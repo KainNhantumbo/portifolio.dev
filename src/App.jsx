@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import Home from './pages/home/Home';
+import { GlobalStyles } from './styles/Globalstyles';
 
 function App() {
-
-
-	return <Home />;
+	return (
+		<>
+			<GlobalStyles />
+			<Home />
+		</>
+	);
 }
 
 export default App;
