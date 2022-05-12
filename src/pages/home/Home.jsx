@@ -36,7 +36,7 @@ const Home = () => {
 		{
 			name: 'LinkedIn',
 			icon: <ImLinkedin2 />,
-			link: 'https://wa.me/258871002535',
+			link: 'https://www.linkedin.com/in/kain-nhantumbo-aa380317a/',
 		},
 	];
 
@@ -81,11 +81,11 @@ const Home = () => {
 				<div>
 					<p>
 						I am very interested in opportunites to work with the latest
-						technologies on challenging projects that would push my skills to the
-						end. I like programming and I am specially ambitious on the kind of
-						projects that solves problems, so if you have a request or question
-						don't hesitate to send me an e-mail using the button below or the
-						links on the footer.
+						technologies on challenging projects that would push my skills to
+						the end. I like programming and I am specially ambitious on the kind
+						of projects that solves problems, so if you have a request or
+						question don't hesitate to send me an e-mail using the button below
+						or the links on the footer.
 					</p>
 				</div>
 
@@ -109,7 +109,7 @@ const Home = () => {
 							than talking, here are some of my personal projects that I have
 							been working on these days. To see all projects, visit my{' '}
 							<a
-								href='https://github.com/KainNhantumbo'
+								href='https://github.com/KainNhantumbo?tab=repositories'
 								target={'_blank'}
 								rel={'noreferrer noopener'}
 							>
@@ -120,21 +120,31 @@ const Home = () => {
 					</p>
 				</section>
 				<section className='projects'>
-					<div>
-						<h2>
-							<strong>Web E-commerce Rest API</strong>
-						</h2>
-						<h3>
-							<strong>Main tools:</strong>
-						</h3>
-						<ul>
-							<li>Node.js</li>
-							<li>Express.js Framework</li>
-							<li>Mongo DB</li>
-						</ul>
-						<a href='#'>See the code</a>
+					<div className='project'>
+						<div>
+							<h2>
+								<strong>Web E-commerce Rest API</strong>
+							</h2>
+							<h3>
+								<strong>Main tools:</strong>
+							</h3>
+							<ul>
+								<li>Node.js</li>
+								<li>Express.js Framework</li>
+								<li>Mongo DB</li>
+							</ul>
+						</div>
+						<div>
+							<a
+								href='https://github.com/KainNhantumbo/Hagira-Website-API'
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+							>
+								See the code
+							</a>
+						</div>
 					</div>
-					<div>
+					<div className='project'>
 						<h2>
 							<strong>Web E-commerce React App</strong>
 						</h2>
@@ -146,49 +156,87 @@ const Home = () => {
 							<li>Sass</li>
 							<li>Styled Components</li>
 						</ul>
-						<a href='#'>See the code</a>
+						<a
+							href='https://github.com/KainNhantumbo/Hagira-Brands-Store'
+							target={'_blank'}
+							rel={'noreferrer noopener'}
+						>
+							See the code
+						</a>
 					</div>
-					<div>
-						<h2>
-							<strong>Notes App</strong>
-						</h2>
-						<h3>
-							<strong>Main tools:</strong>
-						</h3>
-						<ul>
-							<li>React.js</li>
-							<li>Sass</li>
-							<li>Styled Components</li>
-						</ul>
-						<a href='#'>See the code</a>
+					<div className='project'>
+						<div>
+							<h2>
+								<strong>Notes App</strong>
+							</h2>
+							<h3>
+								<strong>Main tools:</strong>
+							</h3>
+							<ul>
+								<li>React.js</li>
+								<li>Sass</li>
+								<li>Styled Components</li>
+							</ul>
+						</div>
+						<div>
+							<a
+								href='https://github.com/KainNhantumbo/Notes-App-made-with-React.js-and-Sass'
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+							>
+								See the code
+							</a>
+						</div>
 					</div>
-					<div>
-						<h2>
-							<strong>Contacts & Tasks App (Front End)</strong>
-						</h2>
-						<h3>
-							<strong>Main tools:</strong>
-						</h3>
-						<ul>
-							<li>React.js</li>
-							<li>Sass</li>
-							<li>Styled Components</li>
-						</ul>
-						<a href='#'>See the code</a>
+
+					<div className='project'>
+						<div>
+							<h2>
+								<strong>Contacts & Tasks App (Front End)</strong>
+							</h2>
+							<h3>
+								<strong>Main tools:</strong>
+							</h3>
+							<ul>
+								<li>React.js</li>
+								<li>Sass</li>
+								<li>Styled Components</li>
+							</ul>
+						</div>
+						<div>
+							<a
+								href='https://github.com/KainNhantumbo/Planner-App'
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+							>
+								See the code
+							</a>
+						</div>
 					</div>
-					<div>
-						<h2>
-							<strong>Contacts & Tasks App (BackEnd Rest API)</strong>
-						</h2>
-						<h3>
-							<strong>Main tools:</strong>
-						</h3>
-						<ul>
-							<li>Node.js</li>
-							<li>Express.js Framework</li>
-							<li>Mongo DB</li>
-						</ul>
-						<a href='#'>See the code</a>
+
+					<div className='project'>
+						<div>
+							<h2>
+								<strong>Contacts & Tasks App (BackEnd Rest API)</strong>
+							</h2>
+							<h3>
+								<strong>Main tools:</strong>
+							</h3>
+							<ul>
+								<li>Node.js</li>
+								<li>Express.js Framework</li>
+								<li>Mongo DB</li>
+							</ul>
+						</div>
+						<div>
+							<a
+								href='https://github.com/KainNhantumbo/Server-for-planner-app'
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+							>
+								See the code
+							</a>
+						</div>
 					</div>
 				</section>
 				<section className='about'>

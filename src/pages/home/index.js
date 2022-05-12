@@ -76,7 +76,7 @@ export const Container = styled.main`
 				border-radius: 50%;
 				width: 200px;
 				position: relative;
-				border: 5px solid rgba(${colors.font}, .5);
+				border: 5px solid rgba(${colors.font}, 0.5);
 			}
 
 			figcaption {
@@ -153,9 +153,9 @@ export const Container = styled.main`
 				grid-template-columns: 1fr;
 			}
 
-			div {
+			.project {
 				display: flex;
-				justify-content: flex-start;
+				justify-content: space-between;
 				padding: 12px;
 				border-radius: 5px;
 				border: 2px solid rgb(${colors.secondary});
@@ -169,6 +169,20 @@ export const Container = styled.main`
 				:hover {
 					box-shadow: 0 0 12px rgba(${colors.primary}, 0.5);
 					transition: all 200ms ease-in-out;
+				}
+
+				div {
+					width: 100%;
+					display: flex;
+					justify-content: flex-start;
+					display: flex;
+					justify-content: space-between;
+					background: rgb(${colors.background});
+					flex-direction: column;
+					gap: 10px;
+					width: 100%;
+					max-width: 250px;
+					user-select: none;
 				}
 
 				h2 {
