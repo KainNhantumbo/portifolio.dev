@@ -58,7 +58,7 @@ export const Container = styled.main`
 		justify-content: center;
 		align-items: center;
 		flex-flow: column nowrap;
-		gap: 20px;
+		gap: 10px;
 		line-height: 1.4rem;
 		padding-top: 20px;
 
@@ -84,14 +84,16 @@ export const Container = styled.main`
 				}
 			}
 		}
+
 		p {
-				color: rgb(${colors.font});
-				text-align: center;
-				padding: 20px 10px;
-				line-height: 1.6rem;
-				font-family: Montserrat, sans-serif;
-				font-weight: 500;
-			}
+			color: rgb(${colors.font});
+			text-align: center;
+			padding: 20px 10px;
+			line-height: 1.6rem;
+			font-family: Montserrat, sans-serif;
+			font-weight: 500;
+			max-width: 700px;
+		}
 
 		.intro {
 			text-align: center;
@@ -106,6 +108,7 @@ export const Container = styled.main`
 				font-size: 1.2rem;
 				letter-spacing: 0.03rem;
 
+				text-transform: uppercase;
 				span {
 					color: rgb(${colors.primary});
 				}

@@ -81,7 +81,9 @@ const Home = () => {
 				</div>
 				<div>
 					<p>
-						
+						I am very interested in opportunites that push my skills to the end. I like
+						programming and I am specially ambitious on the kind of projects that solves problems, so if you have any question don't hesitate to send me an
+						e-mail using the button below or the links on the footer.
 					</p>
 				</div>
 
