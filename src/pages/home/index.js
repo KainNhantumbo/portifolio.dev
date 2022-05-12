@@ -10,17 +10,18 @@ export const Container = styled.main`
 	gap: 20px;
 	position: relative;
 
-	button {
-		@keyframes slide {
-			from {
-				transform: translateY(-60px);
-				opacity: 0;
-			}
-			to {
-				transform: translateY(0);
-				opacity: 1;
-			}
+	@keyframes slide {
+		from {
+			transform: translateY(60px);
+			opacity: 0;
 		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	button {
 		animation: slide ease 500ms forwards;
 		border: none;
 		border-style: none;
@@ -31,10 +32,23 @@ export const Container = styled.main`
 		border-radius: 5px;
 		padding: 5px 10px;
 		box-shadow: 0 0 2px rgb(${colors.primary});
+		position: relative;
 
 		:hover {
 			box-shadow: 0 0 10px rgb(${colors.primary});
 			transition: all 200ms ease;
+		}
+
+		svg {
+			position: absolute;
+			top: 7px;
+			left: 3px;
+			width: 20px;
+			height: 20px;
+		}
+
+		span {
+			padding-left: 20px;
 		}
 	}
 
@@ -45,6 +59,7 @@ export const Container = styled.main`
 		align-items: center;
 		flex-flow: column nowrap;
 		gap: 20px;
+		line-height: 1.4rem;
 		padding-top: 20px;
 
 		figure {
@@ -69,6 +84,14 @@ export const Container = styled.main`
 				}
 			}
 		}
+		p {
+				color: rgb(${colors.font});
+				text-align: center;
+				padding: 20px 10px;
+				line-height: 1.6rem;
+				font-family: Montserrat, sans-serif;
+				font-weight: 500;
+			}
 
 		.intro {
 			text-align: center;
@@ -97,27 +120,51 @@ export const Container = styled.main`
 				background: rgba(${colors.backgroundAlt}, 0.2);
 				color: rgb(${colors.font});
 				text-align: center;
-				padding: 20px 0;
+				padding: 20px 10px;
 				line-height: 1.6rem;
 			}
 		}
 
 		.projects {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			justify-items: center;
 			gap: 20px;
 			padding: 20px;
+
+			@media screen and (max-width: 1200px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			@media screen and (max-width: 900px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@media screen and (max-width: 615px) {
+				grid-template-columns: 1fr;
+			}
 
 			div {
 				display: flex;
 				justify-content: flex-start;
 				padding: 12px;
 				border-radius: 5px;
+				border: 2px solid rgb(${colors.secondary});
 				background: rgb(${colors.background});
 				flex-direction: column;
 				gap: 10px;
+				width: 100%;
 				max-width: 250px;
+				user-select: none;
+
+				:hover {
+					box-shadow: 0 0 12px rgba(${colors.primary}, 0.5);
+					transition: all 200ms ease-in-out;
+				}
+
+				h2 {
+					padding-bottom: 2px;
+					border-bottom: 2px solid rgb(${colors.secondary});
+					line-height: 1.4rem;
+				}
 
 				li {
 					padding: 5px 0;
@@ -129,54 +176,83 @@ export const Container = styled.main`
 					color: rgb(${colors.text});
 					border-radius: 5px;
 					text-align: center;
+					text-transform: uppercase;
+					font-weight: 500;
+					font-size: 0.9rem;
 				}
 			}
 		}
 
-		.
+		.technologies {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+			flex-flow: row wrap;
+			padding: 20px;
+
+			div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				gap: 10px;
+				background: rgba(${colors.background}, 0.2);
+				padding: 10px;
+				border-radius: 5px;
+				user-select: none;
+
+				svg {
+					width: 35px;
+					height: 35px;
+				}
+
+				span {
+					font-weight: 500;
+				}
+			}
+		}
 	}
 
 	footer {
-		@keyframes slide {
-			from {
-				transform: translateY(60px);
-			}
-			to {
-				transform: translateY(0);
-			}
-		}
-
-		padding: 5px 2px;
+		width: 100%;
+		padding-top: 5px;
+		margin-top: 20px;
 		backdrop-filter: blur(10px);
 		background: rgba(${colors.backgroundAlt}, 0.2);
-		box-shadow: 0 0 5px rgba(${colors.font}, 1);
-		animation: slide ease-out 500ms forwards;
+		box-shadow: 0 0 10px rgba(${colors.primary}, 0.5);
+
+		h3 {
+			text-align: center;
+			line-height: 2rem;
+		}
 
 		ul {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: row;
-			gap: 5px;
+			gap: 10px;
 
-			li {
+			a {
 				display: grid;
 				place-content: center;
 				place-items: center;
+				background: rgba(${colors.background}, 0.5);
+				border-radius: 5px;
+				padding: 10px;
 
 				:hover {
 					color: rgb(${colors.secondary});
 					transition: all 200ms ease;
 				}
-
-				svg {
-					width: 50px;
-					height: 50px;
-					color: rgb(${colors.primary});
-					:hover {
-						color: rgb(${colors.font});
-						transition: all 200ms ease;
-					}
+			}
+			svg {
+				width: 20px;
+				height: 20px;
+				color: rgb(${colors.primary});
+				:hover {
+					color: rgb(${colors.font});
+					transition: all 200ms ease;
 				}
 			}
 		}
@@ -184,6 +260,7 @@ export const Container = styled.main`
 		p {
 			text-align: center;
 			padding: 10px;
+			line-height: 1.4rem;
 		}
 	}
 `;

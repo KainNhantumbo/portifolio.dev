@@ -1,33 +1,24 @@
 import { Container } from './index';
 import author from '../../assets/img/author.jpg';
-import { BsWhatsapp } from 'react-icons/bs';
 import {
-	DiCodeBadge,
+	SiVisualstudiocode,
+	SiStyledcomponents,
+	ImLinkedin2,
+	BiMailSend,
+} from 'react-icons/all';
+import {
 	DiCss3,
-	DiCss3Full,
 	DiGit,
 	DiGithub,
-	DiGithubAlt,
-	DiGithubBadge,
-	DiGithubFull,
 	DiHtml5,
-	DiJavascript,
-	DiJavascript1,
 	DiJsBadge,
 	DiMarkdown,
 	DiMongodb,
 	DiNodejsSmall,
 	DiReact,
 	DiSass,
-	DiVisualstudio,
 } from 'react-icons/di';
-import {
-	FaCode,
-	FaGithub,
-	FaLinkedin,
-	FaLinkedinIn,
-	FaWhatsapp,
-} from 'react-icons/fa';
+import { FaCode, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 const Home = () => {
 	const media_links = [
@@ -41,10 +32,18 @@ const Home = () => {
 			icon: <FaWhatsapp />,
 			link: 'https://wa.me/258871002535',
 		},
+		{
+			name: 'LinkedIn',
+			icon: <ImLinkedin2 />,
+			link: 'https://wa.me/258871002535',
+		},
 	];
 
 	const Footer = () => (
 		<footer>
+			<h3>
+				<strong>Find me on the web by:</strong>
+			</h3>
 			<ul>
 				{media_links.map((link, index) => {
 					return (
@@ -57,7 +56,7 @@ const Home = () => {
 				})}
 			</ul>
 			<p>
-				<strong>Copyrght &copy; 2022 Kain Nhantumbo </strong>
+				<strong>Copyright &copy; 2022 Kain Nhantumbo </strong>
 			</p>
 		</footer>
 	);
@@ -80,13 +79,19 @@ const Home = () => {
 						A <span>javascript</span> MERN Stack web developer.
 					</h2>
 				</div>
+				<div>
+					<p>asdaiosdjoaijsoidjaosidjaiopjsd</p>
+				</div>
 
 				<a
 					href='mailto:nhantumbok@gmail.com'
 					target={'_blank'}
 					rel={'noreferrer noopener'}
 				>
-					<button>Let's work togheter!</button>
+					<button>
+						<BiMailSend />
+						<span>Let's work together!</span>
+					</button>
 				</a>
 			</section>
 
@@ -94,18 +99,75 @@ const Home = () => {
 				<section className='about'>
 					<p>
 						<strong>
-							Here are some of my personal projects that I have been working on
-							these days...
+							(...) and because I understand that showing is sometimes better
+							than talking, here are some of my personal projects that I have
+							been working on these days...
 						</strong>
 					</p>
 				</section>
 				<section className='projects'>
 					<div>
 						<h2>
-							<strong>Web Ecommerce Rest API</strong>
+							<strong>Web E-commerce Rest API</strong>
 						</h2>
 						<h3>
-							<strong>Tools:</strong>
+							<strong>Main tools:</strong>
+						</h3>
+						<ul>
+							<li>Node.js</li>
+							<li>Express.js Framework</li>
+							<li>Mongo DB</li>
+						</ul>
+						<a href='#'>See the code</a>
+					</div>
+					<div>
+						<h2>
+							<strong>Web E-commerce React App</strong>
+						</h2>
+						<h3>
+							<strong>Main tools:</strong>
+						</h3>
+						<ul>
+							<li>React.js</li>
+							<li>Sass</li>
+							<li>Styled Components</li>
+						</ul>
+						<a href='#'>See the code</a>
+					</div>
+					<div>
+						<h2>
+							<strong>Notes App</strong>
+						</h2>
+						<h3>
+							<strong>Main tools:</strong>
+						</h3>
+						<ul>
+							<li>React.js</li>
+							<li>Sass</li>
+							<li>Styled Components</li>
+						</ul>
+						<a href='#'>See the code</a>
+					</div>
+					<div>
+						<h2>
+							<strong>Contacts & Tasks App (Front End)</strong>
+						</h2>
+						<h3>
+							<strong>Main tools:</strong>
+						</h3>
+						<ul>
+							<li>React.js</li>
+							<li>Sass</li>
+							<li>Styled Components</li>
+						</ul>
+						<a href='#'>See the code</a>
+					</div>
+					<div>
+						<h2>
+							<strong>Contacts & Tasks App (BackEnd Rest API)</strong>
+						</h2>
+						<h3>
+							<strong>Main tools:</strong>
 						</h3>
 						<ul>
 							<li>Node.js</li>
@@ -117,10 +179,10 @@ const Home = () => {
 				</section>
 				<section className='about'>
 					<p>
-						<strong>Tecnologies that I use everyday</strong>
+						<strong>Technologies that I use everyday</strong>
 					</p>
 				</section>
-				<section className='tecnologies'>
+				<section className='technologies'>
 					<div>
 						<DiJsBadge />
 						<span>Javascript</span>
@@ -158,7 +220,7 @@ const Home = () => {
 						<span>HTML5</span>
 					</div>
 					<div>
-						<DiCodeBadge />
+						<SiStyledcomponents />
 						<span>Styled Components</span>
 					</div>
 					<div>
@@ -166,7 +228,7 @@ const Home = () => {
 						<span>Markdown</span>
 					</div>
 					<div>
-						<DiVisualstudio />
+						<SiVisualstudiocode />
 						<span>Visual Studio Code</span>
 					</div>
 				</section>
