@@ -5,6 +5,7 @@ import {
 	SiStyledcomponents,
 	ImLinkedin2,
 	BiMailSend,
+	SiExpress,
 } from 'react-icons/all';
 import {
 	DiCss3,
@@ -72,18 +73,19 @@ const Home = () => {
 				</figure>
 
 				<div className='intro'>
-					<h1>
-						<span>Hi</span> , I am Kain Nhantumbo!{' '}
-					</h1>
+					<h1>Hi, I am Kain Nhantumbo!</h1>
 					<h2>
 						A <span>javascript</span> MERN Stack web developer.
 					</h2>
 				</div>
 				<div>
 					<p>
-						I am very interested in opportunites that push my skills to the end. I like
-						programming and I am specially ambitious on the kind of projects that solves problems, so if you have any question don't hesitate to send me an
-						e-mail using the button below or the links on the footer.
+						I am very interested in opportunites to work with the latest
+						technologies on challenging projects that would push my skills to the
+						end. I like programming and I am specially ambitious on the kind of
+						projects that solves problems, so if you have a request or question
+						don't hesitate to send me an e-mail using the button below or the
+						links on the footer.
 					</p>
 				</div>
 
@@ -105,7 +107,15 @@ const Home = () => {
 						<strong>
 							(...) and because I understand that showing is sometimes better
 							than talking, here are some of my personal projects that I have
-							been working on these days...
+							been working on these days. To see all projects, visit my{' '}
+							<a
+								href='https://github.com/KainNhantumbo'
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+							>
+								github profile
+							</a>
+							.
 						</strong>
 					</p>
 				</section>
@@ -204,6 +214,10 @@ const Home = () => {
 						<span>Mongo DB</span>
 					</div>
 					<div>
+						<SiExpress />
+						<span>Express.JS</span>
+					</div>
+					<div>
 						<DiGit />
 						<span>Git</span>
 					</div>
@@ -224,12 +238,12 @@ const Home = () => {
 						<span>HTML5</span>
 					</div>
 					<div>
-						<SiStyledcomponents />
-						<span>Styled Components</span>
-					</div>
-					<div>
 						<DiMarkdown />
 						<span>Markdown</span>
+					</div>
+					<div>
+						<SiStyledcomponents />
+						<span>Styled Components</span>
 					</div>
 					<div>
 						<SiVisualstudiocode />

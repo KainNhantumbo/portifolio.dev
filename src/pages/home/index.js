@@ -27,15 +27,18 @@ export const Container = styled.main`
 		border-style: none;
 		outline: none;
 		font-size: 1.2rem;
-		background: rgb(${colors.primary});
-		color: rgb(${colors.text});
+		background: none;
+		border: 2px solid rgb(${colors.primary});
+		color: rgb(${colors.font});
 		border-radius: 5px;
 		padding: 5px 10px;
 		box-shadow: 0 0 2px rgb(${colors.primary});
 		position: relative;
 
 		:hover {
-			box-shadow: 0 0 10px rgb(${colors.primary});
+			box-shadow: 0 0 10px rgb(${colors.shadows});
+			color: rgb(${colors.text});
+			background: rgb(${colors.primary});
 			transition: all 200ms ease;
 		}
 
@@ -73,7 +76,7 @@ export const Container = styled.main`
 				border-radius: 50%;
 				width: 200px;
 				position: relative;
-				border: 5px solid rgb(${colors.secondary});
+				border: 5px solid rgba(${colors.font}, .5);
 			}
 
 			figcaption {
@@ -119,6 +122,11 @@ export const Container = styled.main`
 	.middle-container {
 		.about {
 			padding-top: 10px;
+
+			a {
+				color: rgb(${colors.primary});
+			}
+
 			p {
 				background: rgba(${colors.backgroundAlt}, 0.2);
 				color: rgb(${colors.font});
@@ -203,6 +211,7 @@ export const Container = styled.main`
 				padding: 10px;
 				border-radius: 5px;
 				user-select: none;
+				min-width: 100px;
 
 				svg {
 					width: 35px;
