@@ -80,7 +80,9 @@ const Home = () => {
 					</h2>
 				</div>
 				<div>
-					<p>asdaiosdjoaijsoidjaosidjaiopjsd</p>
+					<p>
+						
+					</p>
 				</div>
 
 				<a
