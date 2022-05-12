@@ -101,6 +101,39 @@ export const Container = styled.main`
 				line-height: 1.6rem;
 			}
 		}
+
+		.projects {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			justify-items: center;
+			gap: 20px;
+			padding: 20px;
+
+			div {
+				display: flex;
+				justify-content: flex-start;
+				padding: 12px;
+				border-radius: 5px;
+				background: rgb(${colors.background});
+				flex-direction: column;
+				gap: 10px;
+				max-width: 250px;
+
+				li {
+					padding: 5px 0;
+				}
+
+				a {
+					padding: 10px;
+					background: rgb(${colors.primary});
+					color: rgb(${colors.text});
+					border-radius: 5px;
+					text-align: center;
+				}
+			}
+		}
+
+		.
 	}
 
 	footer {
@@ -146,6 +179,11 @@ export const Container = styled.main`
 					}
 				}
 			}
+		}
+
+		p {
+			text-align: center;
+			padding: 10px;
 		}
 	}
 `;
