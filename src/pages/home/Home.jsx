@@ -180,6 +180,13 @@ const Home = () => {
 						</div>
 						<div>
 							<a
+								href='https://nava-notes-app.vercel.app'
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+							>
+								See deployed version
+							</a>
+							<a
 								href='https://github.com/KainNhantumbo/Notes-App-made-with-React.js-and-Sass'
 								target={'_blank'}
 								rel={'noreferrer noopener'}

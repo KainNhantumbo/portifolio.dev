@@ -157,7 +157,7 @@ export const Container = styled.main`
 				display: flex;
 				justify-content: space-between;
 				padding: 12px;
-				border-radius: 5px;
+				border-radius: 8px;
 				border: 2px solid rgb(${colors.secondary});
 				background: rgb(${colors.background});
 				flex-direction: column;
