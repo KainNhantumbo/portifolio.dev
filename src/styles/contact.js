@@ -44,6 +44,13 @@ export const ContactsContainer = styled.main`
 			padding: 0 20px;
 		}
 
+    #my-email {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      padding: 0;
+    }
+
 		label,
 		button {
 			font-weight: 500;

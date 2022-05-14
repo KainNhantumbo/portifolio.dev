@@ -1,5 +1,5 @@
 import { ContactsContainer } from '../styles/contact';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Footer from '../components/Footer';
 import {
 	BiMailSend,
@@ -8,13 +8,15 @@ import {
 	FaUser,
 	MdSubject,
 } from 'react-icons/all';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 	const [formData, setFormData] = useState({
 		name: '',
 		subject: '',
 		message: '',
-		email: '',
+		email: 'nhantumbok@gmail.com',
+		from_email: '',
 	});
 
 	// picks form data
@@ -29,6 +31,24 @@ const Contact = () => {
 	const emailSender = (e) => {
 		e.preventDefault();
 		console.log(formData);
+
+		emailjs
+			.send(
+				'service_sjw9i8b',
+				'template_eso630j',
+				formData,
+				'z3FUpU83GBFJyGXVF'
+			)
+			.then(
+				(result) => {
+					console.log(result.text);
+					alert('Message sent sucessfully!');
+				},
+				(error) => {
+					console.log(error.text);
+					alert('An error ocurred, try again later!');
+				}
+			);
 	};
 
 	useEffect(() => {
@@ -71,7 +91,7 @@ const Contact = () => {
 							required
 							type='text'
 							placeholder='Type your email here'
-							name='email'
+							name='from_email'
 							id='email'
 							onChange={formDataPicker}
 						/>
