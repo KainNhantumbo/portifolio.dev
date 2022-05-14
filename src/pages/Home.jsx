@@ -1,5 +1,5 @@
-import { Container } from './index';
-import author from '../../assets/img/author.jpg';
+import { Container } from '../styles/home';
+import author from '../assets/img/author.jpg';
 import {
 	SiVisualstudiocode,
 	SiStyledcomponents,

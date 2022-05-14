@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../styles/colors';
+import { colors } from './colors';
 
 export const Container = styled.main`
 	width: 100%;
@@ -270,16 +270,17 @@ export const Container = styled.main`
 				:hover {
 					color: rgb(${colors.secondary});
 					transition: all 200ms ease;
+
+					svg {
+						color: rgb(${colors.font});
+						transition: all 200ms ease;
+					}
 				}
 			}
 			svg {
 				width: 20px;
 				height: 20px;
 				color: rgb(${colors.primary});
-				:hover {
-					color: rgb(${colors.font});
-					transition: all 200ms ease;
-				}
 			}
 		}
 
