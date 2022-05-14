@@ -9,28 +9,27 @@ export const ContactsContainer = styled.main`
 	flex-direction: column;
 	gap: 20px;
 	color: rgb(${colors.font});
-  overflow-x: hidden;
+	overflow-x: hidden;
 
 	.intro {
 		display: flex;
 		justify-content: flex-start;
 		flex-direction: column;
 		padding: 0 20px;
-    font-family: 'Bree Serif', serif;
+		font-family: 'Bree Serif', serif;
 
-    h2 {
-      font-size: 1.2rem;
-    }
-    p {
-      line-height: 1.6rem;
-    }
+		h2 {
+			font-size: 1.2rem;
+		}
+		p {
+			line-height: 1.6rem;
+		}
 	}
 
-  .form-container {
-    width: 100%;
-    max-width: 100%;
-
-  }
+	.form-container {
+		width: 100%;
+		max-width: 100%;
+	}
 
 	form {
 		display: flex;
@@ -41,14 +40,28 @@ export const ContactsContainer = styled.main`
 		gap: 20px;
 		padding: 0 20px;
 
-    @media screen and (max-width: 520px) {
-      padding: 0 20px;
-    }
+		@media screen and (max-width: 520px) {
+			padding: 0 20px;
+		}
 
 		label,
 		button {
 			font-weight: 500;
 			line-height: 1.4rem;
+			position: relative;
+		}
+
+		label {
+			svg {
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				top: 2px;
+				left: 0;
+			}
+			span {
+				padding-left: 20px;
+			}
 		}
 
 		input,
@@ -63,10 +76,10 @@ export const ContactsContainer = styled.main`
 			border-radius: 5px;
 			color: rgb(${colors.font});
 			border: 2px solid rgba(${colors.font}, 0.5);
-      
-      @media screen and (max-width: 520px) {
-        width: 80%;
-      }
+
+			@media screen and (max-width: 520px) {
+				width: 80%;
+			}
 
 			::placeholder {
 				color: rgba(${colors.font}, 0.5);
@@ -92,6 +105,23 @@ export const ContactsContainer = styled.main`
 
 		button {
 			width: fit-content;
+			cursor: pointer;
+
+      :hover {
+        background: rgba(${colors.primary}, 0.2);
+        box-shadow: 0 0 10px rgb(${colors.shadows});
+      }
+
+			svg {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				top: 6px;
+				left: 5px;
+			}
+			span {
+				padding-left: 20px;
+			}
 		}
 	}
 `;

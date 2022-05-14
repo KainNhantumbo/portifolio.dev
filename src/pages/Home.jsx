@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import {
 	SiVisualstudiocode,
 	SiStyledcomponents,
-	ImLinkedin2,
 	BiMailSend,
 	SiExpress,
-} from 'react-icons/all';
-import {
+	FaCode,
 	DiCss3,
 	DiGit,
 	DiGithub,
@@ -19,50 +17,10 @@ import {
 	DiNodejsSmall,
 	DiReact,
 	DiSass,
-} from 'react-icons/di';
-import { FaCode, FaGithub, FaWhatsapp } from 'react-icons/fa';
+} from 'react-icons/all';
+import Footer from '../components/Footer';
 
 const Home = () => {
-	const media_links = [
-		{
-			name: 'Github',
-			icon: <FaGithub />,
-			link: 'https://github.com/KainNhantumbo',
-		},
-		{
-			name: 'Whatsapp',
-			icon: <FaWhatsapp />,
-			link: 'https://wa.me/258871002535',
-		},
-		{
-			name: 'LinkedIn',
-			icon: <ImLinkedin2 />,
-			link: 'https://www.linkedin.com/in/kain-nhantumbo-aa380317a/',
-		},
-	];
-
-	const Footer = () => (
-		<footer>
-			<h3>
-				<strong>Find me on the web by:</strong>
-			</h3>
-			<ul>
-				{media_links.map((link, index) => {
-					return (
-						<li key={index}>
-							<a href={link.link} target={'_blank'} rel={'noreferrer noopener'}>
-								{link.icon}
-							</a>
-						</li>
-					);
-				})}
-			</ul>
-			<p>
-				<strong>Copyright &copy; 2022 Kain Nhantumbo </strong>
-			</p>
-		</footer>
-	);
-
 	return (
 		<Container>
 			<section className='upper-container'>
@@ -90,18 +48,12 @@ const Home = () => {
 					</p>
 				</div>
 
-				<a
-					href='mailto:nhantumbok@gmail.com'
-					target={'_blank'}
-					rel={'noreferrer noopener'}
-				>
-					<button>
-						<BiMailSend />
-						<Link to={'/contact'}>
-							<span>Let's work together!</span>
-						</Link>
-					</button>
-				</a>
+				<button>
+					<BiMailSend />
+					<Link to={'/contact'}>
+						<span>Let's work together!</span>
+					</Link>
+				</button>
 			</section>
 
 			<section className='middle-container'>

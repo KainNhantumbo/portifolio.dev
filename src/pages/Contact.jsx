@@ -1,5 +1,13 @@
 import { ContactsContainer } from '../styles/contact';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Footer from '../components/Footer';
+import {
+	BiMailSend,
+	FaEnvelope,
+	FaEnvelopeOpenText,
+	FaUser,
+	MdSubject,
+} from 'react-icons/all';
 
 const Contact = () => {
 	const [formData, setFormData] = useState({
@@ -23,17 +31,28 @@ const Contact = () => {
 		console.log(formData);
 	};
 
+	useEffect(() => {
+		// corrects the window position
+		window.scrollTo({
+			top: 0,
+			left: 0,
+		});
+	}, []);
+
 	return (
 		<ContactsContainer>
 			<section className='intro'>
 				<h1>Contact</h1>
 				<h2>Let's work together!</h2>
-        <p>You can use the form above to send me a e-mail.</p>
+				<p>You can use the form above to send me a e-mail.</p>
 			</section>
 			<section className='form-container'>
 				<form onSubmit={emailSender}>
 					<div className='common'>
-						<label htmlFor='name'>Name</label>
+						<label htmlFor='name'>
+							<FaUser />
+							<span>Name</span>
+						</label>
 						<input
 							required
 							type='text'
@@ -44,7 +63,10 @@ const Contact = () => {
 						/>
 					</div>
 					<div className='common'>
-						<label htmlFor='email'>E-mail</label>
+						<label htmlFor='email'>
+							<FaEnvelope />
+							<span>E-mail</span>
+						</label>
 						<input
 							required
 							type='text'
@@ -55,7 +77,10 @@ const Contact = () => {
 						/>
 					</div>
 					<div className='common'>
-						<label htmlFor='subject'>Subject</label>
+						<label htmlFor='subject'>
+							<MdSubject />
+							<span>Subject</span>
+						</label>
 						<input
 							type='text'
 							id='subject'
@@ -67,7 +92,10 @@ const Contact = () => {
 						/>
 					</div>
 					<div className='common'>
-						<label htmlFor='message'>Message</label>
+						<label htmlFor='message'>
+							<FaEnvelopeOpenText />
+							<span>Message</span>
+						</label>
 						<textarea
 							name='message'
 							required
@@ -78,9 +106,13 @@ const Contact = () => {
 							onChange={formDataPicker}
 						></textarea>
 					</div>
-					<button type='submit'>Send message</button>
+					<button type='submit'>
+						<BiMailSend />
+						<span>Send message</span>
+					</button>
 				</form>
 			</section>
+			<Footer />
 		</ContactsContainer>
 	);
 };
