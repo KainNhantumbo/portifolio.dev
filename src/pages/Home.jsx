@@ -1,5 +1,6 @@
 import { Container } from '../styles/home';
 import author from '../assets/img/author.jpg';
+import { Link } from 'react-router-dom';
 import {
 	SiVisualstudiocode,
 	SiStyledcomponents,
@@ -96,7 +97,9 @@ const Home = () => {
 				>
 					<button>
 						<BiMailSend />
-						<span>Let's work together!</span>
+						<Link to={'/contact'}>
+							<span>Let's work together!</span>
+						</Link>
 					</button>
 				</a>
 			</section>
