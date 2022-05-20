@@ -1,5 +1,5 @@
 import { ContactsContainer } from '../styles/contact';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import {
 	BiMailSend,
@@ -8,6 +8,7 @@ import {
 	FaUser,
 	MdSubject,
 } from 'react-icons/all';
+import ManagePerson from '../assets/svg/management.svg';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -32,6 +33,7 @@ const Contact = () => {
 		e.preventDefault();
 		console.log(formData);
 
+		// email sender transport
 		emailjs
 			.send(
 				'service_sjw9i8b',
@@ -64,9 +66,12 @@ const Contact = () => {
 			<section className='intro'>
 				<h1>Contact</h1>
 				<h2>Let's work together!</h2>
-				<p>You can use the form above to send me a e-mail.</p>
+				<p>You can use the form above to send me an e-mail.</p>
 			</section>
 			<section className='form-container'>
+				<div className='svgContainer'>
+					<img src={ManagePerson} alt="management-person svg" />
+				</div>
 				<form onSubmit={emailSender}>
 					<div className='common'>
 						<label htmlFor='name'>

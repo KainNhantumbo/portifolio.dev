@@ -39,7 +39,7 @@ const Home = () => {
 				</div>
 				<div>
 					<p>
-						I am very interested in opportunites to work with the latest
+						I am very interested in opportunities to work with the latest
 						technologies on challenging projects that would push my skills to
 						the end. I like programming and I am specially ambitious on the kind
 						of projects that solves problems, so if you have a request or
@@ -62,7 +62,7 @@ const Home = () => {
 						<strong>
 							(...) and because I understand that showing is sometimes better
 							than talking, here are some of my personal projects that I have
-							been working on these days. To see all projects, visit my{' '}
+							been working on these days. You can see all my personal projects on my{' '}
 							<a
 								href='https://github.com/KainNhantumbo?tab=repositories'
 								target={'_blank'}

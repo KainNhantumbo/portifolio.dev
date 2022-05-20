@@ -29,6 +29,56 @@ export const ContactsContainer = styled.main`
 	.form-container {
 		width: 100%;
 		max-width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-flow: row wrap;
+		gap: 5px;
+		padding: 0 5px;
+
+		@media screen and (max-width: 880px) {
+			gap: 20px;
+		}
+		.svgContainer {
+			@keyframes identifier {
+				0% {
+					border: 2px solid rgba(${colors.primary}, 0.8);
+					transform: scale(1);
+				}
+				20% {
+					border: 2px solid rgba(${colors.inner}, 0.8);
+					transform: scale(0.9);
+				}
+				40% {
+					border: 2px solid rgba(${colors.font}, 0.8);
+				}
+				80% {
+					border: 2px solid rgba(${colors.shadows}, 0.8);
+					transform: scale(1);
+				}
+				100% {
+					border: 2px solid rgba(${colors.primary}, 0.8);
+					transform: scale(1);
+				}
+			}
+			animation: identifier 4000ms ease-in-out forwards infinite;
+			box-shadow: 0 0 10px rgba(${colors.shadows}, 0.8);
+			background: rgba(${colors.primary}, 0.8);
+			border-radius: 50%;
+			width: 300px;
+			height: 300px;
+			display: grid;
+			place-content: center;
+			padding: 10px;
+			margin: 0 auto;
+			@media screen and (max-width: 880px) {
+				width: 240px;
+				height: 240px;
+			}
+			img {
+				width: 100%;
+			}
+		}
 	}
 
 	form {
@@ -38,18 +88,9 @@ export const ContactsContainer = styled.main`
 		width: 100%;
 		max-width: 450px;
 		gap: 20px;
-		padding: 0 20px;
-
-		@media screen and (max-width: 520px) {
-			padding: 0 20px;
-		}
-
-    #my-email {
-      visibility: hidden;
-      width: 0;
-      height: 0;
-      padding: 0;
-    }
+		padding-right: 40px;
+		padding-left: 5px;
+		margin: 0 auto;
 
 		label,
 		button {
@@ -82,11 +123,8 @@ export const ContactsContainer = styled.main`
 			resize: none;
 			border-radius: 5px;
 			color: rgb(${colors.font});
-			border: 2px solid rgba(${colors.font}, 0.5);
-
-			@media screen and (max-width: 520px) {
-				width: 80%;
-			}
+			background: rgb(${colors.inner});
+			border: 2px solid rgba(${colors.primary}, 0.8);
 
 			::placeholder {
 				color: rgba(${colors.font}, 0.5);
@@ -114,10 +152,10 @@ export const ContactsContainer = styled.main`
 			width: fit-content;
 			cursor: pointer;
 
-      :hover {
-        background: rgba(${colors.primary}, 0.2);
-        box-shadow: 0 0 10px rgb(${colors.shadows});
-      }
+			:hover {
+				background: rgba(${colors.primary}, 0.2);
+				box-shadow: 0 0 10px rgb(${colors.shadows});
+			}
 
 			svg {
 				position: absolute;
