@@ -73,10 +73,10 @@ export const Container = styled.main`
 			gap: 10px;
 
 			img {
-				border-radius: 50%;
+				border-radius: 20px;
 				width: 200px;
 				position: relative;
-				border: 5px solid rgba(${colors.font}, 0.5);
+				border-bottom: 5px solid rgb(${colors.primary});
 			}
 
 			figcaption {
@@ -89,7 +89,7 @@ export const Container = styled.main`
 		}
 
 		p {
-			color: rgb(${colors.font});
+			color: rgb(${colors.text});
 			text-align: center;
 			padding: 20px 10px;
 			line-height: 1.6rem;
@@ -237,9 +237,5 @@ export const Container = styled.main`
 				}
 			}
 		}
-	}
-
-	footer {
-	
 	}
 `;
