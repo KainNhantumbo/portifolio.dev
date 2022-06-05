@@ -28,15 +28,17 @@ export const Container = styled.main`
 		outline: none;
 		font-size: 1.2rem;
 		background: none;
-		border: 2px solid rgb(${colors.primary});
+		border: 2px solid rgb(${colors.secondary});
 		color: rgb(${colors.font});
 		border-radius: 5px;
 		padding: 5px 10px;
-		box-shadow: 0 0 2px rgb(${colors.primary});
+		box-shadow: 0 0 2px rgb(${colors.shadows});
 		position: relative;
 
 		:hover {
-			box-shadow: 0 0 10px rgb(${colors.shadows});
+			border: 2px solid rgb(${colors.primary});
+
+			box-shadow: 0 0 5px rgb(${colors.secondary});
 			color: rgb(${colors.text});
 			background: rgb(${colors.primary});
 			transition: all 200ms ease;
@@ -71,12 +73,16 @@ export const Container = styled.main`
 			align-items: center;
 			flex-direction: column;
 			gap: 10px;
+			padding: 20px 20px 0px 20px;
+			background: rgba(${colors.background}, 0.8);
+			border-radius: 20px;
+			backdrop-filter: blur(10px);
+			border-bottom: 5px solid rgb(${colors.primary});
 
 			img {
 				border-radius: 20px;
 				width: 200px;
 				position: relative;
-				border-bottom: 5px solid rgb(${colors.primary});
 			}
 
 			figcaption {
@@ -89,7 +95,7 @@ export const Container = styled.main`
 		}
 
 		p {
-			color: rgb(${colors.text});
+			color: rgb(${colors.font});
 			text-align: center;
 			padding: 20px 10px;
 			line-height: 1.6rem;
@@ -124,12 +130,12 @@ export const Container = styled.main`
 			padding-top: 10px;
 
 			a {
-				color: rgb(${colors.primary});
+				color: rgb(${colors.secondary});
 			}
 
 			p {
 				background: rgba(${colors.backgroundAlt}, 0.2);
-				color: rgb(${colors.font});
+				color: rgb(${colors.text});
 				text-align: center;
 				padding: 20px 10px;
 				line-height: 1.6rem;
@@ -159,7 +165,8 @@ export const Container = styled.main`
 				padding: 12px;
 				border-radius: 8px;
 				border: 2px solid rgb(${colors.secondary});
-				background: rgb(${colors.background});
+				background: rgba(${colors.background}, 0.5);
+				backdrop-filter: blur(10px);
 				flex-direction: column;
 				gap: 10px;
 				width: 100%;
@@ -167,7 +174,7 @@ export const Container = styled.main`
 				user-select: none;
 
 				:hover {
-					box-shadow: 0 0 12px rgba(${colors.primary}, 0.5);
+					box-shadow: 0 0 12px rgb(${colors.secondary});
 					transition: all 200ms ease-in-out;
 				}
 
@@ -177,7 +184,6 @@ export const Container = styled.main`
 					justify-content: flex-start;
 					display: flex;
 					justify-content: space-between;
-					background: rgb(${colors.background});
 					flex-direction: column;
 					gap: 10px;
 					width: 100%;
@@ -197,13 +203,18 @@ export const Container = styled.main`
 
 				a {
 					padding: 10px;
-					background: rgb(${colors.primary});
+					background: rgb(${colors.secondary});
 					color: rgb(${colors.text});
 					border-radius: 5px;
 					text-align: center;
 					text-transform: uppercase;
 					font-weight: 500;
 					font-size: 0.9rem;
+					:hover {
+						background: rgb(${colors.primary});
+						box-shadow: 0 0 5px rgb(${colors.secondary});
+						transition: all 200ms ease-in-out;
+					}
 				}
 			}
 		}
@@ -221,7 +232,7 @@ export const Container = styled.main`
 				align-items: center;
 				flex-direction: column;
 				gap: 10px;
-				background: rgba(${colors.background}, 0.2);
+				background: rgba(${colors.background}, 0.8);
 				padding: 10px;
 				border-radius: 5px;
 				user-select: none;
@@ -230,6 +241,7 @@ export const Container = styled.main`
 				svg {
 					width: 35px;
 					height: 35px;
+					color: rgb(${colors.secondary});
 				}
 
 				span {

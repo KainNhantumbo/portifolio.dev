@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
 body {
   max-width: 100vw;
   font-family: Montserrat;
-  color: rgb(${colors.text});
+  color: rgb(${colors.font});
   background:  rgba(${colors.secondary}, .9);
   background-image: url(${bg});
   background-size: cover;
