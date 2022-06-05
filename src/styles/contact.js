@@ -17,11 +17,14 @@ export const ContactsContainer = styled.main`
 		flex-direction: column;
 		padding: 0 20px;
 		font-family: 'Bree Serif', serif;
+		gap: 5px;
 
 		h2 {
+			padding: 2px 5px;
 			font-size: 1.2rem;
 		}
 		p {
+			padding: 2px 5px;
 			line-height: 1.6rem;
 		}
 	}
@@ -62,8 +65,7 @@ export const ContactsContainer = styled.main`
 				}
 			}
 			animation: identifier 4000ms ease-in-out forwards infinite;
-			box-shadow: 0 0 10px rgba(${colors.shadows}, 0.8);
-			background: rgba(${colors.primary}, 0.8);
+			background: rgba(${colors.secondary}, 0.8);
 			border-radius: 50%;
 			width: 300px;
 			height: 300px;
@@ -124,7 +126,7 @@ export const ContactsContainer = styled.main`
 			border-radius: 5px;
 			color: rgb(${colors.font});
 			background: rgb(${colors.inner});
-			border: 2px solid rgba(${colors.primary}, 0.8);
+			border: 2px solid rgba(${colors.secondary}, 1);
 
 			::placeholder {
 				color: rgba(${colors.font}, 0.5);

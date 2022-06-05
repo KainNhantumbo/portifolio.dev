@@ -7,7 +7,7 @@ export const colors = {
 	text: '255, 255, 255',
 	shadows: '197, 197, 198',
 	background: '32, 33, 36',
-	backgroundAlt: '255, 255, 255',
+	backgroundAlt: '41, 42, 46',
 };
 
 export const dark = {

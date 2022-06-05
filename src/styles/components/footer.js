@@ -9,28 +9,9 @@ export const FooterContainer = styled.footer`
 	background: rgba(${colors.backgroundAlt}, 0.3);
 	box-shadow: 0 0 10px rgba(${colors.primary}, 0.5);
 
-	@keyframes text-slider {
-		0% {
-			color: rgb(${colors.text});
-		}
-		25% {
-			color: rgb(${colors.font});
-		}
-		50% {
-			color: rgb(0,0,0);
-		}
-		75% {
-			color: rgb(${colors.font});
-		}
-		100% {
-			color: rgb(${colors.text});
-		}
-	}
-
 	h3 {
 		text-align: center;
 		line-height: 2rem;
-		animation: text-slider 5s ease forwards infinite;
 	}
 
 	ul {
@@ -69,6 +50,5 @@ export const FooterContainer = styled.footer`
 		text-align: center;
 		padding: 10px;
 		line-height: 1.4rem;
-		animation: text-slider 5s ease forwards infinite;
 	}
 `;

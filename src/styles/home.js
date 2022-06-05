@@ -130,11 +130,12 @@ export const Container = styled.main`
 			padding-top: 10px;
 
 			a {
-				color: rgb(${colors.secondary});
+				color: rgb(${colors.primary});
 			}
 
 			p {
-				background: rgba(${colors.backgroundAlt}, 0.2);
+				background: rgba(${colors.backgroundAlt}, 0.3);
+				backdrop-filter: blur(10px);
 				color: rgb(${colors.text});
 				text-align: center;
 				padding: 20px 10px;
@@ -232,7 +233,8 @@ export const Container = styled.main`
 				align-items: center;
 				flex-direction: column;
 				gap: 10px;
-				background: rgba(${colors.background}, 0.8);
+				background: rgba(${colors.backgroundAlt}, 0.5);
+				backdrop-filter: blur(10px);
 				padding: 10px;
 				border-radius: 5px;
 				user-select: none;
