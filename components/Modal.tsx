@@ -30,7 +30,7 @@ export const ConfirmDialog: FC<Props> = ({
 							onClick={(e) => closeModal(false)}
 						>
 							<FaTimesCircle />
-							<span>Fechar</span>
+							<span>Close</span>
 						</motion.button>
 					</div>
 				</div>

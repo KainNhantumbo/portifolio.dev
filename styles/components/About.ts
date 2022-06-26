@@ -6,8 +6,8 @@ export const AboutContainer = styled.section`
 	align-items: center;
 	margin: 0 auto;
 	gap: 10px;
-  border-top: 1px solid rgba(${({ theme }) => theme.font}, .2);
-		padding-top: 20px;
+	border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
+	padding-top: 20px;
 
 	.experiences {
 		text-align: center;

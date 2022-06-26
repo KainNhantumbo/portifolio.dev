@@ -6,10 +6,10 @@ export default function HeadPage() {
 			<meta name='author' content='Kain Nhantumbo' />
 			<meta
 				name='description'
-				content='Umino plus enterprises services application'
+				content='Kain Nhantumbo portifolio website'
 			/>
 			<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-			<title>Receitas do Kaynee</title>
+			<title>Kain Nhantumbo Portifolio</title>
 		</Head>
 	);
 }

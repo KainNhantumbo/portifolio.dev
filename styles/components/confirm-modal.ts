@@ -20,13 +20,13 @@ export const ConfirmModalContainer = styled.section`
 		position: relative;
 		padding: 7px 10px;
 		color: rgb(${({ theme }) => theme.text});
-		background: rgb(${({ theme }) => theme.primary});
+		background: rgb(${({ theme }) => theme.alter});
 		width: fit-content;
 		cursor: pointer;
     
 		:hover {
 			box-shadow: 0 0 12px rgb(${({ theme }) => theme.shadows});
-			background: rgb(${({ theme }) => theme.secondary});
+		
 		}
 
 		svg {
@@ -53,7 +53,7 @@ export const ConfirmModalContainer = styled.section`
 		border-radius: 10px;
 		background: rgb(${({ theme }) => theme.backgroundAlt});
 		box-shadow: 0 0 20px rgb(${({ theme }) => theme.shadows});
-		border-bottom: 5px solid rgb(${({ theme }) => theme.primary});
+		border-bottom: 5px solid rgb(${({ theme }) => theme.alter});
 		max-width: 600px;
 		margin: 0 10px;
 
@@ -64,7 +64,7 @@ export const ConfirmModalContainer = styled.section`
 			gap: 10px;
 			span {
 				font-weight: 500;
-				color: rgb(${({ theme }) => theme.primary});
+				color: rgb(${({ theme }) => theme.alter});
 			}
 			p {
 				line-height: 1.6rem;
