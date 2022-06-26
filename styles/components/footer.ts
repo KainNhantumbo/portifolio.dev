@@ -10,9 +10,7 @@ export const FooterContainer = styled.footer`
 	gap: 10px;
 	padding-top: 5px;
 	border-radius: 20px 20px 0 0;
-
-	backdrop-filter: blur(10px);
-	background: rgba(${({ theme }) => theme.backgroundAlt}, 0.3);
+	background: rgb(${({ theme }) => theme.backgroundAlt});
 	box-shadow: 0 0 25px rgb(${({ theme }) => theme.shadows}, 0.6);
 
 	h3 {

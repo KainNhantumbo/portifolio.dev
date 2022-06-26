@@ -4,7 +4,7 @@ export const primary: ThemeObj = {
 	primary: '81, 129, 0',
 	secondary: '77, 124, 95',
 	alter: '205, 93, 125',
-	alterAlt: '255, 243, 234',
+	alterAlt: '234, 144, 122',
 	hover: '215, 228, 217',
 	font: '95, 99, 104',
 	inner: '241, 243, 244',
