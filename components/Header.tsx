@@ -4,6 +4,7 @@ import { HeaderContainer as Container } from '../styles/components/header';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { BiPlanet } from 'react-icons/bi';
 
 const Header: FC = (): JSX.Element => {
 	const router = useRouter();
@@ -31,9 +32,9 @@ const Header: FC = (): JSX.Element => {
 
 	return (
 		<Container>
-			<h2 className='brand' onClick={() => router.push('/')}>
-				<FaCoffee />
-				<span>AweBacker</span>
+			<h2 className='brand' onClick={() => router.push('#')}>
+				<BiPlanet />
+				<span>Portifolio</span>
 			</h2>
 			<motion.button
 				whileTap={{ scale: 0.5 }}
@@ -44,44 +45,39 @@ const Header: FC = (): JSX.Element => {
 			</motion.button>
 			<nav className='navbar'>
 				<ul style={{ display: isMenu ? 'flex' : 'none' }}>
-					<Link href={'/'}>
+					<Link href={'#home'}>
 						<motion.li
 							whileTap={{ scale: 0.7 }}
 							whileHover={{ scale: 1.05, y: 1 }}
 						>
-							<span>Início</span>
+							<span>Home</span>
 						</motion.li>
 					</Link>
-					<Link href={'/recipes?page=1'}>
+					
+					<Link href={'#projects'}>
 						<motion.li
 							whileTap={{ scale: 0.7 }}
 							whileHover={{ scale: 1.05, y: 1 }}
 						>
-							<span>Receitas</span>
+							<span>Projects</span>
 						</motion.li>
 					</Link>
-					<Link href={'/categories'}>
+
+					<Link href={'#contact'}>
 						<motion.li
 							whileTap={{ scale: 0.7 }}
 							whileHover={{ scale: 1.05, y: 1 }}
 						>
-							<span>Categorias</span>
+							<span>Contact</span>
 						</motion.li>
 					</Link>
-					<Link href={'/contact'}>
+
+					<Link href={'#about'}>
 						<motion.li
 							whileTap={{ scale: 0.7 }}
 							whileHover={{ scale: 1.05, y: 1 }}
 						>
-							<span>Contato</span>
-						</motion.li>
-					</Link>
-					<Link href={'/about'}>
-						<motion.li
-							whileTap={{ scale: 0.7 }}
-							whileHover={{ scale: 1.05, y: 1 }}
-						>
-							<span>Sobre</span>
+							<span>About</span>
 						</motion.li>
 					</Link>
 				</ul>

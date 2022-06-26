@@ -10,10 +10,11 @@ export const HomeContainer = styled.main`
 	gap: 30px;
 	font-family: Inter, 'Open Sans', Montserrat, Poppins, 'PT Sans';
 	line-height: 1.6rem;
-	background: rgb(${({ theme }) => theme.background_alter});
-	border-radius: 30px;
 	margin-bottom: 50px;
-
+	
+	background: rgb(${({ theme }) => theme.background_alter});
+	border-radius: 0 0 10px 10px;
+	
 	.empty-message {
 		display: grid;
 		place-content: center;
