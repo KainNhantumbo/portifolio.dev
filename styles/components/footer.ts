@@ -8,12 +8,12 @@ export const FooterContainer = styled.footer`
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-
-	width: 100%;
 	padding-top: 5px;
-	margin-top: 20px;
+	border-radius: 20px 20px 0 0;
+
 	backdrop-filter: blur(10px);
-	background: rgba(${({ theme }) => theme.backgroundAlt}, .3);
+	background: rgba(${({ theme }) => theme.backgroundAlt}, 0.3);
+	box-shadow: 0 0 25px rgb(${({ theme }) => theme.shadows}, 0.6);
 
 	h3 {
 		text-align: center;
@@ -25,30 +25,30 @@ export const FooterContainer = styled.footer`
 		justify-content: center;
 		align-items: center;
 		flex-direction: row;
-		gap: 10px;
+		gap: 15px;
 
 		li {
 			display: grid;
 			place-content: center;
 			place-items: center;
-		background:	rgb(${({ theme }) => theme.background_alter});
-			border-radius: 5px;
+			background: rgb(${({ theme }) => theme.background_alter});
+			border-radius: 10px;
 			padding: 10px;
+			width: 40px;
+			height: 40px;
 
 			:hover {
 				color: rgb(${({ theme }) => theme.secondary});
-				transition: all 200ms ease;
 
 				svg {
-					color: rgb(${({ theme }) => theme.font});
-					transition: all 200ms ease;
+					color: rgb(${({ theme }) => theme.alter});
 				}
 			}
 		}
 		svg {
 			width: 20px;
 			height: 20px;
-			color:rgb(${({ theme }) => theme.primary});
+			color: rgb(${({ theme }) => theme.secondary});
 		}
 	}
 
@@ -56,5 +56,6 @@ export const FooterContainer = styled.footer`
 		text-align: center;
 		padding: 10px;
 		line-height: 1.4rem;
+		font-size: .9rem;
 	}
 `;

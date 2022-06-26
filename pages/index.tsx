@@ -12,8 +12,9 @@ const Home: NextPage = () => {
 			<HeadPage />
 			<Header />
 			<PageLayout />
-			<Container></Container>
-			<About/>
+			<Container>
+				<About />
+			</Container>
 			<Footer />
 		</>
 	);

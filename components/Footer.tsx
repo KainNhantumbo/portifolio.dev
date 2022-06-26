@@ -2,6 +2,7 @@ import { FooterContainer as Container } from '../styles/components/footer';
 import { FC } from 'react';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { ImLinkedin2 } from 'react-icons/im';
+import { motion } from 'framer-motion';
 
 interface FooterLinks {
 	name: string;
@@ -36,16 +37,16 @@ const Footer: FC = ({}): JSX.Element => {
 			<ul>
 				{media_links.map((link, index) => {
 					return (
-						<li key={index}>
+						<motion.li key={index} whileHover={{ scale: 1.2 }}>
 							<a href={link.link} target={'_blank'} rel={'noreferrer noopener'}>
 								{link.icon}
 							</a>
-						</li>
+						</motion.li>
 					);
 				})}
 			</ul>
 			<p>
-				<strong>Copyright &copy; 2022 Kain Nhantumbo </strong>
+				<span>Copyright &copy; 2022 Kain Nhantumbo </span>
 			</p>
 		</Container>
 	);

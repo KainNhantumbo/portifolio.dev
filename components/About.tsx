@@ -1,11 +1,16 @@
 import { AboutContainer as Container } from '../styles/components/About';
 import * as React from 'react';
-import { BiBadge } from 'react-icons/bi';
-import { HiCheckCircle, HiCode } from 'react-icons/hi';
+import { HiCode, HiViewGrid } from 'react-icons/hi';
+import { SiAboutdotme } from 'react-icons/si';
+import { motion } from 'framer-motion';
 
 const About: React.FC = (): JSX.Element => {
 	return (
 		<Container>
+			<h2>
+				<SiAboutdotme />
+				<span>About</span>
+			</h2>
 			<section className='experiences'>
 				<p>
 					I am very interested in opportunities to work with the latest
@@ -16,22 +21,19 @@ const About: React.FC = (): JSX.Element => {
 					links on the footer.
 				</p>
 			</section>
-			<section className='cards-container'>
-				<div className='card'>
-					<HiCheckCircle />
-					<h4>Experience</h4>
-					<h3>
-						<span>1+ year of coding</span>
-					</h3>
-				</div>
 
-				<div className='card'>
+			<section className='cards-container'>
+				<motion.div className='card' whileHover={{ scale: 1.1 }}>
 					<HiCode />
+					<h4>Experience</h4>
+					<span>1+ year of coding</span>
+				</motion.div>
+
+				<motion.div className='card' whileHover={{ scale: 1.1 }}>
+					<HiViewGrid />
 					<h4>Projects</h4>
-					<h3>
-						<span>20+ github open projects</span>
-					</h3>
-				</div>
+					<span>20+ github projects</span>
+				</motion.div>
 			</section>
 		</Container>
 	);
