@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
-export const FooterContainer = styled.footer`
+export const AboutContainer = styled.section`
 	width: 100vw;
 	height: min-content;
 	position: relative;
 	font-family: Inter, 'Open Sans', Montserrat, Poppins, 'PT Sans';
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 50px;
 
 	width: 100%;
 	padding-top: 5px;
 	margin-top: 20px;
 	backdrop-filter: blur(10px);
-	background: rgba(${({ theme }) => theme.backgroundAlt}, .3);
+	background: rgba(${({ theme }) => theme.backgroundAlt}, 0.3);
 
 	h3 {
 		text-align: center;
@@ -31,7 +31,7 @@ export const FooterContainer = styled.footer`
 			display: grid;
 			place-content: center;
 			place-items: center;
-		background:	rgb(${({ theme }) => theme.background_alter});
+			background: rgb(${({ theme }) => theme.background_alter});
 			border-radius: 5px;
 			padding: 10px;
 
@@ -48,7 +48,7 @@ export const FooterContainer = styled.footer`
 		svg {
 			width: 20px;
 			height: 20px;
-			color:rgb(${({ theme }) => theme.primary});
+			color: rgb(${({ theme }) => theme.primary});
 		}
 	}
 

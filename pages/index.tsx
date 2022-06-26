@@ -4,6 +4,7 @@ import { HomeContainer as Container } from '../styles/home';
 import Header from '../components/Header';
 import PageLayout from '../components/PageLayout';
 import Footer from '../components/Footer';
+import About from '../components/About';
 
 const Home: NextPage = () => {
 	return (
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
 			<Header />
 			<PageLayout />
 			<Container></Container>
+			<About/>
 			<Footer />
 		</>
 	);
