@@ -32,7 +32,7 @@ const About: React.FC = (): JSX.Element => {
 				<motion.div className='card' whileHover={{ scale: 1.1 }}>
 					<HiViewGrid />
 					<h4>Projects</h4>
-					<span>20+ github projects</span>
+					<span>20+ Github Projects</span>
 				</motion.div>
 			</section>
 		</Container>

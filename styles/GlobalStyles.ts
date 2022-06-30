@@ -35,7 +35,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     width: 5px;
     background: none;
-    background: rgba(${({ theme }) => theme.secondary}, .3);
+    background: rgba(${({ theme }) => theme.background}, .3);
   }
 
   ::-webkit-scrollbar-thumb {

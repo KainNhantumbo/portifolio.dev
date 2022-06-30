@@ -99,7 +99,7 @@ export const HeaderContainer = styled.header`
 				}
 
 				:hover {
-					color: rgb(${({ theme }) => theme.alter});
+					color: rgb(${({ theme }) => theme.primary});
 					cursor: pointer;
 				}
 			}

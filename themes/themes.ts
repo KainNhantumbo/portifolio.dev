@@ -1,7 +1,7 @@
 import { ThemeObj } from './ThemeTypes';
 
 export const primary: ThemeObj = {
-	primary: '81, 129, 0',
+	primary: '108, 161, 246',
 	secondary: '77, 124, 95',
 	alter: '205, 93, 125',
 	alterAlt: '234, 144, 122',
@@ -16,7 +16,7 @@ export const primary: ThemeObj = {
 };
 
 export const dark: ThemeObj = {
-	primary: '81, 129, 0',
+	primary: '108, 161, 246',
 	secondary: '77, 124, 95',
 	alter: '205, 93, 125',
 	alterAlt: '234, 144, 122',

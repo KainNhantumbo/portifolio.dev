@@ -20,13 +20,14 @@ import {
 	SiReact,
 	SiTypescript,
 } from 'react-icons/si';
-import { HiAcademicCap, HiBadgeCheck, HiPhone } from 'react-icons/hi';
+import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
 import { FaEnvelope, FaReact, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { ConfirmDialog } from '../components/Modal';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { BiMailSend } from 'react-icons/bi';
+import { StaticImageData } from 'next/image';
 
 interface AbilitiesProps {
 	technology: string;
@@ -34,11 +35,23 @@ interface AbilitiesProps {
 	level: string;
 }
 
+interface ProjectsProps {
+	name: string
+	category: string
+	image: StaticImageData
+}
+
 enum Levels {
 	ex = 'Experienced',
 	inter = 'Intermediate',
 	med = 'Medium',
 	bas = 'Basic',
+}
+
+enum Categories {
+	back = 'Back-end',
+	front = 'Front-end',
+	full = 'Full-stack'
 }
 
 const frontEnd_abilities: AbilitiesProps[] = [
@@ -130,6 +143,13 @@ const tools: AbilitiesProps[] = [
 		level: Levels.med,
 	},
 ];
+
+const projects: ProjectsProps[] = [
+	
+	
+];
+
+
 const Home: NextPage = () => {
 	const [messageStatus, setMessageStatus] = useState('');
 	const [isModalActive, setIsModalActive] = useState(false);
@@ -256,19 +276,17 @@ const Home: NextPage = () => {
 						<FaEnvelope />
 						<span>Contact me</span>
 					</h2>
-
 					<section className='intro'>
 						<h2>Let's work together!</h2>
 						<p>You can use the form below to send me an e-mail.</p>
 					</section>
-
 					<section className='options'>
 						<div className='option'>
-							<FaWhatsapp/>
+							<FaWhatsapp />
 							<span>(+258) 84 400 2535</span>
 						</div>
 						<div className='option'>
-							<SiGmail/>
+							<SiGmail />
 							<span>nhantumbok@gmail.com</span>
 						</div>
 					</section>

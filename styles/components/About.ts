@@ -31,15 +31,17 @@ export const AboutContainer = styled.section`
 			background: rgb(${({ theme }) => theme.background_alter});
 			border-radius: 10px;
 			padding: 10px;
-
+			user-select: none;
 			H4 {
 				font-weight: 500;
 			}
-
+			span {
+				font-size: .9rem;
+				text-transform: capitalize;
+			}
 			:hover {
-				color: rgb(${({ theme }) => theme.secondary});
 				svg {
-					color: rgb(${({ theme }) => theme.alter});
+					color: rgb(${({ theme }) => theme.primary});
 				}
 			}
 		}
