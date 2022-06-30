@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.main`
 	width: 100%;
-	max-width: 700px;
 	height: 100%;
 	margin: 0 auto;
 	padding: 70px 10px 50px 10px;
@@ -51,6 +50,7 @@ export const HomeContainer = styled.main`
 	.abilities {
 		display: flex;
 		flex-direction: column;
+		max-width: 700px;
 		margin: 0 auto;
 		border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
 		padding-top: 20px;
@@ -97,8 +97,11 @@ export const HomeContainer = styled.main`
 	}
 
 	.contact-container {
+		max-width: 700px;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
 		gap: 20px;
 		border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
 		padding-top: 20px;

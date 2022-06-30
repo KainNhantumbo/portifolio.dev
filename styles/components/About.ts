@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
+	max-width: 700px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

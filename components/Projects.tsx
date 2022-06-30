@@ -1,7 +1,13 @@
 import * as React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ProjectsContainer as Container } from '../styles/components/projects';
-import { HiBadgeCheck, HiLink, HiPaperAirplane, HiPlay, HiViewGrid } from 'react-icons/hi';
+import {
+	HiBadgeCheck,
+	HiLink,
+	HiPaperAirplane,
+	HiPlay,
+	HiViewGrid,
+} from 'react-icons/hi';
 
 // image assets
 import anime_blog from '../assets/anime-blog.jpeg';
@@ -33,12 +39,26 @@ enum Categories {
 
 const projects: ProjectsProps[] = [
 	{
-		name: 'Notes application',
+		name: 'Notes application Front-end and Full-Stack Projects',
 		category: Categories.front,
 		image: nava_notes,
 		live_url: 'https://nava-notes-app.vercel.app',
 		code_url:
 			'https://github.com/KainNhantumbo/Notes-App-made-with-React.js-and-Sass',
+	},
+	{
+		name: 'Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + Mongo DB on the Back-end',
+		category: Categories.full,
+		image: planner_app,
+		live_url: '',
+		code_url: 'https://github.com/KainNhantumbo/Planner-App',
+	},
+	{
+		name: 'Recipes Website made using Typescript, Next.JS and Node.JS + Express.JS + Mongo DB on the Back-end',
+		category: Categories.full,
+		image: recipes_website,
+		live_url: '',
+		code_url: 'https://github.com/KainNhantumbo/Planner-App',
 	},
 ];
 
@@ -47,7 +67,7 @@ export default function Projects(): JSX.Element {
 		<Container>
 			<h2>
 				<HiViewGrid />
-				<span>My Projects, Apps and Websites</span>
+				<span>My Projects</span>
 			</h2>
 			<section className='cards-container'>
 				<h3 className='sub-title'>
@@ -55,32 +75,41 @@ export default function Projects(): JSX.Element {
 					<span>Front-end and Full-Stack Projects</span>
 				</h3>
 				<section className='cards-wrapper'>
-					{projects.map((project) => {
+					{projects.map((project, index) => {
 						return (
-							<section className='card'>
+							<section className='card' key={index}>
 								<div className='top'>
-									<Image src={project.image} placeholder={'blur'} />
+									<Image
+										src={project.image}
+										placeholder={'blur'}
+										width={280}
+										height={210}
+										objectFit={'cover'}
+										style={{ borderRadius: 10 }}
+									/>
+									<h4>{project.category}</h4>
 								</div>
 								<div className='bottom'>
-									<h3>{project.name}</h3>
-									<h4>
-										<span>{project.category}</span>
-									</h4>
+									<div className='details'>
+										<h3>{project.name}</h3>
+									</div>
 									<div className='actions'>
-										<a
-											href={project.live_url}
-											target={'_blank'}
-											rel={'noreferrer noopener'}
-										>
-                      <HiPlay/>
-											<span>Live Demo</span>
-										</a>
+										{project.live_url.length > 5 ? (
+											<a
+												href={project.live_url}
+												target={'_blank'}
+												rel={'noreferrer noopener'}
+											>
+												<HiPlay />
+												<span>Live Demo</span>
+											</a>
+										) : null}
 										<a
 											href={project.code_url}
 											target={'_blank'}
 											rel={'noreferrer noopener'}
 										>
-                      <FaGithub/>
+											<FaGithub />
 											<span>Github Repository</span>
 										</a>
 									</div>
