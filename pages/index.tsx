@@ -17,6 +17,7 @@ import {
 	SiMongodb,
 	SiNodedotjs,
 	SiPostgresql,
+	SiPython,
 	SiReact,
 	SiTypescript,
 } from 'react-icons/si';
@@ -27,7 +28,7 @@ import emailjs from '@emailjs/browser';
 import { ConfirmDialog } from '../components/Modal';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { BiMailSend } from 'react-icons/bi';
-import { StaticImageData } from 'next/image';
+import Projects from '../components/Projects';
 
 interface AbilitiesProps {
 	technology: string;
@@ -35,23 +36,11 @@ interface AbilitiesProps {
 	level: string;
 }
 
-interface ProjectsProps {
-	name: string
-	category: string
-	image: StaticImageData
-}
-
 enum Levels {
 	ex = 'Experienced',
 	inter = 'Intermediate',
 	med = 'Medium',
 	bas = 'Basic',
-}
-
-enum Categories {
-	back = 'Back-end',
-	front = 'Front-end',
-	full = 'Full-stack'
 }
 
 const frontEnd_abilities: AbilitiesProps[] = [
@@ -110,6 +99,11 @@ const backend_abilities: AbilitiesProps[] = [
 		level: Levels.inter,
 	},
 	{
+		technology: 'Python',
+		icon: <SiPython />,
+		level: Levels.bas,
+	},
+	{
 		technology: 'Express.JS',
 		icon: <SiExpress />,
 		level: Levels.inter,
@@ -142,13 +136,7 @@ const tools: AbilitiesProps[] = [
 		icon: <SiGithub />,
 		level: Levels.med,
 	},
-];
-
-const projects: ProjectsProps[] = [
-	
-	
-];
-
+];	
 
 const Home: NextPage = () => {
 	const [messageStatus, setMessageStatus] = useState('');
@@ -210,6 +198,8 @@ const Home: NextPage = () => {
 						closeModal={setIsModalActive}
 					/>
 				) : null}
+
+				<Projects />
 
 				<section className='abilities'>
 					<h2>
