@@ -1,7 +1,9 @@
 import * as React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ProjectsContainer as Container } from '../styles/components/projects';
+import { FaGithub } from 'react-icons/fa';
 import { HiBadgeCheck, HiPlay, HiViewGrid } from 'react-icons/hi';
+import { motion } from 'framer-motion';
 
 // image assets
 import anime_blog from '../assets/anime-blog.jpeg';
@@ -11,11 +13,9 @@ import planner_app from '../assets/planner-app.jpg';
 import python_repo from '../assets/python-repo.png';
 import the_calculator from '../assets/the-calculator.png';
 import recipes_website from '../assets/recipes-website.png';
+import hagira_ecommerce from '../assets/hagira-ecommerce.jpeg';
 import server_01 from '../assets/server-01.png';
-import server_02 from '../assets/server-02.png';
 import server_03 from '../assets/server-03.png';
-import Link from 'next/link';
-import { FaGithub } from 'react-icons/fa';
 
 interface ProjectsProps {
 	name: string;
@@ -58,7 +58,7 @@ const projects: ProjectsProps[] = [
 	{
 		name: 'Hagira E-commerce Website made using Javascript, React.JS and Node.JS + Express.JS + Mongo DB on the Back-end',
 		category: Categories.full,
-		image: server_01,
+		image: hagira_ecommerce,
 		live_url: '',
 		code_url: 'https://github.com/KainNhantumbo/Hagira-Brands-Store',
 	},
@@ -141,23 +141,27 @@ export default function Projects(): JSX.Element {
 									</div>
 									<div className='actions'>
 										{project.live_url.length > 5 ? (
-											<a
+											<motion.a
+												whileTap={{ scale: 0.9 }}
+												whileHover={{ scale: 1.03 }}
 												href={project.live_url}
 												target={'_blank'}
 												rel={'noreferrer noopener'}
 											>
 												<HiPlay />
 												<span>Live Demo</span>
-											</a>
+											</motion.a>
 										) : null}
-										<a
+										<motion.a
+											whileTap={{ scale: 0.9 }}
+											whileHover={{ scale: 1.03 }}
 											href={project.code_url}
 											target={'_blank'}
 											rel={'noreferrer noopener'}
 										>
 											<FaGithub />
 											<span>Github Repository</span>
-										</a>
+										</motion.a>
 									</div>
 								</div>
 							</section>

@@ -52,7 +52,7 @@ export const HeaderContainer = styled.header`
 		position: absolute;
 		top: 22px;
 		left: 10px;
-		color: rgb(${({ theme }) => theme.secondary});
+		color: rgb(${({ theme }) => theme.primary});
 		cursor: pointer;
 
 		span {
@@ -61,7 +61,7 @@ export const HeaderContainer = styled.header`
 			font-size: 1.4rem;
 			padding-left: 50px;
 		}
-		svg {
+		.image {
 			position: absolute;
 			width: 38px;
 			height: 38px;
