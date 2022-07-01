@@ -29,8 +29,9 @@ export default function Introduction(): JSX.Element {
 					<span>Welcome to my portifolio :)</span>
 				</motion.h3>
 				<h1>Hello, I am Kain Nhantumbo!</h1>
-				<h3>A MERN Stack web developer.</h3>
+				
 				<p>
+					A MERN Stack web developer. <br />
 					To build my projects, I work with Javascript, Typescript and Python as
 					main programming languages.
 				</p>

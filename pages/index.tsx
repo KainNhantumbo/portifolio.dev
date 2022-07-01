@@ -22,7 +22,13 @@ import {
 	SiTypescript,
 } from 'react-icons/si';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
-import { FaEnvelope, FaReact, FaWhatsapp } from 'react-icons/fa';
+import {
+	FaEnvelope,
+	FaPhone,
+	FaPhoneAlt,
+	FaReact,
+	FaWhatsapp,
+} from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { ConfirmDialog } from '../components/Modal';
@@ -200,7 +206,7 @@ const Home: NextPage = () => {
 					/>
 				) : null}
 
-				<Introduction/>
+				<Introduction />
 
 				<section className='abilities' id='skills'>
 					<h2>
@@ -271,16 +277,19 @@ const Home: NextPage = () => {
 					</h2>
 					<section className='intro'>
 						<h2>Let's work together!</h2>
-						<p>You can use the form below to send me an e-mail or use the following contact options:</p>
+						<p>
+							You can use the form below to send me an e-mail or use the
+							following contact options:
+						</p>
 					</section>
 					<section className='options'>
 						<div className='option'>
-							<FaWhatsapp />
-							<span>(+258) 84 400 2535</span>
+							<FaPhoneAlt />
+							<span>Phone: (+258) 84 400 2535</span>
 						</div>
 						<div className='option'>
-							<SiGmail />
-							<span>nhantumbok@gmail.com</span>
+							<FaEnvelope />
+							<span>E-mail: nhantumbok@gmail.com</span>
 						</div>
 					</section>
 

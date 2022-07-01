@@ -13,12 +13,11 @@ const About: React.FC = (): JSX.Element => {
 			</h2>
 			<section className='experiences'>
 				<p>
-					I am very interested in opportunities to work with the latest
-					technologies on challenging projects that would push my skills to the
-					end. I like programming and I am specially ambitious on the kind of
-					projects that solves problems, so if you have a request or question
-					don't hesitate to send me an e-mail using the button below or the
-					links on the footer.
+					My desire is to grow by learning new things every day. <br /> I am
+					very interested in opportunities to work with the latest technologies
+					on challenging projects that would push my skills to the end. I like
+					programming and I am specially ambitious on the kind of projects that
+					solves daily problems.
 				</p>
 			</section>
 

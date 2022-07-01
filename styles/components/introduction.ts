@@ -6,7 +6,7 @@ export const IntroductionContainer = styled.section`
 	margin: 0 auto;
 	line-height: 1.8rem;
 	font-size: 1.2rem;
-	min-height: 85vh;
+	height: 600px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -18,7 +18,7 @@ export const IntroductionContainer = styled.section`
 		top: 10px;
 		left: 0;
 		border-radius: 20px;
-		height: 50vh;
+		height: 600px;
 	}
 
 	.intro {
@@ -70,6 +70,7 @@ export const IntroductionContainer = styled.section`
 			padding: 5px 15px;
 			color: rgb(${({ theme }) => theme.text});
 			position: relative;
+      font-size: 1rem;
 			cursor: pointer;
 			border: 2px solid rgb(${({ theme }) => theme.text});
 			:hover {

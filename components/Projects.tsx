@@ -115,11 +115,23 @@ export default function Projects(): JSX.Element {
 				<HiViewGrid />
 				<span>My Projects and Works</span>
 			</h2>
+			<p>
+				<strong>
+					(...) and because I understand that showing is sometimes better than
+					talking, here are some of my personal projects that I have been
+					working on these days. You can see all my personal projects on my{' '}
+					<a
+						href='https://github.com/KainNhantumbo'
+						target={'_blank'}
+						rel={'noreferrer noopener'}
+					>
+						github profile
+					</a>
+					.
+				</strong>
+			</p>
 			<section className='cards-container'>
-				<h3 className='sub-title'>
-					<HiBadgeCheck />
-					<span>Front-end and Full-Stack Projects</span>
-				</h3>
+				
 				<section className='cards-wrapper'>
 					{projects.map((project, index) => {
 						return (
