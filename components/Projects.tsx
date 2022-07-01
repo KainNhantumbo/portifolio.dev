@@ -110,7 +110,7 @@ const projects: ProjectsProps[] = [
 
 export default function Projects(): JSX.Element {
 	return (
-		<Container>
+		<Container id='projects'>
 			<h2>
 				<HiViewGrid />
 				<span>My Projects and Works</span>

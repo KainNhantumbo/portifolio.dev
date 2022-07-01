@@ -202,7 +202,7 @@ const Home: NextPage = () => {
 
 				<Introduction/>
 
-				<section className='abilities'>
+				<section className='abilities' id='skills'>
 					<h2>
 						<HiAcademicCap />
 						<span>My Experience and Skills</span>
@@ -264,14 +264,14 @@ const Home: NextPage = () => {
 
 				<About />
 
-				<section className='contact-container'>
+				<section id='contact' className='contact-container'>
 					<h2>
 						<FaEnvelope />
 						<span>Contact me</span>
 					</h2>
 					<section className='intro'>
 						<h2>Let's work together!</h2>
-						<p>You can use the form below to send me an e-mail.</p>
+						<p>You can use the form below to send me an e-mail or use the following contact options:</p>
 					</section>
 					<section className='options'>
 						<div className='option'>

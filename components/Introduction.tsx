@@ -7,7 +7,7 @@ import { IntroductionContainer as Container } from '../styles/components/introdu
 
 export default function Introduction(): JSX.Element {
 	return (
-		<Container>
+		<Container id='home'>
 			<div className='intro-background'>
 				<Image
 					src={intro_background}

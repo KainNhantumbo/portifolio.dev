@@ -4,7 +4,7 @@ export const HomeContainer = styled.main`
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
-	padding: 70px 10px 50px 10px;
+	padding: 70px 10px 0px 10px;
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
@@ -63,10 +63,22 @@ export const HomeContainer = styled.main`
 		}
 
 		.list-items {
-			display: flex;
-			justify-content: flex-start;
-			flex-flow: row wrap;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			align-items: center;
 			gap: 10px;
+
+			@media screen and (max-width: 650px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			@media screen and (max-width: 495px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@media screen and (max-width: 330px) {
+				grid-template-columns: 1fr;
+				place-items: center;
+
+			}
 
 			.item {
 				position: relative;
@@ -106,6 +118,9 @@ export const HomeContainer = styled.main`
 		border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
 		padding-top: 20px;
 		line-height: 1.6rem;
+		@media screen and (max-width: 370px) {
+		margin: 0;
+	}
 
 		label {
 			font-weight: 500;

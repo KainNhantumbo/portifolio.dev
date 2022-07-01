@@ -8,10 +8,8 @@ export const FooterContainer = styled.footer`
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	padding-top: 5px;
-	border-radius: 20px 20px 0 0;
-	background: rgb(${({ theme }) => theme.backgroundAlt});
-	box-shadow: 0 0 25px rgb(${({ theme }) => theme.shadows}, 0.6);
+	padding-bottom: 10px;
+	background: rgba(${({ theme }) => theme.backgroundAlt}, 0.2);
 
 	h3 {
 		text-align: center;
@@ -54,6 +52,7 @@ export const FooterContainer = styled.footer`
 		text-align: center;
 		padding: 10px;
 		line-height: 1.4rem;
+		font-weight: 500;
 		font-size: .9rem;
 	}
 `;

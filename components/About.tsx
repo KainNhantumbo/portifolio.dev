@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const About: React.FC = (): JSX.Element => {
 	return (
-		<Container>
+		<Container id='about'>
 			<h2>
 				<SiAboutdotme />
 				<span>About</span>

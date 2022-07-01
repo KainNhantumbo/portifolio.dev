@@ -18,6 +18,7 @@ export const AboutContainer = styled.section`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		justify-content: center;
 		flex-flow: row wrap;
 		gap: 50px;
 		margin-top: 20px;

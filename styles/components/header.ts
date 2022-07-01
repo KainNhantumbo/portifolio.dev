@@ -1,29 +1,30 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	min-height: 65px;
-	padding: 20px 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 5px;
-	background: rgba(${({ theme }) => theme.backgroundAlt}, 0.6);
-	backdrop-filter: blur(10px);
-	box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.6);
-	z-index: 5000;
-	font-family: Inter, 'Open Sans', Montserrat, Poppins, 'PT Sans';
+	.core {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 65px;
+		padding: 20px 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+		background: rgba(${({ theme }) => theme.backgroundAlt}, 0.6);
+		backdrop-filter: blur(10px);
+		box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.6);
+		z-index: 5000;
+		font-family: Inter, 'Open Sans', Montserrat, Poppins, 'PT Sans';
 
-	@media screen and (max-width: 730px) {
-		justify-content: flex-end;
+		@media screen and (max-width: 820px) {
+			justify-content: flex-end;
+		}
+		@media screen and (max-width: 600px) {
+			flex-direction: column;
+		}
 	}
-	@media screen and (max-width: 580px) {
-		flex-direction: column;
-	}
-
 	button {
 		border: none;
 		background: none;
@@ -37,7 +38,7 @@ export const HeaderContainer = styled.header`
 		display: none;
 		padding: 5px;
 
-		@media screen and (max-width: 580px) {
+		@media screen and (max-width: 600px) {
 			display: block;
 		}
 
@@ -56,9 +57,9 @@ export const HeaderContainer = styled.header`
 		cursor: pointer;
 
 		span {
-			font-weight: 600;
+			font-weight: 500;
 			text-align: center;
-			font-size: 1.4rem;
+			font-size: 1.3rem;
 			padding-left: 50px;
 		}
 		.image {

@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const IntroductionContainer = styled.section`
+	width: 100%;
+	max-width: 1368px;
+	margin: 0 auto;
 	line-height: 1.8rem;
 	font-size: 1.2rem;
 	min-height: 85vh;
@@ -68,8 +71,9 @@ export const IntroductionContainer = styled.section`
 			color: rgb(${({ theme }) => theme.text});
 			position: relative;
 			cursor: pointer;
-			border: 2px solid rgb(${({ theme }) => theme.primary});
+			border: 2px solid rgb(${({ theme }) => theme.text});
 			:hover {
+        border-color:  rgb(${({ theme }) => theme.primary});
 				color: rgb(${({ theme }) => theme.primary});
 				svg {
 					color: rgb(${({ theme }) => theme.primary});

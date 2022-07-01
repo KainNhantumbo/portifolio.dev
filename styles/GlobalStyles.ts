@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-family: Inter, 'Open Sans', Montserrat, Poppins, 'PT Sans';
     max-width: 100%;
+    scroll-behavior: smooth;
   }
 
   span, label {
@@ -18,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     background: rgb(${({ theme }) => theme.background});
     position: relative;
+    
   }
 
   input, textarea, select {

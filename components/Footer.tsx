@@ -20,12 +20,12 @@ const Footer: FC = ({}): JSX.Element => {
 		{
 			name: 'Whatsapp',
 			icon: <FaWhatsapp />,
-			link: 'https://wa.me/258871002535',
+			link: 'https://wa.me/258844002535',
 		},
 		{
 			name: 'LinkedIn',
 			icon: <ImLinkedin2 />,
-			link: 'https://www.linkedin.com/in/kain-nhantumbo-aa380317a/',
+			link: 'https://www.linkedin.com/in/kain-nhantumbo-aa380317a',
 		},
 	];
 
@@ -46,7 +46,7 @@ const Footer: FC = ({}): JSX.Element => {
 				})}
 			</ul>
 			<p>
-				<span>Copyright &copy; 2022 Kain Nhantumbo </span>
+				<span>Copyright &copy; 2022 Kain Nhantumbo. All Rights Reserved. </span>
 			</p>
 		</Container>
 	);
