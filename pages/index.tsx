@@ -29,6 +29,7 @@ import { ConfirmDialog } from '../components/Modal';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { BiMailSend } from 'react-icons/bi';
 import Projects from '../components/Projects';
+import Introduction from '../components/Introduction';
 
 interface AbilitiesProps {
 	technology: string;
@@ -136,7 +137,7 @@ const tools: AbilitiesProps[] = [
 		icon: <SiGithub />,
 		level: Levels.med,
 	},
-];	
+];
 
 const Home: NextPage = () => {
 	const [messageStatus, setMessageStatus] = useState('');
@@ -199,7 +200,7 @@ const Home: NextPage = () => {
 					/>
 				) : null}
 
-				<Projects />
+				<Introduction/>
 
 				<section className='abilities'>
 					<h2>
@@ -258,6 +259,8 @@ const Home: NextPage = () => {
 						</section>
 					</section>
 				</section>
+
+				<Projects />
 
 				<About />
 

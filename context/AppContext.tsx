@@ -27,7 +27,7 @@ const AppContext: React.FC<Props> = ({ children }) => {
 	const themePrefers = (): void => {
 		let key: string = 'UminoSettings';
 		let theme_data: any = JSON.parse(
-			localStorage.getItem(key) || `{"dark_mode": false}`
+			localStorage.getItem(key) || `{"dark_mode": true}`
 		);
 
 		if (!theme_data.dark_mode || theme_data.dark_mode === undefined) {
