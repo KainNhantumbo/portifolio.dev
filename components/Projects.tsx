@@ -38,8 +38,7 @@ const projects: ProjectsProps[] = [
 		category: Categories.front,
 		image: nava_notes,
 		live_url: 'https://nava-notes-app.vercel.app',
-		code_url:
-			'https://github.com/KainNhantumbo/Notes-App-made-with-React.js-and-Sass',
+		code_url: 'https://github.com/KainNhantumbo/Nava-Notes-App',
 	},
 	{
 		name: 'Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + Mongo DB on the Back-end',
@@ -82,21 +81,22 @@ const projects: ProjectsProps[] = [
 		image: anime_blog,
 		live_url:
 			'https://kainnhantumbo.github.io/Static-Anime-Blog--made-with-HTML--CSS-and-Javascript',
-		code_url: '',
+		code_url:
+			'https://github.com/KainNhantumbo/Static-Anime-Blog--made-with-HTML--CSS-and-Javascript',
 	},
 	{
 		name: 'Repository with Python training projects, exercises and mini-games',
 		category: Categories.train,
 		image: python_repo,
 		live_url: '',
-		code_url: '',
+		code_url: 'https://github.com/KainNhantumbo/Python-Pratices',
 	},
 	{
 		name: 'Multi-functions Calculator, Javascript + HTML5 + SASS',
 		category: Categories.front,
 		image: the_calculator,
 		live_url: 'https://kainnhantumbo.github.io/The-Calculator',
-		code_url: '',
+		code_url: 'https://github.com/KainNhantumbo/The-Calculator',
 	},
 	{
 		name: 'Ecommerce Landing Page, HTML5 + CSS + SASS',
@@ -104,7 +104,8 @@ const projects: ProjectsProps[] = [
 		image: ecommerce_page,
 		live_url:
 			'https://kainnhantumbo.github.io/Website-Theme-Marketplace-E-Commerse-Landing-Page',
-		code_url: '',
+		code_url:
+			'https://github.com/KainNhantumbo/Website-Theme-Marketplace-E-Commerse-Landing-Page',
 	},
 ];
 
@@ -131,7 +132,6 @@ export default function Projects(): JSX.Element {
 				</strong>
 			</p>
 			<section className='cards-container'>
-				
 				<section className='cards-wrapper'>
 					{projects.map((project, index) => {
 						return (
