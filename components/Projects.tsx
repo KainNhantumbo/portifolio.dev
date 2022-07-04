@@ -2,7 +2,7 @@ import * as React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ProjectsContainer as Container } from '../styles/components/projects';
 import { FaGithub } from 'react-icons/fa';
-import { HiBadgeCheck, HiPlay, HiViewGrid } from 'react-icons/hi';
+import {HiPlay, HiViewGrid } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 // image assets

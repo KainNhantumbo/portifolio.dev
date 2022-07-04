@@ -10,7 +10,6 @@ import {
 	SiExpress,
 	SiGit,
 	SiGithub,
-	SiGmail,
 	SiHtml5,
 	SiJavascript,
 	SiMarkdown,
@@ -22,19 +21,13 @@ import {
 	SiTypescript,
 } from 'react-icons/si';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
-import {
-	FaEnvelope,
-	FaPhone,
-	FaPhoneAlt,
-	FaReact,
-	FaWhatsapp,
-} from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaReact } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import { ConfirmDialog } from '../components/Modal';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { BiMailSend } from 'react-icons/bi';
 import Projects from '../components/Projects';
+import emailjs from '@emailjs/browser';
 import Introduction from '../components/Introduction';
 
 interface AbilitiesProps {
@@ -47,7 +40,7 @@ enum Levels {
 	ex = 'Experienced',
 	inter = 'Intermediate',
 	med = 'Medium',
-	bas = 'Basic',
+	learn = 'Learning',
 }
 
 const frontEnd_abilities: AbilitiesProps[] = [
@@ -69,7 +62,7 @@ const frontEnd_abilities: AbilitiesProps[] = [
 	{
 		technology: 'React Native',
 		icon: <SiReact />,
-		level: Levels.inter,
+		level: Levels.learn,
 	},
 	{
 		technology: 'Next.JS',
@@ -108,7 +101,7 @@ const backend_abilities: AbilitiesProps[] = [
 	{
 		technology: 'Python',
 		icon: <SiPython />,
-		level: Levels.bas,
+		level: Levels.learn,
 	},
 	{
 		technology: 'Express.JS',
@@ -123,7 +116,7 @@ const backend_abilities: AbilitiesProps[] = [
 	{
 		technology: 'PostgreSQL',
 		icon: <SiPostgresql />,
-		level: Levels.bas,
+		level: Levels.learn,
 	},
 ];
 
