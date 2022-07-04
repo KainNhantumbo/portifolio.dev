@@ -1,4 +1,4 @@
-import { ThemeObj } from './ThemeTypes';
+import type { ThemeObj } from './ThemeTypes';
 
 export const primary: ThemeObj = {
 	primary: '108, 161, 246',

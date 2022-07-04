@@ -1,4 +1,4 @@
-export interface ThemeObj {
+export type ThemeObj = {
 	primary: string;
 	secondary: string;
 	alter: string
