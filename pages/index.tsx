@@ -201,6 +201,8 @@ const Home: NextPage = () => {
 
 				<Introduction />
 
+				<About />
+
 				<section className='abilities' id='skills'>
 					<h2>
 						<HiAcademicCap />
@@ -260,8 +262,6 @@ const Home: NextPage = () => {
 				</section>
 
 				<Projects />
-
-				<About />
 
 				<section id='contact' className='contact-container'>
 					<h2>

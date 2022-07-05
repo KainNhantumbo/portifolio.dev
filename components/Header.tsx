@@ -7,6 +7,20 @@ import { motion } from 'framer-motion';
 import author from '../assets/author.jpg';
 import Image from 'next/image';
 
+interface NavbarLinks {
+	ref: string;
+	label: string;
+}
+
+// stores navigation bar ref urls and name
+const navbar_data: NavbarLinks[] = [
+	{ label: 'Home', ref: '#home' },
+	{ label: 'About', ref: '#about' },
+	{ label: 'Skills', ref: '#skills' },
+	{ label: 'Projects', ref: '#projects' },
+	{ label: 'Contact', ref: '#contact' },
+];
+
 const Header: FC = (): JSX.Element => {
 	const router = useRouter();
 	const [isMenu, setIsMenu] = useState(false);
@@ -72,49 +86,16 @@ const Header: FC = (): JSX.Element => {
 						animate={{ translateY: isMenu ? 0 : -50 }}
 						style={{ display: isMenu ? 'flex' : 'none' }}
 					>
-						<Link href={'#home'}>
-							<motion.li
-								whileTap={{ scale: 0.7 }}
-								whileHover={{ scale: 1.05, y: 1 }}
-							>
-								<span>Home</span>
-							</motion.li>
-						</Link>
-						<Link href={'#skills'}>
-							<motion.li
-								whileTap={{ scale: 0.7 }}
-								whileHover={{ scale: 1.05, y: 1 }}
-							>
-								<span>Skills</span>
-							</motion.li>
-						</Link>
-
-						<Link href={'#projects'}>
-							<motion.li
-								whileTap={{ scale: 0.7 }}
-								whileHover={{ scale: 1.05, y: 1 }}
-							>
-								<span>Projects</span>
-							</motion.li>
-						</Link>
-
-						<Link href={'#contact'}>
-							<motion.li
-								whileTap={{ scale: 0.7 }}
-								whileHover={{ scale: 1.05, y: 1 }}
-							>
-								<span>Contact</span>
-							</motion.li>
-						</Link>
-
-						<Link href={'#about'}>
-							<motion.li
-								whileTap={{ scale: 0.7 }}
-								whileHover={{ scale: 1.05, y: 1 }}
-							>
-								<span>About</span>
-							</motion.li>
-						</Link>
+						{navbar_data.map((item, index) => (
+							<Link key={index.toString()} href={item.ref}>
+								<motion.li
+									whileTap={{ scale: 0.7 }}
+									whileHover={{ scale: 1.05, y: 1 }}
+								>
+									<span>{item.label}</span>
+								</motion.li>
+							</Link>
+						))}
 					</motion.ul>
 				</nav>
 			</motion.div>
