@@ -44,98 +44,29 @@ enum Levels {
 }
 
 const frontEnd_abilities: AbilitiesProps[] = [
-	{
-		technology: 'Typescript',
-		icon: <SiTypescript />,
-		level: Levels.inter,
-	},
-	{
-		technology: 'Javascript',
-		icon: <SiJavascript />,
-		level: Levels.ex,
-	},
-	{
-		technology: 'React',
-		icon: <FaReact />,
-		level: Levels.ex,
-	},
-	{
-		technology: 'React Native',
-		icon: <SiReact />,
-		level: Levels.learn,
-	},
-	{
-		technology: 'Next.JS',
-		icon: <SiReact />,
-		level: Levels.inter,
-	},
-
-	{
-		technology: 'SASS & CSS',
-		icon: <SiCss3 />,
-		level: Levels.ex,
-	},
-	{
-		technology: 'HTML5',
-		icon: <SiHtml5 />,
-		level: Levels.ex,
-	},
+	{ technology: 'Typescript', icon: <SiTypescript />, level: Levels.inter },
+	{ technology: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
+	{ technology: 'React', icon: <FaReact />, level: Levels.ex },
+	{ technology: 'React Native', icon: <SiReact />, level: Levels.learn },
+	{ technology: 'Next.JS', icon: <SiReact />, level: Levels.inter },
+	{ technology: 'SASS & CSS', icon: <SiCss3 />, level: Levels.ex },
+	{ technology: 'HTML5', icon: <SiHtml5 />, level: Levels.ex },
 ];
 
 const backend_abilities: AbilitiesProps[] = [
-	{
-		technology: 'Typescript',
-		icon: <SiTypescript />,
-		level: Levels.inter,
-	},
-	{
-		technology: 'Javascript',
-		icon: <SiJavascript />,
-		level: Levels.ex,
-	},
-	{
-		technology: 'Node.JS',
-		icon: <SiNodedotjs />,
-		level: Levels.inter,
-	},
-	{
-		technology: 'Python',
-		icon: <SiPython />,
-		level: Levels.learn,
-	},
-	{
-		technology: 'Express.JS',
-		icon: <SiExpress />,
-		level: Levels.inter,
-	},
-	{
-		technology: 'Mongo DB',
-		icon: <SiMongodb />,
-		level: Levels.inter,
-	},
-	{
-		technology: 'PostgreSQL',
-		icon: <SiPostgresql />,
-		level: Levels.learn,
-	},
+	{ technology: 'Typescript', icon: <SiTypescript />, level: Levels.inter },
+	{ technology: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
+	{ technology: 'Node.JS', icon: <SiNodedotjs />, level: Levels.inter },
+	{ technology: 'Python', icon: <SiPython />, level: Levels.learn },
+	{ technology: 'Express.JS', icon: <SiExpress />, level: Levels.inter },
+	{ technology: 'Mongo DB', icon: <SiMongodb />, level: Levels.inter },
+	{ technology: 'PostgreSQL', icon: <SiPostgresql />, level: Levels.learn },
 ];
 
 const tools: AbilitiesProps[] = [
-	{
-		technology: 'Git',
-		icon: <SiGit />,
-		level: Levels.inter,
-	},
-	{
-		technology: 'Markdown',
-		icon: <SiMarkdown />,
-		level: Levels.inter,
-	},
-	{
-		technology: 'Github',
-		icon: <SiGithub />,
-		level: Levels.med,
-	},
+	{ technology: 'Git', icon: <SiGit />, level: Levels.inter },
+	{ technology: 'Markdown', icon: <SiMarkdown />, level: Levels.inter },
+	{ technology: 'Github', icon: <SiGithub />, level: Levels.med },
 ];
 
 const Home: NextPage = () => {
@@ -160,9 +91,18 @@ const Home: NextPage = () => {
 		}));
 	};
 
+	// notifies the e-mail sender about the message status
+	const notifyStatus = (message: string): void => {
+		setMessageStatus(message);
+		setTimeout(() => {
+			setMessageStatus('');
+		}, 5000);
+	};
+
 	// sends email
-	const emailSender = (e: FormEvent<HTMLFormElement>) => {
+	const emailSender = (e: FormEvent<HTMLFormElement> | any) => {
 		e.preventDefault();
+		setMessageStatus('Sending your message, please wait...');
 		// email sender transport
 		emailjs
 			.send(
@@ -174,11 +114,12 @@ const Home: NextPage = () => {
 			.then(
 				(result) => {
 					console.log(result.text);
-					setMessageStatus('Mensagem enviada com sucesso!');
+					notifyStatus('Message sent successfuly!');
+					e.target.reset();
 				},
 				(error) => {
 					console.log(error.text);
-					setMessageStatus(
+					notifyStatus(
 						'Oops! Looks like something went wrong. Please, try again.'
 					);
 				}
@@ -335,7 +276,7 @@ const Home: NextPage = () => {
 								placeholder='Type the message content here'
 								onChange={(e) => formDataPicker(e)}
 							/>
-							<span className='errorMessage'>{messageStatus}</span>
+							<span className='message'>{messageStatus}</span>
 							<motion.button
 								whileTap={{ scale: 0.8 }}
 								whileHover={{ scale: 1.05 }}

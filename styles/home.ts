@@ -144,8 +144,8 @@ export const HomeContainer = styled.main`
 			}
 		}
 
-		.errorMessage {
-			color: rgb(${({ theme }) => theme.alter});
+		.message {
+			color: rgb(${({ theme }) => theme.primary});
 			font-size: 0.9rem;
 			font-weight: 500;
 		}
