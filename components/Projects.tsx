@@ -52,7 +52,7 @@ const projects: ProjectsProps[] = [
 		category: Categories.full,
 		image: recipes_website,
 		live_url: '',
-		code_url: '',
+		code_url: 'https://github.com/KainNhantumbo/food-and-recipes-website',
 	},
 	{
 		name: 'Hagira E-commerce Website made using Javascript, React.JS and Node.JS + Express.JS + Mongo DB on the Back-end',
@@ -144,6 +144,7 @@ export default function Projects(): JSX.Element {
 										height={210}
 										objectFit={'cover'}
 										style={{ borderRadius: 10 }}
+										alt={project.name}
 									/>
 									<h4>{project.category}</h4>
 								</div>

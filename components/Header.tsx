@@ -55,6 +55,7 @@ const Header: FC = (): JSX.Element => {
 							height={40}
 							placeholder={'blur'}
 							style={{ borderRadius: 20 }}
+							alt={'author photo'}
 						/>
 					</div>
 					<span>My Workspace</span>

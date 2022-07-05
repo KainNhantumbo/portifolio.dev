@@ -16,6 +16,7 @@ export default function Introduction(): JSX.Element {
 					layout={'fixed'}
 					objectFit={'cover'}
 					placeholder={'blur'}
+					alt={'Intro wallpaper'}
 				/>
 			</div>
 			<div className='intro'>
