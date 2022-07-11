@@ -60,7 +60,7 @@ const backend_abilities: AbilitiesProps[] = [
 	{ technology: 'Python', icon: <SiPython />, level: Levels.learn },
 	{ technology: 'Express.JS', icon: <SiExpress />, level: Levels.inter },
 	{ technology: 'Mongo DB', icon: <SiMongodb />, level: Levels.inter },
-	{ technology: 'PostgreSQL', icon: <SiPostgresql />, level: Levels.learn },
+	{ technology: 'PostgreSQL', icon: <SiPostgresql />, level: Levels.inter },
 ];
 
 const tools: AbilitiesProps[] = [

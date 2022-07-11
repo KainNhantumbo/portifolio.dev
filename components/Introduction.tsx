@@ -33,7 +33,7 @@ export default function Introduction(): JSX.Element {
 				
 				<p>
 					A MERN Stack web developer. <br />
-					To build my projects, I work with Javascript, Typescript and Python as
+					To build my projects I use with Javascript, Typescript as
 					main programming languages.
 				</p>
 				<motion.button

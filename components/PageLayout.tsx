@@ -13,13 +13,13 @@ const PageLayout: FC = (): JSX.Element => {
 					<motion.button
 						whileTap={{ scale: 0.7 }}
 						transition={{ type: 'spring', duration: 0.5 }}
-						title='Trocar o tema'
+						title='Change Theme'
 						onClick={themeSwitcher}
 					>
 						<BiSun />
 					</motion.button>
 					<motion.button
-						title='Ir ao topo'
+						title='Go to Top'
 						onClick={slidePageUp}
 						whileTap={{ scale: 0.7 }}
 						transition={{ type: 'spring', duration: 0.5 }}
