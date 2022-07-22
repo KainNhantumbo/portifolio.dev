@@ -132,13 +132,13 @@ const Home: NextPage = () => {
 			<Header />
 			<PageLayout />
 			<Container>
-				{isModalActive ? (
+				{isModalActive && (
 					<ConfirmDialog
 						prompt_title='Message Sent.'
 						prompt_message="I just can't  wait to we start working together, thank you!"
 						closeModal={setIsModalActive}
 					/>
-				) : null}
+				)}
 
 				<Introduction />
 
