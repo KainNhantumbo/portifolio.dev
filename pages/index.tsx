@@ -24,14 +24,15 @@ import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
 import { FaEnvelope, FaPhoneAlt, FaReact } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { ConfirmDialog } from '../components/Modal';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { useState } from 'react';
 import { BiMailSend } from 'react-icons/bi';
 import Projects from '../components/Projects';
 import emailjs from '@emailjs/browser';
 import Introduction from '../components/Introduction';
+import { InputEvents, SubmitEvent } from '../types/form';
 
 interface AbilitiesProps {
-	technology: string;
+	tech: string;
 	icon: JSX.Element;
 	level: string;
 }
@@ -44,29 +45,29 @@ enum Levels {
 }
 
 const frontEnd_abilities: AbilitiesProps[] = [
-	{ technology: 'Typescript', icon: <SiTypescript />, level: Levels.inter },
-	{ technology: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
-	{ technology: 'React', icon: <FaReact />, level: Levels.ex },
-	{ technology: 'React Native', icon: <SiReact />, level: Levels.learn },
-	{ technology: 'Next.JS', icon: <SiReact />, level: Levels.inter },
-	{ technology: 'SASS & CSS', icon: <SiCss3 />, level: Levels.ex },
-	{ technology: 'HTML5', icon: <SiHtml5 />, level: Levels.ex },
+	{ tech: 'Typescript', icon: <SiTypescript />, level: Levels.inter },
+	{ tech: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
+	{ tech: 'React', icon: <FaReact />, level: Levels.ex },
+	{ tech: 'React Native', icon: <SiReact />, level: Levels.learn },
+	{ tech: 'Next.JS', icon: <SiReact />, level: Levels.inter },
+	{ tech: 'SASS & CSS', icon: <SiCss3 />, level: Levels.ex },
+	{ tech: 'HTML5', icon: <SiHtml5 />, level: Levels.ex },
 ];
 
 const backend_abilities: AbilitiesProps[] = [
-	{ technology: 'Typescript', icon: <SiTypescript />, level: Levels.inter },
-	{ technology: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
-	{ technology: 'Node.JS', icon: <SiNodedotjs />, level: Levels.inter },
-	{ technology: 'Python', icon: <SiPython />, level: Levels.learn },
-	{ technology: 'Express.JS', icon: <SiExpress />, level: Levels.inter },
-	{ technology: 'Mongo DB', icon: <SiMongodb />, level: Levels.inter },
-	{ technology: 'PostgreSQL', icon: <SiPostgresql />, level: Levels.inter },
+	{ tech: 'Typescript', icon: <SiTypescript />, level: Levels.inter },
+	{ tech: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
+	{ tech: 'Node.JS', icon: <SiNodedotjs />, level: Levels.inter },
+	{ tech: 'Python', icon: <SiPython />, level: Levels.learn },
+	{ tech: 'Express.JS', icon: <SiExpress />, level: Levels.inter },
+	{ tech: 'Mongo DB', icon: <SiMongodb />, level: Levels.inter },
+	{ tech: 'PostgreSQL', icon: <SiPostgresql />, level: Levels.inter },
 ];
 
 const tools: AbilitiesProps[] = [
-	{ technology: 'Git', icon: <SiGit />, level: Levels.inter },
-	{ technology: 'Markdown', icon: <SiMarkdown />, level: Levels.inter },
-	{ technology: 'Github', icon: <SiGithub />, level: Levels.med },
+	{ tech: 'Git', icon: <SiGit />, level: Levels.inter },
+	{ tech: 'Markdown', icon: <SiMarkdown />, level: Levels.inter },
+	{ tech: 'Github', icon: <SiGithub />, level: Levels.med },
 ];
 
 const Home: NextPage = () => {
@@ -82,9 +83,7 @@ const Home: NextPage = () => {
 	});
 
 	// picks form data
-	const formDataPicker = (
-		e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
-	) => {
+	const formDataPicker = (e: InputEvents) => {
 		setFormData((prevData) => ({
 			...prevData,
 			[e.target.name]: e.target.value,
@@ -100,30 +99,23 @@ const Home: NextPage = () => {
 	};
 
 	// sends email
-	const emailSender = (e: FormEvent<HTMLFormElement> | any) => {
+	const emailSender = async (e: SubmitEvent): Promise<void> => {
 		e.preventDefault();
 		setMessageStatus('Sending your message, please wait...');
 		// email sender transport
-		emailjs
-			.send(
+		try {
+			await emailjs.send(
 				'service_sjw9i8b',
 				'template_eso630j',
 				formData,
 				'z3FUpU83GBFJyGXVF'
-			)
-			.then(
-				(result) => {
-					console.log(result.text);
-					notifyStatus('Message sent successfuly!');
-					e.target.reset();
-				},
-				(error) => {
-					console.log(error.text);
-					notifyStatus(
-						'Oops! Looks like something went wrong. Please, try again.'
-					);
-				}
 			);
+			notifyStatus('Message sent successfuly!');
+			(e as any).target.reset();
+		} catch (err: any) {
+			console.log(err.text);
+			notifyStatus('Oops! Looks like something went wrong. Please, try again.');
+		}
 	};
 
 	return (
@@ -132,13 +124,12 @@ const Home: NextPage = () => {
 			<Header />
 			<PageLayout />
 			<Container>
-				{isModalActive && (
-					<ConfirmDialog
-						prompt_title='Message Sent.'
-						prompt_message="I just can't  wait to we start working together, thank you!"
-						closeModal={setIsModalActive}
-					/>
-				)}
+				<ConfirmDialog
+					prompt_title='Message Sent.'
+					prompt_message="I just can't  wait to we start working together, thank you!"
+					closeModal={setIsModalActive}
+					active={isModalActive}
+				/>
 
 				<Introduction />
 
@@ -155,11 +146,11 @@ const Home: NextPage = () => {
 							<span>Frontend Development</span>
 						</h3>
 						<section className='list-items'>
-							{frontEnd_abilities.map(({ technology, icon, level }, index) => {
+							{frontEnd_abilities.map(({ tech, icon, level }, index) => {
 								return (
 									<div key={index} className='item'>
 										{icon}
-										<h3>{technology}</h3>
+										<h3>{tech}</h3>
 										<span>{level}</span>
 									</div>
 								);
@@ -172,11 +163,11 @@ const Home: NextPage = () => {
 							<span>Backend Development</span>
 						</h3>
 						<section className='list-items'>
-							{backend_abilities.map(({ technology, icon, level }, index) => {
+							{backend_abilities.map(({ tech, icon, level }, index) => {
 								return (
 									<div key={index} className='item'>
 										{icon}
-										<h3>{technology}</h3>
+										<h3>{tech}</h3>
 										<span>{level}</span>
 									</div>
 								);
@@ -189,11 +180,11 @@ const Home: NextPage = () => {
 							<span>Development Tools</span>
 						</h3>
 						<section className='list-items'>
-							{tools.map(({ technology, icon, level }, index) => {
+							{tools.map(({ tech, icon, level }, index) => {
 								return (
 									<div key={index} className='item'>
 										{icon}
-										<h3>{technology}</h3>
+										<h3>{tech}</h3>
 										<span>{level}</span>
 									</div>
 								);
