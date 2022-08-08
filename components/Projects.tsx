@@ -2,7 +2,7 @@ import * as React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ProjectsContainer as Container } from '../styles/components/projects';
 import { FaGithub } from 'react-icons/fa';
-import {HiPlay, HiViewGrid } from 'react-icons/hi';
+import { HiPlay, HiViewGrid } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 // image assets
@@ -16,6 +16,8 @@ import recipes_website from '../assets/recipes-website.png';
 import hagira_ecommerce from '../assets/hagira-ecommerce.jpeg';
 import server_01 from '../assets/server-01.png';
 import server_03 from '../assets/server-03.png';
+import bug_tracker_app from '../assets/bug-tracker-app.jpeg';
+import bug_tracker_server from '../assets/bug-tracker-server.png';
 
 interface ProjectsProps {
 	name: string;
@@ -34,14 +36,21 @@ enum Categories {
 
 const projects: ProjectsProps[] = [
 	{
-		name: 'Notes Application made with React.JS',
+		name: 'Bug Tracker App built with React.JS + Typescript  and styled with Styled-Components',
+		category: Categories.full,
+		image: bug_tracker_app,
+		code_url: 'https://github.com/KainNhantumbo/bug-tracker',
+		live_url: '',
+	},
+	{
+		name: 'Notes App made with React.JS + Styled-Components + Sass',
 		category: Categories.front,
 		image: nava_notes,
 		live_url: 'https://nava-notes-app.vercel.app',
 		code_url: 'https://github.com/KainNhantumbo/Nava-Notes-App',
 	},
 	{
-		name: 'Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + Mongo DB on the Back-end',
+		name: 'Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + MongoDB on the Back-end',
 		category: Categories.full,
 		image: planner_app,
 		live_url: '',
@@ -60,6 +69,13 @@ const projects: ProjectsProps[] = [
 		image: hagira_ecommerce,
 		live_url: '',
 		code_url: 'https://github.com/KainNhantumbo/Hagira-Brands-Store',
+	},
+	{
+		name: 'Bug Tracker Restfull API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end',
+		category: Categories.back,
+		image: bug_tracker_server,
+		code_url: 'https://github.com/KainNhantumbo/bug-tracker-api',
+		live_url: '',
 	},
 	{
 		name: 'Server Restfull API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB',

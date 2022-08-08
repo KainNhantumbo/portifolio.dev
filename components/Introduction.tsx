@@ -31,10 +31,10 @@ export default function Introduction(): JSX.Element {
 				</motion.h3>
 				<h1>Hello, I am Kain Nhantumbo!</h1>
 				<p>
-					A MERN Stack software developer who loves building full-stack
-					applications and learning new technologies. <br />
-					To build my projects I use Typescript and Javascript as main
-					programming languages.
+					A enthusiastic software developer who loves building full-stack
+					applications and learning something new everyday. <br />
+					To build my projects, I use Typescript and Javascript as main
+					programming technologies.
 				</p>
 				<motion.button
 					whileTap={{ scale: 0.9 }}

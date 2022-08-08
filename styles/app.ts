@@ -5,7 +5,6 @@ const tops = `
   position: fixed;
   bottom: 20px;
   left: 0;
-
   display: grid;
   place-content: center;
   width: 100%;
