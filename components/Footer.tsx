@@ -1,7 +1,7 @@
 import { FooterContainer as Container } from '../styles/components/footer';
 import { FC } from 'react';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
-import { ImLinkedin2 } from 'react-icons/im';
+import { ImBlog, ImLinkedin2 } from 'react-icons/im';
 import { motion } from 'framer-motion';
 
 interface FooterLinks {
@@ -10,22 +10,27 @@ interface FooterLinks {
 	link: string;
 }
 
-const Footer: FC = ({}): JSX.Element => {
+const Footer: FC = (): JSX.Element => {
 	const media_links: FooterLinks[] = [
 		{
-			name: 'Github',
+			name: 'Find me on Github',
 			icon: <FaGithub />,
 			link: 'https://github.com/KainNhantumbo',
 		},
 		{
-			name: 'Whatsapp',
+			name: 'Find me on Whatsapp',
 			icon: <FaWhatsapp />,
 			link: 'https://wa.me/258844002535',
 		},
 		{
-			name: 'LinkedIn',
+			name: 'Find me on LinkedIn',
 			icon: <ImLinkedin2 />,
 			link: 'https://www.linkedin.com/in/kain-nhantumbo-aa380317a',
+		},
+		{
+			name: 'Visit my blog',
+			icon: <ImBlog />,
+			link: 'https://publish-it-programming.vercel.app/',
 		},
 	];
 
@@ -37,7 +42,7 @@ const Footer: FC = ({}): JSX.Element => {
 			<ul>
 				{media_links.map((link, index) => {
 					return (
-						<motion.li key={index} whileHover={{ scale: 1.2 }}>
+						<motion.li key={index} whileHover={{ scale: 1.2 }} title={link.name}>
 							<a href={link.link} target={'_blank'} rel={'noreferrer noopener'}>
 								{link.icon}
 							</a>

@@ -17,6 +17,7 @@ import hagira_ecommerce from '../assets/hagira-ecommerce.jpeg';
 import server_01 from '../assets/server-01.png';
 import server_03 from '../assets/server-03.png';
 import bug_tracker_app from '../assets/bug-tracker-app.jpeg';
+import blog_shot from '../assets/blog-shot.jpeg';
 import bug_tracker_server from '../assets/bug-tracker-server.png';
 
 interface ProjectsProps {
@@ -35,6 +36,13 @@ enum Categories {
 }
 
 const projects: ProjectsProps[] = [
+	{
+		name: 'My Blog built with Next.JS, Typescript and Markdown',
+		category: Categories.front,
+		image: blog_shot,
+		code_url: 'https://github.com/KainNhantumbo/publish-it.programming',
+		live_url: 'https://publish-it-programming.vercel.app',
+	},
 	{
 		name: 'Bug Tracker App built with React.JS + Typescript  and styled with Styled-Components',
 		category: Categories.full,
