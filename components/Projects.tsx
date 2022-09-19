@@ -48,7 +48,7 @@ const projects: ProjectsProps[] = [
 		category: Categories.full,
 		image: bug_tracker_app,
 		code_url: 'https://github.com/KainNhantumbo/bug-tracker',
-		live_url: '',
+		live_url: 'https://bug-tracker-kainnhantumbo.vercel.app',
 	},
 	{
 		name: 'Notes App made with React.JS + Styled-Components + Sass',
