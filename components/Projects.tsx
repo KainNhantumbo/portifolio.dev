@@ -37,18 +37,18 @@ enum Categories {
 
 const projects: ProjectsProps[] = [
 	{
+		name: 'Bug Tracker App built with React.JS and Typescript',
+		category: Categories.full,
+		image: bug_tracker_app,
+		code_url: 'https://github.com/KainNhantumbo/bug-tracker',
+		live_url: 'https://bug-tracker-kainnhantumbo.vercel.app',
+	},
+	{
 		name: 'My Blog built with Next.JS, Typescript and Markdown',
 		category: Categories.front,
 		image: blog_shot,
 		code_url: 'https://github.com/KainNhantumbo/publish-it.programming',
 		live_url: 'https://publish-it-programming.vercel.app',
-	},
-	{
-		name: 'Bug Tracker App built with React.JS + Typescript  and styled with Styled-Components',
-		category: Categories.full,
-		image: bug_tracker_app,
-		code_url: 'https://github.com/KainNhantumbo/bug-tracker',
-		live_url: 'https://bug-tracker-kainnhantumbo.vercel.app',
 	},
 	{
 		name: 'Notes App made with React.JS + Styled-Components + Sass',
@@ -143,8 +143,8 @@ export default function Projects(): JSX.Element {
 			<p>
 				<strong>
 					(...) and because I understand that showing is sometimes better than
-					talking, here are some of my personal projects that I have been
-					working on these days. You can see all my personal projects on my{' '}
+					saying, here are some of my personal projects that I have been working
+					on these days. You can see all my personal projects on my{' '}
 					<a
 						href='https://github.com/KainNhantumbo'
 						target={'_blank'}

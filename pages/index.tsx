@@ -49,7 +49,7 @@ const frontEnd_abilities: AbilitiesProps[] = [
 	{ tech: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
 	{ tech: 'React', icon: <FaReact />, level: Levels.ex },
 	{ tech: 'React Native', icon: <SiReact />, level: Levels.learn },
-	{ tech: 'Next.JS', icon: <SiReact />, level: Levels.inter },
+	{ tech: 'Next.JS', icon: <SiReact />, level: Levels.ex },
 	{ tech: 'SASS & CSS', icon: <SiCss3 />, level: Levels.ex },
 	{ tech: 'HTML5', icon: <SiHtml5 />, level: Levels.ex },
 ];
@@ -66,8 +66,8 @@ const backend_abilities: AbilitiesProps[] = [
 
 const tools: AbilitiesProps[] = [
 	{ tech: 'Git', icon: <SiGit />, level: Levels.inter },
-	{ tech: 'Markdown', icon: <SiMarkdown />, level: Levels.inter },
-	{ tech: 'Github', icon: <SiGithub />, level: Levels.med },
+	{ tech: 'Markdown', icon: <SiMarkdown />, level: Levels.ex },
+	{ tech: 'Github', icon: <SiGithub />, level: Levels.inter},
 ];
 
 const Home: NextPage = () => {
