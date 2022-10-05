@@ -3,11 +3,11 @@
   "version": "2.0.0",
   "private": true,
   "author": {
-		"name": "Kain Nhantumbo",
-		"email": "nhantumbok@gmail.com",
-		"url": "https://portifolio-dev-mu.vercel.app"
-	},
-	"license": "Apache License Version 2.0",
+    "name": "Kain Nhantumbo",
+    "email": "nhantumbok@gmail.com",
+    "url": "https://portifolio-dev-mu.vercel.app"
+  },
+  "license": "Apache License Version 2.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -21,6 +21,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
+    "react-type-animation": "^2.1.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

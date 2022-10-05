@@ -19,6 +19,7 @@ import server_03 from '../assets/server-03.png';
 import bug_tracker_app from '../assets/bug-tracker-app.jpeg';
 import blog_shot from '../assets/blog-shot.jpeg';
 import bug_tracker_server from '../assets/bug-tracker-server.png';
+import url_shortner_app from '../assets/url-shortner-app.jpeg'
 
 interface ProjectsProps {
 	name: string;
@@ -42,6 +43,13 @@ const projects: ProjectsProps[] = [
 		image: bug_tracker_app,
 		code_url: 'https://github.com/KainNhantumbo/bug-tracker',
 		live_url: 'https://bug-tracker-kainnhantumbo.vercel.app',
+	},
+	{
+		name: 'Url Shortner App built with React.JS and Typescript',
+		category: Categories.full,
+		image: url_shortner_app,
+		code_url: 'https://github.com/KainNhantumbo/url-shortner-app',
+		live_url: 'https://url-shortner-app-six.vercel.app',
 	},
 	{
 		name: 'My Blog built with Next.JS, Typescript and Markdown',

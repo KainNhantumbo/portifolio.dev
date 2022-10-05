@@ -12,6 +12,11 @@ export const AboutContainer = styled.section`
 
 	.experiences {
 		text-align: center;
+
+		.op {
+			margin-bottom: 10px;
+			font-weight: 500;
+		}
 	}
 
 	.cards-container {

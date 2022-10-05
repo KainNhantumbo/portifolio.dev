@@ -201,7 +201,7 @@ const Home: NextPage = () => {
 						<span>Contact me</span>
 					</h2>
 					<section className='intro'>
-						<h2>Let's work together!</h2>
+						<h2>Let's bring ideas to life with code!</h2>
 						<p>
 							You can use the form below to send me an e-mail or use the
 							following contact options:

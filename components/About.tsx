@@ -12,6 +12,7 @@ const About: React.FC = (): JSX.Element => {
 				<span>About me</span>
 			</h2>
 			<section className='experiences'>
+				<p className='op'>Web Developer & Content Creator</p>
 				<p>
 					I am a person with a desire to grow by learning new things every day.
 					Driven by curiosity, I fell in love with web development and design.
