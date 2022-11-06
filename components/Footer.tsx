@@ -1,60 +1,34 @@
 import { FooterContainer as Container } from '../styles/components/footer';
 import { FC } from 'react';
-import { FaGithub, FaWhatsapp } from 'react-icons/fa';
-import { ImBlog, ImLinkedin2 } from 'react-icons/im';
+import { RiHeart3Fill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
+import { linksData } from '../data/app-data';
 
-interface FooterLinks {
-	name: string;
-	icon: JSX.Element;
-	link: string;
-}
-
-const Footer: FC = (): JSX.Element => {
-	const media_links: FooterLinks[] = [
-		{
-			name: 'Find me on Github',
-			icon: <FaGithub />,
-			link: 'https://github.com/KainNhantumbo',
-		},
-		{
-			name: 'Find me on Whatsapp',
-			icon: <FaWhatsapp />,
-			link: 'https://wa.me/258844002535',
-		},
-		{
-			name: 'Find me on LinkedIn',
-			icon: <ImLinkedin2 />,
-			link: 'https://www.linkedin.com/in/kain-nhantumbo-aa380317a',
-		},
-		{
-			name: 'Visit my blog',
-			icon: <ImBlog />,
-			link: 'https://publish-it-programming.vercel.app/',
-		},
-	];
-
-	return (
-		<Container>
-			<h3>
-				<strong>Find me on the web by:</strong>
-			</h3>
-			<ul>
-				{media_links.map((link, index) => {
-					return (
-						<motion.li key={index} whileHover={{ scale: 1.2 }} title={link.name}>
-							<a href={link.link} target={'_blank'} rel={'noreferrer noopener'}>
-								{link.icon}
-							</a>
-						</motion.li>
-					);
-				})}
-			</ul>
-			<p>
-				<span>Copyright &copy; 2022 Kain Nhantumbo. All Rights Reserved. </span>
-			</p>
-		</Container>
-	);
-};
+const Footer: FC = (): JSX.Element => (
+  <Container>
+    <h3>
+      <strong>Find me on the web by:</strong>
+    </h3>
+    <ul>
+      {linksData.map((link, index) => {
+        return (
+          <motion.li key={index} whileHover={{ scale: 1.2 }} title={link.name}>
+            <a href={link.link} target={'_blank'} rel={'noreferrer noopener'}>
+              <link.icon />
+            </a>
+          </motion.li>
+        );
+      })}
+    </ul>
+    <div>
+      <span>Copyright &copy; 2022 Kain Nhantumbo. All Rights Reserved. </span>
+      <p>
+        <span>Made with</span>
+        <RiHeart3Fill />
+        <span>using Next.js and Typescript. </span>
+      </p>
+    </div>
+  </Container>
+);
 
 export default Footer;

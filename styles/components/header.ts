@@ -60,7 +60,7 @@ export const HeaderContainer = styled.header`
 		span {
 			font-weight: 500;
 			text-align: center;
-			font-size: 1.3rem;
+			font-size: 1.2rem;
 			padding-left: 50px;
 		}
 		.image {
