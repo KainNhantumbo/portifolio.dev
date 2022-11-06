@@ -69,8 +69,10 @@ const Home: NextPage = (): JSX.Element => {
           closeModal={setIsModalActive}
           active={isModalActive}
         />
+
         <Introduction />
         <About />
+
         <section className='abilities' id='skills'>
           <h2>
             <HiAcademicCap />

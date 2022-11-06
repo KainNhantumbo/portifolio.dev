@@ -54,11 +54,11 @@ const AppContext: FC<IProps> = ({ children }) => {
     });
 
   useEffect(() => {
-    const theme = JSON.parse(
+    const themeConfig: any = JSON.parse(
       localStorage.getItem(THEME_STORAGE_KEY) || `{"darkMode": true}`
     );
-    setThemeSettings(theme);
-    theme.darkMode ? setCurrentTheme(dark) : setCurrentTheme(primary);
+    setThemeSettings(themeConfig);
+    themeConfig.darkMode ? setCurrentTheme(dark) : setCurrentTheme(primary);
   }, []);
 
   return (

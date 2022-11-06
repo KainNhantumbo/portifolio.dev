@@ -22,8 +22,6 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
-    "react-scroll-motion": "^0.3.0",
-    "react-type-animation": "^2.1.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

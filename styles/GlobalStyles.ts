@@ -20,7 +20,6 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     background: rgb(${({ theme }) => theme.background});
     position: relative;
-    
   }
 
   input, textarea, select {
