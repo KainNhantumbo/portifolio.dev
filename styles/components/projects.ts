@@ -43,6 +43,11 @@ export const ProjectsContainer = styled.section`
 			padding: 8px;
 			user-select: none;
 
+			:hover {
+				transition: all 200ms ease-in-out;
+				box-shadow: 0px 10px 35px rgba(${({ theme }) => theme.shadows}, 0.8);
+			}
+
 			.top {
 				position: relative;
 				width: 100%;

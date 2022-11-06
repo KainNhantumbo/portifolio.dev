@@ -9,11 +9,13 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   gap: 10px;
   padding-bottom: 10px;
-  background: rgba(${({ theme }) => theme.backgroundAlt}, 0.2);
+	border-radius: 20px;
+  background: rgba(${({ theme }) => theme.backgroundAlt}, 0.5);
 
   h3 {
     text-align: center;
     line-height: 2rem;
+		font-size: .92rem;
   }
 
   ul {

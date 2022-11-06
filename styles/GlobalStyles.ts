@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: Inter, 'Open Sans', Montserrat, Poppins, 'PT Sans', sans-serif;
+    font-family: Inter, 'Open Sans', Roboto, Poppins, 'PT Sans', sans-serif;
     max-width: 100%;
     scroll-padding-top: 70px;
     scroll-behavior: smooth;
