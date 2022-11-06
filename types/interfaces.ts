@@ -19,3 +19,9 @@ export interface IProject {
 	code_url: string;
 	live_url: string;
 }
+
+export interface IStackSkill {
+  tech: string;
+  icon: IconType;
+  level: string;
+}

@@ -1,76 +1,26 @@
-import type { NextPage } from 'next';
-import { HomeContainer as Container } from '../styles/home';
-import Layout from '../components/Layout';
 import About from '../components/About';
-import {
-  SiCss3,
-  SiExpress,
-  SiGit,
-  SiGithub,
-  SiHtml5,
-  SiJavascript,
-  SiMarkdown,
-  SiMongodb,
-  SiNodedotjs,
-  SiPostgresql,
-  SiPython,
-  SiReact,
-  SiTypescript,
-} from 'react-icons/si';
-import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
-import { FaEnvelope, FaPhoneAlt, FaReact } from 'react-icons/fa';
+import Layout from '../components/Layout';
+import emailjs from '@emailjs/browser';
+import Projects from '../components/Projects';
+import Introduction from '../components/Introduction';
 import { motion } from 'framer-motion';
-import { ConfirmDialog } from '../components/Modal';
+import { NextPage } from 'next';
 import { useState } from 'react';
 import { BiMailSend } from 'react-icons/bi';
-import Projects from '../components/Projects';
-import emailjs from '@emailjs/browser';
-import Introduction from '../components/Introduction';
+import { ConfirmDialog } from '../components/Modal';
+import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { InputEvents, SubmitEvent } from '../types/form';
+import { HomeContainer as Container } from '../styles/home';
+import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
+import {
+  backend_abilities,
+  frontEnd_abilities,
+  tools,
+} from '../data/stack-data';
 
-interface AbilitiesProps {
-  tech: string;
-  icon: JSX.Element;
-  level: string;
-}
-
-enum Levels {
-  ex = 'Experienced',
-  inter = 'Intermediate',
-  med = 'Medium',
-  learn = 'Learning',
-}
-
-const frontEnd_abilities: AbilitiesProps[] = [
-  { tech: 'Typescript', icon: <SiTypescript />, level: Levels.inter },
-  { tech: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
-  { tech: 'React', icon: <FaReact />, level: Levels.ex },
-  { tech: 'React Native', icon: <SiReact />, level: Levels.learn },
-  { tech: 'Next.JS', icon: <SiReact />, level: Levels.ex },
-  { tech: 'SASS & CSS', icon: <SiCss3 />, level: Levels.ex },
-  { tech: 'HTML5', icon: <SiHtml5 />, level: Levels.ex },
-];
-
-const backend_abilities: AbilitiesProps[] = [
-  { tech: 'Typescript', icon: <SiTypescript />, level: Levels.inter },
-  { tech: 'Javascript', icon: <SiJavascript />, level: Levels.ex },
-  { tech: 'Node.JS', icon: <SiNodedotjs />, level: Levels.inter },
-  { tech: 'Python', icon: <SiPython />, level: Levels.learn },
-  { tech: 'Express.JS', icon: <SiExpress />, level: Levels.inter },
-  { tech: 'Mongo DB', icon: <SiMongodb />, level: Levels.inter },
-  { tech: 'PostgreSQL', icon: <SiPostgresql />, level: Levels.inter },
-];
-
-const tools: AbilitiesProps[] = [
-  { tech: 'Git', icon: <SiGit />, level: Levels.inter },
-  { tech: 'Markdown', icon: <SiMarkdown />, level: Levels.ex },
-  { tech: 'Github', icon: <SiGithub />, level: Levels.inter },
-];
-
-const Home: NextPage = () => {
-  const [messageStatus, setMessageStatus] = useState('');
-  const [isModalActive, setIsModalActive] = useState(false);
-
+const Home: NextPage = (): JSX.Element => {
+  const [messageStatus, setMessageStatus] = useState<string>('');
+  const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     name: '',
     email: 'nhantumbok@gmail.com',
@@ -89,6 +39,7 @@ const Home: NextPage = () => {
   // notifies the e-mail sender about the message status
   const notifyStatus = (message: string): void => {
     setMessageStatus(message);
+    clearTimeout(undefined);
     setTimeout(() => {
       setMessageStatus('');
     }, 5000);
@@ -107,7 +58,7 @@ const Home: NextPage = () => {
       notifyStatus('Message sent successfuly!');
       (e as any).target.reset();
     } catch (err: any) {
-      console.log(err.text);
+      console.error(err.text);
       notifyStatus('Oops! Looks like something went wrong. Please, try again.');
     }
   };
@@ -116,7 +67,7 @@ const Home: NextPage = () => {
     <Layout>
       <Container>
         <ConfirmDialog
-          prompt_title='Message Sent.'
+          prompt_title='Message Sent'
           prompt_message="I just can't  wait to we start working together, thank you!"
           closeModal={setIsModalActive}
           active={isModalActive}
@@ -134,15 +85,13 @@ const Home: NextPage = () => {
               <span>Frontend Development</span>
             </h3>
             <section className='list-items'>
-              {frontEnd_abilities.map(({ tech, icon, level }, index) => {
-                return (
-                  <div key={index} className='item'>
-                    {icon}
-                    <h3>{tech}</h3>
-                    <span>{level}</span>
-                  </div>
-                );
-              })}
+              {frontEnd_abilities.map((item, index) => (
+                <div key={index} className='item'>
+                  <item.icon />
+                  <h3>{item.tech}</h3>
+                  <span>{item.level}</span>
+                </div>
+              ))}
             </section>
           </section>
           <section className='backend'>
@@ -151,15 +100,13 @@ const Home: NextPage = () => {
               <span>Backend Development</span>
             </h3>
             <section className='list-items'>
-              {backend_abilities.map(({ tech, icon, level }, index) => {
-                return (
-                  <div key={index} className='item'>
-                    {icon}
-                    <h3>{tech}</h3>
-                    <span>{level}</span>
-                  </div>
-                );
-              })}
+              {backend_abilities.map((item, index) => (
+                <div key={index} className='item'>
+                  <item.icon />
+                  <h3>{item.tech}</h3>
+                  <span>{item.level}</span>
+                </div>
+              ))}
             </section>
           </section>
           <section className='other'>
@@ -168,15 +115,13 @@ const Home: NextPage = () => {
               <span>Development Tools</span>
             </h3>
             <section className='list-items'>
-              {tools.map(({ tech, icon, level }, index) => {
-                return (
-                  <div key={index} className='item'>
-                    {icon}
-                    <h3>{tech}</h3>
-                    <span>{level}</span>
-                  </div>
-                );
-              })}
+              {tools.map((item, index) => (
+                <div key={index} className='item'>
+                  <item.icon />
+                  <h3>{item.tech}</h3>
+                  <span>{item.level}</span>
+                </div>
+              ))}
             </section>
           </section>
         </section>

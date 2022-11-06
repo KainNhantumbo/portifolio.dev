@@ -1,10 +1,10 @@
-import { AboutContainer as Container } from '../styles/components/About';
-import * as React from 'react';
-import { HiCode, HiViewGrid } from 'react-icons/hi';
-import { SiAboutdotme } from 'react-icons/si';
+import { FC } from 'react';
 import { motion } from 'framer-motion';
+import { SiAboutdotme } from 'react-icons/si';
+import { HiCode, HiViewGrid } from 'react-icons/hi';
+import { AboutContainer as Container } from '../styles/components/About';
 
-const About: React.FC = (): JSX.Element => (
+const About: FC = (): JSX.Element => (
   <Container id='about'>
     <h2>
       <SiAboutdotme />
@@ -26,13 +26,13 @@ const About: React.FC = (): JSX.Element => (
       <motion.div className='card' whileHover={{ scale: 1.1 }}>
         <HiCode />
         <h4>Experience</h4>
-        <span>1+ year of coding</span>
+        <span>2+ year of coding</span>
       </motion.div>
 
       <motion.div className='card' whileHover={{ scale: 1.1 }}>
         <HiViewGrid />
         <h4>Projects</h4>
-        <span>15+ Github Projects</span>
+        <span>20+ Github Projects</span>
       </motion.div>
     </section>
   </Container>
