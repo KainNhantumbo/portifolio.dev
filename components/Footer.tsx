@@ -1,8 +1,8 @@
-import { FooterContainer as Container } from '../styles/components/footer';
 import { FC } from 'react';
-import { RiHeart3Fill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 import { linksData } from '../data/app-data';
+import { RiHeart3Fill } from 'react-icons/ri';
+import { FooterContainer as Container } from '../styles/components/footer';
 
 const Footer: FC = (): JSX.Element => (
   <Container>

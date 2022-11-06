@@ -22,7 +22,7 @@ enum Levels {
   learn = 'Learning',
 }
 
-export const frontEnd_abilities: IStackSkill[] = [
+export const frontend_data: IStackSkill[] = [
   { tech: 'Typescript', icon: SiTypescript, level: Levels.inter },
   { tech: 'Javascript', icon: SiJavascript, level: Levels.ex },
   { tech: 'React', icon: FaReact, level: Levels.ex },
@@ -31,7 +31,7 @@ export const frontEnd_abilities: IStackSkill[] = [
   { tech: 'HTML5', icon: SiHtml5, level: Levels.ex },
 ];
 
-export const backend_abilities: IStackSkill[] = [
+export const backend_data: IStackSkill[] = [
   { tech: 'Typescript', icon: SiTypescript, level: Levels.inter },
   { tech: 'Javascript', icon: SiJavascript, level: Levels.ex },
   { tech: 'Node.JS', icon: SiNodedotjs, level: Levels.inter },
@@ -40,7 +40,7 @@ export const backend_abilities: IStackSkill[] = [
   { tech: 'PostgreSQL', icon: SiPostgresql, level: Levels.inter },
 ];
 
-export const tools: IStackSkill[] = [
+export const tools_data: IStackSkill[] = [
   { tech: 'Git', icon: SiGit, level: Levels.inter },
   { tech: 'Markdown', icon: SiMarkdown, level: Levels.ex },
   { tech: 'Github', icon: SiGithub, level: Levels.inter },

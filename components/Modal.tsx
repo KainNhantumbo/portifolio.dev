@@ -1,16 +1,10 @@
-import { ConfirmModalContainer as Container } from '../styles/components/confirm-modal';
 import { FC } from 'react';
+import { IModalProps } from '../types/interfaces';
 import { FaTimesCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ConfirmModalContainer as Container } from '../styles/components/confirm-modal';
 
-interface Props {
-  prompt_title: string;
-  prompt_message: string;
-  closeModal: React.Dispatch<React.SetStateAction<boolean>>;
-  active: boolean;
-}
-
-export const ConfirmDialog: FC<Props> = (props): JSX.Element => (
+const ConfirmModal: FC<IModalProps> = (props): JSX.Element => (
   <AnimatePresence>
     {props.active && (
       <Container onClick={(e) => props.closeModal(false)}>
@@ -45,3 +39,5 @@ export const ConfirmDialog: FC<Props> = (props): JSX.Element => (
     )}
   </AnimatePresence>
 );
+
+export default ConfirmModal;

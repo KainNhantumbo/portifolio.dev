@@ -1,16 +1,14 @@
-import { FC, ReactNode } from 'react';
-import { BiSun, BiUpArrowAlt } from 'react-icons/bi';
-import { useAppContext } from '../context/AppContext';
-import { AppContainer as Container } from '../styles/app';
-import { motion } from 'framer-motion';
 import HeadPage from './Head';
 import Header from './Header';
 import Footer from './Footer';
+import { FC } from 'react';
+import { motion } from 'framer-motion';
+import { ILayoutProps } from '../types/interfaces';
+import { useAppContext } from '../context/AppContext';
+import { BiSun, BiUpArrowAlt } from 'react-icons/bi';
+import { AppContainer as Container } from '../styles/app';
 
-type LayoutProps = {
-  children: ReactNode;
-};
-const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
+const Layout: FC<ILayoutProps> = ({ children }): JSX.Element => {
   const { themeSwitcher, slidePageUp } = useAppContext();
   return (
     <>

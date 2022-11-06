@@ -3,7 +3,6 @@ import anime_blog from '../assets/anime-blog.jpeg';
 import ecommerce_page from '../assets/ecommerce-page.jpeg';
 import nava_notes from '../assets/nava-notes.jpg';
 import planner_app from '../assets/planner-app.jpg';
-import python_repo from '../assets/python-repo.png';
 import the_calculator from '../assets/the-calculator.png';
 import recipes_website from '../assets/recipes-website.png';
 import hagira_ecommerce from '../assets/hagira-ecommerce.jpeg';
@@ -12,7 +11,7 @@ import server_03 from '../assets/server-03.png';
 import bug_tracker_app from '../assets/bug-tracker-app.jpeg';
 import blog_shot from '../assets/blog-shot.jpeg';
 import bug_tracker_server from '../assets/bug-tracker-server.png';
-import url_shortner_app from '../assets/url-shortner-app.jpeg'
+import url_shortner_app from '../assets/url-shortner-app.jpeg';
 
 enum Categories {
   back = 'Back-end',
@@ -100,13 +99,6 @@ export const projects: IProject[] = [
       'https://kainnhantumbo.github.io/Static-Anime-Blog--made-with-HTML--CSS-and-Javascript',
     code_url:
       'https://github.com/KainNhantumbo/Static-Anime-Blog--made-with-HTML--CSS-and-Javascript',
-  },
-  {
-    name: 'Repository with Python training projects, exercises and mini-games',
-    category: Categories.train,
-    image: python_repo,
-    live_url: '',
-    code_url: 'https://github.com/KainNhantumbo/Python-Pratices',
   },
   {
     name: 'Multi-functions Calculator, Javascript + HTML5 + SASS',

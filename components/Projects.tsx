@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { ProjectsContainer as Container } from '../styles/components/projects';
-import { FaGithub } from 'react-icons/fa';
-import { HiPlay, HiViewGrid } from 'react-icons/hi';
 import { motion } from 'framer-motion';
+import { FaGithub } from 'react-icons/fa';
 import { projects } from '../data/projects-data';
+import { HiPlay, HiViewGrid } from 'react-icons/hi';
+import { ProjectsContainer as Container } from '../styles/components/projects';
 
 const Projects = (): JSX.Element => (
   <Container id='projects'>

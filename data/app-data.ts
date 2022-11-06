@@ -16,7 +16,7 @@ export const linksData: FooterLinks[] = [
   {
     name: 'Find me on LinkedIn',
     icon: ImLinkedin2,
-    link: 'https://www.linkedin.com/in/kain-nhantumbo-aa380317a',
+    link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US',
   },
   {
     name: 'Visit my blog',
@@ -27,9 +27,9 @@ export const linksData: FooterLinks[] = [
 
 // stores navigation bar ref urls and name
 export const navbarData: NavbarLinks[] = [
-	{ label: 'Home', ref: '#home' },
-	{ label: 'About', ref: '#about' },
-	{ label: 'Skills', ref: '#skills' },
-	{ label: 'Projects', ref: '#projects' },
-	{ label: 'Contact', ref: '#contact' },
+  { label: 'Home', ref: '#home' },
+  { label: 'About', ref: '#about' },
+  { label: 'Skills', ref: '#skills' },
+  { label: 'Projects', ref: '#projects' },
+  { label: 'Contact', ref: '#contact' },
 ];

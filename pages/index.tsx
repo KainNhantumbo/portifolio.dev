@@ -2,26 +2,23 @@ import About from '../components/About';
 import Layout from '../components/Layout';
 import emailjs from '@emailjs/browser';
 import Projects from '../components/Projects';
+import ConfirmModal from '../components/Modal';
 import Introduction from '../components/Introduction';
 import { motion } from 'framer-motion';
 import { NextPage } from 'next';
 import { useState } from 'react';
+import { IFormData } from '../types/interfaces';
 import { BiMailSend } from 'react-icons/bi';
-import { ConfirmDialog } from '../components/Modal';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { InputEvents, SubmitEvent } from '../types/form';
 import { HomeContainer as Container } from '../styles/home';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
-import {
-  backend_abilities,
-  frontEnd_abilities,
-  tools,
-} from '../data/stack-data';
+import { backend_data, frontend_data, tools_data } from '../data/stack-data';
 
 const Home: NextPage = (): JSX.Element => {
   const [messageStatus, setMessageStatus] = useState<string>('');
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<IFormData>({
     name: '',
     email: 'nhantumbok@gmail.com',
     subject: '',
@@ -52,7 +49,7 @@ const Home: NextPage = (): JSX.Element => {
       await emailjs.send(
         'service_sjw9i8b',
         'template_eso630j',
-        formData,
+        formData as any,
         'z3FUpU83GBFJyGXVF'
       );
       notifyStatus('Message sent successfuly!');
@@ -66,7 +63,7 @@ const Home: NextPage = (): JSX.Element => {
   return (
     <Layout>
       <Container>
-        <ConfirmDialog
+        <ConfirmModal
           prompt_title='Message Sent'
           prompt_message="I just can't  wait to we start working together, thank you!"
           closeModal={setIsModalActive}
@@ -85,7 +82,7 @@ const Home: NextPage = (): JSX.Element => {
               <span>Frontend Development</span>
             </h3>
             <section className='list-items'>
-              {frontEnd_abilities.map((item, index) => (
+              {frontend_data.map((item, index) => (
                 <div key={index} className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
@@ -100,7 +97,7 @@ const Home: NextPage = (): JSX.Element => {
               <span>Backend Development</span>
             </h3>
             <section className='list-items'>
-              {backend_abilities.map((item, index) => (
+              {backend_data.map((item, index) => (
                 <div key={index} className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
@@ -115,7 +112,7 @@ const Home: NextPage = (): JSX.Element => {
               <span>Development Tools</span>
             </h3>
             <section className='list-items'>
-              {tools.map((item, index) => (
+              {tools_data.map((item, index) => (
                 <div key={index} className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
