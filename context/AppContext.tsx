@@ -24,28 +24,19 @@ const AppContext: FC<IProps> = ({ children }) => {
   const [themeSettings, setThemeSettings] = useState<ITheme>({
     darkMode: false,
   });
-  const [mode, setMode] = useState<ThemeObj>(primary);
+  const [currentTheme, setCurrentTheme] = useState<ThemeObj>(primary);
   const THEME_STORAGE_KEY: string = 'THEME_SETTINGS';
-
-  const themePrefers = (): void => {
-    setThemeSettings(
-      JSON.parse(
-        localStorage.getItem(THEME_STORAGE_KEY) || `{"darkMode": true}`
-      )
-    );
-    themeSwitcher();
-  };
 
   const themeSwitcher = (): void => {
     if (themeSettings.darkMode === false) {
-      setMode(dark);
+      setCurrentTheme(dark);
       setThemeSettings({ darkMode: true });
       localStorage.setItem(
         THEME_STORAGE_KEY,
         JSON.stringify({ darkMode: true })
       );
     } else {
-      setMode(primary);
+      setCurrentTheme(primary);
       setThemeSettings({ darkMode: false });
       localStorage.setItem(
         THEME_STORAGE_KEY,
@@ -63,11 +54,15 @@ const AppContext: FC<IProps> = ({ children }) => {
     });
 
   useEffect(() => {
-    themePrefers();
+    const theme = JSON.parse(
+      localStorage.getItem(THEME_STORAGE_KEY) || `{"darkMode": true}`
+    );
+    setThemeSettings(theme);
+    theme.darkMode ? setCurrentTheme(dark) : setCurrentTheme(primary);
   }, []);
 
   return (
-    <ThemeProvider theme={mode}>
+    <ThemeProvider theme={currentTheme}>
       <GlobalStyles />
       <context.Provider
         value={{

@@ -4,7 +4,6 @@ export const FooterContainer = styled.footer`
   width: 100vw;
   height: min-content;
   position: relative;
-  font-family: Inter, 'Open Sans', Montserrat, Poppins, 'PT Sans';
   display: flex;
   flex-direction: column;
   gap: 10px;

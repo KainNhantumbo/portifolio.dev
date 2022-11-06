@@ -16,7 +16,7 @@ const Header: FC = (): JSX.Element => {
   const toggleMenu = (): void => setIsMenu(!isMenu);
 
   const changeWidth = (): void =>
-    window.innerWidth > 600 ? setIsMenu(true) : setIsMenu(false);
+    window.innerWidth > 640 ? setIsMenu(true) : setIsMenu(false);
 
   // controls the wheel events
   const hideMenu = (e: WheelEvent): void => setDeltaY(e.deltaY);
@@ -69,6 +69,16 @@ const Header: FC = (): JSX.Element => {
                 </motion.li>
               </Link>
             ))}
+            <a
+              href={'https://publish-it-programming.vercel.app'}
+              target={'_blank'}
+              rel={'noreferrer noopener'}>
+              <motion.li
+                whileTap={{ scale: 0.7 }}
+                whileHover={{ scale: 1.05, y: 1 }}>
+                <span>Blog</span>
+              </motion.li>
+            </a>
           </motion.ul>
         </nav>
       </motion.div>

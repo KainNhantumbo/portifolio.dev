@@ -8,7 +8,6 @@ export const HomeContainer = styled.main`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  font-family: Inter, 'Open Sans', Roboto, Poppins, 'PT Sans', sans-serif;
   line-height: 1.6rem;
   margin-bottom: 50px;
 
