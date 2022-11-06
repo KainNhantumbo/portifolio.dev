@@ -82,7 +82,6 @@ const Home: NextPage = () => {
 		from_email: '',
 	});
 
-	// picks form data
 	const formDataPicker = (e: InputEvents) => {
 		setFormData((prevData) => ({
 			...prevData,
@@ -98,11 +97,9 @@ const Home: NextPage = () => {
 		}, 5000);
 	};
 
-	// sends email
 	const emailSender = async (e: SubmitEvent): Promise<void> => {
 		e.preventDefault();
 		setMessageStatus('Sending your message, please wait...');
-		// email sender transport
 		try {
 			await emailjs.send(
 				'service_sjw9i8b',
@@ -130,11 +127,8 @@ const Home: NextPage = () => {
 					closeModal={setIsModalActive}
 					active={isModalActive}
 				/>
-
 				<Introduction />
-
 				<About />
-
 				<section className='abilities' id='skills'>
 					<h2>
 						<HiAcademicCap />

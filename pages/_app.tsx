@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import AppContext from '../context/AppContext';
-import * as React from 'react';
 import { AppContainer as Container } from '../styles/app';
 
 function MyApp({ Component, pageProps }: AppProps) {

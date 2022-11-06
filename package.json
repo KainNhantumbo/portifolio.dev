@@ -5,7 +5,8 @@
   "author": {
     "name": "Kain Nhantumbo",
     "email": "nhantumbok@gmail.com",
-    "url": "https://portifolio-dev-mu.vercel.app"
+    "url": "https://portifolio-dev-mu.vercel.app",
+    "website": "https://publish-it-programming.vercel.app"
   },
   "license": "Apache License Version 2.0",
   "scripts": {
@@ -21,6 +22,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
+    "react-scroll-motion": "^0.3.0",
     "react-type-animation": "^2.1.1",
     "styled-components": "^5.3.5"
   },
