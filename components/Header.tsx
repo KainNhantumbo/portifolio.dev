@@ -37,7 +37,7 @@ const Header: FC = (): JSX.Element => {
         className='core'
         animate={{ translateY: deltaY == 100 ? -65 : 0 }}
         transition={{ duration: 0.5 }}>
-        <motion.h2 className='brand' onClick={() => router.push('#')}>
+        <motion.h2 className='brand' onClick={() => router.push('/')}>
           <div className='image'>
             <Image
               src={author}

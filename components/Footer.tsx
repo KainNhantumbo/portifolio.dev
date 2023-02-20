@@ -21,7 +21,7 @@ const Footer: FC = (): JSX.Element => (
       })}
     </ul>
     <div>
-      <span>Copyright &copy; 2022 Kain Nhantumbo. All Rights Reserved. </span>
+      <span>Copyright &copy; 2023 Kain Nhantumbo. All Rights Reserved. </span>
       <p>
         <span>Made with</span>
         <RiHeart3Fill />

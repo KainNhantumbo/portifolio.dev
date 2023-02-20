@@ -1,5 +1,11 @@
-import { FC, ReactNode, useState, useEffect } from 'react';
-import { createContext, useContext } from 'react';
+import {
+  FC,
+  createContext,
+  useContext,
+  ReactNode,
+  useState,
+  useEffect,
+} from 'react';
 import { GlobalStyles } from '../styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { dark, primary } from '../themes/themes';
@@ -28,7 +34,7 @@ const AppContext: FC<IProps> = ({ children }) => {
   const THEME_STORAGE_KEY: string = 'THEME_SETTINGS';
 
   const themeSwitcher = (): void => {
-    if (themeSettings.darkMode === false) {
+    if (!themeSettings.darkMode) {
       setCurrentTheme(dark);
       setThemeSettings({ darkMode: true });
       localStorage.setItem(
