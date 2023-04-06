@@ -27,51 +27,49 @@ const Projects = (): JSX.Element => (
     </p>
     <section className='cards-container'>
       <section className='cards-wrapper'>
-        {projects.map((project, index) => {
-          return (
-            <section className='card' key={index}>
-              <div className='top'>
-                <Image
-                  src={project.image}
-                  placeholder={'blur'}
-                  width={280}
-                  height={210}
-                  objectFit={'cover'}
-                  style={{ borderRadius: 10 }}
-                  alt={project.name}
-                />
-                <h4>{project.category}</h4>
+        {projects.map((project, index) => (
+          <motion.section className='card' key={index} whileInView={{}}>
+            <div className='top'>
+              <Image
+                src={project.image}
+                placeholder={'blur'}
+                width={280}
+                height={210}
+                objectFit={'cover'}
+                style={{ borderRadius: 10 }}
+                alt={project.name}
+              />
+              <h4>{project.category}</h4>
+            </div>
+            <div className='bottom'>
+              <div className='details'>
+                <h3>{project.name}</h3>
               </div>
-              <div className='bottom'>
-                <div className='details'>
-                  <h3>{project.name}</h3>
-                </div>
-                <div className='actions'>
-                  {project.live_url.length > 5 ? (
-                    <motion.a
-                      whileTap={{ scale: 0.9 }}
-                      whileHover={{ scale: 1.03 }}
-                      href={project.live_url}
-                      target={'_blank'}
-                      rel={'noreferrer noopener'}>
-                      <HiPlay />
-                      <span>Live Demo</span>
-                    </motion.a>
-                  ) : null}
+              <div className='actions'>
+                {project.live_url.length > 5 ? (
                   <motion.a
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ scale: 1.03 }}
-                    href={project.code_url}
+                    href={project.live_url}
                     target={'_blank'}
                     rel={'noreferrer noopener'}>
-                    <FaGithub />
-                    <span>Github Repository</span>
+                    <HiPlay />
+                    <span>Live Demo</span>
                   </motion.a>
-                </div>
+                ) : null}
+                <motion.a
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.03 }}
+                  href={project.code_url}
+                  target={'_blank'}
+                  rel={'noreferrer noopener'}>
+                  <FaGithub />
+                  <span>Github Repository</span>
+                </motion.a>
               </div>
-            </section>
-          );
-        })}
+            </div>
+          </motion.section>
+        ))}
       </section>
     </section>
   </Container>

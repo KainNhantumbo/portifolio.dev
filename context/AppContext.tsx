@@ -1,5 +1,4 @@
 import {
-  FC,
   createContext,
   useContext,
   ReactNode,
@@ -26,14 +25,14 @@ const context = createContext<IContext>({
   slidePageUp: () => {},
 });
 
-const AppContext: FC<IProps> = ({ children }) => {
+export default function AppContext({ children }: IProps): JSX.Element {
   const [themeSettings, setThemeSettings] = useState<ITheme>({
     darkMode: false,
   });
   const [currentTheme, setCurrentTheme] = useState<ThemeObj>(primary);
   const THEME_STORAGE_KEY: string = 'THEME_SETTINGS';
 
-  const themeSwitcher = (): void => {
+  function themeSwitcher(): void {
     if (!themeSettings.darkMode) {
       setCurrentTheme(dark);
       setThemeSettings({ darkMode: true });
@@ -49,15 +48,16 @@ const AppContext: FC<IProps> = ({ children }) => {
         JSON.stringify({ darkMode: false })
       );
     }
-  };
+  }
 
   // slides the page to the top
-  const slidePageUp = (): void =>
-    window.scrollTo({
+  function slidePageUp(): void {
+    return window.scrollTo({
       left: 0,
       top: 0,
       behavior: 'smooth',
     });
+  }
 
   useEffect(() => {
     const themeConfig: any = JSON.parse(
@@ -79,7 +79,6 @@ const AppContext: FC<IProps> = ({ children }) => {
       </context.Provider>
     </ThemeProvider>
   );
-};
+}
 
-export default AppContext;
 export const useAppContext = (): IContext => useContext(context);

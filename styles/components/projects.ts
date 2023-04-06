@@ -52,6 +52,14 @@ export const ProjectsContainer = styled.section`
 				position: relative;
 				width: 100%;
 				height: 210px;
+
+				img {
+					:hover {
+						width: 340px;
+						height: 250px;
+						transition: all 200ms ease;
+					}
+				}
 				H4 {
 					position: absolute;
 					bottom: 16px;

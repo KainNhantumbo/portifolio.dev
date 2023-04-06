@@ -5,7 +5,6 @@ import Projects from '../components/Projects';
 import ConfirmModal from '../components/Modal';
 import Introduction from '../components/Introduction';
 import { motion } from 'framer-motion';
-import { NextPage } from 'next';
 import { useState } from 'react';
 import { IFormData } from '../types/interfaces';
 import { BiMailSend } from 'react-icons/bi';
@@ -15,7 +14,7 @@ import { HomeContainer as Container } from '../styles/home';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
 import { backend_data, frontend_data, tools_data } from '../data/stack-data';
 
-const Home: NextPage = (): JSX.Element => {
+export default function Home(): JSX.Element {
   const [messageStatus, setMessageStatus] = useState<string>('');
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [formData, setFormData] = useState<IFormData>({
@@ -26,23 +25,23 @@ const Home: NextPage = (): JSX.Element => {
     from_email: '',
   });
 
-  const formDataPicker = (e: InputEvents) => {
+  function formDataPicker(e: InputEvents): void {
     setFormData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value,
     }));
-  };
+  }
 
   // notifies the e-mail sender about the message status
-  const notifyStatus = (message: string): void => {
+  function notifyStatus(message: string): void {
     setMessageStatus(message);
     clearTimeout(undefined);
     setTimeout(() => {
       setMessageStatus('');
     }, 5000);
-  };
+  }
 
-  const emailSender = async (e: SubmitEvent): Promise<void> => {
+  async function emailSender(e: SubmitEvent): Promise<void> {
     e.preventDefault();
     setMessageStatus('Sending your message, please wait...');
     try {
@@ -58,7 +57,7 @@ const Home: NextPage = (): JSX.Element => {
       console.error(err.text);
       notifyStatus('Oops! Looks like something went wrong. Please, try again.');
     }
-  };
+  }
 
   return (
     <Layout>
@@ -78,48 +77,72 @@ const Home: NextPage = (): JSX.Element => {
             <HiAcademicCap />
             <span>My Experience and Skills</span>
           </h2>
-          <section className='frontend'>
+          <section className='stack-container'>
             <h3 className='sub-title'>
               <HiBadgeCheck />
               <span>Frontend Development</span>
             </h3>
             <section className='list-items'>
               {frontend_data.map((item, index) => (
-                <div key={index} className='item'>
+                <motion.div
+                  key={index}
+                  initial={{ scale: 0 }}
+                  whileInView={{
+                    scale: 1,
+                    transition: { duration: 0.5, bounce: 1 },
+                  }}
+                  whileHover={{rotate: -15}}
+                  className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
                   <span>{item.level}</span>
-                </div>
+                </motion.div>
               ))}
             </section>
           </section>
-          <section className='backend'>
+          <section className='stack-container'>
             <h3 className='sub-title'>
               <HiBadgeCheck />
               <span>Backend Development</span>
             </h3>
             <section className='list-items'>
               {backend_data.map((item, index) => (
-                <div key={index} className='item'>
+                <motion.div
+                  key={index}
+                  initial={{ scale: 0 }}
+                  whileInView={{
+                    scale: 1,
+                    transition: { duration: 0.5, bounce: 1 },
+                  }}
+                  whileHover={{rotate: -15}}
+                  className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
                   <span>{item.level}</span>
-                </div>
+                </motion.div>
               ))}
             </section>
           </section>
-          <section className='other'>
+          <section className='stack-container'>
             <h3 className='sub-title'>
               <HiBadgeCheck />
               <span>Development Tools</span>
             </h3>
             <section className='list-items'>
               {tools_data.map((item, index) => (
-                <div key={index} className='item'>
+                <motion.div
+                  key={index}
+                  initial={{ scale: 0 }}
+                  whileInView={{
+                    scale: 1,
+                    transition: { duration: 0.5, bounce: 1 },
+                  }}
+                  whileHover={{rotate: -15}}
+                  className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
                   <span>{item.level}</span>
-                </div>
+                </motion.div>
               ))}
             </section>
           </section>
@@ -213,6 +236,4 @@ const Home: NextPage = (): JSX.Element => {
       </Container>
     </Layout>
   );
-};
-
-export default Home;
+}

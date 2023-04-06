@@ -16,7 +16,7 @@ import {
 } from 'react-icons/si';
 
 enum Levels {
-  ex = 'Experienced',
+  ex = 'Expert',
   inter = 'Intermediate',
   med = 'Medium',
   learn = 'Learning',

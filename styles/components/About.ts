@@ -45,6 +45,7 @@ export const AboutContainer = styled.section`
 			span {
 				font-size: .9rem;
 				text-transform: capitalize;
+				text-align: center;
 			}
 			:hover {
 				svg {

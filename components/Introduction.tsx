@@ -25,7 +25,7 @@ const Introduction = (): JSX.Element => (
         transition={{ delay: 0.5 }}
         className='placeholder'>
         <HiSparkles />
-        <span>Welcome to my portifolio :)</span>
+        <span>Welcome to my portfolio :)</span>
       </motion.h3>
       <h1>Hello, I am Kain Nhantumbo!</h1>
       <p>
@@ -39,7 +39,6 @@ const Introduction = (): JSX.Element => (
         whileHover={{ scale: 1.05 }}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 0.6 }}
         onClick={() => {
           window.scroll({
             top: 620,

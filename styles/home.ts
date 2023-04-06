@@ -55,9 +55,7 @@ export const HomeContainer = styled.main`
     padding-top: 20px;
     line-height: 1.6rem;
 
-    .frontend,
-    .backend,
-    .other {
+    .stack-container {
       margin-top: 20px;
     }
 
@@ -88,6 +86,10 @@ export const HomeContainer = styled.main`
         padding-right: 20px;
         background: rgb(${({ theme }) => theme.background_alter});
         border-radius: 10px;
+        border: 2px solid transparent;
+        :hover {
+          border: 2px solid rgb(${({ theme }) => theme.primary});
+        }
 
         span {
           font-size: 0.9rem;

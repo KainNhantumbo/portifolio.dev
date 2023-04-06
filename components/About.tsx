@@ -26,7 +26,7 @@ const About: FC = (): JSX.Element => (
       <motion.div className='card' whileHover={{ scale: 1.1 }}>
         <HiCode />
         <h4>Experience</h4>
-        <span>2+ year of coding</span>
+        <span>2+ years of programming</span>
       </motion.div>
 
       <motion.div className='card' whileHover={{ scale: 1.1 }}>
