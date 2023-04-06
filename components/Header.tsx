@@ -7,6 +7,7 @@ import { navbarData } from '../data/app-data';
 import { FC, useState, useEffect } from 'react';
 import { NextRouter, useRouter } from 'next/router';
 import { HeaderContainer as Container } from '../styles/components/header';
+import { HiX } from 'react-icons/hi';
 
 const Header: FC = (): JSX.Element => {
   const router: NextRouter = useRouter();
@@ -34,7 +35,7 @@ const Header: FC = (): JSX.Element => {
   return (
     <Container>
       <motion.div
-        className='core'
+        className='main-container'
         animate={{ translateY: deltaY == 100 ? -65 : 0 }}
         transition={{ duration: 0.5 }}>
         <motion.h2 className='brand' onClick={() => router.push('/')}>
@@ -54,7 +55,7 @@ const Header: FC = (): JSX.Element => {
           whileTap={{ scale: 0.5 }}
           className='menu-btn'
           onClick={toggleMenu}>
-          <FaBars />
+          {isMenu ? <HiX /> : <FaBars />}
         </motion.button>
         <nav className='navbar'>
           <motion.ul
@@ -63,6 +64,9 @@ const Header: FC = (): JSX.Element => {
             {navbarData.map((item, index) => (
               <Link key={index.toString()} href={item.ref}>
                 <motion.li
+                  className={
+                    router.asPath.includes(item.ref) ? 'active' : 'inative'
+                  }
                   whileTap={{ scale: 0.7 }}
                   whileHover={{ scale: 1.05, y: 1 }}>
                   <span>{item.label}</span>

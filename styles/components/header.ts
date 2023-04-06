@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  .core {
+  .main-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     min-height: 65px;
-    padding: 20px 20px;
+    padding: 20px;
     border-radius: 0 0 25px 25px;
     display: flex;
     justify-content: center;
@@ -23,8 +23,10 @@ export const HeaderContainer = styled.header`
     }
     @media screen and (max-width: 640px) {
       flex-direction: column;
+      padding: 10px;
     }
   }
+
   button {
     border: none;
     background: none;
@@ -32,9 +34,8 @@ export const HeaderContainer = styled.header`
     color: rgb(${({ theme }) => theme.secondary});
     width: fit-content;
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    justify-self: flex-end;
+    align-self: flex-end;
     display: none;
     padding: 5px;
 
@@ -72,8 +73,10 @@ export const HeaderContainer = styled.header`
     }
   }
 
-  .navbar {
+  nav {
+    width: 100%;
     ul {
+      width: 100%;
       display: flex;
       flex-flow: row nowrap;
       justify-content: flex-start;
@@ -83,8 +86,7 @@ export const HeaderContainer = styled.header`
 
       @media screen and (max-width: 640px) {
         flex-direction: column;
-        align-items: center;
-        margin-top: 40px;
+        padding:  0 50px;
         display: none;
       }
       @media screen and (min-width: 640px) {
@@ -102,6 +104,34 @@ export const HeaderContainer = styled.header`
         :hover {
           color: rgb(${({ theme }) => theme.primary});
           cursor: pointer;
+        }
+      }
+
+      .active {
+        @media screen and (max-width: 640px) {
+          border: 1px solid rgba(${({ theme }) => theme.font}, .1);
+          border-radius: 5px;
+        }
+        ::after {
+          content: '';
+          width: 20px;
+          height: 5px;
+          background: rgb(${({ theme }) => theme.font});
+          position: absolute;
+          bottom: -8px;
+          left: calc(50% - 10px);
+          border-radius: 5px;
+          @media screen and (max-width: 640px) {
+            width: 5px;
+            height: 20px;
+            bottom: calc(50% - 10px);
+            left: -3px;
+          }
+        }
+        :hover {
+          ::after {
+            background: rgb(${({ theme }) => theme.primary});
+          }
         }
       }
     }
