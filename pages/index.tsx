@@ -91,7 +91,7 @@ export default function Home(): JSX.Element {
                     scale: 1,
                     transition: { duration: 0.5, bounce: 1 },
                   }}
-                  whileHover={{rotate: -15}}
+                  whileHover={{ rotate: -15 }}
                   className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
@@ -114,7 +114,7 @@ export default function Home(): JSX.Element {
                     scale: 1,
                     transition: { duration: 0.5, bounce: 1 },
                   }}
-                  whileHover={{rotate: -15}}
+                  whileHover={{ rotate: -15 }}
                   className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
@@ -137,7 +137,7 @@ export default function Home(): JSX.Element {
                     scale: 1,
                     transition: { duration: 0.5, bounce: 1 },
                   }}
-                  whileHover={{rotate: -15}}
+                  whileHover={{ rotate: -15 }}
                   className='item'>
                   <item.icon />
                   <h3>{item.tech}</h3>
@@ -156,11 +156,19 @@ export default function Home(): JSX.Element {
             <span>Contact me</span>
           </h2>
           <section className='intro'>
-            <motion.h2 initial={{}} whileInView={{}}>Let's bring ideas to life with code!</motion.h2>
-            <p>
+            <motion.h2
+              initial={{ opacity: 0, x: -500 }}
+              transition={{ delay: 0.2 }}
+              whileInView={{ opacity: 1, x: 0 }}>
+              Let's bring ideas to life with code!
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, x: 500 }}
+              transition={{ delay: 0.4 }}
+              whileInView={{ opacity: 1, x: 0 }}>
               You can use the form below to send me an e-mail or use the
               following contact options:
-            </p>
+            </motion.p>
           </section>
           <section className='options'>
             <div className='option'>
@@ -173,7 +181,11 @@ export default function Home(): JSX.Element {
             </div>
           </section>
 
-          <section className='messageForm'>
+          <motion.section
+            className='messageForm'
+            initial={{ opacity: 0, scale: 2 }}
+            transition={{ delay: 0.4 }}
+            whileInView={{ opacity: 1, scale: 1 }}>
             <form onSubmit={emailSender}>
               <section className='form-control'>
                 <div className='form-item'>
@@ -231,7 +243,7 @@ export default function Home(): JSX.Element {
                 <span>Send message</span>
               </motion.button>
             </form>
-          </section>
+          </motion.section>
         </section>
       </Container>
     </Layout>

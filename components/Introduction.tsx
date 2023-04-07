@@ -3,7 +3,6 @@ import intro_background from '../assets/intro-background.jpg';
 import intro_background2 from '../assets/intro-background2.jpg';
 import { motion } from 'framer-motion';
 import { HiSparkles } from 'react-icons/hi';
-import { BiRightArrowCircle } from 'react-icons/bi';
 import { IntroductionContainer as Container } from '../styles/components/introduction';
 import { useAppContext } from '../context/AppContext';
 import { useTheme } from 'styled-components';
@@ -14,7 +13,10 @@ export default function Introduction(): JSX.Element {
 
   return (
     <Container id='home'>
-      <div className='intro-background'>
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1, transition: { delay: 0.2 } }}
+        className='intro-background'>
         <Image
           src={darkmode ? intro_background : intro_background2}
           style={{ borderRadius: 20 }}
@@ -24,7 +26,7 @@ export default function Introduction(): JSX.Element {
           placeholder={'blur'}
           alt={'Intro wallpaper'}
         />
-      </div>
+      </motion.div>
       <div className='intro-details'>
         <motion.h3
           initial={{ scale: 0 }}
