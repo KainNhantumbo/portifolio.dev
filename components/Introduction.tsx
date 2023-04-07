@@ -1,56 +1,52 @@
 import Image from 'next/image';
 import intro_background from '../assets/intro-background.jpg';
+import intro_background2 from '../assets/intro-background2.jpg';
 import { motion } from 'framer-motion';
 import { HiSparkles } from 'react-icons/hi';
 import { BiRightArrowCircle } from 'react-icons/bi';
 import { IntroductionContainer as Container } from '../styles/components/introduction';
+import { useAppContext } from '../context/AppContext';
+import { useTheme } from 'styled-components';
 
-const Introduction = (): JSX.Element => (
-  <Container id='home'>
-    <div className='intro-background'>
-      <Image
-        src={intro_background}
-        style={{ borderRadius: 20 }}
-        height={600}
-        layout={'fixed'}
-        objectFit={'cover'}
-        placeholder={'blur'}
-        alt={'Intro wallpaper'}
-      />
-    </div>
-    <div className='intro'>
-      <motion.h3
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 0.5 }}
-        className='placeholder'>
-        <HiSparkles />
-        <span>Welcome to my portfolio :)</span>
-      </motion.h3>
-      <h1>Hello, I am Kain Nhantumbo!</h1>
-      <p>
-        A enthusiastic software developer who loves building full-stack
-        applications and learning something new everyday. <br />
-        To build my projects, I use Typescript and Javascript as main
-        programming technologies.
-      </p>
-      <motion.button
-        whileTap={{ scale: 0.9 }}
-        whileHover={{ scale: 1.05 }}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        onClick={() => {
-          window.scroll({
-            top: 620,
-            left: 0,
-            behavior: 'smooth',
-          });
-        }}>
-        <BiRightArrowCircle />
-        <span>Explore more</span>
-      </motion.button>
-    </div>
-  </Container>
-);
+export default function Introduction(): JSX.Element {
+  const { darkmode } = useAppContext();
+  const theme = useTheme();
 
-export default Introduction;
+  return (
+    <Container id='home'>
+      <div className='intro-background'>
+        <Image
+          src={darkmode ? intro_background : intro_background2}
+          style={{ borderRadius: 20 }}
+          height={600}
+          layout={'fixed'}
+          objectFit={'cover'}
+          placeholder={'blur'}
+          alt={'Intro wallpaper'}
+        />
+      </div>
+      <div className='intro-details'>
+        <motion.h3
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.5 }}
+          className='placeholder'>
+          <HiSparkles />
+          <span>Welcome to my portfolio :)</span>
+        </motion.h3>
+
+        <h1>Hello, I am Kain Nhantumbo!</h1>
+        <p
+          style={{
+            color: darkmode ? theme.text : theme.font,
+            textShadow: !darkmode ? `1px 1px 3px rgb(${theme.font})` : 'none',
+          }}>
+          A enthusiastic software developer who loves building full-stack
+          applications and learning something new everyday. <br />
+          To build my projects, I use Typescript and Javascript as main
+          programming technologies.
+        </p>
+      </div>
+    </Container>
+  );
+}

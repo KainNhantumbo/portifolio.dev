@@ -57,6 +57,12 @@ export const HomeContainer = styled.main`
 
     .stack-container {
       margin-top: 20px;
+      padding: 18px;
+      border-radius: 10px;
+      :hover {
+        box-shadow: 0 0 20px rgba(${({ theme }) => theme.font}, .1);
+        transition: 200ms ease;
+      }
     }
 
     .list-items {

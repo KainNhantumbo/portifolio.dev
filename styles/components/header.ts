@@ -74,7 +74,9 @@ export const HeaderContainer = styled.header`
   }
 
   nav {
-    width: 100%;
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
     ul {
       width: 100%;
       display: flex;
@@ -86,7 +88,7 @@ export const HeaderContainer = styled.header`
 
       @media screen and (max-width: 640px) {
         flex-direction: column;
-        padding:  0 50px;
+        padding: 0 50px;
         display: none;
       }
       @media screen and (min-width: 640px) {
@@ -109,14 +111,14 @@ export const HeaderContainer = styled.header`
 
       .active {
         @media screen and (max-width: 640px) {
-          border: 1px solid rgba(${({ theme }) => theme.font}, .1);
+          border: 1px solid rgba(${({ theme }) => theme.font}, 0.1);
           border-radius: 5px;
         }
         ::after {
           content: '';
           width: 20px;
           height: 5px;
-          background: rgb(${({ theme }) => theme.font});
+          background: rgb(${({ theme }) => theme.secondary});
           position: absolute;
           bottom: -8px;
           left: calc(50% - 10px);

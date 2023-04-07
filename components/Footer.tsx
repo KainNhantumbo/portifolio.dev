@@ -1,6 +1,6 @@
 import { Component, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { linksData } from '../data/app-data';
+import { socialMedia } from '../data/app-data';
 import { RiHeart3Fill } from 'react-icons/ri';
 import { FooterContainer as Container } from '../styles/components/footer';
 
@@ -12,21 +12,16 @@ export default class Footer extends Component {
           <strong>Find me on the web by:</strong>
         </h3>
         <ul>
-          {linksData.map((link, index) => {
-            return (
-              <motion.li
-                key={index}
-                whileHover={{ scale: 1.2 }}
-                title={link.name}>
-                <a
-                  href={link.link}
-                  target={'_blank'}
-                  rel={'noreferrer noopener'}>
-                  <link.icon />
-                </a>
-              </motion.li>
-            );
-          })}
+          {socialMedia.map((item, index) => (
+            <motion.li
+              key={index}
+              whileHover={{ scale: 1.2 }}
+              title={item.name}>
+              <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
+                <item.icon />
+              </a>
+            </motion.li>
+          ))}
         </ul>
         <div>
           <span>
@@ -38,7 +33,7 @@ export default class Footer extends Component {
             <span>using Next.js and Typescript.</span>
           </p>
           <p>
-            <span>Version 2.0 | Comp. 04-2023</span>
+            <span>Version 2.0.3 | Comp. 04-2023</span>
           </p>
         </div>
       </Container>

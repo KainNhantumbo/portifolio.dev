@@ -1,96 +1,71 @@
 import styled from 'styled-components';
 
 export const IntroductionContainer = styled.section`
-	width: 100%;
-	max-width: 1368px;
-	margin: 0 auto;
-	line-height: 1.8rem;
-	font-size: 1.2rem;
-	height: 600px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	position: relative;
-	color: rgb(${({ theme }) => theme.text});
+  width: 100%;
+  max-width: 1368px;
+  margin: 0 auto;
+  line-height: 1.8rem;
+  font-size: 1.2rem;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  color: rgb(${({ theme }) => theme.text});
 
-	.intro-background {
-		position: absolute;
-		top: 10px;
-		left: 0;
-		border-radius: 20px;
-		height: 600px;
-	}
+  .intro-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    height: 600px;
+  }
 
-	.intro {
-		z-index: 200;
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		justify-content: flex-start;
-		padding: 20px;
+  .intro-details {
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    padding: 40px 20px;
+    background-color: rgba(${({ theme }) => theme.shadows}, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 0 0 20px 20px;
 
-		.placeholder {
-			width: fit-content;
-			background: linear-gradient(
-				130deg,
-				rgb(${({ theme }) => theme.secondary}) 10%,
-				rgb(${({ theme }) => theme.primary}) 130%,
-				rgb(${({ theme }) => theme.alter}) 5%
-			);
-			color: rgb(${({ theme }) => theme.text});
-			padding: 0 12px;
-			text-transform: capitalize;
-			border-radius: 15px;
-			font-size: 0.9rem;
-			position: relative;
+    .placeholder {
+      width: fit-content;
+      background: linear-gradient(
+        130deg,
+        rgb(${({ theme }) => theme.secondary}) 10%,
+        rgb(${({ theme }) => theme.primary}) 130%,
+        rgb(${({ theme }) => theme.alter}) 5%
+      );
+      color: rgb(${({ theme }) => theme.text});
+      padding: 0 12px;
+      text-transform: capitalize;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      position: relative;
 
-			svg {
-				position: absolute;
-				width: 20px;
-				height: 20px;
-				top: calc(50% - 10px);
-				left: 8px;
-				color: rgb(${({ theme }) => theme.text});
-			}
-			span {
-				padding-left: 20px;
-			}
-		}
-		h1 {
-			font-size: 1.8rem;
-			font-weight: 500;
-		}
+      svg {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: calc(50% - 10px);
+        left: 8px;
+        color: rgb(${({ theme }) => theme.text});
+      }
+      span {
+        padding-left: 20px;
+      }
+    }
 
-		button {
-			width: fit-content;
-			border: none;
-			margin-top: 20px;
-			background: none;
-			border-radius: 25px;
-			padding: 5px 15px;
-			color: rgb(${({ theme }) => theme.text});
-			position: relative;
-      font-size: 1rem;
-			cursor: pointer;
-			border: 2px solid rgb(${({ theme }) => theme.text});
-			:hover {
-        border-color:  rgb(${({ theme }) => theme.primary});
-				color: rgb(${({ theme }) => theme.primary});
-				svg {
-					color: rgb(${({ theme }) => theme.primary});
-				}
-			}
-			svg {
-				position: absolute;
-				width: 20px;
-				height: 20px;
-				top: calc(50% - 10px);
-				right: 5px;
-				color: rgb(${({ theme }) => theme.text});
-			}
-			span {
-				padding-right: 20px;
-			}
-		}
-	}
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      font-family: 'Grand Hotel';
+      color: rgb(${({ theme }) => theme.font});
+      text-shadow: 1px 1px 2px rgb(${({ theme }) => theme.hover});
+    }
+  }
 `;

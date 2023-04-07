@@ -12,6 +12,7 @@ import { ThemeObj } from '../types/ThemeTypes';
 interface IContext {
   themeSwitcher: () => void;
   slidePageUp: () => void;
+  darkmode: boolean;
 }
 interface IProps {
   children: ReactNode;
@@ -23,6 +24,7 @@ interface ITheme {
 const context = createContext<IContext>({
   themeSwitcher: () => {},
   slidePageUp: () => {},
+  darkmode: false,
 });
 
 export default function AppContext({ children }: IProps): JSX.Element {
@@ -74,6 +76,7 @@ export default function AppContext({ children }: IProps): JSX.Element {
         value={{
           themeSwitcher,
           slidePageUp,
+          darkmode: themeSettings.darkMode,
         }}>
         {children}
       </context.Provider>
