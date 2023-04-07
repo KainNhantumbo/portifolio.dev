@@ -11,7 +11,10 @@ const Projects = (): JSX.Element => (
       <HiViewGrid />
       <span>My Projects and Works</span>
     </h2>
-    <p>
+    <motion.p
+      initial={{ opacity: 0, x: -500 }}
+      transition={{ duration: 0.4, delay: 0.2 }}
+      whileInView={{ opacity: 1, x: 0 }}>
       <strong>
         (...) and because I understand that showing is sometimes better than
         saying, here are some of my personal projects that I have been working
@@ -24,7 +27,7 @@ const Projects = (): JSX.Element => (
         </a>
         .
       </strong>
-    </p>
+    </motion.p>
     <section className='cards-container'>
       <section className='cards-wrapper'>
         {projects.map((project, index) => (

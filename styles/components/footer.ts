@@ -33,6 +33,7 @@ export const FooterContainer = styled.footer`
       padding: 10px;
       width: 40px;
       height: 40px;
+      cursor: pointer;
 
       :hover {
         color: rgb(${({ theme }) => theme.secondary});

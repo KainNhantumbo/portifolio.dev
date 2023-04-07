@@ -15,7 +15,12 @@ export default class Footer extends Component {
           {socialMedia.map((item, index) => (
             <motion.li
               key={index}
+              initial={{ scale: 0 }}
               whileHover={{ scale: 1.2 }}
+              transition={{
+                delay: index / 4,
+              }}
+              whileInView={{ scale: 1 }}
               title={item.name}>
               <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
                 <item.icon />
@@ -33,7 +38,7 @@ export default class Footer extends Component {
             <span>using Next.js and Typescript.</span>
           </p>
           <p>
-            <span>Version 2.0.4 | Comp. 04-2023</span>
+            <span>Version 2.0.6 | Comp. 04-2023</span>
           </p>
         </div>
       </Container>
