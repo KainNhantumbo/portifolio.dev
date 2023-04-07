@@ -33,7 +33,7 @@ export default class Footer extends Component {
             <span>using Next.js and Typescript.</span>
           </p>
           <p>
-            <span>Version 2.0.3 | Comp. 04-2023</span>
+            <span>Version 2.0.4 | Comp. 04-2023</span>
           </p>
         </div>
       </Container>
