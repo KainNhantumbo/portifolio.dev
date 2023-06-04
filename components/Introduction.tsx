@@ -9,7 +9,7 @@ import { useTheme } from 'styled-components';
 
 export default function Introduction(): JSX.Element {
   const { darkmode } = useAppContext();
-  const theme = useTheme();
+  const { text, font } = useTheme();
 
   return (
     <Container id='home'>
@@ -40,8 +40,8 @@ export default function Introduction(): JSX.Element {
         <h1>Hello, I am Kain Nhantumbo!</h1>
         <p
           style={{
-            color: darkmode ? theme.text : theme.font,
-            textShadow: !darkmode ? `1px 1px 3px rgb(${theme.font})` : 'none',
+            color: darkmode ? text : font,
+            textShadow: !darkmode ? `1px 1px 3px rgb(${font})` : 'none',
           }}>
           A enthusiastic software developer who loves building full-stack
           applications and learning something new everyday. <br />

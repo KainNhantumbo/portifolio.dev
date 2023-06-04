@@ -21,6 +21,7 @@ const Layout: FC<ILayoutProps> = ({ children }): JSX.Element => {
               whileTap={{ scale: 0.7 }}
               transition={{ type: 'spring', duration: 0.5 }}
               title='Change Theme'
+              aria-label='Toogle theme'
               onClick={themeSwitcher}>
               {darkmode ? <BiSun /> : <BiMoon />}
             </motion.button>
