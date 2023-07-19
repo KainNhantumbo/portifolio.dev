@@ -3,6 +3,10 @@
   "version": "2.1.0",
   "latest_compile": "07-2023",
   "private": true,
+  "engines": {
+    "node": ">=18.12.0",
+    "npm": ">=9.2.0"
+  },
   "author": {
     "name": "Kain Nhantumbo",
     "email": "nhantumbok@gmail.com",
@@ -19,9 +23,12 @@
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "framer-motion": "^6.3.16",
+    "i18next": "^23.2.11",
+    "i18next-browser-languagedetector": "^7.1.0",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-i18next": "^13.0.2",
     "react-icons": "^4.4.0",
     "styled-components": "^5.3.5"
   },
