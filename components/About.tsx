@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { SiAboutdotme } from 'react-icons/si';
 import { HiCode, HiViewGrid } from 'react-icons/hi';
-import { AboutContainer as Container } from '../styles/components/About';
+import { AboutContainer as Container } from '../styles/components/about';
 
 const About: FC = (): JSX.Element => (
   <Container id='about'>

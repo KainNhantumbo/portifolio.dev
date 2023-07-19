@@ -1,6 +1,6 @@
-import type { ThemeObj } from '../@types/ThemeTypes';
+import type { ITheme } from '../@types';
 
-export const primary: ThemeObj = {
+export const lightTheme: ITheme = {
   primary: '108, 161, 246',
   secondary: '77, 124, 95',
   alter: '205, 93, 125',
@@ -15,7 +15,7 @@ export const primary: ThemeObj = {
   backgroundAlt: '255, 255, 255',
 };
 
-export const dark: ThemeObj = {
+export const darkTheme: ITheme = {
   primary: '108, 161, 246',
   secondary: '77, 124, 95',
   alter: '205, 93, 125',

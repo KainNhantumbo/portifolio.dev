@@ -1,16 +1,12 @@
 import '../styles/globals.css';
+import type { FC } from 'react';
 import type { AppProps } from 'next/app';
 import AppContext from '../context/AppContext';
-import { AppContainer as Container } from '../styles/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
-	return (
-		<AppContext>
-			<Container>
-				<Component {...pageProps} />
-			</Container>
-		</AppContext>
-	);
-}
+const MyApp: FC<AppProps> = ({ Component, pageProps }): JSX.Element => (
+  <AppContext>
+    <Component {...pageProps} />
+  </AppContext>
+);
 
 export default MyApp;

@@ -1,5 +1,3 @@
-import { FaReact } from 'react-icons/fa';
-import { IStackSkill } from '../@types/interfaces';
 import {
   SiCss3,
   SiExpress,
@@ -14,6 +12,8 @@ import {
   SiReact,
   SiTypescript,
 } from 'react-icons/si';
+import { FaReact } from 'react-icons/fa';
+import { TStackSkill } from '../@types';
 
 enum Levels {
   ex = 'Expert',
@@ -22,8 +22,8 @@ enum Levels {
   learn = 'Learning',
 }
 
-export const frontend_data: IStackSkill[] = [
-  { tech: 'Typescript', icon: SiTypescript, level: Levels.inter },
+export const frontend_data: TStackSkill[] = [
+  { tech: 'Typescript', icon: SiTypescript, level: Levels.ex },
   { tech: 'Javascript', icon: SiJavascript, level: Levels.ex },
   { tech: 'React', icon: FaReact, level: Levels.ex },
   { tech: 'Next.JS', icon: SiReact, level: Levels.ex },
@@ -31,17 +31,17 @@ export const frontend_data: IStackSkill[] = [
   { tech: 'HTML5', icon: SiHtml5, level: Levels.ex },
 ];
 
-export const backend_data: IStackSkill[] = [
-  { tech: 'Typescript', icon: SiTypescript, level: Levels.inter },
+export const backend_data: TStackSkill[] = [
+  { tech: 'Typescript', icon: SiTypescript, level: Levels.ex },
   { tech: 'Javascript', icon: SiJavascript, level: Levels.ex },
   { tech: 'Node.JS', icon: SiNodedotjs, level: Levels.inter },
-  { tech: 'Express.JS', icon: SiExpress, level: Levels.inter },
+  { tech: 'Express.JS', icon: SiExpress, level: Levels.ex },
   { tech: 'Mongo DB', icon: SiMongodb, level: Levels.inter },
   { tech: 'PostgreSQL', icon: SiPostgresql, level: Levels.inter },
 ];
 
-export const tools_data: IStackSkill[] = [
+export const tools_data: TStackSkill[] = [
   { tech: 'Git', icon: SiGit, level: Levels.inter },
   { tech: 'Markdown', icon: SiMarkdown, level: Levels.ex },
-  { tech: 'Github', icon: SiGithub, level: Levels.inter },
+  { tech: 'Github', icon: SiGithub, level: Levels.ex },
 ];

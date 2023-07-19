@@ -1,15 +1,16 @@
+import { FC } from 'react';
 import Image from 'next/image';
-import intro_background from '../assets/intro-background.jpg';
-import intro_background2 from '../assets/intro-background2.jpg';
 import { motion } from 'framer-motion';
 import { HiSparkles } from 'react-icons/hi';
-import { IntroductionContainer as Container } from '../styles/components/introduction';
 import { useAppContext } from '../context/AppContext';
-import { useTheme } from 'styled-components';
+import { DefaultTheme, useTheme } from 'styled-components';
+import intro_background from '../assets/intro-background.jpg';
+import intro_background2 from '../assets/intro-background2.jpg';
+import { IntroductionContainer as Container } from '../styles/components/introduction';
 
-export default function Introduction(): JSX.Element {
+const Introduction: FC = (): JSX.Element => {
   const { darkmode } = useAppContext();
-  const { text, font } = useTheme();
+  const { text, font }: DefaultTheme = useTheme();
 
   return (
     <Container id='home'>
@@ -51,4 +52,6 @@ export default function Introduction(): JSX.Element {
       </div>
     </Container>
   );
-}
+};
+
+export default Introduction;

@@ -1,23 +1,23 @@
+import { useState } from 'react';
+import type { NextPage } from 'next';
+import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 import About from '../components/About';
 import Layout from '../components/Layout';
-import emailjs from '@emailjs/browser';
+import { BiMailSend } from 'react-icons/bi';
 import Projects from '../components/Projects';
 import ConfirmModal from '../components/Modal';
 import Introduction from '../components/Introduction';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { IFormData } from '../@types/interfaces';
-import { BiMailSend } from 'react-icons/bi';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-import { InputEvents, SubmitEvent } from '../@types/form';
 import { HomeContainer as Container } from '../styles/home';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
+import type { TInputEvents, TSubmitEvent, TFormData } from '../@types';
 import { backend_data, frontend_data, tools_data } from '../data/stack-data';
 
-export default function Home(): JSX.Element {
+const Home: NextPage = (): JSX.Element => {
   const [messageStatus, setMessageStatus] = useState<string>('');
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
-  const [formData, setFormData] = useState<IFormData>({
+  const [formData, setFormData] = useState<TFormData>({
     name: '',
     email: 'nhantumbok@gmail.com',
     subject: '',
@@ -25,23 +25,23 @@ export default function Home(): JSX.Element {
     from_email: '',
   });
 
-  function formDataPicker(e: InputEvents): void {
+  const formDataPicker = (e: TInputEvents): void => {
     setFormData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value,
     }));
-  }
+  };
 
   // notifies the e-mail sender about the message status
-  function notifyStatus(message: string): void {
+  const notifyStatus = (message: string): void => {
     setMessageStatus(message);
     clearTimeout(undefined);
     setTimeout(() => {
       setMessageStatus('');
     }, 5000);
-  }
+  };
 
-  async function emailSender(e: SubmitEvent): Promise<void> {
+  const emailSender = async (e: TSubmitEvent): Promise<void> => {
     e.preventDefault();
     setMessageStatus('Sending your message, please wait...');
     try {
@@ -53,11 +53,11 @@ export default function Home(): JSX.Element {
       );
       notifyStatus('Message sent successfuly!');
       (e as any).target.reset();
-    } catch (err: any) {
-      console.error(err.text);
+    } catch (err: unknown) {
+      console.error((err as any).text);
       notifyStatus('Oops! Looks like something went wrong. Please, try again.');
     }
-  }
+  };
 
   return (
     <Layout>
@@ -248,4 +248,6 @@ export default function Home(): JSX.Element {
       </Container>
     </Layout>
   );
-}
+};
+
+export default Home;

@@ -3,11 +3,15 @@ import { IconType } from 'react-icons';
 import { StaticImageData } from 'next/image';
 import { ChangeEvent, FormEvent } from 'react';
 
-export type InputEvents =
+declare module 'styled-components' {
+  export interface DefaultTheme extends ITheme {}
+}
+
+export type TInputEvents =
   | ChangeEvent<HTMLInputElement>
   | ChangeEvent<HTMLTextAreaElement>;
 
-export type SubmitEvent = FormEvent<HTMLFormElement>;
+export type TSubmitEvent = FormEvent<HTMLFormElement>;
 
 export type TFormData = {
   name: string;

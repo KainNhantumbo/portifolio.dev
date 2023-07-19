@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { IModalProps } from '../@types/interfaces';
+import { TModalProps} from '../@types';
 import { FaTimesCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ConfirmModalContainer as Container } from '../styles/components/confirm-modal';
 
-const ConfirmModal: FC<IModalProps> = (props): JSX.Element => (
+const ConfirmModal: FC<TModalProps> = (props): JSX.Element => (
   <AnimatePresence>
     {props.active && (
       <Container onClick={(e) => props.closeModal(false)}>

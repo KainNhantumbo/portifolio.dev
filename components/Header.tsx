@@ -1,49 +1,41 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import author from '../assets/author.jpg';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars } from 'react-icons/fa';
-import { urls } from '../data/app-data';
-import { FC, useState, useEffect } from 'react';
-import { NextRouter, useRouter } from 'next/router';
-import { HeaderContainer as Container } from '../styles/components/header';
+import Image from 'next/image';
 import { HiX } from 'react-icons/hi';
+import { FaBars } from 'react-icons/fa';
+import author from '../assets/author.jpg';
+import { FC, useState, useEffect } from 'react';
+import { headerAnchors } from '../data/app-data';
+import { NextRouter, useRouter } from 'next/router';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HeaderContainer as Container } from '../styles/components/header';
 
 const Header: FC = (): JSX.Element => {
+  const minWidth: number = 640;
   const router: NextRouter = useRouter();
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const [deltaY, setDeltaY] = useState<number>(-100);
-  const minWidth: number = 640;
 
-  function toggleMenu(): void {
-    setIsMenu(!isMenu);
-  }
+  const toggleMenu = (): void => setIsMenu(!isMenu);
 
-  function changeWidth(): void {
+  const changeWidth = (): void =>
     window.innerWidth > minWidth ? setIsMenu(true) : setIsMenu(false);
-  }
 
-  // controls the wheel events
-  function hideMenu(e: WheelEvent): void {
-    setDeltaY(e.deltaY);
-  }
+  // controls the header visibility by the wheel events
+  const hideMenu = (e: WheelEvent): void => setDeltaY(e.deltaY);
 
-  useEffect(() => {
+  useEffect((): () => void => {
     changeWidth();
     window.addEventListener('resize', changeWidth);
     window.addEventListener('wheel', hideMenu);
-    return () => {
-      window.removeEventListener('resize', changeWidth);
-      window.removeEventListener('wheel', hideMenu);
-    };
-  }, []);
-
-  useEffect(() => {
-    for (let item of urls) {
+    for (let item of headerAnchors) {
       if (router.asPath !== '/' && router.asPath.includes(item.ref)) {
         location.assign(router.asPath);
       }
     }
+    return (): void => {
+      window.removeEventListener('resize', changeWidth);
+      window.removeEventListener('wheel', hideMenu);
+    };
   }, []);
 
   return (
@@ -74,7 +66,7 @@ const Header: FC = (): JSX.Element => {
               animate={{ translateY: isMenu ? 0 : -50 }}
               exit={{ translateX: 150 }}
               style={{ display: isMenu ? 'flex' : 'none' }}>
-              {urls.map((item, index) => (
+              {headerAnchors.map((item, index) => (
                 <Link key={index.toString()} href={item.ref}>
                   <motion.li
                     className={

@@ -1,4 +1,4 @@
-import { IProject } from '../@types/interfaces';
+import { TProject } from '../@types';
 import anime_blog from '../assets/anime-blog.jpeg';
 import ecommerce_page from '../assets/ecommerce-page.jpeg';
 import nava_notes from '../assets/nava-notes.jpg';
@@ -20,7 +20,7 @@ enum Categories {
   train = 'Training',
 }
 
-export const projects: IProject[] = [
+export const projects: TProject[] = [
   {
     name: 'Bug Tracker App built with React.JS and Typescript',
     category: Categories.full,

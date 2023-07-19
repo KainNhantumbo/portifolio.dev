@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
@@ -5,7 +6,7 @@ import { projects } from '../data/projects-data';
 import { HiPlay, HiViewGrid } from 'react-icons/hi';
 import { ProjectsContainer as Container } from '../styles/components/projects';
 
-const Projects = (): JSX.Element => (
+const Projects: FC = (): JSX.Element => (
   <Container id='projects'>
     <h2>
       <HiViewGrid />

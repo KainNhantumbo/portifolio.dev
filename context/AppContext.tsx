@@ -4,19 +4,23 @@ import {
   ReactNode,
   useState,
   useEffect,
+  FC,
 } from 'react';
-import { GlobalStyles } from '../styles/GlobalStyles';
+import { ITheme as ThemeType } from '../@types';
+import { GlobalStyles } from '../styles/global-styles';
 import { ThemeProvider } from 'styled-components';
-import { dark, primary } from '../themes/themes';
-import { ThemeObj } from '../@types/ThemeTypes';
+import { darkTheme, lightTheme } from '../styles/themes';
+
 interface IContext {
   themeSwitcher: () => void;
   slidePageUp: () => void;
   darkmode: boolean;
 }
+
 interface IProps {
   children: ReactNode;
 }
+
 interface ITheme {
   darkMode: boolean;
 }
@@ -27,46 +31,48 @@ const context = createContext<IContext>({
   darkmode: false,
 });
 
-export default function AppContext({ children }: IProps): JSX.Element {
+const AppContext: FC<IProps> = ({ children }): JSX.Element => {
+  const THEME_STORAGE_KEY: string = 'THEME_SETTINGS';
+  const [currentTheme, setCurrentTheme] = useState<ThemeType>(lightTheme);
   const [themeSettings, setThemeSettings] = useState<ITheme>({
     darkMode: false,
   });
-  const [currentTheme, setCurrentTheme] = useState<ThemeObj>(primary);
-  const THEME_STORAGE_KEY: string = 'THEME_SETTINGS';
 
-  function themeSwitcher(): void {
+  const themeSwitcher = (): void => {
     if (!themeSettings.darkMode) {
-      setCurrentTheme(dark);
+      setCurrentTheme(darkTheme);
       setThemeSettings({ darkMode: true });
       localStorage.setItem(
         THEME_STORAGE_KEY,
         JSON.stringify({ darkMode: true })
       );
     } else {
-      setCurrentTheme(primary);
+      setCurrentTheme(lightTheme);
       setThemeSettings({ darkMode: false });
       localStorage.setItem(
         THEME_STORAGE_KEY,
         JSON.stringify({ darkMode: false })
       );
     }
-  }
+  };
 
   // slides the page to the top
-  function slidePageUp(): void {
+  const slidePageUp = (): void => {
     return window.scrollTo({
       left: 0,
       top: 0,
       behavior: 'smooth',
     });
-  }
+  };
 
-  useEffect(() => {
+  useEffect((): void => {
     const themeConfig: any = JSON.parse(
       localStorage.getItem(THEME_STORAGE_KEY) || `{"darkMode": true}`
     );
     setThemeSettings(themeConfig);
-    themeConfig.darkMode ? setCurrentTheme(dark) : setCurrentTheme(primary);
+    themeConfig.darkMode
+      ? setCurrentTheme(darkTheme)
+      : setCurrentTheme(lightTheme);
   }, []);
 
   return (
@@ -82,6 +88,8 @@ export default function AppContext({ children }: IProps): JSX.Element {
       </context.Provider>
     </ThemeProvider>
   );
-}
+};
+
+export default AppContext;
 
 export const useAppContext = (): IContext => useContext(context);

@@ -1,8 +1,8 @@
-import { FooterLinks, NavbarLinks } from '../@types/interfaces';
+import { TFooterLinks, TNavbarLinks } from '../@types';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';
 
-export const socialMedia: FooterLinks[] = [
+export const social_media: TFooterLinks[] = [
   {
     name: 'Find me on Github',
     icon: FaGithub,
@@ -26,7 +26,7 @@ export const socialMedia: FooterLinks[] = [
 ];
 
 // stores navigation bar ref urls and name
-export const urls: NavbarLinks[] = [
+export const headerAnchors: TNavbarLinks[] = [
   { label: 'Home', ref: '#home' },
   { label: 'About', ref: '#about' },
   { label: 'Skills', ref: '#skills' },
