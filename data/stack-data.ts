@@ -1,5 +1,5 @@
 import { FaReact } from 'react-icons/fa';
-import { IStackSkill } from '../types/interfaces';
+import { IStackSkill } from '../@types/interfaces';
 import {
   SiCss3,
   SiExpress,

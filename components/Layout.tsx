@@ -3,12 +3,12 @@ import Header from './Header';
 import Footer from './Footer';
 import { FC } from 'react';
 import { motion } from 'framer-motion';
-import { ILayoutProps } from '../types/interfaces';
+import { TLayoutProps } from '../@types';
 import { useAppContext } from '../context/AppContext';
 import { BiMoon, BiSun, BiUpArrowAlt } from 'react-icons/bi';
 import { AppContainer as Container } from '../styles/app';
 
-const Layout: FC<ILayoutProps> = ({ children }): JSX.Element => {
+const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
   const { themeSwitcher, slidePageUp, darkmode } = useAppContext();
   return (
     <>

@@ -1,4 +1,4 @@
-import { IProject } from '../types/interfaces';
+import { IProject } from '../@types/interfaces';
 import anime_blog from '../assets/anime-blog.jpeg';
 import ecommerce_page from '../assets/ecommerce-page.jpeg';
 import nava_notes from '../assets/nava-notes.jpg';

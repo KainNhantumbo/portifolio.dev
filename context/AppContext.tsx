@@ -8,7 +8,7 @@ import {
 import { GlobalStyles } from '../styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { dark, primary } from '../themes/themes';
-import { ThemeObj } from '../types/ThemeTypes';
+import { ThemeObj } from '../@types/ThemeTypes';
 interface IContext {
   themeSwitcher: () => void;
   slidePageUp: () => void;

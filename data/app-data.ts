@@ -1,4 +1,4 @@
-import { FooterLinks, NavbarLinks } from '../types/interfaces';
+import { FooterLinks, NavbarLinks } from '../@types/interfaces';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';
 

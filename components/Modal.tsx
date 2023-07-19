@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IModalProps } from '../types/interfaces';
+import { IModalProps } from '../@types/interfaces';
 import { FaTimesCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ConfirmModalContainer as Container } from '../styles/components/confirm-modal';
