@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { RiHeart3Fill } from 'react-icons/ri';
 import { social_media } from '../data/app-data';
 import { FooterContainer as Container } from '../styles/components/footer';
+import Package from '../package.json';
 
 const Footer: FC = (): JSX.Element => (
   <Container>
@@ -34,7 +35,7 @@ const Footer: FC = (): JSX.Element => (
         <span>using Next.js and Typescript.</span>
       </p>
       <p>
-        <span>Version 2.0.6 | Comp. 04-2023</span>
+        <span>Version {Package.version} | Comp. {Package.latest_compile}</span>
       </p>
     </div>
   </Container>

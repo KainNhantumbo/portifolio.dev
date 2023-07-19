@@ -1,6 +1,7 @@
 {
-  "name": "portfolio",
-  "version": "2.0.6",
+  "name": "my_portfolio",
+  "version": "2.1.0",
+  "latest_compile": "07-2023",
   "private": true,
   "author": {
     "name": "Kain Nhantumbo",
