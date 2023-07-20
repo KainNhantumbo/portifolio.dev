@@ -7,9 +7,21 @@ import { TLayoutProps } from '../@types';
 import { useAppContext } from '../context/AppContext';
 import { BiMoon, BiSun, BiUpArrowAlt } from 'react-icons/bi';
 import { FluentButtonsContainer as Container } from '../styles/components/fluent-buttons';
+import { useTranslation } from 'react-i18next';
 
 const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
   const { themeSwitcher, slidePageUp, darkmode } = useAppContext();
+  const { i18n } = useTranslation();
+
+  const translate = (language: string): void => {
+    i18n.changeLanguage(language);
+  };
+
+  const serialize_languages = [
+    { label: 'English', value: 'en' },
+    { label: 'Português', value: 'pt' },
+  ];
+
   return (
     <>
       <Head>
@@ -21,6 +33,14 @@ const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
       <Header />
       <Container>
         <div>
+          <motion.button
+            whileTap={{ scale: 0.7 }}
+            transition={{ type: 'spring', duration: 0.5 }}
+            title='Change Theme'
+            aria-label='Toogle theme'
+            onClick={themeSwitcher}>
+            {darkmode ? <BiSun /> : <BiMoon />}
+          </motion.button>
           <motion.button
             whileTap={{ scale: 0.7 }}
             transition={{ type: 'spring', duration: 0.5 }}
