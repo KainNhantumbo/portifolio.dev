@@ -49,7 +49,11 @@
       "recipes-website": "Site de Receitas construido com Typescript, Next.JS e Node.JS + Express.JS + Mongo DB",
       "hagira-store": "Aplicação E-commerce da Hagira construido com React.JS e Javascript",
       "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
-
+    },
+    "modal": {
+      "title": "Mensagem enviada",
+      "message": "Mal posso esperar para começar a trabalhar com você, obrigado!",
+      "button-text": "Fechar"
     }
   }
 }

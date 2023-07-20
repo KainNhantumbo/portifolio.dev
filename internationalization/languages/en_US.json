@@ -58,8 +58,8 @@
     }
   },
   "modal": {
-    "title": "'Message Sent",
-    "message": "I just can't  wait to we start working together, thank you!",
+    "title": "Message Sent",
+    "message": "I just can't wait to we start working together, thank you!",
     "button-text": "Close"
   },
   "abilities": {
