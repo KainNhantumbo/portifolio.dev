@@ -14,7 +14,7 @@ import {
 } from 'react-icons/si';
 import { FaReact } from 'react-icons/fa';
 import type { TStackSkill } from '../@types';
-import { rawTranslation } from '../internationalization/init';
+import { rawTranslation } from '../locales/init';
 
 const levels = {
   ex: rawTranslation('abilities.levels.expert'),

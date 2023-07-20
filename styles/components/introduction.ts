@@ -62,10 +62,15 @@ export const IntroductionContainer = styled.section`
 
     h1 {
       font-size: 2.8rem;
+      line-height: 3.2rem;
       font-weight: 500;
-      font-family: 'Grand Hotel';
       color: rgb(${({ theme }) => theme.font});
       text-shadow: 1px 1px 2px rgb(${({ theme }) => theme.hover});
+
+      @media screen and (max-width: 640px) {
+        font-size: 1.8rem;
+      line-height: 2.2rem;
+      }
     }
   }
 `;

@@ -62,6 +62,15 @@
     "message": "I just can't wait to we start working together, thank you!",
     "button-text": "Close"
   },
+  "language-switcher-modal": {
+    "title": "Language Switcher",
+    "message": "Switch between languages easily.",
+    "button-text": "Close",
+    "buttons": {
+      "portuguese": "Switch to portuguese",
+      "english": "Switch to english"
+    }
+  },
   "abilities": {
     "title": "My Experience and Skills",
     "frontend-title": "Frontend Development",

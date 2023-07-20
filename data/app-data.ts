@@ -1,7 +1,7 @@
 import { TFooterLinks, TNavbarLinks } from '../@types';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';
-import { rawTranslation } from '../internationalization/init';
+import { rawTranslation } from '../locales/init';
 
 export const social_media: TFooterLinks[] = [
   {

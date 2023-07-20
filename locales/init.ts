@@ -9,9 +9,12 @@ i18next
   .use(LanguageDetector)
   .init({
     debug: false,
-    fallbackLng: 'en',
+    fallbackLng: ['en', 'pt'],
     interpolation: { escapeValue: false },
-    resources: { pt: { translation: pt_BR }, en: { translation: en_US } },
+    resources: {
+      pt: { translation: pt_BR },
+      en: { translation: en_US },
+    }
   });
 
 export const rawTranslation = i18next.t;

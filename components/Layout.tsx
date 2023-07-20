@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import Head from 'next/head';
 import Footer from './Footer';
 import Header from './Header';
@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { TLayoutProps } from '../@types';
 import { useAppContext } from '../context/AppContext';
 import { BiMoon, BiSun, BiUpArrowAlt } from 'react-icons/bi';
+import { BsTranslate } from 'react-icons/bs';
 import { FluentButtonsContainer as Container } from '../styles/components/fluent-buttons';
 import { useTranslation } from 'react-i18next';
 
@@ -13,14 +14,15 @@ const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
   const { themeSwitcher, slidePageUp, darkmode } = useAppContext();
   const { i18n } = useTranslation();
 
-  const translate = (language: string): void => {
-    i18n.changeLanguage(language);
-  };
+  const serialize_languages = useCallback((): string => {
+    const foundLabel = [
+      { label: 'English', value: 'en' },
+      { label: 'Português', value: 'pt' },
+    ].find(({ value }) => value === i18n.resolvedLanguage);
+    return foundLabel?.value ?? '';
+  }, []);
 
-  const serialize_languages = [
-    { label: 'English', value: 'en' },
-    { label: 'Português', value: 'pt' },
-  ];
+  console.info(i18n.resolvedLanguage);
 
   return (
     <>
@@ -39,7 +41,7 @@ const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
             title='Change Theme'
             aria-label='Toogle theme'
             onClick={themeSwitcher}>
-            {darkmode ? <BiSun /> : <BiMoon />}
+            <BsTranslate/>
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.7 }}

@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { TModalProps} from '../@types';
+import { TModalProps } from '../../@types';
 import { FaTimesCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ConfirmModalContainer as Container } from '../styles/components/confirm-modal';
+import { ConfirmModalContainer as Container } from '../../styles/components/confirm-modal';
 
 const ConfirmModal: FC<TModalProps> = (props): JSX.Element => (
   <AnimatePresence>

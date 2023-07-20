@@ -6,7 +6,7 @@ import nava_notes from '../assets/nava-notes.jpg';
 import planner_app from '../assets/planner-app.jpg';
 import recipes_website from '../assets/recipes-website.png';
 import bug_tracker_app from '../assets/bug-tracker-app.jpeg';
-import { rawTranslation } from '../internationalization/init';
+import { rawTranslation } from '../locales/init';
 import url_shortner_app from '../assets/url-shortner-app.jpeg';
 import hagira_ecommerce from '../assets/hagira-ecommerce.jpeg';
 import bug_tracker_server from '../assets/bug-tracker-server.png';
@@ -88,5 +88,4 @@ export const projects: TProject[] = [
     live_url: '',
     code_url: 'https://github.com/KainNhantumbo/Server-for-planner-app',
   },
-
 ];

@@ -71,9 +71,7 @@ const Header: FC = (): JSX.Element => {
               {headerAnchors.map((item, index) => (
                 <Link key={index.toString()} href={item.ref}>
                   <motion.li
-                    className={
-                      router.asPath.includes(item.ref) ? 'active' : 'inative'
-                    }
+                    className={router.asPath.includes(item.ref) ? 'active' : ''}
                     whileTap={{ scale: deltaY <= minWidth ? 0.9 : 0.7 }}
                     whileHover={{ scale: 1.05, y: 1 }}>
                     <span>{item.label}</span>

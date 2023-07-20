@@ -55,6 +55,15 @@
       "message": "Mal posso esperar para começar a trabalhar com você, obrigado!",
       "button-text": "Fechar"
     },
+    "language-switcher-modal": {
+      "title": "Troca de Língua",
+      "message": "Troque de língua facilmente.",
+      "button-text": "Fechar",
+      "buttons": {
+        "portuguese": "Trocar para português",
+        "english": "Trocar para inglês"
+      }
+    },
     "abilities": {
       "title": "Minhas Habilidades e Experiência de Trabalho",
       "frontend-title": "Desenvolvimento do Cliente",
