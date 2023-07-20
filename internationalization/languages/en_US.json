@@ -14,5 +14,27 @@
     "copy-phrase": "Copyright © 2023 Kain Nhantumbo. All Rights Reserved.",
     "made-phrase": "Made with ❤ using Next.js and Typescript.",
     "version-phrase": "Version"
+  },
+  "projects": {
+    "title": "My Projects and Works",
+    "intro-part-1": "(...) and because I understand that showing is sometimes better than saying, here are some of my personal projects that I have been working on these days. You can see all my personal projects on my",
+    "intro-part-2": "github profile",
+    "live-demo": "Live Demo",
+    "github": "Github Repository",
+    "content": {
+      "bug-tracker": "Bug Tracker App built with React.JS and Typescript",
+      "bug-tracker-server": "Bug Tracker Restfull API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end",
+      "url-shortner": "Url Shortner App built with React.JS and Typescript",
+      "programming-blog": "My Blog built with Next.JS, Typescript and Markdown",
+      "notes-app": "Notes App made with React.JS + Styled-Components + Sass",
+      "tasks-app": "Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + MongoDB on the Back-end",
+      "tasks-app-server": "Server Restfull API for Contacts and Tasks App, made with Javascript, Node.JS, Express.JS and Mongo DB",
+      "recipes-website": "Recipes Website made using Typescript, Next.JS and Node.JS + Express.JS + Mongo DB on the Back-end",
+      "hagira-store": "Hagira E-commerce Website made using Javascript, React.JS and Node.JS + Express.JS + Mongo DB on the Back-end",
+      "hagira-store-server": "Server Restfull API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB",
+      "anime-website": "Anime Blog, Javascript + HTML5 + CSS",
+      "calculator": "Multi-functions Calculator, Javascript + HTML5 + SASS",
+      "ecommerce-page": "Ecommerce Landing Page, HTML5 + CSS + SASS"
+    }
   }
 }

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { HiX } from 'react-icons/hi';
 import { FaBars } from 'react-icons/fa';
 import author from '../assets/author.jpg';
+import { useTranslation } from 'react-i18next';
 import { FC, useState, useEffect } from 'react';
 import { headerAnchors } from '../data/app-data';
 import { NextRouter, useRouter } from 'next/router';
@@ -14,6 +15,8 @@ const Header: FC = (): JSX.Element => {
   const router: NextRouter = useRouter();
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const [deltaY, setDeltaY] = useState<number>(-100);
+  const { t: translation } = useTranslation();
+
 
   const toggleMenu = (): void => setIsMenu(!isMenu);
 
