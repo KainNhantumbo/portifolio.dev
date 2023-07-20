@@ -81,19 +81,19 @@
     "phone": "Phone: (+258) 84 400 2535",
     "mail": "E-mail: nhantumbok@gmail.com",
     "form": {
-      "name-label": "Name",
+      "name-label": "Name *",
       "name-placeholder": "Type your name here",
-      "mail-label": "E-mail",
+      "mail-label": "E-mail *",
       "mail-placeholder": "Type your e-mail adress here",
-      "subject-label": "Subject",
+      "subject-label": "Subject *",
       "subject-placeholder": "Type the subject here",
-      "message-label": "Message",
+      "message-label": "Message *",
       "message-placeholder": "Type your message content here",
       "button": "Send message"
     },
     "message": {
       "success": "Message sent successfuly!",
-      "failure": "'Oops! Looks like something went wrong. Please, try again.'",
+      "failure": "Oops! Looks like something went wrong. Please, try again.",
       "informative": "Sending your message, please wait..."
     }
   }

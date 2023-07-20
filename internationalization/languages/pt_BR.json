@@ -66,6 +66,29 @@
         "medium": "Médio",
         "learn": "Aprendendo"
       }
+    },
+    "contact": {
+      "title": "Contate-me",
+      "intro-title": "Vamos trazer idéias à vida utilizando código!",
+      "intro-message": "Você pode utilizar o formuário abaixo para me enviar uma mensagem por correio eletrónico ou escolhendo uma das seguintes opções:",
+      "phone": "Telefone: (+258) 84 400 2535",
+      "mail": "Correio eletrónico: nhantumbok@gmail.com",
+      "form": {
+        "name-label": "Nome *",
+        "name-placeholder": "Escreva o seu nome",
+        "mail-label": "Correio eletrónico *",
+        "mail-placeholder": "Escreva o seu endereço de e-mail",
+        "subject-label": "Assunto *",
+        "subject-placeholder": "Escreva o assunto da sua mensagem",
+        "message-label": "Mensagem *",
+        "message-placeholder": "Escreva o conteúdo da sua mensagem",
+        "button": "Enviar mensagem"
+      },
+      "message": {
+        "success": "Mensagem enviada com sucesso!",
+        "failure": "Oops! Parece que algo deu errado. Por favor, tente novamente.",
+        "informative": "Enviando a sua mensagem, aguarde..."
+      }
     }
   }
 }
