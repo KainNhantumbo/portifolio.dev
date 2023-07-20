@@ -76,5 +76,28 @@
       "medium": "Medium",
       "learn": "Learning"
     }
+  },
+  "contact": {
+    "title": "Contact me",
+    "intro-title": "Let's bring ideas to life with code!",
+    "intro-message": "You can use the form below to send me an e-mail or use the following contact options:",
+    "phone": "Phone: (+258) 84 400 2535",
+    "mail": "E-mail: nhantumbok@gmail.com",
+    "form": {
+      "name-label": "Name",
+      "name-placeholder": "Type your name here",
+      "mail-label": "E-mail",
+      "mail-placeholder": "Type your e-mail adress here",
+      "subject-label": "Subject",
+      "subject-placeholder": "Type the subject here",
+      "message-label": "Message",
+      "message-placeholder": "Type your message content here",
+      "button": "Send message"
+    },
+    "message": {
+      "success": "Message sent successfuly!",
+      "failure": "'Oops! Looks like something went wrong. Please, try again.'",
+      "informative": "Sending your message, please wait..."
+    }
   }
 }

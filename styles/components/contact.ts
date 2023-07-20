@@ -122,7 +122,7 @@ export const ContactContainer = styled.section`
         border: none;
         border-radius: 12px;
         padding: 10px;
-        resize: none;
+        resize: vertical;
         background: rgb(${({ theme }) => theme.inner});
         outline: none;
 

@@ -2,9 +2,9 @@ import { FC } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { HiSparkles } from 'react-icons/hi';
+import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
 import { DefaultTheme, useTheme } from 'styled-components';
-import { rawTranslation } from '../internationalization/init';
 import intro_background from '../assets/intro-background.jpg';
 import intro_background2 from '../assets/intro-background2.jpg';
 import { IntroductionContainer as Container } from '../styles/components/introduction';
@@ -12,6 +12,7 @@ import { IntroductionContainer as Container } from '../styles/components/introdu
 const Introduction: FC = (): JSX.Element => {
   const { darkmode } = useAppContext();
   const { text, font }: DefaultTheme = useTheme();
+  const { t: translation } = useTranslation();
 
   return (
     <Container id='home'>
@@ -36,18 +37,18 @@ const Introduction: FC = (): JSX.Element => {
           transition={{ delay: 0.5 }}
           className='placeholder'>
           <HiSparkles />
-          <span>{rawTranslation('intro.welcome-message')}</span>
+          <span>{translation('intro.welcome-message')}</span>
         </motion.h3>
 
-        <h1>{rawTranslation('intro.presentation')}</h1>
+        <h1>{translation('intro.presentation')}</h1>
         <p
           style={{
             color: darkmode ? text : font,
             textShadow: !darkmode ? `1px 1px 3px rgb(${font})` : 'none',
           }}>
-          {rawTranslation('intro.message-part-1')}
+          {translation('intro.message-part-1')}
           <br />
-          {rawTranslation('intro.message-part-2')}
+          {translation('intro.message-part-2')}
         </p>
       </div>
     </Container>

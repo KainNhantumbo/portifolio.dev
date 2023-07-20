@@ -18,10 +18,10 @@ const Footer: FC = (): JSX.Element => {
             key={index}
             initial={{ scale: 0 }}
             whileHover={{ scale: 1.2 }}
-            transition={{
-              delay: index / 4,
+            whileInView={{
+              scale: 1,
+              transition: { delay: index / 4 },
             }}
-            whileInView={{ scale: 1 }}
             title={item.name}>
             <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
               <item.icon />

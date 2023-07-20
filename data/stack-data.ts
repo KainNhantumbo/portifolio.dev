@@ -12,8 +12,8 @@ import {
   SiReact,
   SiTypescript,
 } from 'react-icons/si';
-import { TStackSkill } from '../@types';
 import { FaReact } from 'react-icons/fa';
+import type { TStackSkill } from '../@types';
 import { rawTranslation } from '../internationalization/init';
 
 const levels = {

@@ -8,7 +8,7 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   gap: 10px;
   padding-bottom: 10px;
-	border-radius: 20px;
+	border-radius: 12px;
   background: rgba(${({ theme }) => theme.backgroundAlt}, 0.5);
 
   h3 {
