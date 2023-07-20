@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import type { FC } from 'react';
+import '../internationalization/init';
 import type { AppProps } from 'next/app';
 import AppContext from '../context/AppContext';
 
