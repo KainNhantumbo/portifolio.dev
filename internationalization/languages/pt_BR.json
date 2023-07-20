@@ -16,6 +16,12 @@
     "made-phrase": "Construido com ❤ usando Next.js e Typescript.",
     "version-phrase": "Versão"
   },
+  "intro": {
+    "welcome-message": "Bem vindo ao meu portifólio :)",
+    "presentation": "Olá, me chamo Kain Nhantumbo!",
+    "message-part-1": "Um desenvolvedor de software entusiasta que ama construir aplicações completas e aprender novas coisinhas a cada novo dia.",
+    "message-part-2": "Para construir os meus projetos, utilizo Typescript e Javascript como linguagens de programação principais."
+  },
   "about": {
     "title": "Sobre",
     "subtitle": "Desenvolvedor Web e Criador de Conteúdo",
