@@ -22,6 +22,12 @@
       "blog": "Visit my blog"
     }
   },
+  "intro": {
+    "welcome-message": "Welcome to my portfolio :)",
+    "presentation": "Hello, I am Kain Nhantumbo!",
+    "message-part-1": "A enthusiastic software developer who loves building full-stack applications and learning something new everyday.",
+    "message-part-2": "To build my projects, I use Typescript and Javascript as main programming technologies."
+  },
   "about": {
     "title": "About me",
     "subtitle": "Web Developer & Content Creator",

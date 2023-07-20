@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { HiSparkles } from 'react-icons/hi';
 import { useAppContext } from '../context/AppContext';
 import { DefaultTheme, useTheme } from 'styled-components';
+import { rawTranslation } from '../internationalization/init';
 import intro_background from '../assets/intro-background.jpg';
 import intro_background2 from '../assets/intro-background2.jpg';
 import { IntroductionContainer as Container } from '../styles/components/introduction';
@@ -35,19 +36,18 @@ const Introduction: FC = (): JSX.Element => {
           transition={{ delay: 0.5 }}
           className='placeholder'>
           <HiSparkles />
-          <span>Welcome to my portfolio :)</span>
+          <span>{rawTranslation('intro.welcome-message')}</span>
         </motion.h3>
 
-        <h1>Hello, I am Kain Nhantumbo!</h1>
+        <h1>{rawTranslation('intro.presentation')}</h1>
         <p
           style={{
             color: darkmode ? text : font,
             textShadow: !darkmode ? `1px 1px 3px rgb(${font})` : 'none',
           }}>
-          A enthusiastic software developer who loves building full-stack
-          applications and learning something new everyday. <br />
-          To build my projects, I use Typescript and Javascript as main
-          programming technologies.
+          {rawTranslation('intro.message-part-1')}
+          <br />
+          {rawTranslation('intro.message-part-2')}
         </p>
       </div>
     </Container>
