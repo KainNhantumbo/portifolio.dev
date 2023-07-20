@@ -54,6 +54,18 @@
       "title": "Mensagem enviada",
       "message": "Mal posso esperar para começar a trabalhar com você, obrigado!",
       "button-text": "Fechar"
+    },
+    "abilities": {
+      "title": "Minhas Habilidades e Experiência de Trabalho",
+      "frontend-title": "Desenvolvimento do Cliente",
+      "backend-title": "Desenvolvimento de Servidor",
+      "tools-title": "Ferramentas de Desenvolvimento",
+      "levels": {
+        "expert": "Experiente",
+        "intermediate": "Intermediário",
+        "medium": "Médio",
+        "learn": "Aprendendo"
+      }
     }
   }
 }
