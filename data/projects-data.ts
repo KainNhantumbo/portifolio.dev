@@ -2,11 +2,8 @@ import { TProject } from '../@types';
 import server_01 from '../assets/server-01.png';
 import server_03 from '../assets/server-03.png';
 import blog_shot from '../assets/blog-shot.jpeg';
-import anime_blog from '../assets/anime-blog.jpeg';
 import nava_notes from '../assets/nava-notes.jpg';
 import planner_app from '../assets/planner-app.jpg';
-import the_calculator from '../assets/the-calculator.png';
-import ecommerce_page from '../assets/ecommerce-page.jpeg';
 import recipes_website from '../assets/recipes-website.png';
 import bug_tracker_app from '../assets/bug-tracker-app.jpeg';
 import { rawTranslation } from '../internationalization/init';
@@ -91,29 +88,5 @@ export const projects: TProject[] = [
     live_url: '',
     code_url: 'https://github.com/KainNhantumbo/Server-for-planner-app',
   },
-  {
-    name: rawTranslation('projects.content.anime-website'),
-    category: categories.front,
-    image: anime_blog,
-    live_url:
-      'https://kainnhantumbo.github.io/Static-Anime-Blog--made-with-HTML--CSS-and-Javascript',
-    code_url:
-      'https://github.com/KainNhantumbo/Static-Anime-Blog--made-with-HTML--CSS-and-Javascript',
-  },
-  {
-    name: rawTranslation('projects.content.calculator'),
-    category: categories.front,
-    image: the_calculator,
-    live_url: 'https://kainnhantumbo.github.io/The-Calculator',
-    code_url: 'https://github.com/KainNhantumbo/The-Calculator',
-  },
-  {
-    name: rawTranslation('projects.content.ecommerce-page'),
-    category: categories.front,
-    image: ecommerce_page,
-    live_url:
-      'https://kainnhantumbo.github.io/Website-Theme-Marketplace-E-Commerse-Landing-Page',
-    code_url:
-      'https://github.com/KainNhantumbo/Website-Theme-Marketplace-E-Commerse-Landing-Page',
-  },
+
 ];

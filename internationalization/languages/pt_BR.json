@@ -31,5 +31,25 @@
     "experience-content": "Mais de 2 anos de programação",
     "projects-title": "Projetos",
     "projects-content": "Mais de 20 projetos no Github"
+  },
+  "projects": {
+    "title": "Meus Trabalhos e Projetos",
+    "intro-part-1": "(...) e porque entendo que mostrar  ",
+    "intro-part-2": "perfil do github",
+    "live-demo": "Ver Demostração",
+    "github": "Repositório do Github",
+    "content": {
+      "bug-tracker": "Aplicação para Rastreamento de Bugs construida com React.JS e Typescript",
+      "bug-tracker-server": "API Rest da Aplicação para Rastreamento de Bugs construida com Typescript, Node.JS + Express.JS + MongoDB para servidor",
+      "url-shortner": "Aplicação Encurtadora de URLs construida com React.JS e Typescript",
+      "programming-blog": "Blogue construido com Next.JS, Typescript e Markdown",
+      "notes-app": "Aplicação Notas construida com React.JS + Styled-Components + Sass",
+      "tasks-app": "Aplicação Tarefas e Contatos construida com Javascript, React.JS e Node.JS + Express.JS + MongoDB para servidor",
+      "tasks-app-server": "API Rest para Aplicação Tarefas e Contatos, construida com Javascript, Node.JS, Express.JS e Mongo DB para servidor",
+      "recipes-website": "Site de Receitas construido com Typescript, Next.JS e Node.JS + Express.JS + Mongo DB",
+      "hagira-store": "Aplicação E-commerce da Hagira construido com React.JS e Javascript",
+      "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
+
+    }
   }
 }
