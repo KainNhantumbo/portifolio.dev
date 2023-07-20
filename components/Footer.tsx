@@ -1,44 +1,48 @@
 import { FC } from 'react';
+import Package from '../package.json';
 import { motion } from 'framer-motion';
-import { RiHeart3Fill } from 'react-icons/ri';
+import { useTranslation } from 'react-i18next';
 import { social_media } from '../data/app-data';
 import { FooterContainer as Container } from '../styles/components/footer';
-import Package from '../package.json';
 
-const Footer: FC = (): JSX.Element => (
-  <Container>
-    <h3>
-      <strong>Find me on the web by:</strong>
-    </h3>
-    <ul>
-      {social_media.map((item, index) => (
-        <motion.li
-          key={index}
-          initial={{ scale: 0 }}
-          whileHover={{ scale: 1.2 }}
-          transition={{
-            delay: index / 4,
-          }}
-          whileInView={{ scale: 1 }}
-          title={item.name}>
-          <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
-            <item.icon />
-          </a>
-        </motion.li>
-      ))}
-    </ul>
-    <div>
-      <span>Copyright &copy; 2023 Kain Nhantumbo. All Rights Reserved. </span>
-      <p>
-        <span>Made with</span>
-        <RiHeart3Fill />
-        <span>using Next.js and Typescript.</span>
-      </p>
-      <p>
-        <span>Version {Package.version} | Comp. {Package.latest_compile}</span>
-      </p>
-    </div>
-  </Container>
-);
+const Footer: FC = (): JSX.Element => {
+  const { t: translation } = useTranslation();
+  return (
+    <Container>
+      <h3>
+        <strong>{translation('footer.title')}</strong>
+      </h3>
+      <ul>
+        {social_media.map((item, index) => (
+          <motion.li
+            key={index}
+            initial={{ scale: 0 }}
+            whileHover={{ scale: 1.2 }}
+            transition={{
+              delay: index / 4,
+            }}
+            whileInView={{ scale: 1 }}
+            title={item.name}>
+            <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
+              <item.icon />
+            </a>
+          </motion.li>
+        ))}
+      </ul>
+      <div>
+        <span>{translation('footer.copy-phrase')} </span>
+        <p>
+          <span>{translation('footer.made-phrase')}</span>
+        </p>
+        <p>
+          <span>
+            {translation('footer.version-phrase')} {Package.version} | Comp.{' '}
+            {Package.latest_compile}
+          </span>
+        </p>
+      </div>
+    </Container>
+  );
+};
 
 export default Footer;
