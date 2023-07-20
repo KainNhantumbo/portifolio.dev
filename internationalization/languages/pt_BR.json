@@ -1,4 +1,15 @@
 {
+  "header": {
+    "title": "Bem vindo",
+    "anchors": {
+      "blog": "Blogue",
+      "home": "Início",
+      "about": "Sobre",
+      "skills": "Habilidades",
+      "projects": "Projetos",
+      "contact": "Contato"
+    }
+  },
   "footer": {
     "title": "Encontre-me na internet por:",
     "copy-phrase": "Copyright © 2023 Kain Nhantumbo. Todos os Direitos Reservados.",
