@@ -11,8 +11,8 @@ import Introduction from '../components/Introduction';
 import { HomeContainer as Container } from '../styles/home';
 
 const Home: NextPage = (): JSX.Element => {
-  const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const { t: translation } = useTranslation();
+  const [isModalActive, setIsModalActive] = useState<boolean>(false);
 
   return (
     <Layout>
@@ -24,7 +24,6 @@ const Home: NextPage = (): JSX.Element => {
           closeModal={setIsModalActive}
           buttonText={translation('modal.button-text')}
         />
-
         <Introduction />
         <About />
         <Abilities />

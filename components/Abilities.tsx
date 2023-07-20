@@ -1,21 +1,23 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
 import { backend_data, frontend_data, tools_data } from '../data/stack-data';
 import { AbilitiesContainer as Container } from '../styles/components/abilities';
 
 const Abilities: FC = (): JSX.Element => {
-  
+  const { t: translation } = useTranslation();
+
   return (
     <Container id='skills'>
       <h2>
         <HiAcademicCap />
-        <span>My Experience and Skills</span>
+        <span>{translation('abilities.title')}</span>
       </h2>
       <section className='stack-container'>
         <h3 className='sub-title'>
           <HiBadgeCheck />
-          <span>Frontend Development</span>
+          <span>{translation('abilities.frontend-title')}</span>
         </h3>
         <section className='list-items'>
           {frontend_data.map((item, index) => (
@@ -38,7 +40,7 @@ const Abilities: FC = (): JSX.Element => {
       <section className='stack-container'>
         <h3 className='sub-title'>
           <HiBadgeCheck />
-          <span>Backend Development</span>
+          <span>{translation('abilities.backend-title')}</span>
         </h3>
         <section className='list-items'>
           {backend_data.map((item, index) => (
@@ -61,7 +63,7 @@ const Abilities: FC = (): JSX.Element => {
       <section className='stack-container'>
         <h3 className='sub-title'>
           <HiBadgeCheck />
-          <span>Development Tools</span>
+          <span>{translation('abilities.tools-title')}</span>
         </h3>
         <section className='list-items'>
           {tools_data.map((item, index) => (

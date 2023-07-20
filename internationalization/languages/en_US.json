@@ -64,5 +64,17 @@
     "title": "'Message Sent",
     "message": "I just can't  wait to we start working together, thank you!",
     "button-text": "Close"
+  },
+  "abilities": {
+    "title": "My Experience and Skills",
+    "frontend-title": "Frontend Development",
+    "backend-title": "Backend Development",
+    "tools-title": "Development Tools",
+    "levels": {
+      "expert": "Expert",
+      "intermediate": "Intermediate",
+      "medium": "Medium",
+      "learn": "Learning"
+    }
   }
 }
