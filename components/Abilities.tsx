@@ -5,6 +5,7 @@ import { backend_data, frontend_data, tools_data } from '../data/stack-data';
 import { AbilitiesContainer as Container } from '../styles/components/abilities';
 
 const Abilities: FC = (): JSX.Element => {
+  
   return (
     <Container id='skills'>
       <h2>

@@ -55,6 +55,7 @@ export type TModalProps = {
   prompt_message: string;
   closeModal: React.Dispatch<React.SetStateAction<boolean>>;
   active: boolean;
+  buttonText: string;
 };
 
 export interface ITheme {

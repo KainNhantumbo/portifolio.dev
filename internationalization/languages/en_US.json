@@ -59,5 +59,10 @@
       "calculator": "Multi-functions Calculator, Javascript + HTML5 + SASS",
       "ecommerce-page": "Ecommerce Landing Page, HTML5 + CSS + SASS"
     }
+  },
+  "modal": {
+    "title": "'Message Sent",
+    "message": "I just can't  wait to we start working together, thank you!",
+    "button-text": "Close"
   }
 }

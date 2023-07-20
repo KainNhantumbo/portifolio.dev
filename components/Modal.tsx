@@ -30,7 +30,7 @@ const ConfirmModal: FC<TModalProps> = (props): JSX.Element => (
                 className='prompt-cancel'
                 onClick={(e) => props.closeModal(false)}>
                 <FaTimesCircle />
-                <span>Close</span>
+                <span>{props.buttonText}</span>
               </motion.button>
             </div>
           </div>
