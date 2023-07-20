@@ -1,25 +1,26 @@
 import { TFooterLinks, TNavbarLinks } from '../@types';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';
+import { rawTranslation } from '../internationalization/init';
 
 export const social_media: TFooterLinks[] = [
   {
-    name: 'Find me on Github',
+    name: rawTranslation('footer.anchors.github'),
     icon: FaGithub,
     link: 'https://github.com/KainNhantumbo',
   },
   {
-    name: 'Find me on Whatsapp',
+    name: rawTranslation('footer.anchors.whatsapp'),
     icon: FaWhatsapp,
     link: 'https://wa.me/258844002535',
   },
   {
-    name: 'Find me on LinkedIn',
+    name: rawTranslation('footer.anchors.linkedIn'),
     icon: ImLinkedin2,
     link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US',
   },
   {
-    name: 'Visit my blog',
+    name: rawTranslation('footer.anchors.blog'),
     icon: ImBlog,
     link: 'https://publish-it-programming.vercel.app',
   },
@@ -27,9 +28,9 @@ export const social_media: TFooterLinks[] = [
 
 // stores navigation bar ref urls and name
 export const headerAnchors: TNavbarLinks[] = [
-  { label: 'Home', ref: '#home' },
-  { label: 'About', ref: '#about' },
-  { label: 'Skills', ref: '#skills' },
-  { label: 'Projects', ref: '#projects' },
-  { label: 'Contact', ref: '#contact' },
+  { label: rawTranslation('header.anchors.home'), ref: '#home' },
+  { label: rawTranslation('header.anchors.about'), ref: '#about' },
+  { label: rawTranslation('header.anchors.skills'), ref: '#skills' },
+  { label: rawTranslation('header.anchors.projects'), ref: '#projects' },
+  { label: rawTranslation('header.anchors.contact'), ref: '#contact' },
 ];

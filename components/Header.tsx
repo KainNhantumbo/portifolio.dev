@@ -17,7 +17,6 @@ const Header: FC = (): JSX.Element => {
   const [deltaY, setDeltaY] = useState<number>(-100);
   const { t: translation } = useTranslation();
 
-
   const toggleMenu = (): void => setIsMenu(!isMenu);
 
   const changeWidth = (): void =>
@@ -26,12 +25,12 @@ const Header: FC = (): JSX.Element => {
   // controls the header visibility by the wheel events
   const hideMenu = (e: WheelEvent): void => setDeltaY(e.deltaY);
 
-  useEffect((): () => void => {
+  useEffect((): (() => void) => {
     changeWidth();
     window.addEventListener('resize', changeWidth);
     window.addEventListener('wheel', hideMenu);
-    for (let item of headerAnchors) {
-      if (router.asPath !== '/' && router.asPath.includes(item.ref)) {
+    for (const anchor of headerAnchors) {
+      if (router.asPath !== '/' && router.asPath.includes(anchor.ref)) {
         location.assign(router.asPath);
       }
     }
@@ -58,7 +57,7 @@ const Header: FC = (): JSX.Element => {
               alt={'author photo'}
             />
           </div>
-          <span>My Workspace</span>
+          <span>{translation('header.title')}</span>
         </motion.h2>
         <motion.button whileTap={{ scale: 0.8 }} onClick={toggleMenu}>
           {isMenu ? <HiX /> : <FaBars />}
@@ -86,7 +85,7 @@ const Header: FC = (): JSX.Element => {
                 target={'_blank'}
                 rel={'noreferrer noopener'}>
                 <motion.li whileTap={{ scale: 0.8 }}>
-                  <span>Blog</span>
+                  <span>{translation('header.anchors.blog')}</span>
                 </motion.li>
               </a>
             </motion.ul>

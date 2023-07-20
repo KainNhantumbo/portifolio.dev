@@ -1,4 +1,10 @@
 {
+  "footer": {
+    "title": "Encontre-me na internet por:",
+    "copy-phrase": "Copyright © 2023 Kain Nhantumbo. Todos os Direitos Reservados.",
+    "made-phrase": "Construido com ❤ usando Next.js e Typescript.",
+    "version-phrase": "Versão"
+  },
   "about": {
     "title": "Sobre",
     "subtitle": "Desenvolvedor Web e Criador de Conteúdo",
@@ -8,11 +14,5 @@
     "experience-content": "Mais de 2 anos de programação",
     "projects-title": "Projetos",
     "projects-content": "Mais de 20 projetos no Github"
-  },
-  "footer": {
-    "title": "Encontre-me na internet por:",
-    "copy-phrase": "Copyright © 2023 Kain Nhantumbo. Todos os Direitos Reservados.",
-    "made-phrase": "Construido com ❤ usando Next.js e Typescript.",
-    "version-phrase": "Versão"
   }
 }

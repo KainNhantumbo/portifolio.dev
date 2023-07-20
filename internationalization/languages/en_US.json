@@ -1,4 +1,27 @@
 {
+  "header": {
+    "title": "You're Welcome",
+    "anchors": {
+      "blog": "Blog",
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  },
+  "footer": {
+    "title": "Find me on the web by:",
+    "copy-phrase": "Copyright © 2023 Kain Nhantumbo. All Rights Reserved.",
+    "made-phrase": "Made with ❤ using Next.js and Typescript.",
+    "version-phrase": "Version",
+    "anchors": {
+      "github": "Find me on Github",
+      "whatsapp": "Find me on Whatsapp",
+      "linkedIn": "Find me on LinkedIn",
+      "blog": "Visit my blog"
+    }
+  },
   "about": {
     "title": "About me",
     "subtitle": "Web Developer & Content Creator",
@@ -8,12 +31,6 @@
     "experience-content": "2+ years of programming",
     "projects-title": "Projects",
     "projects-content": "20+ github projects"
-  },
-  "footer": {
-    "title": "Find me on the web by:",
-    "copy-phrase": "Copyright © 2023 Kain Nhantumbo. All Rights Reserved.",
-    "made-phrase": "Made with ❤ using Next.js and Typescript.",
-    "version-phrase": "Version"
   },
   "projects": {
     "title": "My Projects and Works",
