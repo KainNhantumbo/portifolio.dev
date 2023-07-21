@@ -3,7 +3,6 @@ import Package from '../package.json';
 import { motion } from 'framer-motion';
 import { TFooterLinks } from '../@types';
 import { useTranslation } from 'react-i18next';
-import { rawTranslation } from '../locales/init';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { FooterContainer as Container } from '../styles/components/footer';
@@ -13,27 +12,27 @@ const Footer: FC = (): JSX.Element => {
 
   const socialMediaAnchors: TFooterLinks[] = [
     {
-      name: rawTranslation('footer.anchors.github'),
+      name: translation('footer.anchors.github'),
       icon: FaGithub,
       link: 'https://github.com/KainNhantumbo',
     },
     {
-      name: rawTranslation('footer.anchors.whatsapp'),
+      name: translation('footer.anchors.whatsapp'),
       icon: FaWhatsapp,
       link: 'https://wa.me/258844002535',
     },
     {
-      name: rawTranslation('footer.anchors.linkedIn'),
+      name: translation('footer.anchors.linkedIn'),
       icon: ImLinkedin2,
       link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US',
     },
     {
-      name: rawTranslation('footer.anchors.blog'),
+      name: translation('footer.anchors.blog'),
       icon: ImBlog,
       link: 'https://publish-it-programming.vercel.app',
     },
   ];
-  
+
   return (
     <Container>
       <h3>

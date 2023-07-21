@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { HiX } from 'react-icons/hi';
 import { FaBars } from 'react-icons/fa';
 import { TNavbarLinks } from '../@types';
-import author from '../assets/author.jpg';
+import author from '../public/assets/author.jpg';
 import { useTranslation } from 'react-i18next';
 import { FC, useState, useEffect } from 'react';
 import { NextRouter, useRouter } from 'next/router';

@@ -1,12 +1,111 @@
+import {
+  SiCss3,
+  SiExpress,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiMarkdown,
+  SiMongodb,
+  SiNodedotjs,
+  SiPostgresql,
+  SiReact,
+  SiTypescript,
+} from 'react-icons/si';
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
+import { FaReact } from 'react-icons/fa';
+import type { TStackSkill } from '../@types';
 import { useTranslation } from 'react-i18next';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
-import { backend_data, frontend_data, tools_data } from '../data/stack-data';
 import { AbilitiesContainer as Container } from '../styles/components/abilities';
 
 const Abilities: FC = (): JSX.Element => {
   const { t: translation } = useTranslation();
+
+  const frontend_data: TStackSkill[] = [
+    {
+      tech: 'Typescript',
+      icon: SiTypescript,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'Javascript',
+      icon: SiJavascript,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'React',
+      icon: FaReact,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'Next.JS',
+      icon: SiReact,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'SASS & CSS',
+      icon: SiCss3,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'HTML5',
+      icon: SiHtml5,
+      level: translation('abilities.levels.expert'),
+    },
+  ];
+
+  const backend_data: TStackSkill[] = [
+    {
+      tech: 'Typescript',
+      icon: SiTypescript,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'Javascript',
+      icon: SiJavascript,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'Node.JS',
+      icon: SiNodedotjs,
+      level: translation('abilities.levels.intermediate'),
+    },
+    {
+      tech: 'Express.JS',
+      icon: SiExpress,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'Mongo DB',
+      icon: SiMongodb,
+      level: translation('abilities.levels.intermediate'),
+    },
+    {
+      tech: 'PostgreSQL',
+      icon: SiPostgresql,
+      level: translation('abilities.levels.intermediate'),
+    },
+  ];
+
+  const tools_data: TStackSkill[] = [
+    {
+      tech: 'Git',
+      icon: SiGit,
+      level: translation('abilities.levels.intermediate'),
+    },
+    {
+      tech: 'Markdown',
+      icon: SiMarkdown,
+      level: translation('abilities.levels.expert'),
+    },
+    {
+      tech: 'Github',
+      icon: SiGithub,
+      level: translation('abilities.levels.expert'),
+    },
+  ];
 
   return (
     <Container id='skills'>

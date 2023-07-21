@@ -1,6 +1,6 @@
 {
   "header": {
-    "title": "You're Welcome",
+    "title": "You're Welcome 😊",
     "anchors": {
       "blog": "Blog",
       "home": "Home",
@@ -24,8 +24,8 @@
   },
   "intro": {
     "welcome-message": "Welcome to my portfolio :)",
-    "presentation": "Hello, I am Kain Nhantumbo!",
-    "message-part-1": "A enthusiastic software developer who loves building full-stack applications and learning something new everyday.",
+    "presentation": "Hello 👋, I am Kain Nhantumbo!",
+    "message-part-1": "A enthusiastic software developer who loves donuts and building full-stack applications while learning something new everyday.",
     "message-part-2": "To build my projects, I use Typescript and Javascript as main programming technologies."
   },
   "about": {
@@ -77,9 +77,7 @@
     "tools-title": "Development Tools",
     "levels": {
       "expert": "Expert",
-      "intermediate": "Intermediate",
-      "medium": "Medium",
-      "learn": "Learning"
+      "intermediate": "Intermediate"
     }
   },
   "contact": {

@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.main`
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 70px 10px 0px 10px;
+  padding: 0 12px;
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -45,6 +44,4 @@ export const HomeContainer = styled.main`
       left: 0;
     }
   }
-
-  
 `;

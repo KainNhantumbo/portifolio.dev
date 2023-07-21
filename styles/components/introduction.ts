@@ -17,7 +17,7 @@ export const IntroductionContainer = styled.section`
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 20px;
+    border-radius: 12px;
     height: 600px;
   }
 
@@ -30,7 +30,7 @@ export const IntroductionContainer = styled.section`
     padding: 40px 20px;
     background-color: rgba(${({ theme }) => theme.shadows}, 0.2);
     backdrop-filter: blur(4px);
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 12px 12px;
 
     .placeholder {
       width: fit-content;
@@ -68,8 +68,15 @@ export const IntroductionContainer = styled.section`
       text-shadow: 1px 1px 2px rgb(${({ theme }) => theme.hover});
 
       @media screen and (max-width: 640px) {
-        font-size: 1.8rem;
-      line-height: 2.2rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
+    }
+
+    p {
+      @media screen and (max-width: 640px) {
+        font-size: 1rem;
+        line-height: 1.4rem;
       }
     }
   }
