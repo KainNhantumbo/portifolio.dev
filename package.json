@@ -1,6 +1,6 @@
 {
   "name": "my_portfolio",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "latest_compile": "07-2023",
   "private": true,
   "engines": {
@@ -24,7 +24,6 @@
     "@emailjs/browser": "^3.6.2",
     "framer-motion": "^6.3.16",
     "i18next": "^23.2.11",
-    "i18next-browser-languagedetector": "^7.1.0",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
