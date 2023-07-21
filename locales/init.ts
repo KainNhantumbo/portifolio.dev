@@ -14,7 +14,7 @@ i18next
     resources: {
       pt: { translation: pt_BR },
       en: { translation: en_US },
-    }
+    },
   });
 
 export const rawTranslation = i18next.t;

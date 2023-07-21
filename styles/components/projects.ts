@@ -81,6 +81,12 @@ export const ProjectsContainer = styled.section`
 				flex-direction: column;
 				height: 100%;
 
+				.details {
+					h3 {
+						font-size: .95rem;
+					}
+				}
+
 				.actions {
 					display: flex;
 					flex-direction: column;

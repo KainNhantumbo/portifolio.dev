@@ -39,15 +39,14 @@
     "live-demo": "Ver Demostração",
     "github": "Repositório do Github",
     "content": {
-      "bug-tracker": "Aplicação para Rastreamento de Bugs construida com React.JS e Typescript",
-      "bug-tracker-server": "API Rest da Aplicação para Rastreamento de Bugs construida com Typescript, Node.JS + Express.JS + MongoDB para servidor",
-      "url-shortner": "Aplicação Encurtadora de URLs construida com React.JS e Typescript",
-      "programming-blog": "Blogue construido com Next.JS, Typescript e Markdown",
-      "notes-app": "Aplicação Notas construida com React.JS + Styled-Components + Sass",
-      "tasks-app": "Aplicação Tarefas e Contatos construida com Javascript, React.JS e Node.JS + Express.JS + MongoDB para servidor",
+      "bug-tracker": "Aplicação de Rastreamento de Bugs construida com React e Typescript",
+      "bug-tracker-server": "API Rest da Aplicação de Rastreamento de Bugs construida com Typescript, Node.JS + Express.JS + MongoDB",
+      "url-shortner": "Aplicação Encurtadora de URLs construida com React e Typescript",
+      "notes-app": "Aplicação Notas construida com React + Styled-Components + Sass",
+      "tasks-app": "Aplicação Tarefas e Contatos construida com Javascript, React e Node.JS + Express.JS + MongoDB para servidor",
       "tasks-app-server": "API Rest para Aplicação Tarefas e Contatos, construida com Javascript, Node.JS, Express.JS e Mongo DB para servidor",
       "recipes-website": "Site de Receitas construido com Typescript, Next.JS e Node.JS + Express.JS + Mongo DB",
-      "hagira-store": "Aplicação E-commerce da Hagira construido com React.JS e Javascript",
+      "hagira-store": "Aplicação E-commerce da Hagira construido com React e Javascript",
       "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
     },
     "modal": {
@@ -55,7 +54,7 @@
       "message": "Mal posso esperar para começar a trabalhar com você, obrigado!",
       "button-text": "Fechar"
     },
-    "language-switcher-modal": {
+    "language_switcher_modal": {
       "title": "Troca de Língua",
       "message": "Troque de língua facilmente.",
       "button-text": "Fechar",

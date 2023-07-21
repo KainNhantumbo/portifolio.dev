@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { TModalProps } from '../../@types';
 import { useTranslation } from 'react-i18next';
 import { FaTimesCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,7 +7,7 @@ import { LanguageSwitcherContainer as Container } from '../../styles/components/
 type TLanguages = 'pt' | 'en';
 
 type TProps = {
-  closeModal: React.Dispatch<React.SetStateAction<boolean>>;
+  close: React.Dispatch<React.SetStateAction<boolean>>;
   active: boolean;
 };
 
@@ -17,12 +16,13 @@ const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
 
   const translate = (language: TLanguages): void => {
     i18n.changeLanguage(language);
+    props.close(false);
   };
 
   return (
     <AnimatePresence>
-      {!props.active && (
-        <Container onClick={(e) => props.closeModal(false)}>
+      {props.active && (
+        <Container onClick={(e) => props.close(false)}>
           <motion.section
             className='dialog-modal'
             onClick={(e) => e.stopPropagation()}
@@ -35,14 +35,18 @@ const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
             }}>
             <div className='dialog-prompt'>
               <div className='prompt-info'>
-                <span className='prompt-title'>{translation('language-switcher-modal.title')}</span>
-                <p className='prompt-message'>{translation('language-switcher-modal.message')}</p>
+                <span className='prompt-title'>
+                  {translation('language_switcher_modal.title')}
+                </span>
+                <p className='prompt-message'>
+                  {translation('language_switcher_modal.message')}
+                </p>
                 <div className='buttons-container'>
                   <button onClick={() => translate('en')}>
-                    {translation('language-switcher-modal.buttons.english')}
+                    {translation('language_switcher_modal.buttons.english')}
                   </button>
-                  <button onClick={() => translate('en')}>
-                    {translation('language-switcher-modal.buttons.portuguese')}
+                  <button onClick={() => translate('pt')}>
+                    {translation('language_switcher_modal.buttons.portuguese')}
                   </button>
                 </div>
               </div>
@@ -51,9 +55,11 @@ const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
                   whileTap={{ scale: 0.8 }}
                   whileHover={{ scale: 1.1 }}
                   className='prompt-cancel'
-                  onClick={(e) => props.closeModal(false)}>
+                  onClick={(e) => props.close(false)}>
                   <FaTimesCircle />
-                  <span>{translation('language-switcher-modal.button-text')}</span>
+                  <span>
+                    {translation('language_switcher_modal.button-text')}
+                  </span>
                 </motion.button>
               </div>
             </div>

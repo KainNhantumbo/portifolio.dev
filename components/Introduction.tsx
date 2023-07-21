@@ -5,14 +5,14 @@ import { HiSparkles } from 'react-icons/hi';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
 import { DefaultTheme, useTheme } from 'styled-components';
-import intro_background from '../assets/intro-background.jpg';
-import intro_background2 from '../assets/intro-background2.jpg';
+import intro_background from '../public/assets/intro-background.jpg';
+import intro_background2 from '../public/assets/intro-background2.jpg';
 import { IntroductionContainer as Container } from '../styles/components/introduction';
 
 const Introduction: FC = (): JSX.Element => {
   const { darkmode } = useAppContext();
-  const { text, font }: DefaultTheme = useTheme();
   const { t: translation } = useTranslation();
+  const { text, font }: DefaultTheme = useTheme();
 
   return (
     <Container id='home'>

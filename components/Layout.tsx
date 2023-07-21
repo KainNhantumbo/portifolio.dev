@@ -1,28 +1,22 @@
-import { FC, useCallback } from 'react';
 import Head from 'next/head';
 import Footer from './Footer';
 import Header from './Header';
+import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import { TLayoutProps } from '../@types';
+import { BsTranslate } from 'react-icons/bs';
+import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
 import { BiMoon, BiSun, BiUpArrowAlt } from 'react-icons/bi';
-import { BsTranslate } from 'react-icons/bs';
+import ConfirmModal from '../components/modals/ConfirmModal';
+import LanguageSwitcher from '../components/modals/LanguageSwitcher';
 import { FluentButtonsContainer as Container } from '../styles/components/fluent-buttons';
-import { useTranslation } from 'react-i18next';
 
 const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
+  const { t: translation } = useTranslation();
   const { themeSwitcher, slidePageUp, darkmode } = useAppContext();
-  const { i18n } = useTranslation();
-
-  const serialize_languages = useCallback((): string => {
-    const foundLabel = [
-      { label: 'English', value: 'en' },
-      { label: 'Português', value: 'pt' },
-    ].find(({ value }) => value === i18n.resolvedLanguage);
-    return foundLabel?.value ?? '';
-  }, []);
-
-  console.info(i18n.resolvedLanguage);
+  const [isModalActive, setIsModalActive] = useState<boolean>(false);
+  const [isLanguageSwitcher, setIsLanguageSwitcher] = useState<boolean>(false);
 
   return (
     <>
@@ -38,10 +32,8 @@ const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
           <motion.button
             whileTap={{ scale: 0.7 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            title='Change Theme'
-            aria-label='Toogle theme'
-            onClick={themeSwitcher}>
-            <BsTranslate/>
+            onClick={() => setIsLanguageSwitcher(true)}>
+            <BsTranslate />
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.7 }}
@@ -60,6 +52,17 @@ const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
           </motion.button>
         </div>
       </Container>
+      <ConfirmModal
+        active={isModalActive}
+        prompt_title={translation('modal.title')}
+        prompt_message={translation('modal.message')}
+        closeModal={setIsModalActive}
+        buttonText={translation('modal.button-text')}
+      />
+      <LanguageSwitcher
+        active={isLanguageSwitcher}
+        close={setIsLanguageSwitcher}
+      />
       {children}
       <Footer />
     </>

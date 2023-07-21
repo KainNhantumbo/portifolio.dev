@@ -48,7 +48,6 @@
       "bug-tracker": "Bug Tracker App built with React.JS and Typescript",
       "bug-tracker-server": "Bug Tracker Restfull API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end",
       "url-shortner": "Url Shortner App built with React.JS and Typescript",
-      "programming-blog": "Blog built with Next.JS, Typescript and Markdown",
       "notes-app": "Notes App made with React.JS + Styled-Components + Sass",
       "tasks-app": "Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + MongoDB on the Back-end",
       "tasks-app-server": "Server Restfull API for Contacts and Tasks App, made with Javascript, Node.JS, Express.JS and Mongo DB",
@@ -62,9 +61,9 @@
     "message": "I just can't wait to we start working together, thank you!",
     "button-text": "Close"
   },
-  "language-switcher-modal": {
+  "language_switcher_modal": {
     "title": "Language Switcher",
-    "message": "Switch between languages easily.",
+    "message": "Switch between available display languages easily.",
     "button-text": "Close",
     "buttons": {
       "portuguese": "Switch to portuguese",

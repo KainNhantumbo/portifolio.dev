@@ -19,7 +19,8 @@ const Projects: FC = (): JSX.Element => {
         initial={{ opacity: 0, x: -500 }}
         transition={{ duration: 0.4, delay: 0.2 }}
         whileInView={{ opacity: 1, x: 0 }}>
-        <strong>{translation('projects.intro-part-1')}{' '}
+        <strong>
+          {translation('projects.intro-part-1')}{' '}
           <a
             href='https://github.com/KainNhantumbo'
             target={'_blank'}

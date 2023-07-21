@@ -1,19 +1,46 @@
 import { FC } from 'react';
 import Package from '../package.json';
 import { motion } from 'framer-motion';
+import { TFooterLinks } from '../@types';
 import { useTranslation } from 'react-i18next';
-import { social_media } from '../data/app-data';
+import { rawTranslation } from '../locales/init';
+import { ImBlog, ImLinkedin2 } from 'react-icons/im';
+import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { FooterContainer as Container } from '../styles/components/footer';
 
 const Footer: FC = (): JSX.Element => {
   const { t: translation } = useTranslation();
+
+  const socialMediaAnchors: TFooterLinks[] = [
+    {
+      name: rawTranslation('footer.anchors.github'),
+      icon: FaGithub,
+      link: 'https://github.com/KainNhantumbo',
+    },
+    {
+      name: rawTranslation('footer.anchors.whatsapp'),
+      icon: FaWhatsapp,
+      link: 'https://wa.me/258844002535',
+    },
+    {
+      name: rawTranslation('footer.anchors.linkedIn'),
+      icon: ImLinkedin2,
+      link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US',
+    },
+    {
+      name: rawTranslation('footer.anchors.blog'),
+      icon: ImBlog,
+      link: 'https://publish-it-programming.vercel.app',
+    },
+  ];
+  
   return (
     <Container>
       <h3>
         <strong>{translation('footer.title')}</strong>
       </h3>
       <ul>
-        {social_media.map((item, index) => (
+        {socialMediaAnchors.map((item, index) => (
           <motion.li
             key={index}
             initial={{ scale: 0 }}
