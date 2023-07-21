@@ -1,10 +1,17 @@
 import { FC } from 'react';
-import { TModalProps } from '../../@types';
 import { FaTimesCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ConfirmModalContainer as Container } from '../../styles/components/confirm-modal';
 
-const ConfirmModal: FC<TModalProps> = (props): JSX.Element => (
+type TProps = {
+  prompt_title: string;
+  prompt_message: string;
+  closeModal: React.Dispatch<React.SetStateAction<boolean>>;
+  active: boolean;
+  buttonText: string;
+};
+
+const ConfirmModal: FC<TProps> = (props): JSX.Element => (
   <AnimatePresence>
     {props.active && (
       <Container onClick={(e) => props.closeModal(false)}>

@@ -9,6 +9,8 @@ i18next
   .use(initReactI18next)
   .init({
     debug: false,
+    lng: 'en',
+    partialBundledLanguages: false,
     fallbackLng: ['en', 'pt'],
     interpolation: { escapeValue: false },
     resources: {

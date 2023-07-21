@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import Footer from './Footer';
 import Header from './Header';
-import { FC, useState } from 'react';
+import { FC, useState, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { TLayoutProps } from '../@types';
 import { BsTranslate } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
@@ -12,7 +11,9 @@ import ConfirmModal from '../components/modals/ConfirmModal';
 import LanguageSwitcher from '../components/modals/LanguageSwitcher';
 import { FluentButtonsContainer as Container } from '../styles/components/fluent-buttons';
 
-const Layout: FC<TLayoutProps> = ({ children }): JSX.Element => {
+type TProps = { children: ReactNode };
+
+const Layout: FC<TProps> = ({ children }): JSX.Element => {
   const { t: translation } = useTranslation();
   const { themeSwitcher, slidePageUp, darkmode } = useAppContext();
   const [isModalActive, setIsModalActive] = useState<boolean>(false);

@@ -2,13 +2,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { HiX } from 'react-icons/hi';
 import { FaBars } from 'react-icons/fa';
-import { TNavbarLinks } from '../@types';
-import author from '../public/assets/author.jpg';
 import { useTranslation } from 'react-i18next';
 import { FC, useState, useEffect } from 'react';
+import author from '../public/assets/author.jpg';
 import { NextRouter, useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HeaderContainer as Container } from '../styles/components/header';
+
+type TNavbarAnchors = {
+  ref: string;
+  label: string;
+};
 
 const Header: FC = (): JSX.Element => {
   const minWidth: number = 640;
@@ -18,7 +22,7 @@ const Header: FC = (): JSX.Element => {
   const { t: translation } = useTranslation();
 
   // stores navigation bar ref urls and name
-  const headerAnchors: TNavbarLinks[] = [
+  const headerAnchors: TNavbarAnchors[] = [
     { label: translation('header.anchors.home'), ref: '#home' },
     { label: translation('header.anchors.about'), ref: '#about' },
     { label: translation('header.anchors.skills'), ref: '#skills' },

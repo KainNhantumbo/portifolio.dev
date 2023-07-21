@@ -1,16 +1,22 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import Package from '../package.json';
 import { motion } from 'framer-motion';
-import { TFooterLinks } from '../@types';
+import type { IconType } from 'react-icons';
 import { useTranslation } from 'react-i18next';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { FooterContainer as Container } from '../styles/components/footer';
 
+type TSocialMediaAnchors = {
+  name: string;
+  icon: IconType;
+  link: string;
+};
+
 const Footer: FC = (): JSX.Element => {
   const { t: translation } = useTranslation();
 
-  const socialMediaAnchors: TFooterLinks[] = [
+  const socialMediaAnchors: TSocialMediaAnchors[] = [
     {
       name: translation('footer.anchors.github'),
       icon: FaGithub,

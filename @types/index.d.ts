@@ -21,18 +21,7 @@ export type TFormData = {
   from_email: string;
 };
 
-export type TFooterLinks = {
-  name: string;
-  icon: IconType;
-  link: string;
-};
-
-export type TNavbarLinks = {
-  ref: string;
-  label: string;
-};
-
-export type TProject = {
+type TProject = {
   name: string;
   category: string;
   image: StaticImageData;
@@ -46,17 +35,6 @@ export type TStackSkill = {
   level: string;
 };
 
-export type TLayoutProps = {
-  children: ReactNode;
-};
-
-export type TModalProps = {
-  prompt_title: string;
-  prompt_message: string;
-  closeModal: React.Dispatch<React.SetStateAction<boolean>>;
-  active: boolean;
-  buttonText: string;
-};
 
 export interface ITheme {
   primary: string;
