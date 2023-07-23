@@ -26,7 +26,7 @@ const Contact: FC = (): JSX.Element => {
   };
 
   // notifies the e-mail sender about the message status
-  const notifyStatus = (message: string): void => {
+  const notification = (message: string): void => {
     setMessageStatus(message);
     clearTimeout(undefined);
     setTimeout(() => {
@@ -44,11 +44,11 @@ const Contact: FC = (): JSX.Element => {
         formData as any,
         'z3FUpU83GBFJyGXVF'
       );
-      notifyStatus(translation('contact.message.success'));
+      notification(translation('contact.message.success'));
       (e as any).target.reset();
     } catch (err: unknown) {
       console.error((err as any).text);
-      notifyStatus(translation('contact.message.failure'));
+      notification(translation('contact.message.failure'));
     }
   };
 

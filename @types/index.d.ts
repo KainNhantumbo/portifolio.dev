@@ -35,7 +35,6 @@ export type TStackSkill = {
   level: string;
 };
 
-
 export interface ITheme {
   primary: string;
   secondary: string;

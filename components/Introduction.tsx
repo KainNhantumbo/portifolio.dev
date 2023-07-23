@@ -22,7 +22,7 @@ const Introduction: FC = (): JSX.Element => {
         className='intro-background'>
         <Image
           src={darkmode ? intro_background : intro_background2}
-          style={{ borderRadius: 20 }}
+          style={{ borderRadius: 12 }}
           height={600}
           layout={'fixed'}
           objectFit={'cover'}
