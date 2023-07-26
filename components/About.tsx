@@ -33,8 +33,8 @@ const About: FC = (): JSX.Element => {
         <motion.div
           className='card'
           whileHover={{ scale: 1.1 }}
-          initial={{ opacity: 0.4, rotate: 360, x: -500 }}
-          whileInView={{ rotate: 0, opacity: 1, x: 0 }}>
+          initial={{ opacity: 0.4, rotate: 360 }}
+          whileInView={{ rotate: 0, opacity: 1 }}>
           <HiCode />
           <h4>{translation('about.experience-title')}</h4>
           <span>{translation('about.experience-content')}</span>
@@ -43,8 +43,8 @@ const About: FC = (): JSX.Element => {
         <motion.div
           className='card'
           whileHover={{ scale: 1.1 }}
-          initial={{ opacity: 0.4, rotate: 360, x: 500 }}
-          whileInView={{ rotate: 0, opacity: 1, x: 0 }}>
+          initial={{ opacity: 0.4, rotate: 360 }}
+          whileInView={{ rotate: 0, opacity: 1 }}>
           <HiViewGrid />
           <h4>{translation('about.projects-title')}</h4>
           <span>{translation('about.projects-content')}</span>

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
+  width: 100%;
+
   .main-container {
     position: fixed;
     top: 0;
@@ -74,6 +76,7 @@ export const HeaderContainer = styled.header`
   }
 
   nav {
+
     @media screen and (max-width: 640px) {
       width: 100%;
     }

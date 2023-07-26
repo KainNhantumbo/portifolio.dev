@@ -42,7 +42,8 @@ export const ContactContainer = styled.section`
     font-weight: 500;
   }
 
-  .messageForm {
+  .form-container {
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -51,6 +52,10 @@ export const ContactContainer = styled.section`
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(${({ theme }) => theme.shadows}, 0.6);
     background: rgb(${({ theme }) => theme.backgroundAlt});
+
+    @media screen and (max-width: 420px) {
+      padding: 20px 12px;
+    }
 
     h1 {
       svg {
@@ -81,6 +86,7 @@ export const ContactContainer = styled.section`
     }
 
     form {
+      width: 100%;
       display: flex;
       justify-content: flex-start;
       flex-direction: column;
@@ -89,6 +95,9 @@ export const ContactContainer = styled.section`
       span {
         font-size: 0.9rem;
         font-weight: 500;
+      }
+
+      @media screen and (max-width: 420px) {
       }
 
       button {

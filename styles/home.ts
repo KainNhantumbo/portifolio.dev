@@ -16,6 +16,12 @@ export const HomeContainer = styled.main`
     font-weight: 500;
     margin: 0 auto;
     position: relative;
+
+    @media screen and (max-width: 420px) {
+      font-size: 1rem;
+      text-align: center;
+    }
+
     svg {
       position: absolute;
       width: 20px;

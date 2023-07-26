@@ -60,15 +60,15 @@ const Contact: FC = (): JSX.Element => {
       </h2>
       <section className='intro'>
         <motion.h2
-          initial={{ opacity: 0, x: -500 }}
+          initial={{ opacity: 0 }}
           transition={{ delay: 0.2 }}
-          whileInView={{ opacity: 1, x: 0 }}>
+          whileInView={{ opacity: 1}}>
           {translation('contact.intro-title')}
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, x: 500 }}
+          initial={{ opacity: 0 }}
           transition={{ delay: 0.4 }}
-          whileInView={{ opacity: 1, x: 0 }}>
+          whileInView={{ opacity: 1 }}>
           {translation('contact.intro-message')}
         </motion.p>
       </section>
@@ -84,8 +84,8 @@ const Contact: FC = (): JSX.Element => {
       </section>
 
       <motion.section
-        className='messageForm'
-        initial={{ opacity: 0, scale: 2 }}
+        className='form-container'
+        initial={{ opacity: 0, scale: 0.4 }}
         transition={{ delay: 0.4 }}
         whileInView={{ opacity: 1, scale: 1 }}>
         <form onSubmit={emailSender}>

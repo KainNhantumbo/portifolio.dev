@@ -97,21 +97,19 @@ const Projects: FC = (): JSX.Element => {
         <HiViewGrid />
         <span>{translation('projects.title')}</span>
       </h2>
-      <motion.p
-        initial={{ opacity: 0, x: -500 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-        whileInView={{ opacity: 1, x: 0 }}>
+      <p>
         <strong>
           {translation('projects.intro-part-1')}{' '}
           <a
             href='https://github.com/KainNhantumbo'
             target={'_blank'}
             rel={'noreferrer noopener'}>
-            {' '}{translation('projects.intro-part-2')}
+            {' '}
+            {translation('projects.intro-part-2')}
           </a>
           .
         </strong>
-      </motion.p>
+      </p>
       <section className='cards-container'>
         <section className='cards-wrapper'>
           {projects.map((project, index) => (

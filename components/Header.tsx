@@ -82,23 +82,25 @@ const Header: FC = (): JSX.Element => {
               exit={{ translateX: 150 }}
               style={{ display: isMenu ? 'flex' : 'none' }}>
               {headerAnchors.map((item, index) => (
-                <Link key={index.toString()} href={item.ref}>
-                  <motion.li
-                    className={router.asPath.includes(item.ref) ? 'active' : ''}
-                    whileTap={{ scale: deltaY <= minWidth ? 0.9 : 0.7 }}
-                    whileHover={{ scale: 1.05, y: 1 }}>
+                <motion.li
+                  key={index.toString()}
+                  className={router.asPath.includes(item.ref) ? 'active' : ''}
+                  whileTap={{ scale: deltaY <= minWidth ? 0.9 : 0.7 }}
+                  whileHover={{ scale: 1.05, y: 1 }}>
+                  <Link href={item.ref}>
                     <span>{item.label}</span>
-                  </motion.li>
-                </Link>
-              ))}
-              <a
-                href={'https://publish-it-programming.vercel.app'}
-                target={'_blank'}
-                rel={'noreferrer noopener'}>
-                <motion.li whileTap={{ scale: 0.8 }}>
-                  <span>{translation('header.anchors.blog')}</span>
+                  </Link>
                 </motion.li>
-              </a>
+              ))}
+
+              <motion.li whileTap={{ scale: deltaY <= minWidth ? 0.9 : 0.7 }}>
+                <a
+                  href={'https://publish-it-programming.vercel.app'}
+                  target={'_blank'}
+                  rel={'noreferrer noopener'}>
+                  <span>{translation('header.anchors.blog')}</span>
+                </a>
+              </motion.li>
             </motion.ul>
           </AnimatePresence>
         </nav>
