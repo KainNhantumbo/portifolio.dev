@@ -66,8 +66,8 @@ const Header: FC = (): JSX.Element => {
               width={40}
               height={40}
               placeholder={'blur'}
-              style={{ borderRadius: 20 }}
-              alt={'author photo'}
+              alt={'author photo image'}
+              aria-placeholder={'author photo image'}
             />
           </div>
           <span>{translation('header.title')}</span>

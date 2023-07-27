@@ -127,7 +127,7 @@ const Abilities: FC = (): JSX.Element => {
                 scale: 1,
                 transition: { duration: 0.5, bounce: 1 },
               }}
-              whileHover={{ rotate: -15 }}
+              whileHover={{ rotate: 15 }}
               className='item'>
               <item.icon />
               <h3>{item.tech}</h3>
@@ -173,7 +173,7 @@ const Abilities: FC = (): JSX.Element => {
                 scale: 1,
                 transition: { duration: 0.5, bounce: 1 },
               }}
-              whileHover={{ rotate: -15 }}
+              whileHover={{ rotate: 15 }}
               className='item'>
               <item.icon />
               <h3>{item.tech}</h3>

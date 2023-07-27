@@ -1,9 +1,17 @@
+import {
+  BsAt,
+  BsChatSquareText,
+  BsFillPersonFill,
+  BsMailbox2,
+  BsPhone,
+  BsTextLeft,
+} from 'react-icons/bs';
 import { FC, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { BiMailSend } from 'react-icons/bi';
+import { FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import type { TInputEvents, TSubmitEvent, TFormData } from '../@types';
 import { _contact as Container } from '../styles/components/contact';
 
@@ -62,7 +70,7 @@ const Contact: FC = (): JSX.Element => {
         <motion.h2
           initial={{ opacity: 0 }}
           transition={{ delay: 0.2 }}
-          whileInView={{ opacity: 1}}>
+          whileInView={{ opacity: 1 }}>
           {translation('contact.intro-title')}
         </motion.h2>
         <motion.p
@@ -74,11 +82,11 @@ const Contact: FC = (): JSX.Element => {
       </section>
       <section className='options'>
         <div className='option'>
-          <FaPhoneAlt />
+          <BsPhone />
           <span> {translation('contact.phone')}</span>
         </div>
         <div className='option'>
-          <FaEnvelope />
+          <BsMailbox2 />
           <span> {translation('contact.mail')}</span>
         </div>
       </section>
@@ -92,7 +100,8 @@ const Contact: FC = (): JSX.Element => {
           <section className='form-control'>
             <div className='form-item'>
               <label htmlFor='name'>
-                {translation('contact.form.name-label')}
+                <BsFillPersonFill />
+                <span>{translation('contact.form.name-label')}</span>
               </label>
               <input
                 type='text'
@@ -106,7 +115,8 @@ const Contact: FC = (): JSX.Element => {
             </div>
             <div className='form-item'>
               <label htmlFor='email'>
-                {translation('contact.form.mail-label')}
+                <BsAt />
+                <span>{translation('contact.form.mail-label')}</span>
               </label>
               <input
                 type='email'
@@ -120,7 +130,8 @@ const Contact: FC = (): JSX.Element => {
             </div>
           </section>
           <label htmlFor='subject'>
-            {translation('contact.form.subject-label')}
+            <BsTextLeft />
+            <span>{translation('contact.form.subject-label')}</span>
           </label>
           <input
             type='text'
@@ -132,7 +143,8 @@ const Contact: FC = (): JSX.Element => {
             onChange={(e) => formDataPicker(e)}
           />
           <label htmlFor='message'>
-            {translation('contact.form.message-label')}
+            <BsChatSquareText />
+            <span>{translation('contact.form.message-label')}</span>
           </label>
           <textarea
             id='message'

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BaseButton, StyledLabels } from '../defaults';
 
 export const _contact = styled.section`
   max-width: 700px;
@@ -12,10 +13,6 @@ export const _contact = styled.section`
   line-height: 1.6rem;
   @media screen and (max-width: 370px) {
     margin: 0;
-  }
-
-  label {
-    font-weight: 500;
   }
 
   .options {
@@ -92,38 +89,12 @@ export const _contact = styled.section`
       flex-direction: column;
       gap: 10px;
 
-      span {
-        font-size: 0.9rem;
-        font-weight: 500;
-      }
-
-      @media screen and (max-width: 420px) {
+      label {
+        ${StyledLabels}
       }
 
       button {
-        border: none;
-        background: none;
-        border-radius: 8px;
-        position: relative;
-        padding: 7px 10px;
-        color: rgb(${({ theme }) => theme.text});
-        background: rgb(${({ theme }) => theme.secondary});
-        width: fit-content;
-        cursor: pointer;
-
-        svg {
-          width: 18px;
-          height: 18px;
-          position: absolute;
-          top: 7px;
-          right: 7px;
-          pointer-events: none;
-        }
-        span {
-          padding-right: 20px;
-          font-weight: 500;
-          pointer-events: none;
-        }
+        ${BaseButton}
       }
 
       input,
@@ -132,7 +103,7 @@ export const _contact = styled.section`
         border-radius: 12px;
         padding: 10px;
         resize: vertical;
-        background: rgb(${({ theme }) => theme.inner});
+        background: rgb(${({ theme }) => theme.background_alter});
         outline: none;
 
         ::placeholder {

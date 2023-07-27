@@ -72,6 +72,11 @@ export const _header = styled.header`
       color: rgb(${({ theme }) => theme.alter});
       left: 5px;
       top: -8px;
+
+      img {
+        border-radius: 12px;
+        border: 1px solid rgb(${({ theme }) => theme.secondary});
+      }
     }
   }
 

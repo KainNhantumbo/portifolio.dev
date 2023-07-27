@@ -75,8 +75,6 @@ export const BaseButton = css`
   }
 `;
 
-
-
 export const StyledLabels = css`
   font-weight: 500;
   position: relative;
@@ -96,39 +94,3 @@ export const StyledLabels = css`
   }
 `;
 
-export const StyledInputs = css`
-  input,
-  textarea,
-  select {
-    width: 100%;
-    height: fit-content;
-    border: none;
-    padding: 10px 18px;
-    line-height: 1.2rem;
-    font-weight: 400;
-    outline: none;
-    border-radius: 10px;
-    background: rgba(${({ theme }) => theme.background}, 0.7);
-    border: 1px solid rgba(${({ theme }) => theme.shadows}, 0.05);
-    color: rgb(${({ theme }) => theme.font});
-    :focus {
-      border: 1px solid rgba(${({ theme }) => theme.shadows}, 0.15);
-      box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.06);
-    }
-    ::placeholder {
-      color: rgba(${({ theme }) => theme.font}, 0.8);
-      font-size: 0.9rem;
-    }
-    :disabled {
-      background: rgb(${({ theme }) => theme.backgroundAlt});
-      border: none;
-      ::placeholder {
-        color: transparent;
-      }
-    }
-  }
-
-  textarea {
-    resize: vertical;
-  }
-`;
