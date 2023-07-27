@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HomeContainer = styled.main`
+export const _home = styled.main`
   width: 100%;
   padding: 0 12px;
   padding-top: 70px;

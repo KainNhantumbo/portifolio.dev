@@ -1,8 +1,9 @@
 import { FC } from 'react';
+import { IoClose } from 'react-icons/io5';
 import { useTranslation } from 'react-i18next';
-import { FaTimesCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LanguageSwitcherContainer as Container } from '../../styles/components/language-switcher';
+import { _languageSwitcher as Container } from '../../styles/components/language-switcher';
+import { DefaultTheme, useTheme } from 'styled-components';
 
 type TLanguages = 'pt' | 'en';
 
@@ -12,6 +13,7 @@ type TProps = {
 };
 
 const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
+  const theme: DefaultTheme = useTheme();
   const { t: translation, i18n } = useTranslation();
 
   const translate = (language: TLanguages): void => {
@@ -42,12 +44,18 @@ const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
                   {translation('language_switcher_modal.message')}
                 </p>
                 <div className='buttons-container'>
-                  <button onClick={() => translate('en')}>
+                  <motion.button
+                    whileTap={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => translate('en')}>
                     {translation('language_switcher_modal.buttons.english')}
-                  </button>
-                  <button onClick={() => translate('pt')}>
+                  </motion.button>
+                  <motion.button
+                    whileTap={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => translate('pt')}>
                     {translation('language_switcher_modal.buttons.portuguese')}
-                  </button>
+                  </motion.button>
                 </div>
               </div>
               <div className='prompt-actions'>
@@ -56,7 +64,7 @@ const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
                   whileHover={{ scale: 1.1 }}
                   className='prompt-cancel'
                   onClick={(e) => props.close(false)}>
-                  <FaTimesCircle />
+                  <IoClose />
                   <span>
                     {translation('language_switcher_modal.button-text')}
                   </span>

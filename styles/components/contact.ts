@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ContactContainer = styled.section`
+export const _contact = styled.section`
   max-width: 700px;
   display: flex;
   flex-direction: column;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { BaseButton, BaseButtonOutline } from '../defaults';
 
-export const LanguageSwitcherContainer = styled.section`
+export const _languageSwitcher = styled.section`
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -18,35 +19,10 @@ export const LanguageSwitcherContainer = styled.section`
     flex-flow: row wrap;
     gap: 12px;
     margin-top: 20px;
-  }
 
-  button {
-    border: none;
-    background: none;
-    border-radius: 8px;
-    position: relative;
-    padding: 7px 10px;
-    color: rgb(${({ theme }) => theme.text});
-    background: rgb(${({ theme }) => theme.primary});
-    width: fit-content;
-    cursor: pointer;
-
-    :hover {
-      box-shadow: 0 0 12px rgb(${({ theme }) => theme.shadows});
-    }
-
-    svg {
-      width: 18px;
-      height: 18px;
-      position: absolute;
-      top: 7px;
-      left: 7px;
-      pointer-events: none;
-    }
-    span {
-      padding-left: 20px;
-      font-weight: 500;
-      pointer-events: none;
+    button {
+      ${BaseButton}
+      
     }
   }
 
@@ -59,7 +35,6 @@ export const LanguageSwitcherContainer = styled.section`
     border-radius: 10px;
     background: rgb(${({ theme }) => theme.backgroundAlt});
     box-shadow: 0 0 20px rgb(${({ theme }) => theme.shadows});
-    border-bottom: 5px solid rgb(${({ theme }) => theme.primary});
     max-width: 600px;
     margin: 0 10px;
 
@@ -83,6 +58,10 @@ export const LanguageSwitcherContainer = styled.section`
       flex-direction: row;
       justify-content: flex-end;
       gap: 10px;
+
+      .prompt-cancel {
+        ${BaseButtonOutline}
+      }
     }
   }
 `;

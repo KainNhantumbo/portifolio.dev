@@ -7,7 +7,7 @@ import { FC, useState, useEffect } from 'react';
 import author from '../public/assets/author.jpg';
 import { NextRouter, useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HeaderContainer as Container } from '../styles/components/header';
+import { _header as Container } from '../styles/components/header';
 
 type TNavbarAnchors = {
   ref: string;

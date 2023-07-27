@@ -5,7 +5,7 @@ import { BiMailSend } from 'react-icons/bi';
 import { useTranslation } from 'react-i18next';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import type { TInputEvents, TSubmitEvent, TFormData } from '../@types';
-import { ContactContainer as Container } from '../styles/components/contact';
+import { _contact as Container } from '../styles/components/contact';
 
 const Contact: FC = (): JSX.Element => {
   const { t: translation } = useTranslation();

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterContainer = styled.footer`
+export const _footer = styled.footer`
   width: 100vw;
   height: min-content;
   position: relative;
@@ -12,9 +12,10 @@ export const FooterContainer = styled.footer`
   background: rgba(${({ theme }) => theme.backgroundAlt}, 0.5);
 
   h3 {
+    padding-top: 20px;
     text-align: center;
     line-height: 2rem;
-		font-size: .92rem;
+		font-size: .98rem;
   }
 
   ul {
