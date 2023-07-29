@@ -13,7 +13,7 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 import type { FC } from 'react';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { FaReact } from 'react-icons/fa';
 import type { TStackSkill } from '../@types';
 import { useTranslation } from 'react-i18next';

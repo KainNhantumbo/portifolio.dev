@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import { TProject } from '../@types';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { HiPlay, HiViewGrid } from 'react-icons/hi';
@@ -113,7 +113,7 @@ const Projects: FC = (): JSX.Element => {
       <section className='cards-container'>
         <section className='cards-wrapper'>
           {projects.map((project, index) => (
-            <motion.section className='card' key={index}>
+            <motion.section className='card' key={index} whileHover={{ y: -7 }}>
               <div className='top'>
                 <Image
                   src={project.image}
@@ -128,7 +128,7 @@ const Projects: FC = (): JSX.Element => {
               </div>
               <div className='bottom'>
                 <div className='details'>
-                  <h3>{project.name}</h3>
+                  <h3>{project.name}</h3>{' '}
                 </div>
                 <div className='actions'>
                   {project.live_url.length > 5 ? (

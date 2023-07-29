@@ -8,6 +8,11 @@ export const GlobalStyles = createGlobalStyle`
     max-width: 100%;
     scroll-padding-top: 70px;
     scroll-behavior: smooth;
+
+    ::selection {
+      background: rgb(${({ theme }) => theme.secondary});
+      color: rgb(${({ theme }) => theme.text});
+    }
   }
   
   span, label {
@@ -15,9 +20,9 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   body {
+    width: 100%;
     font-family: Inter, 'Open Sans', Roboto, Poppins, 'PT Sans', sans-serif;
     color: rgb(${({ theme }) => theme.font});
-    width: 100%;
     background: rgb(${({ theme }) => theme.background});
     position: relative;
   }

@@ -38,16 +38,16 @@ export const BaseButton = css`
   padding: 10px;
   width: fit-content;
   cursor: pointer;
-  background: rgb(${({ theme }) => theme.primary});
   color: rgb(${({ theme }) => theme.text});
   border: 1px solid transparent;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   outline: none;
+  background: rgb(${({ theme }) => theme.secondary});
   :hover {
     box-shadow: 0 0 12px rgb(${({ theme }) => theme.shadows});
-    background: rgb(${({ theme }) => theme.secondary});
+    background: rgb(${({ theme }) => theme.primary});
   }
   :disabled {
     box-shadow: none;

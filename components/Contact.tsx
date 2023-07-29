@@ -8,7 +8,7 @@ import {
 } from 'react-icons/bs';
 import { FC, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { BiMailSend } from 'react-icons/bi';
 import { FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Footer from './Footer';
 import Header from './Header';
 import { FC, useState, ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { BsTranslate } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';

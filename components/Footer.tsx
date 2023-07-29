@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import Package from '../package.json';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import type { IconType } from 'react-icons';
 import { useTranslation } from 'react-i18next';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';

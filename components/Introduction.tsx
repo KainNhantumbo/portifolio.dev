@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { FC } from 'react';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { HiSparkles } from 'react-icons/hi';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';

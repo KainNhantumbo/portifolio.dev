@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiX } from 'react-icons/hi';
-import { FaBars } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { FC, useState, useEffect } from 'react';
+import { BsFillGridFill } from 'react-icons/bs';
 import author from '../public/assets/author.jpg';
 import { NextRouter, useRouter } from 'next/router';
-import { motion, AnimatePresence } from 'framer-motion';
+import {m as motion, AnimatePresence } from 'framer-motion';
 import { _header as Container } from '../styles/components/header';
 
 type TNavbarAnchors = {
@@ -73,7 +73,7 @@ const Header: FC = (): JSX.Element => {
           <span>{translation('header.title')}</span>
         </motion.h2>
         <motion.button whileTap={{ scale: 0.8 }} onClick={toggleMenu}>
-          {isMenu ? <HiX /> : <FaBars />}
+          {isMenu ? <HiX /> : <BsFillGridFill />}
         </motion.button>
         <nav className='navbar'>
           <AnimatePresence>

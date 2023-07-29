@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { SiAboutdotme } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import { HiCode, HiViewGrid } from 'react-icons/hi';
