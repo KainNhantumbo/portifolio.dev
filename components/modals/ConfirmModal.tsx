@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { FaTimesCircle } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ConfirmModalContainer as Container } from '../../styles/components/confirm-modal';
+import type { FC } from 'react';
+import { IoClose } from 'react-icons/io5';
+import { m as motion, AnimatePresence } from 'framer-motion';
+import { _confirmModal as Container } from '../../styles/components/confirm-modal';
 
 type TProps = {
   prompt_title: string;
@@ -36,7 +36,7 @@ const ConfirmModal: FC<TProps> = (props): JSX.Element => (
                 whileHover={{ scale: 1.1 }}
                 className='prompt-cancel'
                 onClick={(e) => props.closeModal(false)}>
-                <FaTimesCircle />
+                <IoClose />
                 <span>{props.buttonText}</span>
               </motion.button>
             </div>

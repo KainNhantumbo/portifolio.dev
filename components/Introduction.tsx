@@ -4,10 +4,10 @@ import { m as motion } from 'framer-motion';
 import { HiSparkles } from 'react-icons/hi';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
+import intro_bg0 from '../public/assets/intro-bg0.jpg';
+import intro_bg1 from '../public/assets/intro-bg1.jpg';
 import { DefaultTheme, useTheme } from 'styled-components';
-import intro_background from '../public/assets/intro-background.jpg';
-import intro_background2 from '../public/assets/intro-background2.jpg';
-import { IntroductionContainer as Container } from '../styles/components/introduction';
+import { _introduction as Container } from '../styles/components/introduction';
 
 const Introduction: FC = (): JSX.Element => {
   const { darkmode } = useAppContext();
@@ -21,7 +21,7 @@ const Introduction: FC = (): JSX.Element => {
         animate={{ scale: 1, transition: { delay: 0.2 } }}
         className='intro-background'>
         <Image
-          src={darkmode ? intro_background : intro_background2}
+          src={darkmode ? intro_bg0 : intro_bg1}
           style={{ borderRadius: 12 }}
           height={600}
           layout={'fixed'}

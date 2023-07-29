@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const IntroductionContainer = styled.section`
+export const _introduction = styled.section`
   width: 100%;
   max-width: 1368px;
   margin: 0 auto;
@@ -14,15 +14,14 @@ export const IntroductionContainer = styled.section`
   color: rgb(${({ theme }) => theme.text});
 
   .intro-background {
-    position: absolute;
     top: 0;
     left: 0;
+    position: absolute;
     border-radius: 12px;
     height: 600px;
   }
 
   .intro-details {
-    z-index: 200;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -31,6 +30,7 @@ export const IntroductionContainer = styled.section`
     background-color: rgba(${({ theme }) => theme.shadows}, 0.2);
     backdrop-filter: blur(4px);
     border-radius: 0 0 12px 12px;
+    z-index: 200;
 
     .placeholder {
       width: fit-content;
@@ -43,7 +43,7 @@ export const IntroductionContainer = styled.section`
       color: rgb(${({ theme }) => theme.text});
       padding: 0 12px;
       text-transform: capitalize;
-      border-radius: 15px;
+      border-radius: 5px;
       font-size: 0.9rem;
       position: relative;
 
@@ -64,8 +64,7 @@ export const IntroductionContainer = styled.section`
       font-size: 2.8rem;
       line-height: 3.2rem;
       font-weight: 500;
-      color: rgb(${({ theme }) => theme.font});
-      text-shadow: 1px 1px 2px rgb(${({ theme }) => theme.hover});
+      color: rgb(${({ theme }) => theme.text});
 
       @media screen and (max-width: 640px) {
         font-size: 1.6rem;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FluentButtonsContainer = styled.section`
+export const _fluentButtons = styled.section`
   z-index: 3000;
   position: fixed;
   bottom: 20px;
@@ -32,6 +32,7 @@ export const FluentButtonsContainer = styled.section`
     backdrop-filter: blur(10px);
     place-content: center;
     position: relative;
+    outline: none;
     cursor: pointer;
 
     svg {

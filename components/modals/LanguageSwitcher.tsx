@@ -1,9 +1,8 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import { _languageSwitcher as Container } from '../../styles/components/language-switcher';
-import { DefaultTheme, useTheme } from 'styled-components';
 
 type TLanguages = 'pt' | 'en';
 
@@ -13,7 +12,6 @@ type TProps = {
 };
 
 const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
-  const theme: DefaultTheme = useTheme();
   const { t: translation, i18n } = useTranslation();
 
   const translate = (language: TLanguages): void => {

@@ -9,7 +9,7 @@ import { useAppContext } from '../context/AppContext';
 import { BiMoon, BiSun, BiUpArrowAlt } from 'react-icons/bi';
 import ConfirmModal from '../components/modals/ConfirmModal';
 import LanguageSwitcher from '../components/modals/LanguageSwitcher';
-import { FluentButtonsContainer as Container } from '../styles/components/fluent-buttons';
+import { _fluentButtons as Container } from '../styles/components/fluent-buttons';
 
 type TProps = { children: ReactNode };
 
