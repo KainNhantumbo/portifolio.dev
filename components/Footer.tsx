@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { _footer as Container } from '../styles/components/footer';
+import donutsImage from '../public/assets/donuts.png';
+import Image from 'next/image';
 
 type TSocialMediaAnchors = {
   name: string;
@@ -41,6 +43,16 @@ const Footer: FC = (): JSX.Element => {
 
   return (
     <Container>
+      <div className='donuts-image-container'>
+        <Image
+          width={4257}
+          height={375}
+          priority={false}
+          src={donutsImage}
+          alt='donuts image decoration'
+        />
+      </div>
+
       <h3>
         <strong>{translation('footer.title')}</strong>
       </h3>

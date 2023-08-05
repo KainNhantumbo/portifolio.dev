@@ -8,14 +8,25 @@ export const _footer = styled.footer`
   flex-direction: column;
   gap: 10px;
   padding-bottom: 10px;
-	border-radius: 12px;
+  border-radius: 12px;
   background: rgba(${({ theme }) => theme.backgroundAlt}, 0.5);
 
+  .donuts-image-container {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
   h3 {
-    padding-top: 20px;
     text-align: center;
     line-height: 2rem;
-		font-size: .98rem;
+    font-size: 0.98rem;
   }
 
   ul {

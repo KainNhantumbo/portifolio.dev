@@ -18,7 +18,7 @@ import { FaReact } from 'react-icons/fa';
 import type { TStackSkill } from '../@types';
 import { useTranslation } from 'react-i18next';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
-import { AbilitiesContainer as Container } from '../styles/components/abilities';
+import { _abilities as Container } from '../styles/components/abilities';
 
 const Abilities: FC = (): JSX.Element => {
   const { t: translation } = useTranslation();

@@ -64,7 +64,7 @@ export const ProjectsContainer = styled.section`
 					bottom: 16px;
 					left: 8px;
 					padding: 0px 8px;
-					border-radius: 12px;
+					border-radius: 8px;
 					font-size: 0.8rem;
 					font-weight: 500;
 					backdrop-filter: blur(10px);

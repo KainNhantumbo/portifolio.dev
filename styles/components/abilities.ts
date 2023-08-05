@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AbilitiesContainer = styled.section`
+export const _abilities = styled.section`
   display: flex;
   flex-direction: column;
   max-width: 700px;
@@ -49,6 +49,10 @@ export const AbilitiesContainer = styled.section`
       border: 2px solid transparent;
       :hover {
         border: 2px solid rgb(${({ theme }) => theme.primary});
+
+        svg {
+          color: rgb(${({ theme }) => theme.primary});
+        }
       }
 
       span {

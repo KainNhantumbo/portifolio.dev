@@ -1,6 +1,6 @@
 {
   "header": {
-    "title": "You're Welcome 😊",
+    "title": "Halloo 😊",
     "anchors": {
       "blog": "Blog",
       "home": "Home",
@@ -24,7 +24,7 @@
   },
   "intro": {
     "welcome-message": "Welcome to my portfolio :)",
-    "presentation": "Hello 👋, I am Kain Nhantumbo!",
+    "presentation": "Hello 👋, I am Kain!",
     "message-part-1": "A enthusiastic software developer who loves donuts and building full-stack applications while learning something new everyday.",
     "message-part-2": "To build my projects, I use Typescript and Javascript as main programming technologies."
   },
