@@ -8,11 +8,46 @@ import intro_bg0 from '../public/assets/intro-bg0.jpg';
 import intro_bg1 from '../public/assets/intro-bg1.jpg';
 import { DefaultTheme, useTheme } from 'styled-components';
 import { _introduction as Container } from '../styles/components/introduction';
+import { FaGithub } from 'react-icons/fa';
+import { ImLinkedin2 } from 'react-icons/im';
 
 const Introduction: FC = (): JSX.Element => {
   const { darkmode } = useAppContext();
   const { t: translation } = useTranslation();
   const { text, font }: DefaultTheme = useTheme();
+
+  const socialAnchors = [
+    {
+      name: translation('footer.anchors.github'),
+      icon: FaGithub,
+      link: 'https://github.com/KainNhantumbo',
+    },
+    {
+      name: translation('footer.anchors.linkedIn'),
+      icon: ImLinkedin2,
+      link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US',
+    },
+  ];
+
+  const renderAnchors = (): JSX.Element => {
+    return (
+      <ul>
+        {socialAnchors.map((item, index) => (
+          <motion.li
+            key={index}
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            title={item.name}>
+            <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
+              <item.icon />
+            </a>
+          </motion.li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <Container id='home'>
@@ -31,16 +66,25 @@ const Introduction: FC = (): JSX.Element => {
         />
       </motion.div>
       <div className='intro-details'>
-        <motion.h3
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.5 }}
-          className='placeholder'>
-          <HiSparkles />
-          <span>{translation('intro.welcome-message')}</span>
-        </motion.h3>
+        <div className='styled-intro-container'>
+          <h3>{translation('intro.presentation')}</h3>
+          <div className='title-container '>
+            <h1>{translation('intro.title')}</h1>
+          </div>
+        </div>
 
-        <h1>{translation('intro.presentation')}</h1>
+        <div className='welcome-container'>
+          <motion.h3
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.5 }}
+            className='placeholder'>
+            <HiSparkles />
+            <span>{translation('intro.welcome-message')}</span>
+          </motion.h3>
+          {renderAnchors()}
+        </div>
+
         <p
           style={{
             color: darkmode ? text : font,

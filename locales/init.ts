@@ -3,7 +3,7 @@ import pt_BR from './languages/pt_BR.json';
 import en_US from './languages/en_US.json';
 import { initReactI18next } from 'react-i18next';
 
-i18next.use(initReactI18next).init({
+export default i18next.use(initReactI18next).init({
   debug: false,
   lng: 'en',
   partialBundledLanguages: false,
@@ -15,4 +15,4 @@ i18next.use(initReactI18next).init({
   },
 });
 
-export default i18next;
+export const rawTranslation = i18next.t;
