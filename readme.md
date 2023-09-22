@@ -2,11 +2,11 @@
 
 ## Hi, welcome to my portfolio repository!
 
-This is my portifolio website repository were I describe myself, show my projects and talk about my work.
+This is my portfolio website repository were I describe myself, show my projects and talk about my work. It is available in both portuguese and english, translated with the i18next standards.
 
-Feel free to visit my portifolio using the link below:
+Feel free to visit my portfolio using the link below:
 
-**My Portifolio:** [https://portifolio-dev-kainnhantumbo.vercel.app](https://portifolio-dev-kainnhantumbo.vercel.app)
+**My Portfolio:** [https://portifolio-dev-kainnhantumbo.vercel.app](https://portifolio-dev-kainnhantumbo.vercel.app)
 
 or,
 

@@ -4,7 +4,6 @@ class MyDocument extends Document {
   render = (): JSX.Element => (
     <Html>
       <Head>
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'
           href='https://fonts.gstatic.com'
