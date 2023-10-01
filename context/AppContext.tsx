@@ -4,7 +4,7 @@ import {
   ReactNode,
   useState,
   useEffect,
-  FC,
+  FC
 } from 'react';
 import { ITheme as ThemeType } from '../@types';
 import { GlobalStyles } from '../styles/global-styles';
@@ -28,17 +28,17 @@ interface ITheme {
 const context = createContext<IContext>({
   themeSwitcher: () => {},
   slidePageUp: () => {},
-  darkmode: false,
+  darkmode: false
 });
 
-const AppContext: FC<IProps> = ({ children }): JSX.Element => {
+const AppContext: FC<IProps> = ({ children }) => {
   const THEME_STORAGE_KEY: string = 'THEME_SETTINGS';
   const [currentTheme, setCurrentTheme] = useState<ThemeType>(lightTheme);
   const [themeSettings, setThemeSettings] = useState<ITheme>({
-    darkMode: false,
+    darkMode: false
   });
 
-  const themeSwitcher = (): void => {
+  const themeSwitcher = () => {
     if (!themeSettings.darkMode) {
       setCurrentTheme(darkTheme);
       setThemeSettings({ darkMode: true });
@@ -57,15 +57,15 @@ const AppContext: FC<IProps> = ({ children }): JSX.Element => {
   };
 
   // slides the page to the top
-  const slidePageUp = (): void => {
+  const slidePageUp = () => {
     return window.scrollTo({
       left: 0,
       top: 0,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
 
-  useEffect((): void => {
+  useEffect(() => {
     const themeConfig: any = JSON.parse(
       localStorage.getItem(THEME_STORAGE_KEY) || `{"darkMode": true}`
     );
@@ -82,7 +82,7 @@ const AppContext: FC<IProps> = ({ children }): JSX.Element => {
         value={{
           themeSwitcher,
           slidePageUp,
-          darkmode: themeSettings.darkMode,
+          darkmode: themeSettings.darkMode
         }}>
         {children}
       </context.Provider>

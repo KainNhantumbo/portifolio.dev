@@ -15,30 +15,30 @@ type TSocialMediaAnchors = {
   link: string;
 };
 
-const Footer: FC = (): JSX.Element => {
+const Footer: FC = () => {
   const { t: translation } = useTranslation();
 
   const socialMediaAnchors: TSocialMediaAnchors[] = [
     {
       name: translation('footer.anchors.github'),
       icon: FaGithub,
-      link: 'https://github.com/KainNhantumbo',
+      link: 'https://github.com/KainNhantumbo'
     },
     {
       name: translation('footer.anchors.whatsapp'),
       icon: FaWhatsapp,
-      link: 'https://wa.me/258844002535',
+      link: 'https://wa.me/258844002535'
     },
     {
       name: translation('footer.anchors.linkedIn'),
       icon: ImLinkedin2,
-      link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US',
+      link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US'
     },
     {
       name: translation('footer.anchors.blog'),
       icon: ImBlog,
-      link: 'https://publish-it-programming.vercel.app',
-    },
+      link: 'https://publish-it-programming.vercel.app'
+    }
   ];
 
   return (
@@ -64,7 +64,7 @@ const Footer: FC = (): JSX.Element => {
             whileHover={{ scale: 1.2 }}
             whileInView={{
               scale: 1,
-              transition: { delay: index / 4 },
+              transition: { delay: index / 4 }
             }}
             title={item.name}>
             <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>

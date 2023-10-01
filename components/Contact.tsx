@@ -4,7 +4,7 @@ import {
   BsFillPersonFill,
   BsMailbox2,
   BsPhone,
-  BsTextLeft,
+  BsTextLeft
 } from 'react-icons/bs';
 import { FC, useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import type { TInputEvents, TSubmitEvent, TFormData } from '../@types';
 import { _contact as Container } from '../styles/components/contact';
 
-const Contact: FC = (): JSX.Element => {
+const Contact: FC = () => {
   const { t: translation } = useTranslation();
   const [messageStatus, setMessageStatus] = useState<string>('');
   const [formData, setFormData] = useState<TFormData>({
@@ -23,18 +23,18 @@ const Contact: FC = (): JSX.Element => {
     email: 'nhantumbok@gmail.com',
     subject: '',
     message: '',
-    from_email: '',
+    from_email: ''
   });
 
-  const formDataPicker = (e: TInputEvents): void => {
+  const formDataPicker = (e: TInputEvents) => {
     setFormData((prevData) => ({
       ...prevData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }));
   };
 
   // notifies the e-mail sender about the message status
-  const notification = (message: string): void => {
+  const notification = (message: string) => {
     setMessageStatus(message);
     clearTimeout(undefined);
     setTimeout(() => {

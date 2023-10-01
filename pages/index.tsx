@@ -9,14 +9,14 @@ import { _home as Container } from '../styles/home';
 
 // code spliting
 const Contact = dynamic(import('../components/Contact'), {
-  ssr: true,
+  ssr: true
 });
 
 const Projects = dynamic(import('../components/Projects'), {
-  ssr: true,
+  ssr: true
 });
 
-const Home: NextPage = (): JSX.Element => (
+const Home: NextPage = () => (
   <MotionConfig reducedMotion='user'>
     <LazyMotion strict={true} features={domAnimation}>
       <Layout>

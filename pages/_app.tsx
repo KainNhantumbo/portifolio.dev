@@ -4,7 +4,7 @@ import { FC, Suspense } from 'react';
 import type { AppProps } from 'next/app';
 import AppContext from '../context/AppContext';
 
-const MyApp: FC<AppProps> = ({ Component, pageProps }): JSX.Element => (
+const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
   <Suspense fallback={'Loading...'}>
     <AppContext>
       <Component {...pageProps} />

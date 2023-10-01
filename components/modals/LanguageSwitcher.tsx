@@ -11,10 +11,10 @@ type TProps = {
   active: boolean;
 };
 
-const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
+const LanguageSwitcher: FC<TProps> = (props) => {
   const { t: translation, i18n } = useTranslation();
 
-  const translate = (language: TLanguages): void => {
+  const translate = (language: TLanguages) => {
     i18n.changeLanguage(language);
     props.close(false);
   };
@@ -31,7 +31,7 @@ const LanguageSwitcher: FC<TProps> = (props): JSX.Element => {
             exit={{
               opacity: 0,
               scale: 0,
-              transition: { duration: 0.3 },
+              transition: { duration: 0.3 }
             }}>
             <div className='dialog-prompt'>
               <div className='prompt-info'>

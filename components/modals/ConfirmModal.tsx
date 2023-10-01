@@ -11,7 +11,7 @@ type TProps = {
   buttonText: string;
 };
 
-const ConfirmModal: FC<TProps> = (props): JSX.Element => (
+const ConfirmModal: FC<TProps> = (props) => (
   <AnimatePresence>
     {props.active && (
       <Container onClick={(e) => props.closeModal(false)}>
@@ -23,7 +23,7 @@ const ConfirmModal: FC<TProps> = (props): JSX.Element => (
           exit={{
             opacity: 0,
             scale: 0,
-            transition: { duration: 0.3 },
+            transition: { duration: 0.3 }
           }}>
           <div className='dialog-prompt'>
             <div className='prompt-info'>

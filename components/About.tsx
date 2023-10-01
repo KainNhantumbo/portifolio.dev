@@ -3,9 +3,9 @@ import { m as motion } from 'framer-motion';
 import { SiAboutdotme } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import { HiCode, HiViewGrid } from 'react-icons/hi';
-import { AboutContainer as Container } from '../styles/components/about.module';
+import { _about as Container } from '../styles/components/about';
 
-const About: FC = (): JSX.Element => {
+const About: FC = () => {
   const { t: translation } = useTranslation();
   return (
     <Container id='about'>

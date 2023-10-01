@@ -19,10 +19,10 @@ import { ProjectsContainer as Container } from '../styles/components/projects';
 const categories = {
   back: 'Back-end',
   front: 'Front-end',
-  full: 'Full-stack',
+  full: 'Full-stack'
 };
 
-const Projects: FC = (): JSX.Element => {
+const Projects: FC = () => {
   const { t: translation } = useTranslation();
 
   const projects: TProject[] = [
@@ -31,68 +31,68 @@ const Projects: FC = (): JSX.Element => {
       category: categories.full,
       image: bug_tracker_app,
       code_url: 'https://github.com/KainNhantumbo/bug-tracker',
-      live_url: 'https://bug-tracker-kainnhantumbo.vercel.app',
+      live_url: 'https://bug-tracker-kainnhantumbo.vercel.app'
     },
     {
       name: translation('projects.content.url-shortner'),
       category: categories.full,
       image: url_shortner_app,
       code_url: 'https://github.com/KainNhantumbo/url-shortner-app',
-      live_url: 'https://url-shortner-app-six.vercel.app',
+      live_url: 'https://url-shortner-app-six.vercel.app'
     },
     {
       name: translation('projects.content.notes-app'),
       category: categories.front,
       image: nava_notes,
       live_url: 'https://nava-notes-app.vercel.app',
-      code_url: 'https://github.com/KainNhantumbo/Nava-Notes-App',
+      code_url: 'https://github.com/KainNhantumbo/Nava-Notes-App'
     },
     {
       name: translation('projects.content.tasks-app'),
       category: categories.full,
       image: planner_app,
       live_url: '',
-      code_url: 'https://github.com/KainNhantumbo/Planner-App',
+      code_url: 'https://github.com/KainNhantumbo/Planner-App'
     },
     {
       name: translation('projects.content.recipes-website'),
       category: categories.full,
       image: recipes_website,
       live_url: '',
-      code_url: 'https://github.com/KainNhantumbo/food-and-recipes-website',
+      code_url: 'https://github.com/KainNhantumbo/food-and-recipes-website'
     },
     {
       name: translation('projects.content.hagira-store'),
       category: categories.full,
       image: hagira_ecommerce,
       live_url: '',
-      code_url: 'https://github.com/KainNhantumbo/Hagira-Brands-Store',
+      code_url: 'https://github.com/KainNhantumbo/Hagira-Brands-Store'
     },
     {
       name: translation('projects.content.bug-tracker-server'),
       category: categories.back,
       image: bug_tracker_server,
       code_url: 'https://github.com/KainNhantumbo/bug-tracker-api',
-      live_url: '',
+      live_url: ''
     },
     {
       name: translation('projects.content.hagira-store-server'),
       category: categories.back,
       image: server_01,
       live_url: '',
-      code_url: 'https://github.com/KainNhantumbo/Hagira-Website-API',
+      code_url: 'https://github.com/KainNhantumbo/Hagira-Website-API'
     },
     {
       name: translation('projects.content.tasks-app-server'),
       category: categories.back,
       image: server_03,
       live_url: '',
-      code_url: 'https://github.com/KainNhantumbo/Server-for-planner-app',
-    },
+      code_url: 'https://github.com/KainNhantumbo/Server-for-planner-app'
+    }
   ];
 
   return (
-    <Container id='projects'>
+    <Container>
       <h2>
         <HiViewGrid />
         <span>{translation('projects.title')}</span>

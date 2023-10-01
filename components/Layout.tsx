@@ -13,7 +13,7 @@ import { _fluentButtons as Container } from '../styles/components/fluent-buttons
 
 type TProps = { children: ReactNode };
 
-const Layout: FC<TProps> = ({ children }): JSX.Element => {
+const Layout: FC<TProps> = ({ children }) => {
   const { t: translation } = useTranslation();
   const { themeSwitcher, slidePageUp, darkmode } = useAppContext();
   const [isModalActive, setIsModalActive] = useState<boolean>(false);

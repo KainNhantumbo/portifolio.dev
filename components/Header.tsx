@@ -6,7 +6,7 @@ import { FC, useState, useEffect } from 'react';
 import { BsFillGridFill } from 'react-icons/bs';
 import author from '../public/assets/author.jpg';
 import { NextRouter, useRouter } from 'next/router';
-import {m as motion, AnimatePresence } from 'framer-motion';
+import { m as motion, AnimatePresence } from 'framer-motion';
 import { _header as Container } from '../styles/components/header';
 
 type TNavbarAnchors = {
@@ -14,7 +14,7 @@ type TNavbarAnchors = {
   label: string;
 };
 
-const Header: FC = (): JSX.Element => {
+const Header: FC = () => {
   const minWidth: number = 640;
   const router: NextRouter = useRouter();
   const [isMenu, setIsMenu] = useState<boolean>(false);
@@ -27,16 +27,16 @@ const Header: FC = (): JSX.Element => {
     { label: translation('header.anchors.about'), ref: '#about' },
     { label: translation('header.anchors.skills'), ref: '#skills' },
     { label: translation('header.anchors.projects'), ref: '#projects' },
-    { label: translation('header.anchors.contact'), ref: '#contact' },
+    { label: translation('header.anchors.contact'), ref: '#contact' }
   ];
 
-  const toggleMenu = (): void => setIsMenu(!isMenu);
+  const toggleMenu = () => setIsMenu(!isMenu);
 
-  const changeWidth = (): void =>
+  const changeWidth = () =>
     window.innerWidth > minWidth ? setIsMenu(true) : setIsMenu(false);
 
   // controls the header visibility by the wheel events
-  const hideMenu = (e: WheelEvent): void => setDeltaY(e.deltaY);
+  const hideMenu = (e: WheelEvent) => setDeltaY(e.deltaY);
 
   useEffect((): (() => void) => {
     changeWidth();
@@ -47,7 +47,7 @@ const Header: FC = (): JSX.Element => {
         location.assign(router.asPath);
       }
     }
-    return (): void => {
+    return () => {
       window.removeEventListener('resize', changeWidth);
       window.removeEventListener('wheel', hideMenu);
     };

@@ -11,7 +11,7 @@ import { _introduction as Container } from '../styles/components/introduction';
 import { FaGithub } from 'react-icons/fa';
 import { ImLinkedin2 } from 'react-icons/im';
 
-const Introduction: FC = (): JSX.Element => {
+const Introduction: FC = () => {
   const { darkmode } = useAppContext();
   const { t: translation } = useTranslation();
   const { text, font }: DefaultTheme = useTheme();
@@ -20,16 +20,16 @@ const Introduction: FC = (): JSX.Element => {
     {
       name: translation('footer.anchors.github'),
       icon: FaGithub,
-      link: 'https://github.com/KainNhantumbo',
+      link: 'https://github.com/KainNhantumbo'
     },
     {
       name: translation('footer.anchors.linkedIn'),
       icon: ImLinkedin2,
-      link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US',
-    },
+      link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US'
+    }
   ];
 
-  const renderAnchors = (): JSX.Element => {
+  const renderAnchors = () => {
     return (
       <ul>
         {socialAnchors.map((item, index) => (
@@ -88,7 +88,7 @@ const Introduction: FC = (): JSX.Element => {
         <p
           style={{
             color: darkmode ? text : font,
-            textShadow: !darkmode ? `1px 1px 3px rgb(${font})` : 'none',
+            textShadow: !darkmode ? `1px 1px 3px rgb(${font})` : 'none'
           }}>
           {translation('intro.message-part-1')}
           <br />
