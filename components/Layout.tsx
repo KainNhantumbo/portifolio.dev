@@ -15,7 +15,7 @@ type TProps = { children: ReactNode };
 
 const Layout: FC<TProps> = ({ children }) => {
   const { t: translation } = useTranslation();
-  const { themeSwitcher, slidePageUp, darkmode } = useAppContext();
+  const { slidePageUp, colorScheme, changeColorScheme } = useAppContext();
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
   const [isLanguageSwitcher, setIsLanguageSwitcher] = useState<boolean>(false);
 
@@ -41,8 +41,12 @@ const Layout: FC<TProps> = ({ children }) => {
             transition={{ type: 'spring', duration: 0.5 }}
             title='Change Theme'
             aria-label='Toogle theme'
-            onClick={themeSwitcher}>
-            {darkmode ? <BiSun /> : <BiMoon />}
+            onClick={() =>
+              colorScheme.scheme === 'light'
+                ? changeColorScheme({ mode: 'manual', scheme: 'dark' })
+                : changeColorScheme({ mode: 'manual', scheme: 'light' })
+            }>
+            {colorScheme.scheme === 'light' ? <BiSun /> : <BiMoon />}
           </motion.button>
           <motion.button
             title='Go to Top'

@@ -10,15 +10,14 @@ export const _header = styled.header`
     width: 100%;
     min-height: 65px;
     padding: 20px;
-    border-radius: 0 0 12px 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    background: rgba(${({ theme }) => theme.foreground}, 0.6);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
     z-index: 5000;
+    background: rgba(${({ theme }) => theme.foreground}, 0.5);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
 
     @media screen and (max-width: 820px) {
       justify-content: flex-end;
@@ -33,7 +32,6 @@ export const _header = styled.header`
     border: none;
     background: none;
     border-radius: 3px;
-    color: rgb(${({ theme }) => theme.secondary});
     width: fit-content;
     cursor: pointer;
     justify-self: flex-end;
@@ -50,41 +48,37 @@ export const _header = styled.header`
       height: 25px;
       pointer-events: none;
     }
+
+    :hover {
+      color: rgb(${({ theme }) => theme.primary_shade});
+    }
   }
 
-  .brand {
+  h2 {
     position: absolute;
     top: 22px;
-    left: 10px;
-    color: rgb(${({ theme }) => theme.primary});
+    left: 20px;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
 
     span {
       font-weight: 500;
-      text-align: center;
-      font-size: 1.2rem;
-      padding-left: 50px;
-    }
-    .image {
-      position: absolute;
-      width: 38px;
-      height: 38px;
-      color: rgb(${({ theme }) => theme.secondary});
-      left: 5px;
-      top: -8px;
-
-      img {
-        border-radius: 12px;
-        border: 1px solid rgb(${({ theme }) => theme.secondary});
-      }
     }
   }
 
   nav {
-
     @media screen and (max-width: 640px) {
       width: 100%;
     }
+
     ul {
       width: 100%;
       display: flex;
@@ -96,7 +90,7 @@ export const _header = styled.header`
 
       @media screen and (max-width: 640px) {
         flex-direction: column;
-        padding: 0 50px;
+        padding: 0 30px;
         display: none;
       }
       @media screen and (min-width: 640px) {
@@ -107,12 +101,16 @@ export const _header = styled.header`
         position: relative;
         padding: 5px;
 
+        a {
+          width: 100%;
+        }
+
         @media screen and (max-width: 640px) {
           padding: 10px;
         }
 
         :hover {
-          color: rgb(${({ theme }) => theme.primary});
+          color: rgb(${({ theme }) => theme.primary_shade});
           cursor: pointer;
         }
       }

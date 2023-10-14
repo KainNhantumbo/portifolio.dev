@@ -1,10 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { HiX } from 'react-icons/hi';
 import { useTranslation } from 'react-i18next';
 import { FC, useState, useEffect } from 'react';
-import { BsFillGridFill } from 'react-icons/bs';
-import author from '../public/assets/author.jpg';
+import { RiMenuLine, RiCloseLine, RiPlantLine } from 'react-icons/ri';
 import { NextRouter, useRouter } from 'next/router';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _header as Container } from '../styles/components/header';
@@ -23,7 +20,6 @@ const Header: FC = () => {
 
   // stores navigation bar ref urls and name
   const headerAnchors: TNavbarAnchors[] = [
-    { label: translation('header.anchors.home'), ref: '#home' },
     { label: translation('header.anchors.about'), ref: '#about' },
     { label: translation('header.anchors.skills'), ref: '#skills' },
     { label: translation('header.anchors.projects'), ref: '#projects' },
@@ -59,21 +55,12 @@ const Header: FC = () => {
         className='main-container'
         animate={{ translateY: deltaY == 100 ? -65 : 0 }}
         transition={{ duration: 0.5 }}>
-        <motion.h2 className='brand' onClick={() => router.push('/')}>
-          <div className='image'>
-            <Image
-              src={author}
-              width={40}
-              height={40}
-              placeholder={'blur'}
-              alt={'author photo image'}
-              aria-placeholder={'author photo image'}
-            />
-          </div>
-          <span>{translation('header.title')}</span>
-        </motion.h2>
+        <h2 onClick={() => router.push('/')}>
+          <RiPlantLine />
+          <span>Kain.dev</span>
+        </h2>
         <motion.button whileTap={{ scale: 0.8 }} onClick={toggleMenu}>
-          {isMenu ? <HiX /> : <BsFillGridFill />}
+          {isMenu ? <RiCloseLine /> : <RiMenuLine />}
         </motion.button>
         <nav className='navbar'>
           <AnimatePresence>
@@ -85,8 +72,8 @@ const Header: FC = () => {
                 <motion.li
                   key={index.toString()}
                   className={router.asPath.includes(item.ref) ? 'active' : ''}
-                  whileTap={{ scale: deltaY <= minWidth ? 0.9 : 0.7 }}
-                  whileHover={{ scale: 1.05, y: 1 }}>
+                  whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
+                  whileHover={{ scale: 1.01, y: 1 }}>
                   <Link href={item.ref}>
                     <span>{item.label}</span>
                   </Link>
