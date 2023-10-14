@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { NextRouter, useRouter } from 'next/router';
+import donutImage from '../public/assets/path36.png';
+import { RiMenuLine, RiCloseLine } from 'react-icons/ri';
 import { m as motion, AnimatePresence } from 'framer-motion';
-import { RiMenuLine, RiCloseLine, RiPlantLine } from 'react-icons/ri';
 import { _header as Container } from '../styles/components/header';
 
 type TNavbarAnchors = { ref: string; label: string };
@@ -52,10 +54,12 @@ export default function Header() {
         className='main-container'
         animate={{ translateY: deltaY == 100 ? -65 : 0 }}
         transition={{ duration: 0.5 }}>
-        <h2 onClick={() => router.push('/')}>
-          <RiPlantLine />
-          <span>Kain.dev</span>
-        </h2>
+        <div className='donut-container'>
+          <Image src={donutImage} width={25} height={25} alt='donut image' />
+          <h2 onClick={() => router.push('/')}>
+            <span>Kain.dev</span>
+          </h2>
+        </div>
         <motion.button whileTap={{ scale: 0.8 }} onClick={toggleMenu}>
           {isMenu ? <RiCloseLine /> : <RiMenuLine />}
         </motion.button>

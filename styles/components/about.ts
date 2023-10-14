@@ -13,6 +13,41 @@ export const _about = styled.section`
   .experiences {
     text-align: center;
 
+    .header-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      max-width: 450px;
+      margin: 20px auto;
+
+      div {
+        text-align: left;
+        h3 {
+          font-weight: 600;
+          font-size: 2rem;
+          line-height: 2.8rem;
+        }
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
+        border-radius: 50%;
+      }
+
+      @media screen and (max-width: 420px) {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 5px;
+
+      }
+    }
+
     .op {
       margin-bottom: 10px;
       font-weight: 500;

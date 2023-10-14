@@ -15,9 +15,8 @@ export const _header = styled.header`
     align-items: center;
     gap: 5px;
     z-index: 5000;
-    background: rgba(${({ theme }) => theme.foreground}, 0.5);
+    background: rgba(${({ theme }) => theme.background}, 0.5);
     backdrop-filter: blur(8px);
-
 
     @media screen and (max-width: 820px) {
       justify-content: flex-end;
@@ -29,9 +28,7 @@ export const _header = styled.header`
   }
 
   button {
-    border: none;
-    outline: none;
-    background: none;
+    all: unset;
     border-radius: 3px;
     width: fit-content;
     cursor: pointer;
@@ -39,7 +36,6 @@ export const _header = styled.header`
     align-self: flex-end;
     display: none;
     padding: 5px;
-
     @media screen and (max-width: 640px) {
       display: block;
     }
@@ -48,14 +44,17 @@ export const _header = styled.header`
       width: 25px;
       height: 25px;
       pointer-events: none;
+      color: rgb(${({ theme }) => theme.font});
     }
 
     :hover {
-      color: rgb(${({ theme }) => theme.primary_shade});
+      svg {
+        color: rgb(${({ theme }) => theme.primary_shade});
+      }
     }
   }
 
-  h2 {
+  .donut-container {
     position: absolute;
     top: 22px;
     left: 20px;
@@ -65,9 +64,11 @@ export const _header = styled.header`
     align-items: center;
     gap: 8px;
 
-    svg {
-      width: 20px;
-      height: 20px;
+    img {
+      width: 100%;
+      max-width: 25px;
+      max-height: 25px;
+      object-fit: cover;
     }
 
     span {
