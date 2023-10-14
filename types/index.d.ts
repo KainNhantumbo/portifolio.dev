@@ -4,7 +4,7 @@ import { StaticImageData } from 'next/image';
 import { ChangeEvent, FormEvent } from 'react';
 
 declare module 'styled-components' {
-  export interface DefaultTheme extends ITheme {}
+  export interface DefaultTheme extends Theme {}
 }
 
 export type InputEvents =

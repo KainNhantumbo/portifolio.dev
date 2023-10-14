@@ -47,8 +47,8 @@ export const _contact = styled.section`
     gap: 10px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 25px rgba(${({ theme }) => theme.shadows}, 0.6);
-    background: rgb(${({ theme }) => theme.backgroundAlt});
+    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.6);
+    background: rgb(${({ theme }) => theme.foreground});
 
     @media screen and (max-width: 420px) {
       padding: 20px 12px;
@@ -103,7 +103,7 @@ export const _contact = styled.section`
         border-radius: 12px;
         padding: 10px;
         resize: vertical;
-        background: rgb(${({ theme }) => theme.background_alter});
+        background: rgb(${({ theme }) => theme.foreground});
         outline: none;
 
         ::placeholder {

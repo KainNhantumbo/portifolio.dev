@@ -1,6 +1,3 @@
-const actions  = {
+const actions = {};
 
-}
-
-
-export default actions
+export default actions;

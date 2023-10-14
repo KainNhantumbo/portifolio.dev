@@ -37,14 +37,14 @@ export const ProjectsContainer = styled.section`
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
-			background: rgb(${({ theme }) => theme.backgroundAlt});
-			box-shadow: 0 0 25px rgba(${({ theme }) => theme.shadows}, 0.6);
+			background: rgb(${({ theme }) => theme.foreground});
+			box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
 			border-radius: 15px;
 			padding: 8px;
 			user-select: none;
 
 			:hover {
-				box-shadow: 0px 10px 35px rgba(${({ theme }) => theme.shadows}, 0.8);
+				box-shadow: 0px 10px 35px rgba(${({ theme }) => theme.black}, 0.1);
 			}
 
 			.top {
@@ -59,7 +59,8 @@ export const ProjectsContainer = styled.section`
 						transition: all 200ms ease;
 					}
 				}
-				H4 {
+				
+				h4 {
 					position: absolute;
 					bottom: 16px;
 					left: 8px;
@@ -70,7 +71,7 @@ export const ProjectsContainer = styled.section`
 					backdrop-filter: blur(10px);
 					background: rgba(${({ theme }) => theme.secondary}, 0.5);
 					width: fit-content;
-					color: rgb(${({ theme }) => theme.text});
+					color: rgb(${({ theme }) => theme.white});
 				}
 			}
 
@@ -92,7 +93,7 @@ export const ProjectsContainer = styled.section`
 					gap: 10px;
 
 					a {
-						background: rgb(${({ theme }) => theme.background_alter});
+						background: rgb(${({ theme }) => theme.background});
 						padding: 5px;
 						border-radius: 12px;
 						position: relative;

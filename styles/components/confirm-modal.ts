@@ -25,8 +25,8 @@ export const _confirmModal = styled.section`
 		gap: 20px;
 		padding: 20px;
 		border-radius: 10px;
-		background: rgb(${({ theme }) => theme.backgroundAlt});
-		box-shadow: 0 0 20px rgb(${({ theme }) => theme.shadows});
+		background: rgb(${({ theme }) => theme.foreground});
+		box-shadow: 0 0 20px rgb(${({ theme }) => theme.black});
 		max-width: 600px;
 		margin: 0 10px;
 

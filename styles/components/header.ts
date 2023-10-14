@@ -15,9 +15,9 @@ export const _header = styled.header`
     justify-content: center;
     align-items: center;
     gap: 5px;
-    background: rgba(${({ theme }) => theme.backgroundAlt}, 0.6);
+    background: rgba(${({ theme }) => theme.foreground}, 0.6);
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.6);
+    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
     z-index: 5000;
 
     @media screen and (max-width: 820px) {
@@ -69,7 +69,7 @@ export const _header = styled.header`
       position: absolute;
       width: 38px;
       height: 38px;
-      color: rgb(${({ theme }) => theme.alter});
+      color: rgb(${({ theme }) => theme.secondary});
       left: 5px;
       top: -8px;
 

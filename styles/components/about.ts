@@ -35,7 +35,7 @@ export const _about = styled.section`
       gap: 10px;
       width: 180px;
       height: 180px;
-      background: rgb(${({ theme }) => theme.background_alter});
+      background: rgb(${({ theme }) => theme.background});
       border-radius: 10px;
       padding: 10px;
       user-select: none;

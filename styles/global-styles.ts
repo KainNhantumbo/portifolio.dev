@@ -10,8 +10,8 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
 
     ::selection {
-      background: rgb(${({ theme }) => theme.secondary});
-      color: rgb(${({ theme }) => theme.text});
+      background: rgb(${({ theme }) => theme.primary});
+      color: rgb(${({ theme }) => theme.white});
     }
   }
   
@@ -28,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   input, textarea, select {
-    background: rgb(${({ theme }) => theme.inner});
+    background: rgb(${({ theme }) => theme.black});
     color: rgb(${({ theme }) => theme.font});
   }
 

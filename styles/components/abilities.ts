@@ -44,7 +44,7 @@ export const _abilities = styled.section`
       gap: 5px;
       padding: 15px;
       padding-right: 20px;
-      background: rgb(${({ theme }) => theme.background_alter});
+      background: rgb(${({ theme }) => theme.background});
       border-radius: 10px;
       border: 2px solid transparent;
       :hover {

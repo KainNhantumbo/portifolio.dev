@@ -3,9 +3,7 @@ import { css } from 'styled-components';
 export const BaseButtonOutline = css`
   border: none;
   background: none;
-  border-radius: 10px;
-  position: relative;
-  padding: 8px;
+  padding: 7px 10px;
   color: rgb(${({ theme }) => theme.font});
   width: fit-content;
   cursor: pointer;
@@ -14,69 +12,68 @@ export const BaseButtonOutline = css`
   overflow: hidden;
   outline: none;
   :hover {
-    color: rgb(${({ theme }) => theme.primary});
-  }
-  svg {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: calc(50% - 10px);
-    left: 7px;
-    pointer-events: none;
+    color: rgb(${({ theme }) => theme.primary_shade});
   }
   span {
-    padding-left: 20px;
     font-weight: 500;
     pointer-events: none;
   }
 `;
 
 export const BaseButton = css`
-  border: none;
-  border-radius: 10px;
-  position: relative;
-  padding: 10px;
+  all: unset;
+  border-radius: 8px;
+  padding: 7px 10px;
   width: fit-content;
   cursor: pointer;
-  color: rgb(${({ theme }) => theme.text});
-  border: 1px solid transparent;
+  background: rgba(${({ theme }) => theme.primary}, 0.5);
+  color: rgb(${({ theme }) => theme.font});
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  outline: none;
-  background: rgb(${({ theme }) => theme.secondary});
+  border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
+  text-align: center;
+
   :hover {
-    box-shadow: 0 0 12px rgb(${({ theme }) => theme.shadows});
-    background: rgb(${({ theme }) => theme.primary});
+    background: rgba(${({ theme }) => theme.primary}, 0.9);
+    border: 1px solid rgba(${({ theme }) => theme.font}, 0.3);
   }
   :disabled {
     box-shadow: none;
     background: rgba(${({ theme }) => theme.primary}, 0.4);
-    span,
-    svg {
-      color: rgb(${({ theme }) => theme.backgroundAlt});
+    span {
+      color: rgb(${({ theme }) => theme.foreground});
     }
   }
-
-  svg {
-    color: inherit;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: calc(50% - 10px);
-    left: 7px;
-    pointer-events: none;
-  }
-
   span {
-    padding-left: 20px;
     font-weight: 500;
     pointer-events: none;
   }
 `;
 
+export const StyledCornerButton = css`
+  all: unset;
+  border-radius: 10px;
+  color: rgb(${({ theme }) => theme.font});
+  border: 1px solid rgba(${({ theme }) => theme.black}, 0.07);
+  width: fit-content;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  padding: 5px;
+
+  :hover {
+    color: rgb(${({ theme }) => theme.primary_shade});
+  }
+
+  svg {
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+  }
+`;
+
 export const StyledLabels = css`
-  font-weight: 500;
   position: relative;
   line-height: 1.4rem;
 
@@ -91,6 +88,43 @@ export const StyledLabels = css`
   span {
     padding-left: 25px;
     font-weight: 500;
+  }
+`;
+
+export const StyledInputs = css`
+  input,
+  textarea,
+  select {
+    width: 100%;
+    height: fit-content;
+    border: none;
+    padding: 10px 18px;
+    line-height: 1.2rem;
+    font-weight: 400;
+    outline: none;
+    border-radius: 8px;
+    background: rgba(${({ theme }) => theme.background}, 0.7);
+    border: 1px solid rgba(${({ theme }) => theme.font}, 0.08);
+    color: rgb(${({ theme }) => theme.font});
+    :focus {
+      border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
+      box-shadow: 0 0 20px rgba(${({ theme }) => theme.black}, 0.06);
+    }
+    ::placeholder {
+      color: rgba(${({ theme }) => theme.font}, 0.8);
+      font-size: 0.9rem;
+    }
+    :disabled {
+      background: rgb(${({ theme }) => theme.foreground});
+      border: none;
+      ::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  textarea {
+    resize: vertical;
   }
 `;
 

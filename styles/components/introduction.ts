@@ -11,7 +11,7 @@ export const _introduction = styled.section`
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
-  color: rgb(${({ theme }) => theme.text});
+  color: rgb(${({ theme }) => theme.font});
 
   .intro-background {
     top: 0;
@@ -44,9 +44,9 @@ export const _introduction = styled.section`
           130deg,
           rgb(${({ theme }) => theme.secondary}) 10%,
           rgb(${({ theme }) => theme.primary}) 130%,
-          rgb(${({ theme }) => theme.alter}) 5%
+          rgb(${({ theme }) => theme.primary_shade}) 5%
         );
-        color: rgb(${({ theme }) => theme.text});
+        color: rgb(${({ theme }) => theme.white});
         padding: 0 12px;
         text-transform: capitalize;
         border-radius: 5px;
@@ -63,7 +63,7 @@ export const _introduction = styled.section`
           height: 20px;
           top: calc(50% - 10px);
           left: 8px;
-          color: rgb(${({ theme }) => theme.text});
+          color: rgb(${({ theme }) => theme.white});
         }
         span {
           padding-left: 20px;
@@ -88,7 +88,7 @@ export const _introduction = styled.section`
 
             svg {
               transition: all 200ms ease-in-out;
-              color: rgb(${({ theme }) => theme.text});
+              color: rgb(${({ theme }) => theme.white});
             }
           }
         }
@@ -98,7 +98,7 @@ export const _introduction = styled.section`
           top: calc(50% - 12px);
           width: 24px;
           height: 24px;
-          color: rgb(${({ theme }) => theme.text});
+          color: rgb(${({ theme }) => theme.white});
         }
       }
     }
@@ -127,7 +127,7 @@ export const _introduction = styled.section`
           width: 100%;
           font-size: 3.8rem;
           font-weight: 600;
-          color: rgb(${({ theme }) => theme.text});
+          color: rgb(${({ theme }) => theme.white});
           line-height: 1rem;
 
           @media screen and (max-width: 640px) {

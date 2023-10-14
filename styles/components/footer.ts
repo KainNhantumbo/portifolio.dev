@@ -9,7 +9,7 @@ export const _footer = styled.footer`
   gap: 10px;
   padding-bottom: 10px;
   border-radius: 12px;
-  background: rgba(${({ theme }) => theme.backgroundAlt}, 0.5);
+  background: rgba(${({ theme }) => theme.foreground}, 0.5);
 
   .donuts-image-container {
     width: 100%;
@@ -40,7 +40,7 @@ export const _footer = styled.footer`
       display: grid;
       place-content: center;
       place-items: center;
-      background: rgb(${({ theme }) => theme.background_alter});
+      background: rgb(${({ theme }) => theme.foreground});
       border-radius: 10px;
       padding: 10px;
       width: 40px;
@@ -51,7 +51,7 @@ export const _footer = styled.footer`
         color: rgb(${({ theme }) => theme.secondary});
 
         svg {
-          color: rgb(${({ theme }) => theme.alter});
+          color: rgb(${({ theme }) => theme.secondary});
         }
       }
     }

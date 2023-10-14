@@ -28,7 +28,6 @@ const context = createContext<IContext>({
 });
 
 const AppContext: FC<IProps> = ({ children }) => {
-  const THEME_STORAGE_KEY: string = 'THEME_SETTINGS';
   const [currentTheme, setCurrentTheme] = useState<Theme>(light_default);
   const [colorScheme, setColorScheme] = useState<ColorScheme>({
     mode: 'auto',
