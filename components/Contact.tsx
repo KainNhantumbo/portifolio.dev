@@ -3,22 +3,20 @@ import {
   BsChatSquareText,
   BsFillPersonFill,
   BsMailbox2,
-  BsPhone,
   BsTextLeft
 } from 'react-icons/bs';
-import { FC, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 import { m as motion } from 'framer-motion';
-import { BiMailSend } from 'react-icons/bi';
 import { FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import type { TInputEvents, TSubmitEvent, TFormData } from '../@types';
+import { send as sender } from '@emailjs/browser';
+import { InputEvents, SubmitEvent, FormData } from '../types';
 import { _contact as Container } from '../styles/components/contact';
 
-const Contact: FC = () => {
+export default function Contact() {
   const { t: translation } = useTranslation();
-  const [messageStatus, setMessageStatus] = useState<string>('');
-  const [formData, setFormData] = useState<TFormData>({
+  const [messageStatus, setMessageStatus] = useState('');
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: 'nhantumbok@gmail.com',
     subject: '',
@@ -26,7 +24,7 @@ const Contact: FC = () => {
     from_email: ''
   });
 
-  const formDataPicker = (e: TInputEvents) => {
+  const formDataPicker = (e: InputEvents) => {
     setFormData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value
@@ -42,11 +40,11 @@ const Contact: FC = () => {
     }, 5000);
   };
 
-  const emailSender = async (e: TSubmitEvent): Promise<void> => {
+  const emailSender = async (e: SubmitEvent) => {
     e.preventDefault();
     setMessageStatus(translation('contact.message.informative'));
     try {
-      await emailjs.send(
+      await sender(
         'service_sjw9i8b',
         'template_eso630j',
         formData as any,
@@ -81,10 +79,6 @@ const Contact: FC = () => {
         </motion.p>
       </section>
       <section className='options'>
-        <div className='option'>
-          <BsPhone />
-          <span> {translation('contact.phone')}</span>
-        </div>
         <div className='option'>
           <BsMailbox2 />
           <span> {translation('contact.mail')}</span>
@@ -161,13 +155,10 @@ const Contact: FC = () => {
             whileTap={{ scale: 0.8 }}
             whileHover={{ scale: 1.05 }}
             type='submit'>
-            <BiMailSend />
             <span>{translation('contact.form.button')}</span>
           </motion.button>
         </form>
       </motion.section>
     </Container>
   );
-};
-
-export default Contact;
+}

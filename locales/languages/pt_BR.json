@@ -63,7 +63,6 @@
   "language_switcher_modal": {
     "title": "Troca de Língua",
     "message": "Troque de língua facilmente.",
-    "button-text": "Fechar",
     "buttons": {
       "portuguese": "Trocar para português",
       "english": "Trocar para inglês"
@@ -73,17 +72,12 @@
     "title": "Minhas Habilidades e Experiência",
     "frontend-title": "Desenvolvimento do Cliente",
     "backend-title": "Desenvolvimento de Servidor",
-    "tools-title": "Ferramentas de Desenvolvimento",
-    "levels": {
-      "expert": "Experiente",
-      "intermediate": "Intermediário"
-    }
+    "tools-title": "Ferramentas de Desenvolvimento"
   },
   "contact": {
     "title": "Contate-me",
     "intro-title": "Vamos trazer idéias à vida utilizando código!",
     "intro-message": "Você pode utilizar o formuário abaixo para me enviar uma mensagem por correio eletrónico ou escolhendo uma das seguintes opções:",
-    "phone": "Telefone: (+258) 84 400 2535",
     "mail": "Correio eletrónico: nhantumbok@gmail.com",
     "form": {
       "name-label": "Nome *",

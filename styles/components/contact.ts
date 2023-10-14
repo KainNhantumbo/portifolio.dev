@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BaseButton, StyledLabels } from '../defaults';
+import { BaseButton, StyledInputs, StyledLabels } from '../defaults';
 
 export const _contact = styled.section`
   max-width: 700px;
@@ -11,6 +11,7 @@ export const _contact = styled.section`
   border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
   padding-top: 20px;
   line-height: 1.6rem;
+  
   @media screen and (max-width: 370px) {
     margin: 0;
   }
@@ -47,7 +48,7 @@ export const _contact = styled.section`
     gap: 10px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.6);
+    border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
     background: rgb(${({ theme }) => theme.foreground});
 
     @media screen and (max-width: 420px) {
@@ -93,23 +94,10 @@ export const _contact = styled.section`
         ${StyledLabels}
       }
 
+      ${StyledInputs}
+      
       button {
         ${BaseButton}
-      }
-
-      input,
-      textarea {
-        border: none;
-        border-radius: 12px;
-        padding: 10px;
-        resize: vertical;
-        background: rgb(${({ theme }) => theme.foreground});
-        outline: none;
-
-        ::placeholder {
-          font-size: 0.9rem;
-          font-weight: 500;
-        }
       }
     }
   }

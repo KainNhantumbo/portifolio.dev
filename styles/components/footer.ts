@@ -8,8 +8,6 @@ export const _footer = styled.footer`
   flex-direction: column;
   gap: 10px;
   padding-bottom: 10px;
-  border-radius: 12px;
-  background: rgba(${({ theme }) => theme.foreground}, 0.5);
 
   .donuts-image-container {
     width: 100%;
@@ -40,25 +38,25 @@ export const _footer = styled.footer`
       display: grid;
       place-content: center;
       place-items: center;
-      background: rgb(${({ theme }) => theme.foreground});
-      border-radius: 10px;
+      background: rgba(${({ theme }) => theme.primary}, 0.2);
+      border-radius: 50%;
       padding: 10px;
       width: 40px;
       height: 40px;
       cursor: pointer;
 
       :hover {
-        color: rgb(${({ theme }) => theme.secondary});
+        color: rgb(${({ theme }) => theme.primary_shade});
 
         svg {
-          color: rgb(${({ theme }) => theme.secondary});
+          color: rgb(${({ theme }) => theme.primary_shade});
         }
       }
     }
     svg {
       width: 20px;
       height: 20px;
-      color: rgb(${({ theme }) => theme.secondary});
+      color: rgb(${({ theme }) => theme.primary_shade});
     }
   }
 

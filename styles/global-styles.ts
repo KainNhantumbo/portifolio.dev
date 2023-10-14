@@ -10,8 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
 
     ::selection {
-      background: rgb(${({ theme }) => theme.primary});
-      color: rgb(${({ theme }) => theme.white});
+      background: rgba(${({ theme }) => theme.primary},.5);
     }
   }
   

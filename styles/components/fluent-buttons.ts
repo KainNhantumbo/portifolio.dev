@@ -27,7 +27,7 @@ export const _fluentButtons = styled.section`
     margin-top: 8px;
     border: none;
     display: grid;
-    background: rgba(${({ theme }) => theme.primary}, 0.2);
+    background: rgba(${({ theme }) => theme.primary}, 0.3);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     place-content: center;
@@ -38,7 +38,7 @@ export const _fluentButtons = styled.section`
     svg {
       width: 24px;
       height: 24px;
-      color: rgb(${({ theme }) => theme.primary});
+      color: rgb(${({ theme }) => theme.primary_shade});
 
       :hover {
         transition: all 200ms ease-in-out;
@@ -46,6 +46,7 @@ export const _fluentButtons = styled.section`
       }
     }
   }
+
   span {
     padding: 0;
   }

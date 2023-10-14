@@ -29,10 +29,10 @@ type Project = {
   live_url: string;
 };
 
-export type StackSkill = {
-  tech: string;
+export type Stack = {
+  title: string;
   icon: IconType;
-  level: string;
+  data: Array<{ tech: string; icon: IconType }>;
 };
 
 export type Theme = {
@@ -54,4 +54,10 @@ export type Theme = {
 export type ColorScheme = {
   mode: 'auto' | 'manual';
   scheme: 'dark' | 'light';
+};
+
+export type Action = { type: string; payload: State };
+
+export type State = {
+  isLanguagesModal: boolean;
 };

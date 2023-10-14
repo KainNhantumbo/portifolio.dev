@@ -1,28 +1,32 @@
-import type { FC } from 'react';
-import { IoClose } from 'react-icons/io5';
+import actions from '../../shared/actions';
+import { RiCloseLine } from 'react-icons/ri';
 import { useTranslation } from 'react-i18next';
+import { useAppContext } from '../../context/AppContext';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _languageSwitcher as Container } from '../../styles/components/language-switcher';
 
-type TLanguages = 'pt' | 'en';
-
-type TProps = {
-  close: React.Dispatch<React.SetStateAction<boolean>>;
-  active: boolean;
-};
-
-const LanguageSwitcher: FC<TProps> = (props) => {
+export default function LanguageSwitcher() {
+  const { state, dispatch } = useAppContext();
   const { t: translation, i18n } = useTranslation();
 
-  const translate = (language: TLanguages) => {
+  const translate = (language: 'pt' | 'en') => {
     i18n.changeLanguage(language);
-    props.close(false);
+    dispatch({
+      type: actions.LANGUAGES_MODAL,
+      payload: { ...state, isLanguagesModal: false }
+    });
   };
 
   return (
     <AnimatePresence>
-      {props.active && (
-        <Container onClick={(e) => props.close(false)}>
+      {state.isLanguagesModal && (
+        <Container
+          onClick={(e) =>
+            dispatch({
+              type: actions.LANGUAGES_MODAL,
+              payload: { ...state, isLanguagesModal: false }
+            })
+          }>
           <motion.section
             className='dialog-modal'
             onClick={(e) => e.stopPropagation()}
@@ -56,24 +60,22 @@ const LanguageSwitcher: FC<TProps> = (props) => {
                   </motion.button>
                 </div>
               </div>
-              <div className='prompt-actions'>
-                <motion.button
-                  whileTap={{ scale: 0.8 }}
-                  whileHover={{ scale: 1.1 }}
-                  className='prompt-cancel'
-                  onClick={(e) => props.close(false)}>
-                  <IoClose />
-                  <span>
-                    {translation('language_switcher_modal.button-text')}
-                  </span>
-                </motion.button>
-              </div>
+              <motion.button
+                whileTap={{ scale: 0.8 }}
+                whileHover={{ scale: 1.1 }}
+                className='prompt-close'
+                onClick={(e) =>
+                  dispatch({
+                    type: actions.LANGUAGES_MODAL,
+                    payload: { ...state, isLanguagesModal: false }
+                  })
+                }>
+                <RiCloseLine />
+              </motion.button>
             </div>
           </motion.section>
         </Container>
       )}
     </AnimatePresence>
   );
-};
-
-export default LanguageSwitcher;
+}

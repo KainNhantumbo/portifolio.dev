@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { BaseButton, BaseButtonOutline } from '../defaults';
+import { BaseButton, StyledCornerButton } from '../defaults';
 
 export const _languageSwitcher = styled.section`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(${({ theme }) => theme.background}, 0.2);
+  background: rgba(${({ theme }) => theme.foreground}, 0.2);
   backdrop-filter: blur(5px);
   z-index: 10000;
   top: 0;
@@ -22,7 +22,6 @@ export const _languageSwitcher = styled.section`
 
     button {
       ${BaseButton}
-      
     }
   }
 
@@ -34,9 +33,11 @@ export const _languageSwitcher = styled.section`
     padding: 20px;
     border-radius: 10px;
     background: rgb(${({ theme }) => theme.foreground});
-    box-shadow: 0 0 20px rgb(${({ theme }) => theme.black});
+    border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
+    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
     max-width: 600px;
     margin: 0 10px;
+    position: relative;
 
     .prompt-info {
       display: flex;
@@ -45,7 +46,7 @@ export const _languageSwitcher = styled.section`
       gap: 10px;
       span {
         font-weight: 500;
-        color: rgb(${({ theme }) => theme.primary});
+        color: rgb(${({ theme }) => theme.primary_shade});
       }
       p {
         line-height: 1.6rem;
@@ -53,14 +54,15 @@ export const _languageSwitcher = styled.section`
       }
     }
 
-    .prompt-actions {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      gap: 10px;
+    .prompt-close {
+      ${StyledCornerButton}
+      border: none;
+      position: absolute;
+      right: 12px;
+      top: 12px;
 
-      .prompt-cancel {
-        ${BaseButtonOutline}
+      :hover {
+        color: rgb(${({ theme }) => theme.error});
       }
     }
   }

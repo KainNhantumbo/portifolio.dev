@@ -1,17 +1,14 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import { FC, useState, useEffect } from 'react';
-import { RiMenuLine, RiCloseLine, RiPlantLine } from 'react-icons/ri';
+import { useState, useEffect } from 'react';
 import { NextRouter, useRouter } from 'next/router';
 import { m as motion, AnimatePresence } from 'framer-motion';
+import { RiMenuLine, RiCloseLine, RiPlantLine } from 'react-icons/ri';
 import { _header as Container } from '../styles/components/header';
 
-type TNavbarAnchors = {
-  ref: string;
-  label: string;
-};
+type TNavbarAnchors = { ref: string; label: string };
 
-const Header: FC = () => {
+export default function Header() {
   const minWidth: number = 640;
   const router: NextRouter = useRouter();
   const [isMenu, setIsMenu] = useState<boolean>(false);
@@ -94,6 +91,4 @@ const Header: FC = () => {
       </motion.div>
     </Container>
   );
-};
-
-export default Header;
+}

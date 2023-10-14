@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Footer from './Footer';
 import Header from './Header';
-import { FC, useState, ReactNode } from 'react';
+import actions from '../shared/actions';
+import { useState, ReactNode } from 'react';
 import { m as motion } from 'framer-motion';
 import { BsTranslate } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
@@ -11,13 +12,13 @@ import ConfirmModal from '../components/modals/ConfirmModal';
 import LanguageSwitcher from '../components/modals/LanguageSwitcher';
 import { _fluentButtons as Container } from '../styles/components/fluent-buttons';
 
-type TProps = { children: ReactNode };
+type Props = { children: ReactNode };
 
-const Layout: FC<TProps> = ({ children }) => {
+export default function Layout({ children }: Props) {
+  const { state, dispatch } = useAppContext();
   const { t: translation } = useTranslation();
   const { slidePageUp, colorScheme, changeColorScheme } = useAppContext();
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
-  const [isLanguageSwitcher, setIsLanguageSwitcher] = useState<boolean>(false);
 
   return (
     <>
@@ -33,7 +34,12 @@ const Layout: FC<TProps> = ({ children }) => {
           <motion.button
             whileTap={{ scale: 0.7 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            onClick={() => setIsLanguageSwitcher(true)}>
+            onClick={() =>
+              dispatch({
+                type: actions.LANGUAGES_MODAL,
+                payload: { ...state, isLanguagesModal: true }
+              })
+            }>
             <BsTranslate />
           </motion.button>
           <motion.button
@@ -64,14 +70,9 @@ const Layout: FC<TProps> = ({ children }) => {
         closeModal={setIsModalActive}
         buttonText={translation('modal.button-text')}
       />
-      <LanguageSwitcher
-        active={isLanguageSwitcher}
-        close={setIsLanguageSwitcher}
-      />
+      <LanguageSwitcher />
       {children}
       <Footer />
     </>
   );
-};
-
-export default Layout;
+}

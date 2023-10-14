@@ -1,6 +1,5 @@
-import { FC } from 'react';
 import Image from 'next/image';
-import { TProject } from '../@types';
+import { Project } from '../types';
 import { m as motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
@@ -22,10 +21,10 @@ const categories = {
   full: 'Full-stack'
 };
 
-const Projects: FC = () => {
+export default function Projects () {
   const { t: translation } = useTranslation();
 
-  const projects: TProject[] = [
+  const projects: Project[] = [
     {
       name: translation('projects.content.bug-tracker'),
       category: categories.full,
@@ -161,4 +160,3 @@ const Projects: FC = () => {
   );
 };
 
-export default Projects;

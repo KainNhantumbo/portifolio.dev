@@ -4,30 +4,35 @@ import {
   ReactNode,
   useState,
   useEffect,
-  FC
+  Dispatch,
+  useReducer
 } from 'react';
-import { Theme, ColorScheme } from '../types';
+import { Theme, ColorScheme, State, Action } from '../types';
 import { GlobalStyles } from '../styles/global-styles';
 import { ThemeProvider } from 'styled-components';
 import { dark_default, light_default } from '../styles/themes';
+import { initialState, reducer } from '../shared/reducer';
 
-interface IContext {
+type Props = { children: ReactNode };
+
+type Context = {
+  state: State;
+  dispatch: Dispatch<Action>;
   slidePageUp: () => void;
   colorScheme: ColorScheme;
   changeColorScheme: ({ mode, scheme }: ColorScheme) => void;
-}
+};
 
-interface IProps {
-  children: ReactNode;
-}
-
-const context = createContext<IContext>({
+const context = createContext<Context>({
+  state: initialState,
+  dispatch: () => {},
   slidePageUp: () => {},
   colorScheme: { mode: 'auto', scheme: 'light' },
   changeColorScheme: () => {}
 });
 
-const AppContext: FC<IProps> = ({ children }) => {
+export default function AppContext({ children }: Props) {
+  const [state, dispatch] = useReducer(reducer, initialState);
   const [currentTheme, setCurrentTheme] = useState<Theme>(light_default);
   const [colorScheme, setColorScheme] = useState<ColorScheme>({
     mode: 'auto',
@@ -35,13 +40,12 @@ const AppContext: FC<IProps> = ({ children }) => {
   });
 
   // slides the page to the top
-  const slidePageUp = () => {
-    return window.scrollTo({
+  const slidePageUp = () =>
+    window.scrollTo({
       left: 0,
       top: 0,
       behavior: 'smooth'
     });
-  };
 
   const setDarkColorScheme = ({ mode, scheme }: ColorScheme): void => {
     setCurrentTheme(dark_default);
@@ -108,13 +112,20 @@ const AppContext: FC<IProps> = ({ children }) => {
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyles />
-      <context.Provider value={{ slidePageUp, colorScheme, changeColorScheme }}>
+      <context.Provider
+        value={{
+          slidePageUp,
+          state,
+          dispatch,
+          colorScheme,
+          changeColorScheme
+        }}>
         {children}
       </context.Provider>
     </ThemeProvider>
   );
-};
+}
 
-export default AppContext;
-
-export const useAppContext = (): IContext => useContext(context);
+export function useAppContext(): Context {
+  return useContext(context);
+}

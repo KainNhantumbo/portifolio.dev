@@ -28,7 +28,7 @@ export const _home = styled.main`
       height: 20px;
       top: calc(50% - 10px);
       left: 0;
-      color: rgb(${({ theme }) => theme.secondary});
+      color: rgb(${({ theme }) => theme.primary_shade});
     }
     span {
       padding-left: 25px;
@@ -36,7 +36,7 @@ export const _home = styled.main`
   }
 
   .sub-title {
-    color: rgb(${({ theme }) => theme.secondary});
+    color: rgb(${({ theme }) => theme.primary_shade});
     margin-bottom: 20px;
     position: relative;
     span {

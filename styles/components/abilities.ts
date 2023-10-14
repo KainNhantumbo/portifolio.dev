@@ -13,9 +13,11 @@ export const _abilities = styled.section`
     margin-top: 20px;
     padding: 18px;
     border-radius: 10px;
+    border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
     :hover {
+      transition: all 200ms ease;
+      border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
       box-shadow: 0 0 20px rgba(${({ theme }) => theme.font}, 0.1);
-      transition: 200ms ease;
     }
   }
 
@@ -44,9 +46,9 @@ export const _abilities = styled.section`
       gap: 5px;
       padding: 15px;
       padding-right: 20px;
-      background: rgb(${({ theme }) => theme.background});
       border-radius: 10px;
       border: 2px solid transparent;
+      user-select: none;
       :hover {
         border: 2px solid rgb(${({ theme }) => theme.primary});
 
@@ -66,7 +68,7 @@ export const _abilities = styled.section`
         top: 8px;
         right: 8px;
         border-radius: 5px;
-        color: rgb(${({ theme }) => theme.secondary});
+        color: rgb(${({ theme }) => theme.primary_shade});
       }
     }
   }

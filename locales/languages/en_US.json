@@ -63,7 +63,6 @@
   "language_switcher_modal": {
     "title": "Language Switcher",
     "message": "Switch between available display languages easily.",
-    "button-text": "Close",
     "buttons": {
       "portuguese": "Switch to portuguese",
       "english": "Switch to english"
@@ -73,17 +72,12 @@
     "title": "My Experience and Skills",
     "frontend-title": "Frontend Development",
     "backend-title": "Backend Development",
-    "tools-title": "Development Tools",
-    "levels": {
-      "expert": "Expert",
-      "intermediate": "Intermediate"
-    }
+    "tools-title": "Development Tools"
   },
   "contact": {
     "title": "Contact me",
     "intro-title": "Let's bring ideas to life with code!",
     "intro-message": "You can use the form below to send me an e-mail or use the following contact options:",
-    "phone": "Phone: (+258) 84 400 2535",
     "mail": "E-mail: nhantumbok@gmail.com",
     "form": {
       "name-label": "Name *",
