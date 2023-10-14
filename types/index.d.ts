@@ -7,13 +7,13 @@ declare module 'styled-components' {
   export interface DefaultTheme extends ITheme {}
 }
 
-export type TInputEvents =
+export type InputEvents =
   | ChangeEvent<HTMLInputElement>
   | ChangeEvent<HTMLTextAreaElement>;
 
-export type TSubmitEvent = FormEvent<HTMLFormElement>;
+export type SubmitEvent = FormEvent<HTMLFormElement>;
 
-export type TFormData = {
+export type FormData = {
   name: string;
   email: string;
   subject: string;
@@ -21,7 +21,7 @@ export type TFormData = {
   from_email: string;
 };
 
-type TProject = {
+type Project = {
   name: string;
   category: string;
   image: StaticImageData;
@@ -29,23 +29,29 @@ type TProject = {
   live_url: string;
 };
 
-export type TStackSkill = {
+export type StackSkill = {
   tech: string;
   icon: IconType;
   level: string;
 };
 
-export interface ITheme {
+export type Theme = {
   primary: string;
+  primary_shade: string;
   secondary: string;
-  alter: string;
-  alterAlt: string;
+  secondary_shade: string;
   font: string;
-  inner: string;
-  text: string;
-  shadows: string;
-  hover: string;
+  font_dimmed: string;
+  white: string;
+  black: string;
+  error: string;
   background: string;
-  background_alter: string;
-  backgroundAlt: string;
-}
+  background_shade: string;
+  foreground: string;
+  foreground_shade: string;
+};
+
+export type ColorScheme = {
+  mode: 'auto' | 'manual';
+  scheme: 'dark' | 'light';
+};

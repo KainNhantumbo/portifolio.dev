@@ -1,31 +1,33 @@
-import type { ITheme } from '../@types';
+import type { Theme } from '../types/index';
 
-export const lightTheme: ITheme = {
-  primary: '108, 161, 246',
-  secondary: '77, 124, 95',
-  alter: '205, 93, 125',
-  alterAlt: '234, 144, 122',
-  hover: '215, 228, 217',
+export const light_default: Theme = {
+  error: '253, 56, 79',
   font: '95, 99, 104',
-  inner: '241, 243, 244',
-  text: '255, 255, 255',
-  shadows: '197, 197, 198',
-  background: '255, 255, 255',
-  background_alter: '245, 243, 239',
-  backgroundAlt: '255, 255, 255',
+  font_dimmed: '95, 99, 104',
+  black: '12, 3, 13',
+  white: '255, 255, 255',
+  primary: '253, 200, 134',
+  secondary: '255, 71, 71',
+  background: '250, 250, 250',
+  foreground: '255, 255, 255',
+  primary_shade: '228, 113, 49',
+  secondary_shade: '199, 158, 107',
+  background_shade: '245, 242, 234',
+  foreground_shade: '240, 240, 240'
 };
 
-export const darkTheme: ITheme = {
-  primary: '108, 161, 246',
-  secondary: '77, 124, 95',
-  alter: '205, 93, 125',
-  alterAlt: '234, 144, 122',
-  hover: '88, 65, 83',
-  font: '178, 177, 185',
-  inner: '55, 55, 55',
-  text: '240, 240,240',
-  shadows: '25, 25, 28',
-  background: '32, 33, 36',
-  background_alter: '25, 25, 28',
-  backgroundAlt: '41, 42, 46',
+export const dark_default: Theme = {
+  error: '253, 56, 79',
+  font: '198, 197, 205',
+  font_dimmed: '25, 25, 28',
+  black: '25, 25, 28',
+  white: '240, 240,240',
+  primary: '126, 67, 24',
+  secondary: '255, 71, 71',
+  background: '27, 27, 31',
+  foreground: '39, 40, 45',
+  primary_shade: '228, 113, 49',
+  secondary_shade: '221, 207, 136',
+  background_shade: '32, 33, 36',
+  foreground_shade: '34, 37, 41'
 };
