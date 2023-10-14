@@ -17,7 +17,7 @@ export const _header = styled.header`
     z-index: 5000;
     background: rgba(${({ theme }) => theme.foreground}, 0.5);
     backdrop-filter: blur(8px);
-    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
+
 
     @media screen and (max-width: 820px) {
       justify-content: flex-end;
@@ -30,6 +30,7 @@ export const _header = styled.header`
 
   button {
     border: none;
+    outline: none;
     background: none;
     border-radius: 3px;
     width: fit-content;

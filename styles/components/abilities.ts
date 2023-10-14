@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const _abilities = styled.section`
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  width: 100%;
+  max-width: 780px;
   margin: 0 auto;
   border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
   padding-top: 20px;
@@ -14,10 +15,10 @@ export const _abilities = styled.section`
     padding: 18px;
     border-radius: 10px;
     border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
+
     :hover {
       transition: all 200ms ease;
-      border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-      box-shadow: 0 0 20px rgba(${({ theme }) => theme.font}, 0.1);
+      box-shadow: 0 0 20px rgba(${({ theme }) => theme.black}, 0.1);
     }
   }
 

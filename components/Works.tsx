@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { _works as Container } from '../styles/components/works';
 
-type TWork = {
+type Work = {
   title: string;
   image: StaticImageData;
   repository: { label: string; url: string };
@@ -12,7 +12,8 @@ type TWork = {
 
 export default function Works() {
   const { t: translation } = useTranslation();
-  const data: TWork[] = [];
+  
+  const data: Work[] = [];
 
   return <Container id='projects'>
     

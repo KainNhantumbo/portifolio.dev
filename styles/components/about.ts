@@ -38,6 +38,7 @@ export const _about = styled.section`
       background: rgb(${({ theme }) => theme.background});
       border-radius: 10px;
       padding: 10px;
+      border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
       user-select: none;
       H4 {
         font-weight: 500;
@@ -49,14 +50,14 @@ export const _about = styled.section`
       }
       :hover {
         svg {
-          color: rgb(${({ theme }) => theme.primary});
+          color: rgb(${({ theme }) => theme.primary_shade});
         }
       }
     }
     svg {
       width: 40px;
       height: 40px;
-      color: rgb(${({ theme }) => theme.secondary});
+      color: rgb(${({ theme }) => theme.primary});
     }
   }
 `;

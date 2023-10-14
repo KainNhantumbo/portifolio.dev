@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProjectsContainer = styled.section`
+export const _projects = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;

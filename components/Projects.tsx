@@ -13,7 +13,7 @@ import bug_tracker_app from '../public/assets/bug-tracker-app.jpeg';
 import url_shortner_app from '../public/assets/url-shortner-app.jpeg';
 import hagira_ecommerce from '../public/assets/hagira-ecommerce.jpeg';
 import bug_tracker_server from '../public/assets/bug-tracker-server.png';
-import { ProjectsContainer as Container } from '../styles/components/projects';
+import { _projects as Container } from '../styles/components/projects';
 
 const categories = {
   back: 'Back-end',

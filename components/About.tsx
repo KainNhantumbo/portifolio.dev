@@ -1,12 +1,12 @@
-import { FC } from 'react';
 import { m as motion } from 'framer-motion';
 import { SiAboutdotme } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import { HiCode, HiViewGrid } from 'react-icons/hi';
 import { _about as Container } from '../styles/components/about';
 
-const About: FC = () => {
+export default function About() {
   const { t: translation } = useTranslation();
+
   return (
     <Container id='about'>
       <h2>
@@ -15,18 +15,8 @@ const About: FC = () => {
       </h2>
       <section className='experiences'>
         <p className='op'>{translation('about.subtitle')}</p>
-        <motion.p
-          initial={{ opacity: 0, y: 200 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          whileInView={{ opacity: 1, y: 0 }}>
-          {translation('about.intro-1')}
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 200 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          whileInView={{ opacity: 1, y: 0 }}>
-          {translation('about.intro-2')}
-        </motion.p>
+        <p>{translation('about.intro-1')}</p>
+        <p>{translation('about.intro-2')}</p>
       </section>
 
       <section className='cards-container'>
@@ -52,6 +42,4 @@ const About: FC = () => {
       </section>
     </Container>
   );
-};
-
-export default About;
+}

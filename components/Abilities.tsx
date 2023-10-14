@@ -12,9 +12,9 @@ import {
   SiReact,
   SiTypescript
 } from 'react-icons/si';
-import { m as motion } from 'framer-motion';
-import { FaReact } from 'react-icons/fa';
 import { Stack } from '../types';
+import { FaReact } from 'react-icons/fa';
+import { m as motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
 import { _abilities as Container } from '../styles/components/abilities';
@@ -80,7 +80,7 @@ export default function Abilities() {
                   scale: 1,
                   transition: { duration: 0.5, bounce: 1 }
                 }}
-                whileHover={{ rotate: 360 }}
+                whileHover={{ rotate: [0, -20, 0, 20, 0] }}
                 className='item'>
                 <item.icon />
                 <h3>{item.tech}</h3>

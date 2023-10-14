@@ -39,13 +39,13 @@ export const GlobalStyles = createGlobalStyle`
 
   ::-webkit-scrollbar {
     scroll-behavior: smooth;
-    width: 5px;
+    width: 8px;
     background: none;
     background: rgba(${({ theme }) => theme.background}, .3);
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 15px;
-    background: rgba(${({ theme }) => theme.primary}, .5);
+    background: rgba(${({ theme }) => theme.primary_shade}, 1);
   }
 `;
