@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import { HeadProps } from '@/types';
+import { HeadProps} from '@/types';
 import Package from '../../package.json';
 
-export default function (props: HeadProps) {
+type Props = { metadata?: HeadProps };
+
+export default function ({ metadata }: Props) {
   const { url, website_name } = Package;
 
   return (
@@ -12,12 +14,12 @@ export default function (props: HeadProps) {
         content='follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large'
       />
       <meta property='og:url' content={url} />
-      <meta property='og:title' content={props?.title || 'Codenut.dev'} />
+      <meta property='og:title' content={metadata?.title || 'Codenut.dev'} />
       <meta property='og:site_name' content={website_name} />
-      <meta property='og:created_time' content={props?.createdAt} />
-      <meta property='og:updated_time' content={props?.updatedAt} />
-      <meta property='article:published_time' content={props?.createdAt} />
-      <meta property='article:modified_time' content={props?.updatedAt} />
+      <meta property='og:created_time' content={metadata?.createdAt} />
+      <meta property='og:updated_time' content={metadata?.updatedAt} />
+      <meta property='article:published_time' content={metadata?.createdAt} />
+      <meta property='article:modified_time' content={metadata?.updatedAt} />
       <link rel='icon' type='image/png' href='/assets/path36.png' />
       <meta name='author' content='Kain Nhantumbo' />
       <meta name='description' content='Kain Nhantumbo Portfolio and Blog' />
@@ -27,7 +29,7 @@ export default function (props: HeadProps) {
       <meta property='og:type' content='website' />
       <meta name='theme-color' content='#fff' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-      <title>{props?.title || 'Codenut.dev'}</title>
+      <title>{metadata?.title || 'Codenut.dev'}</title>
     </Head>
   );
 }

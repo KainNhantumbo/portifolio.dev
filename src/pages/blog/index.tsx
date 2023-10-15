@@ -31,7 +31,7 @@ export default function Blog({ posts }: Props) {
   }, [router.query]);
 
   return (
-    <Layout>
+    <Layout metadata={{ title: 'Codenut.dev Blog' }}>
       <Container>
         <section className='main-top-container'>
           <section className='banner-container'>

@@ -37,7 +37,7 @@ export default function Post({ post }: Props) {
   }, []);
 
   return (
-    <Layout>
+    <Layout metadata={{ title: 'Kain Portfolio' }}>
       <Container className='wrapper'>
         <div
           style={{
