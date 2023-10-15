@@ -1,33 +1,27 @@
-import Head from 'next/head';
+import Head from './Head';
 import Footer from './Footer';
 import Header from './Header';
+import { HeadProps } from '@/types';
 import actions from '../shared/actions';
-import { useState, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { m as motion } from 'framer-motion';
 import { BsTranslate } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
 import { BiMoon, BiSun, BiUpArrowAlt } from 'react-icons/bi';
-import ConfirmModal from '../components/modals/ConfirmModal';
 import LanguageSwitcher from '../components/modals/LanguageSwitcher';
 import { _fluentButtons as Container } from '../styles/components/fluent-buttons';
 
-type Props = { children: ReactNode };
+type Props = { children: ReactNode; metadata?: HeadProps };
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, metadata }: Props) {
   const { state, dispatch } = useAppContext();
   const { t: translation } = useTranslation();
   const { slidePageUp, colorScheme, changeColorScheme } = useAppContext();
-  const [isModalActive, setIsModalActive] = useState<boolean>(false);
 
   return (
     <>
-      <Head>
-        <meta name='author' content='Kain Nhantumbo' />
-        <meta name='description' content='Kain Nhantumbo portifolio website' />
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        <title>Kain Nhantumbo | Portfolio</title>
-      </Head>
+      <Head />
       <Header />
       <Container>
         <div>
@@ -37,7 +31,7 @@ export default function Layout({ children }: Props) {
             onClick={() =>
               dispatch({
                 type: actions.LANGUAGES_MODAL,
-                payload: { ...state, isLanguagesModal: true }
+                payload: { ...state, isLanguagesModal: true },
               })
             }>
             <BsTranslate />
@@ -63,13 +57,6 @@ export default function Layout({ children }: Props) {
           </motion.button>
         </div>
       </Container>
-      <ConfirmModal
-        active={isModalActive}
-        prompt_title={translation('modal.title')}
-        prompt_message={translation('modal.message')}
-        closeModal={setIsModalActive}
-        buttonText={translation('modal.button-text')}
-      />
       <LanguageSwitcher />
       {children}
       <Footer />
