@@ -89,18 +89,18 @@
       "success": "Message sent successfuly!",
       "failure": "Oops! Looks like something went wrong. Please, try again.",
       "informative": "Sending your message, please wait..."
-    },
-    "works": {
-      "platform": "Platform",
-      "stack": "Stack",
-      "repo": "Repository",
-      "demo": "Live Preview",
-      "live_preview_label": "Try this app live!",
-      "repository_label": "View or fork source code on Github",
-      "choconotey": {
-        "title": "Choconotey Notes App 📔",
-        "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share and export/output your notes content in multiple formats like Markdown, HTML and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor and clean interface editor for ease  and distration free experience.\nGood to give it a try! 🎈🎉🎊"
-      }
+    }
+  },
+  "works": {
+    "platform": "Platform",
+    "stack": "Stack",
+    "repo": "Repository",
+    "demo": "Live Preview",
+    "live_preview_label": "Try this app live!",
+    "repository_label": "View or fork source code on Github",
+    "choconotey": {
+      "title": "Choconotey Notes App 📔",
+      "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share and export/output your notes content in multiple formats like Markdown, HTML and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor and clean interface editor for ease  and distration free experience.\nGood to give it a try! 🎈🎉🎊"
     }
   }
 }

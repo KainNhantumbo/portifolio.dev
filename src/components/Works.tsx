@@ -12,7 +12,12 @@ export default function Works() {
     <Container>
       {data.map((item, index) => (
         <div key={index} className='item-container'>
-          <Image src={item.image} alt={item.title} />
+          <Image
+            width={300}
+            height={300}
+            src={item.image}
+            alt={item.title}
+          />
           <div className='content-container'>
             <h3 className='title'>{item.title}</h3>
             <div className='description-container'>
@@ -28,7 +33,7 @@ export default function Works() {
             </div>
             <div className='stack-container'>
               <h4>{translation('works.stack')}: </h4>
-              {item.platforms.map((platform, index) => (
+              {item.stack.map((platform, index) => (
                 <span key={index}>{platform}</span>
               ))}
             </div>
