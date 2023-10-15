@@ -8,7 +8,7 @@ import { RiMenuLine, RiCloseLine } from 'react-icons/ri';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _header as Container } from '../styles/components/header';
 
-type TNavbarAnchors = { ref: string; label: string };
+type NavAnchors = { ref: string; label: string };
 
 export default function Header() {
   const minWidth: number = 640;
@@ -18,11 +18,12 @@ export default function Header() {
   const { t: translation } = useTranslation();
 
   // stores navigation bar ref urls and name
-  const headerAnchors: TNavbarAnchors[] = [
+  const headerAnchors: NavAnchors[] = [
     { label: translation('header.anchors.about'), ref: '#about' },
     { label: translation('header.anchors.skills'), ref: '#skills' },
     { label: translation('header.anchors.projects'), ref: '#projects' },
-    { label: translation('header.anchors.contact'), ref: '#contact' }
+    { label: translation('header.anchors.contact'), ref: '#contact' },
+    { label: translation('header.anchors.blog'), ref: '/blog' },
   ];
 
   const toggleMenu = () => setIsMenu(!isMenu);
@@ -80,15 +81,6 @@ export default function Header() {
                   </Link>
                 </motion.li>
               ))}
-
-              <motion.li whileTap={{ scale: deltaY <= minWidth ? 0.9 : 0.7 }}>
-                <a
-                  href={'https://publish-it-programming.vercel.app'}
-                  target={'_blank'}
-                  rel={'noreferrer noopener'}>
-                  <span>{translation('header.anchors.blog')}</span>
-                </a>
-              </motion.li>
             </motion.ul>
           </AnimatePresence>
         </nav>

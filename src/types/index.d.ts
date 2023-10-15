@@ -61,3 +61,21 @@ export type Action = { type: string; payload: State };
 export type State = {
   isLanguagesModal: boolean;
 };
+
+export type Frontmatter = {
+  title: string
+  excerpt: string
+  image: string
+  createdAt: string
+  updatedAt?: string
+  author: {
+    name: string
+    picture: string
+    description: string
+  }
+}
+
+export interface Post extends Frontmatter {
+  slug: string;
+  content: string;
+};
