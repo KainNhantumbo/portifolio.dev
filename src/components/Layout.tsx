@@ -10,7 +10,7 @@ import { BsTranslate } from 'react-icons/bs';
 import { useAppContext } from '../context/AppContext';
 import { BiMoon, BiSun, BiUpArrowAlt } from 'react-icons/bi';
 import LanguageSwitcher from '../components/modals/LanguageSwitcher';
-import { _fluentButtons as Container } from '../styles/components/fluent-buttons';
+import { _fluentButtons as Container } from '../styles/modules/_fluent-buttons';
 
 type Props = { children: ReactNode; metadata?: HeadProps };
 
@@ -32,7 +32,7 @@ export default function Layout({ children, metadata }: Props) {
               onClick={() =>
                 dispatch({
                   type: actions.LANGUAGES_MODAL,
-                  payload: { ...state, isLanguagesModal: true },
+                  payload: { ...state, isLanguagesModal: true }
                 })
               }>
               <BsTranslate />

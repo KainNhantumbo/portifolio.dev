@@ -5,7 +5,7 @@ import type { IconType } from 'react-icons';
 import { useTranslation } from 'react-i18next';
 import { ImBlog, ImLinkedin2 } from 'react-icons/im';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
-import { _footer as Container } from '../styles/components/footer';
+import { _footer as Container } from '../styles/modules/_footer';
 import donutsImage from '../../public/assets/donuts.png';
 
 type TSocialMediaAnchors = {
@@ -14,7 +14,7 @@ type TSocialMediaAnchors = {
   link: string;
 };
 
-export default function Footer(){
+export default function Footer() {
   const { t: translation } = useTranslation();
 
   const socialMediaAnchors: TSocialMediaAnchors[] = [
@@ -86,5 +86,4 @@ export default function Footer(){
       </div>
     </Container>
   );
-};
-
+}

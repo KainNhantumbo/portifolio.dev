@@ -17,7 +17,7 @@ import { FaReact } from 'react-icons/fa';
 import { m as motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
-import { _abilities as Container } from '../styles/components/abilities';
+import { _abilities as Container } from '../styles/modules/_abilities';
 
 export default function Abilities() {
   const { t: translation } = useTranslation();

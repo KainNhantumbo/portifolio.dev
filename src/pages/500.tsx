@@ -1,6 +1,6 @@
 import Package from '../../package.json';
 import { useRouter } from 'next/router';
-import { errorPage as Container } from '../styles/error-page';
+import { _errorPage as Container } from '../styles/_error-page';
 
 export default function InternalServerError() {
   const router = useRouter();

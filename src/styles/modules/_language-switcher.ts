@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BaseButton, StyledCornerButton } from '../defaults';
+import { BaseButton, StyledCornerButton } from '../_defaults';
 
 export const _languageSwitcher = styled.section`
   position: fixed;

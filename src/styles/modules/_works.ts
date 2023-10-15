@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const _works = styled.section`
   width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -76,6 +77,9 @@ export const _works = styled.section`
 
         span {
           text-transform: capitalize;
+          padding: 2px 5px;
+          border-radius: 8px;
+          border: 1px dashed rgb(${({ theme }) => theme.primary});
         }
       }
 
@@ -84,13 +88,17 @@ export const _works = styled.section`
         flex-flow: row wrap;
         align-items: center;
         gap: 12px;
-
+        margin-top: 12px;
         a {
           display: flex;
           flex-direction: row;
           align-items: center;
           gap: 5px;
-          color: rgb(${({ theme }) => theme.primary_shade});
+          color: #1a8eff;
+
+          svg {
+            color: rgb(${({ theme }) => theme.primary_shade});
+          }
 
           :hover {
             text-decoration-line: underline;

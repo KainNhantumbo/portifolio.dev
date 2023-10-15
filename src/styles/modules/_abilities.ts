@@ -15,12 +15,6 @@ export const _abilities = styled.section`
     padding: 18px;
     border-radius: 10px;
     border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-
-    /* 
-    :hover {
-      transition: all 200ms ease;
-      box-shadow: 0 0 20px rgba(${({ theme }) => theme.black}, 0.1);
-    } */
   }
 
   .list-items {
@@ -50,7 +44,7 @@ export const _abilities = styled.section`
       padding-right: 20px;
       border-radius: 10px;
       user-select: none;
-      
+
       :hover {
         svg {
           color: rgb(${({ theme }) => theme.primary});

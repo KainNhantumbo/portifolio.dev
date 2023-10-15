@@ -17,7 +17,7 @@ export function getWorks(): Array<Work> {
         url: 'https://github.com/KainNhantumbo/notes-app'
       },
       stack: ['node.js', 'react.js', 'express.js', 'typescript'],
-      platforms: ['Web', '', 'PWA Apps']
+      platforms: ['Web', 'PWA Apps']
     }
   ];
 }

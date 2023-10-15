@@ -8,7 +8,7 @@ import { GiCoffeeMug } from 'react-icons/gi';
 import { FaGrinHearts } from 'react-icons/fa';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import { getPaths, getPost } from '@/lib/processor';
-import { _post as Container } from '@/styles/_post';
+import { _post as Container } from '@/styles/routes/_post';
 
 type Props = { post: Post };
 

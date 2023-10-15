@@ -6,7 +6,7 @@ import { NextRouter, useRouter } from 'next/router';
 import donutImage from '../../public/assets/path36.png';
 import { RiMenuLine, RiCloseLine } from 'react-icons/ri';
 import { m as motion, AnimatePresence } from 'framer-motion';
-import { _header as Container } from '../styles/components/header';
+import { _header as Container } from '../styles/modules/_header';
 
 type NavAnchors = { ref: string; label: string };
 
@@ -23,7 +23,7 @@ export default function Header() {
     { label: translation('header.anchors.skills'), ref: '#skills' },
     { label: translation('header.anchors.projects'), ref: '#projects' },
     { label: translation('header.anchors.contact'), ref: '#contact' },
-    { label: translation('header.anchors.blog'), ref: '/blog' },
+    { label: translation('header.anchors.blog'), ref: '/blog' }
   ];
 
   const toggleMenu = () => setIsMenu(!isMenu);

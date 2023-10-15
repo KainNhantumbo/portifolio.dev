@@ -11,7 +11,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { send as sender } from '@emailjs/browser';
 import { InputEvents, SubmitEvent, FormData } from '../types';
-import { _contact as Container } from '../styles/components/contact';
+import { _contact as Container } from '../styles/modules/_contact';
 
 export default function Contact() {
   const { t: translation } = useTranslation();

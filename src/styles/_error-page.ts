@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { BaseButton } from './defaults';
+import { BaseButton } from './_defaults';
 
-export const errorPage = styled.article`
+export const _errorPage = styled.article`
   margin-top: 70px;
   display: grid;
   align-items: center;

@@ -4,7 +4,7 @@ import { SiAboutdotme } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import { HiCode, HiViewGrid } from 'react-icons/hi';
 import authorImage from '../../public/assets/author.jpg';
-import { _about as Container } from '../styles/components/about';
+import { _about as Container } from '../styles/modules/_about';
 
 export default function About() {
   const { t: translation } = useTranslation();
@@ -21,7 +21,12 @@ export default function About() {
             <h3>Kain Nhantumbo</h3>
             <p className='op'>{translation('about.subtitle')}</p>
           </div>
-          <Image width={100} height={100} src={authorImage} alt='author image' />
+          <Image
+            width={100}
+            height={100}
+            src={authorImage}
+            alt='author image'
+          />
         </div>
 
         <p>{translation('about.intro-1')}</p>

@@ -2,7 +2,7 @@ import { m as motion } from 'framer-motion';
 import { HiSparkles } from 'react-icons/hi';
 import { useTranslation } from 'react-i18next';
 import { RiGithubLine, RiLinkedinFill } from 'react-icons/ri';
-import { _introduction as Container } from '../styles/components/introduction';
+import { _introduction as Container } from '../styles/modules/_introduction';
 
 export default function Introduction() {
   const { t: translation } = useTranslation();

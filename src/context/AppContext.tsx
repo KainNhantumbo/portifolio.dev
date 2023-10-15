@@ -8,7 +8,7 @@ import {
   useReducer
 } from 'react';
 import { Theme, ColorScheme, State, Action } from '../types';
-import { GlobalStyles } from '../styles/global-styles';
+import { GlobalStyles } from '../styles/_global-styles';
 import { ThemeProvider } from 'styled-components';
 import { dark_default, light_default } from '../styles/themes';
 import { initialState, reducer } from '../shared/reducer';

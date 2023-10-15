@@ -5,7 +5,7 @@ import { m as motion } from 'framer-motion';
 import { getProjects } from '@/data/projects';
 import { useTranslation } from 'react-i18next';
 import { HiPlay, HiViewGrid } from 'react-icons/hi';
-import { _projects as Container } from '../styles/components/projects';
+import { _projects as Container } from '../styles/modules/_projects';
 
 export default function Projects() {
   const projects = getProjects();

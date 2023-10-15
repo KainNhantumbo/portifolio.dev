@@ -1,5 +1,5 @@
-import Image, { StaticImageData } from 'next/image';
-import { _works as Container } from '../styles/components/works';
+import Image from 'next/image';
+import { _works as Container } from '../styles/modules/_works';
 import { getWorks } from '@/data/works';
 import { useTranslation } from 'react-i18next';
 import { RiGithubLine, RiLiveLine } from 'react-icons/ri';
@@ -12,12 +12,7 @@ export default function Works() {
     <Container>
       {data.map((item, index) => (
         <div key={index} className='item-container'>
-          <Image
-            width={300}
-            height={300}
-            src={item.image}
-            alt={item.title}
-          />
+          <Image width={600} height={600} src={item.image} alt={item.title} />
           <div className='content-container'>
             <h3 className='title'>{item.title}</h3>
             <div className='description-container'>

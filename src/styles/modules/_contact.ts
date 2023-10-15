@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BaseButton, StyledInputs, StyledLabels } from '../defaults';
+import { BaseButton, StyledInputs, StyledLabels } from '../_defaults';
 
 export const _contact = styled.section`
   max-width: 700px;
@@ -11,7 +11,7 @@ export const _contact = styled.section`
   border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
   padding-top: 20px;
   line-height: 1.6rem;
-  
+
   @media screen and (max-width: 370px) {
     margin: 0;
   }
@@ -95,7 +95,7 @@ export const _contact = styled.section`
       }
 
       ${StyledInputs}
-      
+
       button {
         ${BaseButton}
       }

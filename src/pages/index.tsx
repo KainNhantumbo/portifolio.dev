@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import About from '../components/About';
 import Layout from '../components/Layout';
 import Abilities from '../components/Abilities';
-import { _home as Container } from '../styles/home';
+import { _home as Container } from '../styles/routes/_home';
 import Introduction from '../components/Introduction';
 import { MotionConfig, LazyMotion, domAnimation } from 'framer-motion';
 

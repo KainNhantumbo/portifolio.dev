@@ -19,7 +19,6 @@ export const _footer = styled.footer`
     img {
       width: 100%;
       height: fit-content;
-      /* object-fit: cover; */
     }
   }
 

@@ -18,7 +18,6 @@ export const _home = styled.main`
     margin-top: 12px;
     position: relative;
 
-
     ::before {
       content: '';
       position: absolute;
