@@ -123,6 +123,6 @@ export default function Blog({ posts }: Props) {
 }
 
 export async function getStaticProps() {
-  const posts = DataProcessor.posts();
+  const posts = DataProcessor.getPosts();
   return { props: { posts } };
 }
