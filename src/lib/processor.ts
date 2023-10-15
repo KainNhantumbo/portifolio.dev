@@ -26,6 +26,6 @@ export function getPosts(): Array<Post> {
 export function getPaths(): Array<{ params: { slug: string } }> {
   const files = readdirSync(postsDir);
   return files.map((filename) => ({
-    params: { slug: filename.replace('.md', '').toLowerCase() },
+    params: { slug: filename.replace('.md', '').toLowerCase() }
   }));
 }

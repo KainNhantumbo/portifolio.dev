@@ -19,7 +19,8 @@ export default function Blog({ posts }: Props) {
   // defines how many posts to display on each page
   const realocatePosts = (): void => {
     const page = Number(router.query.page) || 1;
-    const start = page === 1 ? undefined : POSTS_PER_PAGE * page - POSTS_PER_PAGE;
+    const start =
+      page === 1 ? undefined : POSTS_PER_PAGE * page - POSTS_PER_PAGE;
     const end = page === totalPages ? undefined : page * 2;
     if (page === 1) return setPagePosts(() => posts.slice(0, POSTS_PER_PAGE));
     return setPagePosts(() => posts.slice(start, end));

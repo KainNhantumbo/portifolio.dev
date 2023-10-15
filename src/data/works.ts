@@ -10,14 +10,14 @@ export function getWorks(): Array<Work> {
       image: notesAppImage,
       livePreview: {
         label: translation('works.live_preview_label'),
-        url: 'https://choconotey-demo.vercel.app',
+        url: 'https://choconotey-demo.vercel.app'
       },
       repository: {
         label: translation('works.repository_label'),
-        url: 'https://github.com/KainNhantumbo/notes-app',
+        url: 'https://github.com/KainNhantumbo/notes-app'
       },
       stack: ['node.js', 'react.js', 'express.js', 'typescript'],
-      platforms: ['web', '', 'pwa apps'],
-    },
+      platforms: ['web', '', 'pwa apps']
+    }
   ];
 }

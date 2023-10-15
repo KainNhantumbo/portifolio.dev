@@ -18,13 +18,15 @@ export default function Post({ post }: Props) {
   const anchors = buildShareUrls({
     title: post.title,
     excerpt: post.excerpt,
-    slug: post.slug,
+    slug: post.slug
   });
 
   const computePageInnerWidth = (): void => {
     const wrapper = document.querySelector('.main-container');
     if (!wrapper)
-      throw new Error('Cannot get wrapper container to compute screen position.');
+      throw new Error(
+        'Cannot get wrapper container to compute screen position.'
+      );
     const calc = (window.scrollY * 100) / wrapper.scrollHeight;
     setScreenPosition(calc);
   };
@@ -48,7 +50,7 @@ export default function Post({ post }: Props) {
             top: '0px',
             left: '0px',
             zIndex: '99999',
-            transition: '200ms',
+            transition: '200ms'
           }}
         />
 
@@ -83,7 +85,11 @@ export default function Post({ post }: Props) {
               <h1 title={post.title}>
                 <strong>{post.title}</strong>
               </h1>
-              <img className='article-image' src={post.image} alt={post.title} />
+              <img
+                className='article-image'
+                src={post.image}
+                alt={post.title}
+              />
 
               <h4>{post.excerpt}</h4>
             </section>
@@ -112,8 +118,8 @@ export default function Post({ post }: Props) {
                 <HiDotsHorizontal className='dots' />
                 <h2>Has this been helpful to you?</h2>
                 <p>
-                  You can support my work by sharing this article with others, or perhaps
-                  buy me a cup of coffee
+                  You can support my work by sharing this article with others,
+                  or perhaps buy me a cup of coffee
                 </p>
                 <FaGrinHearts className='svg-smile' />
                 <motion.a

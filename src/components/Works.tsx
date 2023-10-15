@@ -34,11 +34,17 @@ export default function Works() {
             </div>
 
             <div className='anchors-container'>
-              <a href={item.livePreview.url} rel='noopener noreferrer' target='_blank'>
+              <a
+                href={item.livePreview.url}
+                rel='noopener noreferrer'
+                target='_blank'>
                 <RiLiveLine />
                 <span>{item.livePreview.label}</span>
               </a>
-              <a href={item.repository.url} rel='noopener noreferrer' target='_blank'>
+              <a
+                href={item.repository.url}
+                rel='noopener noreferrer'
+                target='_blank'>
                 <RiGithubLine />
                 <span>{item.repository.label}</span>
               </a>
