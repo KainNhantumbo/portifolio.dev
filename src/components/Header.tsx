@@ -57,7 +57,7 @@ export default function Header() {
         <div className='donut-container'>
           <Image src={donutImage} width={25} height={25} alt='donut image' />
           <h2 onClick={() => router.push('/')}>
-            <span>Kain.dev</span>
+            <span>Codenut.dev</span>
           </h2>
         </div>
         <motion.button whileTap={{ scale: 0.8 }} onClick={toggleMenu}>

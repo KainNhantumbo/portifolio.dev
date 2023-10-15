@@ -43,22 +43,12 @@ export const _projects = styled.section`
       padding: 8px;
       user-select: none;
       border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-      :hover {
-        box-shadow: 0px 10px 35px rgba(${({ theme }) => theme.black}, 0.1);
-      }
+      box-shadow: 0px 10px 35px rgba(${({ theme }) => theme.black}, 0.1);
 
       .top {
         position: relative;
         width: 100%;
         height: 210px;
-
-        img {
-          :hover {
-            width: 340px;
-            height: 250px;
-            transition: all 200ms ease;
-          }
-        }
 
         h4 {
           position: absolute;

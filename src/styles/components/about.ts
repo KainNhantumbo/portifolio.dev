@@ -33,8 +33,6 @@ export const _about = styled.section`
       }
 
       img {
-        width: 100%;
-        object-fit: cover;
         border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
         border-radius: 50%;
       }
@@ -44,7 +42,6 @@ export const _about = styled.section`
         justify-content: center;
         text-align: center;
         margin-bottom: 5px;
-
       }
     }
 
