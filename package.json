@@ -1,5 +1,6 @@
 {
   "name": "codenut-homepage",
+  "website_name": "Codenut Blog",
   "version": "3.0.7",
   "private": true,
   "latest_compile": "07-2023",

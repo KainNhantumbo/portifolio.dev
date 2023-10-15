@@ -1,8 +1,8 @@
 import { Post } from '@/types';
-import Layout from '@/components/Layout';
 import { useRouter } from 'next/router';
+import Layout from '@/components/Layout';
+import { getPosts } from '@/lib/processor';
 import { useEffect, useState } from 'react';
-import DataProcessor from '@/lib/processor';
 import { _blog as Container } from '@/styles/_blog';
 import { FaCalendarAlt, FaPaperPlane } from 'react-icons/fa';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
@@ -34,9 +34,8 @@ export default function Blog({ posts }: Props) {
     <Layout>
       <Container>
         <section className='main-top-container'>
-          <section className='greet'>
-            <img src='assets/cover.jpg' alt='cover image' />
-            <h1>Hello, you're welcome ;)</h1>
+          <section className='banner-container'>
+            <h1>Hello, welcome to my blog!</h1>
           </section>
         </section>
         <div className='main-container'>
@@ -123,6 +122,6 @@ export default function Blog({ posts }: Props) {
 }
 
 export async function getStaticProps() {
-  const posts = DataProcessor.getPosts();
+  const posts = getPosts();
   return { props: { posts } };
 }

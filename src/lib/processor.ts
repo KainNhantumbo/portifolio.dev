@@ -1,34 +1,31 @@
-import fs from 'node:fs';
 import { join } from 'node:path';
 import matter from 'gray-matter';
-import { Frontmatter, Post } from '@/types';
+import type { Post } from '@/types';
+import { readFileSync, readdirSync } from 'node:fs';
 
-const postsDir = join(process.cwd(), '/data/docs');
+const postsDir = join(process.cwd(), '/src/data/docs');
 
-export default class DataProcessor {
-  public static getPost(slug: string): Post {
-    const file = fs.readFileSync(join(postsDir, `${slug}.md`));
-    const { data, content } = matter(file);
-    return { ...data, content, slug } as Post;
-  }
+export function getPost(slug: string): Post {
+  const file = readFileSync(join(postsDir, `${slug}.md`));
+  const { data, content } = matter(file);
+  return { ...data, content, slug } as Post;
+}
 
-  public static getPosts(): Array<Post> {
-    const filesNames: string[] = fs.readdirSync(postsDir);
-    return filesNames
-      .map((fileName) => {
-        const slug: string = fileName.replace('.md', '').toLowerCase();
-        const readFiles: Buffer = fs.readFileSync(join(postsDir, fileName));
-        const { data } = matter(readFiles);
-        data.slug = slug;
-        return data as Post;
-      })
-      .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-  }
+export function getPosts(): Array<Post> {
+  const filesNames: string[] = readdirSync(postsDir);
+  return filesNames
+    .map((fileName) => {
+      const slug: string = fileName.replace('.md', '').toLowerCase();
+      const readFiles: Buffer = readFileSync(join(postsDir, fileName));
+      const { data } = matter(readFiles);
+      return { slug, ...data } as Post;
+    })
+    .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
+}
 
-  public static getPaths(): Array<{ params: { slug: string } }> {
-    const files = fs.readdirSync(postsDir);
-    return files.map((filename) => ({
-      params: { slug: filename.replace('.md', '').toLowerCase() },
-    }));
-  }
+export function getPaths(): Array<{ params: { slug: string } }> {
+  const files = readdirSync(postsDir);
+  return files.map((filename) => ({
+    params: { slug: filename.replace('.md', '').toLowerCase() },
+  }));
 }

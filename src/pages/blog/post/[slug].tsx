@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import ReactMarkdown from 'react-markdown';
 import { m as motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import DataProcessor from '@/lib/processor';
+import { getPaths, getPost } from '@/lib/processor';
 import { GiCoffeeMug } from 'react-icons/gi';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import { _post as Container } from '@/styles/_post';
@@ -136,11 +136,11 @@ export default function Post({ post }: Props) {
 }
 
 export async function getStaticPaths() {
-  const paths = DataProcessor.getPaths();
+  const paths = getPaths();
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
-  const post = DataProcessor.getPost(slug);
+  const post = getPost(slug);
   return { props: { ...post } };
 }
