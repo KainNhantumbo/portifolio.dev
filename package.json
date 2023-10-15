@@ -1,7 +1,19 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "codenut-homepage",
+  "version": "3.0.7",
   "private": true,
+  "latest_compile": "07-2023",
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=10.1.0"
+  },
+  "author": {
+    "name": "Kain Nhantumbo",
+    "email": "nhantumbok@gmail.com",
+    "url": "https://portifolio-dev-mu.vercel.app",
+    "website": "https://publish-it-programming.vercel.app"
+  },
+  "license": "Apache License Version 2.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

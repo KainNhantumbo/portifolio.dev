@@ -1,0 +1,99 @@
+{
+  "header": {
+    "anchors": {
+      "blog": "Blogue",
+      "about": "Sobre",
+      "skills": "Habilidades",
+      "projects": "Projetos",
+      "contact": "Contato"
+    }
+  },
+  "footer": {
+    "title": "Encontre-me na internet através do:",
+    "copy-phrase": "Copyright © 2023 Kain Nhantumbo. Todos os Direitos Reservados.",
+    "made-phrase": "Construido com ❤ usando Next.js e Typescript.",
+    "version-phrase": "Versão",
+    "anchors": {
+      "github": "Encontre-me no Github",
+      "whatsapp": "Encontre-me no Whatsapp",
+      "linkedIn": "Encontre-me no LinkedIn",
+      "blog": "Visite o meu blogue"
+    }
+  },
+  "intro": {
+    "welcome-message": "Bem vindo ao meu espaço :)",
+    "presentation": "Olá 👋, sou o Kain!",
+    "message-part-1": "Um desenvolvedor de software entusiasta que ama rosquinhas e construir aplicações completas enquanto aprende novas coisinhas a cada novo dia.",
+    "message-part-2": "Para construir os meus projetos, utilizo Typescript e Javascript como linguagens de programação principais.",
+    "title":"Desenvolvedor Web"
+  },
+  "about": {
+    "title": "Sobre",
+    "subtitle": "Desenvolvedor Web e Criador de Conteúdo",
+    "intro-1": "Sou uma pessoa com o desejo de crescer aprendendo novas coisas todos os dias. Movido pela curiosidade, me apixonei pelo desenvolvimento web e design.",
+    "intro-2": "Estou muito ansioso e interessado em oportunidades de trabalho que envolvem as mais novas tecnologias e que coloquem as minhas habilidades em prática.",
+    "experience-title": "Experiência",
+    "experience-content": "Mais de 2 anos de programação",
+    "projects-title": "Projetos",
+    "projects-content": "Mais de 20 projetos no Github"
+  },
+  "projects": {
+    "title": "Meus Trabalhos e Projetos",
+    "intro-part-1": "(...) e porque entendo que mostrar às vezes é melhordo que dizer, aqui estão alguns dos meus projetos pessoais nos quais tenho trabalhado atualmente. Você ainda pode ver os meus outros projetos pessoais no meu",
+    "intro-part-2": "perfil do github",
+    "live-demo": "Ver Demostração",
+    "github": "Repositório do Github",
+    "content": {
+      "bug-tracker": "Aplicação de Rastreamento de Bugs construida com React e Typescript",
+      "bug-tracker-server": "API Rest da Aplicação de Rastreamento de Bugs construida com Typescript, Node.JS + Express.JS + MongoDB",
+      "url-shortner": "Aplicação Encurtadora de URLs construida com React e Typescript",
+      "notes-app": "Aplicação Notas construida com React + Styled-Components + Sass",
+      "tasks-app": "Aplicação Tarefas e Contatos construida com Javascript, React e Node.JS + Express.JS + MongoDB para servidor",
+      "tasks-app-server": "API Rest para Aplicação Tarefas e Contatos, construida com Javascript, Node.JS, Express.JS e Mongo DB para servidor",
+      "recipes-website": "Site de Receitas construido com Typescript, Next.JS e Node.JS + Express.JS + Mongo DB",
+      "hagira-store": "Aplicação E-commerce da Hagira construido com React e Javascript",
+      "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
+    }
+  },
+  "modal": {
+    "title": "Mensagem enviada",
+    "message": "Mal posso esperar para começar a trabalhar com você, obrigado!",
+    "button-text": "Fechar"
+  },
+  "language_switcher_modal": {
+    "title": "Troca de Língua",
+    "message": "Troque de língua facilmente.",
+    "buttons": {
+      "portuguese": "Trocar para português",
+      "english": "Trocar para inglês"
+    }
+  },
+  "abilities": {
+    "title": "Minhas Habilidades e Experiência",
+    "frontend-title": "Desenvolvimento do Cliente",
+    "backend-title": "Desenvolvimento de Servidor",
+    "tools-title": "Ferramentas de Desenvolvimento"
+  },
+  "contact": {
+    "title": "Contate-me",
+    "intro-title": "Vamos trazer idéias à vida utilizando código!",
+    "intro-message": "Você pode utilizar o formuário abaixo para me enviar uma mensagem por correio eletrónico ou escolhendo uma das seguintes opções:",
+    "mail": "Correio eletrónico: nhantumbok@gmail.com",
+    "form": {
+      "name-label": "Nome *",
+      "name-placeholder": "Escreva o seu nome",
+      "mail-label": "E-mail *",
+      "mail-placeholder": "Escreva o seu endereço de e-mail",
+      "subject-label": "Assunto *",
+      "subject-placeholder": "Escreva o assunto da sua mensagem",
+      "message-label": "Mensagem *",
+      "message-placeholder": "Escreva o conteúdo da sua mensagem",
+      "button": "Enviar mensagem"
+    },
+    "message": {
+      "success": "Mensagem enviada com sucesso!",
+      "failure": "Oops! Parece que algo deu errado. Por favor, tente novamente.",
+      "informative": "Enviando a sua mensagem, aguarde..."
+    }
+  }
+}
