@@ -1,5 +1,5 @@
+import Works from './Works';
 import Image from 'next/image';
-import { Project } from '../types';
 import { FaGithub } from 'react-icons/fa';
 import { m as motion } from 'framer-motion';
 import { getProjects } from '@/data/projects';
@@ -8,11 +8,11 @@ import { HiPlay, HiViewGrid } from 'react-icons/hi';
 import { _projects as Container } from '../styles/components/projects';
 
 export default function Projects() {
-  const projects: Project[] = getProjects();
+  const projects = getProjects();
   const { t: translation } = useTranslation();
 
   return (
-    <Container>
+    <Container id='projects'>
       <h2>
         <HiViewGrid />
         <span>{translation('projects.title')}</span>
@@ -30,6 +30,9 @@ export default function Projects() {
           .
         </strong>
       </p>
+
+      <Works />
+
       <section className='cards-container'>
         <section className='cards-wrapper'>
           {projects.map((project, index) => (

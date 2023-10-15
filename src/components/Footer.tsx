@@ -36,7 +36,7 @@ export default function Footer(){
     {
       name: translation('footer.anchors.blog'),
       icon: ImBlog,
-      link: 'https://publish-it-programming.vercel.app'
+      link: '/blog'
     }
   ];
 

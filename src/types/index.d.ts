@@ -29,6 +29,16 @@ type Project = {
   live_url: string;
 };
 
+export type Work = {
+  title: string;
+  image: StaticImageData;
+  repository: { label: string; url: string };
+  livePreview: { label: string; url: string };
+  description: string[];
+  stack: string[];
+  platforms: string[];
+};
+
 export type Stack = {
   title: string;
   icon: IconType;

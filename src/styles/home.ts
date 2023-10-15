@@ -15,7 +15,20 @@ export const _home = styled.main`
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0 auto;
+    margin-top: 12px;
     position: relative;
+
+
+    ::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 5px;
+      top: -20px;
+      left: calc(50% - 20px);
+      border-radius: 12px;
+      background: rgb(${({ theme }) => theme.primary_shade});
+    }
 
     @media screen and (max-width: 420px) {
       font-size: 1rem;

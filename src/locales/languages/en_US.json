@@ -11,7 +11,7 @@
   "footer": {
     "title": "Find me on the web by:",
     "copy-phrase": "Copyright © 2023 Kain Nhantumbo. All Rights Reserved.",
-    "made-phrase": "Made with ❤ using Next.js and Typescript.",
+    "made-phrase": "Crafted with ❤ using Next.js and Typescript.",
     "version-phrase": "Version",
     "anchors": {
       "github": "Find me on Github",
@@ -55,11 +55,6 @@
       "hagira-store-server": "Server Restfull API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB"
     }
   },
-  "modal": {
-    "title": "Message Sent",
-    "message": "I just can't wait to we start working together, thank you!",
-    "button-text": "Close"
-  },
   "language_switcher_modal": {
     "title": "Language Switcher",
     "message": "Switch between available display languages easily.",
@@ -94,6 +89,18 @@
       "success": "Message sent successfuly!",
       "failure": "Oops! Looks like something went wrong. Please, try again.",
       "informative": "Sending your message, please wait..."
+    },
+    "works": {
+      "platform": "Platform",
+      "stack": "Stack",
+      "repo": "Repository",
+      "demo": "Live Preview",
+      "live_preview_label": "Try this app live!",
+      "repository_label": "View or fork source code on Github",
+      "choconotey": {
+        "title": "Choconotey Notes App 📔",
+        "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share and export/output your notes content in multiple formats like Markdown, HTML and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor and clean interface editor for ease  and distration free experience.\nGood to give it a try! 🎈🎉🎊"
+      }
     }
   }
 }

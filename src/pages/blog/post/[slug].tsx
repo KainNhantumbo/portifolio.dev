@@ -1,14 +1,14 @@
-import { FaGrinHearts } from 'react-icons/fa';
 import type { Post } from '@/types';
 import Layout from '@/components/Layout';
 import ReactMarkdown from 'react-markdown';
 import { m as motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { getPaths, getPost } from '@/lib/processor';
-import { GiCoffeeMug } from 'react-icons/gi';
-import { HiDotsHorizontal } from 'react-icons/hi';
-import { _post as Container } from '@/styles/_post';
 import { buildShareUrls } from '@/lib/share';
+import { GiCoffeeMug } from 'react-icons/gi';
+import { FaGrinHearts } from 'react-icons/fa';
+import { HiDotsHorizontal } from 'react-icons/hi';
+import { getPaths, getPost } from '@/lib/processor';
+import { _post as Container } from '@/styles/_post';
 
 type Props = { post: Post };
 

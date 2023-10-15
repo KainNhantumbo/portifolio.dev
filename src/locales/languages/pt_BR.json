@@ -25,7 +25,7 @@
     "presentation": "Olá 👋, sou o Kain!",
     "message-part-1": "Um desenvolvedor de software entusiasta que ama rosquinhas e construir aplicações completas enquanto aprende novas coisinhas a cada novo dia.",
     "message-part-2": "Para construir os meus projetos, utilizo Typescript e Javascript como linguagens de programação principais.",
-    "title":"Desenvolvedor Web"
+    "title": "Desenvolvedor Web"
   },
   "about": {
     "title": "Sobre",
@@ -54,11 +54,6 @@
       "hagira-store": "Aplicação E-commerce da Hagira construido com React e Javascript",
       "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
     }
-  },
-  "modal": {
-    "title": "Mensagem enviada",
-    "message": "Mal posso esperar para começar a trabalhar com você, obrigado!",
-    "button-text": "Fechar"
   },
   "language_switcher_modal": {
     "title": "Troca de Língua",
@@ -94,6 +89,18 @@
       "success": "Mensagem enviada com sucesso!",
       "failure": "Oops! Parece que algo deu errado. Por favor, tente novamente.",
       "informative": "Enviando a sua mensagem, aguarde..."
+    }
+  },
+  "works": {
+    "platform": "Plataforma",
+    "stack": "Feramentas",
+    "repo": "Repositório",
+    "demo": "Versão Demostrativa",
+    "live_preview_label": "Experimente a demostração!",
+    "repository_label": "Ver ou ramificar o código fonte no Github",
+    "choconotey": {
+      "title": "Choconotey Notes App 📔",
+      "description": "Fazer anotações em markdown se tornou mais simples com esta aplicação. Ela está enriquecida com funcionalidades para criar, organizar, filtrar, compartilhar e exportar o conteúdo das suas notas em múltiplos formatos como Markdown, HTML e texto simples.\nEmbutida com sincronização automática, controlo de dados e funcionalidades, leves animações gráficas, um editor robusto com uma interface limpa para obter uma experiência fácil e sem  distrações.\nDê uma olhada ao vivo! 🎈🎉🎊"
     }
   }
 }
