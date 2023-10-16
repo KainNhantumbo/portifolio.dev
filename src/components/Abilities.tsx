@@ -80,7 +80,10 @@ export default function Abilities() {
                   scale: 1,
                   transition: { duration: 0.5, bounce: 1 }
                 }}
-                whileHover={{ rotate: [0, -20, 0, 20, 0] }}
+                whileHover={{
+                  rotate: [0, -20, 0, 20, 0],
+                  scale: [1.1, 1, 1.18, 1.09, 1]
+                }}
                 className='item'>
                 <item.icon />
                 <h3>{item.tech}</h3>

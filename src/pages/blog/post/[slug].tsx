@@ -15,10 +15,12 @@ type Props = { post: Post };
 export default function Post({ post }: Props) {
   const [screenPosition, setScreenPosition] = useState<number>(0);
 
+  console.log(post);
+  
   const anchors = buildShareUrls({
-    title: post.title,
-    excerpt: post.excerpt,
-    slug: post.slug
+    title: post?.title || '',
+    excerpt: post?.excerpt || '',
+    slug: post?.slug || ''
   });
 
   const computePageInnerWidth = (): void => {
@@ -59,7 +61,12 @@ export default function Post({ post }: Props) {
             <section className={'article-header-container'}>
               <h5>{post.createdAt}</h5>
               <section className='author'>
-                <img src={post.author.picture} alt='article author photo' />
+                <img
+                  loading='lazy'
+                  decoding='async'
+                  src={post.author.picture}
+                  alt='article author photo'
+                />
                 <div>
                   <span>{post.author.name}</span>
                   <span className='description'>{post.author.description}</span>
@@ -146,7 +153,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params: { slug } }: any) {
-  const post = getPost(slug);
-  return { props: { ...post } };
+export async function getStaticProps(context: any) {
+  const post = getPost(context.params.slug);
+  return { props: { post } };
 }

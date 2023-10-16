@@ -89,6 +89,7 @@ export type Frontmatter = {
     picture: string;
     description: string;
   };
+  topic: string
 };
 
 export interface Post extends Frontmatter {

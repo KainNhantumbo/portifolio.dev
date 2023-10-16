@@ -54,7 +54,12 @@ export const _abilities = styled.section`
       span {
         font-size: 0.9rem;
         color: rgba(${({ theme }) => theme.font}, 0.8);
+
+        :hover {
+          border: none;
+        }
       }
+
       svg {
         position: absolute;
         width: 20px;

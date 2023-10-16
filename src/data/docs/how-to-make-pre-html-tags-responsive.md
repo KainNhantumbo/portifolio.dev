@@ -7,6 +7,7 @@ author:
   name: Kain Nhantumbo
   picture: '/assets/author.jpg'
   description: 'Web Developer and Marketeer'
+topic: 'Web Development'
 ---
 
 When I was building this site, I had a hard time styling the `pre` tags. That problem lead long code snippets (which are wrapped by `pre` tags) to overflow the width of the page, and cause the page layout to break. So I decided to share the solution I found and that worked for me.

@@ -1,59 +1,49 @@
+import Link from 'next/link';
 import { Post } from '@/types';
-import { useRouter } from 'next/router';
 import Layout from '@/components/Layout';
 import { getPosts } from '@/lib/processor';
 import { _blog as Container } from '@/styles/routes/_blog';
-import { FaCalendarAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaCalendarAlt } from 'react-icons/fa';
+import { formatDate } from '@/lib/time';
 
 type Props = { posts: Post[] };
 
-export default function Blog({ posts = [] }: Props) {
-  const router = useRouter();
+export default function Blog({ posts }: Props) {
+  console.log(posts);
 
   return (
     <Layout metadata={{ title: 'Codenut.dev - Blog' }}>
       <Container>
         <section className='main-top-container'>
           <section className='banner-container'>
-            <h1>Hello, welcome to my blog!</h1>
+            <h1>
+              Codenut<i>.dev</i>
+            </h1>
+            <h1>Hello, I am Kain, Welcome to My Blog!</h1>
           </section>
         </section>
         <div className='main-container'>
           <article>
             <section className='posts-container'>
               {posts.map((post, index) => (
-                <section className='post' key={index.toString()}>
+                <Link
+                  href={`/blog/post/${post.slug}`}
+                  className='post'
+                  key={index.toString()}>
                   <section className='top-container'>
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      onClick={() => router.push(`/post/${post.slug}`)}
-                    />
+                    <img src={post.image} alt={post.title} />
 
                     <div className='details'>
-                      <h3
-                        onClick={() =>
-                          router.push(
-                            `/blog/post/${encodeURIComponent(post.slug)}`
-                          )
-                        }>
-                        {post.title}
-                      </h3>
+                      <h3>{post.title}</h3>
                       <p>{post.excerpt}</p>
                     </div>
 
                     <div className='date'>
                       <FaCalendarAlt />
-                      <span>{post.createdAt}</span>
+                      <span>{formatDate(post.createdAt)}</span>
                     </div>
                   </section>
-                  <section className='bottom-container'>
-                    <button onClick={() => router.push(`/post/${post.slug}`)}>
-                      <FaPaperPlane />
-                      <span>Continue reading</span>
-                    </button>
-                  </section>
-                </section>
+                </Link>
               ))}
             </section>
           </article>
@@ -65,5 +55,5 @@ export default function Blog({ posts = [] }: Props) {
 
 export async function getStaticProps() {
   const posts = getPosts();
-  return { props: { posts } };
+  return { props: { posts: posts ?? [] } };
 }
