@@ -56,7 +56,7 @@ export const _header = styled.header`
 
   .donut-container {
     position: absolute;
-    top: 22px;
+    top: 16px;
     left: 20px;
     cursor: pointer;
     display: flex;

@@ -1,65 +1,33 @@
 import type { Post } from '@/types';
+import { formatDate } from '@/lib/time';
 import Layout from '@/components/Layout';
 import ReactMarkdown from 'react-markdown';
 import { m as motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import { buildShareUrls } from '@/lib/share';
 import { GiCoffeeMug } from 'react-icons/gi';
 import { FaGrinHearts } from 'react-icons/fa';
 import { HiDotsHorizontal } from 'react-icons/hi';
-import { getPaths, getPost } from '@/lib/processor';
 import { _post as Container } from '@/styles/routes/_post';
+import { generateTableOfContents, getPaths, getPost } from '@/lib/processor';
 
-type Props = { post: Post };
+type Props = { post: Post; tableOfContents: any };
 
-export default function Post({ post }: Props) {
-  const [screenPosition, setScreenPosition] = useState<number>(0);
+export default function Post({ post, tableOfContents }: Props) {
+  console.log(tableOfContents);
 
-  console.log(post);
-  
   const anchors = buildShareUrls({
     title: post?.title || '',
     excerpt: post?.excerpt || '',
     slug: post?.slug || ''
   });
 
-  const computePageInnerWidth = (): void => {
-    const wrapper = document.querySelector('.main-container');
-    if (!wrapper)
-      throw new Error(
-        'Cannot get wrapper container to compute screen position.'
-      );
-    const calc = (window.scrollY * 100) / wrapper.scrollHeight;
-    setScreenPosition(calc);
-  };
-
-  useEffect((): (() => void) => {
-    window.addEventListener('wheel', computePageInnerWidth);
-    return (): void => {
-      window.removeEventListener('wheel', computePageInnerWidth);
-    };
-  }, []);
-
   return (
     <Layout metadata={{ title: 'Kain Portfolio' }}>
       <Container className='wrapper'>
-        <div
-          style={{
-            height: '4px',
-            width: `${screenPosition.toString()}%`,
-            backgroundColor: '#f09836',
-            position: 'fixed',
-            top: '0px',
-            left: '0px',
-            zIndex: '99999',
-            transition: '200ms'
-          }}
-        />
-
         <div className='main-container'>
           <article>
-            <section className={'article-header-container'}>
-              <h5>{post.createdAt}</h5>
+            <section className={'meta-container'}>
+              <h5>{formatDate(post.createdAt)}</h5>
               <section className='author'>
                 <img
                   loading='lazy'
@@ -77,14 +45,14 @@ export default function Post({ post }: Props) {
                 <div className='options'>
                   {anchors.map((option) => (
                     <motion.a
-                      whileHover={{ scale: 1.2 }}
+                      whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.8 }}
                       href={option.url}
                       title={option.name}
                       target={'_blank'}
                       rel={'noreferrer noopener'}
                       key={option.name}>
-                      {option.icon}
+                      <option.icon />
                     </motion.a>
                   ))}
                 </div>
@@ -116,26 +84,25 @@ export default function Post({ post }: Props) {
                       target={'_blank'}
                       rel={'noreferrer noopener'}
                       key={option.name}>
-                      {option.icon}
+                      <option.icon />
                     </motion.a>
                   ))}
                 </div>
               </section>
-              <section className='fund-support'>
+              <section className='support-container'>
                 <HiDotsHorizontal className='dots' />
                 <h2>Has this been helpful to you?</h2>
                 <p>
                   You can support my work by sharing this article with others,
-                  or perhaps buy me a cup of coffee
+                  or perhaps buy me a cup of coffee : )
                 </p>
-                <FaGrinHearts className='svg-smile' />
+                <GiCoffeeMug className={'coffee-mug-icon'} />
                 <motion.a
                   href='https://www.buymeacoffee.com/nhantumbokU'
                   target={'_blank'}
                   rel={'noreferrer noopener'}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.8 }}>
-                  <GiCoffeeMug />
                   <span>Buy me a coffee</span>
                 </motion.a>
                 <HiDotsHorizontal className='dots' />
@@ -155,5 +122,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const post = getPost(context.params.slug);
-  return { props: { post } };
+  const tableOfContents = await generateTableOfContents(context.params.slug);
+  return { props: { post, tableOfContents } };
 }

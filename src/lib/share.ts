@@ -1,8 +1,8 @@
 import {
-  RiFacebookBoxFill,
+  RiFacebookCircleFill,
   RiLinkedinFill,
   RiPinterestFill,
-  RiTwitterXFill,
+  RiTwitterXFill
 } from 'react-icons/ri';
 import Package from '../../package.json';
 
@@ -15,22 +15,22 @@ export function buildShareUrls({ slug, title, excerpt }: Props) {
     {
       name: 'Share on LinkedIn',
       url: `https://www.linkedin.com/shareArticle?mini=true&url=${url}/${slug}&title=${title}&summary=${excerpt}`,
-      icon: RiLinkedinFill,
+      icon: RiLinkedinFill
     },
     {
       name: 'Share on Facebook',
       url: `https://www.facebook.com/sharer/sharer.php?u=${url}/${slug}`,
-      icon: RiFacebookBoxFill,
+      icon: RiFacebookCircleFill
     },
     {
       name: 'Share on Twitter',
       url: `https://twitter.com/intent/tweet?text=${url}/${slug}`,
-      icon: RiTwitterXFill,
+      icon: RiTwitterXFill
     },
     {
       name: 'Share on Pinterest',
       url: `https://pinterest.com/pin/create/button/?url=${url}/${slug}&media=${url}/${slug}&description=${excerpt}`,
-      icon: RiPinterestFill,
-    },
+      icon: RiPinterestFill
+    }
   ];
 }

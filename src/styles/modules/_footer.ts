@@ -48,19 +48,16 @@ export const _footer = styled.footer`
 
       :hover {
         color: rgb(${({ theme }) => theme.primary_shade});
-      }
 
-      svg {
-        width: 20px;
-        height: 20px;
+        svg {
+          color: rgb(${({ theme }) => theme.primary_shade});
+        }
       }
     }
-
-    .static-anchors {
-      :hover {
-        transform: translateY(-1px);
-        transition: all 200ms ease-in-out;
-      }
+    svg {
+      width: 20px;
+      height: 20px;
+      color: rgb(${({ theme }) => theme.primary_shade});
     }
   }
 

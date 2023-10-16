@@ -1,12 +1,12 @@
 ---
-title: 'Why Semantic Markup is Significant for Your Website optimization'
+title: 'Why Semantic Markup is Significant for Your Website Optimization'
 excerpt: 'We should discuss why semantic markup (HTML) is significant for your sites Search engine optimization, and that it is so easy to get this pivotal Website design enhancement component right, even as a non-geek.'
 image: 'https://cdn.pixabay.com/photo/2018/05/16/22/52/website-3407280_960_720.jpg'
 createdAt: '2022-09-11T12:10:18.366Z'
 author:
   name: Kain Nhantumbo
   picture: '/assets/author.jpg'
-  description: 'Web Developer and Marketeer'
+  description: 'Web Developer & Designer'
 topic: 'Web Development'
 ---
 

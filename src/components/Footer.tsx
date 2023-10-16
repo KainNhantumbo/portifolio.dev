@@ -55,35 +55,21 @@ export default function Footer() {
         <strong>{translation('footer.title')}</strong>
       </h3>
       <ul>
-        {isPortfolio
-          ? socialMediaAnchors.map((item, index) => (
-              <motion.li
-                key={index}
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 1.2 }}
-                whileInView={{
-                  scale: 1,
-                  transition: { delay: index / 4 }
-                }}
-                title={item.name}>
-                <a
-                  href={item.link}
-                  target={'_blank'}
-                  rel={'noreferrer noopener'}>
-                  <item.icon />
-                </a>
-              </motion.li>
-            ))
-          : socialMediaAnchors.map((item, index) => (
-              <li className='static-anchors' key={index} title={item.name}>
-                <a
-                  href={item.link}
-                  target={'_blank'}
-                  rel={'noreferrer noopener'}>
-                  <item.icon />
-                </a>
-              </li>
-            ))}
+        {socialMediaAnchors.map((item, index) => (
+          <motion.li
+            key={index}
+            initial={{ scale: 0 }}
+            whileHover={{ scale: 1.2 }}
+            whileInView={{
+              scale: 1,
+              transition: { delay: index / 4 }
+            }}
+            title={item.name}>
+            <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
+              <item.icon />
+            </a>
+          </motion.li>
+        ))}
       </ul>
       <div>
         <span>{translation('footer.copy-phrase')} </span>

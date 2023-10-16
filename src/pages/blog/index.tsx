@@ -17,9 +17,16 @@ export default function Blog({ posts }: Props) {
         <section className='main-top-container'>
           <section className='banner-container'>
             <h1>
-              Codenut<i>.dev</i>
+              Codenut<i>.dev</i> Blog
             </h1>
-            <h1>Hello, I am Kain, Welcome to My Blog!</h1>
+
+            <div>
+              <h3>Hello, I am Kain, Welcome to My Blog!</h3>
+              <p>
+                Web development is my favorite flavour and I love to code. I
+                blog about codding software and my projects.
+              </p>
+            </div>
           </section>
         </section>
         <div className='main-container'>

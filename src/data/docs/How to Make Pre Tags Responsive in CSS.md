@@ -6,7 +6,7 @@ createdAt: '2022-09-10T15:10:18.366Z'
 author:
   name: Kain Nhantumbo
   picture: '/assets/author.jpg'
-  description: 'Web Developer and Marketeer'
+  description: 'Web Developer & Designer'
 topic: 'Web Development'
 ---
 
