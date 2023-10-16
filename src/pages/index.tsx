@@ -11,6 +11,13 @@ const Contact = dynamic(import('../components/Contact'), {
   ssr: true
 });
 
+const LanguageSwitcher = dynamic(
+  import('../components/modals/LanguageSwitcher'),
+  {
+    ssr: true
+  }
+);
+
 const Projects = dynamic(import('../components/Projects'), {
   ssr: true
 });
@@ -19,9 +26,10 @@ export default function Home() {
   return (
     <MotionConfig reducedMotion='user'>
       <LazyMotion strict={true} features={domAnimation}>
-        <Layout>
+        <Layout metadata={{ title: 'Codenut.dev - Portfolio' }}>
           <Container>
             <Introduction />
+            <LanguageSwitcher />
             <About />
             <Abilities />
             <Projects />

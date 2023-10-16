@@ -1,13 +1,12 @@
 import type { Work } from '@/types';
 import { rawTranslation as translation } from '@/locales/init';
-import notesAppImage from '@/../public/assets/notes-demo-light.png';
 
-export function getWorks(): Array<Work> {
+export function getWorks(): Work[] {
   return [
     {
       title: translation('works.choconotey.title'),
       description: translation('works.choconotey.description').split('\n'),
-      image: notesAppImage,
+      image: '/assets/notes-demo-light.png',
       livePreview: {
         label: translation('works.live_preview_label'),
         url: 'https://choconotey-demo.vercel.app'

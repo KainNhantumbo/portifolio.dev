@@ -18,6 +18,14 @@ export const _projects = styled.section`
     }
   }
 
+  .headings {
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin-bottom: 8px;
+  }
+
   .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -49,6 +57,11 @@ export const _projects = styled.section`
         position: relative;
         width: 100%;
         height: 210px;
+
+        img {
+          border: 2px solid rgba(${({ theme }) => theme.font}, 0.15);
+          box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
+        }
 
         h4 {
           position: absolute;

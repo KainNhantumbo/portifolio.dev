@@ -7,17 +7,16 @@ import { ImBlog, ImLinkedin2 } from 'react-icons/im';
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { _footer as Container } from '../styles/modules/_footer';
 import donutsImage from '../../public/assets/donuts.png';
+import { useRouter } from 'next/router';
 
-type TSocialMediaAnchors = {
-  name: string;
-  icon: IconType;
-  link: string;
-};
+type Anchors = { name: string; icon: IconType; link: string };
 
 export default function Footer() {
+  const router = useRouter();
+  const isPortfolio = router.asPath.includes('blog') === false;
   const { t: translation } = useTranslation();
 
-  const socialMediaAnchors: TSocialMediaAnchors[] = [
+  const socialMediaAnchors: Anchors[] = [
     {
       name: translation('footer.anchors.github'),
       icon: FaGithub,
@@ -56,21 +55,35 @@ export default function Footer() {
         <strong>{translation('footer.title')}</strong>
       </h3>
       <ul>
-        {socialMediaAnchors.map((item, index) => (
-          <motion.li
-            key={index}
-            initial={{ scale: 0 }}
-            whileHover={{ scale: 1.2 }}
-            whileInView={{
-              scale: 1,
-              transition: { delay: index / 4 }
-            }}
-            title={item.name}>
-            <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
-              <item.icon />
-            </a>
-          </motion.li>
-        ))}
+        {isPortfolio
+          ? socialMediaAnchors.map((item, index) => (
+              <motion.li
+                key={index}
+                initial={{ scale: 0 }}
+                whileHover={{ scale: 1.2 }}
+                whileInView={{
+                  scale: 1,
+                  transition: { delay: index / 4 }
+                }}
+                title={item.name}>
+                <a
+                  href={item.link}
+                  target={'_blank'}
+                  rel={'noreferrer noopener'}>
+                  <item.icon />
+                </a>
+              </motion.li>
+            ))
+          : socialMediaAnchors.map((item, index) => (
+              <li className='static-anchors' key={index} title={item.name}>
+                <a
+                  href={item.link}
+                  target={'_blank'}
+                  rel={'noreferrer noopener'}>
+                  <item.icon />
+                </a>
+              </li>
+            ))}
       </ul>
       <div>
         <span>{translation('footer.copy-phrase')} </span>

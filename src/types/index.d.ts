@@ -31,7 +31,7 @@ type Project = {
 
 export type Work = {
   title: string;
-  image: StaticImageData;
+  image: string;
   repository: { label: string; url: string };
   livePreview: { label: string; url: string };
   description: string[];

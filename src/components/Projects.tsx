@@ -31,7 +31,11 @@ export default function Projects() {
         </strong>
       </p>
 
+      <h3 className='headings'>Works</h3>
+
       <Works />
+
+      <h3 className='headings'>Projects</h3>
 
       <section className='cards-container'>
         <section className='cards-wrapper'>

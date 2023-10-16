@@ -19,6 +19,7 @@ export const _works = styled.section`
     border-radius: 12px;
     background: rgb(${({ theme }) => theme.foreground});
     border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
+    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
 
     @media screen and (max-width: 890px) {
       flex-direction: column;
@@ -40,8 +41,9 @@ export const _works = styled.section`
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 5px;
+      border-radius: 8px;
       max-width: 500px;
+      box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
       border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
     }
 

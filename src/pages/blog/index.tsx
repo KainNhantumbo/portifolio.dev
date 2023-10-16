@@ -20,11 +20,6 @@ export default function Blog({ posts = [] }: Props) {
         </section>
         <div className='main-container'>
           <article>
-            <section className='navigator'>
-              <h3>
-                All Articles <span>({posts.length})</span>
-              </h3>
-            </section>
             <section className='posts-container'>
               {posts.map((post, index) => (
                 <section className='post' key={index.toString()}>
@@ -38,7 +33,9 @@ export default function Blog({ posts = [] }: Props) {
                     <div className='details'>
                       <h3
                         onClick={() =>
-                          router.push(`/post/${encodeURIComponent(post.slug)}`)
+                          router.push(
+                            `/blog/post/${encodeURIComponent(post.slug)}`
+                          )
                         }>
                         {post.title}
                       </h3>
@@ -66,3 +63,7 @@ export default function Blog({ posts = [] }: Props) {
   );
 }
 
+export async function getStaticProps() {
+  const posts = getPosts();
+  return { props: { posts } };
+}
