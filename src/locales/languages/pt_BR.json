@@ -43,6 +43,7 @@
     "intro-part-2": "perfil do github",
     "live-demo": "Ver Demostração",
     "github": "Repositório do Github",
+    "section_name": "Projetos",
     "content": {
       "bug-tracker": "Aplicação de Rastreamento de Bugs construida com React e Typescript",
       "bug-tracker-server": "API Rest da Aplicação de Rastreamento de Bugs construida com Typescript, Node.JS + Express.JS + MongoDB",
@@ -93,14 +94,15 @@
   },
   "works": {
     "platform": "Plataforma",
-    "stack": "Feramentas",
+    "stack": "Ferramentas",
     "repo": "Repositório",
     "demo": "Versão Demostrativa",
+    "section_name": "Trabalhos",
     "live_preview_label": "Experimente a demostração!",
     "repository_label": "Ver ou ramificar o código fonte no Github",
     "choconotey": {
-      "title": "Choconotey Notes App 📔",
-      "description": "Fazer anotações em markdown se tornou mais simples com esta aplicação. Ela está enriquecida com funcionalidades para criar, organizar, filtrar, compartilhar e exportar o conteúdo das suas notas em múltiplos formatos como Markdown, HTML e texto simples.\nEmbutida com sincronização automática, controlo de dados e funcionalidades, leves animações gráficas, um editor robusto com uma interface limpa para obter uma experiência fácil e sem  distrações.\nDê uma olhada ao vivo! 🎈🎉🎊"
+      "title": "Aplicação de Notas Choconotey 📔",
+      "description": "Fazer anotações em markdown se tornou mais simples com esta aplicação. Ela foi projetada com funcionalidades para criar, organizar, filtrar, compartilhar e exportar o conteúdo das suas notas em múltiplos formatos como Markdown, HTML e texto simples.\nEmbutida com sincronização automática, controlo de dados e funcionalidades, leves animações gráficas, um editor robusto com uma interface limpa para obter uma experiência fácil e sem  distrações.\nDê uma olhada ao vivo! 🎈🎉🎊"
     }
   }
 }

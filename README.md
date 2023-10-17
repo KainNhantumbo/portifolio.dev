@@ -4,9 +4,11 @@
 
 This is my portfolio website repository were I describe myself, show my projects and talk about my work. It is available in both portuguese and english, translated with the i18next standards.
 
+I have also integrated my blog into this project in the version 4.0.0, so it can be much confortable for me to keep everything up to date, you can check it [here](https://codenut-dev.vercel.app/blog).
+
 Feel free to visit my portfolio using the link below:
 
-**My Portfolio:** [https://portifolio-dev-mu.vercel.app](https://portifolio-dev-mu.vercel.app)
+**My Portfolio:** [https://codenut-dev.vercel.app](https://codenut-dev.vercel.app)
 
 ## Stack
 
@@ -38,7 +40,7 @@ $PROJECT_ROOT
 
 E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an e-mail')\
 Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')  
-My blog: [https://publish-it-programming.vercel.app](https://publish-it-programming.vercel.app 'Visit my website')
+My blog: [https://codenut-dev.vercel.app/blog](https://codenut-dev.vercel.app/blog 'Visit my website')
 
 
 #### If you like this project, let me know by leaving a star on this repository.

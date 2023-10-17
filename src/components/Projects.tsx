@@ -31,11 +31,11 @@ export default function Projects() {
         </strong>
       </p>
 
-      <h3 className='headings'>Works</h3>
+      <h3 className='headings'>{translation('works.section_name')}</h3>
 
       <Works />
 
-      <h3 className='headings'>Projects</h3>
+      <h3 className='headings'>{translation('projects.section_name')}</h3>
 
       <section className='cards-container'>
         <section className='cards-wrapper'>

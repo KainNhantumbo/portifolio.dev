@@ -43,6 +43,7 @@
     "intro-part-2": "github profile",
     "live-demo": "Live Demo",
     "github": "Github Repository",
+    "section_name": "Projects",
     "content": {
       "bug-tracker": "Bug Tracker App built with React.JS and Typescript",
       "bug-tracker-server": "Bug Tracker Restfull API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end",
@@ -96,6 +97,7 @@
     "stack": "Stack",
     "repo": "Repository",
     "demo": "Live Preview",
+    "section_name": "Works",
     "live_preview_label": "Try this app live!",
     "repository_label": "View or fork source code on Github",
     "choconotey": {
