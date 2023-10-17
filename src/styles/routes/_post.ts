@@ -132,14 +132,16 @@ export const _post = styled.main`
         }
       }
 
-      .article-image {
-        width: 100%;
-        height: 100%;
-        max-width: 900px;
-        max-height: 480px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin: 0 auto;
+      .topic {
+        all: unset;
+        width: fit-content;
+        font-size: 0.95rem;
+        font-weight: 500;
+        border-radius: 30px;
+        color: rgb(${({ theme }) => theme.white});
+        padding: 0 12px;
+        background: rgb(${({ theme }) => theme.black});
+        border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
       }
 
       h4 {

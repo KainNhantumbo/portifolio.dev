@@ -1,20 +1,19 @@
 import type { Post } from '@/types';
+import remarkGfm from 'remark-gfm';
+import { CSSProperties } from 'react';
 import { formatDate } from '@/lib/time';
 import Layout from '@/components/Layout';
 import ReactMarkdown from 'react-markdown';
 import { m as motion } from 'framer-motion';
 import { buildShareUrls } from '@/lib/share';
 import { GiCoffeeMug } from 'react-icons/gi';
-import { HiDotsHorizontal } from 'react-icons/hi';
+import { RiCircleFill, RiMoreFill } from 'react-icons/ri';
+import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';
 import { generateTableOfContents, getPaths, getPost } from '@/lib/processor';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-import remarkGfm from 'remark-gfm';
-import { CSSProperties } from 'react';
-import { readingTime } from 'reading-time-estimator';
-import { RiCircleFill } from 'react-icons/ri';
 type Props = { post: Post; tableOfContents: any };
 
 const styles: CSSProperties = {
@@ -81,9 +80,12 @@ export default function Post({ post, tableOfContents }: Props) {
                   <i>Characters:</i> {post.content.length}
                 </span>
               </div>
-              <h1 title={post.title}>
+              <h1>
                 <strong>{post.title}</strong>
               </h1>
+              <div className='topic'>
+                <p>{post.topic}</p>
+              </div>
 
               <h4>{post.excerpt}</h4>
             </section>
@@ -135,7 +137,7 @@ export default function Post({ post, tableOfContents }: Props) {
                 </div>
               </section>
               <section className='support-container'>
-                <HiDotsHorizontal className='dots' />
+                <RiMoreFill className='dots' />
                 <h2>Has this been helpful to you?</h2>
                 <p>
                   You can support my work by sharing this article with others,
@@ -150,7 +152,6 @@ export default function Post({ post, tableOfContents }: Props) {
                   whileTap={{ scale: 0.8 }}>
                   <span>Buy me a coffee</span>
                 </motion.a>
-                <HiDotsHorizontal className='dots' />
               </section>
             </section>
           </article>

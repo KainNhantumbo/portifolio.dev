@@ -78,6 +78,7 @@ export const _blog = styled.main`
             color: rgb(${({ theme }) => theme.white});
             padding: 0 12px;
             background: rgb(${({ theme }) => theme.black});
+            border: 1px solid rgba(${({ theme }) => theme.font}, .2);
           }
 
           h4 {

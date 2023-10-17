@@ -12,7 +12,7 @@ export default function Layout({ children, metadata }: Props) {
     <>
       <Head metadata={metadata} />
       <Header />
-      <FluentButtons/>
+      <FluentButtons />
       {children}
       <Footer />
     </>
