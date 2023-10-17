@@ -1,7 +1,6 @@
 ---
 title: 'How to Make Pre Tags Responsive in CSS'
 excerpt: 'Learn how to make your HTML pre tags responsive by adding a couple of CSS properties'
-image: 'https://cdn.pixabay.com/photo/2016/11/30/20/44/computer-1873831_960_720.png'
 createdAt: '2022-09-10T15:10:18.366Z'
 author:
   name: Kain Nhantumbo

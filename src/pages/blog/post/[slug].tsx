@@ -8,21 +8,29 @@ import { GiCoffeeMug } from 'react-icons/gi';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import { _post as Container } from '@/styles/routes/_post';
 import { generateTableOfContents, getPaths, getPost } from '@/lib/processor';
-import  {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-import remarkgfm from 'remark-gfm'
-
+import remarkGfm from 'remark-gfm';
+import { CSSProperties } from 'react';
+import { readingTime } from 'reading-time-estimator';
+import { RiCircleFill } from 'react-icons/ri';
 type Props = { post: Post; tableOfContents: any };
+
+const styles: CSSProperties = {
+  borderRadius: '8px'
+};
 
 export default function Post({ post, tableOfContents }: Props) {
   console.log(tableOfContents);
 
   const anchors = buildShareUrls({
-    title: post?.title || '',
-    excerpt: post?.excerpt || '',
-    slug: post?.slug || ''
+    title: post.title,
+    excerpt: post.excerpt,
+    slug: post.slug
   });
+
+  const readTime = readingTime(post.content, undefined, 'en');
 
   return (
     <Layout metadata={{ title: 'Kain Portfolio' }}>
@@ -30,7 +38,7 @@ export default function Post({ post, tableOfContents }: Props) {
         <div className='main-container'>
           <article>
             <section className={'meta-container'}>
-              <h5>{formatDate(post.createdAt)}</h5>
+              <h5>PUBLISHED: {formatDate(post.createdAt)}</h5>
               <section className='author'>
                 <img
                   loading='lazy'
@@ -60,14 +68,22 @@ export default function Post({ post, tableOfContents }: Props) {
                   ))}
                 </div>
               </section>
+              <div className='read-time'>
+                <span>
+                  <i>Read:</i> {readTime.minutes} minutes
+                </span>
+                <RiCircleFill />
+                <span>
+                  <i>Words:</i> {readTime.words}
+                </span>
+                <RiCircleFill />
+                <span>
+                  <i>Characters:</i> {post.content.length}
+                </span>
+              </div>
               <h1 title={post.title}>
                 <strong>{post.title}</strong>
               </h1>
-              <img
-                className='article-image'
-                src={post.image}
-                alt={post.title}
-              />
 
               <h4>{post.excerpt}</h4>
             </section>
@@ -75,6 +91,7 @@ export default function Post({ post, tableOfContents }: Props) {
             <ReactMarkdown
               className='content'
               children={post.content}
+              remarkPlugins={[remarkGfm]}
               components={{
                 code(props) {
                   const { children, className, node, ...rest } = props;
@@ -83,8 +100,10 @@ export default function Post({ post, tableOfContents }: Props) {
                     <SyntaxHighlighter
                       {...rest}
                       children={String(children).replace(/\n$/, '')}
-                      style={dark}
+                      style={hopscotch}
                       language={match[1]}
+                      wrapLongLines={true}
+                      customStyle={{ ...styles }}
                       PreTag='div'
                       ref={undefined}
                     />

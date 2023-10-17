@@ -100,6 +100,24 @@ export const _post = styled.main`
         ${ShareLinksStyles}
       }
 
+      .read-time {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0 5px;
+        align-items: center;
+        font-size: 0.9rem;
+
+        i {
+          font-weight: 500;
+        }
+
+        svg {
+          width: 8px;
+          height: 8px;
+          color: rgb(${({ theme }) => theme.primary_shade});
+        }
+      }
+
       h1 {
         line-height: 2.9rem;
         font-size: 2.4rem;
@@ -124,33 +142,9 @@ export const _post = styled.main`
         margin: 0 auto;
       }
 
-      .tags-container {
-        display: flex;
-        justify-content: flex-start;
-        gap: 12px;
-        align-items: center;
-        margin-top: 10px;
-        .title {
-          font-weight: 600;
-        }
-        .tags {
-          display: flex;
-          justify-content: flex-start;
-          gap: 8px;
-          flex-flow: row wrap;
-          max-width: 70%;
-
-          span {
-            padding: 10px;
-            border-radius: 5px;
-            background: rgba(${({ theme }) => theme.alternative_b}, 0.1);
-          }
-        }
-      }
-
       h4 {
-        padding: 10px;
-        background: rgba(${({ theme }) => theme.primary}, 0.1);
+        padding: 12px;
+        background: rgb(${({ theme }) => theme.background_shade});
         border-radius: 10px;
         line-height: 1.6rem;
         font-weight: 500;
@@ -242,38 +236,7 @@ export const _post = styled.main`
         margin-top: 10px;
       }
 
-      pre {
-        background-color: rgb(${({ theme }) => theme.background_shade});
-        border-radius: 12px;
-        margin: 20px 0;
-        padding: 12px;
-        border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-        white-space: pre-wrap;
-        word-break: break-all;
-        word-wrap: break-word;
-        text-align: justify;
-      }
-
-      pre code {
-        background-color: unset;
-        font-family: Hack, Menlo, Consolas, 'SF Mono', 'IBM Plex Mono',
-          monospace;
-        word-spacing: normal;
-        tab-size: 2;
-        hyphens: none;
-        -webkit-font-smoothing: antialiased;
-        line-height: 1.4rem;
-        white-space: inherit;
-        border: none;
-        padding: 0;
-        overflow: auto;
-        font-size: 0.95rem;
-        margin: 2rem 0;
-        white-space: pre;
-      }
-
       code {
-        white-space: pre;
         padding: 2px 5px;
         background: rgba(${({ theme }) => theme.font}, 0.1);
         border-radius: 5px;

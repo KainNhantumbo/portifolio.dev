@@ -1,7 +1,6 @@
 ---
 title: 'Why Semantic Markup is Significant for Your Website Optimization'
 excerpt: 'We should discuss why semantic markup (HTML) is significant for your sites Search engine optimization, and that it is so easy to get this pivotal Website design enhancement component right, even as a non-geek.'
-image: 'https://cdn.pixabay.com/photo/2018/05/16/22/52/website-3407280_960_720.jpg'
 createdAt: '2022-09-11T12:10:18.366Z'
 author:
   name: Kain Nhantumbo
@@ -49,6 +48,7 @@ The above results in an un-styled button, yet it utilizes right semantic markup.
 In any case, suppose that I need to be amusing, and on second thought wrap the substance above (Like and Subscribe) inside section labels `<p>`Like and Subscribe`</p>`.
 
 In addition to the fact that it be semantically would wrong, yet it likewise wouldn't work actually, in light of the fact that section components are not interactive in the browser.
+
 ## Unsemanic markup
 
 There are a couple of ways you can markup your substance un-semantically, that won't destroy your site's specialized elements, in contrast to the earlier model.

@@ -96,6 +96,11 @@ export const _blog = styled.main`
           position: relative;
           padding-left: 20px;
 
+          &:hover {
+            color: #1a8eff;
+            transition: all 200ms ease-in-out;
+          }
+
           &::before {
             content: '';
             z-index: 100;

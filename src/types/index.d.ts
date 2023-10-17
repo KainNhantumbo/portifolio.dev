@@ -81,7 +81,6 @@ export type State = {
 export type Frontmatter = {
   title: string;
   excerpt: string;
-  image: string;
   createdAt: string;
   updatedAt?: string;
   author: {
