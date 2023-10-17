@@ -164,6 +164,38 @@ export const _post = styled.main`
       max-width: 1000px;
       margin: 0 auto;
 
+      i {
+        font-style: italic;
+      }
+
+      u {
+        text-underline-offset: 3px;
+      }
+
+      s {
+        text-decoration: line-through;
+      }
+
+      hr,
+      .hr-class {
+        color: rgb(${({ theme }) => theme.font});
+        border-bottom: 2px solid rgb(${({ theme }) => theme.font});
+        margin: 8px 0;
+        border-radius: 3px;
+      }
+
+      em,
+      .italic-class {
+        font-style: italic;
+      }
+
+      a,
+      .link-class {
+        color: #1a8eff;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
       p {
         margin-bottom: 25px;
         font-size: 1.1rem;
@@ -173,12 +205,23 @@ export const _post = styled.main`
       h3,
       h2 {
         margin-bottom: 10px;
-        font-size: 1.3rem;
-        font-weight: 500;
+        font-size: 1.5rem;
       }
 
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+
+      h5,
+      h6 {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
       }
 
       ul {

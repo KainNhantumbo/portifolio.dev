@@ -5,10 +5,13 @@ import ReactMarkdown from 'react-markdown';
 import { m as motion } from 'framer-motion';
 import { buildShareUrls } from '@/lib/share';
 import { GiCoffeeMug } from 'react-icons/gi';
-import { FaGrinHearts } from 'react-icons/fa';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import { _post as Container } from '@/styles/routes/_post';
 import { generateTableOfContents, getPaths, getPost } from '@/lib/processor';
+import  {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+import remarkgfm from 'remark-gfm'
 
 type Props = { post: Post; tableOfContents: any };
 
@@ -69,7 +72,30 @@ export default function Post({ post, tableOfContents }: Props) {
               <h4>{post.excerpt}</h4>
             </section>
 
-            <ReactMarkdown className='content'>{post.content}</ReactMarkdown>
+            <ReactMarkdown
+              className='content'
+              children={post.content}
+              components={{
+                code(props) {
+                  const { children, className, node, ...rest } = props;
+                  const match = /language-(\w+)/.exec(className || '');
+                  return match ? (
+                    <SyntaxHighlighter
+                      {...rest}
+                      children={String(children).replace(/\n$/, '')}
+                      style={dark}
+                      language={match[1]}
+                      PreTag='div'
+                      ref={undefined}
+                    />
+                  ) : (
+                    <code {...rest} className={className}>
+                      {children}
+                    </code>
+                  );
+                }
+              }}
+            />
 
             <section className='base-container'>
               <section className='share-options'>

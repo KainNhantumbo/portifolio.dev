@@ -3,58 +3,45 @@ import { Post } from '@/types';
 import Layout from '@/components/Layout';
 import { getPosts } from '@/lib/processor';
 import { _blog as Container } from '@/styles/routes/_blog';
-import { FaCalendarAlt } from 'react-icons/fa';
 import { formatDate } from '@/lib/time';
 
 type Props = { posts: Post[] };
 
 export default function Blog({ posts }: Props) {
-  console.log(posts);
-
   return (
     <Layout metadata={{ title: 'Codenut.dev - Blog' }}>
       <Container>
-        <section className='main-top-container'>
-          <section className='banner-container'>
-            <h1>
-              Codenut<i>.dev</i> Blog
-            </h1>
+        <section className='presentation-container'>
+          <h1>
+            Codenut<i>.dev</i> Blog
+          </h1>
 
-            <div>
-              <h3>Hello, I am Kain, Welcome to My Blog!</h3>
-              <p>
-                Web development is my favorite flavour and I love to code. I
-                blog about codding software and my projects.
-              </p>
-            </div>
-          </section>
+          <div>
+            <h3>👋 Hello, I am Kain, You're Welcome!</h3>
+            <p>
+              Web development is my favorite flavour and I love to code. I blog
+              about coding, software, my projects and works.
+            </p>
+          </div>
         </section>
-        <div className='main-container'>
-          <article>
-            <section className='posts-container'>
-              {posts.map((post, index) => (
-                <Link
-                  href={`/blog/post/${post.slug}`}
-                  className='post'
-                  key={index.toString()}>
-                  <section className='top-container'>
-                    <img src={post.image} alt={post.title} />
 
-                    <div className='details'>
-                      <h3>{post.title}</h3>
-                      <p>{post.excerpt}</p>
-                    </div>
+        <article>
+          <section className='posts-container'>
+            {posts.map((post, index) => (
+              <Link href={`/blog/post/${post.slug}`} key={index.toString()}>
+                <div className='header-container'>
+                  <h3>{post.topic}</h3>
+                  <h4>
+                    <span>{formatDate(post.createdAt)}</span>
+                  </h4>
+                </div>
 
-                    <div className='date'>
-                      <FaCalendarAlt />
-                      <span>{formatDate(post.createdAt)}</span>
-                    </div>
-                  </section>
-                </Link>
-              ))}
-            </section>
-          </article>
-        </div>
+                <h3 className='title'>{post.title}</h3>
+                <p className='excerpt'>{post.excerpt}</p>
+              </Link>
+            ))}
+          </section>
+        </article>
       </Container>
     </Layout>
   );
