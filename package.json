@@ -3,7 +3,7 @@
   "website_name": "Codenut Blog",
   "version": "4.0.0",
   "private": true,
-  "latest_compile": "07-2023",
+  "latest_compile": "10-2023",
   "url": "https://codenut-dev.vercel.app",
   "engines": {
     "node": ">=18.18.0",
@@ -23,15 +23,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@napi-rs/canvas": "^0.1.44",
     "@react-three/drei": "^9.88.2",
     "@react-three/fiber": "^8.14.5",
-    "@types/three": "^0.157.0",
     "classnames": "^2.3.2",
     "framer-motion": "^10.16.4",
     "gray-matter": "^4.0.3",
     "i18next": "^23.5.1",
-    "million": "^2.6.4",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
@@ -44,14 +41,14 @@
     "remark-gfm": "^4.0.0",
     "remark-toc": "^9.0.0",
     "styled-components": "^6.1.0",
-    "three": "^0.157.0",
-    "to-vfile": "^8.0.0"
+    "three": "^0.157.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-syntax-highlighter": "^15.5.8",
+    "@types/three": "^0.157.0",
     "typescript": "^5"
   }
 }
