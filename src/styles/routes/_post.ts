@@ -159,6 +159,22 @@ export const _post = styled.main`
     .content {
       max-width: 1000px;
       margin: 0 auto;
+      
+      pre {
+        display: flex;
+        flex: 1 0 auto;
+        margin: 0 !important; /* some themes try to override this */
+      }
+
+      pre code {
+        display: flex;
+        flex: 1 0 auto;
+      }
+
+      table {
+        margin: 12px 0;
+      }
+
 
       i {
         font-style: italic;

@@ -83,11 +83,6 @@ export type Frontmatter = {
   excerpt: string;
   createdAt: string;
   updatedAt?: string;
-  author: {
-    name: string;
-    picture: string;
-    description: string;
-  };
   topic: string
 };
 

@@ -1,12 +1,8 @@
 ---
+topic: 'Web Development'
+createdAt: '2022-09-11T12:10:18.366Z'
 title: 'Why Semantic Markup is Significant for Your Website Optimization'
 excerpt: 'We should discuss why semantic markup (HTML) is significant for your sites Search engine optimization, and that it is so easy to get this pivotal Website design enhancement component right, even as a non-geek.'
-createdAt: '2022-09-11T12:10:18.366Z'
-author:
-  name: Kain Nhantumbo
-  picture: '/assets/author.jpg'
-  description: 'Web Developer & Designer'
-topic: 'Web Development'
 ---
 
 The vast majority have caught wind of Website design enhancement (Site improvement) and realize that it's something that your site should be found by means of the Web crawler Results Pages (SERPs). On the off chance that you know somewhat more than that you might know that "catchphrases" are one of the main components of Website optimization. You'll comprehend the reason why semantic markup is so significant for your catchphrases in a second.

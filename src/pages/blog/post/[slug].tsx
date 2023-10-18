@@ -1,5 +1,6 @@
 import type { Post } from '@/types';
 import remarkGfm from 'remark-gfm';
+import { author } from '@/data/app';
 import { CSSProperties } from 'react';
 import { formatDate } from '@/lib/time';
 import Layout from '@/components/Layout';
@@ -42,12 +43,12 @@ export default function Post({ post, tableOfContents }: Props) {
                 <img
                   loading='lazy'
                   decoding='async'
-                  src={post.author.picture}
+                  src={author.picture}
                   alt='article author photo'
                 />
                 <div>
-                  <span>{post.author.name}</span>
-                  <span className='description'>{post.author.description}</span>
+                  <span>{author.name}</span>
+                  <span className='description'>{author.description}</span>
                 </div>
               </section>
               <section className='share-options'>
