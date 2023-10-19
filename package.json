@@ -1,5 +1,6 @@
 {
   "name": "codenut-homepage",
+  "description": "Kain's Blog and Portfolio website",
   "website_name": "Codenut Blog",
   "version": "4.0.0",
   "private": true,

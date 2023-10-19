@@ -5,7 +5,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import remarkToc from 'remark-toc';
 import { remark } from 'remark';
 
-const postsDir = join(process.cwd(), '/src/data/docs');
+const postsDir = join(process.cwd(), '/src/data/posts');
 
 export async function generateTableOfContents(slug: string) {
   try {

@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import { getPosts } from '@/lib/processor';
 import { _blog as Container } from '@/styles/routes/_blog';
 import { formatDate } from '@/lib/time';
+import FeedGenerator from '@/lib/feed';
 
 type Props = { posts: Post[] };
 
@@ -49,5 +50,6 @@ export default function Blog({ posts }: Props) {
 
 export async function getStaticProps() {
   const posts = getPosts();
+  new FeedGenerator().generate();
   return { props: { posts: posts ?? [] } };
 }
