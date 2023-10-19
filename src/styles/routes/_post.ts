@@ -1,42 +1,4 @@
-import styled, { css } from 'styled-components';
-import { BaseButton } from '../_defaults';
-
-const ShareLinksStyles = css`
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-  align-items: center;
-
-  .title {
-    font-weight: 600;
-  }
-
-  .options {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-
-    a {
-      width: 35px;
-      height: 35px;
-      display: grid;
-      place-content: center center;
-      padding: 5px;
-      background: rgba(${({ theme }) => theme.primary_shade}, 0.1);
-      border-radius: 8px;
-
-      :hover {
-        color: rgb(${({ theme }) => theme.primary_shade});
-      }
-
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-`;
+import styled from 'styled-components';
 
 export const _post = styled.main`
   width: 100%;
@@ -97,7 +59,40 @@ export const _post = styled.main`
       }
 
       .share-options {
-        ${ShareLinksStyles}
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        align-items: center;
+
+        .title {
+          font-weight: 600;
+        }
+
+        .options {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 10px;
+
+          a {
+            width: 35px;
+            height: 35px;
+            display: grid;
+            place-content: center center;
+            padding: 5px;
+            background: rgba(${({ theme }) => theme.primary_shade}, 0.1);
+            border-radius: 8px;
+
+            :hover {
+              color: rgb(${({ theme }) => theme.primary_shade});
+            }
+
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
       }
 
       .read-time {
@@ -159,7 +154,7 @@ export const _post = styled.main`
     .content {
       max-width: 1000px;
       margin: 0 auto;
-      
+
       pre {
         display: flex;
         flex: 1 0 auto;
@@ -174,7 +169,6 @@ export const _post = styled.main`
       table {
         margin: 12px 0;
       }
-
 
       i {
         font-style: italic;
@@ -283,60 +277,6 @@ export const _post = styled.main`
           font-size: 1.1rem;
           line-height: 1.8rem;
         }
-      }
-    }
-  }
-
-  .base-container {
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    .share-options {
-      ${ShareLinksStyles}
-      justify-content: center;
-      flex-direction: column;
-      .options {
-        gap: 10px;
-      }
-    }
-
-    .support-container {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-      text-align: center;
-
-      h2,
-      p {
-        line-height: 1.4rem;
-      }
-
-      h2 {
-        font-weight: 600;
-        font-size: 1.4rem;
-      }
-      p {
-        font-size: 1.1rem;
-        max-width: 620px;
-      }
-
-      .dots {
-        width: 30px;
-        height: 30px;
-      }
-
-      .coffee-mug-icon {
-        width: 40px;
-        height: 40px;
-        color: rgb(${({ theme }) => theme.primary_shade});
-      }
-
-      a {
-        ${BaseButton}
       }
     }
   }

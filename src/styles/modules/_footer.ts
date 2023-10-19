@@ -14,6 +14,7 @@ export const _footer = styled.footer`
     max-width: 600px;
     height: auto;
     padding: 20px;
+    padding-bottom: 12px;
     margin: 0 auto;
 
     img {

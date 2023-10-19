@@ -15,9 +15,10 @@
     "version-phrase": "Version",
     "anchors": {
       "github": "Find me on Github",
-      "whatsapp": "Find me on Whatsapp",
+      "twitter": "Find me on Twitter",
       "linkedIn": "Find me on LinkedIn",
-      "blog": "Visit my blog"
+      "blog": "Visit my blog",
+      "coffee": "Buy me a coffee"
     }
   },
   "intro": {

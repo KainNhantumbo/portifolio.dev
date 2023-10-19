@@ -2,30 +2,28 @@ import Image from 'next/image';
 import Package from '../../package.json';
 import { m as motion } from 'framer-motion';
 import type { IconType } from 'react-icons';
+import { GiCoffeeMug } from 'react-icons/gi';
+import { RiTwitterXLine } from 'react-icons/ri';
 import { useTranslation } from 'react-i18next';
-import { ImBlog, ImLinkedin2 } from 'react-icons/im';
-import { FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { ImBlog, ImLinkedin2, ImGithub } from 'react-icons/im';
 import { _footer as Container } from '../styles/modules/_footer';
 import donutsImage from '../../public/assets/donuts.png';
-import { useRouter } from 'next/router';
 
 type Anchors = { name: string; icon: IconType; link: string };
 
 export default function Footer() {
-  const router = useRouter();
-  const isPortfolio = router.asPath.includes('blog') === false;
   const { t: translation } = useTranslation();
 
   const socialMediaAnchors: Anchors[] = [
     {
       name: translation('footer.anchors.github'),
-      icon: FaGithub,
+      icon: ImGithub,
       link: 'https://github.com/KainNhantumbo'
     },
     {
-      name: translation('footer.anchors.whatsapp'),
-      icon: FaWhatsapp,
-      link: 'https://wa.me/258844002535'
+      name: translation('footer.anchors.twitter'),
+      icon: RiTwitterXLine,
+      link: 'https://twitter.com/ubelloch'
     },
     {
       name: translation('footer.anchors.linkedIn'),
@@ -36,21 +34,16 @@ export default function Footer() {
       name: translation('footer.anchors.blog'),
       icon: ImBlog,
       link: '/blog'
+    },
+    {
+      name: translation('footer.anchors.coffee'),
+      icon: GiCoffeeMug,
+      link: 'https://www.buymeacoffee.com/nhantumbokU'
     }
   ];
 
   return (
     <Container>
-      <div className='donuts-image-container'>
-        <Image
-          width={4257}
-          height={375}
-          priority={false}
-          src={donutsImage}
-          alt='donuts image decoration'
-        />
-      </div>
-
       <h3>
         <strong>{translation('footer.title')}</strong>
       </h3>
@@ -71,6 +64,17 @@ export default function Footer() {
           </motion.li>
         ))}
       </ul>
+
+      <div className='donuts-image-container'>
+        <Image
+          width={4257}
+          height={375}
+          priority={false}
+          src={donutsImage}
+          alt='donuts image decoration'
+        />
+      </div>
+
       <div>
         <span>{translation('footer.copy-phrase')} </span>
         <p>

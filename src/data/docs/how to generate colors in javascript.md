@@ -48,4 +48,5 @@ The above function, loops 6 times because hexadecimal colors are represented by 
 The function `getHexCharacter()` takes the `randomIndex` generated from the array of characters we have created before as parameter to ensure that we not have te same generated calor code values. Once all digits of the color code have been generated, the function `generateColor()`  returns the complete hexadecimal color code represented as a string.
 
 
-That's it. I hope it helped your.
+That's it. I hope you could learn something new today.
+Thank you for reading! 

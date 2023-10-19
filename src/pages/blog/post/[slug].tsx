@@ -7,23 +7,21 @@ import Layout from '@/components/Layout';
 import ReactMarkdown from 'react-markdown';
 import { m as motion } from 'framer-motion';
 import { buildShareUrls } from '@/lib/share';
-import { GiCoffeeMug } from 'react-icons/gi';
-import { RiCircleFill, RiMoreFill } from 'react-icons/ri';
+import { RiCircleFill } from 'react-icons/ri';
 import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { generateTableOfContents, getPaths, getPost } from '@/lib/processor';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
-type Props = { post: Post; tableOfContents: any };
+type Props = { post: Post; toc: any };
 
 const styles: CSSProperties = {
   borderRadius: '8px'
 };
 
-export default function Post({ post, tableOfContents }: Props) {
-  console.log(tableOfContents);
-
+export default function Post({ post, toc }: Props) {
   const anchors = buildShareUrls({
     title: post.title,
     excerpt: post.excerpt,
@@ -40,9 +38,8 @@ export default function Post({ post, tableOfContents }: Props) {
             <section className={'meta-container'}>
               <h5>PUBLISHED: {formatDate(post.createdAt)}</h5>
               <section className='author'>
-                <img
-                  loading='lazy'
-                  decoding='async'
+                <LazyLoadImage
+                  effect='blur'
                   src={author.picture}
                   alt='article author photo'
                 />
@@ -70,7 +67,7 @@ export default function Post({ post, tableOfContents }: Props) {
               </section>
               <div className='read-time'>
                 <span>
-                  <i>Read:</i> {readTime.minutes} minutes
+                  <i>Read:</i> {readTime.minutes < 2 ? 'minute' : 'minutes'}
                 </span>
                 <RiCircleFill />
                 <span>
@@ -118,43 +115,6 @@ export default function Post({ post, tableOfContents }: Props) {
                 }
               }}
             />
-
-            <section className='base-container'>
-              <section className='share-options'>
-                <div className='title'>Share this article:</div>
-                <div className='options'>
-                  {anchors.map((option) => (
-                    <motion.a
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.8 }}
-                      href={option.url}
-                      title={option.name}
-                      target={'_blank'}
-                      rel={'noreferrer noopener'}
-                      key={option.name}>
-                      <option.icon />
-                    </motion.a>
-                  ))}
-                </div>
-              </section>
-              <section className='support-container'>
-                <RiMoreFill className='dots' />
-                <h2>Has this been helpful to you?</h2>
-                <p>
-                  You can support my work by sharing this article with others,
-                  or perhaps buy me a cup of coffee : )
-                </p>
-                <GiCoffeeMug className={'coffee-mug-icon'} />
-                <motion.a
-                  href='https://www.buymeacoffee.com/nhantumbokU'
-                  target={'_blank'}
-                  rel={'noreferrer noopener'}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.8 }}>
-                  <span>Buy me a coffee</span>
-                </motion.a>
-              </section>
-            </section>
           </article>
         </div>
       </Container>
@@ -170,5 +130,5 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
   const post = getPost(context.params.slug);
   const tableOfContents = await generateTableOfContents(context.params.slug);
-  return { props: { post, tableOfContents } };
+  return { props: { post, toc: tableOfContents } };
 }
