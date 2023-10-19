@@ -5,7 +5,7 @@ import type { IconType } from 'react-icons';
 import { GiCoffeeMug } from 'react-icons/gi';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { useTranslation } from 'react-i18next';
-import { ImBlog, ImLinkedin2, ImGithub } from 'react-icons/im';
+import { ImBlog, ImLinkedin2, ImGithub, ImFeed } from 'react-icons/im';
 import { _footer as Container } from '../styles/modules/_footer';
 import donutsImage from '../../public/assets/donuts.png';
 
@@ -39,6 +39,11 @@ export default function Footer() {
       name: translation('footer.anchors.coffee'),
       icon: GiCoffeeMug,
       link: 'https://www.buymeacoffee.com/nhantumbokU'
+    },
+    {
+      name: 'Feed',
+      icon: ImFeed,
+      link: '/rss/feed.en.xml'
     }
   ];
 

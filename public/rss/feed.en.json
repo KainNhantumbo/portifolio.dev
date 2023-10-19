@@ -1,9 +1,9 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "https://codenut-dev.vercel.app feed",
+    "title": "Codenut.dev Feed",
     "home_page_url": "https://codenut-dev.vercel.app",
     "feed_url": "https://codenut-dev.vercel.app/blog/rss/feed.en.json",
-    "description": "Kain's Blog and Portfolio website",
+    "description": "Kain's Blog and Portfolio Website",
     "author": {
         "name": "Kain Nhantumbo",
         "url": "https://codenut-dev.vercel.app"
@@ -21,7 +21,7 @@
                 "url": "https://codenut-dev.vercel.app"
             },
             "tags": [
-                "Web Development"
+                "Javascript"
             ]
         },
         {
@@ -51,7 +51,7 @@
                 "url": "https://codenut-dev.vercel.app"
             },
             "tags": [
-                "Web Development"
+                "CSS"
             ]
         }
     ]

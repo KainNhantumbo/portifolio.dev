@@ -1,5 +1,5 @@
 ---
-topic: 'Web Development'
+topic: 'CSS'
 createdAt: '2022-09-10T15:10:18.366Z'
 title: 'How to Make Pre Tags Responsive in CSS'
 excerpt: 'Learn how to make your HTML pre tags responsive by adding a couple of CSS properties'

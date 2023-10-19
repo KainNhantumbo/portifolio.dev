@@ -26,15 +26,20 @@ export function getPost(slug: string): Post {
   return { ...data, content, slug } as Post;
 }
 
-export function getPosts(): Array<Post> {
+export function getPosts(withContent?: boolean): Array<Post> {
   const filesNames: string[] = readdirSync(postsDir);
   return filesNames
     .map((fileName) => {
       const slug: string = fileName.replace('.md', '').replaceAll(' ', '-');
 
       const readFiles: Buffer = readFileSync(join(postsDir, fileName));
-      const { data } = matter(readFiles);
-      return { slug, ...data } as Post;
+      const { data, content } = matter(readFiles);
+
+      const result = withContent
+        ? { slug, ...data, content }
+        : { slug, ...data };
+      
+        return result as Post;
     })
     .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
 }

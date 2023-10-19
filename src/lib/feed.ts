@@ -1,12 +1,8 @@
 import { Feed } from 'feed';
-import { Post } from '@/types';
 import { marked } from 'marked';
-import { join } from 'node:path';
-import matter from 'gray-matter';
 import { SITE_PROPERTIES } from './constants';
-import { mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs';
-
-const postsDir = join(process.cwd(), '/src/data/posts');
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { getPosts } from './processor';
 
 export default class FeedGenerator {
   feed: Feed;
@@ -16,7 +12,7 @@ export default class FeedGenerator {
       SITE_PROPERTIES;
 
     this.feed = new Feed({
-      title: `${url} feed`,
+      title: `${title} Feed`,
       description: description,
       id: url,
       link: url,
@@ -34,23 +30,10 @@ export default class FeedGenerator {
     });
   }
 
-  private getPosts(): Post[] {
-    const filesNames: string[] = readdirSync(postsDir);
-    return filesNames
-      .map((fileName) => {
-        const slug: string = fileName.replace('.md', '').replaceAll(' ', '-');
-
-        const readFiles: Buffer = readFileSync(join(postsDir, fileName));
-        const { data, content } = matter(readFiles);
-        return { slug, ...data, content } as Post;
-      })
-      .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-  }
-
   generate() {
-    const posts = this.getPosts();
+    const posts = getPosts(true);
     const { url, authorName, locale, authorEmail } = SITE_PROPERTIES;
-    
+
     for (const post of posts) {
       this.feed.addItem({
         title: post.title,

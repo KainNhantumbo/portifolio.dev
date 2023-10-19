@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://codenut-dev.vercel.app</id>
-    <title>https://codenut-dev.vercel.app feed</title>
-    <updated>2023-10-19T14:58:06.426Z</updated>
-    <generator>Feed for Kain's Blog and Portfolio website</generator>
+    <title>Codenut.dev Feed</title>
+    <updated>2023-10-19T16:15:41.084Z</updated>
+    <generator>Feed for Kain's Blog and Portfolio Website</generator>
     <author>
         <name>Kain Nhantumbo</name>
         <email>nhantumbok@gmail.com</email>
@@ -11,7 +11,7 @@
     </author>
     <link rel="alternate" href="https://codenut-dev.vercel.app"/>
     <link rel="self" href="https://codenut-dev.vercel.app/blog/rss/feed.en.xml"/>
-    <subtitle>Kain's Blog and Portfolio website</subtitle>
+    <subtitle>Kain's Blog and Portfolio Website</subtitle>
     <icon>https://codenut-dev.vercel.app/favicon.png</icon>
     <rights>Copyright © 2023 Codenut.dev - All rights reserved.</rights>
     <entry>
@@ -56,7 +56,7 @@ Thank you for reading! </p>
             <email>nhantumbok@gmail.com</email>
             <uri>https://codenut-dev.vercel.app</uri>
         </author>
-        <category label="Web Development"/>
+        <category label="Javascript"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Why Semantic Markup is Significant for Your Website Optimization]]></title>
@@ -147,6 +147,6 @@ Thank you for reading! </p>
             <email>nhantumbok@gmail.com</email>
             <uri>https://codenut-dev.vercel.app</uri>
         </author>
-        <category label="Web Development"/>
+        <category label="CSS"/>
     </entry>
 </feed>

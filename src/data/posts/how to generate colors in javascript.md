@@ -1,5 +1,5 @@
 ---
-topic: 'Web Development'
+topic: 'Javascript'
 createdAt: '2022-09-20T12:10:18.366Z'
 title: 'How to Generate Random Colors in Javascript'
 excerpt: 'Learn how to generate colors in javascript programatically'

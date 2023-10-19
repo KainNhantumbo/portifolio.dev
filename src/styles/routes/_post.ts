@@ -258,6 +258,7 @@ export const _post = styled.main`
         border-radius: 12px;
         margin: 0 auto;
         margin-top: 10px;
+        border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
       }
 
       code {
