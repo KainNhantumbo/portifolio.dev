@@ -8,16 +8,6 @@ const nextConfig = {
     defaultLocale: 'en',
     locales: ['en', 'pt'],
     localeDetection: false
-  },
-  webpack: function (config, context) {
-    return {
-      ...config,
-      cache: {
-        type: 'memory',
-        // allowCollectingMemory: false,
-        maxGenerations: 1
-      }
-    };
   }
 };
 

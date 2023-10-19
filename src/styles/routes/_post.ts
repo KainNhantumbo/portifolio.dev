@@ -156,14 +156,26 @@ export const _post = styled.main`
       margin: 0 auto;
 
       pre {
-        display: flex;
-        flex: 1 0 auto;
-        margin: 0 !important; /* some themes try to override this */
+        border-radius: 8px !important;
+        border: 1px solid rgba(${({ theme }) => theme.accent}, 0.1);
+        white-space: pre-wrap;
+        word-break: break-all;
+        word-wrap: break-word;
+        text-align: justify;
       }
 
       pre code {
-        display: flex;
-        flex: 1 0 auto;
+        word-spacing: normal;
+        tab-size: 2 !important;
+        hyphens: none;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.4rem;
+        white-space: inherit;
+        border: none;
+        padding: 0;
+        overflow: auto;
+        font-size: 0.95rem;
+        margin: 2rem 0;
       }
 
       table {
@@ -254,8 +266,8 @@ export const _post = styled.main`
         border-radius: 5px;
         margin: 0 5px;
         line-height: 1.6rem;
-        font-family: Hack, Menlo, Consolas, 'SF Mono', 'IBM Plex Mono',
-          monospace;
+        font-family: 'IBM Plex Mono', Hack, Menlo, Consolas, 'SF Mono',
+          monospace !important;
 
         ::selection {
           background: rgba(${({ theme }) => theme.secondary}, 0.5);

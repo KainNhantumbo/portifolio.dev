@@ -1,7 +1,6 @@
 import type { Post } from '@/types';
 import remarkGfm from 'remark-gfm';
 import { author } from '@/data/app';
-import { CSSProperties } from 'react';
 import { formatDate } from '@/lib/time';
 import Layout from '@/components/Layout';
 import ReactMarkdown from 'react-markdown';
@@ -16,10 +15,6 @@ import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 type Props = { post: Post; toc: any };
-
-const styles: CSSProperties = {
-  borderRadius: '8px'
-};
 
 export default function Post({ post, toc }: Props) {
   const anchors = buildShareUrls({
@@ -90,8 +85,8 @@ export default function Post({ post, toc }: Props) {
 
             <ReactMarkdown
               className='content'
-              children={post.content}
               remarkPlugins={[remarkGfm]}
+              children={post.content}
               components={{
                 code(props) {
                   const { children, className, node, ...rest } = props;
@@ -103,8 +98,6 @@ export default function Post({ post, toc }: Props) {
                       style={hopscotch}
                       language={match[1]}
                       wrapLongLines={true}
-                      customStyle={{ ...styles }}
-                      PreTag='div'
                       ref={undefined}
                     />
                   ) : (
