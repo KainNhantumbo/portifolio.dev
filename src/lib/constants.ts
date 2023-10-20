@@ -8,3 +8,11 @@ export const SITE_PROPERTIES = {
   description: Package.description,
   title: 'Codenut.dev'
 };
+
+export const AUTHOR = {
+  name: Package.author.name,
+  picture: '/assets/author.jpg',
+  email: Package.author.email,
+  description: 'Web Developer & Designer'
+};
+

@@ -1,5 +1,5 @@
-import { Token, marked } from 'marked';
 import Link from 'next/link';
+import { marked } from 'marked';
 
 type Props = { content: string };
 
@@ -24,7 +24,9 @@ export default function TableOfContents({ content }: Props) {
         <h2>Table of Contents</h2>
         <ul>
           {headings.map((heading, index) => (
-            <li key={index} data-depth={heading.depth}>
+            <li
+              key={index}
+              style={{ paddingLeft: `calc(${heading.depth}px * 8px)` }}>
               <Link href={`#${transformChild(heading.text)}`}>
                 <span>{String(heading.text)}</span>
               </Link>

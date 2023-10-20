@@ -3,7 +3,7 @@ import { m as motion } from 'framer-motion';
 import { SiAboutdotme } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import { HiCode, HiViewGrid } from 'react-icons/hi';
-import authorImage from '../../public/assets/author.jpg';
+import { AUTHOR } from '@/lib/constants';
 import { _about as Container } from '../styles/modules/_about';
 
 export default function About() {
@@ -24,7 +24,7 @@ export default function About() {
           <Image
             width={100}
             height={100}
-            src={authorImage}
+            src={AUTHOR.picture}
             alt='author image'
           />
         </div>

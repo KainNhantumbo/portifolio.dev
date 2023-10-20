@@ -1,6 +1,5 @@
 import type { Post } from '@/types';
 import remarkGfm from 'remark-gfm';
-import { author } from '@/data/app';
 import { formatDate } from '@/lib/time';
 import Layout from '@/components/Layout';
 import ReactMarkdown from 'react-markdown';
@@ -14,6 +13,7 @@ import { getPaths, getPost } from '@/lib/processor';
 import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import TableOfContents, { transformChild } from '@/components/TableOfContents';
+import { AUTHOR } from '@/lib/constants';
 
 type Props = { post: Post };
 
@@ -36,12 +36,12 @@ export default function Post({ post }: Props) {
               <section className='author'>
                 <LazyLoadImage
                   effect='blur'
-                  src={author.picture}
+                  src={AUTHOR.picture}
                   alt='article author photo'
                 />
                 <div>
-                  <span>{author.name}</span>
-                  <span className='description'>{author.description}</span>
+                  <span>{AUTHOR.name}</span>
+                  <span className='description'>{AUTHOR.description}</span>
                 </div>
               </section>
               <section className='share-options'>

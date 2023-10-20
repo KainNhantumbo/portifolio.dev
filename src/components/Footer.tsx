@@ -8,11 +8,28 @@ import { useTranslation } from 'react-i18next';
 import { ImBlog, ImLinkedin2, ImGithub, ImFeed } from 'react-icons/im';
 import { _footer as Container } from '../styles/modules/_footer';
 import donutsImage from '../../public/assets/donuts.png';
+import { useRouter } from 'next/router';
 
 type Anchors = { name: string; icon: IconType; link: string };
 
 export default function Footer() {
   const { t: translation } = useTranslation();
+  const isPortfolio = useRouter().asPath.includes('blog') ? false : true;
+
+  const aditionalFooterUrls = isPortfolio
+    ? []
+    : [
+        {
+          name: translation('footer.anchors.coffee'),
+          icon: GiCoffeeMug,
+          link: 'https://www.buymeacoffee.com/nhantumbokU'
+        },
+        {
+          name: 'Feed',
+          icon: ImFeed,
+          link: '/rss/feed.en.xml'
+        }
+      ];
 
   const socialMediaAnchors: Anchors[] = [
     {
@@ -35,16 +52,7 @@ export default function Footer() {
       icon: ImBlog,
       link: '/blog'
     },
-    {
-      name: translation('footer.anchors.coffee'),
-      icon: GiCoffeeMug,
-      link: 'https://www.buymeacoffee.com/nhantumbokU'
-    },
-    {
-      name: 'Feed',
-      icon: ImFeed,
-      link: '/rss/feed.en.xml'
-    }
+    ...aditionalFooterUrls
   ];
 
   return (

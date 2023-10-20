@@ -2,8 +2,6 @@ import { join } from 'node:path';
 import matter from 'gray-matter';
 import type { Post } from '@/types';
 import { readFileSync, readdirSync } from 'node:fs';
-import remarkToc from 'remark-toc';
-import { remark } from 'remark';
 
 const postsDir = join(process.cwd(), '/src/data/posts');
 

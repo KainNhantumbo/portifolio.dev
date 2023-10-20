@@ -140,14 +140,36 @@ export const _post = styled.main`
       }
 
       h4 {
-        padding: 12px;
-        background: rgb(${({ theme }) => theme.background_shade});
-        border-radius: 10px;
         line-height: 1.6rem;
         font-weight: 500;
-        margin: 0 auto;
-        margin: 20px auto;
+        margin: 12px auto;
         max-width: 1000px;
+      }
+    }
+
+    .toc-container {
+      width: 100%;
+      padding: 12px;
+      background: rgb(${({ theme }) => theme.background_shade});
+      border-radius: 10px;
+      line-height: 1.6rem;
+      margin: 0 auto;
+      margin: 20px auto;
+
+      h2 {
+        font-weight: 500;
+      }
+
+      ul {
+        list-style: inside;
+        a {
+          text-decoration: underline;
+          text-underline-offset: 3px;
+
+          &:hover {
+            color: #1a8eff;
+          }
+        }
       }
     }
 
@@ -223,23 +245,24 @@ export const _post = styled.main`
       h3,
       h2 {
         margin-bottom: 10px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
 
       h2 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         line-height: 2rem;
+        font-weight: 500;
       }
 
       h4 {
-        font-size: 1.2rem;
-        line-height: 2rem;
+        font-size: 1.3rem;
+        line-height: 2.2rem;
       }
 
       h5,
       h6 {
         font-size: 1.1rem;
-        line-height: 1.8rem;
+        line-height: 2rem;
       }
 
       ul {
