@@ -7,19 +7,6 @@ import { remark } from 'remark';
 
 const postsDir = join(process.cwd(), '/src/data/posts');
 
-export async function generateTableOfContents(slug: string) {
-  try {
-    const { content } = getPost(slug);
-    const file = await remark()
-      .use(remarkToc, { tight: true, heading: 'Table of Contents' })
-      .process(readFileSync(join(postsDir, `${slug.replaceAll('-', ' ')}.md`)));
-
-    return String(file);
-  } catch (error) {
-    Promise.reject(error);
-  }
-}
-
 export function getPost(slug: string): Post {
   const file = readFileSync(join(postsDir, `${slug.replaceAll('-', ' ')}.md`));
   const { data, content } = matter(file);

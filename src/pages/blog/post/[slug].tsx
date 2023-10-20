@@ -10,13 +10,14 @@ import { RiCircleFill } from 'react-icons/ri';
 import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { generateTableOfContents, getPaths, getPost } from '@/lib/processor';
+import { getPaths, getPost } from '@/lib/processor';
 import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import TableOfContents, { transformChild } from '@/components/TableOfContents';
 
-type Props = { post: Post; toc: any };
+type Props = { post: Post };
 
-export default function Post({ post, toc }: Props) {
+export default function Post({ post }: Props) {
   const anchors = buildShareUrls({
     title: post.title,
     excerpt: post.excerpt,
@@ -83,6 +84,8 @@ export default function Post({ post, toc }: Props) {
               <h4>{post.excerpt}</h4>
             </section>
 
+            <TableOfContents content={post.content} />
+
             <ReactMarkdown
               className='content'
               remarkPlugins={[remarkGfm]}
@@ -105,6 +108,46 @@ export default function Post({ post, toc }: Props) {
                       {children}
                     </code>
                   );
+                },
+                h2(props) {
+                  const { id, children, ...rest } = props;
+                  return (
+                    <h2 {...rest} id={transformChild(String(children))}>
+                      {children}
+                    </h2>
+                  );
+                },
+                h3(props) {
+                  const { id, children, ...rest } = props;
+                  return (
+                    <h2 {...rest} id={transformChild(String(children))}>
+                      {children}
+                    </h2>
+                  );
+                },
+                h4(props) {
+                  const { id, children, ...rest } = props;
+                  return (
+                    <h4 {...rest} id={transformChild(String(children))}>
+                      {children}
+                    </h4>
+                  );
+                },
+                h5(props) {
+                  const { id, children, ...rest } = props;
+                  return (
+                    <h5 {...rest} id={transformChild(String(children))}>
+                      {children}
+                    </h5>
+                  );
+                },
+                h6(props) {
+                  const { id, children, ...rest } = props;
+                  return (
+                    <h6 {...rest} id={transformChild(String(children))}>
+                      {children}
+                    </h6>
+                  );
                 }
               }}
             />
@@ -122,6 +165,5 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const post = getPost(context.params.slug);
-  const tableOfContents = await generateTableOfContents(context.params.slug);
-  return { props: { post, toc: tableOfContents } };
+  return { props: { post } };
 }
