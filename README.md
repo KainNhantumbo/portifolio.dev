@@ -20,20 +20,19 @@ Feel free to visit my portfolio using the link below:
 
 ```
 $PROJECT_ROOT
-│   # type definitions
-├── @types
-│   # Page files
-├── pages
-│   # global scope modules
-├── context
-│   # React component files
-├── components
-│   # translation modules and JSON files
-├── locales
-│   # stylesheets modules
-├── styles
-│   # Static files
-└── public
+│
+├── public
+└── src     
+    ├── components
+    ├── context
+    ├── data
+    ├── lib
+    │   # translation modules and JSON files
+    ├── locales
+    ├── pages
+    ├── shared
+    ├── styles
+    └── types
 ```
 
 ## Contact
@@ -42,15 +41,12 @@ E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an e-mail')\
 Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')  
 My blog: [https://codenut-dev.vercel.app/blog](https://codenut-dev.vercel.app/blog 'Visit my website')
 
-
 #### If you like this project, let me know by leaving a star on this repository.
 
 Best regards, Kain Nhantumbo. 😊😘\
 **Made with ❤ Next.JS and Typescript**
 
-
 ## License
 
 Licensed under Apache 2.0 License. All rights reserved.\
 Copyright &copy; 2023 Kain Nhantumbo.
-

@@ -14,7 +14,6 @@ export const _introduction = styled.section`
   font-size: 1.2rem;
   color: rgb(${({ theme }) => theme.font});
 
-
   .welcome-container {
     display: flex;
     flex-direction: row;
@@ -106,8 +105,30 @@ export const _introduction = styled.section`
         width: 100%;
         font-size: 3.8rem;
         font-weight: 600;
-        line-height: 1rem;
+        line-height: 4rem;
 
+        @keyframes titleAnimation {
+          0% {
+            background-position: 0 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0 50%;
+          }
+        }
+        
+        background: linear-gradient(
+          45deg,
+          rgba(${({ theme }) => theme.secondary_shade}, 0.8) 20%,
+          rgba(${({ theme }) => theme.primary_shade}, 0.8) 40%,
+          rgba(${({ theme }) => theme.secondary}, 0.8) 300%
+        );
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: titleAnimation 2s ease-in-out infinite;
         @media screen and (max-width: 640px) {
           font-size: 1.6rem;
         }
