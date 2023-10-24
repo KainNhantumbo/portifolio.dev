@@ -2,6 +2,8 @@
 
 ## Hi, welcome to my portfolio repository!
 
+![](/public/assets/demo.png)
+
 This is my portfolio website repository were I describe myself, show my projects and talk about my work. It is available in both portuguese and english, translated with the i18next standards.
 
 I have also integrated my blog into this project in the version 4.0.0, so it can be much confortable for me to keep everything up to date, you can check it [here](https://codenut-dev.vercel.app/blog).
@@ -15,6 +17,8 @@ Feel free to visit my portfolio using the link below:
 - [Next.js](https://nextjs.org/) - A React framework with hybrid static & server rendering, and route pre-fetching, etc.
 - [Styled Componets](https://styled-components.com/) - A robust component css-in-js styling library for React and React native.
 - [Framer Motion](https://www.framer.com/motion/) - An animation library for React.
+- React Markdown - for rendering blog pages.
+- Feed - for generating rss feeds.
 
 ## Project structure
 
