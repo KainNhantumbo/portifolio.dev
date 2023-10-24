@@ -18,6 +18,8 @@ export default function TableOfContents({ content }: Props) {
     text: string;
   }>;
 
+  if (headings.length < 1) return null;
+
   return (
     <aside className='toc-container'>
       <nav>

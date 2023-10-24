@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { StyledCornerButton } from '../_defaults';
 
 export const _blog = styled.main`
   width: 100%;
@@ -28,9 +29,22 @@ export const _blog = styled.main`
       font-size: 2.8rem;
       line-height: 3.8rem;
       font-family: 'Zilla Slab';
-
+      position: relative;
       i {
         color: rgb(${({ theme }) => theme.primary_shade});
+      }
+
+      a {
+        ${StyledCornerButton}
+        position: absolute;
+        right: -20px;
+        top: 0;
+        border: none;
+
+        &:hover {
+          transition: all 200ms ease-in-out;
+          color: rgb(${({ theme }) => theme.primary_shade});
+        }
       }
     }
 
@@ -78,7 +92,7 @@ export const _blog = styled.main`
             color: rgb(${({ theme }) => theme.white});
             padding: 0 12px;
             background: rgb(${({ theme }) => theme.black});
-            border: 1px solid rgba(${({ theme }) => theme.font}, .2);
+            border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
           }
 
           h4 {

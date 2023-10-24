@@ -5,6 +5,7 @@ import { getPosts } from '@/lib/processor';
 import { _blog as Container } from '@/styles/routes/_blog';
 import { formatDate } from '@/lib/time';
 import FeedGenerator from '@/lib/feed';
+import { FaRss } from 'react-icons/fa';
 
 type Props = { posts: Post[] };
 
@@ -15,6 +16,9 @@ export default function Blog({ posts }: Props) {
         <section className='presentation-container'>
           <h1>
             Codenut<i>.dev</i> Blog
+            <a href='/rss/feed.en.xml' target='_blank' title='RSS Feed'>
+              <FaRss />
+            </a>
           </h1>
 
           <div>

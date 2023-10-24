@@ -5,10 +5,11 @@ import type { IconType } from 'react-icons';
 import { GiCoffeeMug } from 'react-icons/gi';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { useTranslation } from 'react-i18next';
-import { ImBlog, ImLinkedin2, ImGithub, ImFeed } from 'react-icons/im';
+import { ImBlog, ImLinkedin2, ImGithub } from 'react-icons/im';
 import { _footer as Container } from '../styles/modules/_footer';
 import donutsImage from '../../public/assets/donuts.png';
 import { useRouter } from 'next/router';
+import { FaRss } from 'react-icons/fa';
 
 type Anchors = { name: string; icon: IconType; link: string };
 
@@ -25,8 +26,8 @@ export default function Footer() {
           link: 'https://www.buymeacoffee.com/nhantumbokU'
         },
         {
-          name: 'Feed',
-          icon: ImFeed,
+          name: 'RSS Feed',
+          icon: FaRss,
           link: '/rss/feed.en.xml'
         }
       ];
