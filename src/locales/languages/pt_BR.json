@@ -32,7 +32,11 @@
     "title": "Sobre",
     "subtitle": "Desenvolvedor Web e Criador de Conteúdo",
     "intro-1": "Sou uma pessoa com o desejo de crescer aprendendo novas coisas todos os dias. Movido pela curiosidade, me apixonei pelo desenvolvimento web e design.",
-    "intro-2": "Estou muito ansioso e interessado em oportunidades de trabalho que envolvem as mais novas tecnologias e que coloquem as minhas habilidades em prática."
+    "intro-2": "Estou muito ansioso e interessado em oportunidades de trabalho que envolvem as mais novas tecnologias e que coloquem as minhas habilidades em prática.",
+    "experience-title": "Experiência",
+    "experience-content": "Mais de 3 anos de programação",
+    "projects-title": "Projetos",
+    "projects-content": "Mais de 20 projetos no Github"
   },
   "projects": {
     "title": "Meus Trabalhos e Projetos",

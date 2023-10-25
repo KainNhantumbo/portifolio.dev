@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const titleAnimation = keyframes`
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+`;
 
 export const _introduction = styled.section`
   width: 100%;
@@ -107,18 +116,6 @@ export const _introduction = styled.section`
         font-weight: 600;
         line-height: 4rem;
 
-        @keyframes titleAnimation {
-          0% {
-            background-position: 0 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0 50%;
-          }
-        }
-        
         background: linear-gradient(
           45deg,
           rgba(${({ theme }) => theme.secondary_shade}, 0.8) 20%,
@@ -128,7 +125,7 @@ export const _introduction = styled.section`
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
-        animation: titleAnimation 2s ease-in-out infinite;
+        animation: ${titleAnimation} 2s ease-in-out infinite;
         @media screen and (max-width: 640px) {
           font-size: 1.6rem;
         }
