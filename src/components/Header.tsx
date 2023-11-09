@@ -82,7 +82,9 @@ export default function Header() {
                       })}
                       whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
                       whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link href={item.ref}>
+                      <Link
+                        href={item.ref}
+                        locale={item.ref === '/blog' ? 'en' : router.locale}>
                         <span>{item.label}</span>
                       </Link>
                     </motion.li>

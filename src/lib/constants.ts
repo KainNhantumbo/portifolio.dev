@@ -12,6 +12,7 @@ export const SITE_PROPERTIES = {
 export const AUTHOR = {
   name: Package.author.name,
   picture: '/assets/author.jpg',
+  picturePlaceholder: '/assets/author-placeholder.jpg',
   email: Package.author.email,
   description: 'Web Developer & Designer'
 };

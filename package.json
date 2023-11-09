@@ -44,7 +44,6 @@
     "@types/react-dom": "^18",
     "@types/react-lazy-load-image-component": "^1.6.2",
     "@types/react-syntax-highlighter": "^15.5.8",
-    "@types/three": "^0.157.0",
     "typescript": "^5"
   }
 }

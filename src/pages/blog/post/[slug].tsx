@@ -37,7 +37,8 @@ export default function Post({ post }: Props) {
                 <LazyLoadImage
                   effect='blur'
                   src={AUTHOR.picture}
-                  alt='article author photo'
+                  placeholderSrc={AUTHOR.picturePlaceholder}
+                  alt='Article author picture'
                 />
                 <div>
                   <span>{AUTHOR.name}</span>
