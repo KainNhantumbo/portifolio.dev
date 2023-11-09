@@ -22,10 +22,16 @@ export default function Blog({ posts }: Props) {
           </h1>
 
           <div>
-            <h3>👋 Hello, I am Kain, You're Welcome!</h3>
+            <h3>👋 Hellom, Welcome to Kain's Universe!</h3>
+            <p>
+              You've stumbled upon Kain's little corner of the internet, where
+              everything runs rampant and normal is just a unpredictable wave on
+              a ocean.
+            </p>
             <p>
               Web development is my favorite flavour and I love to code. I blog
-              about coding, software, my projects and works.
+              about coding, software, my projects and works. Feel free to dive
+              in, here every visit is an adventure, a glance on exploration!
             </p>
           </div>
         </section>
