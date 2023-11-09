@@ -24,7 +24,7 @@
   "intro": {
     "welcome-message": "Welcome to my portfolio :)",
     "presentation": "Hello 👋, I am Kain!",
-    "message-part-1": "A enthusiastic software developer who loves donuts and building full-stack applications while learning something new everyday.",
+    "message-part-1": "A true knowledge lover, always looking to learn more and share information. Working with web development since 2019, developing for performant and scalable projects while learning something new everyday.",
     "message-part-2": "To build my projects, I use Typescript and Javascript as main programming technologies.",
     "title": "Web Developer"
   },
@@ -40,7 +40,7 @@
   },
   "projects": {
     "title": "My Projects and Works",
-    "intro-part-1": "(...) and because I understand that showing is sometimes better than saying, here are some of my personal projects that I have been working on these days. You can see all my personal projects on my",
+    "intro-part-1": "Each project is a unique piece of development 🎏. You can see all my personal projects on my",
     "intro-part-2": "github profile",
     "live-demo": "Live Demo",
     "github": "Github Repository",
