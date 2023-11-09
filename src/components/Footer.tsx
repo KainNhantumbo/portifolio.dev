@@ -81,8 +81,9 @@ export default function Footer() {
 
       <div className='donuts-image-container'>
         <LazyLoadImage
-          src={'/public/assets/donuts.png'}
-          placeholderSrc={'/public/assets/donuts-placeholder.png'}
+          src={'/assets/donuts.png'}
+          placeholderSrc={'/assets/donuts-placeholder.png'}
+          effect='blur'
           alt='Donuts combo decoration image'
         />
       </div>

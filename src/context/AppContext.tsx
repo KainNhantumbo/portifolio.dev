@@ -12,6 +12,8 @@ import { GlobalStyles } from '../styles/_global-styles';
 import { ThemeProvider } from 'styled-components';
 import { dark_default, light_default } from '../styles/themes';
 import { initialState, reducer } from '../shared/reducer';
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
 
 type Props = { children: ReactNode };
 
@@ -32,6 +34,8 @@ const context = createContext<Context>({
 });
 
 export default function AppContext({ children }: Props) {
+  const router = useRouter();
+  const { i18n } = useTranslation();
   const [state, dispatch] = useReducer(reducer, initialState);
   const [currentTheme, setCurrentTheme] = useState<Theme>(light_default);
   const [colorScheme, setColorScheme] = useState<ColorScheme>({
@@ -46,6 +50,8 @@ export default function AppContext({ children }: Props) {
       top: 0,
       behavior: 'smooth'
     });
+
+  const translate = () => i18n.changeLanguage(router.locale);
 
   const setDarkColorScheme = ({ mode, scheme }: ColorScheme): void => {
     setCurrentTheme(dark_default);
@@ -99,6 +105,7 @@ export default function AppContext({ children }: Props) {
         `{"mode": "auto", "scheme": "light"}`
     );
     setColorScheme(colorScheme);
+    translate();
   }, []);
 
   useEffect((): void => {

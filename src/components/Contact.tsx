@@ -64,7 +64,7 @@ export default function Contact() {
         <FaEnvelope />
         <span>{translation('contact.title')}</span>
       </h2>
-      <section className='intro'>
+      <section className='intro-container'>
         <motion.h2
           initial={{ opacity: 0 }}
           transition={{ delay: 0.2 }}
@@ -74,6 +74,12 @@ export default function Contact() {
         <motion.p
           initial={{ opacity: 0 }}
           transition={{ delay: 0.4 }}
+          whileInView={{ opacity: 1 }}>
+          {translation('contact.intro-phrase')}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          transition={{ delay: 0.6 }}
           whileInView={{ opacity: 1 }}>
           {translation('contact.intro-message')}
         </motion.p>

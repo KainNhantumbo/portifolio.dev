@@ -22,7 +22,7 @@ export default function Blog({ posts }: Props) {
           </h1>
 
           <div>
-            <h3>👋 Hellom, Welcome to Kain's Universe!</h3>
+            <h3>👋 Hello, Welcome to Kain's Universe!</h3>
             <p>
               You've stumbled upon Kain's little corner of the internet, where
               everything runs rampant and normal is just a unpredictable wave on

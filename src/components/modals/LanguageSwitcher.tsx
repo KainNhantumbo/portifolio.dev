@@ -4,13 +4,17 @@ import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../../context/AppContext';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _languageSwitcher as Container } from '../../styles/modules/_language-switcher';
+import { useRouter } from 'next/router';
 
 export default function LanguageSwitcher() {
   const { state, dispatch } = useAppContext();
+  const router = useRouter();
   const { t: translation, i18n } = useTranslation();
 
   const translate = (language: 'pt' | 'en') => {
+    router.push(`/`, undefined, { locale: language });
     i18n.changeLanguage(language);
+
     dispatch({
       type: actions.LANGUAGES_MODAL,
       payload: { ...state, isLanguagesModal: false }

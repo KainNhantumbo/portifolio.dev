@@ -40,6 +40,12 @@ export const _contact = styled.section`
     font-weight: 500;
   }
 
+  .intro-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .form-container {
     width: 100%;
     display: flex;
