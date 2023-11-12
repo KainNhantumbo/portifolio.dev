@@ -13,7 +13,7 @@ export function getWorks(): Work[] {
       },
       repository: {
         label: translation('works.repository_label'),
-        url: 'https://github.com/KainNhantumbo/notes-app'
+        url: 'https://github.com/KainNhantumbo/notes-client'
       },
       stack: ['node.js', 'react.js', 'express.js', 'typescript'],
       platforms: ['Web', 'PWA Apps']

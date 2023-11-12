@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://codenut-dev.vercel.app</id>
     <title>Codenut.dev Feed</title>
-    <updated>2023-11-09T21:17:43.412Z</updated>
+    <updated>2023-11-12T17:34:22.526Z</updated>
     <generator>Feed for Kain's Blog and Portfolio Website</generator>
     <author>
         <name>Kain Nhantumbo</name>
@@ -14,6 +14,65 @@
     <subtitle>Kain's Blog and Portfolio Website</subtitle>
     <icon>https://codenut-dev.vercel.app/favicon.png</icon>
     <rights>Copyright © 2023 Codenut.dev - All rights reserved.</rights>
+    <entry>
+        <title type="html"><![CDATA[Discover The Features of The New Next 14]]></title>
+        <id>https://codenut-dev.vercel.app/blog/post/dicover-the-features-of-next14</id>
+        <link href="https://codenut-dev.vercel.app/blog/post/dicover-the-features-of-next14"/>
+        <updated>2023-11-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>Let&#39;s  wrap up for the latest version of Next.js that brings several new features and improvements to the framework that most of us love</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>While many of us are still in the process of exploring the now old Next.js 13 and now Vercel striked again with the new version of its beloved React.js framework. The new Next.js 14 brings some game-changing features, whether you’re already a Next.js enthusiast or just getting started.</p>
+<p>Additionally, be aware of some breacking changes, including the minimum Node.js version being raised to 18.17 and a few API modifications, so is good to stay up-to-date with the latest changes to get the most of Next.js.</p>
+<h2>The Highlights</h2>
+<p>Now, you can expect a 53% faster on local server startup, remarkable 94% faster code update with Fast Refresh and Turbopack is expected to move to “stable” in an upcoming minor release. Additionally, you don’t have to change a single line of code in your existing Next.js project to reap these new performance benefits.</p>
+<p>It’s the kind of upgrade that we all were wondering for.</p>
+<h3>Server Actions: Simplify Data Mutations</h3>
+<p>The need to create a dedicated API routes for server-side code is changing with Next.js 14. he introduction of Server Actions into stable release status is a big upgrade.</p>
+<p>You can now write server-side code securely with a function defined inside your React component. It simplifies your code and provides better user experience by reducing the number of network roundtrips needed for data mutations and page re-rendering.</p>
+<p>Take this demo example:</p>
+<pre><code class="language-tsx">export default function Page() {
+  async function create(formData: FormData) {
+    &#39;use server&#39;;
+    const fooId = await createFoo(formData);
+  }
+
+  return (
+    &lt;form action={create}&gt;
+      &lt;input type=&#39;text&#39; name=&#39;name&#39; /&gt;
+      &lt;button type=&#39;submit&#39;&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h3>The new <code>Metadata</code> object</h3>
+<p>Metadata options for meta tags have been enhanced to improve the initial rendering performance and reduce layout shift.</p>
+<h3>Partial Prerendering</h3>
+<p>Next.js 14 brings you the best of both sides of SSR and SSG with the new Partial Prerendering lineup.</p>
+<p>It provides a fast initial static response while streaming dynamic content based on your React Suspense boundaries so you get the performance of static sites and the dynamism of server-rendered applications.</p>
+<p>There are no new APIs to learn. It’s a smart move that simplifies your development experience.</p>
+<h2>Summary</h2>
+<ul>
+<li><p>Turbopack improved local development performance: 53% faster local server startup, and 94% faster code updates with Fast Refresh;</p>
+</li>
+<li><p>Metadata improvements ensure that important metadata are sent with initial page content, preventing page undesired layout shift;</p>
+</li>
+<li><p>Server Actions allow execution of server-side code without the need for a dedicated API route;</p>
+</li>
+<li><p>Partial Prerendering provides a fast initial static response while streaming dynamic content based on React Suspense boundaries.</p>
+</li>
+</ul>
+<h2>Next.js free course</h2>
+<p>Next.js 14 brings a new free course on Next.js Learn. Whether you’re new to Next.js or a seasoned pro, this course has something new for you.</p>
+<p>From the basics to advanced features like Partial Prerendering, it’s a comprehensive resource to level up your Next.js skills. This will simplify the learning proccess for many of us.</p>
+<p>Thanks for reading!</p>
+]]></content>
+        <author>
+            <name>Kain Nhantumbo</name>
+            <email>nhantumbok@gmail.com</email>
+            <uri>https://codenut-dev.vercel.app</uri>
+        </author>
+        <category label="Web Development"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How to Generate Random Colors in Javascript]]></title>
         <id>https://codenut-dev.vercel.app/blog/post/how-to-generate-colors-in-javascript</id>
