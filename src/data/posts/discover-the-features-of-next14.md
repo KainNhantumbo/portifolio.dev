@@ -2,7 +2,7 @@
 topic: 'Web Development'
 createdAt: '2023-11-05'
 title: 'Discover The Features of The New Next 14'
-excerpt: 'Let's  wrap up for the latest version of Next.js that brings several new features and improvements to the framework that most of us love'
+excerpt: "Let's  wrap up for the latest version of Next.js that brings several new features and improvements to the framework that most of us love"
 ---
 
 While many of us are still in the process of exploring the now old Next.js 13 and now Vercel striked again with the new version of its beloved React.js framework. The new Next.js 14 brings some game-changing features, whether you’re already a Next.js enthusiast or just getting started.

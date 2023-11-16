@@ -1,8 +1,8 @@
 ---
-topic: SEO
+topic: 'SEO'
 createdAt: '2023-02-19'
 title: 'Learn More About Next.js: SSR, SSG, ISR, Server Components and more'
-excerpt: In this era of dynamic world of web development, search engine optimization (SEO) plays a crucial role in ensuring your website’s visibility and success.
+excerpt: "In this era of dynamic world of web development, search engine optimization (SEO) plays a crucial role in ensuring your website’s visibility and success."
 ---
 
 In this article, we’ll explore the ins and outs of SEO within React and Next.js, from traditional methods to modern solutions, and discuss the different rendering techniques — SSR, SSG, and ISR.

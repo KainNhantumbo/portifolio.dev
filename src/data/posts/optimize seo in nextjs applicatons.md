@@ -1,8 +1,8 @@
 ---
-topic: SEO
+topic: 'SEO'
 createdAt: '2023-04-12'
-title: Optimize SEO in your Next.js Applications
-excerpt: Search engine optimization (SEO) makes a crucial role in driving organic traffic to websites. Next.js provides tools for building performant and SEO-friendly web applications. In this blog post, we will explore some techniques for optimizing SEO in Next.js Apps to enhance search engine visibility and attract more organic traffic.
+title: 'Optimize SEO in your Next.js Applications'
+excerpt: "Search engine optimization (SEO) makes a crucial role in driving organic traffic to websites. Next.js provides tools for building performant and SEO-friendly web applications. In this blog post, we will explore some techniques for optimizing SEO in Next.js Apps to enhance search engine visibility and attract more organic traffic."
 ---
 
 Optimizing SEO in Next.js requires a combination of technical implementation, content optimization, and ongoing monitoring. By leveraging advanced techniques, such as dynamic meta tags, SSR, structured data markup, and performance optimization, you can significantly improve search engine visibility and attract more organic traffic to your Next.js applications.

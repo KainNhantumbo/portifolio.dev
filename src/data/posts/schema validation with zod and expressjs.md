@@ -1,8 +1,8 @@
 ---
-topic: Security
+topic: 'Security'
 createdAt: '2023-11-09'
-title: Schema Validation with Zod and Express.js
-excerpt: They say “Never trust user input” - I know that this may sound extreme, but it is an important security principle in programming. Today, we will learn togheter how to implement Zod in a Express.js application.
+title: 'Schema Validation with Zod and Express.js'
+excerpt: "They say “Never trust user input” - I know that this may sound extreme, but it is an important security principle in programming. Today, we will learn togheter how to implement Zod in a Express.js application."
 ---
 
 This article will explain the concept of schema validation, explore the features of Zod, and demonstrate Zod validation, and its usage to ensure robust data integrity in Express applications.
