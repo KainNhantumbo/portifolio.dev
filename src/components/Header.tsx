@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -77,7 +77,7 @@ export default function Header() {
                 ? portfolioUrls.map((item, index) => (
                     <motion.li
                       key={index.toString()}
-                      className={classnames({
+                      className={clsx({
                         active: router.asPath.includes(item.ref)
                       })}
                       whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
