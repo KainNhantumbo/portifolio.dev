@@ -6,10 +6,12 @@ import { _blog as Container } from '@/styles/routes/_blog';
 import { formatDate } from '@/lib/time';
 import FeedGenerator from '@/lib/feed';
 import { FaRss } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
 type Props = { posts: Post[] };
 
 export default function Blog({ posts }: Props) {
+  const {locale} = useRouter()
   return (
     <Layout metadata={{ title: 'Codenut.dev - Blog' }}>
       <Container>
@@ -39,7 +41,10 @@ export default function Blog({ posts }: Props) {
         <article>
           <section className='posts-container'>
             {posts.map((post, index) => (
-              <Link href={`/blog/post/${post.slug}`} key={index.toString()}>
+              <Link
+                href={`/${locale}/blog/post/${post.slug}`}
+                locale={'en'}
+                key={index.toString()}>
                 <div className='header-container'>
                   <h3>{post.topic}</h3>
                   <h4>

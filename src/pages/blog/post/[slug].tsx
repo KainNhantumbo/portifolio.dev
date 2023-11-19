@@ -1,5 +1,4 @@
 import type { Post } from '@/types';
-import remarkGfm from 'remark-gfm';
 import { formatDate } from '@/lib/time';
 import Layout from '@/components/Layout';
 import ReactMarkdown from 'react-markdown';
@@ -89,7 +88,6 @@ export default function Post({ post }: Props) {
 
             <ReactMarkdown
               className='content'
-              remarkPlugins={[remarkGfm]}
               children={post.content}
               components={{
                 code(props) {

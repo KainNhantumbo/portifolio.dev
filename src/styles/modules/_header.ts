@@ -4,26 +4,37 @@ export const _header = styled.header`
   width: 100%;
 
   .main-container {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    min-height: 65px;
-    padding: 20px;
+    width: fit-content;
+    position: fixed;
+    top: 12px;
+    min-width: 550px;
+    left: calc(50% - 285px);
+    min-height: 50px;
+    padding: 0 20px;
+
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
     z-index: 5000;
-    background: rgba(${({ theme }) => theme.background}, 0.5);
-    backdrop-filter: blur(8px);
 
-    @media screen and (max-width: 820px) {
-      justify-content: flex-end;
-    }
+    border-radius: 12px;
+    border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
+    background: rgba(${({ theme }) => theme.background}, 0.5);
+    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
+    backdrop-filter: blur(5px);
+
     @media screen and (max-width: 640px) {
       flex-direction: column;
-      padding: 10px;
+      min-width: 340px;
+      left: calc(50% - 170px);
+
+      .donut-container {
+        position: absolute;
+        top: 13px;
+        right: calc(50% - 60px);
+      }
     }
   }
 
@@ -35,9 +46,12 @@ export const _header = styled.header`
     justify-self: flex-end;
     align-self: flex-end;
     display: none;
-    padding: 5px;
+
     @media screen and (max-width: 640px) {
       display: block;
+      position: absolute;
+      top: 11px;
+      right: 8px;
     }
 
     svg {
@@ -55,9 +69,6 @@ export const _header = styled.header`
   }
 
   .donut-container {
-    position: absolute;
-    top: 16px;
-    left: 20px;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -66,13 +77,15 @@ export const _header = styled.header`
 
     img {
       width: 100%;
-      max-width: 25px;
-      max-height: 25px;
+      max-width: 19px;
+      max-height: 19px;
       object-fit: cover;
     }
 
     span {
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: rgba(${({ theme }) => theme.primary_shade}, 0.8);
     }
   }
 
@@ -92,8 +105,9 @@ export const _header = styled.header`
 
       @media screen and (max-width: 640px) {
         flex-direction: column;
-        padding: 0 30px;
+        padding: 20px;
         display: none;
+        margin-top: 28px;
       }
       @media screen and (min-width: 640px) {
         display: flex;
@@ -128,7 +142,7 @@ export const _header = styled.header`
           height: 5px;
           background: rgb(${({ theme }) => theme.secondary});
           position: absolute;
-          bottom: -8px;
+          bottom: -5px;
           left: calc(50% - 10px);
           border-radius: 5px;
           @media screen and (max-width: 640px) {

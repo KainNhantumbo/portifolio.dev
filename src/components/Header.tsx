@@ -25,11 +25,11 @@ export default function Header() {
     { label: translation('header.anchors.skills'), ref: '#skills' },
     { label: translation('header.anchors.projects'), ref: '#projects' },
     { label: translation('header.anchors.contact'), ref: '#contact' },
-    { label: translation('header.anchors.blog'), ref: '/blog' }
+    { label: translation('header.anchors.blog'), ref: '/en/blog' }
   ];
 
   const blogUrls: NavAnchors[] = [
-    { label: 'Home', ref: '/blog' },
+    { label: 'Blog', ref: '/blog',  },
     { label: 'Portfolio', ref: '/' }
   ];
 
@@ -67,7 +67,7 @@ export default function Header() {
         <motion.button whileTap={{ scale: 0.8 }} onClick={toggleMenu}>
           {isMenu ? <RiCloseLine /> : <RiMenuLine />}
         </motion.button>
-        <nav className='navbar'>
+        <nav className='navbar' role='main'>
           <AnimatePresence>
             <motion.ul
               animate={{ translateY: isMenu ? 0 : -50 }}
@@ -82,9 +82,7 @@ export default function Header() {
                       })}
                       whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
                       whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link
-                        href={item.ref}
-                        locale={item.ref === '/blog' ? 'en' : router.locale}>
+                      <Link href={item.ref} locale={'en'}>
                         <span>{item.label}</span>
                       </Link>
                     </motion.li>
@@ -94,6 +92,9 @@ export default function Header() {
                 ? blogUrls.map((item, index) => (
                     <motion.li
                       key={index.toString()}
+                      className={clsx({
+                        active: item.ref.includes('blog')
+                      })}
                       whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
                       whileHover={{ scale: 1.01, y: 1 }}>
                       <Link href={item.ref}>

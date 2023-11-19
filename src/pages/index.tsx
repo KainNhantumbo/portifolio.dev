@@ -1,25 +1,12 @@
-import dynamic from 'next/dynamic';
 import About from '../components/About';
 import Layout from '../components/Layout';
+import Contact from '../components/Contact';
+import Projects from '../components/Projects';
 import Abilities from '../components/Abilities';
-import { _home as Container } from '../styles/routes/_home';
 import Introduction from '../components/Introduction';
+import { _home as Container } from '../styles/routes/_home';
+import LanguageSwitcher from '../components/modals/LanguageSwitcher';
 
-// code spliting
-const Contact = dynamic(import('../components/Contact'), {
-  ssr: true
-});
-
-const LanguageSwitcher = dynamic(
-  import('../components/modals/LanguageSwitcher'),
-  {
-    ssr: true
-  }
-);
-
-const Projects = dynamic(import('../components/Projects'), {
-  ssr: true
-});
 
 export default function Home() {
   return (

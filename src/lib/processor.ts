@@ -21,8 +21,8 @@ export function getPosts(withContent?: boolean): Array<Post> {
       const { data, content } = matter(readFiles);
 
       const result = withContent
-        ? { slug, ...data, content }
-        : { slug, ...data };
+        ? { ...data, slug, content }
+        : {  ...data, slug };
       
         return result as Post;
     })
