@@ -25,7 +25,7 @@ export default function Header() {
     { label: translation('header.anchors.skills'), ref: '#skills' },
     { label: translation('header.anchors.projects'), ref: '#projects' },
     { label: translation('header.anchors.contact'), ref: '#contact' },
-    { label: translation('header.anchors.blog'), ref: '/en/blog' }
+    { label: translation('header.anchors.blog'), ref: '/blog' }
   ];
 
   const blogUrls: NavAnchors[] = [
@@ -82,7 +82,7 @@ export default function Header() {
                       })}
                       whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
                       whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link href={item.ref} locale={'en'}>
+                      <Link href={item.ref} locale={router.locale}>
                         <span>{item.label}</span>
                       </Link>
                     </motion.li>
@@ -97,7 +97,7 @@ export default function Header() {
                       })}
                       whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
                       whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link href={item.ref}>
+                      <Link href={item.ref} locale={router.locale}>
                         <span>{item.label}</span>
                       </Link>
                     </motion.li>
