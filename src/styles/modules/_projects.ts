@@ -100,6 +100,7 @@ export const _projects = styled.section`
             padding: 5px;
             border-radius: 12px;
             position: relative;
+            border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
             :hover {
               color: rgb(${({ theme }) => theme.primary_shade});
               svg {

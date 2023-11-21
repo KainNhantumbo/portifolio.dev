@@ -300,13 +300,25 @@ export const _post = styled.main`
 
       blockquote {
         width: 100%;
-        background: rgba(${({ theme }) => theme.primary}, 0.1);
-        border-left: 3px solid rgba(${({ theme }) => theme.font}, 0.1);
-        text-align: left;
+        background: rgb(${({ theme }) => theme.background_shade});
         font-size: 1.2rem;
-        padding: 18px;
+        padding: 12px 12px 1px 12px;
         margin: 12px 0;
+        margin-left: 20px;
         line-height: 2rem;
+        position: relative;
+        border-radius: 8px;
+
+        ::before {
+          content: '';
+          position: absolute;
+          top: calc(50% - 8px);
+          left: -12px;
+          border-radius: 8px;
+          width: 5px;
+          height: 24px;
+          background: rgb(${({ theme }) => theme.primary_shade});
+        }
 
         @media screen and (max-width: 530px) {
           padding: 12px;

@@ -25,11 +25,11 @@ export default function Header() {
     { label: translation('header.anchors.skills'), ref: '#skills' },
     { label: translation('header.anchors.projects'), ref: '#projects' },
     { label: translation('header.anchors.contact'), ref: '#contact' },
-    { label: translation('header.anchors.blog'), ref: '/blog' }
+    { label: translation('header.anchors.blog'), ref: '/en/blog' }
   ];
 
   const blogUrls: NavAnchors[] = [
-    { label: 'Blog', ref: '/blog',  },
+    { label: 'Blog', ref: '/en/blog' },
     { label: 'Portfolio', ref: '/' }
   ];
 
@@ -56,7 +56,7 @@ export default function Header() {
     <Container>
       <motion.div
         className='main-container'
-        animate={{ translateY: deltaY == 100 ? -65 : 0 }}
+        animate={{ translateY: deltaY > 100 ? '-65px' : '0px' }}
         transition={{ duration: 0.5 }}>
         <div className='donut-container'>
           <Image src={donutImage} width={25} height={25} alt='donut image' />
@@ -80,9 +80,9 @@ export default function Header() {
                       className={clsx({
                         active: router.asPath.includes(item.ref)
                       })}
-                      whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
+                      whileTap={{ scale: deltaY <= minWidth ? 0.95 : 1 }}
                       whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link href={item.ref} locale={router.locale}>
+                      <Link href={item.ref} locale={'en'}>
                         <span>{item.label}</span>
                       </Link>
                     </motion.li>
@@ -95,9 +95,9 @@ export default function Header() {
                       className={clsx({
                         active: item.ref.includes('blog')
                       })}
-                      whileTap={{ scale: deltaY <= minWidth ? 0.9 : 1 }}
+                      whileTap={{ scale: deltaY <= minWidth ? 0.95 : 1 }}
                       whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link href={item.ref} locale={router.locale}>
+                      <Link href={item.ref} locale={'en'}>
                         <span>{item.label}</span>
                       </Link>
                     </motion.li>

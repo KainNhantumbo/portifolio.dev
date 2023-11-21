@@ -27,6 +27,7 @@ export const _fluentButtons = styled.section`
     margin-top: 8px;
     border: none;
     display: grid;
+    border: 1px solid rgba(${({ theme }) => theme.font}, 0.1);
     background: rgba(${({ theme }) => theme.primary}, 0.3);
     border-radius: 10px;
     backdrop-filter: blur(10px);

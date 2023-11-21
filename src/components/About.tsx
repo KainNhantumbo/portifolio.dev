@@ -21,16 +21,28 @@ export default function About() {
             <h3>Kain Nhantumbo</h3>
             <p className='op'>{translation('about.subtitle')}</p>
           </div>
-          <Image
-            width={100}
-            height={100}
-            src={AUTHOR.picture}
-            alt='author image'
-          />
+          <motion.div whileInView={{ rotate: [0, 360] }}>
+            <Image
+              width={100}
+              height={100}
+              src={AUTHOR.picture}
+              alt='author image'
+            />
+          </motion.div>
         </div>
 
-        <p>{translation('about.intro-1')}</p>
-        <p>{translation('about.intro-2')}</p>
+        <motion.p
+          transition={{ delay: 0.2 }}
+          initial={{ y: -50 }}
+          whileInView={{ y: 0 }}>
+          {translation('about.intro-1')}
+        </motion.p>
+        <motion.p
+          transition={{ delay: 0.4 }}
+          initial={{ y: 50 }}
+          whileInView={{ y: 0 }}>
+          {translation('about.intro-2')}
+        </motion.p>
       </section>
 
       <section className='cards-container'>

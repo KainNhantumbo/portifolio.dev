@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { FaRss } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import Package from '../../package.json';
@@ -51,7 +50,7 @@ export default function Footer() {
     {
       name: translation('footer.anchors.blog'),
       icon: ImBlog,
-      link: '/blog'
+      link: '/en/blog'
     },
     ...aditionalFooterUrls
   ];

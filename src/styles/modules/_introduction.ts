@@ -1,13 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-const titleAnimation = keyframes`
-  from {
-    background-position: 0 50%;
-  }
-  to {
-    background-position: 100% 50%;
-  }
-`;
+
 
 export const _introduction = styled.section`
   width: 100%;
@@ -22,6 +15,23 @@ export const _introduction = styled.section`
   line-height: 1.8rem;
   font-size: 1.2rem;
   color: rgb(${({ theme }) => theme.font});
+  background: rgba(${({ theme }) => theme.background}, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    right: 50%;
+    top: 0;
+    border-radius: 50%;
+    z-index: -999;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 180px 140px rgba(${({ theme }) => theme.primary}, 0.8);
+  }
 
   .welcome-container {
     display: flex;
@@ -125,17 +135,18 @@ export const _introduction = styled.section`
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
-        animation: ${titleAnimation} 2s ease-in-out infinite;
         @media screen and (max-width: 640px) {
-          font-size: 1.6rem;
+          font-size: 2.6rem;
+          line-height: 2.8rem;
         }
       }
     }
   }
 
   p {
+    font-size: 1.1rem;
     @media screen and (max-width: 640px) {
-      font-size: 1rem;
+      font-size: 0.98rem;
       line-height: 1.6rem;
     }
   }

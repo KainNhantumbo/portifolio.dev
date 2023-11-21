@@ -2,6 +2,7 @@ import { getWorks } from '@/data/works';
 import { useTranslation } from 'react-i18next';
 import { RiGithubLine, RiLiveLine } from 'react-icons/ri';
 import { _works as Container } from '../styles/modules/_works';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Works() {
   const { t: translation } = useTranslation();
@@ -11,7 +12,6 @@ export default function Works() {
     <Container>
       {data.map((item, index) => (
         <div key={index} className='item-container'>
-          <img loading='lazy' decoding='async' src={item.image} alt={item.title} />
           <div className='content-container'>
             <h3 className='title'>{item.title}</h3>
             <div className='description-container'>
@@ -49,6 +49,7 @@ export default function Works() {
               </a>
             </div>
           </div>
+          <LazyLoadImage src={item.image} alt={item.title} />
         </div>
       ))}
     </Container>

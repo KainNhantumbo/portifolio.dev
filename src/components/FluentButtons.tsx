@@ -2,6 +2,7 @@ import actions from '../shared/actions';
 import { useRouter } from 'next/router';
 import { m as motion } from 'framer-motion';
 import { BsTranslate } from 'react-icons/bs';
+import { RiTranslate, RiTranslate2 } from 'react-icons/ri';
 import { useAppContext } from '../context/AppContext';
 import { BiMoon, BiSun, BiUpArrowAlt } from 'react-icons/bi';
 import { _fluentButtons as Container } from '@/styles/modules/_fluent-buttons';
@@ -25,7 +26,7 @@ export default function FluentButtons() {
                 payload: { ...state, isLanguagesModal: true }
               })
             }>
-            <BsTranslate />
+            <RiTranslate2 />
           </motion.button>
         ) : null}
 

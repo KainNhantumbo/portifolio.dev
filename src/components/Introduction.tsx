@@ -25,7 +25,7 @@ export default function Introduction() {
       <div className='styled-intro-container'>
         <h3>{translation('intro.presentation')}</h3>
         <div className='title-container '>
-          <h1>{translation('intro.title')}</h1>
+          <motion.h1 initial={{x: -300}} whileInView={{x: 0}}>{translation('intro.title')}</motion.h1>
         </div>
       </div>
 
@@ -57,11 +57,13 @@ export default function Introduction() {
         </div>
       </div>
 
-      <p>
-        {translation('intro.message-part-1')}
+      <motion.p
+        initial={{ scale: 0, y: -120, opacity: 0 }}
+        whileInView={{ scale: 1, y: 0, opacity: 1 }}>
+        <motion.i >{translation('intro.message-part-1')}</motion.i>
         <br />
         {translation('intro.message-part-2')}
-      </p>
+      </motion.p>
     </Container>
   );
 }

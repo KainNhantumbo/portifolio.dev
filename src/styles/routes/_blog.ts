@@ -12,7 +12,23 @@ export const _blog = styled.main`
   gap: 30px;
   line-height: 1.6rem;
   margin-bottom: 50px;
-  background: rgb(${({ theme }) => theme.background});
+  background: rgba(${({ theme }) => theme.background}, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    right: 50%;
+    top: 20px;
+    border-radius: 50%;
+    z-index: -999;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 180px 140px rgba(${({ theme }) => theme.primary}, 0.8);
+  }
 
   ::selection {
     background: rgba(${({ theme }) => theme.primary}, 0.5);
