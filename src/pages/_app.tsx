@@ -5,6 +5,11 @@ import type { AppProps } from 'next/app';
 import AppContext from '../context/AppContext';
 import { Inter, Zilla_Slab, IBM_Plex_Mono } from 'next/font/google';
 import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const AnimatePageTransition = dynamic(
+  import('@/components/AnimatePageTransition')
+);
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,7 +40,9 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
                 ${zillaSlab.style.fontFamily}, ${ibmPlexMono.style.fontFamily};
             }
           `}</style>
-          <Component {...pageProps} />
+          <AnimatePageTransition>
+            <Component {...pageProps} />
+          </AnimatePageTransition>
         </>
       </LazyMotion>
     </MotionConfig>
