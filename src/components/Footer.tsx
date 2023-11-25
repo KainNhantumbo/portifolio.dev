@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FaRss } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import Package from '../../package.json';
@@ -6,9 +7,9 @@ import type { IconType } from 'react-icons';
 import { GiCoffeeMug } from 'react-icons/gi';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { useTranslation } from 'react-i18next';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { ImBlog, ImLinkedin2, ImGithub } from 'react-icons/im';
 import { _footer as Container } from '../styles/modules/_footer';
+import donutsImage from '@/../public/assets/donuts.png';
 
 type Anchors = { name: string; icon: IconType; link: string };
 
@@ -79,10 +80,11 @@ export default function Footer() {
       </ul>
 
       <div className='donuts-image-container'>
-        <LazyLoadImage
-          src={'/assets/donuts.png'}
-          placeholderSrc={'/assets/donuts-placeholder.png'}
-          effect='blur'
+        <Image
+          width={1702}
+          height={149}
+          src={donutsImage}
+          placeholder='blur'
           alt='Donuts combo decoration image'
         />
       </div>

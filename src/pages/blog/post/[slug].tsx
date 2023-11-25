@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Post } from '@/types';
 import { formatDate } from '@/lib/time';
 import Layout from '@/components/Layout';
@@ -7,7 +8,6 @@ import { buildShareUrls } from '@/lib/share';
 import { RiCircleFill } from 'react-icons/ri';
 import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getPaths, getPost } from '@/lib/processor';
 import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -33,10 +33,11 @@ export default function Post({ post }: Props) {
             <section className={'meta-container'}>
               <h5>PUBLISHED: {formatDate(post.createdAt)}</h5>
               <section className='author'>
-                <LazyLoadImage
-                  effect='blur'
+                <Image
+                  width={580}
+                  height={580}
+                  priority={false}
                   src={AUTHOR.picture}
-                  placeholderSrc={AUTHOR.picturePlaceholder}
                   alt='Article author picture'
                 />
                 <div>

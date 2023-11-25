@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import { StaticImageData } from 'next/image';
 import { ChangeEvent, FormEvent } from 'react';
@@ -21,17 +20,9 @@ export type FormData = {
   from_email: string;
 };
 
-type Project = {
-  name: string;
-  category: string;
-  image: StaticImageData;
-  code_url: string;
-  live_url: string;
-};
-
 export type Work = {
   title: string;
-  image: string;
+  image: StaticImageData;
   repository: { label: string; url: string };
   livePreview: { label: string; url: string };
   description: string[];
@@ -83,7 +74,7 @@ export type Frontmatter = {
   excerpt: string;
   createdAt: string;
   updatedAt?: string;
-  topic: string
+  topic: string;
 };
 
 export interface Post extends Frontmatter {

@@ -1,8 +1,8 @@
+import Image from 'next/image'
 import { getWorks } from '@/data/works';
 import { useTranslation } from 'react-i18next';
 import { RiGithubLine, RiLiveLine } from 'react-icons/ri';
 import { _works as Container } from '../styles/modules/_works';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Works() {
   const { t: translation } = useTranslation();
@@ -49,7 +49,7 @@ export default function Works() {
               </a>
             </div>
           </div>
-          <LazyLoadImage src={item.image} alt={item.title} />
+          <Image width={500} height={undefined} src={item.image} alt={item.title} />
         </div>
       ))}
     </Container>

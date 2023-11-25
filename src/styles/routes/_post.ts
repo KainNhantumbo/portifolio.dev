@@ -42,7 +42,10 @@ export const _post = styled.main`
         gap: 18px;
 
         img {
-          width: 50px;
+          width: auto;
+          height: auto;
+          max-width: 50px;
+
           border-radius: 50%;
         }
 
