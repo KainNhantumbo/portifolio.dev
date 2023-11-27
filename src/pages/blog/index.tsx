@@ -36,8 +36,6 @@ export default function Blog({ posts }: Props) {
               in, here every visit is an adventure, a glance on exploration!
             </p>
           </div>
-
-          <div>Just backed {posts.length} posts for you!</div>
         </section>
 
         <article>

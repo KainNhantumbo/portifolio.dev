@@ -9,6 +9,7 @@ import bug_tracker_app from '../../public/assets/bug-tracker-app.jpeg';
 import url_shortner_app from '../../public/assets/url-shortner-app.jpeg';
 import hagira_ecommerce from '../../public/assets/hagira-ecommerce.jpeg';
 import bug_tracker_server from '../../public/assets/bug-tracker-server.png';
+import firstRestaurantImage from '../../public/assets/restaurant-demo-first.png';
 
 export function getProjects(): Project[] {
   const categories = {

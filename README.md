@@ -1,8 +1,12 @@
-# Kain Portfolio 📚✨
+<h1 >🌟 My Official Portfolio ✨</h1>
 
-## Hi, welcome to my portfolio repository!
+> **Hi, welcome to my portfolio repository!**
 
-![](/public/assets/demo.png)
+<div align='center'>
+<img src='./public/assets/demo.png' alt="portfolio demo image"/>
+</div>
+
+<br/>
 
 This is my portfolio website repository were I describe myself, show my projects and talk about my work. It is available in both portuguese and english, translated with the i18next standards.
 
@@ -10,9 +14,9 @@ I have also integrated my blog into this project in the version 4.0.0, so it can
 
 Feel free to visit my portfolio using the link below:
 
-**My Portfolio:** [https://codenut-dev.vercel.app](https://codenut-dev.vercel.app)
+> **Go Live! at: [https://codenut-dev.vercel.app](https://codenut-dev.vercel.app)**
 
-## Stack
+## 🐾 Project Stack
 
 - [Next.js](https://nextjs.org/) - A React framework with hybrid static & server rendering, and route pre-fetching, etc.
 - [Styled Componets](https://styled-components.com/) - A robust component css-in-js styling library for React and React native.
@@ -20,13 +24,13 @@ Feel free to visit my portfolio using the link below:
 - React Markdown - for rendering blog pages.
 - Feed - for generating rss feeds.
 
-## Project structure
+## 🌳 Project structure
 
 ```
 $PROJECT_ROOT
 │
 ├── public
-└── src     
+└── src
     ├── components
     ├── context
     ├── data
@@ -39,7 +43,7 @@ $PROJECT_ROOT
     └── types
 ```
 
-## Contact
+## ☘️ Find me!
 
 E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an e-mail')\
 Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')  
@@ -47,10 +51,10 @@ My blog: [https://codenut-dev.vercel.app/blog](https://codenut-dev.vercel.app/bl
 
 #### If you like this project, let me know by leaving a star on this repository.
 
-Best regards, Kain Nhantumbo. 😊😘\
-**Made with ❤ Next.JS and Typescript**
+Best regards, Kain Nhantumbo.\
+✌️🇲🇿 **Made with ❤ React + Vite and Typescript**
 
-## License
+## 📜 License
 
 Licensed under Apache 2.0 License. All rights reserved.\
 Copyright &copy; 2023 Kain Nhantumbo.

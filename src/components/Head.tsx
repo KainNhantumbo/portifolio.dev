@@ -4,7 +4,7 @@ import Package from '../../package.json';
 
 type Props = { metadata?: HeadProps };
 
-export default function ({ metadata }: Props) {
+export default function CustomMetadata ({ metadata }: Props) {
   const { url, website_name } = Package;
 
   return (

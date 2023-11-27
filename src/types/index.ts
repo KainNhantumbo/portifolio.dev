@@ -20,6 +20,14 @@ export type FormData = {
   from_email: string;
 };
 
+export type Project = {
+  name: string;
+  category: string;
+  image: StaticImageData;
+  code_url: string;
+  live_url: string;
+};
+
 export type Work = {
   title: string;
   image: StaticImageData;

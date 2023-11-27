@@ -89,7 +89,6 @@ export default function Post({ post }: Props) {
 
             <ReactMarkdown
               className='content'
-              children={post.content}
               components={{
                 code(props) {
                   const { children, className, node, ...rest } = props;
@@ -97,12 +96,12 @@ export default function Post({ post }: Props) {
                   return match ? (
                     <SyntaxHighlighter
                       {...rest}
-                      children={String(children).replace(/\n$/, '')}
                       style={hopscotch}
                       language={match[1]}
                       wrapLongLines={true}
-                      ref={undefined}
-                    />
+                      ref={undefined}>
+                      {String(children).replace(/\n$/, '')}
+                    </SyntaxHighlighter>
                   ) : (
                     <code {...rest} className={className}>
                       {children}
@@ -149,8 +148,9 @@ export default function Post({ post }: Props) {
                     </h6>
                   );
                 }
-              }}
-            />
+              }}>
+              {post.content}
+            </ReactMarkdown>
           </article>
         </div>
       </Container>

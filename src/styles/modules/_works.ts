@@ -17,8 +17,6 @@ export const _works = styled.section`
     padding: 12px;
     user-select: none;
     border-radius: 12px;
-    background: rgb(${({ theme }) => theme.foreground});
-    border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
 
     @media screen and (max-width: 890px) {
       flex-direction: column-reverse;
