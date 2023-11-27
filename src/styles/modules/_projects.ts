@@ -41,7 +41,7 @@ export const _projects = styled.section`
 
     .card {
       width: 280px;
-      height: 360px;
+      height: 400px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;

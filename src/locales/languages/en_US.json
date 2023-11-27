@@ -44,7 +44,7 @@
     "intro-part-2": "github profile",
     "live-demo": "Live Demo",
     "github": "Github Repository",
-    "section_name": "Projects",
+    "section_name": "Good Old Projects",
     "content": {
       "bug-tracker": "Bug Tracker App built with React.JS and Typescript",
       "bug-tracker-server": "Bug Tracker Restfull API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end",
@@ -53,7 +53,7 @@
       "tasks-app": "Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + MongoDB on the Back-end",
       "tasks-app-server": "Server Restfull API for Contacts and Tasks App, made with Javascript, Node.JS, Express.JS and Mongo DB",
       "recipes-website": "Recipes Website made using Typescript, Next.JS and Node.JS + Express.JS + Mongo DB",
-      "hagira-store": "Hagira E-commerce Website made using React.JS and Javascript",
+      "restaurant-demo": "Restaurant Website made using React.JS and Typescript + Tailwindcss",
       "hagira-store-server": "Server Restfull API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB"
     }
   },

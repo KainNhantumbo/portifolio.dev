@@ -44,7 +44,7 @@
     "intro-part-2": "perfil do github",
     "live-demo": "Ver Demostração",
     "github": "Repositório do Github",
-    "section_name": "Projetos",
+    "section_name": "Bons Projetos Passados",
     "content": {
       "bug-tracker": "Aplicação de Rastreamento de Bugs construida com React e Typescript",
       "bug-tracker-server": "API Rest da Aplicação de Rastreamento de Bugs construida com Typescript, Node.JS + Express.JS + MongoDB",
@@ -53,7 +53,7 @@
       "tasks-app": "Aplicação Tarefas e Contatos construida com Javascript, React e Node.JS + Express.JS + MongoDB para servidor",
       "tasks-app-server": "API Rest para Aplicação Tarefas e Contatos, construida com Javascript, Node.JS, Express.JS e Mongo DB para servidor",
       "recipes-website": "Site de Receitas construido com Typescript, Next.JS e Node.JS + Express.JS + Mongo DB",
-      "hagira-store": "Aplicação E-commerce da Hagira construido com React e Javascript",
+      "restaurant-demo": "Site de Restaurante feito com React.JS and Typescript + Tailwindcss",
       "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
     }
   },
