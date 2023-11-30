@@ -91,7 +91,7 @@ export const _works = styled.section`
             color: rgb(${({ theme }) => theme.primary_shade});
           }
 
-          :hover {
+          &:hover {
             text-decoration-line: underline;
             text-underline-offset: 3px;
           }

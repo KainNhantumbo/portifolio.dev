@@ -28,9 +28,10 @@ export default function Header() {
     { label: translation('header.anchors.blog'), ref: '/en/blog' }
   ];
 
-  const blogUrls: NavAnchors[] = [
-    { label: 'Blog', ref: '/en/blog' },
-    { label: 'Portfolio', ref: '/' }
+  const blogUrls: { label: string; ref: string; url: string }[] = [
+    { label: 'Blog', ref: '/en/blog/post', url: '/en/blog' },
+    { label: 'About', ref: 'about', url: '/en/blog/about' },
+    { label: 'Portfolio', ref: '/en', url: '/' }
   ];
 
   const toggleMenu = () => setIsMenu(!isMenu);
@@ -91,13 +92,13 @@ export default function Header() {
               {!isPortfolio
                 ? blogUrls.map((item, index) => (
                     <motion.li
-                      key={index.toString()}
+                      key={index}
                       className={clsx({
-                        active: item.ref.includes('blog')
+                        active: item.url.includes(item.ref)
                       })}
                       whileTap={{ scale: deltaY <= minWidth ? 0.95 : 1 }}
                       whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link href={item.ref} locale={'en'}>
+                      <Link href={item.url} locale={'en'}>
                         <span>{item.label}</span>
                       </Link>
                     </motion.li>

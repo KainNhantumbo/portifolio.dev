@@ -30,7 +30,7 @@ export default class FeedGenerator {
     });
   }
 
-  generate() {
+  generate(): void {
     const posts = getPosts(true);
     const { url, authorName, locale, authorEmail } = SITE_PROPERTIES;
 

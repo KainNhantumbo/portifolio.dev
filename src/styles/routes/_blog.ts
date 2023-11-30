@@ -4,7 +4,7 @@ import { StyledCornerButton } from '../_defaults';
 export const _blog = styled.main`
   width: 100%;
   max-width: 980px;
-  padding: 0 12px;
+  padding: 0 8px;
   padding-top: 75px;
   display: flex;
   flex-direction: column;
@@ -30,9 +30,7 @@ export const _blog = styled.main`
     box-shadow: 0 0 180px 140px rgba(${({ theme }) => theme.primary}, 0.8);
   }
 
-  ::selection {
-    background: rgba(${({ theme }) => theme.primary}, 0.5);
-  }
+
 
   .presentation-container {
     width: 100%;

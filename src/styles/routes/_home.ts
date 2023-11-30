@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const _home = styled.main`
   width: 100%;
-  padding: 0 12px;
+  padding: 0 8px;
   padding-top: 75px;
   display: flex;
   flex-direction: column;
