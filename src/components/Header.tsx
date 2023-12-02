@@ -28,7 +28,7 @@ export default function Header() {
   ];
 
   const blogUrls = [
-    { label: 'Blog', ref: '/en/blog/post', url: '/en/blog' },
+    { label: 'Blog', ref: 'post', url: '/en/blog' },
     { label: 'About', ref: 'about', url: '/en/blog/about' },
     { label: 'Portfolio', ref: '/en', url: '/' }
   ];
@@ -76,7 +76,7 @@ export default function Header() {
                     <motion.li
                       key={index}
                       className={clsx({
-                        active: item.url.includes(item.ref)
+                        active: router.asPath.includes(item.ref)
                       })}
                       whileTap={{
                         scale: scrollRangeValue <= MIN_WIDTH ? 0.95 : 1
