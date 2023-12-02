@@ -4,11 +4,11 @@ import server_01 from '../../public/assets/server-01.png';
 import server_03 from '../../public/assets/server-03.png';
 import nava_notes from '../../public/assets/nava-notes.jpg';
 import planner_app from '../../public/assets/planner-app.jpg';
-import recipes_website from '../../public/assets/recipes-website.png';
 import bug_tracker_app from '../../public/assets/bug-tracker-app.jpeg';
 import url_shortner_app from '../../public/assets/url-shortner-app.jpeg';
 import bug_tracker_server from '../../public/assets/bug-tracker-server.png';
 import firstRestaurantImage from '../../public/assets/restaurant-demo-first.png';
+import barbercutts from '../../public/assets/barbercutts.png';
 
 export function getProjects(): Project[] {
   const categories = {
@@ -47,17 +47,17 @@ export function getProjects(): Project[] {
       code_url: 'https://github.com/KainNhantumbo/Planner-App'
     },
     {
-      name: translation('projects.content.recipes-website'),
-      category: categories.full,
-      image: recipes_website,
-      live_url: '',
-      code_url: 'https://github.com/KainNhantumbo/food-and-recipes-website'
+      name: translation('projects.content.barber-shop-website'),
+      category: categories.front,
+      image: barbercutts,
+      live_url: 'https://barbercutts-demo.vercel.app',
+      code_url: 'https://github.com/KainNhantumbo/barber-shop-website'
     },
     {
       name: translation('projects.content.restaurant-demo'),
       category: categories.front,
       image: firstRestaurantImage,
-      live_url: 'imeat-restaurant-demo.vercel.app',
+      live_url: 'https://imeat-restaurant-demo.vercel.app',
       code_url: 'https://github.com/KainNhantumbo/restaurant-sample-website'
     },
     {

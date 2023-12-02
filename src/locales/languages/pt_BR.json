@@ -52,8 +52,8 @@
       "notes-app": "Aplicação Notas construida com React + Styled-Components + Sass",
       "tasks-app": "Aplicação Tarefas e Contatos construida com Javascript, React e Node.JS + Express.JS + MongoDB para servidor",
       "tasks-app-server": "API Rest para Aplicação Tarefas e Contatos, construida com Javascript, Node.JS, Express.JS e Mongo DB para servidor",
-      "recipes-website": "Site de Receitas construido com Typescript, Next.JS e Node.JS + Express.JS + Mongo DB",
-      "restaurant-demo": "Site de Restaurante feito com React.JS and Typescript + Tailwindcss",
+      "barber-shop-website": "Site de Loja de Barbearia construido com Typescript, React.JS e Tailwindcss",
+      "restaurant-demo": "Site de Restaurante feito com React.JS e Typescript + Tailwindcss",
       "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
     }
   },

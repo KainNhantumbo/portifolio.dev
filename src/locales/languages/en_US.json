@@ -52,7 +52,7 @@
       "notes-app": "Notes App made with React.JS + Styled-Components + Sass",
       "tasks-app": "Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + MongoDB on the Back-end",
       "tasks-app-server": "Server Restfull API for Contacts and Tasks App, made with Javascript, Node.JS, Express.JS and Mongo DB",
-      "recipes-website": "Recipes Website made using Typescript, Next.JS and Node.JS + Express.JS + Mongo DB",
+      "barber-shop-website": "Barber Shop  Website made using Typescript, React.JS and Tailwindcss",
       "restaurant-demo": "Restaurant Website made using React.JS and Typescript + Tailwindcss",
       "hagira-store-server": "Server Restfull API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB"
     }
