@@ -1,10 +1,9 @@
 ---
-topic: 'Front-end Development'
+topic: 'Front-end'
 createdAt: '2023-11-27'
 title: 'Use SERVE Package to Serve Locally Your Front-end Applications'
 excerpt: 'Vercel has a pretty useful package called serve, that can be very handy to test and preview your local applications build'
 ---
-
 
 In this small post, I will talk about a little NPM Package I use to preview builds before deploying my apps.
 

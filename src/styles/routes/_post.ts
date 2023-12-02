@@ -140,12 +140,15 @@ export const _post = styled.main`
         padding: 0 12px;
         background: rgb(${({ theme }) => theme.black});
         border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
+        font-family: 'Space Grotesk';
       }
 
       h4 {
         line-height: 1.6rem;
         font-weight: 500;
         margin: 12px auto;
+        font-family: 'Space Grotesk';
+        font-size: 1.05rem;
         max-width: 1000px;
       }
     }

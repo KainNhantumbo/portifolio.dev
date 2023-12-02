@@ -30,8 +30,6 @@ export const _blog = styled.main`
     box-shadow: 0 0 180px 140px rgba(${({ theme }) => theme.primary}, 0.8);
   }
 
-
-
   .presentation-container {
     width: 100%;
     padding: 0 12px;
@@ -107,6 +105,7 @@ export const _blog = styled.main`
             padding: 0 12px;
             background: rgb(${({ theme }) => theme.black});
             border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
+            font-family: 'Space Grotesk';
           }
 
           h4 {

@@ -4,11 +4,38 @@
         <title>Codenut.dev Feed</title>
         <link>https://codenut-dev.vercel.app</link>
         <description>Kain's Blog and Portfolio Website</description>
-        <lastBuildDate>Sat, 02 Dec 2023 18:05:41 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 02 Dec 2023 20:22:50 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Kain's Blog and Portfolio Website</generator>
         <language>en</language>
         <copyright>Copyright © 2023 Codenut.dev - All rights reserved.</copyright>
+        <item>
+            <title><![CDATA[Use SERVE Package to Serve Locally Your Front-end Applications]]></title>
+            <link>https://codenut-dev.vercel.app/blog/post/use-serve-package-to-serve-locally-your-react-apps</link>
+            <guid>https://codenut-dev.vercel.app/blog/post/use-serve-package-to-serve-locally-your-react-apps</guid>
+            <pubDate>Mon, 27 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Vercel has a pretty useful package called serve, that can be very handy to test and preview your local applications build</p>
+]]></description>
+            <content:encoded><![CDATA[<p>In this small post, I will talk about a little NPM Package I use to preview builds before deploying my apps.</p>
+<p>Without much, let&#39;s quick dive into this...</p>
+<p>Some times you are trying out a new application with some HTML and you realize that to run your app, you need to have a server. With this package you don&#39;t have to always to get into the process of setting a simple HTTP server to able to run your application.</p>
+<p>Now if you are only going to work with HTML files and don’t really have to connect to a database then this is a quick and easy solution rather than setting up a web server using various tools.</p>
+<p><code>serve</code> is a NPM package that converts our current working directory into an virtual directory i.e. the directory is hosted under localhost.</p>
+<p>Assuming Node is pre-installed on your local machine, you can open the terminal and install <code>serve</code> globally:</p>
+<pre><code class="language-bash">npm install --global serve
+</code></pre>
+<p>You can now navigate to the directory were your application files are located and hit <code>serve .</code> on your terminal. Thats it now your local directory is being hosted on localhost.</p>
+<p>The default port is <code>3000</code> but you can specify the port using the below command:</p>
+<pre><code class="language-bash">serve .  -p [port_number]
+</code></pre>
+<p>Now, open your browser and type localhost:[port_number] to access your hosted application.</p>
+<p>Don&#39;t forget too refer to the official documentation or type <code>serve -h</code> to show the available command options.</p>
+<p>You can find the <code>serve</code> package on NPM <a href="https://www.npmjs.com/package/serve">here</a>.</p>
+<p>Thanks for reading!</p>
+]]></content:encoded>
+            <author>nhantumbok@gmail.com (Kain Nhantumbo)</author>
+            <category>Front-end</category>
+        </item>
         <item>
             <title><![CDATA[Schema Validation with Zod and Express.js]]></title>
             <link>https://codenut-dev.vercel.app/blog/post/schema-validation-with-zod-and-expressjs</link>
@@ -227,7 +254,7 @@ app.listen(8080, () =&gt; console.log(`&gt; Ready on http://localhost:${8080}`))
             <link>https://codenut-dev.vercel.app/blog/post/combine-styled-components-with-css-modules-to-unleash-power</link>
             <guid>https://codenut-dev.vercel.app/blog/post/combine-styled-components-with-css-modules-to-unleash-power</guid>
             <pubDate>Sat, 07 Oct 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p>Styled components and CSS modules in offer powerful features for managing and scaling CSS in modern web applications so  you can create a robust and maintainable CSS architecture that is both flexible and efficient. Get ready to learn more about them togheter.</p>
+            <description><![CDATA[<p>Styled components and CSS modules offer powerful features for managing and scaling CSS in modern web applications so  you can create a robust and maintainable CSS architecture that is both flexible and efficient. Get ready to learn more about them togheter.</p>
 ]]></description>
             <content:encoded><![CDATA[<p>I am pretty confident that styled components and CSS modules are two powerful tools for managing and scaling CSS in modern web applications, since I have been using them in my personal projects. In this follow-up, we will explore some advanced techniques and best practices for using styled components and CSS modules to create a robust and maintainable CSS architecture.</p>
 <p>Let&#39;s dive in already.</p>
@@ -302,6 +329,35 @@ const CustomButton = (props) =&gt; (
 ]]></content:encoded>
             <author>nhantumbok@gmail.com (Kain Nhantumbo)</author>
             <category>Styling</category>
+        </item>
+        <item>
+            <title><![CDATA[Get the Most Out of Your React Apps by Learning These Performance Techniques]]></title>
+            <link>https://codenut-dev.vercel.app/blog/post/get-the-most-out-of-your-react-apps-by-learning-these-performance-techniques</link>
+            <guid>https://codenut-dev.vercel.app/blog/post/get-the-most-out-of-your-react-apps-by-learning-these-performance-techniques</guid>
+            <pubDate>Fri, 30 Jun 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Take your skills to the next level and optimize your React applications by using these performance tips</p>
+]]></description>
+            <content:encoded><![CDATA[<p>In this article, I’ll share with you some performance tips that will supercharge your React development. Now get ready to optimize and make your apps blazing-fast. Okay, let’s dive in!</p>
+<p><strong>1. Use Functional Components and React Hooks.</strong><br>We all know functional components with React Hooks offer better performance compared to the old class components.</p>
+<p>They are lighter and don’t carry the overhead of managing instance properties, avoiding unnecessary re-renders and boost your app’s performance.</p>
+<p><strong>2. Use <code>useMemo</code> to Memoize Expensive Computations in your Components.</strong><br>If you have expensive computations or complex data manipulation in your components, you can optimize them with the <code>useMemo</code> hook.</p>
+<p>It memoizes the result of the computation, preventing unnecessary re-calculations.</p>
+<p>With this hook, you ensure that the expensive computation is only performed when the dependencies change.</p>
+<p><strong>3. Optimize your CSS and Layout Render Performance.</strong><br>Consider using CSS-in-JS libraries like styled-components or emotion that generate optimized CSS.</p>
+<p>Minimize the use of inline styles and prefer external stylesheets for better caching and performance.</p>
+<p>Also, be aware of any undesired re-renders caused by frequently changing styles.</p>
+<p><strong>4. Use <em>Code Splitting</em> and <em>Lazy Loading</em>.</strong><br>Leverage code splitting and lazy loading to load only the necessary code when it’s needed, reducing the initial bundle size and improving loading speed.</p>
+<p><code>React</code> provides the <code>React.lazy</code> function for dynamically loading your components. In the end, your app loads faster, improving the overall performance.</p>
+<p><strong>5. Optimize Re-rendering with <code>React.memo</code>.</strong><br>Use <code>React.memo</code> to memoize functional components and prevent unnecessary re-renders. The component will only re-render if its props change, preventing unnecessary updates.</p>
+<p><strong>6. Use Profile Tools and Analyze Performance.</strong><br>Make a good use and take advantage by using performance profiling tools like <strong>React DevTools Profiler</strong> or <strong>Chrome DevTools</strong> Performance tab to identify performance bottlenecks.</p>
+<p>Analyze render times, component lifecycles and expensive operations to optimize your application performance.</p>
+<blockquote>
+<p>That&#39;s it for now, I hope you use these performance tips to level up your next React projects and help you build high-performing, responsive, lightning-fast and user-friendly applications.</p>
+</blockquote>
+<p>Thanks for readind and... Happy coding!</p>
+]]></content:encoded>
+            <author>nhantumbok@gmail.com (Kain Nhantumbo)</author>
+            <category>Front-end</category>
         </item>
         <item>
             <title><![CDATA[Optimize SEO in your Next.js Applications]]></title>

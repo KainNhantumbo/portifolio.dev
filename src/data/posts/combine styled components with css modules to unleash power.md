@@ -2,7 +2,7 @@
 topic: 'Styling'
 createdAt: '2023-10-07'
 title: 'Combine Styled Components with CSS Modules to Unleash Power'
-excerpt: 'Styled components and CSS modules in offer powerful features for managing and scaling CSS in modern web applications so  you can create a robust and maintainable CSS architecture that is both flexible and efficient. Get ready to learn more about them togheter.'
+excerpt: 'Styled components and CSS modules offer powerful features for managing and scaling CSS in modern web applications so  you can create a robust and maintainable CSS architecture that is both flexible and efficient. Get ready to learn more about them togheter.'
 ---
 
 I am pretty confident that styled components and CSS modules are two powerful tools for managing and scaling CSS in modern web applications, since I have been using them in my personal projects. In this follow-up, we will explore some advanced techniques and best practices for using styled components and CSS modules to create a robust and maintainable CSS architecture.
