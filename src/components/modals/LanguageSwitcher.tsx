@@ -1,3 +1,4 @@
+<<<<<<< HEAD:components/modals/LanguageSwitcher.tsx
 import actions from '@/shared/actions';
 import { useTranslation } from '@/providers/translation';
 import { useAppContext } from '@/context/AppContext';
@@ -5,6 +6,15 @@ import { motion, AnimatePresence } from '@/providers/framer';
 import { _languageSwitcher as Container } from '@/styles/modules/_language-switcher';
 import { useRouter } from 'next/navigation';
 import { XIcon } from 'lucide-react';
+=======
+import actions from '../../shared/actions';
+import { RiCloseLine } from 'react-icons/ri';
+import { useTranslation } from 'react-i18next';
+import { useAppContext } from '../../context/AppContext';
+import { m as motion, AnimatePresence } from 'framer-motion';
+import { _languageSwitcher as Container } from '../../styles/modules/_language-switcher';
+import { useRouter } from 'next/router';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/modals/LanguageSwitcher.tsx
 
 export default function LanguageSwitcher() {
   const { state, dispatch } = useAppContext();
@@ -74,7 +84,7 @@ export default function LanguageSwitcher() {
                     payload: { ...state, isLanguagesModal: false }
                   })
                 }>
-                <XIcon />
+                <RiCloseLine />
               </motion.button>
             </div>
           </motion.section>

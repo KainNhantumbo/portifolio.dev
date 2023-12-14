@@ -4,14 +4,19 @@ import { formatDate } from '@/lib/time';
 import ReactMarkdown from 'react-markdown';
 import { motion } from '@/providers/framer';
 import { buildShareUrls } from '@/lib/share';
+import { RiCircleFill } from 'react-icons/ri';
 import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';
 import { getPaths, getPost } from '@/lib/processor';
 import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import TableOfContents, { transformChild } from '@/components/TableOfContents';
+<<<<<<< HEAD:pages/blog/post/[slug].tsx
 import { AUTHOR } from '@/shared/constants';
 import { DotIcon } from 'lucide-react';
+=======
+import { AUTHOR } from '@/lib/constants';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/pages/blog/post/[slug].tsx
 
 type Props = { post: Post };
 
@@ -25,6 +30,7 @@ export default function Post({ post }: Props) {
   const readTime = readingTime(post.content, undefined, 'en');
 
   return (
+<<<<<<< HEAD:pages/blog/post/[slug].tsx
     <Container className='wrapper'>
       <div className='main-container'>
         <article>
@@ -41,6 +47,56 @@ export default function Post({ post }: Props) {
               <div>
                 <span>{AUTHOR.name}</span>
                 <span className='description'>{AUTHOR.description}</span>
+=======
+    <Layout metadata={{ title: 'Kain Portfolio' }}>
+      <Container className='wrapper'>
+        <div className='main-container'>
+          <article>
+            <section className={'meta-container'}>
+              <h5>PUBLISHED: {formatDate(post.createdAt)}</h5>
+              <section className='author'>
+                <Image
+                  width={580}
+                  height={580}
+                  priority={false}
+                  src={AUTHOR.picture}
+                  alt='Article author picture'
+                />
+                <div>
+                  <span>{AUTHOR.name}</span>
+                  <span className='description'>{AUTHOR.description}</span>
+                </div>
+              </section>
+              <section className='share-options'>
+                <div className='title'>Share:</div>
+                <div className='options'>
+                  {anchors.map((option) => (
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.8 }}
+                      href={option.url}
+                      title={option.name}
+                      target={'_blank'}
+                      rel={'noreferrer noopener'}
+                      key={option.name}>
+                      <option.icon />
+                    </motion.a>
+                  ))}
+                </div>
+              </section>
+              <div className='read-time'>
+                <span>
+                  <i>Read:</i> {readTime.minutes < 2 ? 'minute' : 'minutes'}
+                </span>
+                <RiCircleFill />
+                <span>
+                  <i>Words:</i> {readTime.words}
+                </span>
+                <RiCircleFill />
+                <span>
+                  <i>Characters:</i> {post.content.length}
+                </span>
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/pages/blog/post/[slug].tsx
               </div>
             </section>
             <section className='share-options'>

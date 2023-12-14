@@ -1,3 +1,4 @@
+<<<<<<< HEAD:components/Header.tsx
 'use client';
 
 import donutImage from '@/public/assets/path36.png';
@@ -10,6 +11,18 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useTranslation } from '@/providers/translation';
 import { useHeaderView } from '../hooks/useHeaderView';
 import { _header as Container } from '../styles/modules/_header';
+=======
+import clsx from 'clsx';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
+import donutImage from '../../public/assets/path36.png';
+import { RiMenuLine, RiCloseLine } from 'react-icons/ri';
+import { m as motion, AnimatePresence } from 'framer-motion';
+import { _header as Container } from '../styles/modules/_header';
+import { useHeaderView } from '@/hooks/useHeaderView';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/Header.tsx
 
 type NavAnchors = { ref: string; label: string };
 
@@ -49,7 +62,7 @@ export default function Header() {
           </h2>
         </div>
         <motion.button whileTap={{ scale: 0.8 }} onClick={handleToggleMenu}>
-          {isHeaderInView ? <XIcon /> : <Settings2Icon />}
+          {isHeaderInView ? <RiCloseLine /> : <RiMenuLine />}
         </motion.button>
         <nav className='navbar' role='main'>
           <AnimatePresence>

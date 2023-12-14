@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import type { Post } from '@/types';
 import { readFileSync, readdirSync } from 'node:fs';
 
-const postsDir = join(process.cwd(), '/data/posts');
+const postsDir = join(process.cwd(), '/src/data/posts');
 
 export function getPost(slug: string): Post {
   const file = readFileSync(join(postsDir, `${slug.replaceAll('-', ' ')}.md`));

@@ -4,15 +4,15 @@ import { getPosts } from '@/lib/processor';
 import { _blog as Container } from '@/styles/routes/_blog';
 import { formatDate } from '@/lib/time';
 import FeedGenerator from '@/lib/feed';
+import { FaRss } from 'react-icons/fa';
 import { useRouter } from 'next/router';
-import { RssIcon } from 'lucide-react';
 
 type Props = { posts: Post[] };
-const dfg = 'fgdfg';
 
 export default function Blog({ posts }: Props) {
   const { locale } = useRouter();
   return (
+<<<<<<< HEAD:pages/blog/index.tsx
     <Container>
       <section className='presentation-container'>
         <h1>
@@ -21,6 +21,17 @@ export default function Blog({ posts }: Props) {
             <RssIcon />
           </a>
         </h1>
+=======
+    <Layout metadata={{ title: 'Codenut.dev - Blog' }}>
+      <Container>
+        <section className='presentation-container'>
+          <h1>
+            Codenut<i>.dev</i> Blog
+            <a href='/rss/feed.en.xml' target='_blank' title='RSS Feed'>
+              <FaRss />
+            </a>
+          </h1>
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/pages/blog/index.tsx
 
         <div>
           <h3>👋 Hello, Welcome to Kain's Universe!</h3>

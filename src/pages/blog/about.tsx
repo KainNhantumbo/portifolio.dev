@@ -1,6 +1,19 @@
+<<<<<<< HEAD:pages/blog/about.tsx
 'use client';
+=======
+import {
+  RiCss3Fill,
+  RiGithubFill,
+  RiJavascriptLine,
+  RiMailLine,
+  RiMarkdownLine,
+  RiPlanetLine,
+  RiReactjsLine
+} from 'react-icons/ri';
+import Layout from '@/components/Layout';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/pages/blog/about.tsx
 import { _about as Container } from '@/styles/routes/_about';
-import { Code2Icon, ExternalLinkIcon, GithubIcon, Mail } from 'lucide-react';
+import { SiNextdotjs, SiNodedotjs, SiTypescript } from 'react-icons/si';
 import Link from 'next/link';
 
 export default function About() {
@@ -64,15 +77,46 @@ export default function About() {
               <span>https://codenut-dev.vercel.app</span>
             </Link>
           </section>
+<<<<<<< HEAD:pages/blog/about.tsx
           <section className='techs-container'>
             <p>
               <strong>Technologies used to build this website:</strong>
             </p>
             <div>
+=======
+          <section className='complements-container'>
+            <section className='anchors-container'>
+              <Link
+                href={'mailto:nhantumbok@gmail.com'}
+                rel='noopener noreferrer'
+                target='_blank'>
+                <RiMailLine />
+                <span>nhantumbok@gmail.com</span>
+              </Link>
+
+              <Link
+                href={'https://github.com/KainNhantumbo'}
+                rel='noopener noreferrer'
+                target='_blank'>
+                <RiGithubFill />
+                <span>https://github.com/KainNhantumbo</span>
+              </Link>
+
+              <Link
+                href={'https://codenut-dev.vercel.app'}
+                rel='noopener noreferrer'
+                target='_blank'>
+                <RiPlanetLine />
+                <span>https://codenut-dev.vercel.app</span>
+              </Link>
+            </section>
+            <section className='techs-container'>
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/pages/blog/about.tsx
               <p>
                 <Code2Icon />
                 <span>React.JS</span>
               </p>
+<<<<<<< HEAD:pages/blog/about.tsx
               <p>
                 <Code2Icon />
                 <span>Next.JS</span>
@@ -102,6 +146,43 @@ export default function About() {
                 <span>Node.JS</span>
               </p>
             </div>
+=======
+              <div>
+                <p>
+                  <RiReactjsLine />
+                  <span>React.JS</span>
+                </p>
+                <p>
+                  <SiNextdotjs />
+                  <span>Next.JS</span>
+                </p>
+                <p>
+                  <RiReactjsLine />
+                  <span>React.JS</span>
+                </p>
+                <p>
+                  <RiMarkdownLine />
+                  <span>Markdown</span>
+                </p>
+                <p>
+                  <RiCss3Fill />
+                  <span>CSS 3</span>
+                </p>
+                <p>
+                  <RiJavascriptLine />
+                  <span>Javascript</span>
+                </p>
+                <p>
+                  <SiTypescript />
+                  <span>Typescript</span>
+                </p>
+                <p>
+                  <SiNodedotjs />
+                  <span>Node.JS</span>
+                </p>
+              </div>
+            </section>
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/pages/blog/about.tsx
           </section>
         </section>
       </article>

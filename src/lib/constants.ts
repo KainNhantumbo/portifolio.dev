@@ -1,4 +1,4 @@
-import Package from '../package.json';
+import Package from '../../package.json';
 
 export const constants = {
   authorName: Package.author.name,

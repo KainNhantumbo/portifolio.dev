@@ -1,4 +1,4 @@
-import { LucideIcon } from 'lucide-react';
+import { IconType } from 'react-icons';
 import { StaticImageData } from 'next/image';
 import { ChangeEvent, FormEvent } from 'react';
 
@@ -40,8 +40,8 @@ export type Work = {
 
 export type Stack = {
   title: string;
-  icon: LucideIcon;
-  data: Array<{ tech: string; icon: LucideIcon }>;
+  icon: IconType;
+  data: Array<{ tech: string; icon: IconType }>;
 };
 
 export type Theme = {

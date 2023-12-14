@@ -1,8 +1,14 @@
+<<<<<<< HEAD:components/Works.tsx
 import Image from 'next/image';
 import { getWorks } from '../data/works';
 import { useTranslation } from '@/providers/translation';
+=======
+import Image from 'next/image'
+import { getWorks } from '@/data/works';
+import { useTranslation } from 'react-i18next';
+import { RiGithubLine, RiLiveLine } from 'react-icons/ri';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/Works.tsx
 import { _works as Container } from '../styles/modules/_works';
-import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
 
 export default function Works() {
   const { t: translation } = useTranslation();
@@ -37,24 +43,19 @@ export default function Works() {
                 href={item.livePreview.url}
                 rel='noopener noreferrer'
                 target='_blank'>
-                <ExternalLinkIcon />
+                <RiLiveLine />
                 <span>{item.livePreview.label}</span>
               </a>
               <a
                 href={item.repository.url}
                 rel='noopener noreferrer'
                 target='_blank'>
-                <GithubIcon />
+                <RiGithubLine />
                 <span>{item.repository.label}</span>
               </a>
             </div>
           </div>
-          <Image
-            width={500}
-            height={undefined}
-            src={item.image}
-            alt={item.title}
-          />
+          <Image width={500} height={undefined} src={item.image} alt={item.title} />
         </div>
       ))}
     </Container>

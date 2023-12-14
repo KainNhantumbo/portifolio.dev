@@ -1,14 +1,27 @@
 import {
-  BadgeCheckIcon,
-  BookMarkedIcon,
-  Code2Icon,
-  FolderGit2Icon,
-  GithubIcon,
-  PenToolIcon
-} from 'lucide-react';
+  SiCss3,
+  SiExpress,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiMarkdown,
+  SiMongodb,
+  SiNodedotjs,
+  SiPostgresql,
+  SiReact,
+  SiTypescript
+} from 'react-icons/si';
 import { Stack } from '../types';
+<<<<<<< HEAD:components/Abilities.tsx
 import { motion } from '@/providers/framer';
 import { useTranslation } from '@/providers/translation';
+=======
+import { FaReact } from 'react-icons/fa';
+import { m as motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/Abilities.tsx
 import { _abilities as Container } from '../styles/modules/_abilities';
 
 export default function Abilities() {
@@ -17,35 +30,35 @@ export default function Abilities() {
   const data: Array<Stack> = [
     {
       title: translation('abilities.frontend-title'),
-      icon: BadgeCheckIcon,
+      icon: HiBadgeCheck,
       data: [
-        { tech: 'Typescript', icon: Code2Icon },
-        { tech: 'Javascript', icon: Code2Icon },
-        { tech: 'React', icon: Code2Icon },
-        { tech: 'Next.JS', icon: Code2Icon },
-        { tech: 'SASS & CSS', icon: Code2Icon },
-        { tech: 'HTML5', icon: Code2Icon }
+        { tech: 'Typescript', icon: SiTypescript },
+        { tech: 'Javascript', icon: SiJavascript },
+        { tech: 'React', icon: FaReact },
+        { tech: 'Next.JS', icon: SiReact },
+        { tech: 'SASS & CSS', icon: SiCss3 },
+        { tech: 'HTML5', icon: SiHtml5 }
       ]
     },
     {
       title: translation('abilities.backend-title'),
-      icon: BadgeCheckIcon,
+      icon: HiBadgeCheck,
       data: [
-        { tech: 'Typescript', icon: Code2Icon },
-        { tech: 'Javascript', icon: Code2Icon },
-        { tech: 'Node.JS', icon: Code2Icon },
-        { tech: 'Express.JS', icon: Code2Icon },
-        { tech: 'Mongo DB', icon: Code2Icon },
-        { tech: 'PostgreSQL', icon: Code2Icon }
+        { tech: 'Typescript', icon: SiTypescript },
+        { tech: 'Javascript', icon: SiJavascript },
+        { tech: 'Node.JS', icon: SiNodedotjs },
+        { tech: 'Express.JS', icon: SiExpress },
+        { tech: 'Mongo DB', icon: SiMongodb },
+        { tech: 'PostgreSQL', icon: SiPostgresql }
       ]
     },
     {
       title: translation('abilities.tools-title'),
-      icon: BadgeCheckIcon,
+      icon: HiBadgeCheck,
       data: [
-        { tech: 'Git', icon: FolderGit2Icon },
-        { tech: 'Markdown', icon: BookMarkedIcon },
-        { tech: 'Github', icon: GithubIcon }
+        { tech: 'Git', icon: SiGit },
+        { tech: 'Markdown', icon: SiMarkdown },
+        { tech: 'Github', icon: SiGithub }
       ]
     }
   ];
@@ -53,7 +66,7 @@ export default function Abilities() {
   return (
     <Container id='skills'>
       <h2>
-        <PenToolIcon />
+        <HiAcademicCap />
         <span>{translation('abilities.title')}</span>
       </h2>
 

@@ -1,7 +1,13 @@
+<<<<<<< HEAD:components/Introduction.tsx
 import { motion } from '@/providers/framer';
 import { useTranslation } from '@/providers/translation';
+=======
+import { m as motion } from 'framer-motion';
+import { HiSparkles } from 'react-icons/hi';
+import { useTranslation } from 'react-i18next';
+import { RiGithubLine, RiLinkedinFill } from 'react-icons/ri';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/Introduction.tsx
 import { _introduction as Container } from '../styles/modules/_introduction';
-import { GithubIcon, LinkedinIcon, StarsIcon } from 'lucide-react';
 
 export default function Introduction() {
   const { t: translation } = useTranslation();
@@ -9,12 +15,12 @@ export default function Introduction() {
   const socialAnchors = [
     {
       name: translation('footer.anchors.github'),
-      icon: GithubIcon,
+      icon: RiGithubLine,
       link: 'https://github.com/KainNhantumbo'
     },
     {
       name: translation('footer.anchors.linkedIn'),
-      icon: LinkedinIcon,
+      icon: RiLinkedinFill,
       link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US'
     }
   ];
@@ -36,7 +42,7 @@ export default function Introduction() {
           animate={{ scale: 1 }}
           transition={{ delay: 0.5 }}
           className='placeholder'>
-          <StarsIcon />
+          <HiSparkles />
           <span>{translation('intro.welcome-message')}</span>
         </motion.h3>
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD:components/Footer.tsx
 'use client';
 
 import {
@@ -15,9 +16,22 @@ import { usePathname } from 'next/navigation';
 import { motion } from '@/providers/framer';
 import donutsImage from '@/../public/assets/donuts.png';
 import { useTranslation } from '@/providers/translation';
+=======
+import Image from 'next/image';
+import { FaRss } from 'react-icons/fa';
+import { useRouter } from 'next/router';
+import Package from '../../package.json';
+import { m as motion } from 'framer-motion';
+import type { IconType } from 'react-icons';
+import { GiCoffeeMug } from 'react-icons/gi';
+import { RiTwitterXLine } from 'react-icons/ri';
+import { useTranslation } from 'react-i18next';
+import { ImBlog, ImLinkedin2, ImGithub } from 'react-icons/im';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/Footer.tsx
 import { _footer as Container } from '../styles/modules/_footer';
+import donutsImage from '@/../public/assets/donuts.png';
 
-type Anchors = { name: string; icon: LucideIcon; link: string };
+type Anchors = { name: string; icon: IconType; link: string };
 
 export default function Footer() {
   const { t: translation } = useTranslation();
@@ -29,12 +43,12 @@ export default function Footer() {
     : [
         {
           name: translation('footer.anchors.coffee'),
-          icon: CoffeeIcon,
+          icon: GiCoffeeMug,
           link: 'https://www.buymeacoffee.com/nhantumbokU'
         },
         {
           name: 'RSS Feed',
-          icon: RssIcon,
+          icon: FaRss,
           link: '/rss/feed.en.xml'
         }
       ];
@@ -42,22 +56,22 @@ export default function Footer() {
   const socialMediaAnchors: Anchors[] = [
     {
       name: translation('footer.anchors.github'),
-      icon: GithubIcon,
+      icon: ImGithub,
       link: 'https://github.com/KainNhantumbo'
     },
     {
       name: translation('footer.anchors.twitter'),
-      icon: TwitterIcon,
+      icon: RiTwitterXLine,
       link: 'https://twitter.com/ubelloch'
     },
     {
       name: translation('footer.anchors.linkedIn'),
-      icon: LinkedinIcon,
+      icon: ImLinkedin2,
       link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US'
     },
     {
       name: translation('footer.anchors.blog'),
-      icon: BookTextIcon,
+      icon: ImBlog,
       link: '/en/blog'
     },
     ...aditionalFooterUrls

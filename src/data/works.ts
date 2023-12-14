@@ -1,6 +1,6 @@
 import type { Work } from '@/types';
-import { rawTranslation as translation } from '../locales/init';
-import choconoteyLightImage from '@/../public/assets/notes-demo-light.png';
+import { rawTranslation as translation } from '@/locales/init';
+import choconoteyLightImage from '@/../public/assets/notes-demo-light.png'
 
 export function getWorks(): Work[] {
   return [

@@ -1,9 +1,16 @@
 import Image from 'next/image';
+<<<<<<< HEAD:components/About.tsx
 import { motion } from '@/providers/framer';
 import { useTranslation } from '@/providers/translation';
 import { AUTHOR } from '../shared/constants';
+=======
+import { m as motion } from 'framer-motion';
+import { SiAboutdotme } from 'react-icons/si';
+import { useTranslation } from 'react-i18next';
+import { HiCode, HiViewGrid } from 'react-icons/hi';
+import { AUTHOR } from '@/lib/constants';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/About.tsx
 import { _about as Container } from '../styles/modules/_about';
-import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
 
 export default function About() {
   const { t: translation } = useTranslation();
@@ -11,7 +18,7 @@ export default function About() {
   return (
     <Container id='about'>
       <h2>
-        <UserIcon />
+        <SiAboutdotme />
         <span>{translation('about.title')}</span>
       </h2>
       <section className='experiences'>
@@ -50,7 +57,7 @@ export default function About() {
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0.4, rotate: 360 }}
           whileInView={{ rotate: 0, opacity: 1 }}>
-          <Code2Icon />
+          <HiCode />
           <h4>{translation('about.experience-title')}</h4>
           <span>{translation('about.experience-content')}</span>
         </motion.div>
@@ -60,7 +67,7 @@ export default function About() {
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0.4, rotate: 360 }}
           whileInView={{ rotate: 0, opacity: 1 }}>
-          <SquareStackIcon />
+          <HiViewGrid />
           <h4>{translation('about.projects-title')}</h4>
           <span>{translation('about.projects-content')}</span>
         </motion.div>

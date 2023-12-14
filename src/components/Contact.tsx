@@ -1,3 +1,4 @@
+<<<<<<< HEAD:components/Contact.tsx
 'use client';
 
 import {
@@ -10,6 +11,19 @@ import {
 import { useState } from 'react';
 import { motion } from '@/providers/framer';
 import { useTranslation } from '@/providers/translation';
+=======
+import {
+  BsAt,
+  BsChatSquareText,
+  BsFillPersonFill,
+  BsMailbox2,
+  BsTextLeft
+} from 'react-icons/bs';
+import { useState } from 'react';
+import { m as motion } from 'framer-motion';
+import { FaEnvelope } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/Contact.tsx
 import { send as sender } from '@emailjs/browser';
 import { InputEvents, SubmitEvent, FormData } from '../types';
 import { _contact as Container } from '../styles/modules/_contact';
@@ -62,7 +76,7 @@ export default function Contact() {
   return (
     <Container id='contact'>
       <h2>
-        <MessageSquareDashed />
+        <FaEnvelope />
         <span>{translation('contact.title')}</span>
       </h2>
       <section className='intro-container'>
@@ -87,7 +101,7 @@ export default function Contact() {
       </section>
       <section className='options'>
         <div className='option'>
-          <MailboxIcon />
+          <BsMailbox2 />
           <span> {translation('contact.mail')}</span>
         </div>
       </section>
@@ -101,7 +115,7 @@ export default function Contact() {
           <section className='form-control'>
             <div className='form-item'>
               <label htmlFor='name'>
-                <UserIcon />
+                <BsFillPersonFill />
                 <span>{translation('contact.form.name-label')}</span>
               </label>
               <input
@@ -116,7 +130,7 @@ export default function Contact() {
             </div>
             <div className='form-item'>
               <label htmlFor='email'>
-                <AtSignIcon />
+                <BsAt />
                 <span>{translation('contact.form.mail-label')}</span>
               </label>
               <input
@@ -131,7 +145,7 @@ export default function Contact() {
             </div>
           </section>
           <label htmlFor='subject'>
-            <TextIcon />
+            <BsTextLeft />
             <span>{translation('contact.form.subject-label')}</span>
           </label>
           <input
@@ -144,7 +158,7 @@ export default function Contact() {
             onChange={(e) => formDataPicker(e)}
           />
           <label htmlFor='message'>
-            <MessageSquareDashed />
+            <BsChatSquareText />
             <span>{translation('contact.form.message-label')}</span>
           </label>
           <textarea

@@ -1,10 +1,17 @@
 import Works from './Works';
 import Image from 'next/image';
+<<<<<<< HEAD:components/Projects.tsx
 import { motion } from '@/providers/framer';
 import { getProjects } from '../data/projects';
 import { useTranslation } from '@/providers/translation';
+=======
+import { FaGithub } from 'react-icons/fa';
+import { m as motion } from 'framer-motion';
+import { getProjects } from '@/data/projects';
+import { useTranslation } from 'react-i18next';
+import { HiPlay, HiViewGrid } from 'react-icons/hi';
+>>>>>>> parent of 06d8e11 (refactor: removed react-icons. Moved source from /src to /(root)):src/components/Projects.tsx
 import { _projects as Container } from '../styles/modules/_projects';
-import { ExternalLinkIcon, GithubIcon, SquareStackIcon } from 'lucide-react';
 
 export default function Projects() {
   const projects = getProjects();
@@ -13,7 +20,7 @@ export default function Projects() {
   return (
     <Container id='projects'>
       <h2>
-        <SquareStackIcon />
+        <HiViewGrid />
         <span>{translation('projects.title')}</span>
       </h2>
       <p>
@@ -63,7 +70,7 @@ export default function Projects() {
                       href={project.live_url}
                       target={'_blank'}
                       rel={'noreferrer noopener'}>
-                      <ExternalLinkIcon />
+                      <HiPlay />
                       <span>{translation('projects.live-demo')}</span>
                     </motion.a>
                   ) : null}
@@ -73,7 +80,7 @@ export default function Projects() {
                     href={project.code_url}
                     target={'_blank'}
                     rel={'noreferrer noopener'}>
-                    <GithubIcon />
+                    <FaGithub />
                     <span>{translation('projects.github')}</span>
                   </motion.a>
                 </div>
