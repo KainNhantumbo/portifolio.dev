@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, FC } from 'react';
 import { m as motion, useInView, useAnimation } from 'framer-motion';
 

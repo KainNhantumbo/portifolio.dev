@@ -1,21 +1,24 @@
-import clsx from 'clsx';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'react-i18next';
+'use client';
+
 import donutImage from '@/public/assets/path36.png';
-import { m as motion, AnimatePresence } from 'framer-motion';
-import { _header as Container } from '../styles/modules/_header';
-import { useHeaderView } from '../hooks/useHeaderView';
+import clsx from 'clsx';
+import { motion, AnimatePresence } from '@/providers/framer';
 import { Settings2Icon, XIcon } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { useTranslation } from '@/providers/translation';
+import { useHeaderView } from '../hooks/useHeaderView';
+import { _header as Container } from '../styles/modules/_header';
 
 type NavAnchors = { ref: string; label: string };
 
 export default function Header() {
   const MIN_WIDTH = 640;
+  const pathname = usePathname();
   const router = useRouter();
   const { t: translation } = useTranslation();
-  const isPortfolio = router.asPath.includes('blog') === false;
+  const isPortfolio = pathname.includes('blog') === false;
   const { isHeaderInView, scrollRangeValue, handleToggleMenu } =
     useHeaderView(MIN_WIDTH);
 
@@ -59,7 +62,7 @@ export default function Header() {
                     <motion.li
                       key={index.toString()}
                       className={clsx({
-                        active: router.asPath.includes(item.ref)
+                        active: pathname.includes(item.ref)
                       })}
                       whileTap={{
                         scale: scrollRangeValue <= MIN_WIDTH ? 0.95 : 1
@@ -76,7 +79,7 @@ export default function Header() {
                     <motion.li
                       key={index}
                       className={clsx({
-                        active: router.asPath.includes(item.ref)
+                        active: pathname.includes(item.ref)
                       })}
                       whileTap={{
                         scale: scrollRangeValue <= MIN_WIDTH ? 0.95 : 1

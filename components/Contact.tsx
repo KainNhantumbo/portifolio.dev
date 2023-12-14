@@ -1,9 +1,5 @@
-import { useState } from 'react';
-import { m as motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { send as sender } from '@emailjs/browser';
-import { InputEvents, SubmitEvent, FormData } from '../types';
-import { _contact as Container } from '../styles/modules/_contact';
+'use client';
+
 import {
   AtSignIcon,
   MailboxIcon,
@@ -11,6 +7,12 @@ import {
   TextIcon,
   UserIcon
 } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from '@/providers/framer';
+import { useTranslation } from '@/providers/translation';
+import { send as sender } from '@emailjs/browser';
+import { InputEvents, SubmitEvent, FormData } from '../types';
+import { _contact as Container } from '../styles/modules/_contact';
 
 export default function Contact() {
   const { t: translation } = useTranslation();

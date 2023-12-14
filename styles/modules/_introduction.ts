@@ -1,6 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+'use client';
 
-
+import styled from 'styled-components';
 
 export const _introduction = styled.section`
   width: 100%;

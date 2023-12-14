@@ -1,3 +1,4 @@
+'use client';
 import styled from 'styled-components';
 
 export const _works = styled.section`
@@ -34,7 +35,7 @@ export const _works = styled.section`
         }
       }
     }
-   
+
     .content-container {
       width: 100%;
       display: flex;
@@ -107,6 +108,5 @@ export const _works = styled.section`
       max-width: 500px;
       border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
     }
-
   }
 `;

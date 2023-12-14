@@ -7,8 +7,8 @@ import {
   PenToolIcon
 } from 'lucide-react';
 import { Stack } from '../types';
-import { m as motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { motion } from '@/providers/framer';
+import { useTranslation } from '@/providers/translation';
 import { _abilities as Container } from '../styles/modules/_abilities';
 
 export default function Abilities() {

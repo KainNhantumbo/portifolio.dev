@@ -1,3 +1,4 @@
+'use client';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
@@ -20,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
   
   body {
     width: 100%;
-    font-family: Inter, 'Open Sans', Roboto, Poppins, 'PT Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', "inter", 'Open Sans', Roboto, Poppins, 'PT Sans', sans-serif;
     color: rgb(${({ theme }) => theme.font});
     background: rgb(${({ theme }) => theme.background});
     position: relative;

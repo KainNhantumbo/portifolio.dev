@@ -1,6 +1,6 @@
 import { Feed } from 'feed';
 import { marked } from 'marked';
-import { SITE_PROPERTIES } from './constants';
+import { constants } from '../shared/constants';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { getPosts } from './processor';
 
@@ -9,7 +9,7 @@ export default class FeedGenerator {
 
   constructor() {
     const { url, title, authorName, authorEmail, locale, description } =
-      SITE_PROPERTIES;
+      constants;
 
     this.feed = new Feed({
       title: `${title} Feed`,
@@ -32,7 +32,7 @@ export default class FeedGenerator {
 
   generate(): void {
     const posts = getPosts(true);
-    const { url, authorName, locale, authorEmail } = SITE_PROPERTIES;
+    const { url, authorName, locale, authorEmail } = constants;
 
     for (const post of posts) {
       this.feed.addItem({

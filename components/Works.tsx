@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { getWorks } from '../data/works';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/providers/translation';
 import { _works as Container } from '../styles/modules/_works';
 import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
 

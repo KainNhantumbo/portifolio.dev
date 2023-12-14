@@ -1,16 +1,18 @@
-import { AnimatePresence, m as motion } from 'framer-motion';
-import { useRouter } from 'next/router';
+'use client';
+
+import { motion, AnimatePresence } from '@/providers/framer';
+import { usePathname } from 'next/navigation';
 import { ReactNode } from 'react';
 
 type Props = { children: ReactNode };
 
 export default function AnimatePageTransition({ children }: Props) {
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <AnimatePresence>
       <motion.div
-        key={router.route}
+        key={pathname}
         initial={'initialState'}
         animate={'animateState'}
         exit={'exitState'}

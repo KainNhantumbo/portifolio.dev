@@ -1,8 +1,8 @@
 import Works from './Works';
 import Image from 'next/image';
-import { m as motion } from 'framer-motion';
+import { motion } from '@/providers/framer';
 import { getProjects } from '../data/projects';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/providers/translation';
 import { _projects as Container } from '../styles/modules/_projects';
 import { ExternalLinkIcon, GithubIcon, SquareStackIcon } from 'lucide-react';
 

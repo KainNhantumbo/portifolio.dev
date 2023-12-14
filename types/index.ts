@@ -65,12 +65,6 @@ export type ColorScheme = {
   scheme: 'dark' | 'light';
 };
 
-export type HeadProps = {
-  title?: string;
-  createdAt?: string;
-  updatedAt?: string;
-};
-
 export type Action = { type: string; payload: State };
 
 export type State = {

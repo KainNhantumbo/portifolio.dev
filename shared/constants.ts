@@ -1,6 +1,6 @@
 import Package from '../package.json';
 
-export const SITE_PROPERTIES = {
+export const constants = {
   authorName: Package.author.name,
   authorEmail: Package.author.email,
   url: Package.url,

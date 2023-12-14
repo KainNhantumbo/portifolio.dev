@@ -1,5 +1,5 @@
-import donutsImage from '@/../public/assets/donuts.png';
-import { m as motion } from 'framer-motion';
+'use client';
+
 import {
   BookTextIcon,
   CoffeeIcon,
@@ -10,16 +10,19 @@ import {
   TwitterIcon
 } from 'lucide-react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'react-i18next';
-import Package from '../package.json';
+import Package from '@/package.json';
+import { usePathname } from 'next/navigation';
+import { motion } from '@/providers/framer';
+import donutsImage from '@/../public/assets/donuts.png';
+import { useTranslation } from '@/providers/translation';
 import { _footer as Container } from '../styles/modules/_footer';
 
 type Anchors = { name: string; icon: LucideIcon; link: string };
 
 export default function Footer() {
   const { t: translation } = useTranslation();
-  const isPortfolio = useRouter().asPath.includes('blog') ? false : true;
+  const pathname = usePathname();
+  const isPortfolio = pathname?.includes('blog') ? false : true;
 
   const aditionalFooterUrls = isPortfolio
     ? []

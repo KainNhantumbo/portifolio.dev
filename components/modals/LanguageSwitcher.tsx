@@ -1,9 +1,9 @@
 import actions from '@/shared/actions';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/providers/translation';
 import { useAppContext } from '@/context/AppContext';
-import { m as motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/providers/framer';
 import { _languageSwitcher as Container } from '@/styles/modules/_language-switcher';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { XIcon } from 'lucide-react';
 
 export default function LanguageSwitcher() {
@@ -11,9 +11,9 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const { t: translation, i18n } = useTranslation();
 
-  const translate = (language: 'pt' | 'en') => {
-    router.push(`/`, undefined, { locale: language });
-    i18n.changeLanguage(language);
+  const translate = (lang: 'pt' | 'en') => {
+    router.push(`/${lang}`);
+    i18n.changeLanguage(lang);
 
     dispatch({
       type: actions.LANGUAGES_MODAL,

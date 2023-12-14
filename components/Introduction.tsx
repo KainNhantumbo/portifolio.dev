@@ -1,5 +1,5 @@
-import { m as motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { motion } from '@/providers/framer';
+import { useTranslation } from '@/providers/translation';
 import { _introduction as Container } from '../styles/modules/_introduction';
 import { GithubIcon, LinkedinIcon, StarsIcon } from 'lucide-react';
 
@@ -24,7 +24,9 @@ export default function Introduction() {
       <div className='styled-intro-container'>
         <h3>{translation('intro.presentation')}</h3>
         <div className='title-container '>
-          <motion.h1 initial={{x: -300}} whileInView={{x: 0}}>{translation('intro.title')}</motion.h1>
+          <motion.h1 initial={{ x: -300 }} whileInView={{ x: 0 }}>
+            {translation('intro.title')}
+          </motion.h1>
         </div>
       </div>
 
@@ -59,7 +61,7 @@ export default function Introduction() {
       <motion.p
         initial={{ scale: 0, y: -120, opacity: 0 }}
         whileInView={{ scale: 1, y: 0, opacity: 1 }}>
-        <motion.i >{translation('intro.message-part-1')}</motion.i>
+        <motion.i>{translation('intro.message-part-1')}</motion.i>
         <br />
         {translation('intro.message-part-2')}
       </motion.p>

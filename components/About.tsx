@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { m as motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { AUTHOR } from '../lib/constants';
+import { motion } from '@/providers/framer';
+import { useTranslation } from '@/providers/translation';
+import { AUTHOR } from '../shared/constants';
 import { _about as Container } from '../styles/modules/_about';
 import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
 

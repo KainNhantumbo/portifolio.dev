@@ -1,3 +1,4 @@
+'use client';
 
 import {
   createContext,
@@ -6,15 +7,16 @@ import {
   useState,
   useEffect,
   Dispatch,
-  useReducer
+  useReducer,
+  useMemo
 } from 'react';
 import { Theme, ColorScheme, State, Action } from '../types';
 import { GlobalStyles } from '../styles/_global-styles';
 import { ThemeProvider } from 'styled-components';
 import { dark_default, light_default } from '../styles/themes';
 import { initialState, reducer } from '../shared/reducer';
-import { useTranslation } from 'react-i18next';
-import { useRouter } from 'next/router';
+import { useTranslation } from '@/providers/translation';
+import { useRouter } from 'next/navigation';
 
 type Props = { children: ReactNode };
 
@@ -52,7 +54,7 @@ export default function AppContext({ children }: Props) {
       behavior: 'smooth'
     });
 
-  const translate = () => i18n.changeLanguage(router.locale);
+  const translate = useMemo(() => () => i18n.changeLanguage('en'), [i18n]);
 
   const setDarkColorScheme = ({ mode, scheme }: ColorScheme): void => {
     setCurrentTheme(dark_default);
@@ -107,7 +109,8 @@ export default function AppContext({ children }: Props) {
     );
     setColorScheme(colorScheme);
     translate();
-  }, []);
+    console.log('Translation trigger')
+  }, [translate]);
 
   useEffect((): void => {
     if (colorScheme.scheme === 'dark') {

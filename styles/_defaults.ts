@@ -1,3 +1,4 @@
+'use client';
 import { css } from 'styled-components';
 
 export const BaseButtonOutline = css`
@@ -127,4 +128,3 @@ export const StyledInputs = css`
     resize: vertical;
   }
 `;
-

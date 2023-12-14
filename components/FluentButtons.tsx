@@ -1,3 +1,5 @@
+'use client';
+
 import {
   ArrowUpIcon,
   LanguagesIcon,
@@ -5,14 +7,14 @@ import {
   SunMediumIcon
 } from 'lucide-react';
 import { _fluentButtons as Container } from '../styles/modules/_fluent-buttons';
-import { m as motion } from 'framer-motion';
-import { useRouter } from 'next/router';
+import { motion } from '@/providers/framer';
+import { usePathname } from 'next/navigation';
 import { useAppContext } from '../context/AppContext';
 import actions from '../shared/actions';
 
 export default function FluentButtons() {
-  const router = useRouter();
-  const isPortfolio = router.asPath.includes('blog') === false;
+  const pathname = usePathname();
+  const isPortfolio = pathname?.includes('blog') === false;
   const { state, dispatch, slidePageUp, colorScheme, changeColorScheme } =
     useAppContext();
 
