@@ -18,7 +18,7 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const { t: translation } = useTranslation();
-  const isPortfolio = pathname.includes('blog') === false;
+  const isPortfolio = pathname?.includes('blog') === false;
   const { isHeaderInView, scrollRangeValue, handleToggleMenu } =
     useHeaderView(MIN_WIDTH);
 
@@ -79,7 +79,7 @@ export default function Header() {
                     <motion.li
                       key={index}
                       className={clsx({
-                        active: pathname.includes(item.ref)
+                        active: pathname?.includes(item.ref)
                       })}
                       whileTap={{
                         scale: scrollRangeValue <= MIN_WIDTH ? 0.95 : 1

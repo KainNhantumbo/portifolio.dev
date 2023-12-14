@@ -18,6 +18,7 @@ import { constants, AUTHOR } from '@/shared/constants';
 import AnimatePageTransition from '@/components/AnimatePageTransition';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer';
 import StyledComponentsRegistry from '@/lib/registry';
+import { ThemeProvider } from '@/providers/theme-provider';
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
@@ -66,20 +67,22 @@ export default function RootLayout({ children }: Props) {
           zillaSlab.className,
           jakarta.className
         )}>
-        <MotionConfig reducedMotion='user'>
-          <LazyMotion strict={true} features={domAnimation}>
-            <AnimatePageTransition>
-              <StyledComponentsRegistry>
-                <AppContext>
-                  <Header />
-                  <FluentButtons />
-                  {children}
-                  <Footer />
-                </AppContext>
-              </StyledComponentsRegistry>
-            </AnimatePageTransition>
-          </LazyMotion>
-        </MotionConfig>
+        <ThemeProvider attribute='class' enableSystem={true}>
+          <MotionConfig reducedMotion='user'>
+            <LazyMotion strict={true} features={domAnimation}>
+              <AnimatePageTransition>
+                <StyledComponentsRegistry>
+                  <AppContext>
+                    <Header />
+                    <FluentButtons />
+                    {children}
+                    <Footer />
+                  </AppContext>
+                </StyledComponentsRegistry>
+              </AnimatePageTransition>
+            </LazyMotion>
+          </MotionConfig>
+        </ThemeProvider>
       </body>
     </html>
   );

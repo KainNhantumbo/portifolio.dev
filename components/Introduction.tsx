@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from '@/providers/framer';
 import { useTranslation } from '@/providers/translation';
 import { _introduction as Container } from '../styles/modules/_introduction';

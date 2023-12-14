@@ -62,7 +62,7 @@ export const _header = styled.header`
       color: rgb(${({ theme }) => theme.font});
     }
 
-    :hover {
+    &:hover {
       svg {
         color: rgb(${({ theme }) => theme.primary_shade});
       }
@@ -126,7 +126,7 @@ export const _header = styled.header`
           padding: 10px;
         }
 
-        :hover {
+        &:hover {
           color: rgb(${({ theme }) => theme.primary_shade});
           cursor: pointer;
         }
@@ -137,7 +137,7 @@ export const _header = styled.header`
           border: 1px solid rgba(${({ theme }) => theme.font}, 0.1);
           border-radius: 5px;
         }
-        ::after {
+        &::after {
           content: '';
           width: 20px;
           height: 5px;
@@ -153,8 +153,8 @@ export const _header = styled.header`
             left: -3px;
           }
         }
-        :hover {
-          ::after {
+        &:hover {
+          &::after {
             background: rgb(${({ theme }) => theme.primary});
           }
         }
