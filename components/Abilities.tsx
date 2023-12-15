@@ -53,16 +53,18 @@ export default function Abilities() {
   ];
 
   return (
-    <Container id='skills'>
-      <h2>
+    <Container
+      id='skills'
+      className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
+      <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] sm:after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
         <PenToolIcon />
         <span>{translation('title')}</span>
       </h2>
 
       {data.map((group, index) => (
-        <section key={index} className='stack-container'>
+        <section key={index} className='stack-container base-border font-sans'>
           <h3 className='sub-title'>
-            <group.icon />
+            <group.icon className='stroke-secondary' />
             <span>{group.title}</span>
           </h3>
           <section className='list-items'>
@@ -79,7 +81,7 @@ export default function Abilities() {
                   scale: [1.1, 1, 1.18, 1.09, 1]
                 }}
                 className='item'>
-                <item.icon />
+                <item.icon className='stroke-primary' />
                 <h3>{item.tech}</h3>
               </motion.div>
             ))}

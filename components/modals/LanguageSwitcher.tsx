@@ -33,7 +33,7 @@ export default function LanguageSwitcher() {
             })
           }>
           <motion.section
-            className='dialog-modal'
+            className='dialog-modal base-border rounded-xl backdrop-blur-md bg-background/50 font-sans '
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +44,7 @@ export default function LanguageSwitcher() {
             }}>
             <div className='dialog-prompt'>
               <div className='prompt-info'>
-                <span className='prompt-title'>
+                <span className='prompt-title font-sans-display'>
                   {translation('title')}
                 </span>
                 <p className='prompt-message'>

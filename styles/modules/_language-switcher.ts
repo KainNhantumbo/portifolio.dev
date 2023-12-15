@@ -32,10 +32,7 @@ export const _languageSwitcher = styled.section`
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    border-radius: 10px;
-    background: rgb(${({ theme }) => theme.foreground});
-    border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
-    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
+    
     max-width: 600px;
     margin: 0 10px;
     position: relative;

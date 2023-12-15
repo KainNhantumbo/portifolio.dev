@@ -2,14 +2,6 @@
 import styled from 'styled-components';
 
 export const _about = styled.section`
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  gap: 10px;
-  border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
-  padding-top: 20px;
 
   .experiences {
     text-align: center;

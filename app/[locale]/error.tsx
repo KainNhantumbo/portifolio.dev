@@ -1,8 +1,7 @@
 'use client';
 
-import Package from '../../package.json';
 import { useEffect } from 'react';
-import { _errorPage as Container } from '../../styles/_error-page';
+import { constants } from '@/shared/constants';
 
 type Props = {
   error: Error & { digest?: string };
@@ -15,18 +14,23 @@ export default function Error({ error, reset }: Props) {
   }, [error]);
 
   return (
-    <Container>
+    <main className='w-full h-[100vh] grid place-content-center place-items-center'>
       <section className='logo-container'>
-        <div className='logo'>
-          <span>{Package.website_name}</span>
+        <div className='font-sans-display text-3xl'>
+          <span>{constants.title}</span>
         </div>
       </section>
-      <section className='content-container'>
-        <h1>500</h1>
-        <h2>Ooops! That's an error: internal server error...</h2>
-        <p>Sorry, but looks like something wrong happened on the server.</p>
-        <button onClick={reset}>Retry</button>
+      <section className='flex flex-col items-center gap-5'>
+        <h1 className='font-sans-display font-bold text-error text-center text-6xl leading-tight'>
+          Something went wrong!
+        </h1>
+
+        <button
+          className='rounded-3xl font-medium font-sans border-solid border-[2px] border-font mt-5 p-3 px-5 hover:border-primary hover:text-primary transition-colors '
+          onClick={reset}>
+          Try again
+        </button>
       </section>
-    </Container>
+    </main>
   );
 }

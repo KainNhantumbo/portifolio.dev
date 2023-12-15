@@ -10,14 +10,6 @@ export const _projects = styled.section`
   border-top: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
   padding-top: 20px;
 
-  p {
-    max-width: 700px;
-    margin-bottom: 10px;
-    text-align: center;
-    a {
-      color: rgb(${({ theme }) => theme.primary_shade});
-    }
-  }
 
   .headings {
     font-weight: 600;

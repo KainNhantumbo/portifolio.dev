@@ -13,23 +13,9 @@ export const _blog = styled.main`
   gap: 30px;
   line-height: 1.6rem;
   margin-bottom: 50px;
-  background: rgba(${({ theme }) => theme.background}, 0.5);
-  backdrop-filter: blur(5px);
   z-index: 1;
-  position: relative;
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    right: 50%;
-    top: 20px;
-    border-radius: 50%;
-    z-index: -999;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 180px 140px rgba(${({ theme }) => theme.primary}, 0.8);
-  }
+
 
   .presentation-container {
     width: 100%;
@@ -98,14 +84,7 @@ export const _blog = styled.main`
           align-items: center;
 
           h3 {
-            all: unset;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border-radius: 30px;
-            color: rgb(${({ theme }) => theme.white});
-            padding: 0 12px;
-            background: rgb(${({ theme }) => theme.black});
-            border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
+
             font-family: 'Space Grotesk';
           }
 

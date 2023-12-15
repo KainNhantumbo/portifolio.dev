@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const _header = styled.header`
   width: 100%;
+  
 
   .main-container {
     width: 100%;
@@ -19,12 +20,6 @@ export const _header = styled.header`
     align-items: center;
     gap: 5px;
     z-index: 5000;
-
-    border-radius: 12px;
-    border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-    background: rgba(${({ theme }) => theme.background}, 0.5);
-    box-shadow: 0 0 25px rgba(${({ theme }) => theme.black}, 0.1);
-    backdrop-filter: blur(5px);
 
     @media screen and (max-width: 640px) {
       flex-direction: column;
@@ -132,33 +127,6 @@ export const _header = styled.header`
         }
       }
 
-      .active {
-        @media screen and (max-width: 640px) {
-          border: 1px solid rgba(${({ theme }) => theme.font}, 0.1);
-          border-radius: 5px;
-        }
-        &::after {
-          content: '';
-          width: 20px;
-          height: 5px;
-          background: rgb(${({ theme }) => theme.secondary});
-          position: absolute;
-          bottom: -5px;
-          left: calc(50% - 10px);
-          border-radius: 5px;
-          @media screen and (max-width: 640px) {
-            width: 5px;
-            height: 20px;
-            bottom: calc(50% - 10px);
-            left: -3px;
-          }
-        }
-        &:hover {
-          &::after {
-            background: rgb(${({ theme }) => theme.primary});
-          }
-        }
-      }
     }
   }
 `;

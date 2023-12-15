@@ -63,7 +63,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
   if (!locales.includes(locale)) notFound();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <StyledComponentsRegistry>
         <body
           className={clsx(

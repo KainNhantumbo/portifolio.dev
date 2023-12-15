@@ -1,8 +1,7 @@
 import Image from 'next/image';
-import type { Post } from '@/types';
 import { formatDate } from '@/lib/time';
 import ReactMarkdown from 'react-markdown';
-import { motion } from '@/providers/framer-provider';
+// import { motion } from '@/providers/framer-provider';
 import { buildShareUrls } from '@/lib/share';
 import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';
@@ -13,9 +12,16 @@ import TableOfContents, { transformChild } from '@/components/TableOfContents';
 import { AUTHOR } from '@/shared/constants';
 import { DotIcon } from 'lucide-react';
 
-type Props = { post: Post };
+type Props = { params: { slug: string } };
 
-export default function Post({ post }: Props) {
+export async function generateStaticPaths() {
+  const paths = getPaths();
+  return { paths, fallback: false };
+}
+
+export default function Page({ params: { slug } }: Props) {
+  const post = getPost(slug);
+
   const anchors = buildShareUrls({
     title: post.title,
     excerpt: post.excerpt,
@@ -28,7 +34,7 @@ export default function Post({ post }: Props) {
     <Container className='wrapper'>
       <div className='main-container'>
         <article>
-          <section className={'meta-container'}>
+          <section className={'meta-container font-sans'}>
             <h5>PUBLISHED: {formatDate(post.createdAt)}</h5>
             <section className='author'>
               <Image
@@ -46,7 +52,7 @@ export default function Post({ post }: Props) {
             <section className='share-options'>
               <div className='title'>Share:</div>
               <div className='options'>
-                {anchors.map((option) => (
+                {/* {anchors.map((option) => (
                   <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.8 }}
@@ -57,12 +63,12 @@ export default function Post({ post }: Props) {
                     key={option.name}>
                     <option.icon />
                   </motion.a>
-                ))}
+                ))} */}
               </div>
             </section>
             <div className='read-time'>
               <span>
-                <i>Read:</i> {readTime.minutes < 2 ? 'minute' : 'minutes'}
+                <i>Read:</i> {readTime.minutes < 1 ? 'Less than a minute' : `${readTime.minutes} minutes`}
               </span>
               <DotIcon />
               <span>
@@ -76,7 +82,7 @@ export default function Post({ post }: Props) {
             <h1>
               <strong>{post.title}</strong>
             </h1>
-            <div className='topic'>
+            <div className='topic bg-foreground'>
               <p>{post.topic}</p>
             </div>
 
@@ -89,7 +95,7 @@ export default function Post({ post }: Props) {
             className='content'
             components={{
               code(props) {
-                const { children, className, node, ...rest } = props;
+                const { children, className, ...rest } = props;
                 const match = /language-(\w+)/.exec(className || '');
                 return match ? (
                   <SyntaxHighlighter
@@ -107,7 +113,7 @@ export default function Post({ post }: Props) {
                 );
               },
               h2(props) {
-                const { id, children, ...rest } = props;
+                const { children, ...rest } = props;
                 return (
                   <h2 {...rest} id={transformChild(String(children))}>
                     {children}
@@ -115,7 +121,7 @@ export default function Post({ post }: Props) {
                 );
               },
               h3(props) {
-                const { id, children, ...rest } = props;
+                const { children, ...rest } = props;
                 return (
                   <h2 {...rest} id={transformChild(String(children))}>
                     {children}
@@ -123,7 +129,7 @@ export default function Post({ post }: Props) {
                 );
               },
               h4(props) {
-                const { id, children, ...rest } = props;
+                const { children, ...rest } = props;
                 return (
                   <h4 {...rest} id={transformChild(String(children))}>
                     {children}
@@ -131,7 +137,7 @@ export default function Post({ post }: Props) {
                 );
               },
               h5(props) {
-                const { id, children, ...rest } = props;
+                const { children, ...rest } = props;
                 return (
                   <h5 {...rest} id={transformChild(String(children))}>
                     {children}
@@ -139,7 +145,7 @@ export default function Post({ post }: Props) {
                 );
               },
               h6(props) {
-                const { id, children, ...rest } = props;
+                const { children, ...rest } = props;
                 return (
                   <h6 {...rest} id={transformChild(String(children))}>
                     {children}
@@ -153,14 +159,4 @@ export default function Post({ post }: Props) {
       </div>
     </Container>
   );
-}
-
-export async function getStaticPaths() {
-  const paths = getPaths();
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps(context: any) {
-  const post = getPost(context.params.slug);
-  return { props: { post } };
 }

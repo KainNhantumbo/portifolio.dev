@@ -64,13 +64,12 @@ export default function Footer() {
   ];
 
   return (
-    <Container>
-      <h3>
-        <strong>{translation('title')}</strong>
-      </h3>
+    <Container className='font-sans'>
+      <h3>{translation('title')}</h3>
       <ul>
         {socialMediaAnchors.map((item, index) => (
           <motion.li
+            className='bg-primary/[.15] backdrop-blur-md'
             key={index}
             initial={{ scale: 0 }}
             whileHover={{ scale: 1.2 }}
@@ -80,7 +79,7 @@ export default function Footer() {
             }}
             title={item.name}>
             <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
-              <item.icon />
+              <item.icon className='stroke-primary' />
             </a>
           </motion.li>
         ))}

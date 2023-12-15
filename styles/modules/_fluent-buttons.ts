@@ -22,32 +22,7 @@ export const _fluentButtons = styled.section`
     left: 90vw;
   }
 
-  button {
-    width: 32px;
-    height: 32px;
-    margin-top: 8px;
-    border: none;
-    display: grid;
-    border: 1px solid rgba(${({ theme }) => theme.font}, 0.1);
-    background: rgba(${({ theme }) => theme.primary}, 0.3);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    place-content: center;
-    position: relative;
-    outline: none;
-    cursor: pointer;
-
-    svg {
-      width: 24px;
-      height: 24px;
-      color: rgb(${({ theme }) => theme.primary_shade});
-
-      :hover {
-        transition: all 200ms ease-in-out;
-        color: rgb(${({ theme }) => theme.secondary});
-      }
-    }
-  }
+  
 
   span {
     padding: 0;

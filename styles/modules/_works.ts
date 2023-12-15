@@ -81,22 +81,7 @@ export const _works = styled.section`
         align-items: center;
         gap: 12px;
         margin-top: 12px;
-        a {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 5px;
-          color: #1a8eff;
-
-          svg {
-            color: rgb(${({ theme }) => theme.primary_shade});
-          }
-
-          &:hover {
-            text-decoration-line: underline;
-            text-underline-offset: 3px;
-          }
-        }
+        
       }
     }
 

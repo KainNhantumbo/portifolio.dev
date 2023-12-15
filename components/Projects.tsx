@@ -13,30 +13,35 @@ export default function Projects() {
   const translation = useI18n();
 
   return (
-    <Container id='projects'>
-      <h2>
+    <Container
+      id='projects'
+      className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
+      <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] sm:after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
         <SquareStackIcon />
         <span>{translation('projects.title')}</span>
       </h2>
-      <p>
-        <strong>
-          {translation('projects.intro-part-1')}{' '}
-          <a
-            href='https://github.com/KainNhantumbo'
-            target={'_blank'}
-            rel={'noreferrer noopener'}>
-            {' '}
-            {translation('projects.intro-part-2')}
-          </a>
-          .
-        </strong>
+      <p className='font-sans font-sm max-w-md text-center font-semibold'>
+        {translation('projects.intro-part-1')}{' '}
+        <a
+          href='https://github.com/KainNhantumbo'
+          target={'_blank'}
+          rel={'noreferrer noopener'}
+          className='text-primary'>
+          {' '}
+          {translation('projects.intro-part-2')}
+        </a>
+        .
       </p>
 
-      <h3 className='headings'>{translation('works.section_name')}</h3>
+      <h3 className='font-semibold font-sans text-xl underline underline-offset-4 decoration-dashed '>
+        {translation('works.section_name')}
+      </h3>
 
       <Works />
 
-      <h3 className='headings'>{translation('projects.section_name')}</h3>
+      <h3 className='font-semibold font-sans text-xl underline underline-offset-4 decoration-dashed'>
+        {translation('projects.section_name')}
+      </h3>
 
       <section className='cards-container'>
         <section className='cards-wrapper'>

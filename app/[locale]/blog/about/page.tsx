@@ -1,13 +1,14 @@
 'use client';
+
 import { _about as Container } from '@/styles/routes/_about';
 import { Code2Icon, ExternalLinkIcon, GithubIcon, Mail } from 'lucide-react';
 import Link from 'next/link';
 
-export default function About() {
+export default function Page() {
   return (
-    <Container>
-      <article>
-        <h1>About me</h1>
+    <Container className='px-2 border-t-font/10  mb-12 w-full max-w-[780px] flex flex-col gap-3 mx-auto mt-10 p-5 z-50 font-sans relative backdrop-blur-sm bg-background/50 after:absolute after:w-[1px] after:h-[1px] after:right-[50%] after:top-0 after:rounded-full after:-z-50 after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
+      <article className='mt-10 w-full flex flex-col gap-5'>
+        <h1 className='font-medium'>About me</h1>
         <section className='description-container'>
           <p>
             Hi, I am Kain. I'm a developer and freelancer who likes to spent
@@ -43,62 +44,69 @@ export default function About() {
             <Link
               href={'mailto:nhantumbok@gmail.com'}
               rel='noopener noreferrer'
-              target='_blank'>
-              <Mail />
-              <span>nhantumbok@gmail.com</span>
+              target='_blank'
+              className='base-border rounded-md hover:underline hover:underline-offset-8 hover:text-primary hover:decoration-dashed'>
+              <Mail className='stroke-primary h-auto w-5' />
+              <span className='text-primary'>nhantumbok@gmail.com</span>
             </Link>
 
             <Link
               href={'https://github.com/KainNhantumbo'}
               rel='noopener noreferrer'
-              target='_blank'>
-              <GithubIcon />
-              <span>https://github.com/KainNhantumbo</span>
+              target='_blank'
+              className='base-border rounded-md hover:underline hover:underline-offset-8 hover:text-primary hover:decoration-dashed'>
+              <GithubIcon className='stroke-primary h-auto w-5' />
+              <span className='text-primary'>
+                https://github.com/KainNhantumbo
+              </span>
             </Link>
 
             <Link
               href={'https://codenut-dev.vercel.app'}
               rel='noopener noreferrer'
-              target='_blank'>
-              <ExternalLinkIcon />
-              <span>https://codenut-dev.vercel.app</span>
+              target='_blank'
+              className='base-border rounded-md hover:underline hover:underline-offset-8 hover:text-primary hover:decoration-dashed'>
+              <ExternalLinkIcon className='stroke-primary h-auto w-5' />
+              <span className='text-primary'>
+                https://codenut-dev.vercel.app
+              </span>
             </Link>
           </section>
           <section className='techs-container'>
             <p>
               <strong>Technologies used to build this website:</strong>
             </p>
-            <div>
-              <p>
-                <Code2Icon />
+            <div className='group'>
+              <p className='base-border rounded-md'>
+                <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>React.JS</span>
               </p>
-              <p>
-                <Code2Icon />
+              <p className='base-border rounded-md'>
+                <Code2Icon className='stroke-primary h-auto w-5' />
                 <span>Next.JS</span>
               </p>
-              <p>
-                <Code2Icon />
+              <p className='base-border rounded-md'>
+                <Code2Icon className='stroke-primary h-auto w-5' />
                 <span>React.JS</span>
               </p>
-              <p>
-                <Code2Icon />
+              <p className='base-border rounded-md'>
+                <Code2Icon className='stroke-primary h-auto w-5' />
                 <span>Markdown</span>
               </p>
-              <p>
-                <Code2Icon />
+              <p className='base-border rounded-md'>
+                <Code2Icon className='stroke-primary h-auto w-5' />
                 <span>CSS 3</span>
               </p>
-              <p>
-                <Code2Icon />
+              <p className='base-border rounded-md'>
+                <Code2Icon className='stroke-primary h-auto w-5' />
                 <span>Javascript</span>
               </p>
-              <p>
-                <Code2Icon />
+              <p className='base-border rounded-md'>
+                <Code2Icon className='stroke-primary h-auto w-5' />
                 <span>Typescript</span>
               </p>
-              <p>
-                <Code2Icon />
+              <p className='base-border rounded-md'>
+                <Code2Icon className='stroke-primary h-auto w-5' />
                 <span>Node.JS</span>
               </p>
             </div>
