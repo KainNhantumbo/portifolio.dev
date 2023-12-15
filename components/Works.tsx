@@ -1,12 +1,14 @@
+'use client';
+
 import Image from 'next/image';
-import { getWorks } from '../data/works';
-import { useTranslation } from '@/providers/translation';
+import { useWorks } from '../hooks/useWorks';
 import { _works as Container } from '../styles/modules/_works';
 import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
+import { useScopedI18n } from '@/locales/client';
 
 export default function Works() {
-  const { t: translation } = useTranslation();
-  const data = getWorks();
+  const translation = useScopedI18n('works');
+  const data = useWorks();
 
   return (
     <Container>
@@ -20,13 +22,13 @@ export default function Works() {
               ))}
             </div>
             <div className='platforms-container'>
-              <h4>{translation('works.platform')}: </h4>
+              <h4>{translation('platform')}: </h4>
               {item.platforms.map((platform, index) => (
                 <span key={index}>{platform}</span>
               ))}
             </div>
             <div className='stack-container'>
-              <h4>{translation('works.stack')}: </h4>
+              <h4>{translation('stack')}: </h4>
               {item.stack.map((platform, index) => (
                 <span key={index}>{platform}</span>
               ))}

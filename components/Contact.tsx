@@ -8,14 +8,14 @@ import {
   UserIcon
 } from 'lucide-react';
 import { useState } from 'react';
-import { motion } from '@/providers/framer';
-import { useTranslation } from '@/providers/translation';
+import { motion } from '@/providers/framer-provider';
 import { send as sender } from '@emailjs/browser';
 import { InputEvents, SubmitEvent, FormData } from '../types';
 import { _contact as Container } from '../styles/modules/_contact';
+import { useScopedI18n } from '@/locales/client';
 
 export default function Contact() {
-  const { t: translation } = useTranslation();
+  const translation = useScopedI18n('contact');
   const [messageStatus, setMessageStatus] = useState('');
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -43,7 +43,7 @@ export default function Contact() {
 
   const emailSender = async (e: SubmitEvent) => {
     e.preventDefault();
-    setMessageStatus(translation('contact.message.informative'));
+    setMessageStatus(translation('message.informative'));
     try {
       await sender(
         'service_sjw9i8b',
@@ -51,11 +51,11 @@ export default function Contact() {
         formData as any,
         'z3FUpU83GBFJyGXVF'
       );
-      notification(translation('contact.message.success'));
+      notification(translation('message.success'));
       (e as any).target.reset();
     } catch (err: unknown) {
       console.error((err as any).text);
-      notification(translation('contact.message.failure'));
+      notification(translation('message.failure'));
     }
   };
 
@@ -63,32 +63,32 @@ export default function Contact() {
     <Container id='contact'>
       <h2>
         <MessageSquareDashed />
-        <span>{translation('contact.title')}</span>
+        <span>{translation('title')}</span>
       </h2>
       <section className='intro-container'>
         <motion.h2
           initial={{ opacity: 0 }}
           transition={{ delay: 0.2 }}
           whileInView={{ opacity: 1 }}>
-          {translation('contact.intro-title')}
+          {translation('intro-title')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
           transition={{ delay: 0.4 }}
           whileInView={{ opacity: 1 }}>
-          {translation('contact.intro-phrase')}
+          {translation('intro-phrase')}
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
           transition={{ delay: 0.6 }}
           whileInView={{ opacity: 1 }}>
-          {translation('contact.intro-message')}
+          {translation('intro-message')}
         </motion.p>
       </section>
       <section className='options'>
         <div className='option'>
           <MailboxIcon />
-          <span> {translation('contact.mail')}</span>
+          <span> {translation('mail')}</span>
         </div>
       </section>
 
@@ -102,7 +102,7 @@ export default function Contact() {
             <div className='form-item'>
               <label htmlFor='name'>
                 <UserIcon />
-                <span>{translation('contact.form.name-label')}</span>
+                <span>{translation('form.name-label')}</span>
               </label>
               <input
                 type='text'
@@ -110,21 +110,21 @@ export default function Contact() {
                 name='name'
                 maxLength={120}
                 required
-                placeholder={translation('contact.form.name-placeholder')}
+                placeholder={translation('form.name-placeholder')}
                 onChange={(e) => formDataPicker(e)}
               />
             </div>
             <div className='form-item'>
               <label htmlFor='email'>
                 <AtSignIcon />
-                <span>{translation('contact.form.mail-label')}</span>
+                <span>{translation('form.mail-label')}</span>
               </label>
               <input
                 type='email'
                 id='email'
                 name='from_email'
                 required
-                placeholder={translation('contact.form.mail-placeholder')}
+                placeholder={translation('form.mail-placeholder')}
                 maxLength={30}
                 onChange={(e) => formDataPicker(e)}
               />
@@ -132,7 +132,7 @@ export default function Contact() {
           </section>
           <label htmlFor='subject'>
             <TextIcon />
-            <span>{translation('contact.form.subject-label')}</span>
+            <span>{translation('form.subject-label')}</span>
           </label>
           <input
             type='text'
@@ -140,12 +140,12 @@ export default function Contact() {
             name='subject'
             maxLength={120}
             required
-            placeholder={translation('contact.form.subject-placeholder')}
+            placeholder={translation('form.subject-placeholder')}
             onChange={(e) => formDataPicker(e)}
           />
           <label htmlFor='message'>
             <MessageSquareDashed />
-            <span>{translation('contact.form.message-label')}</span>
+            <span>{translation('form.message-label')}</span>
           </label>
           <textarea
             id='message'
@@ -154,7 +154,7 @@ export default function Contact() {
             rows={10}
             maxLength={3500}
             required
-            placeholder={translation('contact.form.message-placeholder')}
+            placeholder={translation('form.message-placeholder')}
             onChange={(e) => formDataPicker(e)}
           />
           <span className='message'>{messageStatus}</span>
@@ -162,7 +162,7 @@ export default function Contact() {
             whileTap={{ scale: 0.8 }}
             whileHover={{ scale: 1.05 }}
             type='submit'>
-            <span>{translation('contact.form.button')}</span>
+            <span>{translation('form.button')}</span>
           </motion.button>
         </form>
       </motion.section>

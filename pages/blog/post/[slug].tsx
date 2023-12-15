@@ -2,7 +2,7 @@ import Image from 'next/image';
 import type { Post } from '@/types';
 import { formatDate } from '@/lib/time';
 import ReactMarkdown from 'react-markdown';
-import { motion } from '@/providers/framer';
+import { motion } from '@/providers/framer-provider';
 import { buildShareUrls } from '@/lib/share';
 import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';

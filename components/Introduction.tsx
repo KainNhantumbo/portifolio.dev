@@ -1,12 +1,12 @@
 'use client';
 
-import { motion } from '@/providers/framer';
-import { useTranslation } from '@/providers/translation';
+import { motion } from '@/providers/framer-provider';
 import { _introduction as Container } from '../styles/modules/_introduction';
 import { GithubIcon, LinkedinIcon, StarsIcon } from 'lucide-react';
+import { useI18n } from '@/locales/client';
 
 export default function Introduction() {
-  const { t: translation } = useTranslation();
+  const translation = useI18n();
 
   const socialAnchors = [
     {

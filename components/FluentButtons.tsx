@@ -7,7 +7,7 @@ import {
   SunMediumIcon
 } from 'lucide-react';
 import { _fluentButtons as Container } from '../styles/modules/_fluent-buttons';
-import { motion } from '@/providers/framer';
+import { motion } from '@/providers/framer-provider';
 import { usePathname } from 'next/navigation';
 import { useAppContext } from '../context/AppContext';
 import actions from '../shared/actions';

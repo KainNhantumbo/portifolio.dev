@@ -1,8 +1,8 @@
 'use client';
 
-import Package from '../package.json';
+import Package from '../../package.json';
 import { useEffect } from 'react';
-import { _errorPage as Container } from '../styles/_error-page';
+import { _errorPage as Container } from '../../styles/_error-page';
 
 type Props = {
   error: Error & { digest?: string };

@@ -2,14 +2,14 @@
 
 import donutImage from '@/public/assets/path36.png';
 import clsx from 'clsx';
-import { motion, AnimatePresence } from '@/providers/framer';
+import { motion, AnimatePresence } from '@/providers/framer-provider';
 import { Settings2Icon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useTranslation } from '@/providers/translation';
 import { useHeaderView } from '../hooks/useHeaderView';
 import { _header as Container } from '../styles/modules/_header';
+import { useScopedI18n } from '@/locales/client';
 
 type NavAnchors = { ref: string; label: string };
 
@@ -17,17 +17,17 @@ export default function Header() {
   const MIN_WIDTH = 640;
   const pathname = usePathname();
   const router = useRouter();
-  const { t: translation } = useTranslation();
+  const translation = useScopedI18n('header');
   const isPortfolio = pathname?.includes('blog') === false;
   const { isHeaderInView, scrollRangeValue, handleToggleMenu } =
     useHeaderView(MIN_WIDTH);
 
   const portfolioUrls: NavAnchors[] = [
-    { label: translation('header.anchors.about'), ref: '#about' },
-    { label: translation('header.anchors.skills'), ref: '#skills' },
-    { label: translation('header.anchors.projects'), ref: '#projects' },
-    { label: translation('header.anchors.contact'), ref: '#contact' },
-    { label: translation('header.anchors.blog'), ref: '/en/blog' }
+    { label: translation('anchors.about'), ref: '#about' },
+    { label: translation('anchors.skills'), ref: '#skills' },
+    { label: translation('anchors.projects'), ref: '#projects' },
+    { label: translation('anchors.contact'), ref: '#contact' },
+    { label: translation('anchors.blog'), ref: '/en/blog' }
   ];
 
   const blogUrls = [

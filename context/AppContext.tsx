@@ -8,15 +8,12 @@ import {
   useEffect,
   Dispatch,
   useReducer,
-  useMemo
 } from 'react';
 import { Theme, ColorScheme, State, Action } from '../types';
 import { GlobalStyles } from '../styles/_global-styles';
 import { ThemeProvider } from 'styled-components';
 import { dark_default, light_default } from '../styles/themes';
 import { initialState, reducer } from '../shared/reducer';
-import { useTranslation } from '@/providers/translation';
-import { useRouter } from 'next/navigation';
 
 type Props = { children: ReactNode };
 
@@ -37,8 +34,6 @@ const context = createContext<Context>({
 });
 
 export default function AppContext({ children }: Props) {
-  const router = useRouter();
-  const { i18n } = useTranslation();
   const [state, dispatch] = useReducer(reducer, initialState);
   const [currentTheme, setCurrentTheme] = useState<Theme>(light_default);
   const [colorScheme, setColorScheme] = useState<ColorScheme>({
@@ -53,8 +48,6 @@ export default function AppContext({ children }: Props) {
       top: 0,
       behavior: 'smooth'
     });
-
-  const translate = useMemo(() => () => i18n.changeLanguage('en'), [i18n]);
 
   const setDarkColorScheme = ({ mode, scheme }: ColorScheme): void => {
     setCurrentTheme(dark_default);
@@ -108,9 +101,7 @@ export default function AppContext({ children }: Props) {
         `{"mode": "auto", "scheme": "light"}`
     );
     setColorScheme(colorScheme);
-    translate();
-    console.log('Translation trigger')
-  }, [translate]);
+  }, []);
 
   useEffect((): void => {
     if (colorScheme.scheme === 'dark') {

@@ -1,14 +1,16 @@
+'use client';
+
 import Works from './Works';
 import Image from 'next/image';
-import { motion } from '@/providers/framer';
-import { getProjects } from '../data/projects';
-import { useTranslation } from '@/providers/translation';
+import { motion } from '@/providers/framer-provider';
+import { useProjects } from '../hooks/useProjects';
 import { _projects as Container } from '../styles/modules/_projects';
 import { ExternalLinkIcon, GithubIcon, SquareStackIcon } from 'lucide-react';
+import { useI18n } from '@/locales/client';
 
 export default function Projects() {
-  const projects = getProjects();
-  const { t: translation } = useTranslation();
+  const projects = useProjects();
+  const translation = useI18n();
 
   return (
     <Container id='projects'>

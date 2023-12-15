@@ -16,3 +16,6 @@ export const AUTHOR = {
   email: Package.author.email,
   description: 'Web Developer & Designer'
 };
+
+
+export const locales = ['pt', 'en']

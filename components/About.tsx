@@ -1,24 +1,26 @@
+'use client';
+
 import Image from 'next/image';
-import { motion } from '@/providers/framer';
-import { useTranslation } from '@/providers/translation';
+import { motion } from '@/providers/framer-provider';
 import { AUTHOR } from '../shared/constants';
 import { _about as Container } from '../styles/modules/_about';
 import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
+import { useScopedI18n } from '@/locales/client';
 
 export default function About() {
-  const { t: translation } = useTranslation();
+  const translation = useScopedI18n('about');
 
   return (
     <Container id='about'>
       <h2>
         <UserIcon />
-        <span>{translation('about.title')}</span>
+        <span>{translation('title')}</span>
       </h2>
       <section className='experiences'>
         <div className='header-container'>
           <div>
             <h3>Kain Nhantumbo</h3>
-            <p className='op'>{translation('about.subtitle')}</p>
+            <p className='op'>{translation('subtitle')}</p>
           </div>
           <motion.div whileInView={{ rotate: [0, 360] }}>
             <Image
@@ -34,13 +36,13 @@ export default function About() {
           transition={{ delay: 0.2 }}
           initial={{ y: -50 }}
           whileInView={{ y: 0 }}>
-          {translation('about.intro-1')}
+          {translation('intro-1')}
         </motion.p>
         <motion.p
           transition={{ delay: 0.4 }}
           initial={{ y: 50 }}
           whileInView={{ y: 0 }}>
-          {translation('about.intro-2')}
+          {translation('intro-2')}
         </motion.p>
       </section>
 
@@ -51,8 +53,8 @@ export default function About() {
           initial={{ opacity: 0.4, rotate: 360 }}
           whileInView={{ rotate: 0, opacity: 1 }}>
           <Code2Icon />
-          <h4>{translation('about.experience-title')}</h4>
-          <span>{translation('about.experience-content')}</span>
+          <h4>{translation('experience-title')}</h4>
+          <span>{translation('experience-content')}</span>
         </motion.div>
 
         <motion.div
@@ -61,8 +63,8 @@ export default function About() {
           initial={{ opacity: 0.4, rotate: 360 }}
           whileInView={{ rotate: 0, opacity: 1 }}>
           <SquareStackIcon />
-          <h4>{translation('about.projects-title')}</h4>
-          <span>{translation('about.projects-content')}</span>
+          <h4>{translation('projects-title')}</h4>
+          <span>{translation('projects-content')}</span>
         </motion.div>
       </section>
     </Container>

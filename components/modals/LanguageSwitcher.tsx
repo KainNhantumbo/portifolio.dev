@@ -1,19 +1,20 @@
+'use client';
+
 import actions from '@/shared/actions';
-import { useTranslation } from '@/providers/translation';
 import { useAppContext } from '@/context/AppContext';
-import { motion, AnimatePresence } from '@/providers/framer';
+import { motion, AnimatePresence } from '@/providers/framer-provider';
 import { _languageSwitcher as Container } from '@/styles/modules/_language-switcher';
 import { useRouter } from 'next/navigation';
 import { XIcon } from 'lucide-react';
+import { useScopedI18n } from '@/locales/client';
 
 export default function LanguageSwitcher() {
   const { state, dispatch } = useAppContext();
   const router = useRouter();
-  const { t: translation, i18n } = useTranslation();
+  const translation = useScopedI18n('language_switcher_modal');
 
   const translate = (lang: 'pt' | 'en') => {
     router.push(`/${lang}`);
-    i18n.changeLanguage(lang);
 
     dispatch({
       type: actions.LANGUAGES_MODAL,
@@ -25,7 +26,7 @@ export default function LanguageSwitcher() {
     <AnimatePresence>
       {state.isLanguagesModal && (
         <Container
-          onClick={(e) =>
+          onClick={() =>
             dispatch({
               type: actions.LANGUAGES_MODAL,
               payload: { ...state, isLanguagesModal: false }
@@ -44,23 +45,23 @@ export default function LanguageSwitcher() {
             <div className='dialog-prompt'>
               <div className='prompt-info'>
                 <span className='prompt-title'>
-                  {translation('language_switcher_modal.title')}
+                  {translation('title')}
                 </span>
                 <p className='prompt-message'>
-                  {translation('language_switcher_modal.message')}
+                  {translation('message')}
                 </p>
                 <div className='buttons-container'>
                   <motion.button
                     whileTap={{ scale: 0.8 }}
                     whileHover={{ scale: 1.05 }}
                     onClick={() => translate('en')}>
-                    {translation('language_switcher_modal.buttons.english')}
+                    {translation('buttons.english')}
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.8 }}
                     whileHover={{ scale: 1.05 }}
                     onClick={() => translate('pt')}>
-                    {translation('language_switcher_modal.buttons.portuguese')}
+                    {translation('buttons.portuguese')}
                   </motion.button>
                 </div>
               </div>
@@ -68,7 +69,7 @@ export default function LanguageSwitcher() {
                 whileTap={{ scale: 0.8 }}
                 whileHover={{ scale: 1.1 }}
                 className='prompt-close'
-                onClick={(e) =>
+                onClick={() =>
                   dispatch({
                     type: actions.LANGUAGES_MODAL,
                     payload: { ...state, isLanguagesModal: false }

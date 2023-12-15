@@ -1,3 +1,5 @@
+'use client';
+
 import {
   BadgeCheckIcon,
   BookMarkedIcon,
@@ -7,16 +9,16 @@ import {
   PenToolIcon
 } from 'lucide-react';
 import { Stack } from '../types';
-import { motion } from '@/providers/framer';
-import { useTranslation } from '@/providers/translation';
+import { motion } from '@/providers/framer-provider';
 import { _abilities as Container } from '../styles/modules/_abilities';
+import { useScopedI18n } from '@/locales/client';
 
 export default function Abilities() {
-  const { t: translation } = useTranslation();
+  const translation = useScopedI18n('abilities');
 
   const data: Array<Stack> = [
     {
-      title: translation('abilities.frontend-title'),
+      title: translation('frontend-title'),
       icon: BadgeCheckIcon,
       data: [
         { tech: 'Typescript', icon: Code2Icon },
@@ -28,7 +30,7 @@ export default function Abilities() {
       ]
     },
     {
-      title: translation('abilities.backend-title'),
+      title: translation('backend-title'),
       icon: BadgeCheckIcon,
       data: [
         { tech: 'Typescript', icon: Code2Icon },
@@ -40,7 +42,7 @@ export default function Abilities() {
       ]
     },
     {
-      title: translation('abilities.tools-title'),
+      title: translation('tools-title'),
       icon: BadgeCheckIcon,
       data: [
         { tech: 'Git', icon: FolderGit2Icon },
@@ -54,7 +56,7 @@ export default function Abilities() {
     <Container id='skills'>
       <h2>
         <PenToolIcon />
-        <span>{translation('abilities.title')}</span>
+        <span>{translation('title')}</span>
       </h2>
 
       {data.map((group, index) => (

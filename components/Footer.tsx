@@ -12,15 +12,15 @@ import {
 import Image from 'next/image';
 import Package from '@/package.json';
 import { usePathname } from 'next/navigation';
-import { motion } from '@/providers/framer';
+import { motion } from '@/providers/framer-provider';
 import donutsImage from '@/../public/assets/donuts.png';
-import { useTranslation } from '@/providers/translation';
 import { _footer as Container } from '../styles/modules/_footer';
+import { useScopedI18n } from '@/locales/client';
 
 type Anchors = { name: string; icon: LucideIcon; link: string };
 
 export default function Footer() {
-  const { t: translation } = useTranslation();
+  const translation = useScopedI18n('footer');
   const pathname = usePathname();
   const isPortfolio = pathname?.includes('blog') ? false : true;
 
@@ -28,7 +28,7 @@ export default function Footer() {
     ? []
     : [
         {
-          name: translation('footer.anchors.coffee'),
+          name: translation('anchors.coffee'),
           icon: CoffeeIcon,
           link: 'https://www.buymeacoffee.com/nhantumbokU'
         },
@@ -41,22 +41,22 @@ export default function Footer() {
 
   const socialMediaAnchors: Anchors[] = [
     {
-      name: translation('footer.anchors.github'),
+      name: translation('anchors.github'),
       icon: GithubIcon,
       link: 'https://github.com/KainNhantumbo'
     },
     {
-      name: translation('footer.anchors.twitter'),
+      name: translation('anchors.twitter'),
       icon: TwitterIcon,
       link: 'https://twitter.com/ubelloch'
     },
     {
-      name: translation('footer.anchors.linkedIn'),
+      name: translation('anchors.linkedIn'),
       icon: LinkedinIcon,
       link: 'https://www.linkedin.com/in/kain-nhantumbo/?locale=en_US'
     },
     {
-      name: translation('footer.anchors.blog'),
+      name: translation('anchors.blog'),
       icon: BookTextIcon,
       link: '/en/blog'
     },
@@ -66,7 +66,7 @@ export default function Footer() {
   return (
     <Container>
       <h3>
-        <strong>{translation('footer.title')}</strong>
+        <strong>{translation('title')}</strong>
       </h3>
       <ul>
         {socialMediaAnchors.map((item, index) => (
@@ -97,13 +97,13 @@ export default function Footer() {
       </div>
 
       <div>
-        <span>{translation('footer.copy-phrase')} </span>
+        <span>{translation('copy-phrase')} </span>
         <p>
-          <span>{translation('footer.made-phrase')}</span>
+          <span>{translation('made-phrase')}</span>
         </p>
         <p>
           <span>
-            {translation('footer.version-phrase')} {Package.version} | Comp.{' '}
+            {translation('version-phrase')} {Package.version} | Comp.{' '}
             {Package.latest_compile}
           </span>
         </p>
