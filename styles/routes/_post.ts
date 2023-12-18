@@ -10,10 +10,6 @@ export const _post = styled.main`
   gap: 30px;
   line-height: 1.6rem;
 
-  ::selection {
-    background: rgba(${({ theme }) => theme.primary}, 0.5);
-  }
-
   .main-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -62,43 +58,6 @@ export const _post = styled.main`
         }
       }
 
-      .share-options {
-        display: flex;
-        justify-content: flex-end;
-        gap: 20px;
-        align-items: center;
-
-        .title {
-          font-weight: 600;
-        }
-
-        .options {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          gap: 10px;
-
-          a {
-            width: 35px;
-            height: 35px;
-            display: grid;
-            place-content: center center;
-            padding: 5px;
-            background: rgba(${({ theme }) => theme.primary_shade}, 0.1);
-            border-radius: 8px;
-
-            :hover {
-              color: rgb(${({ theme }) => theme.primary_shade});
-            }
-
-            svg {
-              width: 20px;
-              height: 20px;
-            }
-          }
-        }
-      }
-
       .read-time {
         display: flex;
         flex-flow: row wrap;
@@ -113,7 +72,7 @@ export const _post = styled.main`
         svg {
           width: 8px;
           height: 8px;
-          color: rgb(${({ theme }) => theme.primary_shade});
+          /* color: rgb(${({ theme }) => theme.primary_shade}); */
         }
       }
 
@@ -131,19 +90,6 @@ export const _post = styled.main`
         }
       }
 
-      .topic {
-        all: unset;
-        width: fit-content;
-        font-size: 0.95rem;
-        font-weight: 500;
-        border-radius: 30px;
-        color: rgb(${({ theme }) => theme.white});
-        padding: 0 12px;
-        background: rgb(${({ theme }) => theme.black});
-        border: 1px solid rgba(${({ theme }) => theme.font}, 0.2);
-        font-family: 'Space Grotesk';
-      }
-
       h4 {
         line-height: 1.6rem;
         font-weight: 500;
@@ -154,39 +100,14 @@ export const _post = styled.main`
       }
     }
 
-    .toc-container {
-      width: 100%;
-      padding: 12px;
-      background: rgb(${({ theme }) => theme.background_shade});
-      border-radius: 10px;
-      line-height: 1.6rem;
-      margin: 0 auto;
-      margin: 20px auto;
-
-      h2 {
-        font-weight: 500;
-      }
-
-      ul {
-        list-style: inside;
-        a {
-          text-decoration: underline;
-          text-underline-offset: 3px;
-
-          &:hover {
-            color: #1a8eff;
-          }
-        }
-      }
-    }
-
     .content {
       max-width: 1000px;
       margin: 0 auto;
 
       pre {
         border-radius: 8px !important;
-        border: 1px solid rgba(${({ theme }) => theme.accent}, 0.1);
+        /* border: 1px solid rgba(${({ theme }) => theme.accent}, 0.1); */
+
         white-space: pre-wrap;
         word-break: break-all;
         word-wrap: break-word;
@@ -225,8 +146,8 @@ export const _post = styled.main`
 
       hr,
       .hr-class {
-        color: rgb(${({ theme }) => theme.font});
-        border-bottom: 2px solid rgb(${({ theme }) => theme.font});
+        /* color: rgb(${({ theme }) => theme.font}); */
+        /* border-bottom: 2px solid rgb(${({ theme }) => theme.font}); */
         margin: 8px 0;
         border-radius: 3px;
       }
@@ -288,26 +209,12 @@ export const _post = styled.main`
         border-radius: 12px;
         margin: 0 auto;
         margin-top: 10px;
-        border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-      }
-
-      code {
-        padding: 2px 5px;
-        background: rgba(${({ theme }) => theme.font}, 0.1);
-        border-radius: 5px;
-        margin: 0 5px;
-        line-height: 1.6rem;
-        font-family: 'IBM Plex Mono', Hack, Menlo, Consolas, 'SF Mono',
-          monospace !important;
-
-        ::selection {
-          background: rgba(${({ theme }) => theme.secondary}, 0.5);
-        }
+        /* border: 1px solid rgba(${({ theme }) => theme.font}, 0.15); */
       }
 
       blockquote {
         width: 100%;
-        background: rgb(${({ theme }) => theme.background_shade});
+        /* background: rgb(${({ theme }) => theme.background_shade}); */
         font-size: 1.2rem;
         padding: 12px 12px 1px 12px;
         margin: 12px 0;
@@ -324,7 +231,7 @@ export const _post = styled.main`
           border-radius: 8px;
           width: 5px;
           height: 24px;
-          background: rgb(${({ theme }) => theme.primary_shade});
+          /* background: rgb(${({ theme }) => theme.primary_shade}); */
         }
 
         @media screen and (max-width: 530px) {

@@ -100,6 +100,7 @@ export const _blog = styled.main`
           font-weight: 500;
           line-height: 2rem;
           text-decoration: underline;
+          text-decoration-style: dashed;
           text-underline-offset: 4px;
           position: relative;
           padding-left: 20px;

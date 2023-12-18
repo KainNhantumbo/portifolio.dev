@@ -67,7 +67,7 @@ export default function Contact() {
         <MessageSquareDashed />
         <span>{translation('title')}</span>
       </h2>
-      <section className='intro-container'>
+      <section className='intro-container font-sans'>
         <motion.h2
           initial={{ opacity: 0 }}
           transition={{ delay: 0.2 }}
@@ -87,15 +87,15 @@ export default function Contact() {
           {translation('intro-message')}
         </motion.p>
       </section>
-      <section className='options'>
+      <section className='options font-sans'>
         <div className='option'>
-          <MailboxIcon />
+          <MailboxIcon className='stroke-primary' />
           <span> {translation('mail')}</span>
         </div>
       </section>
 
       <motion.section
-        className='form-container'
+        className='form-container font-sans base-border'
         initial={{ opacity: 0, scale: 0.4 }}
         transition={{ delay: 0.4 }}
         whileInView={{ opacity: 1, scale: 1 }}>
@@ -112,6 +112,7 @@ export default function Contact() {
                 name='name'
                 maxLength={120}
                 required
+                className='base-input'
                 placeholder={translation('form.name-placeholder')}
                 onChange={(e) => formDataPicker(e)}
               />
@@ -125,6 +126,7 @@ export default function Contact() {
                 type='email'
                 id='email'
                 name='from_email'
+                className='base-input'
                 required
                 placeholder={translation('form.mail-placeholder')}
                 maxLength={30}
@@ -141,6 +143,7 @@ export default function Contact() {
             id='subject'
             name='subject'
             maxLength={120}
+            className='base-input'
             required
             placeholder={translation('form.subject-placeholder')}
             onChange={(e) => formDataPicker(e)}
@@ -156,6 +159,7 @@ export default function Contact() {
             rows={10}
             maxLength={3500}
             required
+            className='base-input'
             placeholder={translation('form.message-placeholder')}
             onChange={(e) => formDataPicker(e)}
           />
@@ -163,6 +167,7 @@ export default function Contact() {
           <motion.button
             whileTap={{ scale: 0.8 }}
             whileHover={{ scale: 1.05 }}
+            className='bg-foreground base-border w-fit rounded-lg px-4 py-2 text-white'
             type='submit'>
             <span>{translation('form.button')}</span>
           </motion.button>

@@ -33,7 +33,7 @@ export default function LanguageSwitcher() {
             })
           }>
           <motion.section
-            className='dialog-modal base-border rounded-xl backdrop-blur-md bg-background/50 font-sans '
+            className='dialog-modal base-border rounded-xl backdrop-blur-md bg-foreground/90 font-sans '
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -47,19 +47,19 @@ export default function LanguageSwitcher() {
                 <span className='prompt-title font-sans-display'>
                   {translation('title')}
                 </span>
-                <p className='prompt-message'>
-                  {translation('message')}
-                </p>
+                <p className='prompt-message'>{translation('message')}</p>
                 <div className='buttons-container'>
                   <motion.button
                     whileTap={{ scale: 0.8 }}
                     whileHover={{ scale: 1.05 }}
+                    className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center hover:text-primary transition-colors '
                     onClick={() => translate('en')}>
                     {translation('buttons.english')}
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.8 }}
                     whileHover={{ scale: 1.05 }}
+                    className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center hover:text-primary transition-colors'
                     onClick={() => translate('pt')}>
                     {translation('buttons.portuguese')}
                   </motion.button>
@@ -68,14 +68,14 @@ export default function LanguageSwitcher() {
               <motion.button
                 whileTap={{ scale: 0.8 }}
                 whileHover={{ scale: 1.1 }}
-                className='prompt-close'
+                className='prompt-close group'
                 onClick={() =>
                   dispatch({
                     type: actions.LANGUAGES_MODAL,
                     payload: { ...state, isLanguagesModal: false }
                   })
                 }>
-                <XIcon />
+                <XIcon className='group-hover:stroke-error transition-colors' />
               </motion.button>
             </div>
           </motion.section>

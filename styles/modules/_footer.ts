@@ -63,29 +63,4 @@ export const _footer = styled.footer`
       color: rgb(${({ theme }) => theme.primary_shade});
     }
   }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-    line-height: 1.4rem;
-    font-weight: 500;
-    font-size: 0.9rem;
-
-    p {
-      display: flex;
-      flex-direction: row;
-      gap: 3px;
-    }
-
-    svg {
-      color: #f35887;
-      width: 20px;
-      height: 20px;
-    }
-  }
 `;

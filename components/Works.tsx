@@ -74,6 +74,7 @@ export default function Works() {
             height={undefined}
             src={item.image}
             alt={item.title}
+            className='base-border'
           />
         </div>
       ))}

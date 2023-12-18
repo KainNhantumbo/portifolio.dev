@@ -95,17 +95,17 @@ export default function Footer() {
         />
       </div>
 
-      <div>
-        <span>{translation('copy-phrase')} </span>
+      <div className='w-full flex flex-col items-center mx-auto gap-3'>
         <p>
           <span>{translation('made-phrase')}</span>
         </p>
-        <p>
+        <div className='w-full flex flex-wrap gap-3 mx-auto items-center justify-center'>
+          <span>Copyright © 2023 Kain Nhantumbo.</span>
           <span>
             {translation('version-phrase')} {Package.version} | Comp.{' '}
             {Package.latest_compile}
           </span>
-        </p>
+        </div>
       </div>
     </Container>
   );

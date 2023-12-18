@@ -17,12 +17,18 @@ export default function Page() {
         <h1 className='py-5 leading-10'>
           Codenut<i className='text-primary'>.dev</i> Blog
           <a href='/rss/feed.en.xml' target='_blank' title='RSS Feed'>
-            <RssIcon strokeWidth={4} width={'140px'} className='stroke-primary'/>
+            <RssIcon
+              strokeWidth={4}
+              width={'140px'}
+              className='stroke-primary'
+            />
           </a>
         </h1>
 
-        <div className='font-sans'>
-          <h3>👋 Hello, Welcome to Kain's Universe!</h3>
+        <div className='font-sans-body font-medium'>
+          <h3 className='font-sans-body'>
+            👋 Hello, Welcome to Kain's Universe!
+          </h3>
           <p>
             You've stumbled upon Kain's little corner of the internet, where
             everything runs rampant and normal is just a unpredictable wave on a
@@ -44,14 +50,18 @@ export default function Page() {
               locale={'en'}
               key={index.toString()}>
               <div className='header-container'>
-                <h3 className='base-border rounded-3xl bg-black text-white font-sans-body font-medium px-3 uppercase text-[.95rem]'>{post.topic}</h3>
-                <h4 className='font-sans'>
+                <h3 className='base-border rounded-3xl bg-black text-white font-sans-body font-medium px-3 uppercase text-[.95rem]'>
+                  {post.topic}
+                </h3>
+                <h4 className='font-sans-body font-medium'>
                   <span>{formatDate(post.createdAt)}</span>
                 </h4>
               </div>
 
-              <h3 className='title'>{post.title}</h3>
-              <p className='excerpt font-sans'>{post.excerpt}</p>
+              <h3 className='title before:bg-primary'>{post.title}</h3>
+              <p className='excerpt font-sans-body  font-medium'>
+                {post.excerpt}
+              </p>
             </Link>
           ))}
         </section>

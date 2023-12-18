@@ -10,7 +10,6 @@
   },
   "footer": {
     "title": "Find me on the web by:",
-    "copy-phrase": "Copyright © 2023 Kain Nhantumbo. All Rights Reserved.",
     "made-phrase": "Crafted with ❤ using Next.js and Typescript.",
     "version-phrase": "Version",
     "anchors": {

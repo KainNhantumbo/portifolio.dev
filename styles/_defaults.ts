@@ -22,23 +22,8 @@ export const BaseButtonOutline = css`
 `;
 
 export const BaseButton = css`
-  all: unset;
-  border-radius: 8px;
   padding: 7px 10px;
-  width: fit-content;
-  cursor: pointer;
-  background: rgba(${({ theme }) => theme.primary}, 0.5);
-  color: rgb(${({ theme }) => theme.font});
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-  text-align: center;
 
-  :hover {
-    background: rgba(${({ theme }) => theme.primary}, 0.9);
-    border: 1px solid rgba(${({ theme }) => theme.font}, 0.3);
-  }
   :disabled {
     box-shadow: none;
     background: rgba(${({ theme }) => theme.primary}, 0.4);

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { formatDate } from '@/lib/time';
-import TableOfContents, { transformChild } from '@/components/TableOfContents';
+import TableOfContents from '@/components/TableOfContents';
 import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';
 import { getPaths, getPost } from '@/lib/processor';
@@ -23,7 +23,7 @@ export default function Page({ params: { slug } }: Props) {
   return (
     <Container className='wrapper'>
       <div className='main-container'>
-        <article>
+        <article className='w-full  font-sans-body'>
           <section className={'meta-container font-sans'}>
             <h5>PUBLISHED: {formatDate(post.createdAt)}</h5>
             <section className='author'>
@@ -40,11 +40,18 @@ export default function Page({ params: { slug } }: Props) {
               </div>
             </section>
 
-            <SocialShare title={post.title} slug={post.slug} excerpt={post.excerpt} />
+            <SocialShare
+              title={post.title}
+              slug={post.slug}
+              excerpt={post.excerpt}
+            />
 
             <div className='read-time'>
               <span>
-                <i>Read:</i> {readTime.minutes < 1 ? 'Less than a minute' : `${readTime.minutes} minutes`}
+                <i>Read:</i>{' '}
+                {readTime.minutes < 1
+                  ? 'Less than a minute'
+                  : `${readTime.minutes} minutes`}
               </span>
               <DotIcon />
               <span>
@@ -58,8 +65,10 @@ export default function Page({ params: { slug } }: Props) {
             <h1>
               <strong>{post.title}</strong>
             </h1>
-            <div className='topic bg-foreground'>
-              <p>{post.topic}</p>
+            <div className=' w-fit'>
+              <p className='base-border rounded-3xl bg-black text-white font-medium px-3 uppercase text-[.95rem] font-sans-display'>
+                {post.topic}
+              </p>
             </div>
 
             <h4>{post.excerpt}</h4>
@@ -67,9 +76,7 @@ export default function Page({ params: { slug } }: Props) {
 
           <TableOfContents content={post.content} />
 
-          <ContentRenderer>
-            {post.content}
-          </ContentRenderer>
+          <ContentRenderer>{post.content}</ContentRenderer>
         </article>
       </div>
     </Container>

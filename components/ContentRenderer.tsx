@@ -1,9 +1,10 @@
 import ReactMarkdown from 'react-markdown';
 import { transformChild } from '@/components/TableOfContents';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import clsx from 'clsx';
 
-type Props = { children: string }
+type Props = { children: string };
 
 export default function ContentRenderer({ children }: Props) {
   return (
@@ -14,16 +15,20 @@ export default function ContentRenderer({ children }: Props) {
           const { children, className, ...rest } = props;
           const match = /language-(\w+)/.exec(className || '');
           return match ? (
-            <SyntaxHighlighter
-              {...rest}
-              style={hopscotch}
-              language={match[1]}
-              wrapLongLines={true}
-              ref={undefined}>
-              {String(children).replace(/\n$/, '')}
-            </SyntaxHighlighter>
+            <div className='text-white my-3' style={{ color: '#fff' }}>
+              <SyntaxHighlighter
+                {...rest}
+                style={{ ...materialDark }}
+                language={match[1]}
+                wrapLongLines={true}
+                ref={undefined}>
+                {String(children).replace(/\n$/, '')}
+              </SyntaxHighlighter>
+            </div>
           ) : (
-            <code {...rest} className={className}>
+            <code
+              {...rest}
+              className={clsx(className, 'rounded-[5px] bg-font/10 py-[2px] px-[5px] mx-1 font-monospace')}>
               {children}
             </code>
           );
@@ -71,6 +76,5 @@ export default function ContentRenderer({ children }: Props) {
       }}>
       {children}
     </ReactMarkdown>
-
-  )
+  );
 }

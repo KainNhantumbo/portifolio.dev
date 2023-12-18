@@ -101,11 +101,7 @@ export const _contact = styled.section`
         ${StyledLabels}
       }
 
-      ${StyledInputs}
-
-      button {
-        ${BaseButton}
-      }
+    
     }
   }
 `;

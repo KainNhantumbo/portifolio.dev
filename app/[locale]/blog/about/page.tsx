@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <Container className='px-2 border-t-font/10  mb-12 w-full max-w-[780px] flex flex-col gap-3 mx-auto mt-10 p-5 z-50 font-sans relative backdrop-blur-sm bg-background/50 after:absolute after:w-[1px] after:h-[1px] after:right-[50%] after:top-0 after:rounded-full after:-z-50 after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
-      <article className='mt-10 w-full flex flex-col gap-5'>
+      <article className='mt-10 w-full flex flex-col gap-5 font-sans-body font-medium'>
         <h1 className='font-medium'>About me</h1>
         <section className='description-container'>
           <p>

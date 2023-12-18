@@ -31,8 +31,11 @@ export default function FluentButtons() {
       <div>
         {isPortfolio ? (
           <motion.button
-            className='w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative'
+            className='w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative group'
             whileTap={{ scale: 0.7 }}
+            whileHover={{ y: -4 }}
+            initial={{ x: 200 }}
+            animate={{ x: 0, transition: { delay: 0.5 } }}
             transition={{ type: 'spring', duration: 0.5 }}
             onClick={() =>
               dispatch({
@@ -40,13 +43,16 @@ export default function FluentButtons() {
                 payload: { ...state, isLanguagesModal: true }
               })
             }>
-            <LanguagesIcon className='w-5 h-5 stroke-primary' />
+            <LanguagesIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
           </motion.button>
         ) : null}
 
         <motion.button
-          className='w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative'
+          className='group w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative'
           whileTap={{ scale: 0.7 }}
+          whileHover={{ y: -4 }}
+          initial={{ x: 200 }}
+          animate={{ x: 0, transition: { delay: 0.8 } }}
           transition={{ type: 'spring', duration: 0.5 }}
           title='Change Theme'
           aria-label='Toogle theme'
@@ -54,18 +60,21 @@ export default function FluentButtons() {
             theme === 'light' ? setTheme('dark') : setTheme('light')
           }>
           {theme === 'light' ? (
-            <SunMediumIcon className='w-5 h-5 stroke-primary' />
+            <SunMediumIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
           ) : (
-            <MoonStarIcon className='w-5 h-5 stroke-primary' />
+            <MoonStarIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
           )}
         </motion.button>
         <motion.button
-          className='w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative'
+          className='group w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative'
           title='Go to Top'
           onClick={slidePageUp}
+          whileHover={{ y: -4 }}
+          initial={{ x: 200 }}
+          animate={{ x: 0, transition: { delay: 1 } }}
           whileTap={{ scale: 0.7 }}
           transition={{ type: 'spring', duration: 0.5 }}>
-          <ArrowUpIcon className='w-5 h-5 stroke-primary' />
+          <ArrowUpIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
         </motion.button>
       </div>
     </Container>

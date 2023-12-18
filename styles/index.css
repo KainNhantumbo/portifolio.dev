@@ -89,11 +89,15 @@
   }
 
   .base-border {
-    @apply border-solid border-[1px] border-font/[.15];
+    @apply border-solid border-[1px] border-font/[.12];
   }
 
   .base-link {
     @apply text-center sm:text-left transition-colors hover:underline hover:underline-offset-4 w-fit;
+  }
+
+  .base-input {
+    @apply w-full base-border py-[10px] px-[18px] outline-none rounded-lg bg-background/70 transition-colors focus:shadow-[0_0_20px_rgba(0,0,0,.06)] placeholder:text-font/60 resize-y disabled:bg-foreground disabled:placeholder:text-transparent disabled:border-none;
   }
 
   .inputs {
