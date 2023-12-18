@@ -21,26 +21,28 @@ Feel free to visit my portfolio using the link below:
 - [Next.js](https://nextjs.org/) - A React framework with hybrid static & server rendering, and route pre-fetching, etc.
 - [Styled Componets](https://styled-components.com/) - A robust component css-in-js styling library for React and React native.
 - [Framer Motion](https://www.framer.com/motion/) - An animation library for React.
-- React Markdown - for rendering blog pages.
+- React Markdown - for rendering blog posts content.
 - Feed - for generating rss feeds.
+- Tailwind CSS - for styling (moving from styled-components for better performance).
 
 ## 🌳 Project structure
 
 ```
 $PROJECT_ROOT
 │
+├── app
+├── components
+├── context
+├── data
+├── hooks
+├── lib
+│   # translation modules and JSON files
+├── locales
+├── providers
 ├── public
-└── src
-    ├── components
-    ├── context
-    ├── data
-    ├── lib
-    │   # translation modules and JSON files
-    ├── locales
-    ├── pages
-    ├── shared
-    ├── styles
-    └── types
+├── shared
+├── styles
+└── types
 ```
 
 ## ☘️ Find me!
