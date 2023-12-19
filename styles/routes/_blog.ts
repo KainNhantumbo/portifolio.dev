@@ -69,11 +69,9 @@ export const _blog = styled.main`
       gap: 20px;
 
       a {
-        all: unset;
         display: flex;
         flex-direction: column;
         gap: 12px;
-        padding: 8px;
         cursor: pointer;
 
         .header-container {

@@ -48,6 +48,7 @@ export default function Page() {
             <Link
               href={`/${locale}/blog/post/${post.slug}`}
               locale={'en'}
+              className='hover:bg-foreground transition-colors rounded-xl p-4'
               key={index.toString()}>
               <div className='header-container'>
                 <h3 className='base-border rounded-3xl bg-black text-white font-sans-body font-medium px-3 uppercase text-[.95rem]'>

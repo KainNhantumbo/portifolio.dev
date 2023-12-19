@@ -69,11 +69,7 @@ export const _post = styled.main`
           font-weight: 500;
         }
 
-        svg {
-          width: 8px;
-          height: 8px;
-          /* color: rgb(${({ theme }) => theme.primary_shade}); */
-        }
+       
       }
 
       h1 {
@@ -103,66 +99,6 @@ export const _post = styled.main`
     .content {
       max-width: 1000px;
       margin: 0 auto;
-
-      pre {
-        border-radius: 8px !important;
-        /* border: 1px solid rgba(${({ theme }) => theme.accent}, 0.1); */
-
-        white-space: pre-wrap;
-        word-break: break-all;
-        word-wrap: break-word;
-        text-align: justify;
-      }
-
-      pre code {
-        word-spacing: normal;
-        tab-size: 2 !important;
-        hyphens: none;
-        -webkit-font-smoothing: antialiased;
-        line-height: 1.4rem;
-        white-space: inherit;
-        border: none;
-        padding: 0;
-        overflow: auto;
-        font-size: 0.95rem;
-        margin: 2rem 0;
-      }
-
-      table {
-        margin: 12px 0;
-      }
-
-      i {
-        font-style: italic;
-      }
-
-      u {
-        text-underline-offset: 3px;
-      }
-
-      s {
-        text-decoration: line-through;
-      }
-
-      hr,
-      .hr-class {
-        /* color: rgb(${({ theme }) => theme.font}); */
-        /* border-bottom: 2px solid rgb(${({ theme }) => theme.font}); */
-        margin: 8px 0;
-        border-radius: 3px;
-      }
-
-      em,
-      .italic-class {
-        font-style: italic;
-      }
-
-      a,
-      .link-class {
-        color: #1a8eff;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
 
       p {
         margin-bottom: 25px;
@@ -209,36 +145,7 @@ export const _post = styled.main`
         border-radius: 12px;
         margin: 0 auto;
         margin-top: 10px;
-        /* border: 1px solid rgba(${({ theme }) => theme.font}, 0.15); */
-      }
-
-      blockquote {
-        width: 100%;
-        /* background: rgb(${({ theme }) => theme.background_shade}); */
-        font-size: 1.2rem;
-        padding: 12px 12px 1px 12px;
-        margin: 12px 0;
-        margin-left: 20px;
-        line-height: 2rem;
-        position: relative;
-        border-radius: 8px;
-
-        ::before {
-          content: '';
-          position: absolute;
-          top: calc(50% - 8px);
-          left: -12px;
-          border-radius: 8px;
-          width: 5px;
-          height: 24px;
-          /* background: rgb(${({ theme }) => theme.primary_shade}); */
-        }
-
-        @media screen and (max-width: 530px) {
-          padding: 12px;
-          font-size: 1.1rem;
-          line-height: 1.8rem;
-        }
+        border: 1px solid #00000015;
       }
     }
   }

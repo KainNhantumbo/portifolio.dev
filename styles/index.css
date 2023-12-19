@@ -10,6 +10,7 @@
     --black: 36 35 36;
     --white: 255 255 255;
     --primary: 228 113 49;
+    --primary-variant: 250 198 132;
     --secondary: 255 71 71;
     --foreground: 255 255 255;
     --background: 250 250 250;
@@ -22,6 +23,7 @@
     --black: 46 45 46;
     --white: 240 240 240;
     --primary: 228 113 49;
+    --primary-variant: 126 67 24;
     --secondary: 255 71 71;
     --foreground: 39 40 45;
     --background: 27 27 31;
@@ -58,6 +60,75 @@
 
   i {
     @apply not-italic;
+  }
+
+  u {
+    text-underline-offset: 3px;
+  }
+
+  s {
+    text-decoration: line-through;
+  }
+
+  hr,
+  .hr-class {
+    @apply text-font stroke-font;
+    margin: 8px 0;
+    border-radius: 3px;
+  }
+
+  table {
+    margin: 12px 0;
+  }
+
+  blockquote {
+    @apply bg-primary-variant/30 w-fit mobile-x:w-full my-3 relative ml-5 rounded-lg;
+    font-size: 1.2rem;
+    padding: 12px 12px 1px 12px;
+    line-height: 2rem;
+  }
+
+  blockquote::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 8px);
+    left: -12px;
+    border-radius: 8px;
+    width: 5px;
+    height: 24px;
+    @apply bg-primary;
+  }
+
+  @media screen and (max-width: 530px) {
+    blockquote {
+      padding: 12px;
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+    }
+  }
+
+  pre {
+    border-radius: 8px !important;
+    
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-align: justify;
+  }
+  
+  pre code {
+    @apply base-border;
+    word-spacing: normal;
+    tab-size: 2 !important;
+    hyphens: none;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4rem;
+    white-space: inherit;
+    border: none;
+    padding: 0;
+    overflow: auto;
+    font-size: 0.95rem;
+    margin: 2rem 0;
   }
 
   body {

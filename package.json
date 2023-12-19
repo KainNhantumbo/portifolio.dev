@@ -2,7 +2,7 @@
   "name": "codenut-homepage",
   "description": "Kain's Blog and Portfolio Website",
   "website_name": "Codenut Blog",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "private": true,
   "latest_compile": "11-2023",
   "url": "https://codenut-dev.vercel.app",

@@ -22,6 +22,7 @@ module.exports = {
         secondary: 'rgb(var(--secondary) / <alpha-value>)',
         foreground: 'rgb(var(--foreground) / <alpha-value>)',
         background: 'rgb(var(--background) / <alpha-value>)',
+        'primary-variant': 'rgb(var(--primary-variant) / <alpha-value>)',
         primary: 'rgb(var(--primary) / <alpha-value>)'
       }
     }

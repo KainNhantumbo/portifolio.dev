@@ -3,7 +3,7 @@ import { formatDate } from '@/lib/time';
 import TableOfContents from '@/components/TableOfContents';
 import { readingTime } from 'reading-time-estimator';
 import { _post as Container } from '@/styles/routes/_post';
-import { getPaths, getPost } from '@/lib/processor';
+import { getPost } from '@/lib/processor';
 import { AUTHOR } from '@/shared/constants';
 import { DotIcon } from 'lucide-react';
 import SocialShare from '@/components/SocialShare';
@@ -11,20 +11,20 @@ import ContentRenderer from '@/components/ContentRenderer';
 
 type Props = { params: { slug: string } };
 
-export async function generateStaticPaths() {
-  const paths = getPaths();
-  return { paths, fallback: false };
-}
+// async function generateStaticPaths() {
+//   const paths = getPaths();
+//   return { paths, fallback: false };
+// }
 
 export default function Page({ params: { slug } }: Props) {
-  const post = getPost(slug);
+  const post = getPost(decodeURIComponent(slug));
   const readTime = readingTime(post.content, undefined, 'en');
 
   return (
     <Container className='wrapper'>
       <div className='main-container'>
         <article className='w-full  font-sans-body'>
-          <section className={'meta-container font-sans'}>
+          <section className={'meta-container font-sans-body'}>
             <h5>PUBLISHED: {formatDate(post.createdAt)}</h5>
             <section className='author'>
               <Image
@@ -53,11 +53,11 @@ export default function Page({ params: { slug } }: Props) {
                   ? 'Less than a minute'
                   : `${readTime.minutes} minutes`}
               </span>
-              <DotIcon />
+              <DotIcon className='stroke-primary w-8 h-8 p-0 m-0' />
               <span>
                 <i>Words:</i> {readTime.words}
               </span>
-              <DotIcon />
+              <DotIcon className='stroke-primary w-8 h-8 p-0 m-0' />
               <span>
                 <i>Characters:</i> {post.content.length}
               </span>
@@ -66,7 +66,7 @@ export default function Page({ params: { slug } }: Props) {
               <strong>{post.title}</strong>
             </h1>
             <div className=' w-fit'>
-              <p className='base-border rounded-3xl bg-black text-white font-medium px-3 uppercase text-[.95rem] font-sans-display'>
+              <p className='base-border rounded-3xl bg-black text-white font-medium px-3 uppercase text-[.95rem] font-sans-display mt-2'>
                 {post.topic}
               </p>
             </div>

@@ -51,9 +51,9 @@ export default function Works() {
                 href={item.livePreview.url}
                 rel='noopener noreferrer'
                 target='_blank'
-                className='group flex items-center gap-2 underline-offset-4 underline decoration-dashed hover:text-primary transition-colors'>
-                <ExternalLinkIcon className='h-auto w-4 group-hover:stroke-primary' />
-                <span className='font-semibold group-hover:text-primary'>
+                className='group flex items-center gap-2 underline-offset-4 underline decoration-dashed hover:text-primary transition-colors  text-blue-400'>
+                <ExternalLinkIcon className='h-auto w-4 group-hover:stroke-primary stroke-blue-400 transition-colors' />
+                <span className='font-semibold transition-colors group-hover:text-primary  text-blue-400'>
                   {item.livePreview.label}
                 </span>
               </a>
@@ -61,9 +61,9 @@ export default function Works() {
                 href={item.repository.url}
                 rel='noopener noreferrer'
                 target='_blank'
-                className='group flex items-center gap-2 underline-offset-4 underline decoration-dashed hover:text-primary transition-colors'>
-                <GithubIcon className='h-auto w-4 group-hover:stroke-primary' />
-                <span className='font-semibold group-hover:text-primary'>
+                className='group flex items-center gap-2 underline-offset-4 underline decoration-dashed hover:text-primary transition-colors text-blue-400'>
+                <GithubIcon className='h-auto w-4 group-hover:stroke-primary stroke-blue-400 transition-colors' />
+                <span className='transition-colors font-semibold group-hover:text-primary  text-blue-400'>
                   {item.repository.label}
                 </span>
               </a>

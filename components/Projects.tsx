@@ -17,10 +17,10 @@ export default function Projects() {
       id='projects'
       className='w-full max-w-[980px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
       <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] sm:after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
-        <SquareStackIcon />
+        <SquareStackIcon  className='stroke-primary'/>
         <span>{translation('projects.title')}</span>
       </h2>
-      <p className='font-sans font-sm max-w-md text-center font-semibold'>
+      <p className='font-sans font-sm max-w-lg text-center font-semibold'>
         {translation('projects.intro-part-1')}{' '}
         <a
           href='https://github.com/KainNhantumbo'
@@ -47,7 +47,7 @@ export default function Projects() {
         <section className='cards-wrapper'>
           {projects.map((project, index) => (
             <motion.section
-              className='card base-border bg-foreground font-sans'
+              className='card base-border bg-foreground font-sans shadow-[0_0_25px_#00000015]'
               key={index}
               whileHover={{ y: -7 }}>
               <div className='top'>
@@ -60,7 +60,9 @@ export default function Projects() {
                   style={{ borderRadius: 10 }}
                   alt={project.name}
                 />
-                <h4 className='bg-orange-400/50 text-white backdrop-blur-md rounded-2xl'>{project.category}</h4>
+                <h4 className='bg-orange-400/50 text-white backdrop-blur-md rounded-2xl'>
+                  {project.category}
+                </h4>
               </div>
               <div className='bottom'>
                 <div>

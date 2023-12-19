@@ -22,8 +22,8 @@ export default function TableOfContents({ content }: Props) {
 
   return (
     <aside className='toc-container base-border bg-foreground p-3 px-4 my-2 rounded-xl'>
-      <nav className='flex flex-col gap-5'>
-        <h2 className='font-sans-body'>Table of Contents</h2>
+      <nav className='flex flex-col gap-2'>
+        <h2 className='font-sans-body text-xl'>Table of Contents</h2>
         <ul>
           {headings.map((heading, index) => (
             <li
@@ -32,7 +32,7 @@ export default function TableOfContents({ content }: Props) {
               style={{ paddingLeft: `calc(${heading.depth}px * 8px)` }}>
               <Link
                 href={`#${transformChild(heading.text)}`}
-                className='group hover:underline hover:underline-offset-8 hover:text-primary hover:decoration-dashed transition-colors'>
+                className='group underline underline-offset-4 hover:text-primary decoration-dashed transition-colors font-medium'>
                 {String(heading.text)}
               </Link>
             </li>

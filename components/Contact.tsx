@@ -64,7 +64,7 @@ export default function Contact() {
       id='contact'
       className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
       <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] sm:after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
-        <MessageSquareDashed />
+        <MessageSquareDashed className='stroke-primary' />
         <span>{translation('title')}</span>
       </h2>
       <section className='intro-container font-sans'>
@@ -95,7 +95,7 @@ export default function Contact() {
       </section>
 
       <motion.section
-        className='form-container font-sans base-border'
+        className='form-container font-sans base-border bg-foreground'
         initial={{ opacity: 0, scale: 0.4 }}
         transition={{ delay: 0.4 }}
         whileInView={{ opacity: 1, scale: 1 }}>
@@ -167,7 +167,7 @@ export default function Contact() {
           <motion.button
             whileTap={{ scale: 0.8 }}
             whileHover={{ scale: 1.05 }}
-            className='bg-foreground base-border w-fit rounded-lg px-4 py-2 text-white'
+            className='bg-primary-variant base-border w-fit rounded-lg px-4 py-2 text-white font-medium'
             type='submit'>
             <span>{translation('form.button')}</span>
           </motion.button>
