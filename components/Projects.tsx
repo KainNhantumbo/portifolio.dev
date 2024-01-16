@@ -77,7 +77,7 @@ export default function Projects() {
                       target={'_blank'}
                       className='group bg-background transition-colors base-border shadow-[0_0_20px_rgba(0,0,0,.06)] flex items-center font-medium py-[5px] px-4 gap-2 rounded-xl'
                       rel={'noreferrer noopener'}>
-                      <ExternalLinkIcon className='group-hover:stroke-primary transition-colors w-auto h-5' />
+                      <ExternalLinkIcon className='stroke-primary transition-colors w-auto h-5' />
                       <span className='group-hover:text-primary transition-colors capitalize text-[.9rem]'>
                         {translation('projects.live-demo')}
                       </span>
@@ -90,7 +90,7 @@ export default function Projects() {
                     className='group bg-background transition-colors base-border shadow-[0_0_20px_rgba(0,0,0,.06)] flex items-center font-medium py-[5px] px-4 gap-2 rounded-xl'
                     target={'_blank'}
                     rel={'noreferrer noopener'}>
-                    <GithubIcon className='group-hover:stroke-primary transition-colors w-auto h-5' />
+                    <GithubIcon className='stroke-primary transition-colors w-auto h-5' />
                     <span className='group-hover:text-primary transition-colors capitalize text-[.9rem]'>
                       {translation('projects.github')}
                     </span>

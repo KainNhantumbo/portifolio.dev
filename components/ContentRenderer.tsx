@@ -1,8 +1,8 @@
-import ReactMarkdown from 'react-markdown';
 import { transformChild } from '@/components/TableOfContents';
+import clsx from 'clsx';
+import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import clsx from 'clsx';
 
 type Props = { children: string };
 
@@ -15,7 +15,7 @@ export default function ContentRenderer({ children }: Props) {
           const { children, className, ...rest } = props;
           const match = /language-(\w+)/.exec(className || '');
           return match ? (
-            <div className='text-white my-3' style={{ color: '#fff' }}>
+            <div className='text-white my-3 font-monospace'>
               <SyntaxHighlighter
                 {...rest}
                 style={{ ...materialDark }}
@@ -28,7 +28,10 @@ export default function ContentRenderer({ children }: Props) {
           ) : (
             <code
               {...rest}
-              className={clsx(className, 'rounded-[5px] bg-font/10 py-[2px] px-[5px] mx-1 font-monospace')}>
+              className={clsx(
+                className,
+                'rounded-[5px] bg-font/10 py-[2px] px-[5px] mx-1 font-monospace'
+              )}>
               {children}
             </code>
           );

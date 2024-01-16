@@ -1,13 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 export const useHeaderView = (minWidth: number, initialScrollRange = -100) => {
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const [deltaY, setDeltaY] = useState<number>(initialScrollRange);
 
-  const onChangeWidth = () =>
-    window.innerWidth > minWidth ? setIsMenu(true) : setIsMenu(false);
+  const onChangeWidth = useMemo(
+    () => () =>
+      window.innerWidth > minWidth ? setIsMenu(true) : setIsMenu(false),
+    [minWidth]
+  );
 
   const onScroll = (e: WheelEvent) => setDeltaY(e.deltaY);
 
@@ -20,7 +23,7 @@ export const useHeaderView = (minWidth: number, initialScrollRange = -100) => {
       window.removeEventListener('resize', onChangeWidth);
       window.removeEventListener('wheel', onScroll);
     };
-  }, []);
+  }, [onChangeWidth]);
 
   return {
     handleToggleMenu: () => setIsMenu((current) => !current),

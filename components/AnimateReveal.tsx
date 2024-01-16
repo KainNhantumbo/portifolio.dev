@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, FC } from 'react';
+import { useEffect, useRef, type FC } from 'react';
 import { m as motion, useInView, useAnimation } from 'framer-motion';
 
 type Props = {
@@ -36,7 +36,7 @@ export const Reveal: FC<Props> = ({
       revealControls.start('visible');
       slideControls.start('visible');
     }
-  }, [isInView]);
+  }, [isInView, slideControls, revealControls]);
 
   return (
     <div ref={ref} style={{ width }} className='overflow-hidden relative'>

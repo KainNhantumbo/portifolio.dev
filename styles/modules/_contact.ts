@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import { BaseButton, StyledInputs, StyledLabels } from '../_defaults';
+import { StyledLabels } from '../_defaults';
 
 export const _contact = styled.section`
   max-width: 700px;

@@ -31,6 +31,7 @@ export default function Contact() {
       [e.target.name]: e.target.value
     }));
   };
+303074
 
   // notifies the e-mail sender about the message status
   const notification = (message: string) => {

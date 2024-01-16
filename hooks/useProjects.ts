@@ -8,6 +8,7 @@ import url_shortner_app from '@/public/assets/url-shortner-app.jpeg';
 import bug_tracker_server from '@/public/assets/bug-tracker-server.png';
 import firstRestaurantImage from '@/public/assets/restaurant-demo-first.png';
 import barbercutts from '@/public/assets/barbercutts.png';
+import maron_themes from '@/public/assets/maron-themes.png';
 import { useScopedI18n } from '@/locales/client';
 
 const categories = {
@@ -20,6 +21,14 @@ export function useProjects(): Project[] {
   const translation = useScopedI18n('projects');
 
   return [
+    {
+      name: translation('content.maron-themes'),
+      category: categories.front,
+      image: maron_themes,
+      code_url: 'https://github.com/KainNhantumbo/maron-themes',
+      live_url:
+        'https://marketplace.visualstudio.com/items?itemName=KainNhantumbo.maron-themes'
+    },
     {
       name: translation('content.bug-tracker'),
       category: categories.full,

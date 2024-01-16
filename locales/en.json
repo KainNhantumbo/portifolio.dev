@@ -45,6 +45,7 @@
     "github": "Github Repository",
     "section_name": "Good Old Projects",
     "content": {
+      "maron-themes": "Visual Studio Code Theme extension pack made with VSCode Theming API",
       "bug-tracker": "Bug Tracker App built with React.JS and Typescript",
       "bug-tracker-server": "Bug Tracker Restfull API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end",
       "url-shortner": "Url Shortner App built with React.JS and Typescript",
@@ -80,7 +81,7 @@
       "name-label": "Name *",
       "name-placeholder": "Type your name here",
       "mail-label": "E-mail *",
-      "mail-placeholder": "Type your e-mail adress here",
+      "mail-placeholder": "Type your e-mail address here",
       "subject-label": "Subject *",
       "subject-placeholder": "Type the subject here",
       "message-label": "Message *",
@@ -88,7 +89,7 @@
       "button": "Send message"
     },
     "message": {
-      "success": "Message sent successfuly!",
+      "success": "Message sent successfully!",
       "failure": "Oops! Looks like something went wrong. Please, try again.",
       "informative": "Sending your message, please wait..."
     }
@@ -103,7 +104,7 @@
     "repository_label": "View or fork source code on Github",
     "choconotey": {
       "title": "Choconotey Notes App 📔",
-      "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share and export/output your notes content in multiple formats like Markdown, HTML and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor and clean interface for ease  and distration free experience.\nGood to give it a try! 🎈🎉🎊"
+      "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share and export/output your notes content in multiple formats like Markdown, HTML and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor and clean interface for ease  and distraction free experience.\nGood to give it a try! 🎈🎉🎊"
     }
   }
 }
