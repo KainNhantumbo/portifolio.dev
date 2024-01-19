@@ -23,14 +23,14 @@
   "intro": {
     "welcome-message": "Bem vindo ao meu espaço :)",
     "presentation": "Olá 👋, sou o Kain!",
-    "message-part-1": "Um verdadeiro amante de conhecimento, sempre procurando aprender e partihar informações. Trabalhando com desenvolvimento Web desde 2019, desenvolvendo projetos escaláveis e  performáticos enquanto aprende novas coisinhas a cada dia.",
+    "message-part-1": "Um verdadeiro amante de conhecimento, sempre procurando aprender e partilhar informações. Trabalhando com desenvolvimento Web desde 2019, desenvolvendo projetos escaláveis e  performáticos enquanto aprende novas coisinhas a cada dia.",
     "message-part-2": "Para construir os meus projetos, utilizo Typescript e Javascript como linguagens de programação principais.",
     "title": "Desenvolvedor Web"
   },
   "about": {
     "title": "Sobre",
     "subtitle": "Desenvolvedor Web e Criador de Conteúdo",
-    "intro-1": "Sou uma pessoa com o desejo de crescer aprendendo novas coisas todos os dias. Movido pela curiosidade, me apixonei pelo desenvolvimento web e design.",
+    "intro-1": "Sou uma pessoa com o desejo de crescer aprendendo novas coisas todos os dias. Movido pela curiosidade, me apaixonei pelo desenvolvimento web e design.",
     "intro-2": "Estou muito ansioso e interessado em oportunidades de trabalho que envolvem as mais novas tecnologias e que coloquem as minhas habilidades em prática.",
     "experience-title": "Experiência",
     "experience-content": "Mais de 3 anos de programação",
@@ -73,9 +73,9 @@
   },
   "contact": {
     "title": "Contate-me",
-    "intro-title": "Vamos trazer idéias à vida utilizando código!",
-    "intro-phrase": "Olá! Estou aqui para ajudar as pessoas a tornar as suas idéias em realidade. Se você estiver preso em um projeto, quer iniciar algo novo ou simplesmente quer um conselho sobre onde pretente chegar daqui, gostaria de conversar com você sobre isso e ver o que podemos fazer juntos. Sinta-se livre para me contactar para mais informações!",
-    "intro-message": "Você pode utilizar o formuário abaixo para me enviar uma mensagem por correio eletrónico ou escolhendo uma das seguintes opções:",
+    "intro-title": "Vamos trazer ideias à vida utilizando código!",
+    "intro-phrase": "Olá! Estou aqui para ajudar as pessoas a tornar as suas ideias em realidade. Se você estiver preso em um projeto, quer iniciar algo novo ou simplesmente quer um conselho sobre onde pretende chegar daqui, gostaria de conversar com você sobre isso e ver o que podemos fazer juntos. Sinta-se livre para me contactar para mais informações!",
+    "intro-message": "Você pode utilizar o formulário abaixo para me enviar uma mensagem por correio eletrónico ou escolhendo uma das seguintes opções:",
     "mail": "Correio eletrónico: nhantumbok@gmail.com",
     "form": {
       "name-label": "Nome *",

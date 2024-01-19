@@ -26,8 +26,7 @@ export function useProjects(): Project[] {
       category: categories.front,
       image: maron_themes,
       code_url: 'https://github.com/KainNhantumbo/maron-themes',
-      live_url:
-        'https://marketplace.visualstudio.com/items?itemName=KainNhantumbo.maron-themes'
+      live_url: 'https://vscode.dev/theme/KainNhantumbo.maron-themes'
     },
     {
       name: translation('content.bug-tracker'),
