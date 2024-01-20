@@ -1,6 +1,6 @@
-import type { Theme } from '../types/index';
+import type { Theme } from '../types';
 
-export const light_default: Theme = {
+export const light_default:Theme = {
   error: '253, 56, 79',
   font: '95, 99, 104',
   font_dimmed: '95, 99, 104',

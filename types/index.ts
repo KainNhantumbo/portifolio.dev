@@ -8,6 +8,23 @@ export type InputEvents =
 
 export type SubmitEvent = FormEvent<HTMLFormElement>;
 
+
+export type Theme = {
+  error: string;
+  font: string;
+  font_dimmed: string;
+  black: string;
+  white: string;
+  primary: string;
+  secondary: string;
+  background: string;
+  foreground: string;
+  primary_shade: string;
+  secondary_shade: string;
+  background_shade: string;
+  foreground_shade: string;
+};
+
 export type FormData = {
   name: string;
   email: string;
