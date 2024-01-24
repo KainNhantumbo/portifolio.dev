@@ -5,6 +5,7 @@ import { useWorks } from '../hooks/useWorks';
 import { _works as Container } from '../styles/modules/_works';
 import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import { useScopedI18n } from '@/locales/client';
+import { AnimateScroll } from './animations/AnimateScroll';
 
 export default function Works() {
   const translation = useScopedI18n('works');
@@ -13,7 +14,7 @@ export default function Works() {
   return (
     <Container>
       {data.map((item, index) => (
-        <div key={index} className='item-container'>
+        <AnimateScroll key={index} className='item-container'>
           <div className='content-container'>
             <h3 className='font-sans mx-auto font-semibold uppercase text-lg'>
               {item.title}
@@ -76,7 +77,7 @@ export default function Works() {
             alt={item.title}
             className='base-border'
           />
-        </div>
+        </AnimateScroll>
       ))}
     </Container>
   );

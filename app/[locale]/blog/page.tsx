@@ -6,6 +6,7 @@ import { RssIcon } from 'lucide-react';
 import { setStaticParamsLocale } from 'next-international/server';
 import Link from 'next/link';
 
+
 type Props = {
   params: { locale: string };
 };

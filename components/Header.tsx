@@ -12,12 +12,14 @@ import { _header as Container } from '../styles/modules/_header';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { usePathname } from '@/hooks/usePathname';
 import { constants } from '@/shared/constants';
+import { useMemo } from 'react';
 
 type NavAnchors = { ref: string; label: string };
 
 export default function Header() {
   const MIN_WIDTH = 640;
   const { pathname, setPathname } = usePathname();
+
 
   const router = useRouter();
   const translation = useScopedI18n('header');
@@ -40,6 +42,7 @@ export default function Header() {
     { label: 'Portfolio', ref: '/en', url: '/' }
   ];
 
+  // const urls = useMemo(()=>  isportifo ,[])
   return (
     <Container>
       <motion.div
@@ -79,7 +82,7 @@ export default function Header() {
                         onClick={() =>
                           setPathname(`${currentLocale}#${item.ref}`)
                         }
-                        className='font-sans text-sm '>
+                        className='font-sans text-sm w-full'>
                         <span className='group-hover:text-primary transition-colors'>
                           {item.label}
                         </span>
