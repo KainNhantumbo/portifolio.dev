@@ -10,7 +10,6 @@ export const _introduction = styled.section`
   gap: 10px;
   margin: 0 auto;
   margin-top: 40px;
-  padding: 20px;
   z-index: 200;
   line-height: 1.8rem;
   font-size: 1.2rem;

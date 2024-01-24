@@ -55,14 +55,12 @@ export default function FluentButtons() {
           animate={{ x: 0, transition: { delay: 0.8 } }}
           transition={{ type: 'spring', duration: 0.5 }}
           title='Change Theme'
-          aria-label='Toogle theme'
-          onClick={() =>
-            theme === 'light' ? setTheme('dark') : setTheme('light')
-          }>
+          aria-label='Toggle theme'
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
           {theme === 'light' ? (
-            <SunMediumIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
-          ) : (
             <MoonStarIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
+          ) : (
+            <SunMediumIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
           )}
         </motion.button>
         <motion.button

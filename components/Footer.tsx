@@ -24,7 +24,7 @@ export default function Footer() {
   const pathname = usePathname();
   const isPortfolio = pathname?.includes('blog') ? false : true;
 
-  const aditionalFooterUrls = isPortfolio
+  const additionalFooterUrls = isPortfolio
     ? []
     : [
         {
@@ -60,7 +60,7 @@ export default function Footer() {
       icon: BookTextIcon,
       link: '/en/blog'
     },
-    ...aditionalFooterUrls
+    ...additionalFooterUrls
   ];
 
   return (
@@ -69,10 +69,9 @@ export default function Footer() {
       <ul>
         {socialMediaAnchors.map((item, index) => (
           <motion.li
-            className='bg-primary/[.15] backdrop-blur-md'
+            className='bg-primary/[.15] backdrop-blur-md  hover:bg-secondary/20 hover:animate-pulse'
             key={index}
             initial={{ scale: 0 }}
-            whileHover={{ scale: 1.2 }}
             whileInView={{
               scale: 1,
               transition: { delay: index / socialMediaAnchors.length }

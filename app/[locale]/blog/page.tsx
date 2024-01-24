@@ -6,11 +6,11 @@ import { RssIcon } from 'lucide-react';
 import { setStaticParamsLocale } from 'next-international/server';
 import Link from 'next/link';
 
-export default function Page({
-  params: { locale }
-}: {
+type Props = {
   params: { locale: string };
-}) {
+};
+
+export default function Page({ params: { locale } }: Props) {
   setStaticParamsLocale(locale);
 
   new FeedGenerator().generate();

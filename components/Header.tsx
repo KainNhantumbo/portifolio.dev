@@ -17,7 +17,7 @@ type NavAnchors = { ref: string; label: string };
 
 export default function Header() {
   const MIN_WIDTH = 640;
-  const {pathname, setPathname} = usePathname();
+  const { pathname, setPathname } = usePathname();
 
   const router = useRouter();
   const translation = useScopedI18n('header');
@@ -72,9 +72,6 @@ export default function Header() {
                         },
                         'list-none group'
                       )}
-                      whileTap={{
-                        scale: scrollRangeValue <= MIN_WIDTH ? 0.95 : 1
-                      }}
                       whileHover={{ scale: 1.01, y: 1 }}>
                       <Link
                         href={item.ref}

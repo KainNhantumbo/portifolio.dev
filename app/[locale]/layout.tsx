@@ -1,6 +1,6 @@
 import '@/styles/index.css';
 
-import AnimatePageTransition from '@/components/AnimatePageTransition';
+import AnimatePageTransition from '@/components/animations/AnimatePageTransition';
 import FluentButtons from '@/components/FluentButtons';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';

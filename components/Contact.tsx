@@ -64,7 +64,7 @@ export default function Contact() {
     <Container
       id='contact'
       className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
-      <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] sm:after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
+      <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
         <MessageSquareDashed className='stroke-primary' />
         <span>{translation('title')}</span>
       </h2>
@@ -166,7 +166,7 @@ export default function Contact() {
           />
           <span className='message'>{messageStatus}</span>
           <motion.button
-            whileTap={{ scale: 0.8 }}
+            whileTap={{ scale: 0.85 }}
             whileHover={{ scale: 1.05 }}
             className='bg-primary-variant base-border w-fit rounded-lg px-4 py-2 text-white font-medium'
             type='submit'>

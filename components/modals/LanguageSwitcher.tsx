@@ -50,14 +50,14 @@ export default function LanguageSwitcher() {
                 <p className='prompt-message'>{translation('message')}</p>
                 <div className='buttons-container'>
                   <motion.button
-                    whileTap={{ scale: 0.8 }}
+                    whileTap={{ scale: 0.85 }}
                     whileHover={{ scale: 1.05 }}
                     className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center hover:text-primary transition-colors '
                     onClick={() => translate('en')}>
                     {translation('buttons.english')}
                   </motion.button>
                   <motion.button
-                    whileTap={{ scale: 0.8 }}
+                    whileTap={{ scale: 0.85 }}
                     whileHover={{ scale: 1.05 }}
                     className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center hover:text-primary transition-colors'
                     onClick={() => translate('pt')}>
@@ -66,7 +66,7 @@ export default function LanguageSwitcher() {
                 </div>
               </div>
               <motion.button
-                whileTap={{ scale: 0.8 }}
+                whileTap={{ scale: 0.85 }}
                 whileHover={{ scale: 1.1 }}
                 className='prompt-close group'
                 onClick={() =>
