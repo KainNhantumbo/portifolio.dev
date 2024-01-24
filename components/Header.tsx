@@ -14,12 +14,11 @@ import { usePathname } from '@/hooks/usePathname';
 import { constants } from '@/shared/constants';
 import { useMemo } from 'react';
 
-type NavAnchors = { ref: string; label: string };
+export type UrlList = Array<{ ref: string; label: string; url?: string }>;
 
 export default function Header() {
   const MIN_WIDTH = 640;
   const { pathname, setPathname } = usePathname();
-
 
   const router = useRouter();
   const translation = useScopedI18n('header');
@@ -28,21 +27,31 @@ export default function Header() {
   const { isHeaderInView, scrollRangeValue, handleToggleMenu } =
     useHeaderView(MIN_WIDTH);
 
-  const portfolioUrls: NavAnchors[] = [
-    { label: translation('anchors.about'), ref: '#about' },
-    { label: translation('anchors.skills'), ref: '#skills' },
-    { label: translation('anchors.projects'), ref: '#projects' },
-    { label: translation('anchors.contact'), ref: '#contact' },
-    { label: translation('anchors.blog'), ref: '/en/blog' }
-  ];
+  const portfolioUrls: UrlList = useMemo(
+    () => [
+      { label: translation('anchors.about'), ref: '#about' },
+      { label: translation('anchors.skills'), ref: '#skills' },
+      { label: translation('anchors.projects'), ref: '#projects' },
+      { label: translation('anchors.contact'), ref: '#contact' },
+      { label: translation('anchors.blog'), ref: '/en/blog' }
+    ],
+    [translation]
+  );
 
-  const blogUrls = [
-    { label: 'Blog', ref: 'post', url: '/en/blog' },
-    { label: 'About', ref: 'about', url: '/en/blog/about' },
-    { label: 'Portfolio', ref: '/en', url: '/' }
-  ];
+  const blogUrls: UrlList = useMemo(
+    () => [
+      { label: 'Blog', ref: 'post', url: '/en/blog' },
+      { label: 'About', ref: 'about', url: '/en/blog/about' },
+      { label: 'Portfolio', ref: '/en', url: '/' }
+    ],
+    []
+  );
 
-  // const urls = useMemo(()=>  isportifo ,[])
+  const urls = useMemo(
+    () => (isPortfolio ? portfolioUrls : blogUrls),
+    [isPortfolio, blogUrls, portfolioUrls]
+  );
+
   return (
     <Container>
       <motion.div
@@ -64,61 +73,31 @@ export default function Header() {
               animate={{ translateY: isHeaderInView ? 0 : -50 }}
               exit={{ translateX: 150 }}
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
-              {isPortfolio
-                ? portfolioUrls.map((item, index) => (
-                    <motion.li
-                      key={index.toString()}
-                      className={clsx(
-                        {
-                          'base-border rounded-md  sm:rounded-none sm:border-none after:absolute sm:after:bottom-[calc(50%_-_16px)] after:left-[-3px] after:bottom-[calc(50%_-_10px)] after:w-[5px] after:h-[20px] sm:after:left-[calc(50%_-_10px)] sm:after:w-[20px] sm:after:h-[5px] after:rounded-md after:bg-primary sm:text-primary':
-                            pathname.includes(item.ref)
-                        },
-                        'list-none group'
-                      )}
-                      whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link
-                        href={item.ref}
-                        locale={'en'}
-                        onClick={() =>
-                          setPathname(`${currentLocale}#${item.ref}`)
-                        }
-                        className='font-sans text-sm w-full'>
-                        <span className='group-hover:text-primary transition-colors'>
-                          {item.label}
-                        </span>
-                      </Link>
-                    </motion.li>
-                  ))
-                : null}
-              {!isPortfolio
-                ? blogUrls.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className={clsx(
-                        {
-                          'base-border rounded-md  sm:rounded-none sm:border-none after:absolute sm:after:bottom-[calc(50%_-_16px)] after:left-[-3px] after:bottom-[calc(50%_-_10px)] after:w-[5px] after:h-[20px] sm:after:left-[calc(50%_-_10px)] sm:after:w-[20px] sm:after:h-[5px] after:rounded-md after:bg-primary sm:text-primary':
-                            pathname.includes(item.ref)
-                        },
-                        'list-none group'
-                      )}
-                      whileTap={{
-                        scale: scrollRangeValue <= MIN_WIDTH ? 0.95 : 1
-                      }}
-                      whileHover={{ scale: 1.01, y: 1 }}>
-                      <Link
-                        href={item.url}
-                        locale={'en'}
-                        onClick={() =>
-                          setPathname(`${currentLocale}#${item.ref}`)
-                        }
-                        className='font-sans text-sm'>
-                        <span className='group-hover:text-primary transition-colors'>
-                          {item.label}
-                        </span>
-                      </Link>
-                    </motion.li>
-                  ))
-                : null}
+              {urls.map((item, index) => (
+                <motion.li
+                  key={index.toString()}
+                  className={clsx(
+                    {
+                      'base-border rounded-md  sm:rounded-none sm:border-none after:absolute sm:after:bottom-[calc(50%_-_16px)] after:left-[-3px] after:bottom-[calc(50%_-_10px)] after:w-[5px] after:h-[20px] sm:after:left-[calc(50%_-_10px)] sm:after:w-[20px] sm:after:h-[5px] after:rounded-md after:bg-primary sm:text-primary':
+                        pathname.includes(item.ref)
+                    },
+                    'list-none group'
+                  )}
+                  whileTap={{
+                    scale: scrollRangeValue <= MIN_WIDTH ? 0.98 : 1
+                  }}
+                  whileHover={{ scale: 1.01, y: 1 }}>
+                  <Link
+                    href={item.url || item.ref}
+                    locale={'en'}
+                    onClick={() => setPathname(`${currentLocale}#${item.ref}`)}
+                    className='font-sans text-sm w-full'>
+                    <span className='group-hover:text-primary transition-colors'>
+                      {item.label}
+                    </span>
+                  </Link>
+                </motion.li>
+              ))}
             </motion.ul>
           </AnimatePresence>
         </nav>

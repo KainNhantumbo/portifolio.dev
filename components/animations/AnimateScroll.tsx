@@ -19,11 +19,7 @@ export const AnimateScroll: FC<AnimateScrollProps> = ({
     offset: ['start end', 'end start']
   });
 
-  const scaleStyle = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.5, 0.8, 1],
-    [1, 0.9, 0.9, 0.8, 0]
-  );
+  const scaleStyle = useTransform(scrollYProgress, [ 0.8, 0.9, 1], [1,.9, .8,]);
 
   const opacityStyle = useTransform(scrollYProgress, [0, 0.65, 0], [1, 1, 0]);
 

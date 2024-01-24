@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  AtomIcon,
   BadgeCheckIcon,
   BookMarkedIcon,
   Code2Icon,
@@ -46,6 +47,7 @@ export default function Abilities() {
       icon: BadgeCheckIcon,
       data: [
         { tech: 'Git', icon: FolderGit2Icon },
+        { tech: 'Electron.JS', icon: AtomIcon },
         { tech: 'Markdown', icon: BookMarkedIcon },
         { tech: 'Github', icon: GithubIcon }
       ]
