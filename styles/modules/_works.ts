@@ -81,7 +81,6 @@ export const _works = styled.section`
         align-items: center;
         gap: 12px;
         margin-top: 12px;
-        
       }
     }
 

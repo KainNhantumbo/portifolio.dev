@@ -12,7 +12,7 @@ export default function Works() {
   const data = useWorks();
 
   return (
-    <Container>
+    <Container >
       {data.map((item, index) => (
         <AnimateScroll key={index} className='item-container'>
           <div className='content-container'>

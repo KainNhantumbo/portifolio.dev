@@ -105,6 +105,10 @@
     "choconotey": {
       "title": "Choconotey Notes App 📔",
       "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share and export/output your notes content in multiple formats like Markdown, HTML and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor and clean interface for ease  and distraction free experience.\nGood to give it a try! 🎈🎉🎊"
+    },
+    "palletone": {
+      "title": "Palletone Colors App 🎨",
+      "description": "This app aims to bring a new experience of collecting, managing and building color palettes for designers and web developers.\nThe main goal is to simplify the process providing the right tools for choosing the preferred color for their project.\nFeel free to try it on any device of yours and bake your own color flavor for your next project! 🥳"
     }
   }
 }

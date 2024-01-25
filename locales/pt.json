@@ -105,6 +105,10 @@
     "choconotey": {
       "title": "Aplicação de Notas Choconotey 📔",
       "description": "Fazer anotações em markdown se tornou mais simples com esta aplicação. Ela foi projetada com funcionalidades para criar, organizar, filtrar, compartilhar e exportar o conteúdo das suas notas em múltiplos formatos como Markdown, HTML e texto simples.\nEmbutida com sincronização automática, controlo de dados e funcionalidades, leves animações gráficas, um editor robusto com uma interface limpa para obter uma experiência fácil e sem  distrações.\nDê uma olhada ao vivo! 🎈🎉🎊"
+    },
+    "palletone": {
+      "title": "Criador de Cores Palletone 🎨",
+      "description": "Este aplicativo tem como objetivo trazer uma nova experiência de coleta, gerenciamento e construção de paletas de cores para designers e desenvolvedores web.\nO objetivo principal é simplificar o processo fornecendo as ferramentas certas para escolher a cor preferida para seu projeto.\nSinta-se à vontade para experimentá-lo. em qualquer dispositivo seu e prepare seu próprio sabor de cor para seu próximo projeto!🥳"
     }
   }
 }
