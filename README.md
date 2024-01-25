@@ -1,4 +1,4 @@
-<h1 >🌟 My Official Portfolio ✨</h1>
+<h1 align="center">🌟 My Official Portfolio ✨</h1>
 
 > **Hi, welcome to my portfolio repository!**
 
@@ -28,21 +28,31 @@ Feel free to visit my portfolio using the link below:
 ## 🌳 Project structure
 
 ```
-$PROJECT_ROOT
+$PROJECT_ROOT (v5)
 .
 ├── app
+│   └── [locale]
+│       └── blog
+│           ├── about
+│           └── post
+│               └── [slug]
 ├── components
+│   ├── animations
+│   └── modals
 ├── context
 ├── data
+│   └── posts
 ├── hooks
 ├── lib
-│   # translation modules and JSON files
 ├── locales
-├── node_modules
 ├── providers
 ├── public
+│   ├── assets
+│   └── rss
 ├── shared
 ├── styles
+│   ├── modules
+│   └── routes
 └── types
 ```
 
