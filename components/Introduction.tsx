@@ -1,9 +1,10 @@
 'use client';
 
-import { motion } from '@/providers/framer-provider';
-import { _introduction as Container } from '../styles/modules/_introduction';
-import { GithubIcon, LinkedinIcon } from 'lucide-react';
 import { useI18n } from '@/locales/client';
+import { motion } from '@/providers/framer-provider';
+import { GithubIcon, LinkedinIcon } from 'lucide-react';
+import { LinearTextGradient } from 'react-text-gradients-and-animations';
+import { _introduction as Container } from '../styles/modules/_introduction';
 
 export default function Introduction() {
   const translation = useI18n();
@@ -30,8 +31,15 @@ export default function Introduction() {
           {translation('intro.presentation')}
         </h3>
         <div className='w-full flex gap-3'>
-          <h1 className='w-full font-bold text-4xl mobile-x:text-6xl font-sans leading-10 my-4 mobile-x:my-0 mobile-x:py-8 text-transparent bg-clip-text bg-gradient-to-r from-primary-variant to-primary'>
-            {translation('intro.title')}
+          <h1 className='w-full font-bold text-4xl mobile-x:text-6xl font-sans leading-10 my-4 mobile-x:my-0 mobile-x:py-8 text-transparent bg-clip-text'>
+            <LinearTextGradient
+              animate
+              angle={45}
+              animateDirection='vertical'
+              animateDuration={2}
+              colors={['#1E9000', '#708090', '#E47131', '#fafa6e']}>
+              {translation('intro.title')}
+            </LinearTextGradient>
           </h1>
         </div>
       </div>

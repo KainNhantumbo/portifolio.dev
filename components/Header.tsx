@@ -64,41 +64,44 @@ export default function Header() {
             <span className='font-sans text-primary'>{constants.title}</span>
           </h2>
         </div>
-        <motion.button whileTap={{ scale: 0.8 }} onClick={handleToggleMenu}>
-          {isHeaderInView ? <XIcon /> : <Settings2Icon />}
+        <motion.button
+          whileTap={{ scale: 0.8 }}
+          onClick={handleToggleMenu}
+          className='rounded-sm w-fit cursor-pointer justify-self-end hidden max-[640px]:block max-[640px]:absolute max-[640px]:top-3 max-[640px]:right-2 group'>
+          {isHeaderInView ? (
+            <XIcon className='w-6 h-auto pointer-events-none group-hover:stroke-error' />
+          ) : (
+            <Settings2Icon className='w-6 h-auto pointer-events-none group-hover:stroke-primary' />
+          )}
         </motion.button>
-        <nav className='navbar' role='main'>
+        <nav className='max-[640px]:w-full' role='main'>
           <AnimatePresence>
-            <motion.ul
+            <motion.section
+              className='w-full flex flex-row flex-nowrap px-2 gap-2 max-[640px]:p-5 max-[640px]:flex-col max-[640px]:hidden max-[640px]:mt-7 min-[640px]:flex'
               animate={{ translateY: isHeaderInView ? 0 : -50 }}
               exit={{ translateX: 150 }}
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
               {urls.map((item, index) => (
-                <motion.li
+                <Link
                   key={index.toString()}
+                  href={item.url || item.ref}
+                  onClick={() => setPathname(`${currentLocale}#${item.ref}`)}
+                  locale={'en'}
                   className={clsx(
                     {
-                      'base-border rounded-md  sm:rounded-none sm:border-none after:absolute sm:after:bottom-[calc(50%_-_16px)] after:left-[-3px] after:bottom-[calc(50%_-_10px)] after:w-[5px] after:h-[20px] sm:after:left-[calc(50%_-_10px)] sm:after:w-[20px] sm:after:h-[5px] after:rounded-md after:bg-primary sm:text-primary':
+                      'relative base-border rounded-md  sm:rounded-none sm:border-none after:absolute sm:after:bottom-[calc(50%_-_16px)] after:left-[-3px] after:bottom-[calc(50%_-_10px)] after:w-[5px] after:h-[20px] sm:after:left-[calc(50%_-_10px)] sm:after:w-[20px] sm:after:h-[5px] after:rounded-md after:bg-primary sm:text-primary':
                         pathname.includes(item.ref)
                     },
                     'list-none group'
-                  )}
-                  whileTap={{
-                    scale: scrollRangeValue <= MIN_WIDTH ? 0.98 : 1
-                  }}
-                  whileHover={{ scale: 1.01, y: 1 }}>
-                  <Link
-                    href={item.url || item.ref}
-                    locale={'en'}
-                    onClick={() => setPathname(`${currentLocale}#${item.ref}`)}
-                    className='font-sans text-sm w-full'>
-                    <span className='group-hover:text-primary transition-colors'>
+                  )}>
+                  <div className='w-full relative p-1 max-[640px]:p-2 max-[640px]:px-4 '> 
+                    <span className='w-full group-hover:text-primary transition-colors font-sans text-sm font-medium'>
                       {item.label}
                     </span>
-                  </Link>
-                </motion.li>
+                  </div>
+                </Link>
               ))}
-            </motion.ul>
+            </motion.section>
           </AnimatePresence>
         </nav>
       </motion.div>

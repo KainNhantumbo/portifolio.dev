@@ -7,13 +7,11 @@ import { _home as Container } from '@/styles/routes/_home';
 import LanguageSwitcher from '@/components/modals/LanguageSwitcher';
 import { setStaticParamsLocale } from 'next-international/server';
 
-export default function Page({
-  params: { locale }
-}: {
-  params: { locale: string };
-}) {
+export type PageParams = { params: { locale: string } };
+
+export default function Page({ params: { locale } }: PageParams) {
   setStaticParamsLocale(locale);
-  
+
   return (
     <Container>
       <Introduction />

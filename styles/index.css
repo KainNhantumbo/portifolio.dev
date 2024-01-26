@@ -72,31 +72,23 @@
 
   hr,
   .hr-class {
-    @apply text-font stroke-font;
-    margin: 8px 0;
-    border-radius: 3px;
+    @apply text-font stroke-font my-2 rounded-[3px];
   }
 
   table {
-    margin: 12px 0;
+    @apply my-3;
   }
 
   blockquote {
-    @apply bg-primary-variant/30 w-fit mobile-x:w-full my-3 relative ml-5 rounded-lg;
-    font-size: 1.2rem;
+    @apply bg-primary-variant/30 w-fit mobile-x:w-full my-3 relative ml-5 rounded-lg text-xl;
     padding: 12px 12px 1px 12px;
-    line-height: 2rem;
   }
 
   blockquote::before {
     content: '';
-    position: absolute;
     top: calc(50% - 8px);
     left: -12px;
-    border-radius: 8px;
-    width: 5px;
-    height: 24px;
-    @apply bg-primary;
+    @apply bg-primary w-[5px] h-6 rounded-lg absolute;
   }
 
   @media screen and (max-width: 530px) {
@@ -109,13 +101,12 @@
 
   pre {
     border-radius: 8px !important;
-    
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
     text-align: justify;
   }
-  
+
   pre code {
     @apply base-border;
     word-spacing: normal;

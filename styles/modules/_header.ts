@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const _header = styled.header`
   width: 100%;
-  
 
   .main-container {
     width: 100%;
@@ -34,36 +33,6 @@ export const _header = styled.header`
     }
   }
 
-  button {
-    all: unset;
-    border-radius: 3px;
-    width: fit-content;
-    cursor: pointer;
-    justify-self: flex-end;
-    align-self: flex-end;
-    display: none;
-
-    @media screen and (max-width: 640px) {
-      display: block;
-      position: absolute;
-      top: 11px;
-      right: 8px;
-    }
-
-    svg {
-      width: 25px;
-      height: 25px;
-      pointer-events: none;
-      color: rgb(${({ theme }) => theme.font});
-    }
-
-    &:hover {
-      svg {
-        color: rgb(${({ theme }) => theme.primary_shade});
-      }
-    }
-  }
-
   .donut-container {
     cursor: pointer;
     display: flex;
@@ -82,51 +51,6 @@ export const _header = styled.header`
       font-weight: 600;
       font-size: 0.9rem;
       color: rgba(${({ theme }) => theme.primary_shade}, 0.8);
-    }
-  }
-
-  nav {
-    @media screen and (max-width: 640px) {
-      width: 100%;
-    }
-
-    ul {
-      width: 100%;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: flex-start;
-      font-weight: 500;
-      padding: 0 10px;
-      gap: 8px;
-
-      @media screen and (max-width: 640px) {
-        flex-direction: column;
-        padding: 20px;
-        display: none;
-        margin-top: 28px;
-      }
-      @media screen and (min-width: 640px) {
-        display: flex;
-      }
-
-      li {
-        position: relative;
-        padding: 5px;
-
-        a {
-          width: 100%;
-        }
-
-        @media screen and (max-width: 640px) {
-          padding: 10px;
-        }
-
-        &:hover {
-          color: rgb(${({ theme }) => theme.primary_shade});
-          cursor: pointer;
-        }
-      }
-
     }
   }
 `;
