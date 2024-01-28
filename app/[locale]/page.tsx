@@ -1,25 +1,25 @@
+import type { PageParams } from '@/types';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Projects from '@/components/Projects';
 import Abilities from '@/components/Abilities';
 import Introduction from '@/components/Introduction';
-import { _home as Container } from '@/styles/routes/_home';
-import LanguageSwitcher from '@/components/modals/LanguageSwitcher';
 import { setStaticParamsLocale } from 'next-international/server';
+import LanguageSwitcher from '@/components/modals/LanguageSwitcher';
 
-export type PageParams = { params: { locale: string } };
-
-export default function Page({ params: { locale } }: PageParams) {
+const Page = ({ params: { locale } }: PageParams) => {
   setStaticParamsLocale(locale);
 
   return (
-    <Container>
+    <main className='w-full px-3 pt-[75px] flex flex-col gap-7 mb-12'>
       <Introduction />
       <LanguageSwitcher />
       <About />
       <Abilities />
       <Projects />
       <Contact />
-    </Container>
+    </main>
   );
-}
+};
+
+export default Page;

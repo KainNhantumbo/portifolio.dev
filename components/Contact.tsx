@@ -31,7 +31,7 @@ export default function Contact() {
       [e.target.name]: e.target.value
     }));
   };
-303074
+  303074;
 
   // notifies the e-mail sender about the message status
   const notification = (message: string) => {
@@ -64,8 +64,8 @@ export default function Contact() {
     <Container
       id='contact'
       className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
-      <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
-        <MessageSquareDashed className='stroke-primary' />
+      <h2 className='base-section-title'>
+        <MessageSquareDashed />
         <span>{translation('title')}</span>
       </h2>
       <section className='intro-container font-sans'>

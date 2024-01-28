@@ -58,10 +58,18 @@ export default function Header() {
         className='main-container base-border bg-background/50 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm rounded-xl'
         animate={{ translateY: scrollRangeValue > 100 ? '-65px' : '0px' }}
         transition={{ duration: 0.5 }}>
-        <div className='donut-container'>
-          <Image src={donutImage} width={25} height={25} alt='donut image' />
+        <div className='cursor-pointer flex flex-row items-center gap-2 max-[640px]:absolute max-[640px]:top-3 max-[640px]:left-[calc(50%_-_60px)]'>
+          <Image
+            src={donutImage}
+            width={25}
+            height={25}
+            alt='donut image'
+            className='w-full max-w-[18px] max-h-[18px] object-cover'
+          />
           <h2 onClick={() => router.push('/')}>
-            <span className='font-sans text-primary'>{constants.title}</span>
+            <span className='font-sans text-primary text-sm font-semibold'>
+              {constants.title}
+            </span>
           </h2>
         </div>
         <motion.button
@@ -77,7 +85,7 @@ export default function Header() {
         <nav className='max-[640px]:w-full' role='main'>
           <AnimatePresence>
             <motion.section
-              className='w-full flex flex-row flex-nowrap px-2 gap-2 max-[640px]:p-5 max-[640px]:flex-col max-[640px]:hidden max-[640px]:mt-7 min-[640px]:flex'
+              className='w-full flex flex-row flex-nowrap px-2 gap-2 max-[640px]:p-5 max-[640px]:flex-col max-[640px]:hidden max-[640px]:mt-8 min-[640px]:flex'
               animate={{ translateY: isHeaderInView ? 0 : -50 }}
               exit={{ translateX: 150 }}
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
@@ -94,7 +102,7 @@ export default function Header() {
                     },
                     'list-none group'
                   )}>
-                  <div className='w-full relative p-1 max-[640px]:p-2 max-[640px]:px-4 '> 
+                  <div className='w-full relative p-1 max-[640px]:p-2 max-[640px]:px-4 '>
                     <span className='w-full group-hover:text-primary transition-colors font-sans text-sm font-medium'>
                       {item.label}
                     </span>

@@ -32,25 +32,4 @@ export const _header = styled.header`
       }
     }
   }
-
-  .donut-container {
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-
-    img {
-      width: 100%;
-      max-width: 19px;
-      max-height: 19px;
-      object-fit: cover;
-    }
-
-    span {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: rgba(${({ theme }) => theme.primary_shade}, 0.8);
-    }
-  }
 `;

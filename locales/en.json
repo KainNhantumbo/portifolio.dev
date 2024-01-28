@@ -43,7 +43,7 @@
     "intro-part-2": "github profile",
     "live-demo": "Live Demo",
     "github": "Github Repository",
-    "section_name": "Good Old Projects",
+    "section_name": "Other Crafted Projects",
     "content": {
       "maron-themes": "Visual Studio Code Theme extension pack made with VSCode Theming API",
       "bug-tracker": "Bug Tracker App built with React.JS and Typescript",

@@ -2,22 +2,21 @@
 
 import Works from './Works';
 import Image from 'next/image';
+import { useI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { useProjects } from '../hooks/useProjects';
-import { _projects as Container } from '../styles/modules/_projects';
 import { ExternalLinkIcon, GithubIcon, SquareStackIcon } from 'lucide-react';
-import { useI18n } from '@/locales/client';
 
 export default function Projects() {
   const projects = useProjects();
   const translation = useI18n();
 
   return (
-    <Container
+    <section
       id='projects'
       className='w-full max-w-[980px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
-      <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
-        <SquareStackIcon  className='stroke-primary'/>
+      <h2 className='base-section-title'>
+        <SquareStackIcon />
         <span>{translation('projects.title')}</span>
       </h2>
       <p className='font-sans font-sm max-w-lg text-center font-semibold'>
@@ -39,32 +38,32 @@ export default function Projects() {
 
       <Works />
 
-      <h3 className='font-semibold font-sans text-xl underline underline-offset-4 decoration-dashed'>
+      <h3 className='font-semibold font-sans-display text-lg underline underline-offset-4 uppercase decoration-dashed'>
         {translation('projects.section_name')}
       </h3>
 
       <section className='cards-container'>
-        <section className='cards-wrapper'>
+        <section className='grid grid-cols-3 mt-5 gap-5 max-[910px]:grid-cols-2 max-[605px]:grid-cols-1'>
           {projects.map((project, index) => (
             <motion.section
-              className='card base-border bg-foreground font-sans shadow-[0_0_25px_#00000015]'
+              className='w-[280px] h-[380px] flex flex-col rounded-xl p-2 select-none base-border bg-foreground font-sans shadow-[0_0_25px_#00000015]'
               key={index}
               whileHover={{ y: -7 }}>
-              <div className='top'>
+              <div className='w-full h-[210px] relative'>
                 <Image
                   src={project.image}
                   placeholder={'blur'}
                   width={280}
                   height={200}
-                  className='base-border shadow-[0_0_25px_rgba(0,0,0,.08)]'
+                  className='base-border w-full h-full max-h-[180px]'
                   style={{ borderRadius: 10 }}
                   alt={project.name}
                 />
-                <h4 className='bg-orange-400/50 text-white backdrop-blur-md rounded-2xl'>
+                <h4 className='bg-orange-400/50 text-white backdrop-blur-md rounded-lg absolute left-2 bottom-2 px-2 w-fit font-medium text-sm'>
                   {project.category}
                 </h4>
               </div>
-              <div className='bottom'>
+              <div className='flex flex-col justify-between h-full'>
                 <div>
                   <h3 className='mt-2 text-[.95rem]'>{project.name}</h3>
                 </div>
@@ -101,6 +100,6 @@ export default function Projects() {
           ))}
         </section>
       </section>
-    </Container>
+    </section>
   );
 }

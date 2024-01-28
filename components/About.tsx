@@ -14,8 +14,8 @@ export default function About() {
     <Container
       id='about'
       className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
-      <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
-        <UserIcon className='stroke-primary' />
+      <h2 className='base-section-title'>
+        <UserIcon />
         <span>{translation('title')}</span>
       </h2>
       <section className='experiences font-sans'>

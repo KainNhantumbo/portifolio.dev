@@ -129,6 +129,7 @@
   }
 
   html {
+    scroll-padding-top: 70px;
     @apply overflow-x-hidden m-0 p-0 scroll-smooth text-font;
   }
 
@@ -164,5 +165,20 @@
 
   .inputs {
     @apply w-[100%] max-w-[200px] mobile:max-w-[260px] sm:max-w-md md:max-w-lg h-fit py-[10px] px-[18px] leading-7 outline-none resize-y rounded-xl bg-background bg-opacity-70 border-solid border-[1px] border-opacity-50 border-font text-font focus:border-font focus:border-opacity-70 focus:transition-shadow focus:shadow-[0_0_20px_rgba(0,0,0,0.1)] placeholder:text-[0.9rem] disabled:bg-foreground disabled:placeholder:text-transparent disabled:border-none;
+  }
+
+  .base-section-title {
+    @apply relative font-semibold mx-auto mt-3 max-[420px]:text-base max-[420px]:text-center font-sans-display;
+
+    ::before {
+      @apply absolute content-[''] bg-primary rounded-xl -top-4 h-[7px] w-11 left-[calc(50%_-_20px)];
+    }
+
+    svg {
+      @apply stroke-primary absolute w-5 h-5 left-0 top-[calc(50%_-_10px)];
+    }
+    span {
+      @apply pl-6 uppercase text-lg;
+    }
   }
 }

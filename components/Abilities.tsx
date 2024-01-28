@@ -58,16 +58,16 @@ export default function Abilities() {
     <Container
       id='skills'
       className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
-      <h2 className='rounded-md after:absolute after:top-[calc(50%_-_30px)] after:left-[calc(50%_-_10px)] after:w-[40px] after:h-[7px] after:rounded-md after:bg-primary font-sans font-semibold'>
-        <PenToolIcon className='stroke-primary' />
+      <h2 className='base-section-title'>
+        <PenToolIcon />
         <span>{translation('title')}</span>
       </h2>
 
       {data.map((group, index) => (
         <section key={index} className='stack-container base-border font-sans'>
-          <h3 className='sub-title'>
-            <group.icon className='stroke-secondary' />
-            <span className='text-primary'>{group.title}</span>
+          <h3 className='text-primary mb-5 relative'>
+            <group.icon className='stroke-secondary absolute w-5 h-auto left-0 top-[calc(50%_-_10px)]' />
+            <span className='text-primary pl-6'>{group.title}</span>
           </h3>
           <section className='list-items'>
             {group.data.map((item, index) => (

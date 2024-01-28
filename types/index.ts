@@ -1,13 +1,11 @@
 import { LucideIcon } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ChangeEvent, FormEvent } from 'react';
-
 export type InputEvents =
-  | ChangeEvent<HTMLInputElement>
-  | ChangeEvent<HTMLTextAreaElement>;
+| ChangeEvent<HTMLInputElement>
+| ChangeEvent<HTMLTextAreaElement>;
 
 export type SubmitEvent = FormEvent<HTMLFormElement>;
-
 
 export type Theme = {
   error: string;
@@ -80,3 +78,5 @@ export interface Post extends Frontmatter {
   slug: string;
   content: string;
 }
+
+export type PageParams = { params: { locale: string } };
