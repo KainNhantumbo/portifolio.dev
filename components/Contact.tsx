@@ -8,11 +8,10 @@ import {
   UserIcon
 } from 'lucide-react';
 import { useState } from 'react';
+import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { send as sender } from '@emailjs/browser';
-import { InputEvents, SubmitEvent, FormData } from '../types';
-import { _contact as Container } from '../styles/modules/_contact';
-import { useScopedI18n } from '@/locales/client';
+import type { FormData, InputEvents, SubmitEvent } from '../types';
 
 export default function Contact() {
   const translation = useScopedI18n('contact');
@@ -61,20 +60,21 @@ export default function Contact() {
   };
 
   return (
-    <Container
+    <section
       id='contact'
-      className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
+      className='w-full max-w-[700px] max-[370px]:m-0 flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
       <h2 className='base-section-title'>
         <MessageSquareDashed />
         <span>{translation('title')}</span>
       </h2>
-      <section className='intro-container font-sans'>
-        <motion.h2
+      <section className='flex flex-col gap-3 font-sans'>
+        <motion.h3
+        className='text-center text-xl font-normal'
           initial={{ opacity: 0 }}
           transition={{ delay: 0.2 }}
           whileInView={{ opacity: 1 }}>
           {translation('intro-title')}
-        </motion.h2>
+        </motion.h3>
         <motion.p
           initial={{ opacity: 0 }}
           transition={{ delay: 0.4 }}
@@ -88,22 +88,22 @@ export default function Contact() {
           {translation('intro-message')}
         </motion.p>
       </section>
-      <section className='options font-sans'>
-        <div className='option'>
-          <MailboxIcon className='stroke-primary' />
+      <section className='flex flex-col gap-1 font-sans'>
+        <div className='flex gap-3 items-center'>
+          <MailboxIcon className='stroke-primary w-5 h-5' />
           <span> {translation('mail')}</span>
         </div>
       </section>
 
       <motion.section
-        className='form-container font-sans base-border bg-foreground'
+        className='w-full flex flex-col gap-3 p-5 rounded-xl font-sans base-border bg-foreground max-[420px]:py-5 max-[420px]:px-3'
         initial={{ opacity: 0, scale: 0.4 }}
         transition={{ delay: 0.4 }}
         whileInView={{ opacity: 1, scale: 1 }}>
-        <form onSubmit={emailSender}>
-          <section className='form-control'>
-            <div className='form-item'>
-              <label htmlFor='name'>
+        <form onSubmit={emailSender} className='w-full flex flex-col gap-3'>
+          <section className='flex gap-3 max-[568px]:flex-wrap'>
+            <div className='flex flex-col w-full'>
+              <label htmlFor='name' className='base-label pb-2'>
                 <UserIcon />
                 <span>{translation('form.name-label')}</span>
               </label>
@@ -118,8 +118,8 @@ export default function Contact() {
                 onChange={(e) => formDataPicker(e)}
               />
             </div>
-            <div className='form-item'>
-              <label htmlFor='email'>
+            <div className='flex flex-col w-full'>
+              <label htmlFor='email' className='base-label pb-2'>
                 <AtSignIcon />
                 <span>{translation('form.mail-label')}</span>
               </label>
@@ -135,7 +135,7 @@ export default function Contact() {
               />
             </div>
           </section>
-          <label htmlFor='subject'>
+          <label htmlFor='subject' className='base-label pb-2'>
             <TextIcon />
             <span>{translation('form.subject-label')}</span>
           </label>
@@ -149,7 +149,7 @@ export default function Contact() {
             placeholder={translation('form.subject-placeholder')}
             onChange={(e) => formDataPicker(e)}
           />
-          <label htmlFor='message'>
+          <label htmlFor='message' className='base-label pb-2'>
             <MessageSquareDashed />
             <span>{translation('form.message-label')}</span>
           </label>
@@ -164,7 +164,9 @@ export default function Contact() {
             placeholder={translation('form.message-placeholder')}
             onChange={(e) => formDataPicker(e)}
           />
-          <span className='message'>{messageStatus}</span>
+          <span className='text-primary text-sm font-medium'>
+            {messageStatus}
+          </span>
           <motion.button
             whileTap={{ scale: 0.85 }}
             whileHover={{ scale: 1.05 }}
@@ -174,6 +176,6 @@ export default function Contact() {
           </motion.button>
         </form>
       </motion.section>
-    </Container>
+    </section>
   );
 }

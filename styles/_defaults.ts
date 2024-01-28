@@ -64,11 +64,6 @@ export const StyledLabels = css`
   line-height: 1.4rem;
 
   svg {
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    top: 2px;
-    left: 0;
     color: rgb(${({ theme }) => theme.font});
   }
   span {
@@ -77,39 +72,3 @@ export const StyledLabels = css`
   }
 `;
 
-export const StyledInputs = css`
-  input,
-  textarea,
-  select {
-    width: 100%;
-    height: fit-content;
-    border: none;
-    padding: 10px 18px;
-    line-height: 1.2rem;
-    font-weight: 400;
-    outline: none;
-    border-radius: 8px;
-    background: rgba(${({ theme }) => theme.background}, 0.7);
-    border: 1px solid rgba(${({ theme }) => theme.font}, 0.08);
-    color: rgb(${({ theme }) => theme.font});
-    :focus {
-      border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-      box-shadow: 0 0 20px rgba(${({ theme }) => theme.black}, 0.06);
-    }
-    ::placeholder {
-      color: rgba(${({ theme }) => theme.font}, 0.8);
-      font-size: 0.9rem;
-    }
-    :disabled {
-      background: rgb(${({ theme }) => theme.foreground});
-      border: none;
-      ::placeholder {
-        color: transparent;
-      }
-    }
-  }
-
-  textarea {
-    resize: vertical;
-  }
-`;

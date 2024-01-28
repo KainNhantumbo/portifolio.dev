@@ -163,8 +163,16 @@
     @apply w-full base-border py-[10px] px-[18px] outline-none rounded-lg bg-background/70 transition-colors focus:shadow-[0_0_20px_rgba(0,0,0,.06)] placeholder:text-font/60 resize-y disabled:bg-foreground disabled:placeholder:text-transparent disabled:border-none;
   }
 
-  .inputs {
-    @apply w-[100%] max-w-[200px] mobile:max-w-[260px] sm:max-w-md md:max-w-lg h-fit py-[10px] px-[18px] leading-7 outline-none resize-y rounded-xl bg-background bg-opacity-70 border-solid border-[1px] border-opacity-50 border-font text-font focus:border-font focus:border-opacity-70 focus:transition-shadow focus:shadow-[0_0_20px_rgba(0,0,0,0.1)] placeholder:text-[0.9rem] disabled:bg-foreground disabled:placeholder:text-transparent disabled:border-none;
+  .base-label {
+    @apply relative;
+
+    svg {
+      @apply w-[18px] h-[18px] absolute top-[2px] left-0;
+    }
+
+    span {
+      @apply pl-6;
+    }
   }
 
   .base-section-title {
