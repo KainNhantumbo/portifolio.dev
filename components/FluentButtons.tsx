@@ -6,7 +6,6 @@ import {
   MoonStarIcon,
   SunMediumIcon
 } from 'lucide-react';
-import { _fluentButtons as Container } from '../styles/modules/_fluent-buttons';
 import { motion } from '@/providers/framer-provider';
 import { usePathname } from 'next/navigation';
 import { useAppContext } from '../context/AppContext';
@@ -16,8 +15,8 @@ import { useTheme } from 'next-themes';
 export default function FluentButtons() {
   const pathname = usePathname();
   const { setTheme, theme } = useTheme();
-  const isPortfolio = pathname?.includes('blog') === false;
   const { state, dispatch } = useAppContext();
+  const isPortfolio = pathname?.includes('blog') === false;
 
   const slidePageUp = () =>
     window.scrollTo({
@@ -27,7 +26,7 @@ export default function FluentButtons() {
     });
 
   return (
-    <Container>
+    <section className='z-[3000] fixed bottom-[135px] left-[97vw] grid place-content-center w-0 h-0 max-[690px]:left-[95vw] max-[480px]:left-[90vw]'>
       <div>
         {isPortfolio ? (
           <motion.button
@@ -75,6 +74,6 @@ export default function FluentButtons() {
           <ArrowUpIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
         </motion.button>
       </div>
-    </Container>
+    </section>
   );
 }
