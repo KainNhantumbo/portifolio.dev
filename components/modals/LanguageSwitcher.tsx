@@ -3,7 +3,6 @@
 import actions from '@/shared/actions';
 import { useAppContext } from '@/context/AppContext';
 import { motion, AnimatePresence } from '@/providers/framer-provider';
-import { _languageSwitcher as Container } from '@/styles/modules/_language-switcher';
 import { useRouter } from 'next/navigation';
 import { XIcon } from 'lucide-react';
 import { useScopedI18n } from '@/locales/client';
@@ -25,7 +24,8 @@ export default function LanguageSwitcher() {
   return (
     <AnimatePresence>
       {state.isLanguagesModal && (
-        <Container
+        <section
+          className='w-[100vw] h-[100vh] fixed bg-foreground/20 backdrop-blur-sm z-[10000] top-0 left-0 grid place-content-center select-none'
           onClick={() =>
             dispatch({
               type: actions.LANGUAGES_MODAL,
@@ -42,24 +42,24 @@ export default function LanguageSwitcher() {
               scale: 0,
               transition: { duration: 0.3 }
             }}>
-            <div className='dialog-prompt'>
-              <div className='prompt-info'>
-                <span className='prompt-title font-sans-display'>
+            <div className='flex flex-col gap-5 px-2 py-5 max-w-[400px]  mx-3 relative'>
+              <div className='flex flex-col gap-3'>
+                <span className='font-medium text-primary font-sans-display'>
                   {translation('title')}
                 </span>
-                <p className='prompt-message'>{translation('message')}</p>
-                <div className='buttons-container'>
+                <p className='text-sm'>{translation('message')}</p>
+                <div className='flex flex-wrap gap-2 mt-5 w-full mx-auto justify-center'>
                   <motion.button
                     whileTap={{ scale: 0.85 }}
                     whileHover={{ scale: 1.05 }}
-                    className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center hover:text-primary transition-colors '
+                    className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center text-sm hover:text-primary transition-colors px-2 py-2'
                     onClick={() => translate('en')}>
                     {translation('buttons.english')}
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.85 }}
                     whileHover={{ scale: 1.05 }}
-                    className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center hover:text-primary transition-colors'
+                    className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center text-sm hover:text-primary transition-colors px-2 py-2'
                     onClick={() => translate('pt')}>
                     {translation('buttons.portuguese')}
                   </motion.button>
@@ -68,7 +68,7 @@ export default function LanguageSwitcher() {
               <motion.button
                 whileTap={{ scale: 0.85 }}
                 whileHover={{ scale: 1.1 }}
-                className='prompt-close group'
+                className='base-corner-button group absolute right-0 top-3'
                 onClick={() =>
                   dispatch({
                     type: actions.LANGUAGES_MODAL,
@@ -79,7 +79,7 @@ export default function LanguageSwitcher() {
               </motion.button>
             </div>
           </motion.section>
-        </Container>
+        </section>
       )}
     </AnimatePresence>
   );

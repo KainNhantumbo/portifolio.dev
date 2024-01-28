@@ -175,6 +175,25 @@
     }
   }
 
+  .base-corner-button {
+    all: unset;
+    @apply rounded-lg w-fit cursor-pointer place-content-center grid;
+
+    svg {
+      @apply w-[20px] h-auto;
+    }
+  }
+
+  .base-button-outline {
+    all: unset;
+    @apply px-[7px] py-[10px] cursor-pointer whitespace-nowrap text-ellipsis text-font overflow-hidden outline-none;
+  }
+
+  .base-button {
+    all: unset;
+    @apply w-fit cursor-pointer px-2 py-3 rounded-xl bg-primary_c text-white-light dark:text-white-dark whitespace-nowrap text-ellipsis overflow-hidden border-solid border-[1px] border-opacity-80 border-font-light dark:border-font-dark text-center hover:bg-primary_c hover:border-opacity-20 font-semibold hover:text-font-light transition-colors;
+  }
+
   .base-section-title {
     @apply relative font-semibold mx-auto mt-3 max-[420px]:text-base max-[420px]:text-center font-sans-display;
 
