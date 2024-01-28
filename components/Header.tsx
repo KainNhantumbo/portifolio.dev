@@ -8,7 +8,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, usePathname as usePath } from 'next/navigation';
 import { useHeaderView } from '../hooks/useHeaderView';
-import { _header as Container } from '../styles/modules/_header';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { usePathname } from '@/hooks/usePathname';
 import { constants } from '@/shared/constants';
@@ -53,9 +52,9 @@ export default function Header() {
   );
 
   return (
-    <Container>
+    <section className='w-full'>
       <motion.div
-        className='main-container base-border bg-background/50 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm rounded-xl'
+        className='w-fit fixed top-3 min-w-[550px] left-[calc(50%_-_285px)] min-h-[50px] px-5 flex justify-center items-center gap-[5px] z-[5000] base-border bg-background/50 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm rounded-xl max-[640px]:flex-col max-[640px]:min-w-[340px] max-[640px]:left-[calc(50%_-_170px)] '
         animate={{ translateY: scrollRangeValue > 100 ? '-65px' : '0px' }}
         transition={{ duration: 0.5 }}>
         <div className='cursor-pointer flex flex-row items-center gap-2 max-[640px]:absolute max-[640px]:top-3 max-[640px]:left-[calc(50%_-_60px)]'>
@@ -113,6 +112,6 @@ export default function Header() {
           </AnimatePresence>
         </nav>
       </motion.div>
-    </Container>
+    </section>
   );
 }
