@@ -4,7 +4,6 @@ import { useI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
 import { LinearTextGradient } from 'react-text-gradients-and-animations';
-import { _introduction as Container } from '../styles/modules/_introduction';
 
 export default function Introduction() {
   const translation = useI18n();
@@ -23,7 +22,7 @@ export default function Introduction() {
   ];
 
   return (
-    <Container
+    <section
       id='home'
       className='w-full max-w-[780px] flex flex-col gap-3 mx-auto mt-10 py-5 px-2 z-50 font-sans relative backdrop-blur-sm bg-background/50 after:absolute after:w-[1px] after:h-[1px] after:right-[50%] after:top-0 after:rounded-full after:-z-50 after:bg-[#FAC684cc] after:shadow-[0_0_180px_140px_#FDC886cc] dark:after:bg-[#E8884Fcc] dark:after:shadow-[0_0_180px_140px_#E8884Fcc] '>
       <div className='w-fit flex flex-col relative'>
@@ -74,14 +73,14 @@ export default function Introduction() {
         </div>
       </div>
 
-      <motion.p
-        className='text-[1rem]'
+      <motion.div
+        className='flex gap-2 flex-col'
         initial={{ scale: 0, y: -120, opacity: 0 }}
         whileInView={{ scale: 1, y: 0, opacity: 1 }}>
-        <motion.i>{translation('intro.message-part-1')}</motion.i>
-        <br />
-        {translation('intro.message-part-2')}
-      </motion.p>
-    </Container>
+        <p className='text-base'>{translation('intro.message-part-1')}</p>
+
+        <p className='text-base'>{translation('intro.message-part-2')}</p>
+      </motion.div>
+    </section>
   );
 }
