@@ -1,17 +1,16 @@
 'use client';
 
+import { usePathname } from '@/hooks/usePathname';
+import { useCurrentLocale, useScopedI18n } from '@/locales/client';
+import { AnimatePresence, motion } from '@/providers/framer-provider';
 import donutImage from '@/public/assets/path36.png';
+import { constants } from '@/shared/constants';
 import clsx from 'clsx';
-import { motion, AnimatePresence } from '@/providers/framer-provider';
 import { Settings2Icon, XIcon } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter, usePathname as usePath } from 'next/navigation';
-import { useHeaderView } from '../hooks/useHeaderView';
-import { useCurrentLocale, useScopedI18n } from '@/locales/client';
-import { usePathname } from '@/hooks/usePathname';
-import { constants } from '@/shared/constants';
+import { usePathname as usePath, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
+import { useHeaderView } from '../hooks/useHeaderView';
 
 export type UrlList = Array<{ ref: string; label: string; url?: string }>;
 
@@ -89,11 +88,10 @@ export default function Header() {
               exit={{ translateX: 150 }}
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
               {urls.map((item, index) => (
-                <Link
+                <a
                   key={index.toString()}
                   href={item.url || item.ref}
                   onClick={() => setPathname(`${currentLocale}#${item.ref}`)}
-                  locale={'en'}
                   className={clsx(
                     {
                       'relative base-border rounded-md  sm:rounded-none sm:border-none after:absolute sm:after:bottom-[calc(50%_-_16px)] after:left-[-3px] after:bottom-[calc(50%_-_10px)] after:w-[5px] after:h-[20px] sm:after:left-[calc(50%_-_10px)] sm:after:w-[20px] sm:after:h-[5px] after:rounded-md after:bg-primary sm:text-primary':
@@ -106,7 +104,7 @@ export default function Header() {
                       {item.label}
                     </span>
                   </div>
-                </Link>
+                </a>
               ))}
             </motion.section>
           </AnimatePresence>
