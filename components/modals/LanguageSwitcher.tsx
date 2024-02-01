@@ -23,7 +23,7 @@ export default function LanguageSwitcher() {
 
   return (
     <AnimatePresence>
-      {state.isLanguagesModal && (
+      {state.isLanguagesModal ? (
         <section
           className='w-[100vw] h-[100vh] fixed bg-foreground/20 backdrop-blur-sm z-[10000] top-0 left-0 grid place-content-center select-none'
           onClick={() =>
@@ -80,7 +80,7 @@ export default function LanguageSwitcher() {
             </div>
           </motion.section>
         </section>
-      )}
+      ) : null}
     </AnimatePresence>
   );
 }

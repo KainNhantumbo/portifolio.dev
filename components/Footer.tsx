@@ -25,8 +25,7 @@ export default function Footer() {
   const isPortfolio = pathname?.includes('blog') ? false : true;
 
   const additionalFooterUrls = isPortfolio
-    ? []
-    : [
+    ? [
         {
           name: translation('anchors.coffee'),
           icon: CoffeeIcon,
@@ -37,7 +36,8 @@ export default function Footer() {
           icon: RssIcon,
           link: '/rss/feed.en.xml'
         }
-      ];
+      ]
+    : [];
 
   const socialMediaAnchors: Anchors[] = [
     {
@@ -64,7 +64,7 @@ export default function Footer() {
   ];
 
   return (
-    <Container className='font-sans'>
+    <Container className='font-sans w-[100vw] h-min relative flex flex-col gap-3 pb-3'>
       <h3>{translation('title')}</h3>
       <ul>
         {socialMediaAnchors.map((item, index) => (
