@@ -14,7 +14,6 @@ import Package from '@/package.json';
 import { usePathname } from 'next/navigation';
 import { motion } from '@/providers/framer-provider';
 import donutsImage from '@/../public/assets/donuts.png';
-import { _footer as Container } from '../styles/modules/_footer';
 import { useScopedI18n } from '@/locales/client';
 
 type Anchors = { name: string; icon: LucideIcon; link: string };
@@ -64,40 +63,39 @@ export default function Footer() {
   ];
 
   return (
-    <Container className='font-sans w-[100vw] h-min relative flex flex-col gap-3 pb-3'>
-      <h3>{translation('title')}</h3>
-      <ul>
+    <section className='font-sans w-[100vw] h-min relative flex flex-col gap-3 pb-3'>
+      <h3 className='text-center font-medium'>{translation('title')}</h3>
+      <ul className='flex items-center justify-center gap-4 flex-row'>
         {socialMediaAnchors.map((item, index) => (
           <motion.li
-            className='bg-primary/[.15] backdrop-blur-md  hover:bg-secondary/20 hover:animate-pulse'
+            className='bg-primary/[.15] backdrop-blur-md  hover:bg-secondary/20 hover:animate-pulse grid place-content-center place-items-center rounded-full p-3 w-10 h-10 cursor-pointer'
             key={index}
             initial={{ scale: 0 }}
+            title={item.name}
             whileInView={{
               scale: 1,
               transition: { delay: index / socialMediaAnchors.length }
-            }}
-            title={item.name}>
+            }}>
             <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
-              <item.icon className='stroke-primary' />
+              <item.icon className='stroke-primary w-5 h-auto' />
             </a>
           </motion.li>
         ))}
       </ul>
 
-      <div className='donuts-image-container'>
+      <div className='w-full max-w-[600px] h-auto mx-auto p-5 pb-3 '>
         <Image
           width={1702}
           height={149}
           src={donutsImage}
           placeholder='blur'
+          className='w-full h-fit'
           alt='Donuts combo decoration image'
         />
       </div>
 
       <div className='w-full flex flex-col items-center mx-auto gap-3'>
-        <p>
-          <span>{translation('made-phrase')}</span>
-        </p>
+        <p className='text-center'>{translation('made-phrase')}</p>
         <div className='w-full flex flex-wrap gap-3 mx-auto items-center justify-center'>
           <span>Copyright © 2023 Kain Nhantumbo.</span>
           <span>
@@ -106,6 +104,6 @@ export default function Footer() {
           </span>
         </div>
       </div>
-    </Container>
+    </section>
   );
 }
