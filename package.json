@@ -2,9 +2,9 @@
   "name": "codenut-homepage",
   "description": "Kain's Blog and Portfolio Website",
   "website_name": "Codenut Blog",
-  "version": "5.0.2",
+  "version": "6.0.0",
   "private": true,
-  "latest_compile": "12-2023",
+  "latest_compile": "02-2023",
   "url": "https://codenut-dev.vercel.app",
   "author": {
     "name": "Kain Nhantumbo",
@@ -40,7 +40,6 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-text-gradients-and-animations": "^1.1.7",
     "reading-time-estimator": "^1.9.0",
-    "styled-components": "^6.1.1",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {

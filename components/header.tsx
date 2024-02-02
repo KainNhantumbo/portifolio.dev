@@ -52,37 +52,37 @@ export const Header = () => {
   return (
     <section className='w-full'>
       <motion.div
-        className='w-fit fixed top-3 min-w-[550px] left-[calc(50%_-_285px)] min-h-[50px] px-5 flex justify-center items-center gap-[5px] z-[5000] base-border bg-background/50 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm rounded-xl max-[640px]:flex-col max-[640px]:min-w-[340px] max-[640px]:left-[calc(50%_-_170px)] '
+        className='base-border fixed left-[calc(50%_-_285px)] top-3 z-[5000] flex min-h-[50px] w-fit min-w-[550px] items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:left-[calc(50%_-_170px)] max-[640px]:min-w-[340px] max-[640px]:flex-col '
         animate={{ translateY: scrollRangeValue > 100 ? '-65px' : '0px' }}
         transition={{ duration: 0.5 }}>
-        <div className='cursor-pointer flex flex-row items-center gap-2 max-[640px]:absolute max-[640px]:top-3 max-[640px]:left-[calc(50%_-_60px)]'>
+        <div className='flex cursor-pointer flex-row items-center gap-2 max-[640px]:absolute max-[640px]:left-[calc(50%_-_60px)] max-[640px]:top-3'>
           <Image
             src={donutImage}
             width={25}
             height={25}
             alt='donut image'
-            className='w-full max-w-[18px] max-h-[18px] object-cover'
+            className='max-h-[18px] w-full max-w-[18px] object-cover'
           />
-          <h2 onClick={() => router.push('/')}>
-            <span className='font-sans text-primary text-sm font-semibold'>
-              {constants.title}
-            </span>
-          </h2>
+          <span
+            onClick={() => router.push('/')}
+            className='font-sans text-sm font-semibold text-primary'>
+            {constants.title}
+          </span>
         </div>
         <motion.button
           whileTap={{ scale: 0.8 }}
           onClick={handleToggleMenu}
-          className='rounded-sm w-fit cursor-pointer justify-self-end hidden max-[640px]:block max-[640px]:absolute max-[640px]:top-3 max-[640px]:right-2 group'>
+          className='group hidden w-fit cursor-pointer justify-self-end rounded-sm max-[640px]:absolute max-[640px]:right-2 max-[640px]:top-3 max-[640px]:block'>
           {isHeaderInView ? (
-            <XIcon className='w-6 h-auto pointer-events-none group-hover:stroke-error' />
+            <XIcon className='pointer-events-none h-auto w-6 group-hover:stroke-error' />
           ) : (
-            <Settings2Icon className='w-6 h-auto pointer-events-none group-hover:stroke-primary' />
+            <Settings2Icon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
           )}
         </motion.button>
         <nav className='max-[640px]:w-full' role='main'>
           <AnimatePresence>
             <motion.section
-              className='w-full flex flex-row flex-nowrap px-2 gap-2 max-[640px]:p-5 max-[640px]:flex-col max-[640px]:hidden max-[640px]:mt-8 min-[640px]:flex'
+              className='flex w-full flex-row flex-nowrap gap-2 px-2 max-[640px]:mt-8 max-[640px]:hidden max-[640px]:flex-col max-[640px]:p-5 min-[640px]:flex'
               animate={{ translateY: isHeaderInView ? 0 : -50 }}
               exit={{ translateX: 150 }}
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
@@ -93,13 +93,13 @@ export const Header = () => {
                   onClick={() => setPathname(`${currentLocale}#${item.ref}`)}
                   className={clsx(
                     {
-                      'relative base-border rounded-md  sm:rounded-none sm:border-none after:absolute sm:after:bottom-[calc(50%_-_16px)] after:left-[-3px] after:bottom-[calc(50%_-_10px)] after:w-[5px] after:h-[20px] sm:after:left-[calc(50%_-_10px)] sm:after:w-[20px] sm:after:h-[5px] after:rounded-md after:bg-primary sm:text-primary':
+                      'base-border relative rounded-md  after:absolute after:bottom-[calc(50%_-_10px)] after:left-[-3px] after:h-[20px] after:w-[5px] after:rounded-md after:bg-primary sm:rounded-none sm:border-none sm:text-primary sm:after:bottom-[calc(50%_-_16px)] sm:after:left-[calc(50%_-_10px)] sm:after:h-[5px] sm:after:w-[20px]':
                         pathname.includes(item.ref)
                     },
-                    'list-none group'
+                    'group list-none'
                   )}>
-                  <div className='w-full relative p-1 max-[640px]:p-2 max-[640px]:px-4 '>
-                    <span className='w-full group-hover:text-primary transition-colors font-sans text-sm font-medium'>
+                  <div className='relative w-full p-1 max-[640px]:p-2 max-[640px]:px-4 '>
+                    <span className='w-full font-sans text-sm font-medium transition-colors group-hover:text-primary'>
                       {item.label}
                     </span>
                   </div>

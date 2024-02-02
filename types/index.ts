@@ -1,27 +1,12 @@
 import { LucideIcon } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ChangeEvent, FormEvent } from 'react';
+
 export type InputEvents =
   | ChangeEvent<HTMLInputElement>
   | ChangeEvent<HTMLTextAreaElement>;
 
 export type SubmitEvent = FormEvent<HTMLFormElement>;
-
-export type Theme = {
-  error: string;
-  font: string;
-  font_dimmed: string;
-  black: string;
-  white: string;
-  primary: string;
-  secondary: string;
-  background: string;
-  foreground: string;
-  primary_shade: string;
-  secondary_shade: string;
-  background_shade: string;
-  foreground_shade: string;
-};
 
 export type FormData = {
   name: string;
@@ -53,11 +38,6 @@ export type Stack = {
   title: string;
   icon: LucideIcon;
   data: Array<{ tech: string; icon: LucideIcon }>;
-};
-
-export type ColorScheme = {
-  mode: 'auto' | 'manual';
-  scheme: 'dark' | 'light';
 };
 
 export type Action = { type: string; payload: State };
