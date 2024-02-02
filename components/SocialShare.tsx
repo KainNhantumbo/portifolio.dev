@@ -2,10 +2,11 @@
 
 import { buildShareUrls } from '@/lib/share';
 import { motion } from '@/providers/framer-provider';
+import type { FC } from 'react';
 
 type Props = { title: string; excerpt: string; slug: string };
 
-export default function SocialShare({ title, excerpt, slug }: Props) {
+export const SocialShare: FC<Props> = ({ title, excerpt, slug }) => {
   const anchors = buildShareUrls({
     title,
     excerpt,
@@ -14,7 +15,7 @@ export default function SocialShare({ title, excerpt, slug }: Props) {
 
   return (
     <section className='flex justify-end gap-5 items-center'>
-      <span className='font-medium' >Share:</span>
+      <span className='font-medium'>Share:</span>
       <div className='flex gap-3 items-center'>
         {anchors.map((option) => (
           <motion.a
@@ -32,4 +33,4 @@ export default function SocialShare({ title, excerpt, slug }: Props) {
       </div>
     </section>
   );
-}
+};

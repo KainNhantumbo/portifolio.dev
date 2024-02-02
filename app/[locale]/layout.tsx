@@ -1,4 +1,5 @@
 import '@/styles/index.css';
+import '@/styles/blog-post.css';
 
 import AnimatePageTransition from '@/components/animations/AnimatePageTransition';
 import FluentButtons from '@/components/FluentButtons';

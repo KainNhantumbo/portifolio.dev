@@ -9,7 +9,7 @@ type Props = { children: string };
 export default function ContentRenderer({ children }: Props) {
   return (
     <ReactMarkdown
-      className='content'
+      className='blog-post-content'
       components={{
         code(props) {
           const { children, className, ...rest } = props;

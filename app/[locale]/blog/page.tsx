@@ -1,15 +1,12 @@
 import FeedGenerator from '@/lib/feed';
 import { getPosts } from '@/lib/processor';
 import { formatDate } from '@/lib/time';
+import { PageParams } from '@/types';
 import { RssIcon } from 'lucide-react';
 import { setStaticParamsLocale } from 'next-international/server';
 import Link from 'next/link';
 
-type Props = {
-  params: { locale: string };
-};
-
-export default function Page({ params: { locale } }: Props) {
+export default function Page({ params: { locale } }: PageParams) {
   setStaticParamsLocale(locale);
 
   new FeedGenerator().generate();
