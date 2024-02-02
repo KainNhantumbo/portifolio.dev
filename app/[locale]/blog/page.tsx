@@ -1,11 +1,9 @@
 import FeedGenerator from '@/lib/feed';
 import { getPosts } from '@/lib/processor';
 import { formatDate } from '@/lib/time';
-import { _blog as Container } from '@/styles/routes/_blog';
 import { RssIcon } from 'lucide-react';
 import { setStaticParamsLocale } from 'next-international/server';
 import Link from 'next/link';
-
 
 type Props = {
   params: { locale: string };
@@ -18,21 +16,21 @@ export default function Page({ params: { locale } }: Props) {
   const posts = getPosts();
 
   return (
-    <Container className='px-2 border-t-font/10  mb-12 w-full max-w-[780px] flex flex-col gap-3 mx-auto mt-10 p-5 z-50 font-sans relative backdrop-blur-sm bg-background/50 after:absolute after:w-[1px] after:h-[1px] after:right-[50%] after:top-0 after:rounded-full after:-z-50 after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
-      <section className='presentation-container border-dashed border-b-[2px] border-font mt-5'>
-        <h1 className='py-5 leading-10'>
+    <section className='px-2 border-t-font/10  mb-12 w-full max-w-[780px] flex flex-col gap-3 mx-auto mt-12 p-5 z-50 font-sans relative backdrop-blur-sm bg-background/50 after:absolute after:w-[1px] after:h-[1px] after:right-[50%] after:top-0 after:rounded-full after:-z-50 after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
+      <section className='w-full px-3 pb-7 border-dashed border-b-[2px] border-font mt-5'>
+        <h1 className='py-5 font-medium text-4xl font-sans-display relative'>
           Codenut<i className='text-primary'>.dev</i> Blog
-          <a href='/rss/feed.en.xml' target='_blank' title='RSS Feed'>
-            <RssIcon
-              strokeWidth={4}
-              width={'140px'}
-              className='stroke-primary'
-            />
+          <a
+            href='/rss/feed.en.xml'
+            target='_blank'
+            title='RSS Feed'
+            className='base-corner-button absolute top-0 -right-5 base-border animate-pulse w-7 h-7'>
+            <RssIcon strokeWidth={4} className='stroke-primary' />
           </a>
         </h1>
 
-        <div className='font-sans-body font-medium'>
-          <h3 className='font-sans-body'>
+        <div className='font-sans-body font-medium flex flex-col gap-2'>
+          <h3 className='font-sans-display text-xl mb-2 font-medium'>
             👋 Hello, Welcome to Kain's Universe!
           </h3>
           <p>
@@ -48,24 +46,26 @@ export default function Page({ params: { locale } }: Props) {
         </div>
       </section>
 
-      <article>
-        <section className='posts-container'>
+      <article className='w-full'>
+        <section className='w-full flex flex-col gap-5'>
           {posts.map((post, index) => (
             <Link
               href={`/${locale}/blog/post/${post.slug}`}
               locale={'en'}
-              className='hover:bg-foreground transition-colors rounded-xl p-4'
+              className='group hover:bg-foreground border-[1px] border-transparent hover:base-border transition-colors rounded-xl p-4 flex flex-col gap-3 cursor-pointer'
               key={index.toString()}>
-              <div className='header-container'>
-                <h3 className='base-border rounded-3xl bg-black text-white font-sans-body font-medium px-3 uppercase text-[.95rem]'>
+              <div className='flex flex-row justify-between items-center gap-1'>
+                <h3 className='base-border rounded-full bg-black text-white font-sans-display font-medium px-3 uppercase text-[.95rem]'>
                   {post.topic}
                 </h3>
-                <h4 className='font-sans-body font-medium'>
-                  <span>{formatDate(post.createdAt)}</span>
+                <h4 className='font-sans-body font-medium text-xs uppercase'>
+                  {formatDate(post.createdAt)}
                 </h4>
               </div>
 
-              <h3 className='title before:bg-primary'>{post.title}</h3>
+              <h3 className="font-slab font-medium underline underline-offset-4 decoration-dashed pl-5 relative text-[1.4rem] before:absolute before:content-[''] before:bg-primary before:top-[calc(50%_-_2px)] before:left-0 before:w-2 before:h-2 before:rounded-lg  before:z-50 group-hover:text-blue-400 group-hover:transition-colors">
+                {post.title}
+              </h3>
               <p className='excerpt font-sans-body  font-medium'>
                 {post.excerpt}
               </p>
@@ -73,6 +73,6 @@ export default function Page({ params: { locale } }: Props) {
           ))}
         </section>
       </article>
-    </Container>
+    </section>
   );
 }
