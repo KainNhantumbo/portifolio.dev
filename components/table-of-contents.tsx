@@ -1,15 +1,9 @@
-import Link from 'next/link';
+import { transformChild } from '@/lib/utils';
 import { marked } from 'marked';
+import Link from 'next/link';
+import type { FC } from 'react';
 
-type Props = { content: string };
-
-export const transformChild = (child: string): string =>
-  child
-    .replace(/ /g, '-')
-    .replace(/[\/\\^$*+?.()|\[\]{}<>:;"'~,=@`#!%&]/g, '')
-    .toLowerCase();
-
-export default function TableOfContents({ content }: Props) {
+export const TableOfContents: FC<{ content: string }> = ({ content }) => {
   const headings = marked
     .lexer(content)
     .filter((token) => token.type === 'heading') as Array<{
@@ -41,4 +35,4 @@ export default function TableOfContents({ content }: Props) {
       </nav>
     </aside>
   );
-}
+};

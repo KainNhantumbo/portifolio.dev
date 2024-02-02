@@ -1,20 +1,19 @@
 'use client';
 
-import { usePathname } from '@/hooks/usePathname';
+import { usePathname } from '@/hooks/use-pathname';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { AnimatePresence, motion } from '@/providers/framer-provider';
 import donutImage from '@/public/assets/path36.png';
 import { constants } from '@/shared/constants';
+import type { UrlList } from '@/types';
 import clsx from 'clsx';
 import { Settings2Icon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
-import { useHeaderView } from '../hooks/useHeaderView';
+import { useHeaderView } from '../hooks/use-header-view';
 
-export type UrlList = Array<{ ref: string; label: string; url?: string }>;
-
-export default function Header() {
+export const Header = () => {
   const MIN_WIDTH = 640;
   const { pathname, setPathname } = usePathname();
 
@@ -112,4 +111,4 @@ export default function Header() {
       </motion.div>
     </section>
   );
-}
+};

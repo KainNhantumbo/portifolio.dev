@@ -2,8 +2,8 @@ import { LucideIcon } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { ChangeEvent, FormEvent } from 'react';
 export type InputEvents =
-| ChangeEvent<HTMLInputElement>
-| ChangeEvent<HTMLTextAreaElement>;
+  | ChangeEvent<HTMLInputElement>
+  | ChangeEvent<HTMLTextAreaElement>;
 
 export type SubmitEvent = FormEvent<HTMLFormElement>;
 
@@ -80,3 +80,7 @@ export interface Post extends Frontmatter {
 }
 
 export type PageParams = { params: { locale: string } };
+
+export type UrlList = Array<{ ref: string; label: string; url?: string }>;
+
+export type FooterAnchors = { name: string; icon: LucideIcon; link: string };

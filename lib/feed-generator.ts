@@ -2,9 +2,9 @@ import { Feed } from 'feed';
 import { marked } from 'marked';
 import { constants } from '../shared/constants';
 import { mkdirSync, writeFileSync } from 'node:fs';
-import { getPosts } from './processor';
+import { getPosts } from './posts-processor';
 
-export default class FeedGenerator {
+export  class FeedGenerator {
   feed: Feed;
 
   constructor() {

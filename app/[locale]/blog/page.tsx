@@ -1,7 +1,7 @@
-import FeedGenerator from '@/lib/feed';
-import { getPosts } from '@/lib/processor';
-import { formatDate } from '@/lib/time';
-import { PageParams } from '@/types';
+import { FeedGenerator } from '@/lib/feed-generator';
+import { getPosts } from '@/lib/posts-processor';
+import { formatDate } from '@/lib/utils';
+import type { PageParams } from '@/types';
 import { RssIcon } from 'lucide-react';
 import { setStaticParamsLocale } from 'next-international/server';
 import Link from 'next/link';

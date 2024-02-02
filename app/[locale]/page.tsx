@@ -1,11 +1,11 @@
+import { Abilities } from '@/components/abilities';
+import { About } from '@/components/about';
+import { Contact } from '@/components/contact';
+import { Introduction } from '@/components/introduction';
+import { LanguageSwitcher } from '@/components/modals/language-switcher';
+import { Projects } from '@/components/projects';
 import type { PageParams } from '@/types';
-import About from '@/components/About';
-import Contact from '@/components/Contact';
-import Projects from '@/components/Projects';
-import Abilities from '@/components/Abilities';
-import Introduction from '@/components/Introduction';
 import { setStaticParamsLocale } from 'next-international/server';
-import LanguageSwitcher from '@/components/modals/LanguageSwitcher';
 
 const Page = ({ params: { locale } }: PageParams) => {
   setStaticParamsLocale(locale);

@@ -1,6 +1,6 @@
 'use client';
 
-import { buildShareUrls } from '@/lib/share';
+import { buildShareUrls } from '@/lib/share-urls';
 import { motion } from '@/providers/framer-provider';
 import type { FC } from 'react';
 

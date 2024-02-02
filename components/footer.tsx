@@ -1,24 +1,22 @@
 'use client';
 
+import donutsImage from '@/../public/assets/donuts.png';
+import { useScopedI18n } from '@/locales/client';
+import Package from '@/package.json';
+import { motion } from '@/providers/framer-provider';
+import type { FooterAnchors } from '@/types';
 import {
   BookTextIcon,
   CoffeeIcon,
   GithubIcon,
   LinkedinIcon,
-  LucideIcon,
   RssIcon,
   TwitterIcon
 } from 'lucide-react';
 import Image from 'next/image';
-import Package from '@/package.json';
 import { usePathname } from 'next/navigation';
-import { motion } from '@/providers/framer-provider';
-import donutsImage from '@/../public/assets/donuts.png';
-import { useScopedI18n } from '@/locales/client';
 
-type Anchors = { name: string; icon: LucideIcon; link: string };
-
-export default function Footer() {
+export const Footer = () => {
   const translation = useScopedI18n('footer');
   const pathname = usePathname();
   const isPortfolio = pathname?.includes('blog') ? false : true;
@@ -38,7 +36,7 @@ export default function Footer() {
       ]
     : [];
 
-  const socialMediaAnchors: Anchors[] = [
+  const socialMediaAnchors: FooterAnchors[] = [
     {
       name: translation('anchors.github'),
       icon: GithubIcon,
@@ -106,4 +104,4 @@ export default function Footer() {
       </div>
     </section>
   );
-}
+};

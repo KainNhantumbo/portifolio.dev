@@ -1,8 +1,8 @@
-import ContentRenderer from '@/components/ContentRenderer';
-import { SocialShare } from '@/components/SocialShare';
-import TableOfContents from '@/components/TableOfContents';
-import { getPost } from '@/lib/processor';
-import { formatDate } from '@/lib/time';
+import { ContentRenderer } from '@/components/content-renderer';
+import { SocialShare } from '@/components/social-share';
+import { TableOfContents } from '@/components/table-of-contents';
+import { getPost } from '@/lib/posts-processor';
+import { formatDate } from '@/lib/utils';
 import { AUTHOR } from '@/shared/constants';
 import { DotIcon } from 'lucide-react';
 import Image from 'next/image';
@@ -19,7 +19,7 @@ export default function Page({ params: { slug } }: Props) {
       <div className='grid grid-cols-1 gap-1 items-center max-w-[980px] self-center mx-auto'>
         <article className='w-full font-sans-body px-10 pb-0 pt-7 max-[620px]:px-5 max-[620px]:py-7'>
           <section className='flex flex-col gap-2 font-sans-body'>
-            <h5 className='font-xs font-medium uppercase'>
+            <h5 className='text-sm font-medium uppercase'>
               published: {formatDate(post.createdAt)}
             </h5>
             <section className='flex items-center py-3 gap-5'>
@@ -29,7 +29,7 @@ export default function Page({ params: { slug } }: Props) {
                 priority={false}
                 src={AUTHOR.picture}
                 alt='Article author picture'
-                className='w-auto h-auto max-w-[50px] rounded-full'
+                className='base-border w-auto h-auto max-w-[50px] rounded-full'
               />
               <div className='flex flex-col text-sm'>
                 <span>{AUTHOR.name}</span>
@@ -43,7 +43,7 @@ export default function Page({ params: { slug } }: Props) {
               excerpt={post.excerpt}
             />
 
-            <div className='flex flex-wrap flex-row gap-x-1 items-center text-sm'>
+            <div className='flex flex-wrap flex-row items-center text-sm'>
               <span>
                 <i className='font-medium'>Read:</i>{' '}
                 {readTime.minutes < 1
@@ -70,7 +70,9 @@ export default function Page({ params: { slug } }: Props) {
               </p>
             </div>
 
-            <h4 className='font-sans-display font-medium my-3 mx-auto w-full max-w-[1000px]'>{post.excerpt}</h4>
+            <h4 className='font-sans-display font-medium my-3 mx-auto w-full max-w-[1000px]'>
+              {post.excerpt}
+            </h4>
           </section>
 
           <TableOfContents content={post.content} />

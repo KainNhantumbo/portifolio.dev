@@ -7,8 +7,8 @@ import {
   Dispatch,
   useReducer
 } from 'react';
-import { State, Action } from '../types';
-import { initialState, reducer } from '../shared/reducer';
+import type { State, Action } from '@/types';
+import { initialState, reducer } from '@/shared/reducer';
 
 type Props = { children: ReactNode };
 
@@ -22,22 +22,13 @@ const context = createContext<Context>({
   dispatch: () => {}
 });
 
-export default function AppContext({ children }: Props) {
+export const AppContext = ({ children }: Props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // slides the page to the top
-
   return (
-    <context.Provider
-      value={{
-        state,
-        dispatch
-      }}>
-      {children}
-    </context.Provider>
+    <context.Provider value={{ state, dispatch }}>{children}</context.Provider>
   );
-}
+};
 
-export function useAppContext(): Context {
-  return useContext(context);
-}
+
+export const useAppContext = (): Context => useContext(context);

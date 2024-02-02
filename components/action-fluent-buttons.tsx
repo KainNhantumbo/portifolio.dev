@@ -1,29 +1,30 @@
 'use client';
 
+import { motion } from '@/providers/framer-provider';
 import {
   ArrowUpIcon,
   LanguagesIcon,
   MoonStarIcon,
   SunMediumIcon
 } from 'lucide-react';
-import { motion } from '@/providers/framer-provider';
-import { usePathname } from 'next/navigation';
-import { useAppContext } from '../context/AppContext';
-import actions from '../shared/actions';
 import { useTheme } from 'next-themes';
+import { usePathname } from 'next/navigation';
+import { useAppContext } from '../context/app-context';
+import actions from '../shared/actions';
 
-export default function FluentButtons() {
+export const ActionFluentButtons = () => {
   const pathname = usePathname();
   const { setTheme, theme } = useTheme();
   const { state, dispatch } = useAppContext();
   const isPortfolio = pathname?.includes('blog') === false;
 
-  const slidePageUp = () =>
-    window.scrollTo({
+  const slidePageUp = () => {
+    return window.scrollTo({
       left: 0,
       top: 0,
       behavior: 'smooth'
     });
+  };
 
   return (
     <section className='z-[3000] fixed bottom-[135px] left-[97vw] grid place-content-center w-0 h-0 max-[690px]:left-[95vw] max-[480px]:left-[90vw]'>
@@ -76,4 +77,4 @@ export default function FluentButtons() {
       </div>
     </section>
   );
-}
+};

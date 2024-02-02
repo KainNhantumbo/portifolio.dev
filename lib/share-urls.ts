@@ -8,7 +8,7 @@ import Package from '../package.json';
 
 type Props = { slug: string; excerpt: string; title: string };
 
-export function buildShareUrls({ slug, title, excerpt }: Props) {
+export const buildShareUrls = ({ slug, title, excerpt }: Props) => {
   const { url } = Package;
 
   return [
@@ -33,4 +33,4 @@ export function buildShareUrls({ slug, title, excerpt }: Props) {
       icon: ShareIcon
     }
   ];
-}
+};

@@ -1,4 +1,4 @@
-import { Project } from '@/types';
+import type { Project } from '@/types';
 import server_01 from '@/public/assets/server-01.png';
 import server_03 from '@/public/assets/server-03.png';
 import nava_notes from '@/public/assets/nava-notes.jpg';
@@ -11,13 +11,13 @@ import barbercutts from '@/public/assets/barbercutts.png';
 import maron_themes from '@/public/assets/maron-themes.png';
 import { useScopedI18n } from '@/locales/client';
 
-const categories = {
+export const categories = {
   back: 'Back-end',
   front: 'Front-end',
   full: 'Full-stack'
 };
 
-export function useProjects(): Project[] {
+export const useProjects = (): readonly Project[] => {
   const translation = useScopedI18n('projects');
 
   return [
@@ -92,4 +92,4 @@ export function useProjects(): Project[] {
       code_url: 'https://github.com/KainNhantumbo/Server-for-planner-app'
     }
   ];
-}
+};

@@ -1,13 +1,13 @@
 'use client';
 
-import actions from '@/shared/actions';
-import { useAppContext } from '@/context/AppContext';
-import { motion, AnimatePresence } from '@/providers/framer-provider';
-import { useRouter } from 'next/navigation';
-import { XIcon } from 'lucide-react';
+import { useAppContext } from '@/context/app-context';
 import { useScopedI18n } from '@/locales/client';
+import { AnimatePresence, motion } from '@/providers/framer-provider';
+import actions from '@/shared/actions';
+import { XIcon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
-export default function LanguageSwitcher() {
+export const LanguageSwitcher = () => {
   const { state, dispatch } = useAppContext();
   const router = useRouter();
   const translation = useScopedI18n('language_switcher_modal');
@@ -83,4 +83,4 @@ export default function LanguageSwitcher() {
       ) : null}
     </AnimatePresence>
   );
-}
+};
