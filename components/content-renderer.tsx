@@ -1,5 +1,8 @@
-import { transformChild } from '@/lib/utils';
+'use client';
+
+import { clipboard, transformChild } from '@/lib/utils';
 import clsx from 'clsx';
+import { ClipboardCopyIcon } from 'lucide-react';
 import type { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,12 +16,26 @@ export const ContentRenderer: FC<{ children: string }> = ({ children }) => (
         const { children, className, ...rest } = props;
         const match = /language-(\w+)/.exec(className || '');
         return match ? (
-          <div className='text-white my-3 font-monospace'>
+          <div className='my-3 flex flex-col gap-0 font-monospace text-white'>
+            <div className='flex w-full items-center justify-between gap-2 rounded-t-xl border-b-2 border-b-font/10 bg-[#2F2F2F] px-3 py-2'>
+              <i className='font-sans text-xs font-bold uppercase'>
+                {match[1].toString()}
+              </i>
+              <button
+                onClick={() => clipboard(String(children).replace(/\n$/, ''))}
+                className='base-border group flex flex-row flex-nowrap items-center gap-2 rounded-lg p-1 px-2 hover:bg-primary/30 active:animate-ping'>
+                <ClipboardCopyIcon className='h-auto w-4' />
+                <span className='font-sans text-xs font-bold uppercase'>
+                  Copy
+                </span>
+              </button>
+            </div>
             <SyntaxHighlighter
               {...rest}
               style={{ ...materialDark }}
               language={match[1]}
-              wrapLongLines={true}
+              showLineNumbers
+              customStyle={{ margin: 0 }}
               ref={undefined}>
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>
@@ -28,7 +45,7 @@ export const ContentRenderer: FC<{ children: string }> = ({ children }) => (
             {...rest}
             className={clsx(
               className,
-              'rounded-[5px] bg-font/10 py-[2px] px-[5px] mx-1 font-monospace'
+              'mx-1 rounded-[5px] bg-font/10 px-[5px] py-[2px] font-monospace'
             )}>
             {children}
           </code>

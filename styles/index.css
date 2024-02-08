@@ -34,11 +34,11 @@
   }
 
   h1 {
-    @apply font-sans text-3xl leading-10 font-semibold;
+    @apply font-sans text-3xl font-semibold leading-10;
   }
 
   h2 {
-    @apply font-sans font-semibold leading-6 text-xl;
+    @apply font-sans text-xl font-semibold leading-6;
   }
 
   h3 {
@@ -51,7 +51,7 @@
   }
 
   li {
-    @apply list-disc list-inside;
+    @apply list-inside list-disc;
   }
 
   em {
@@ -72,7 +72,7 @@
 
   hr,
   .hr-class {
-    @apply text-font stroke-font my-2 rounded-[3px];
+    @apply my-2 rounded-[3px] stroke-font text-font;
   }
 
   table {
@@ -80,7 +80,7 @@
   }
 
   blockquote {
-    @apply bg-primary-variant/30 w-fit mobile-x:w-full my-3 relative ml-5 rounded-lg text-xl;
+    @apply relative my-3 ml-5 w-fit rounded-lg bg-primary-variant/30 text-xl mobile-x:w-full;
     padding: 12px 12px 1px 12px;
   }
 
@@ -88,7 +88,7 @@
     content: '';
     top: calc(50% - 8px);
     left: -12px;
-    @apply bg-primary w-[5px] h-6 rounded-lg absolute;
+    @apply absolute h-6 w-[5px] rounded-lg bg-primary;
   }
 
   @media screen and (max-width: 530px) {
@@ -100,7 +100,7 @@
   }
 
   pre {
-    border-radius: 8px !important;
+    border-radius: 0 0 8px 8px !important;
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
@@ -108,29 +108,26 @@
   }
 
   pre code {
-    @apply base-border;
     word-spacing: normal;
     tab-size: 2 !important;
     hyphens: none;
     -webkit-font-smoothing: antialiased;
     line-height: 1.4rem;
     white-space: inherit;
-    border: none;
     padding: 0;
     overflow: auto;
     font-size: 0.95rem;
-    margin: 2rem 0;
   }
 
   body {
-    @apply w-[100%] relative font-sans m-0 bg-background text-font selection:bg-primary/20 selection:text-font selection:text-opacity-90 font-normal;
+    @apply relative m-0 w-[100%] bg-background font-sans font-normal text-font selection:bg-primary/20 selection:text-font selection:text-opacity-90;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   html {
     scroll-padding-top: 70px;
-    @apply overflow-x-hidden m-0 p-0 scroll-smooth text-font;
+    @apply m-0 overflow-x-hidden scroll-smooth p-0 text-font;
   }
 
   ::-webkit-scrollbar {
@@ -138,7 +135,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-lg bg-primary hover:transition-all hover:delay-200 hover:ease-in-out absolute top-[50%] bottom-[50%] before:w-[100%] before:h-[100%] before:min-h-[44px] before:min-w-[44px] before:translate-x-[50%] before:translate-y-[50%];
+    @apply absolute bottom-[50%] top-[50%] rounded-lg bg-primary before:h-[100%] before:min-h-[44px] before:w-[100%] before:min-w-[44px] before:translate-x-[50%] before:translate-y-[50%] hover:transition-all hover:delay-200 hover:ease-in-out;
   }
 
   * {
@@ -148,26 +145,26 @@
 
 @layer components {
   .base-image {
-    @apply rounded-[50%] object-cover w-[100%] h-[100%];
+    @apply h-[100%] w-[100%] rounded-[50%] object-cover;
   }
 
   .base-border {
-    @apply border-solid border-[1px] border-font/[.12];
+    @apply border-[1px] border-solid border-font/[.12];
   }
 
   .base-link {
-    @apply text-center sm:text-left transition-colors hover:underline hover:underline-offset-4 w-fit;
+    @apply w-fit text-center transition-colors hover:underline hover:underline-offset-4 sm:text-left;
   }
 
   .base-input {
-    @apply w-full base-border py-[10px] px-[18px] outline-none rounded-lg bg-background/70 transition-colors focus:shadow-[0_0_20px_rgba(0,0,0,.06)] placeholder:text-font/60 resize-y disabled:bg-foreground disabled:placeholder:text-transparent disabled:border-none;
+    @apply base-border w-full resize-y rounded-lg bg-background/70 px-[18px] py-[10px] outline-none transition-colors placeholder:text-font/60 focus:shadow-[0_0_20px_rgba(0,0,0,.06)] disabled:border-none disabled:bg-foreground disabled:placeholder:text-transparent;
   }
 
   .base-label {
     @apply relative;
 
     svg {
-      @apply w-[18px] h-[18px] absolute top-[2px] left-0;
+      @apply absolute left-0 top-[2px] h-[18px] w-[18px];
     }
 
     span {
@@ -177,35 +174,35 @@
 
   .base-corner-button {
     all: unset;
-    @apply rounded-lg w-fit cursor-pointer place-content-center grid;
+    @apply grid w-fit cursor-pointer place-content-center rounded-lg;
 
     svg {
-      @apply w-[20px] h-auto;
+      @apply h-auto w-[20px];
     }
   }
 
   .base-button-outline {
     all: unset;
-    @apply px-[7px] py-[10px] cursor-pointer whitespace-nowrap text-ellipsis text-font overflow-hidden outline-none;
+    @apply cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap px-[7px] py-[10px] text-font outline-none;
   }
 
   .base-button {
     all: unset;
-    @apply w-fit cursor-pointer px-2 py-3 rounded-xl bg-primary_c text-white-light dark:text-white-dark whitespace-nowrap text-ellipsis overflow-hidden border-solid border-[1px] border-opacity-80 border-font-light dark:border-font-dark text-center hover:bg-primary_c hover:border-opacity-20 font-semibold hover:text-font-light transition-colors;
+    @apply bg-primary_c text-white-light dark:text-white-dark border-font-light dark:border-font-dark hover:bg-primary_c hover:text-font-light w-fit cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded-xl border-[1px] border-solid border-opacity-80 px-2 py-3 text-center font-semibold transition-colors hover:border-opacity-20;
   }
 
   .base-section-title {
-    @apply relative font-semibold mx-auto mt-3 max-[420px]:text-base max-[420px]:text-center font-sans-display;
+    @apply relative mx-auto mt-3 font-sans-display font-semibold max-[420px]:text-center max-[420px]:text-base;
 
     ::before {
-      @apply absolute content-[''] bg-primary rounded-xl -top-4 h-[7px] w-11 left-[calc(50%_-_20px)];
+      @apply absolute -top-4 left-[calc(50%_-_20px)] h-[7px] w-11 rounded-xl bg-primary content-[''];
     }
 
     svg {
-      @apply stroke-primary absolute w-5 h-5 left-0 top-[calc(50%_-_10px)];
+      @apply absolute left-0 top-[calc(50%_-_10px)] h-5 w-5 stroke-primary;
     }
     span {
-      @apply pl-6 uppercase text-lg;
+      @apply pl-6 text-lg uppercase;
     }
   }
 }

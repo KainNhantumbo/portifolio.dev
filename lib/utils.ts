@@ -22,3 +22,11 @@ export const formatDate = (date: string): string => {
 export const generateStaticParams = () => {
   return locales.map((locale) => ({ locale }));
 };
+
+export const clipboard = async (content: string) => {
+  try {
+    await navigator.clipboard.writeText(content);
+  } catch (error) {
+    console.log(error);
+  }
+};
