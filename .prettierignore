@@ -1,1 +1,11 @@
 **/*.md
+**/node_modules
+**/dist
+**/*.svg
+
+package-lock.json
+.electron-vendors.cache.json
+
+.github
+.idea
+.vscode

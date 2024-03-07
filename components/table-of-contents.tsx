@@ -15,18 +15,18 @@ export const TableOfContents: FC<{ content: string }> = ({ content }) => {
   if (headings.length < 1) return null;
 
   return (
-    <aside className='toc-container base-border bg-foreground p-3 px-4 my-2 rounded-xl'>
+    <aside className='toc-container base-border my-2 rounded-xl bg-foreground p-3 px-4'>
       <nav className='flex flex-col gap-2'>
         <h2 className='font-sans-body text-xl'>Table of Contents</h2>
         <ul>
           {headings.map((heading, index) => (
             <li
               key={index}
-              className='pl-3 list-inside'
+              className='list-inside pl-3'
               style={{ paddingLeft: `calc(${heading.depth}px * 8px)` }}>
               <Link
                 href={`#${transformChild(heading.text)}`}
-                className='group underline underline-offset-4 hover:text-primary decoration-dashed transition-colors font-medium'>
+                className='group font-medium underline decoration-dashed underline-offset-4 transition-colors hover:text-primary'>
                 {String(heading.text)}
               </Link>
             </li>

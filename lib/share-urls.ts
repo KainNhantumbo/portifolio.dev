@@ -1,9 +1,4 @@
-import {
-  FacebookIcon,
-  LinkedinIcon,
-  ShareIcon,
-  TwitterIcon
-} from 'lucide-react';
+import { FacebookIcon, LinkedinIcon, ShareIcon, TwitterIcon } from 'lucide-react';
 import Package from '../package.json';
 
 type Props = { slug: string; excerpt: string; title: string };

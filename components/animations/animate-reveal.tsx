@@ -39,7 +39,7 @@ export const Reveal: FC<Props> = ({
   }, [isInView, slideControls, revealControls]);
 
   return (
-    <div ref={ref} style={{ width }} className='overflow-hidden relative'>
+    <div ref={ref} style={{ width }} className='relative overflow-hidden'>
       <motion.div
         variants={{
           hidden: { opacity: 0, scale: 0, y: 90 },

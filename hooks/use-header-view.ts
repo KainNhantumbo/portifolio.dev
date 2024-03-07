@@ -7,8 +7,7 @@ export const useHeaderView = (minWidth: number, initialScrollRange = -100) => {
   const [deltaY, setDeltaY] = useState<number>(initialScrollRange);
 
   const onChangeWidth = useMemo(
-    () => () =>
-      window.innerWidth > minWidth ? setIsMenu(true) : setIsMenu(false),
+    () => () => (window.innerWidth > minWidth ? setIsMenu(true) : setIsMenu(false)),
     [minWidth]
   );
 

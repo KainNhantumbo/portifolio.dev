@@ -56,7 +56,7 @@ export const Abilities = () => {
   return (
     <section
       id='skills'
-      className='w-full max-w-[780px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
+      className='mx-auto flex w-full max-w-[780px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
       <h2 className='base-section-title'>
         <PenToolIcon />
         <span>{translation('title')}</span>
@@ -64,11 +64,11 @@ export const Abilities = () => {
 
       {data.map((group, index) => (
         <section key={index} className='mb-5 p-5 font-sans'>
-          <h3 className='text-primary mb-5 relative'>
-            <group.icon className='stroke-secondary absolute w-5 h-auto left-0 top-[calc(50%_-_10px)]' />
-            <span className='text-primary pl-6'>{group.title}</span>
+          <h3 className='relative mb-5 text-primary'>
+            <group.icon className='absolute left-0 top-[calc(50%_-_10px)] h-auto w-5 stroke-secondary' />
+            <span className='pl-6 text-primary'>{group.title}</span>
           </h3>
-          <section className='grid items-center gap-2 grid-cols-4 max-[330px]:grid-cols-1 max-[495px]:grid-cols-2 max-[650px]:grid-cols-3'>
+          <section className='grid grid-cols-4 items-center gap-2 max-[650px]:grid-cols-3 max-[495px]:grid-cols-2 max-[330px]:grid-cols-1'>
             {group.data.map((item, index) => (
               <motion.div
                 key={index}
@@ -81,8 +81,8 @@ export const Abilities = () => {
                   rotate: [0, -20, 0, 20, 0],
                   scale: [1.1, 1, 1.18, 1.09, 1]
                 }}
-                className='relative flex flex-col gap-1 p-4 w-[150px] pr-5 rounded-xl select-none'>
-                <item.icon className='stroke-primary absolute w-5 h-5 top-2 right-2' />
+                className='relative flex w-[150px] select-none flex-col gap-1 rounded-xl p-4 pr-5'>
+                <item.icon className='absolute right-2 top-2 h-5 w-5 stroke-primary' />
                 <h3 className='font-medium'>{item.tech}</h3>
               </motion.div>
             ))}

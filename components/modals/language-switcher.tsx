@@ -25,7 +25,7 @@ export const LanguageSwitcher = () => {
     <AnimatePresence>
       {state.isLanguagesModal ? (
         <section
-          className='w-[100vw] h-[100vh] fixed bg-foreground/20 backdrop-blur-sm z-[10000] top-0 left-0 grid place-content-center select-none'
+          className='fixed left-0 top-0 z-[10000] grid h-[100vh] w-[100vw] select-none place-content-center bg-foreground/20 backdrop-blur-sm'
           onClick={() =>
             dispatch({
               type: actions.LANGUAGES_MODAL,
@@ -33,7 +33,7 @@ export const LanguageSwitcher = () => {
             })
           }>
           <motion.section
-            className='dialog-modal base-border rounded-xl backdrop-blur-md bg-foreground/90 font-sans '
+            className='dialog-modal base-border rounded-xl bg-foreground/90 font-sans backdrop-blur-md '
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -42,24 +42,24 @@ export const LanguageSwitcher = () => {
               scale: 0,
               transition: { duration: 0.3 }
             }}>
-            <div className='flex flex-col gap-5 px-2 py-5 max-w-[400px]  mx-3 relative'>
+            <div className='relative mx-3 flex max-w-[400px] flex-col gap-5  px-2 py-5'>
               <div className='flex flex-col gap-3'>
-                <span className='font-medium text-primary font-sans-display'>
+                <span className='font-sans-display font-medium text-primary'>
                   {translation('title')}
                 </span>
                 <p className='text-sm'>{translation('message')}</p>
-                <div className='flex flex-wrap gap-2 mt-5 w-full mx-auto justify-center'>
+                <div className='mx-auto mt-5 flex w-full flex-wrap justify-center gap-2'>
                   <motion.button
                     whileTap={{ scale: 0.85 }}
                     whileHover={{ scale: 1.05 }}
-                    className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center text-sm hover:text-primary transition-colors px-2 py-2'
+                    className='base-border w-fit overflow-hidden text-ellipsis whitespace-nowrap rounded-xl bg-background px-2 py-2 text-center text-sm transition-colors hover:text-primary'
                     onClick={() => translate('en')}>
                     {translation('buttons.english')}
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.85 }}
                     whileHover={{ scale: 1.05 }}
-                    className='base-border rounded-xl w-fit bg-background whitespace-nowrap text-ellipsis overflow-hidden text-center text-sm hover:text-primary transition-colors px-2 py-2'
+                    className='base-border w-fit overflow-hidden text-ellipsis whitespace-nowrap rounded-xl bg-background px-2 py-2 text-center text-sm transition-colors hover:text-primary'
                     onClick={() => translate('pt')}>
                     {translation('buttons.portuguese')}
                   </motion.button>
@@ -75,7 +75,7 @@ export const LanguageSwitcher = () => {
                     payload: { ...state, isLanguagesModal: false }
                   })
                 }>
-                <XIcon className='group-hover:stroke-error transition-colors' />
+                <XIcon className='transition-colors group-hover:stroke-error' />
               </motion.button>
             </div>
           </motion.section>

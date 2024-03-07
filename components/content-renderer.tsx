@@ -12,22 +12,17 @@ export const ContentRenderer: FC<{ children: string }> = ({ children }) => (
   <ReactMarkdown
     className='blog-post-content'
     components={{
-      code(props) {
-        const { children, className, ...rest } = props;
+      code({ children, className, ...rest }) {
         const match = /language-(\w+)/.exec(className || '');
         return match ? (
           <div className='my-3 flex flex-col gap-0 font-monospace text-white'>
             <div className='flex w-full items-center justify-between gap-2 rounded-t-xl border-b-2 border-b-font/10 bg-[#2F2F2F] px-3 py-2'>
-              <i className='font-sans text-xs font-bold uppercase'>
-                {match[1].toString()}
-              </i>
+              <i className='font-sans text-xs font-bold uppercase'>{match[1].toString()}</i>
               <button
                 onClick={() => clipboard(String(children).replace(/\n$/, ''))}
                 className='base-border group flex flex-row flex-nowrap items-center gap-2 rounded-lg p-1 px-2 hover:bg-primary/30 active:animate-ping'>
                 <ClipboardCopyIcon className='h-auto w-4' />
-                <span className='font-sans text-xs font-bold uppercase'>
-                  Copy
-                </span>
+                <span className='font-sans text-xs font-bold uppercase'>Copy</span>
               </button>
             </div>
             <SyntaxHighlighter
@@ -51,46 +46,31 @@ export const ContentRenderer: FC<{ children: string }> = ({ children }) => (
           </code>
         );
       },
-      h2(props) {
-        const { children, ...rest } = props;
-        return (
-          <h2 {...rest} id={transformChild(String(children))}>
-            {children}
-          </h2>
-        );
-      },
-      h3(props) {
-        const { children, ...rest } = props;
-        return (
-          <h2 {...rest} id={transformChild(String(children))}>
-            {children}
-          </h2>
-        );
-      },
-      h4(props) {
-        const { children, ...rest } = props;
-        return (
-          <h4 {...rest} id={transformChild(String(children))}>
-            {children}
-          </h4>
-        );
-      },
-      h5(props) {
-        const { children, ...rest } = props;
-        return (
-          <h5 {...rest} id={transformChild(String(children))}>
-            {children}
-          </h5>
-        );
-      },
-      h6(props) {
-        const { children, ...rest } = props;
-        return (
-          <h6 {...rest} id={transformChild(String(children))}>
-            {children}
-          </h6>
-        );
-      }
+      h2: ({ children, ...rest }) => (
+        <h2 {...rest} id={transformChild(String(children))}>
+          {children}
+        </h2>
+      ),
+      h3: ({ children, ...rest }) => (
+        <h2 {...rest} id={transformChild(String(children))}>
+          {children}
+        </h2>
+      ),
+      h4: ({ children, ...rest }) => (
+        <h4 {...rest} id={transformChild(String(children))}>
+          {children}
+        </h4>
+      ),
+      h5: ({ children, ...rest }) => (
+        <h5 {...rest} id={transformChild(String(children))}>
+          {children}
+        </h5>
+      ),
+      h6: ({ children, ...rest }) => (
+        <h6 {...rest} id={transformChild(String(children))}>
+          {children}
+        </h6>
+      )
     }}>
     {children}
   </ReactMarkdown>

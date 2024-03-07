@@ -7,11 +7,7 @@ import { Header } from '@/components/header';
 import { AnimatePageTransition } from '@/components/animations/animate-page-transition';
 import { AppContext } from '@/context/app-context';
 import { I18nProviderClient } from '@/locales/client';
-import {
-  LazyMotion,
-  MotionConfig,
-  domAnimation
-} from '@/providers/framer-provider';
+import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';
 import { ThemeProvider } from '@/providers/theme-provider';
 import { AUTHOR, constants, locales } from '@/shared/constants';
 import clsx from 'clsx';

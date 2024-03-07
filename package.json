@@ -20,7 +20,9 @@
     "dev": "next dev -p 3200",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit -p ./tsconfig.json",
+    "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,json}\""
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

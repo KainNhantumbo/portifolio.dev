@@ -1,21 +1,12 @@
 'use client';
 
-import {
-  createContext,
-  useContext,
-  ReactNode,
-  Dispatch,
-  useReducer
-} from 'react';
+import { createContext, useContext, type ReactNode, Dispatch, useReducer } from 'react';
 import type { State, Action } from '@/types';
 import { initialState, reducer } from '@/shared/reducer';
 
 type Props = { children: ReactNode };
 
-type Context = {
-  state: State;
-  dispatch: Dispatch<Action>;
-};
+type Context = { state: State; dispatch: Dispatch<Action> };
 
 const context = createContext<Context>({
   state: initialState,
@@ -25,10 +16,7 @@ const context = createContext<Context>({
 export const AppContext = ({ children }: Props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return (
-    <context.Provider value={{ state, dispatch }}>{children}</context.Provider>
-  );
+  return <context.Provider value={{ state, dispatch }}>{children}</context.Provider>;
 };
 
-
-export const useAppContext = (): Context => useContext(context);
+export const useAppContext = () => useContext(context);

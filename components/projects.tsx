@@ -14,12 +14,12 @@ export const Projects = () => {
   return (
     <section
       id='projects'
-      className='w-full max-w-[980px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
+      className='mx-auto flex w-full max-w-[980px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
       <h2 className='base-section-title'>
         <SquareStackIcon />
         <span>{translation('projects.title')}</span>
       </h2>
-      <p className='font-sans font-sm max-w-lg text-center font-semibold'>
+      <p className='font-sm max-w-lg text-center font-sans font-semibold'>
         {translation('projects.intro-part-1')}{' '}
         <a
           href='https://github.com/KainNhantumbo'
@@ -32,38 +32,38 @@ export const Projects = () => {
         .
       </p>
 
-      <h3 className='font-semibold font-sans text-xl underline underline-offset-4 decoration-dashed '>
+      <h3 className='font-sans text-xl font-semibold underline decoration-dashed underline-offset-4 '>
         {translation('works.section_name')}
       </h3>
 
       <Works />
 
-      <h3 className='font-semibold font-sans-display text-lg underline underline-offset-4 uppercase decoration-dashed'>
+      <h3 className='font-sans-display text-lg font-semibold uppercase underline decoration-dashed underline-offset-4'>
         {translation('projects.section_name')}
       </h3>
 
       <section className='cards-container'>
-        <section className='grid grid-cols-3 mt-5 gap-5 max-[910px]:grid-cols-2 max-[605px]:grid-cols-1'>
+        <section className='mt-5 grid grid-cols-3 gap-5 max-[910px]:grid-cols-2 max-[605px]:grid-cols-1'>
           {projects.map((project, index) => (
             <motion.section
-              className='w-[280px] h-[380px] flex flex-col rounded-xl p-2 select-none base-border bg-foreground font-sans shadow-[0_0_25px_#00000015]'
+              className='base-border flex h-[380px] w-[280px] select-none flex-col rounded-xl bg-foreground p-2 font-sans shadow-[0_0_25px_#00000015]'
               key={index}
               whileHover={{ y: -7 }}>
-              <div className='w-full h-[210px] relative'>
+              <div className='relative h-[210px] w-full'>
                 <Image
                   src={project.image}
                   placeholder={'blur'}
                   width={280}
                   height={200}
-                  className='base-border w-full h-full max-h-[180px]'
+                  className='base-border h-full max-h-[180px] w-full'
                   style={{ borderRadius: 10 }}
                   alt={project.name}
                 />
-                <h4 className='bg-orange-400/50 text-white backdrop-blur-md rounded-lg absolute left-2 bottom-2 px-2 w-fit font-medium text-sm'>
+                <h4 className='absolute bottom-2 left-2 w-fit rounded-lg bg-orange-400/50 px-2 text-sm font-medium text-white backdrop-blur-md'>
                   {project.category}
                 </h4>
               </div>
-              <div className='flex flex-col justify-between h-full'>
+              <div className='flex h-full flex-col justify-between'>
                 <div>
                   <h3 className='mt-2 text-[.95rem]'>{project.name}</h3>
                 </div>
@@ -74,10 +74,10 @@ export const Projects = () => {
                       whileHover={{ scale: 1.03 }}
                       href={project.live_url}
                       target={'_blank'}
-                      className='group bg-background transition-colors base-border shadow-[0_0_20px_rgba(0,0,0,.06)] flex items-center font-medium py-[5px] px-4 gap-2 rounded-xl'
+                      className='base-border group flex items-center gap-2 rounded-xl bg-background px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
                       rel={'noreferrer noopener'}>
-                      <ExternalLinkIcon className='stroke-primary transition-colors w-auto h-5' />
-                      <span className='group-hover:text-primary transition-colors capitalize text-[.9rem]'>
+                      <ExternalLinkIcon className='h-5 w-auto stroke-primary transition-colors' />
+                      <span className='text-[.9rem] capitalize transition-colors group-hover:text-primary'>
                         {translation('projects.live-demo')}
                       </span>
                     </motion.a>
@@ -86,11 +86,11 @@ export const Projects = () => {
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ scale: 1.03 }}
                     href={project.code_url}
-                    className='group bg-background transition-colors base-border shadow-[0_0_20px_rgba(0,0,0,.06)] flex items-center font-medium py-[5px] px-4 gap-2 rounded-xl'
+                    className='base-border group flex items-center gap-2 rounded-xl bg-background px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
                     target={'_blank'}
                     rel={'noreferrer noopener'}>
-                    <GithubIcon className='stroke-primary transition-colors w-auto h-5' />
-                    <span className='group-hover:text-primary transition-colors capitalize text-[.9rem]'>
+                    <GithubIcon className='h-5 w-auto stroke-primary transition-colors' />
+                    <span className='text-[.9rem] capitalize transition-colors group-hover:text-primary'>
                       {translation('projects.github')}
                     </span>
                   </motion.a>

@@ -14,9 +14,9 @@ export const SocialShare: FC<Props> = ({ title, excerpt, slug }) => {
   });
 
   return (
-    <section className='flex justify-end gap-5 items-center'>
+    <section className='flex items-center justify-end gap-5'>
       <span className='font-medium'>Share:</span>
-      <div className='flex gap-3 items-center'>
+      <div className='flex items-center gap-3'>
         {anchors.map((option) => (
           <motion.a
             whileHover={{ scale: 1.1 }}
@@ -26,8 +26,8 @@ export const SocialShare: FC<Props> = ({ title, excerpt, slug }) => {
             target={'_blank'}
             rel={'noreferrer noopener'}
             key={option.name}
-            className='bg-primary/[.15] backdrop-blur-md rounded-full w-[34px] h-[34px] grid place-content-center p-1'>
-            <option.icon className='stroke-primary w-auto h-5' />
+            className='grid h-[34px] w-[34px] place-content-center rounded-full bg-primary/[.15] p-1 backdrop-blur-md'>
+            <option.icon className='h-5 w-auto stroke-primary' />
           </motion.a>
         ))}
       </div>

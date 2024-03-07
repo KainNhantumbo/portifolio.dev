@@ -11,7 +11,7 @@ const Page = ({ params: { locale } }: PageParams) => {
   setStaticParamsLocale(locale);
 
   return (
-    <main className='w-full px-3 pt-[75px] flex flex-col gap-7 mb-12'>
+    <main className='mb-12 flex w-full flex-col gap-7 px-3 pt-[75px]'>
       <Introduction />
       <LanguageSwitcher />
       <About />

@@ -1,10 +1,8 @@
-import { LucideIcon } from 'lucide-react';
-import { StaticImageData } from 'next/image';
-import { ChangeEvent, FormEvent } from 'react';
+import type { LucideIcon } from 'lucide-react';
+import type { StaticImageData } from 'next/image';
+import type { ChangeEvent, FormEvent } from 'react';
 
-export type InputEvents =
-  | ChangeEvent<HTMLInputElement>
-  | ChangeEvent<HTMLTextAreaElement>;
+export type InputEvents = ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>;
 
 export type SubmitEvent = FormEvent<HTMLFormElement>;
 
@@ -42,9 +40,7 @@ export type Stack = {
 
 export type Action = { type: string; payload: State };
 
-export type State = {
-  isLanguagesModal: boolean;
-};
+export type State = { isLanguagesModal: boolean };
 
 export type Frontmatter = {
   title: string;
@@ -54,10 +50,7 @@ export type Frontmatter = {
   topic: string;
 };
 
-export interface Post extends Frontmatter {
-  slug: string;
-  content: string;
-}
+export type Post = Frontmatter & { slug: string; content: string };
 
 export type PageParams = { params: { locale: string } };
 

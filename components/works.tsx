@@ -11,55 +11,55 @@ export const Works = () => {
   const data = useWorks();
 
   return (
-    <section className='w-full max-w-[1000px] flex flex-col mb-5 gap-5'>
+    <section className='mb-5 flex w-full max-w-[1000px] flex-col gap-5'>
       {data.map((item, index) => (
         <AnimateScroll
           key={index}
-          className='w-full flex flex-row flex-nowrap items-center gap-3 p-3 rounded-xl select-none max-[890px]:flex-col-reverse max-[890px]:justify-center max-[890px]:items-center max-[890px]:gap-5'>
-          <div className='w-full flex flex-col gap-2'>
-            <h3 className='font-sans mx-auto font-semibold uppercase text-lg text-center'>
+          className='flex w-full select-none flex-row flex-nowrap items-center gap-3 rounded-xl p-3 max-[890px]:flex-col-reverse max-[890px]:items-center max-[890px]:justify-center max-[890px]:gap-5'>
+          <div className='flex w-full flex-col gap-2'>
+            <h3 className='mx-auto text-center font-sans text-lg font-semibold uppercase'>
               {item.title}
             </h3>
-            <div className='font-sans text-left'>
+            <div className='text-left font-sans'>
               {item.description.map((phrase, index) => (
                 <p key={index} className='mb-3'>
                   {phrase}
                 </p>
               ))}
             </div>
-            <div className='font-sans flex flex-wrap flex-row items-center gap-2'>
-              <h4 className='uppercase font-medium text-primary'>
+            <div className='flex flex-row flex-wrap items-center gap-2 font-sans'>
+              <h4 className='font-medium uppercase text-primary'>
                 {translation('platform')}:{' '}
               </h4>
               {item.platforms.map((platform, index) => (
                 <span
                   key={index}
-                  className='base-border p-1 px-2 uppercase text-xs font-medium rounded-lg bg-foreground text-secondary'>
+                  className='base-border rounded-lg bg-foreground p-1 px-2 text-xs font-medium uppercase text-secondary'>
                   {platform}
                 </span>
               ))}
             </div>
-            <div className='font-sans flex flex-wrap flex-row items-center gap-2'>
-              <h4 className='uppercase font-medium text-primary'>
+            <div className='flex flex-row flex-wrap items-center gap-2 font-sans'>
+              <h4 className='font-medium uppercase text-primary'>
                 {translation('stack')}:{' '}
               </h4>
               {item.stack.map((platform, index) => (
                 <span
                   key={index}
-                  className='base-border p-1 px-2 uppercase text-xs font-medium rounded-lg bg-foreground text-secondary'>
+                  className='base-border rounded-lg bg-foreground p-1 px-2 text-xs font-medium uppercase text-secondary'>
                   {platform}
                 </span>
               ))}
             </div>
 
-            <div className='flex gap-3 flex-wrap items-center w-full font-sans mt-2'>
+            <div className='mt-2 flex w-full flex-wrap items-center gap-3 font-sans'>
               <a
                 href={item.livePreview.url}
                 rel='noopener noreferrer'
                 target='_blank'
-                className='group flex items-center gap-2 underline-offset-4 underline hover:text-primary transition-colors  text-blue-400'>
-                <ExternalLinkIcon className='h-auto w-4 group-hover:stroke-primary stroke-blue-400 transition-colors' />
-                <span className='font-medium transition-colors group-hover:text-primary text-blue-400'>
+                className='group flex items-center gap-2 text-blue-400 underline underline-offset-4 transition-colors  hover:text-primary'>
+                <ExternalLinkIcon className='h-auto w-4 stroke-blue-400 transition-colors group-hover:stroke-primary' />
+                <span className='font-medium text-blue-400 transition-colors group-hover:text-primary'>
                   {item.livePreview.label}
                 </span>
               </a>
@@ -67,9 +67,9 @@ export const Works = () => {
                 href={item.repository.url}
                 rel='noopener noreferrer'
                 target='_blank'
-                className='group flex items-center gap-2 underline-offset-4 underline  hover:text-primary transition-colors text-blue-400'>
-                <GithubIcon className='h-auto w-4 group-hover:stroke-primary stroke-blue-400 transition-colors' />
-                <span className='transition-colors font-medium group-hover:text-primary text-blue-400'>
+                className='group flex items-center gap-2 text-blue-400 underline  underline-offset-4 transition-colors hover:text-primary'>
+                <GithubIcon className='h-auto w-4 stroke-blue-400 transition-colors group-hover:stroke-primary' />
+                <span className='font-medium text-blue-400 transition-colors group-hover:text-primary'>
                   {item.repository.label}
                 </span>
               </a>
@@ -80,7 +80,7 @@ export const Works = () => {
             height={undefined}
             src={item.image}
             alt={item.title}
-            className='w-full h-full object-cover max-w-[500px] rounded-lg  base-border max-[890px]:max-w-full'
+            className='base-border h-full w-full max-w-[500px] rounded-lg  object-cover max-[890px]:max-w-full'
           />
         </AnimateScroll>
       ))}

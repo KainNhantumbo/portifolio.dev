@@ -12,18 +12,16 @@ export const About = () => {
   return (
     <section
       id='about'
-      className='w-full max-w-[700px] flex flex-col items-center gap-3 pt-5 mx-auto border-solid border-t-[1px] border-font/10'>
+      className='mx-auto flex w-full max-w-[700px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
       <h2 className='base-section-title'>
         <UserIcon />
         <span>{translation('title')}</span>
       </h2>
       <section className='text-center font-sans'>
-        <div className='flex justify-between items-center gap-5 max-w-md my-5 mx-auto max-[420px]:flex-col-reverse max-[420px]:justify-center max-[420px]:text-center max-[420px]:mb-[5px]'>
+        <div className='mx-auto my-5 flex max-w-md items-center justify-between gap-5 max-[420px]:mb-[5px] max-[420px]:flex-col-reverse max-[420px]:justify-center max-[420px]:text-center'>
           <div>
-            <h3 className='text-left font-semibold text-3xl'>Kain Nhantumbo</h3>
-            <p className='mb-3 font-medium text-left'>
-              {translation('subtitle')}
-            </p>
+            <h3 className='text-left text-3xl font-semibold'>Kain Nhantumbo</h3>
+            <p className='mb-3 text-left font-medium'>{translation('subtitle')}</p>
           </div>
           <motion.div whileInView={{ rotate: [0, 360] }}>
             <Image
@@ -32,7 +30,7 @@ export const About = () => {
               priority
               src={AUTHOR.picture}
               alt='author image'
-              className='border-primary border-[2px] rounded-full border-dashed'
+              className='rounded-full border-[2px] border-dashed border-primary'
             />
           </motion.div>
         </div>
@@ -44,35 +42,32 @@ export const About = () => {
           whileInView={{ y: 0 }}>
           {translation('intro-1')}
         </motion.p>
-        <motion.p
-          transition={{ delay: 0.4 }}
-          initial={{ y: 50 }}
-          whileInView={{ y: 0 }}>
+        <motion.p transition={{ delay: 0.4 }} initial={{ y: 50 }} whileInView={{ y: 0 }}>
           {translation('intro-2')}
         </motion.p>
       </section>
 
-      <section className='flex flex-wrap items-center justify-center gap-12 mt-5'>
+      <section className='mt-5 flex flex-wrap items-center justify-center gap-12'>
         <motion.div
-          className='grid place-content-center place-items-center w-[180px] h-[180px] gap-3 bg-foreground rounded-xl base-border font-sans p-3 select-none group'
+          className='base-border group grid h-[180px] w-[180px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-3 font-sans'
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0.4, rotate: 360 }}
           whileInView={{ rotate: 0, opacity: 1 }}>
-          <Code2Icon className='stroke-primary group-hover:stroke-secondary w-10 h-10' />
+          <Code2Icon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
           <h4 className='font-medium'>{translation('experience-title')}</h4>
-          <span className='text-sm capitalize text-center'>
+          <span className='text-center text-sm capitalize'>
             {translation('experience-content')}
           </span>
         </motion.div>
 
         <motion.div
-          className='grid place-content-center place-items-center w-[180px] h-[180px] gap-3 bg-foreground rounded-xl base-border font-sans p-3 select-none group'
+          className='base-border group grid h-[180px] w-[180px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-3 font-sans'
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0.4, rotate: 360 }}
           whileInView={{ rotate: 0, opacity: 1 }}>
-          <SquareStackIcon className='stroke-primary group-hover:stroke-secondary w-10 h-10' />
+          <SquareStackIcon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
           <h4 className='font-medium'>{translation('projects-title')}</h4>
-          <span className='text-sm capitalize text-center'>
+          <span className='text-center text-sm capitalize'>
             {translation('projects-content')}
           </span>
         </motion.div>

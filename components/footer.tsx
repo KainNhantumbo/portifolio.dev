@@ -61,12 +61,12 @@ export const Footer = () => {
   ];
 
   return (
-    <section className='font-sans w-[100vw] h-min relative flex flex-col gap-3 pb-3'>
+    <section className='relative flex h-min w-[100vw] flex-col gap-3 pb-3 font-sans'>
       <h3 className='text-center font-medium'>{translation('title')}</h3>
-      <ul className='flex items-center justify-center gap-4 flex-row'>
+      <ul className='flex flex-row items-center justify-center gap-4'>
         {socialMediaAnchors.map((item, index) => (
           <motion.li
-            className='bg-primary/[.15] backdrop-blur-md  hover:bg-secondary/20 hover:animate-pulse grid place-content-center place-items-center rounded-full p-3 w-10 h-10 cursor-pointer'
+            className='grid h-10  w-10 cursor-pointer place-content-center place-items-center rounded-full bg-primary/[.15] p-3 backdrop-blur-md hover:animate-pulse hover:bg-secondary/20'
             key={index}
             initial={{ scale: 0 }}
             title={item.name}
@@ -75,26 +75,26 @@ export const Footer = () => {
               transition: { delay: index / socialMediaAnchors.length }
             }}>
             <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
-              <item.icon className='stroke-primary w-5 h-auto' />
+              <item.icon className='h-auto w-5 stroke-primary' />
             </a>
           </motion.li>
         ))}
       </ul>
 
-      <div className='w-full max-w-[600px] h-auto mx-auto p-5 pb-3 '>
+      <div className='mx-auto h-auto w-full max-w-[600px] p-5 pb-3 '>
         <Image
           width={1702}
           height={149}
           src={donutsImage}
           placeholder='blur'
-          className='w-full h-fit'
+          className='h-fit w-full'
           alt='Donuts combo decoration image'
         />
       </div>
 
-      <div className='w-full flex flex-col items-center mx-auto gap-3'>
+      <div className='mx-auto flex w-full flex-col items-center gap-3'>
         <p className='text-center'>{translation('made-phrase')}</p>
-        <div className='w-full flex flex-wrap gap-3 mx-auto items-center justify-center'>
+        <div className='mx-auto flex w-full flex-wrap items-center justify-center gap-3'>
           <span>Copyright © 2023 Kain Nhantumbo.</span>
           <span>
             {translation('version-phrase')} {Package.version} | Comp.{' '}

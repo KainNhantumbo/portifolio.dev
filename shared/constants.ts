@@ -17,5 +17,4 @@ export const AUTHOR = {
   description: 'Web Developer & Designer'
 };
 
-
-export const locales = ['pt', 'en']
+export const locales = ['pt', 'en'];

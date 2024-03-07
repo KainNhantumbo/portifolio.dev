@@ -15,21 +15,21 @@ export default function Page({ params: { slug } }: Props) {
   const readTime = readingTime(post.content, undefined, 'en');
 
   return (
-    <section className='wrapper w-full px-2 pt-20 flex flex-col gap-7'>
-      <div className='grid grid-cols-1 gap-1 items-center max-w-[980px] self-center mx-auto'>
-        <article className='w-full font-sans-body px-10 pb-0 pt-7 max-[620px]:px-5 max-[620px]:py-7'>
+    <section className='wrapper flex w-full flex-col gap-7 px-2 pt-20'>
+      <div className='mx-auto grid max-w-[980px] grid-cols-1 items-center gap-1 self-center'>
+        <article className='w-full px-10 pb-0 pt-7 font-sans-body max-[620px]:px-5 max-[620px]:py-7'>
           <section className='flex flex-col gap-2 font-sans-body'>
             <h5 className='text-sm font-medium uppercase'>
               published: {formatDate(post.createdAt)}
             </h5>
-            <section className='flex items-center py-3 gap-5'>
+            <section className='flex items-center gap-5 py-3'>
               <Image
                 width={580}
                 height={580}
                 priority={false}
                 src={AUTHOR.picture}
                 alt='Article author picture'
-                className='base-border w-auto h-auto max-w-[50px] rounded-full'
+                className='base-border h-auto w-auto max-w-[50px] rounded-full'
               />
               <div className='flex flex-col text-sm'>
                 <span>{AUTHOR.name}</span>
@@ -37,24 +37,20 @@ export default function Page({ params: { slug } }: Props) {
               </div>
             </section>
 
-            <SocialShare
-              title={post.title}
-              slug={post.slug}
-              excerpt={post.excerpt}
-            />
+            <SocialShare title={post.title} slug={post.slug} excerpt={post.excerpt} />
 
-            <div className='flex flex-wrap flex-row items-center text-sm'>
+            <div className='flex flex-row flex-wrap items-center text-sm'>
               <span>
                 <i className='font-medium'>Read:</i>{' '}
                 {readTime.minutes < 1
                   ? 'Less than a minute'
                   : `${readTime.minutes} minutes`}
               </span>
-              <DotIcon className='stroke-primary w-8 h-8 p-0 m-0' />
+              <DotIcon className='m-0 h-8 w-8 stroke-primary p-0' />
               <span>
                 <i className='font-medium'>Words:</i> {readTime.words}
               </span>
-              <DotIcon className='stroke-primary w-8 h-8 p-0 m-0' />
+              <DotIcon className='m-0 h-8 w-8 stroke-primary p-0' />
               <span>
                 <i className='font-medium'>Characters:</i> {post.content.length}
               </span>
@@ -65,12 +61,12 @@ export default function Page({ params: { slug } }: Props) {
             </h1>
 
             <div className='w-fit'>
-              <p className='base-border rounded-3xl bg-black text-white font-medium px-3 uppercase text-[.95rem] font-sans-display mt-2'>
+              <p className='base-border mt-2 rounded-3xl bg-black px-3 font-sans-display text-[.95rem] font-medium uppercase text-white'>
                 {post.topic}
               </p>
             </div>
 
-            <h4 className='font-sans-display font-medium my-3 mx-auto w-full max-w-[1000px]'>
+            <h4 className='mx-auto my-3 w-full max-w-[1000px] font-sans-display font-medium'>
               {post.excerpt}
             </h4>
           </section>

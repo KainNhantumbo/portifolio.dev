@@ -1,12 +1,7 @@
 'use client';
 
 import { motion } from '@/providers/framer-provider';
-import {
-  ArrowUpIcon,
-  LanguagesIcon,
-  MoonStarIcon,
-  SunMediumIcon
-} from 'lucide-react';
+import { ArrowUpIcon, LanguagesIcon, MoonStarIcon, SunMediumIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
 import { useAppContext } from '../context/app-context';
@@ -27,11 +22,11 @@ export const ActionFluentButtons = () => {
   };
 
   return (
-    <section className='z-[3000] fixed bottom-[135px] left-[97vw] grid place-content-center w-0 h-0 max-[690px]:left-[95vw] max-[480px]:left-[90vw]'>
+    <section className='fixed bottom-[135px] left-[97vw] z-[3000] grid h-0 w-0 place-content-center max-[690px]:left-[95vw] max-[480px]:left-[90vw]'>
       <div>
         {isPortfolio ? (
           <motion.button
-            className='w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative group'
+            className='group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center rounded-[10px] border-none bg-primary/20 backdrop-blur-md'
             whileTap={{ scale: 0.7 }}
             whileHover={{ y: -4 }}
             initial={{ x: 200 }}
@@ -43,12 +38,12 @@ export const ActionFluentButtons = () => {
                 payload: { ...state, isLanguagesModal: true }
               })
             }>
-            <LanguagesIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
+            <LanguagesIcon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary' />
           </motion.button>
         ) : null}
 
         <motion.button
-          className='group w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative'
+          className='group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center rounded-[10px] border-none bg-primary/20 backdrop-blur-md'
           whileTap={{ scale: 0.7 }}
           whileHover={{ y: -4 }}
           initial={{ x: 200 }}
@@ -58,13 +53,13 @@ export const ActionFluentButtons = () => {
           aria-label='Toggle theme'
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
           {theme === 'light' ? (
-            <MoonStarIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
+            <MoonStarIcon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary' />
           ) : (
-            <SunMediumIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
+            <SunMediumIcon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary' />
           )}
         </motion.button>
         <motion.button
-          className='group w-7 h-7 mt-2 border-none bg-primary/20 backdrop-blur-md rounded-[10px] grid place-content-center cursor-pointer relative'
+          className='group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center rounded-[10px] border-none bg-primary/20 backdrop-blur-md'
           title='Go to Top'
           onClick={slidePageUp}
           whileHover={{ y: -4 }}
@@ -72,7 +67,7 @@ export const ActionFluentButtons = () => {
           animate={{ x: 0, transition: { delay: 1 } }}
           whileTap={{ scale: 0.7 }}
           transition={{ type: 'spring', duration: 0.5 }}>
-          <ArrowUpIcon className='w-5 h-5 stroke-primary group-hover:stroke-secondary transition-colors' />
+          <ArrowUpIcon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary' />
         </motion.button>
       </div>
     </section>

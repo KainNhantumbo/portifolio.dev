@@ -20,11 +20,9 @@ export function getPosts(withContent?: boolean): Array<Post> {
       const readFiles: Buffer = readFileSync(join(postsDir, fileName));
       const { data, content } = matter(readFiles);
 
-      const result = withContent
-        ? { ...data, slug, content }
-        : {  ...data, slug };
-      
-        return result as Post;
+      const result = withContent ? { ...data, slug, content } : { ...data, slug };
+
+      return result as Post;
     })
     .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
 }

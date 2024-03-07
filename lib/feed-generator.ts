@@ -4,12 +4,11 @@ import { constants } from '../shared/constants';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { getPosts } from './posts-processor';
 
-export  class FeedGenerator {
+export class FeedGenerator {
   feed: Feed;
 
   constructor() {
-    const { url, title, authorName, authorEmail, locale, description } =
-      constants;
+    const { url, title, authorName, authorEmail, locale, description } = constants;
 
     this.feed = new Feed({
       title: `${title} Feed`,

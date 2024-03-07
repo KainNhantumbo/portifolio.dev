@@ -21,8 +21,7 @@ export const Header = () => {
   const translation = useScopedI18n('header');
   const isPortfolio = usePath()?.includes('blog') ? false : true;
   const currentLocale = useCurrentLocale();
-  const { isHeaderInView, scrollRangeValue, handleToggleMenu } =
-    useHeaderView(MIN_WIDTH);
+  const { isHeaderInView, scrollRangeValue, handleToggleMenu } = useHeaderView(MIN_WIDTH);
 
   const portfolioUrls: UrlList = useMemo(
     () => [
