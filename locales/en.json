@@ -46,15 +46,16 @@
     "section_name": "Other Crafted Projects",
     "content": {
       "maron-themes": "Visual Studio Code Theme extension pack made with VSCode Theming API",
+      "we-commerce": "Full featured e-commerce store (production ready), crafted with Next.JS, Nest.JS, Node.JS, Tailwindcss and Typescript.",
       "bug-tracker": "Bug Tracker App built with React.JS and Typescript",
-      "bug-tracker-server": "Bug Tracker Restfull API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end",
-      "url-shortner": "Url Shortner App built with React.JS and Typescript",
+      "bug-tracker-server": "Bug Tracker Restful API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end",
+      "url-shortner": "Url Shortner App, built with Node.JS and Express.JS (backend), React.JS and Typescript (frontend).",
       "notes-app": "Notes App made with React.JS + Styled-Components + Sass",
       "tasks-app": "Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + MongoDB on the Back-end",
-      "tasks-app-server": "Server Restfull API for Contacts and Tasks App, made with Javascript, Node.JS, Express.JS and Mongo DB",
+      "tasks-app-server": "Server Restful API for Contacts and Tasks App, made with Javascript, Node.JS, Express.JS and Mongo DB",
       "barber-shop-website": "Barber Shop  Website made using Typescript, React.JS and Tailwindcss",
       "restaurant-demo": "Restaurant Website made using React.JS and Typescript + Tailwindcss",
-      "hagira-store-server": "Server Restfull API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB"
+      "hagira-store-server": "Server Restful API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB"
     }
   },
   "language_switcher_modal": {

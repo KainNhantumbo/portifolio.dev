@@ -6,6 +6,7 @@ import planner_app from '@/public/assets/planner-app.jpg';
 import bug_tracker_app from '@/public/assets/bug-tracker-app.jpeg';
 import url_shortner_app from '@/public/assets/url-shortner-app.jpeg';
 import bug_tracker_server from '@/public/assets/bug-tracker-server.png';
+import we_commerce from '@/public/assets/we-commerce.png';
 import firstRestaurantImage from '@/public/assets/restaurant-demo-first.png';
 import barbercutts from '@/public/assets/barbercutts.png';
 import maron_themes from '@/public/assets/maron-themes.png';
@@ -22,6 +23,13 @@ export const useProjects = (): readonly Project[] => {
 
   return [
     {
+      name: translation('content.we-commerce'),
+      category: categories.full,
+      image: we_commerce,
+      code_url: 'https://github.com/KainNhantumbo/ecommerce-app-client',
+      live_url: 'https://wecommerce-store-demo.vercel.app'
+    },
+    {
       name: translation('content.maron-themes'),
       category: categories.front,
       image: maron_themes,
@@ -34,13 +42,6 @@ export const useProjects = (): readonly Project[] => {
       image: bug_tracker_app,
       code_url: 'https://github.com/KainNhantumbo/bug-tracker',
       live_url: 'https://bug-tracker-kainnhantumbo.vercel.app'
-    },
-    {
-      name: translation('content.url-shortner'),
-      category: categories.full,
-      image: url_shortner_app,
-      code_url: 'https://github.com/KainNhantumbo/url-shortner-app',
-      live_url: 'https://url-shortner-app-six.vercel.app'
     },
     {
       name: translation('content.notes-app'),
@@ -90,6 +91,13 @@ export const useProjects = (): readonly Project[] => {
       image: server_03,
       live_url: '',
       code_url: 'https://github.com/KainNhantumbo/Server-for-planner-app'
+    },
+    {
+      name: translation('content.url-shortner'),
+      category: categories.full,
+      image: url_shortner_app,
+      code_url: 'https://github.com/KainNhantumbo/url-shortner-app',
+      live_url: ''
     }
   ];
 };

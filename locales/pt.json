@@ -47,8 +47,9 @@
     "content": {
       "maron-themes": "Extensão de Pacote de Temas para o Visual Studio Code feito com VSCode Theming API",
       "bug-tracker": "Aplicação de Rastreamento de Bugs construida com React e Typescript",
+      "we-commerce": "Loja E-Commerce Online completa (pronta para uso), construida com Next.JS, Nest.JS, Node.JS, Tailwindcss e Typescript.",
       "bug-tracker-server": "API Rest da Aplicação de Rastreamento de Bugs construida com Typescript, Node.JS + Express.JS + MongoDB",
-      "url-shortner": "Aplicação Encurtadora de URLs construida com React e Typescript",
+      "url-shortner": "Aplicação Encurtadora de URLs construida com Node.JS e Express.JS (backend), React.JS e Typescript (frontend).",
       "notes-app": "Aplicação Notas construida com React + Styled-Components + Sass",
       "tasks-app": "Aplicação Tarefas e Contatos construida com Javascript, React e Node.JS + Express.JS + MongoDB para servidor",
       "tasks-app-server": "API Rest para Aplicação Tarefas e Contatos, construida com Javascript, Node.JS, Express.JS e Mongo DB para servidor",
