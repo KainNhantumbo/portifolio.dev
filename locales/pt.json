@@ -109,6 +109,10 @@
     "palletone": {
       "title": "Criador de Cores Palletone 🎨",
       "description": "Este aplicativo tem como objetivo trazer uma nova experiência de coleta, gerenciamento e construção de paletas de cores para designers e desenvolvedores web.\nO objetivo principal é simplificar o processo fornecendo as ferramentas certas para escolher a cor preferida para seu projeto.\nSinta-se à vontade para experimentá-lo. em qualquer dispositivo seu e prepare seu próprio sabor de cor para seu próximo projeto!🥳"
+    },
+    "rubymart": {
+      "title": "Plataforma Rubymart  🫂🛒🇲🇿",
+      "description": "Imagine uma plataforma aberta onde todos podem fazer crescer os seus negócios construindo uma comunidade de clientes, vender produtos, criar perfis de  usuário e sua loja, avaliar produtos, oferecer trabalhos, compartilhar ideias e fazer reais conexões! \nEsta é a aplicação que torna isso possível!\nUma perfeita fusão do mundo e-commerce e uma comunidade social de empreendimentos.\nExplore o meu github para saber mais!"
     }
   }
 }

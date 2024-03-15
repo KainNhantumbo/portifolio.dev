@@ -109,6 +109,10 @@
     "palletone": {
       "title": "Palletone Colors App 🎨",
       "description": "This app aims to bring a new experience of collecting, managing and building color palettes for designers and web developers.\nThe main goal is to simplify the process providing the right tools for choosing the preferred color for their project.\nFeel free to try it on any device of yours and bake your own color flavor for your next project! 🥳"
+    },
+    "rubymart": {
+      "title": "Rubymart Platform  🫂🛒🇲🇿",
+      "description": "Imagine an open platform where anyone can power their businesses by constructing a community of costumers, sell products, create user and store profiles, rate products, offer jobs, share ideias and make real connections!\nThis is the app that accomplishes it.\nA perfect fusion of e-commerce and social community business platform.\n Explore my github for more!"
     }
   }
 }
