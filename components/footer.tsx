@@ -4,6 +4,7 @@ import donutsImage from '@/../public/assets/donuts.png';
 import { useScopedI18n } from '@/locales/client';
 import Package from '@/package.json';
 import { motion } from '@/providers/framer-provider';
+import { constants } from '@/shared/constants';
 import type { FooterAnchors } from '@/types';
 import {
   BookTextIcon,
@@ -95,7 +96,7 @@ export const Footer = () => {
       <div className='mx-auto flex w-full flex-col items-center gap-3'>
         <p className='text-center'>{translation('made-phrase')}</p>
         <div className='mx-auto flex w-full flex-wrap items-center justify-center gap-3'>
-          <span>Copyright © 2023 Kain Nhantumbo.</span>
+          <span>{constants.copyright}</span>
           <span>
             {translation('version-phrase')} {Package.version} | Comp.{' '}
             {Package.latest_compile}

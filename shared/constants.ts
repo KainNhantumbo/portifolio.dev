@@ -6,7 +6,8 @@ export const constants = {
   url: Package.url,
   locale: 'en',
   description: Package.description,
-  title: 'Codenut.dev'
+  title: 'Codenut.dev',
+  copyright: `Copyright © ${new Date().getFullYear()} Kain Nhantumbo.`
 };
 
 export const AUTHOR = {
