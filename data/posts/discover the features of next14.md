@@ -5,9 +5,9 @@ title: 'Discover The Features of The New Next 14'
 excerpt: "Let's  wrap up for the latest version of Next.js that brings several new features and improvements to the framework that most of us love"
 ---
 
-While many of us are still in the process of exploring the now old Next.js 13 and now Vercel striked again with the new version of its beloved React.js framework. The new Next.js 14 brings some game-changing features, whether you’re already a Next.js enthusiast or just getting started.
+While many of us are still in the process of exploring the now old Next.js 13 and now Vercel stroked again with the new version of its beloved React.js framework. The new Next.js 14 brings some game-changing features, whether you’re already a Next.js enthusiast or just getting started.
 
-Additionally, be aware of some breacking changes, including the minimum Node.js version being raised to 18.17 and a few API modifications, so is good to stay up-to-date with the latest changes to get the most of Next.js.
+Additionally, be aware of some breaking changes, including the minimum Node.js version being raised to 18.17 and a few API modifications, so is good to stay up-to-date with the latest changes to get the most of Next.js.
 
 ## The Highlights
 
@@ -19,7 +19,7 @@ It’s the kind of upgrade that we all were wondering for.
 
 The need to create a dedicated API routes for server-side code is changing with Next.js 14. he introduction of Server Actions into stable release status is a big upgrade.
 
-You can now write server-side code securely with a function defined inside your React component. It simplifies your code and provides better user experience by reducing the number of network roundtrips needed for data mutations and page re-rendering.
+You can now write server-side code securely with a function defined inside your React component. It simplifies your code and provides better user experience by reducing the number of network roundtrip needed for data mutations and page re-rendering.
 
 Take this demo example:
 
@@ -43,9 +43,9 @@ export default function Page() {
 
 Metadata options for meta tags have been enhanced to improve the initial rendering performance and reduce layout shift.
 
-### Partial Prerendering
+### Partial Pre-rendering
 
-Next.js 14 brings you the best of both sides of SSR and SSG with the new Partial Prerendering lineup.
+Next.js 14 brings you the best of both sides of SSR and SSG with the new Partial Pre-rendering lineup.
 
 It provides a fast initial static response while streaming dynamic content based on your React Suspense boundaries so you get the performance of static sites and the dynamism of server-rendered applications.
 
@@ -59,12 +59,12 @@ There are no new APIs to learn. It’s a smart move that simplifies your develop
 
 - Server Actions allow execution of server-side code without the need for a dedicated API route;
 
-- Partial Prerendering provides a fast initial static response while streaming dynamic content based on React Suspense boundaries.
+- Partial Pre-rendering provides a fast initial static response while streaming dynamic content based on React Suspense boundaries.
 
 ## Next.js free course
 
 Next.js 14 brings a new free course on Next.js Learn. Whether you’re new to Next.js or a seasoned pro, this course has something new for you.
 
-From the basics to advanced features like Partial Prerendering, it’s a comprehensive resource to level up your Next.js skills. This will simplify the learning proccess for many of us.
+From the basics to advanced features like Partial Pre-rendering, it’s a comprehensive resource to level up your Next.js skills. This will simplify the learning process for many of us.
 
 Thanks for reading!

@@ -56,7 +56,7 @@ $PROJECT_ROOT (v6)
 ## ☘️ Find me!
 
 E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an e-mail')\
-Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')
+Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')\
 My blog: [https://codenut-dev.vercel.app/blog](https://codenut-dev.vercel.app/blog 'Visit my website')
 
 #### If you like this project, let me know by leaving a star on this repository.

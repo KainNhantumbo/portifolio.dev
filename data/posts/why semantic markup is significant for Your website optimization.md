@@ -45,7 +45,7 @@ In any case, suppose that I need to be amusing, and on second thought wrap the s
 
 In addition to the fact that it be semantically would wrong, yet it likewise wouldn't work actually, in light of the fact that section components are not interactive in the browser.
 
-## Unsemanic markup
+## Un-semantic markup
 
 There are a couple of ways you can markup your substance un-semantically, that won't destroy your site's specialized elements, in contrast to the earlier model.
 
@@ -53,7 +53,7 @@ Suppose you wrap your article's title inside section labels rather than the suit
 
 You can contend that visual styling is a specialized component of your site, and all things considered, enclosing a title by a section label will to some degree hurt your site in fact, as in your title will have a more modest text dimension and textual style weight than it ought to (on the grounds that passage is dependably more modest than headings).
 
-## Conventional and unsemanic markup
+## Conventional and un-semantic markup
 
 You could likewise wrap a section inside one of HTML's conventional HTML labels for example the exemplary `<div>` tag. Utilizing a `<div>` to fold over a passage or title, or other text, would be semantically wrong, however it will not obliterate your site's specialized highlights. Your site will in any case work, yet very much like with the heading/section model over, it will play with your typography (text organizing).
 
@@ -62,7 +62,7 @@ Involving some unacceptable markup for your substance is an incredible method fo
 SEO-friendly HTML markup is simple, here’s a quick checklist:
 
 - Headlines should be defined with `<h1>` tags — only one per page.
-- Subheadlines should be define with `<h2>`, `<h3>`, or `<h4>` tags. You can also use `<h5>` and `<h6>` but I generally recommend against going overboard with heading tags (it won’t give you more SEO).
+- Sub-headlines should be define with `<h2>`, `<h3>`, or `<h4>` tags. You can also use `<h5>` and `<h6>` but I generally recommend against going overboard with heading tags (it won’t give you more SEO).
 - Paragraphs should be defined with `<p>`
 - Lists should be defined with `<ul>`
 - List items should be defined with `<li>` and always sit inside `<ul>` tags.

@@ -41,4 +41,4 @@ Analyze render times, component lifecycles and expensive operations to optimize 
 
 > That's it for now, I hope you use these performance tips to level up your next React projects and help you build high-performing, responsive, lightning-fast and user-friendly applications.
 
-Thanks for readind and... Happy coding!
+Thanks for reading and... Happy coding!

@@ -11,13 +11,13 @@ In this article, we’ll explore the ins and outs of SEO within React and Next.j
 
 Server-Side Rendering (SSR), Static Site Generation (SSG), and Incremental Static Regeneration (ISR) are crucial concepts in optimizing your Next.js app for SEO. Each method determines your speed which greatly affects your SEO ranking and also how you will be retrieving the metadata for each dynamic page (like a blog post or product page).
 
-**_Server-Side Rendering(SSR)_**: pre-renders pages on the server before sending them to the client side. This approach enhances SEO by providing search engines with fully-rendered HTML content, improving indexability and loading times.
+**_Server-Side Rendering(SSR)_**: pre-renders pages on the server before sending them to the client side. This approach enhances SEO by providing search engines with fully-rendered HTML content, improving index and loading times.
 
 **_Static Site Generation (SSG)_**: generates HTML pages at build time, reducing server load and ensuring fast page loads. However, it may not be suitable for content that changes frequently.
 
 **_Incremental Static Regeneration (ISR)_**: combines the best of both worlds by allowing you to revalidate and regenerate specific pages at intervals, keeping content fresh while benefiting from the performance of static content.
 
-Also, is important to say that this approach may lead to stale content between revalidations.
+Also, is important to say that this approach may lead to stale content between revalidation.
 
 ### Consider `next-seo` for a simple SEO solution
 

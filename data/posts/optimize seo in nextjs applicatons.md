@@ -11,7 +11,7 @@ Optimizing SEO in Next.js requires a combination of technical implementation, co
 
 Before diving into techniques, let’s quickly review some essential SEO principles. Meta tags, structured data markup, URL structure, and sitemaps are crucial for search engines to understand and rank our web pages.
 
-## Next.js and SEO - A Poweful Combination
+## Next.js and SEO - A Powerful Combination
 
 Next.js is an excellent choice out there for building SEO-friendly applications due to its server-side rendering (SSR) capabilities, which provide search engines with fully-rendered HTML content. Additionally, Next.js comes with built-in optimizations, such as automatic code splitting and prefetching, that contribute to better SEO performance.
 
@@ -85,7 +85,7 @@ export async function getServerSideProps(context) {
 }
 ```
 
-## Best Pratices Considerations for Next.js
+## Best Practices Considerations for Next.js
 
 ### Managing 404 Errors and Custom Error Pages
 
@@ -129,6 +129,6 @@ Track your website’s rankings in search engine results pages (SERPs) and monit
 
 Remember to regularly review and update your SEO strategies as search engine algorithms and best practices evolve. By staying informed, implementing advanced techniques, and consistently monitoring performance, you can maintain a strong SEO presence for your Next.js applications and drive sustainable organic traffic.
 
-This article is not only for you, but for me too! Good things come in our learning journey, so dont't stop learning. See yaa!
+This article is not only for you, but for me too! Good things come in our learning journey, so don't stop learning. See yaa!
 
 And... Thanks for reading!

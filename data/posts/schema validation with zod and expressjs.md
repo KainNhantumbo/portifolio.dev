@@ -2,7 +2,7 @@
 topic: 'Security'
 createdAt: '2023-11-09'
 title: 'Schema Validation with Zod and Express.js'
-excerpt: "They say “Never trust user input” - I know that this may sound extreme, but it is an important security principle in programming. Today, we will learn togheter how to implement Zod in a Express.js application."
+excerpt: "They say “Never trust user input” - I know that this may sound extreme, but it is an important security principle in programming. Today, we will learn together how to implement Zod in a Express.js application."
 ---
 
 This article will explain the concept of schema validation, explore the features of Zod, and demonstrate Zod validation, and its usage to ensure robust data integrity in Express applications.
@@ -43,7 +43,7 @@ With Zod, you can create a schema and use it to verify form inputs and user inpu
 
 API Calls validation helps you getting the right data that you want. For example, you want your users to have a strong password(e.g. at least 6 characters), you can use something like Zod or Yup and prevent users from entering a short password(less than 6 characters). Also, doing validation on the server makes your server much more secure, because no one can open the developer tools, go through your code and figure out how to beat your validation.
 
-**_Let's dive in with a pratical examples:_**
+**_Let's dive in with a practical examples:_**
 
 First, go and create an empty directory and navigate into it:
 
