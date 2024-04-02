@@ -7,7 +7,7 @@ export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 export const transformChild = (child: string) =>
   child
     .replace(/ /g, '-')
-    .replace(/[\/\\^$*+?.()|\[\]{}<>:;"'~,=@`#!%&]/g, '')
+    .replace(/[/\\^$*+?.()|[\]{}<>:;"'~,=@`#!%&]/g, '')
     .toLowerCase();
 
 export const formatDate = (date: string) => {
