@@ -4,7 +4,6 @@ import type { Work } from '@/types';
 import choconoteyImage from '@/../public/assets/notes-demo-light.png';
 import palletoneDemoImage from '@/../public/assets/palletone-demo.png';
 import rubymartDemoImage from '@/../public/assets/rubymart-demo.png';
-
 import { useScopedI18n } from '@/locales/client';
 
 export const useWorks = (): readonly Work[] => {

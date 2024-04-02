@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Package from '../package.json';
 
 export const constants = {
@@ -16,6 +17,14 @@ export const AUTHOR = {
   picturePlaceholder: '/assets/author-placeholder.jpg',
   email: Package.author.email,
   description: 'Web Developer & Designer'
+};
+
+export const metadata: Metadata = {
+  title: constants.title,
+  description: constants.description,
+  authors: [{ name: AUTHOR.name, url: AUTHOR.email }],
+  category: 'website',
+  icons: '/favicon.png'
 };
 
 export const locales = ['pt', 'en'];

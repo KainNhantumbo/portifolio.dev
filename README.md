@@ -67,4 +67,4 @@ Best regards, Kain Nhantumbo.\
 ## 📜 License
 
 Licensed under Apache 2.0 License. All rights reserved.\
-Copyright &copy; 2023 Kain Nhantumbo.
+Copyright &copy; 2024 Kain Nhantumbo.

@@ -2,56 +2,23 @@ import '@/styles/blog-post.css';
 import '@/styles/index.css';
 
 import { ActionFluentButtons } from '@/components/action-fluent-buttons';
+import { AnimatePageTransition } from '@/components/animations/animate-page-transition';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { AnimatePageTransition } from '@/components/animations/animate-page-transition';
 import { AppContext } from '@/context/app-context';
 import { I18nProviderClient } from '@/locales/client';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';
 import { ThemeProvider } from '@/providers/theme-provider';
-import { AUTHOR, constants, locales } from '@/shared/constants';
+import { locales } from '@/shared/constants';
+import { ibmPlexMono, jakarta, spaceGrotesk, zillaSlab } from '@/shared/fonts';
 import clsx from 'clsx';
-import type { Metadata } from 'next';
-import {
-  IBM_Plex_Mono,
-  Plus_Jakarta_Sans,
-  Space_Grotesk,
-  Zilla_Slab
-} from 'next/font/google';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
-
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal']
-});
-
-const zillaSlab = Zilla_Slab({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['italic', 'normal']
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  style: ['italic', 'normal']
-});
-
-export const metadata: Metadata = {
-  title: constants.title,
-  description: constants.description,
-  authors: [{ name: AUTHOR.name, url: AUTHOR.email }],
-  category: 'website',
-  icons: '/favicon.png'
-};
-
-type Props = { children: ReactNode; params: { locale: string } };
+import type { PageParams } from '@/types';
 
 export { generateStaticParams } from '@/lib/utils';
+
+type Props = PageParams & { children: ReactNode };
 
 const RootLayout = ({ children, params: { locale } }: Props) => {
   if (!locales.includes(locale)) notFound();
