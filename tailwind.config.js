@@ -6,15 +6,12 @@ const tailwindConfig = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        slab: ['Zilla Slab', 'serif'],
+        slab: ['Zilla Slab', 'Roboto Slab', 'Inter', 'serif'],
         'sans-body': ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
         monospace: ['IBM Plex Mono', 'Menlo', 'Hack', 'Consolas', 'monospace'],
         'sans-display': ['Space Grotesk', 'Inter', 'sans-serif']
       },
-      screens: {
-        mobile: '420px',
-        'mobile-x': '480px'
-      },
+      screens: { mobile: '420px', ['mobile-x']: '480px' },
       colors: {
         transparent: 'var(--transparent)',
         error: 'rgb(var(--error) / <alpha-value>)',

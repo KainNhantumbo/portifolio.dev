@@ -30,7 +30,7 @@ export const Reveal: React.FC<Props> = ({
       revealControls.start('visible');
       slideControls.start('visible');
     }
-  }, [isInView, slideControls, revealControls]);
+  }, [isInView]);
 
   return (
     <div ref={ref} style={{ width }} className='relative overflow-hidden'>
