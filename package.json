@@ -26,9 +26,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "clsx": "^2.0.0",
+    "@tsparticles/engine": "^3.4.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.4.0",
+    "clsx": "^2.1.1",
     "feed": "^4.2.2",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^10.18.0",
     "granim": "^2.0.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.293.0",
@@ -42,7 +45,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-text-gradients-and-animations": "^1.1.7",
     "reading-time-estimator": "^1.9.0",
-    "tailwind-merge": "^2.2.0"
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/granim": "^2.0.4",

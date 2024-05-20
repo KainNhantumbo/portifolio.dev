@@ -25,6 +25,7 @@ export const Abilities = () => {
         { tech: 'Javascript', icon: Code2Icon },
         { tech: 'React', icon: Code2Icon },
         { tech: 'Next.JS', icon: Code2Icon },
+        { tech: 'Tailwind CSS', icon: Code2Icon },
         { tech: 'SASS & CSS', icon: Code2Icon },
         { tech: 'HTML5', icon: Code2Icon }
       ]

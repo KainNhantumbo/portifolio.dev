@@ -5,6 +5,7 @@ import { motion } from '@/providers/framer-provider';
 import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
 import Image from 'next/image';
 import { AUTHOR } from '../shared/constants';
+import { SparklesCore } from './animations/animate-sparkles';
 
 export const About = () => {
   const translation = useScopedI18n('about');
@@ -49,25 +50,47 @@ export const About = () => {
 
       <section className='mt-5 flex flex-wrap items-center justify-center gap-12'>
         <motion.div
-          className='base-border group grid h-[180px] w-[180px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-3 font-sans'
+          className='base-border group relative grid h-[180px] w-[180px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-3 font-sans'
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0.4, rotate: 360 }}
           whileInView={{ rotate: 0, opacity: 1 }}>
+          <div className='absolute left-0 top-0 h-full w-full'>
+            <SparklesCore
+              id={crypto.randomUUID()}
+              background='transparent'
+              minSize={0.4}
+              maxSize={1}
+              particleDensity={1200}
+              className='h-full w-full'
+              particleColor='#E4703180'
+            />
+          </div>
           <Code2Icon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
           <h4 className='font-medium'>{translation('experience-title')}</h4>
-          <span className='text-center text-sm capitalize'>
+          <span className='text-center text-sm font-bold capitalize'>
             {translation('experience-content')}
           </span>
         </motion.div>
 
         <motion.div
-          className='base-border group grid h-[180px] w-[180px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-3 font-sans'
+          className='base-border group relative grid h-[180px] w-[180px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-3 font-sans'
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0.4, rotate: 360 }}
           whileInView={{ rotate: 0, opacity: 1 }}>
+          <div className='absolute left-0 top-0 h-full w-full'>
+            <SparklesCore
+              id={crypto.randomUUID()}
+              background='transparent'
+              minSize={0.4}
+              maxSize={1}
+              particleDensity={1200}
+              className='h-full w-full'
+              particleColor='#E4703180'
+            />
+          </div>
           <SquareStackIcon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
           <h4 className='font-medium'>{translation('projects-title')}</h4>
-          <span className='text-center text-sm capitalize'>
+          <span className='text-center text-sm font-bold capitalize'>
             {translation('projects-content')}
           </span>
         </motion.div>

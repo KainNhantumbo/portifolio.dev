@@ -1,6 +1,6 @@
 'use client';
 
-import donutsImage from '@/../public/assets/donuts.png';
+import donutsImage from '../public/assets/donuts.png';
 import { useScopedI18n } from '@/locales/client';
 import Package from '@/package.json';
 import { motion } from '@/providers/framer-provider';
@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { SparklesCore } from './animations/animate-sparkles';
 
 export const Footer = () => {
   const translation = useScopedI18n('footer');
@@ -62,8 +63,19 @@ export const Footer = () => {
   ];
 
   return (
-    <section className='relative flex h-min w-[100vw] flex-col gap-3 pb-3 font-sans'>
-      <h3 className='text-center font-medium'>{translation('title')}</h3>
+    <section className='relative flex h-min w-[100vw] flex-col gap-3 py-3 font-sans border-t'>
+      <div className='absolute left-0 top-0 h-full w-full'>
+        <SparklesCore
+          id={crypto.randomUUID()}
+          background='transparent'
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={1200}
+          className='h-full w-full'
+          particleColor='#E4703180'
+        />
+      </div>
+      <h3 className='text-center font-bold text-md'>{translation('title')}</h3>
       <ul className='flex flex-row items-center justify-center gap-4'>
         {socialMediaAnchors.map((item, index) => (
           <motion.li

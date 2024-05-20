@@ -78,8 +78,8 @@ export const Introduction = () => {
         className='flex flex-col gap-2'
         initial={{ scale: 0, y: -120, opacity: 0 }}
         whileInView={{ scale: 1, y: 0, opacity: 1 }}>
-        <AnimateText words={translation('intro.message-part-1')} duration={0.3} />
-        <AnimateText words={translation('intro.message-part-2')} duration={0.3} />
+        <AnimateText words={translation('intro.message-part-1')} duration={0.1} />
+        <AnimateText words={translation('intro.message-part-2')} duration={0.1} />
       </motion.div>
     </section>
   );

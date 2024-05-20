@@ -91,7 +91,7 @@ export const Contact = () => {
       <section className='flex flex-col gap-1 font-sans'>
         <div className='flex items-center gap-3'>
           <MailboxIcon className='h-5 w-5 stroke-primary' />
-          <span> {translation('mail')}</span>
+          <span className='font-semibold'> {translation('mail')}</span>
         </div>
       </section>
 
