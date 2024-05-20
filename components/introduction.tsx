@@ -4,6 +4,7 @@ import { useI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
 import { LinearTextGradient } from 'react-text-gradients-and-animations';
+import { AnimateText } from './animations/animate-text';
 
 export const Introduction = () => {
   const translation = useI18n();
@@ -26,7 +27,9 @@ export const Introduction = () => {
       id='home'
       className='relative z-50 mx-auto mt-10 flex w-full max-w-[780px] flex-col gap-3 bg-background/50 px-2 py-5 font-sans backdrop-blur-sm after:absolute after:right-[50%] after:top-0 after:-z-50 after:h-[1px] after:w-[1px] after:rounded-full after:bg-[#FAC684cc] after:shadow-[0_0_180px_140px_#FDC886cc] dark:after:bg-[#E8884Fcc] dark:after:shadow-[0_0_180px_140px_#E8884Fcc] '>
       <div className='relative flex w-fit flex-col'>
-        <h3 className='p-0 text-sm font-semibold'>{translation('intro.presentation')}</h3>
+        <h3 className='p-0 text-sm font-semibold'>
+          <AnimateText words={translation('intro.presentation')} />
+        </h3>
         <div className='flex w-full gap-3'>
           <h1 className='my-4 w-full bg-clip-text font-sans text-4xl font-bold leading-10 text-transparent mobile-x:my-0 mobile-x:py-8 mobile-x:text-6xl'>
             <LinearTextGradient
@@ -75,9 +78,8 @@ export const Introduction = () => {
         className='flex flex-col gap-2'
         initial={{ scale: 0, y: -120, opacity: 0 }}
         whileInView={{ scale: 1, y: 0, opacity: 1 }}>
-        <p className='text-base'>{translation('intro.message-part-1')}</p>
-
-        <p className='text-base'>{translation('intro.message-part-2')}</p>
+        <AnimateText words={translation('intro.message-part-1')} duration={0.3} />
+        <AnimateText words={translation('intro.message-part-2')} duration={0.3} />
       </motion.div>
     </section>
   );
