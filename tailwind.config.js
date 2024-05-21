@@ -5,11 +5,11 @@ const tailwindConfig = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        slab: ['Zilla Slab', 'Roboto Slab', 'Inter', 'serif'],
+        sans: ['Spline Sans Mono', 'Inter', 'sans-serif'],
+        slab: ['Spline Sans Mono', 'Zilla Slab', 'Roboto Slab', 'Inter', 'serif'],
         'sans-body': ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        monospace: ['IBM Plex Mono', 'Menlo', 'Hack', 'Consolas', 'monospace'],
-        'sans-display': ['Space Grotesk', 'Inter', 'sans-serif']
+        monospace: ['IBM Plex Mono', 'Menlo', 'Hack'],
+        'sans-display': ['Space Grotesk', 'Inter', ]
       },
       screens: { mobile: '420px', ['mobile-x']: '480px' },
       colors: {

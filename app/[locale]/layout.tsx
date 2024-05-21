@@ -10,7 +10,13 @@ import { I18nProviderClient } from '@/locales/client';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';
 import { ThemeProvider } from '@/providers/theme-provider';
 import { locales } from '@/shared/constants';
-import { ibmPlexMono, jakarta, spaceGrotesk, zillaSlab } from '@/shared/fonts';
+import {
+  ibmPlexMono,
+  jakarta,
+  spaceGrotesk,
+  zillaSlab,
+  splineSansMono
+} from '@/shared/fonts';
 import clsx from 'clsx';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
@@ -20,7 +26,7 @@ export { generateStaticParams } from '@/lib/utils';
 
 type Props = PageParams & { children: ReactNode };
 
-const RootLayout = ({ children, params: { locale } }: Props) => {
+export default function RootLayout({ children, params: { locale } }: Props) {
   if (!locales.includes(locale)) notFound();
 
   return (
@@ -28,6 +34,7 @@ const RootLayout = ({ children, params: { locale } }: Props) => {
       <body
         className={clsx(
           spaceGrotesk.className,
+          splineSansMono.className,
           ibmPlexMono.className,
           zillaSlab.className,
           jakarta.className
@@ -51,6 +58,4 @@ const RootLayout = ({ children, params: { locale } }: Props) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

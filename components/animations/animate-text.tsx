@@ -12,13 +12,13 @@ export const AnimateText: React.FC<Props> = ({ words, duration, className }) => 
   const wordsArray = words.split(' ');
 
   React.useEffect(() => {
-    animate('span', { opacity: 1 }, { duration: duration ?? 2, delay: stagger(0.2) });
+    animate('span', { opacity: 1 }, { duration: duration ?? 2, delay: stagger(.1, {}) });
   }, [scope.current]);
 
   const renderWords = () => (
     <motion.div ref={scope}>
       {wordsArray.map((word, index) => (
-        <motion.span key={word + index} className='text-primary opacity-0 dark:text-font'>
+        <motion.span key={index} className='text-primary opacity-0 dark:text-font'>
           {word}{' '}
         </motion.span>
       ))}

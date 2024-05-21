@@ -7,7 +7,7 @@ import donutImage from '@/public/assets/path36.png';
 import { constants } from '@/shared/constants';
 import type { UrlList } from '@/types';
 import clsx from 'clsx';
-import { Settings2Icon, XIcon } from 'lucide-react';
+import { MenuIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
@@ -49,7 +49,7 @@ export const Header = () => {
   );
 
   return (
-    <section className='w-full'>
+    <header className='w-full'>
       <motion.div
         className='base-border fixed left-[calc(50%_-_285px)] top-3 z-[5000] flex min-h-[50px] w-fit min-w-[550px] items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:left-[calc(50%_-_170px)] max-[640px]:min-w-[340px] max-[640px]:flex-col '
         animate={{ translateY: scrollRangeValue > 100 ? '-65px' : '0px' }}
@@ -75,7 +75,7 @@ export const Header = () => {
           {isHeaderInView ? (
             <XIcon className='pointer-events-none h-auto w-6 group-hover:stroke-error' />
           ) : (
-            <Settings2Icon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
+            <MenuIcon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
           )}
         </motion.button>
         <nav className='max-[640px]:w-full' role='main'>
@@ -108,6 +108,6 @@ export const Header = () => {
           </AnimatePresence>
         </nav>
       </motion.div>
-    </section>
+    </header>
   );
 };

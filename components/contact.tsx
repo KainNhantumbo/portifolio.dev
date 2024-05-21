@@ -62,7 +62,7 @@ export const Contact = () => {
   return (
     <section
       id='contact'
-      className='mx-auto flex w-full max-w-[700px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5 max-[370px]:m-0'>
+      className='mx-auto flex w-full max-w-[700px] flex-col items-center gap-6 border-t-[1px] border-solid border-font/10 pt-5 max-[370px]:m-0'>
       <h2 className='base-section-title'>
         <MessageSquareDashed />
         <span>{translation('title')}</span>
@@ -75,18 +75,8 @@ export const Contact = () => {
           whileInView={{ opacity: 1 }}>
           {translation('intro-title')}
         </motion.h3>
-        <motion.p
-          initial={{ opacity: 0 }}
-          transition={{ delay: 0.4 }}
-          whileInView={{ opacity: 1 }}>
-          {translation('intro-phrase')}
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          transition={{ delay: 0.6 }}
-          whileInView={{ opacity: 1 }}>
-          {translation('intro-message')}
-        </motion.p>
+        <p>{translation('intro-phrase')}</p>
+        <p>{translation('intro-message')}</p>
       </section>
       <section className='flex flex-col gap-1 font-sans'>
         <div className='flex items-center gap-3'>
@@ -95,11 +85,7 @@ export const Contact = () => {
         </div>
       </section>
 
-      <motion.section
-        className='base-border flex w-full flex-col gap-3 rounded-xl bg-foreground p-5 font-sans max-[420px]:px-3 max-[420px]:py-5'
-        initial={{ opacity: 0, scale: 0.4 }}
-        transition={{ delay: 0.4 }}
-        whileInView={{ opacity: 1, scale: 1 }}>
+      <section className='flex w-full flex-col gap-3 font-sans max-[420px]:py-5'>
         <form onSubmit={emailSender} className='flex w-full flex-col gap-3'>
           <section className='flex gap-3 max-[568px]:flex-wrap'>
             <div className='flex w-full flex-col'>
@@ -173,7 +159,7 @@ export const Contact = () => {
             <span>{translation('form.button')}</span>
           </motion.button>
         </form>
-      </motion.section>
+      </section>
     </section>
   );
 };

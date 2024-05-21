@@ -63,7 +63,7 @@ export const Footer = () => {
   ];
 
   return (
-    <section className='relative flex h-min w-[100vw] flex-col gap-3 py-3 font-sans border-t'>
+    <footer className='relative flex h-min w-full flex-col gap-3 overflow-hidden rounded-t-3xl border-t-[1px] border-solid border-font/10 py-5 font-sans font-semibold'>
       <div className='absolute left-0 top-0 h-full w-full'>
         <SparklesCore
           id={crypto.randomUUID()}
@@ -75,7 +75,7 @@ export const Footer = () => {
           particleColor='#E4703180'
         />
       </div>
-      <h3 className='text-center font-bold text-md'>{translation('title')}</h3>
+      <h3 className='my-2 text-center text-xl font-bold'>{translation('title')}</h3>
       <ul className='flex flex-row items-center justify-center gap-4'>
         {socialMediaAnchors.map((item, index) => (
           <motion.li
@@ -110,11 +110,10 @@ export const Footer = () => {
         <div className='mx-auto flex w-full flex-wrap items-center justify-center gap-3'>
           <span>{constants.copyright}</span>
           <span>
-            {translation('version-phrase')} {Package.version} | Comp.{' '}
-            {Package.latest_compile}
+            {translation('version-phrase')} {Package.version}-{Package.latest_compile}
           </span>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
