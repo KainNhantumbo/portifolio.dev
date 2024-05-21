@@ -3,16 +3,16 @@
 import { cn } from '@/lib/utils';
 import { motion } from '@/providers/framer-provider';
 import { stagger, useAnimate } from 'framer-motion';
-import * as React from 'react';
+import { type FC, useEffect } from 'react';
 
 type Props = { words: string; className?: string; duration?: number };
 
-export const AnimateText: React.FC<Props> = ({ words, duration, className }) => {
+export const AnimateText: FC<Props> = ({ words, duration, className }) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(' ');
 
-  React.useEffect(() => {
-    animate('span', { opacity: 1 }, { duration: duration ?? 2, delay: stagger(.1, {}) });
+  useEffect(() => {
+    animate('span', { opacity: 1 }, { duration: duration ?? 2, delay: stagger(0.1, {}) });
   }, [scope.current]);
 
   const renderWords = () => (

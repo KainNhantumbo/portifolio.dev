@@ -15,6 +15,14 @@
   font-size: 1.4rem;
 }
 
+.blog-post-content table thead tr {
+  @apply m-0 overflow-x-auto border-t p-0;
+}
+.blog-post-content table th,
+td {
+  @apply order-1 overflow-x-auto px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+}
+
 .blog-post-content h2 {
   font-size: 1.6rem;
   line-height: 2rem;
@@ -57,4 +65,8 @@
   * {
     @apply text-[#ccc] dark:text-[#fff];
   }
+}
+
+.blog-post-content pre span {
+  @apply font-mono;
 }

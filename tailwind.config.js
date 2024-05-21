@@ -1,15 +1,16 @@
 /** @type {import('tailwindcss').Config} */
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const tailwindConfig = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Spline Sans Mono', 'Inter', 'sans-serif'],
-        slab: ['Spline Sans Mono', 'Zilla Slab', 'Roboto Slab', 'Inter', 'serif'],
-        'sans-body': ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        monospace: ['IBM Plex Mono', 'Menlo', 'Hack'],
-        'sans-display': ['Space Grotesk', 'Inter', ]
+        sans: ['var(--font-spline-sans-mono)', 'Inter', ...fontFamily.sans],
+        slab: ['Spline Sans Mono', 'Zilla Slab', 'Roboto Slab', ...fontFamily.serif],
+        'sans-body': ['var(--font-jakarta-sans)', 'Inter', ...fontFamily.sans],
+        monospace: ['var(--font-ibm-plex-mono)', 'Menlo', 'Hack', ...fontFamily.mono],
+        'sans-display': ['var(--font-space-grotesk)', ...fontFamily.sans]
       },
       screens: { mobile: '420px', ['mobile-x']: '480px' },
       colors: {

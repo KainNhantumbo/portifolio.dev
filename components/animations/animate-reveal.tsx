@@ -1,22 +1,22 @@
 'use client';
 
 import { m as motion, useAnimation, useInView } from 'framer-motion';
-import * as React from 'react';
+import { FC, ReactNode, useEffect, useRef } from 'react';
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   width?: 'fit-content' | '100%';
   delay?: number;
   inverseDirection?: boolean;
 };
 
-export const Reveal: React.FC<Props> = ({
+export const Reveal: FC<Props> = ({
   children,
   delay = 0,
   inverseDirection = false,
   width = 'fit-content'
 }) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const revealControls = useAnimation();
   const slideControls = useAnimation();
@@ -25,7 +25,7 @@ export const Reveal: React.FC<Props> = ({
     ? { hidden: { left: 0 }, visible: { left: '100%' } }
     : { hidden: { right: 0 }, visible: { right: '100%' } };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isInView) {
       revealControls.start('visible');
       slideControls.start('visible');

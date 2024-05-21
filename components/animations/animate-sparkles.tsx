@@ -5,7 +5,7 @@ import type { Container, SingleOrMultiple } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { useAnimation } from 'framer-motion';
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 
 export type ParticlesProps = {
   id?: string;
@@ -30,10 +30,10 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleColor,
     particleDensity
   } = props;
-  const [init, setInit] = React.useState(false);
+  const [init, setInit] = useState(false);
   const controls = useAnimation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     initParticlesEngine(async (engine) => await loadSlim(engine))
       .then(() => setInit(true))
       .catch((error) => console.error(error));

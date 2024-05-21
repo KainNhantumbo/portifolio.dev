@@ -15,12 +15,12 @@ export const Works = () => {
       {data.map((item, index) => (
         <AnimateScroll
           key={index}
-          className='flex w-full select-none flex-row flex-nowrap items-center gap-3 rounded-xl p-3 max-[890px]:flex-col-reverse max-[890px]:items-center max-[890px]:justify-center max-[890px]:gap-5'>
+          className='flex w-full group select-none flex-row flex-nowrap items-center gap-3 rounded-xl p-3 even:flex-row-reverse max-[890px]:flex-col-reverse max-[890px]:items-center max-[890px]:justify-center max-[890px]:gap-5'>
           <div className='flex w-full flex-col gap-2'>
             <h3 className='mx-auto text-center font-sans text-lg font-semibold uppercase'>
               {item.title}
             </h3>
-            <div className='text-left font-sans'>
+            <div className='text-justify'>
               {item.description.map((phrase, index) => (
                 <p key={index} className='mb-3'>
                   {phrase}

@@ -9,7 +9,8 @@ import { AppContext } from '@/context/app-context';
 import { I18nProviderClient } from '@/locales/client';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';
 import { ThemeProvider } from '@/providers/theme-provider';
-import { locales } from '@/shared/constants';
+import AnimatedCursor from 'react-animated-cursor';
+import { cursorClickablesList, locales } from '@/shared/constants';
 import {
   ibmPlexMono,
   jakarta,
@@ -33,12 +34,22 @@ export default function RootLayout({ children, params: { locale } }: Props) {
     <html lang={locale} suppressHydrationWarning>
       <body
         className={clsx(
-          spaceGrotesk.className,
-          splineSansMono.className,
-          ibmPlexMono.className,
-          zillaSlab.className,
-          jakarta.className
+          spaceGrotesk.variable,
+          splineSansMono.variable,
+          ibmPlexMono.variable,
+          zillaSlab.variable,
+          jakarta.variable
         )}>
+        <AnimatedCursor
+          innerSize={12}
+          outerSize={12}
+          color='253, 56, 79'
+          outerAlpha={0.2}
+          innerScale={0.7}
+          outerScale={5}
+          showSystemCursor={true}
+          clickables={cursorClickablesList}
+        />
         <ThemeProvider attribute='class' enableSystem={true}>
           <I18nProviderClient locale={locale} fallback='en'>
             <MotionConfig reducedMotion='user'>

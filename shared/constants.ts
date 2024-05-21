@@ -1,6 +1,19 @@
 import type { Metadata } from 'next';
 import Package from '../package.json';
 
+export const cursorClickablesList = [
+  'a',
+  'input[type="text"]',
+  'input[type="email"]',
+  'input[type="number"]',
+  'input[type="submit"]',
+  'input[type="image"]',
+  'label[for]',
+  'select',
+  'textarea',
+  'button',
+];
+
 export const constants = {
   authorName: Package.author.name,
   authorEmail: Package.author.email,

@@ -4,7 +4,7 @@
         <title>Codenut.dev Feed</title>
         <link>https://codenut-dev.vercel.app</link>
         <description>Kain's Blog and Portfolio Website</description>
-        <lastBuildDate>Thu, 08 Feb 2024 11:21:30 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 21 May 2024 11:00:29 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Kain's Blog and Portfolio Website</generator>
         <language>en</language>
@@ -41,7 +41,7 @@
             <link>https://codenut-dev.vercel.app/blog/post/schema-validation-with-zod-and-expressjs</link>
             <guid>https://codenut-dev.vercel.app/blog/post/schema-validation-with-zod-and-expressjs</guid>
             <pubDate>Thu, 09 Nov 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p>They say “Never trust user input” - I know that this may sound extreme, but it is an important security principle in programming. Today, we will learn togheter how to implement Zod in a Express.js application.</p>
+            <description><![CDATA[<p>They say “Never trust user input” - I know that this may sound extreme, but it is an important security principle in programming. Today, we will learn together how to implement Zod in a Express.js application.</p>
 ]]></description>
             <content:encoded><![CDATA[<p>This article will explain the concept of schema validation, explore the features of Zod, and demonstrate Zod validation, and its usage to ensure robust data integrity in Express applications.</p>
 <p>Proper schema validation can help to prevent errors, improve performance, and ensure data security.</p>
@@ -69,7 +69,7 @@
 <p>With Zod, you can create a schema and use it to verify form inputs and user input at runtime.</p>
 <h2>Why do we need to validate API Calls?</h2>
 <p>API Calls validation helps you getting the right data that you want. For example, you want your users to have a strong password(e.g. at least 6 characters), you can use something like Zod or Yup and prevent users from entering a short password(less than 6 characters). Also, doing validation on the server makes your server much more secure, because no one can open the developer tools, go through your code and figure out how to beat your validation.</p>
-<p><strong><em>Let&#39;s dive in with a pratical examples:</em></strong></p>
+<p><strong><em>Let&#39;s dive in with a practical examples:</em></strong></p>
 <p>First, go and create an empty directory and navigate into it:</p>
 <pre><code class="language-bash">mkdir schema-validation-with-zod-and-expressjs
 cd schema-validation-with-zod-and-expressjs
@@ -201,14 +201,14 @@ app.listen(8080, () =&gt; console.log(`&gt; Ready on http://localhost:${8080}`))
             <pubDate>Sun, 05 Nov 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>Let&#39;s  wrap up for the latest version of Next.js that brings several new features and improvements to the framework that most of us love</p>
 ]]></description>
-            <content:encoded><![CDATA[<p>While many of us are still in the process of exploring the now old Next.js 13 and now Vercel striked again with the new version of its beloved React.js framework. The new Next.js 14 brings some game-changing features, whether you’re already a Next.js enthusiast or just getting started.</p>
-<p>Additionally, be aware of some breacking changes, including the minimum Node.js version being raised to 18.17 and a few API modifications, so is good to stay up-to-date with the latest changes to get the most of Next.js.</p>
+            <content:encoded><![CDATA[<p>While many of us are still in the process of exploring the now old Next.js 13 and now Vercel stroked again with the new version of its beloved React.js framework. The new Next.js 14 brings some game-changing features, whether you’re already a Next.js enthusiast or just getting started.</p>
+<p>Additionally, be aware of some breaking changes, including the minimum Node.js version being raised to 18.17 and a few API modifications, so is good to stay up-to-date with the latest changes to get the most of Next.js.</p>
 <h2>The Highlights</h2>
 <p>Now, you can expect a 53% faster on local server startup, remarkable 94% faster code update with Fast Refresh and Turbopack is expected to move to “stable” in an upcoming minor release. Additionally, you don’t have to change a single line of code in your existing Next.js project to reap these new performance benefits.</p>
 <p>It’s the kind of upgrade that we all were wondering for.</p>
 <h3>Server Actions: Simplify Data Mutations</h3>
 <p>The need to create a dedicated API routes for server-side code is changing with Next.js 14. he introduction of Server Actions into stable release status is a big upgrade.</p>
-<p>You can now write server-side code securely with a function defined inside your React component. It simplifies your code and provides better user experience by reducing the number of network roundtrips needed for data mutations and page re-rendering.</p>
+<p>You can now write server-side code securely with a function defined inside your React component. It simplifies your code and provides better user experience by reducing the number of network roundtrip needed for data mutations and page re-rendering.</p>
 <p>Take this demo example:</p>
 <pre><code class="language-tsx">export default function Page() {
   async function create(formData: FormData) {
@@ -226,8 +226,8 @@ app.listen(8080, () =&gt; console.log(`&gt; Ready on http://localhost:${8080}`))
 </code></pre>
 <h3>The new <code>Metadata</code> object</h3>
 <p>Metadata options for meta tags have been enhanced to improve the initial rendering performance and reduce layout shift.</p>
-<h3>Partial Prerendering</h3>
-<p>Next.js 14 brings you the best of both sides of SSR and SSG with the new Partial Prerendering lineup.</p>
+<h3>Partial Pre-rendering</h3>
+<p>Next.js 14 brings you the best of both sides of SSR and SSG with the new Partial Pre-rendering lineup.</p>
 <p>It provides a fast initial static response while streaming dynamic content based on your React Suspense boundaries so you get the performance of static sites and the dynamism of server-rendered applications.</p>
 <p>There are no new APIs to learn. It’s a smart move that simplifies your development experience.</p>
 <h2>Summary</h2>
@@ -238,12 +238,12 @@ app.listen(8080, () =&gt; console.log(`&gt; Ready on http://localhost:${8080}`))
 </li>
 <li><p>Server Actions allow execution of server-side code without the need for a dedicated API route;</p>
 </li>
-<li><p>Partial Prerendering provides a fast initial static response while streaming dynamic content based on React Suspense boundaries.</p>
+<li><p>Partial Pre-rendering provides a fast initial static response while streaming dynamic content based on React Suspense boundaries.</p>
 </li>
 </ul>
 <h2>Next.js free course</h2>
 <p>Next.js 14 brings a new free course on Next.js Learn. Whether you’re new to Next.js or a seasoned pro, this course has something new for you.</p>
-<p>From the basics to advanced features like Partial Prerendering, it’s a comprehensive resource to level up your Next.js skills. This will simplify the learning proccess for many of us.</p>
+<p>From the basics to advanced features like Partial Pre-rendering, it’s a comprehensive resource to level up your Next.js skills. This will simplify the learning process for many of us.</p>
 <p>Thanks for reading!</p>
 ]]></content:encoded>
             <author>nhantumbok@gmail.com (Kain Nhantumbo)</author>
@@ -254,7 +254,7 @@ app.listen(8080, () =&gt; console.log(`&gt; Ready on http://localhost:${8080}`))
             <link>https://codenut-dev.vercel.app/blog/post/combine-styled-components-with-css-modules-to-unleash-power</link>
             <guid>https://codenut-dev.vercel.app/blog/post/combine-styled-components-with-css-modules-to-unleash-power</guid>
             <pubDate>Sat, 07 Oct 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p>Styled components and CSS modules offer powerful features for managing and scaling CSS in modern web applications so  you can create a robust and maintainable CSS architecture that is both flexible and efficient. Get ready to learn more about them togheter.</p>
+            <description><![CDATA[<p>Styled components and CSS modules offer powerful features for managing and scaling CSS in modern web applications so  you can create a robust and maintainable CSS architecture that is both flexible and efficient. Get ready to learn more about them together.</p>
 ]]></description>
             <content:encoded><![CDATA[<p>I am pretty confident that styled components and CSS modules are two powerful tools for managing and scaling CSS in modern web applications, since I have been using them in my personal projects. In this follow-up, we will explore some advanced techniques and best practices for using styled components and CSS modules to create a robust and maintainable CSS architecture.</p>
 <p>Let&#39;s dive in already.</p>
@@ -309,7 +309,7 @@ const CustomButton = (props) =&gt; (
   &lt;Button className={styles.button}&gt;{props.buttonText}&lt;/Button&gt;
 );
 </code></pre>
-<p>Whith this combination, you can leverage the strengths of both styled components and CSS modules, creating a more maintainable and scalable CSS architecture.</p>
+<p>With this combination, you can leverage the strengths of both styled components and CSS modules, creating a more maintainable and scalable CSS architecture.</p>
 <h2>Best Practices for Styled Components and CSS Modules</h2>
 <p>To get the most of styled components and CSS modules powers, we should consider the following best practices:</p>
 <ul>
@@ -354,7 +354,7 @@ const CustomButton = (props) =&gt; (
 <blockquote>
 <p>That&#39;s it for now, I hope you use these performance tips to level up your next React projects and help you build high-performing, responsive, lightning-fast and user-friendly applications.</p>
 </blockquote>
-<p>Thanks for readind and... Happy coding!</p>
+<p>Thanks for reading and... Happy coding!</p>
 ]]></content:encoded>
             <author>nhantumbok@gmail.com (Kain Nhantumbo)</author>
             <category>Front-end</category>
@@ -369,7 +369,7 @@ const CustomButton = (props) =&gt; (
             <content:encoded><![CDATA[<p>Optimizing SEO in Next.js requires a combination of technical implementation, content optimization, and ongoing monitoring. By leveraging advanced techniques, such as dynamic meta tags, SSR, structured data markup, and performance optimization, you can significantly improve search engine visibility and attract more organic traffic to your Next.js applications.</p>
 <h2>Understanding SEO Basics</h2>
 <p>Before diving into techniques, let’s quickly review some essential SEO principles. Meta tags, structured data markup, URL structure, and sitemaps are crucial for search engines to understand and rank our web pages.</p>
-<h2>Next.js and SEO - A Poweful Combination</h2>
+<h2>Next.js and SEO - A Powerful Combination</h2>
 <p>Next.js is an excellent choice out there for building SEO-friendly applications due to its server-side rendering (SSR) capabilities, which provide search engines with fully-rendered HTML content. Additionally, Next.js comes with built-in optimizations, such as automatic code splitting and prefetching, that contribute to better SEO performance.</p>
 <h2>SEO in Next.js</h2>
 <h3>Meta Tags and Title Optimization</h3>
@@ -419,7 +419,7 @@ export default Page;
   };
 }
 </code></pre>
-<h2>Best Pratices Considerations for Next.js</h2>
+<h2>Best Practices Considerations for Next.js</h2>
 <h3>Managing 404 Errors and Custom Error Pages</h3>
 <p>Properly handle 404 errors by creating custom error pages that provide helpful information to users and search engines. Next.js allows you to create custom 404 error pages by creating a pages/404.js file.</p>
 <h3>Optimizing HTML and CSS</h3>
@@ -441,7 +441,7 @@ export default Page;
 <p>Track your website’s rankings in search engine results pages (SERPs) and monitor the click-through rates (CTR) using SEO tools like SEMrush, Ahrefs, or Moz. Analyzing these metrics can help you identify areas for optimization.</p>
 <h2>Conclusion</h2>
 <p>Remember to regularly review and update your SEO strategies as search engine algorithms and best practices evolve. By staying informed, implementing advanced techniques, and consistently monitoring performance, you can maintain a strong SEO presence for your Next.js applications and drive sustainable organic traffic.</p>
-<p>This article is not only for you, but for me too! Good things come in our learning journey, so dont&#39;t stop learning. See yaa!</p>
+<p>This article is not only for you, but for me too! Good things come in our learning journey, so don&#39;t stop learning. See yaa!</p>
 <p>And... Thanks for reading!</p>
 ]]></content:encoded>
             <author>nhantumbok@gmail.com (Kain Nhantumbo)</author>
@@ -457,10 +457,10 @@ export default Page;
             <content:encoded><![CDATA[<p>In this article, we’ll explore the ins and outs of SEO within React and Next.js, from traditional methods to modern solutions, and discuss the different rendering techniques — SSR, SSG, and ISR.</p>
 <h2>Understanding SSR, SSG, and ISR</h2>
 <p>Server-Side Rendering (SSR), Static Site Generation (SSG), and Incremental Static Regeneration (ISR) are crucial concepts in optimizing your Next.js app for SEO. Each method determines your speed which greatly affects your SEO ranking and also how you will be retrieving the metadata for each dynamic page (like a blog post or product page).</p>
-<p><strong><em>Server-Side Rendering(SSR)</em></strong>: pre-renders pages on the server before sending them to the client side. This approach enhances SEO by providing search engines with fully-rendered HTML content, improving indexability and loading times.</p>
+<p><strong><em>Server-Side Rendering(SSR)</em></strong>: pre-renders pages on the server before sending them to the client side. This approach enhances SEO by providing search engines with fully-rendered HTML content, improving index and loading times.</p>
 <p><strong><em>Static Site Generation (SSG)</em></strong>: generates HTML pages at build time, reducing server load and ensuring fast page loads. However, it may not be suitable for content that changes frequently.</p>
 <p><strong><em>Incremental Static Regeneration (ISR)</em></strong>: combines the best of both worlds by allowing you to revalidate and regenerate specific pages at intervals, keeping content fresh while benefiting from the performance of static content.</p>
-<p>Also, is important to say that this approach may lead to stale content between revalidations.</p>
+<p>Also, is important to say that this approach may lead to stale content between revalidation.</p>
 <h3>Consider <code>next-seo</code> for a simple SEO solution</h3>
 <p>Use the next-seo and get pretty much off-the-shelf static and simple SEO solutions. The <code>next-seo</code> package simplifies SEO management in Next.js by providing a declarative way to define metadata.</p>
 <h3>For more advanced and dynamic use cases</h3>
@@ -482,12 +482,12 @@ export default Page;
             <link>https://codenut-dev.vercel.app/blog/post/how-to-generate-colors-in-javascript</link>
             <guid>https://codenut-dev.vercel.app/blog/post/how-to-generate-colors-in-javascript</guid>
             <pubDate>Tue, 20 Sep 2022 12:10:18 GMT</pubDate>
-            <description><![CDATA[<p>Learn how to generate colors in javascript programatically</p>
+            <description><![CDATA[<p>Learn how to generate colors in javascript programmatically</p>
 ]]></description>
             <content:encoded><![CDATA[<p>In this post, I will write a  quick guide to build a simple hexadecimal color generator with javascript, so you can use it in your projects.</p>
 <p>Without much, let&#39;s begin.</p>
 <h3>Generating the colors</h3>
-<p>First, we have to create an array of hexadecimal caracters like this:</p>
+<p>First, we have to create an array of hexadecimal caracteres like this:</p>
 <pre><code class="language-js">const charactersArray = [0,1,2,3,4,5,6,7,8,9,&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;]
 </code></pre>
 <p>Putting those characters in an array will simplify the process, thats why I have picked an array to allow us to select any item by providing its index.</p>
@@ -497,11 +497,11 @@ function getHexCharacter(index) {
   return charactersArray[index];
 }
 </code></pre>
-<p>The function above will take the index and return the hexademical-character stored in that place. Next, we need to represent colors using the returned value.</p>
+<p>The function above will take the index and return the hexadecimal-character stored in that place. Next, we need to represent colors using the returned value.</p>
 <pre><code class="language-js">function generateColor() {
   const hexColorCode = &#39;#&#39;; // initial hex color code
 
-  // iterate over the 6 possible aditional characters for the color code
+  // iterate over the 6 possible additional characters for the color code
   for (const i = 0; i &lt; 6; i++) {
     const randomIndex = Math.floor(Math.random() * charactersArray.length);
     hexColorCode += getHexCharacter(randomIndex);
@@ -509,10 +509,10 @@ function getHexCharacter(index) {
   return hexColorCode;
 }
 </code></pre>
-<p>The above function, loops 6 times because hexadecimal colors are represented by 6 hexadecimal digits. Within the loop, the function calls <code>getHexCharacter()</code> to generate a hexadecimal digit for each index of the color code. </p>
+<p>The above function, loops 6 times because hexadecimal colors are represented by 6 hexadecimal digits. Within the loop, the function calls <code>getHexCharacter()</code> to generate a hexadecimal digit for each index of the color code.</p>
 <p>The function <code>getHexCharacter()</code> takes the <code>randomIndex</code> generated from the array of characters we have created before as parameter to ensure that we not have te same generated calor code values. Once all digits of the color code have been generated, the function <code>generateColor()</code>  returns the complete hexadecimal color code represented as a string.</p>
 <p>That&#39;s it. I hope you could learn something new today.
-Thank you for reading! </p>
+Thank you for reading!</p>
 ]]></content:encoded>
             <author>nhantumbok@gmail.com (Kain Nhantumbo)</author>
             <category>Javascript</category>
@@ -547,17 +547,17 @@ Thank you for reading! </p>
 <p>The above results in an un-styled button, yet it utilizes right semantic markup.</p>
 <p>In any case, suppose that I need to be amusing, and on second thought wrap the substance above (Like and Subscribe) inside section labels <code>&lt;p&gt;</code>Like and Subscribe<code>&lt;/p&gt;</code>.</p>
 <p>In addition to the fact that it be semantically would wrong, yet it likewise wouldn&#39;t work actually, in light of the fact that section components are not interactive in the browser.</p>
-<h2>Unsemanic markup</h2>
+<h2>Un-semantic markup</h2>
 <p>There are a couple of ways you can markup your substance un-semantically, that won&#39;t destroy your site&#39;s specialized elements, in contrast to the earlier model.</p>
 <p>Suppose you wrap your article&#39;s title inside section labels rather than the suitable H1 tag. This is semantically wrong since well, a title isn&#39;t a passage. Be that as it may, in fact it won&#39;t seriously hurt your site. Guests can in any case peruse the text.</p>
 <p>You can contend that visual styling is a specialized component of your site, and all things considered, enclosing a title by a section label will to some degree hurt your site in fact, as in your title will have a more modest text dimension and textual style weight than it ought to (on the grounds that passage is dependably more modest than headings).</p>
-<h2>Conventional and unsemanic markup</h2>
+<h2>Conventional and un-semantic markup</h2>
 <p>You could likewise wrap a section inside one of HTML&#39;s conventional HTML labels for example the exemplary <code>&lt;div&gt;</code> tag. Utilizing a <code>&lt;div&gt;</code> to fold over a passage or title, or other text, would be semantically wrong, however it will not obliterate your site&#39;s specialized highlights. Your site will in any case work, yet very much like with the heading/section model over, it will play with your typography (text organizing).</p>
 <p>Involving some unacceptable markup for your substance is an incredible method for letting web search tools like Google realize that you don&#39;t have the foggiest idea what in the world you&#39;re doing, and this will straightforwardly hurt your capacity to rank high on the query items pages (SERPs).</p>
 <p>SEO-friendly HTML markup is simple, here’s a quick checklist:</p>
 <ul>
 <li>Headlines should be defined with <code>&lt;h1&gt;</code> tags — only one per page.</li>
-<li>Subheadlines should be define with <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, or <code>&lt;h4&gt;</code> tags. You can also use <code>&lt;h5&gt;</code> and <code>&lt;h6&gt;</code> but I generally recommend against going overboard with heading tags (it won’t give you more SEO).</li>
+<li>Sub-headlines should be define with <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, or <code>&lt;h4&gt;</code> tags. You can also use <code>&lt;h5&gt;</code> and <code>&lt;h6&gt;</code> but I generally recommend against going overboard with heading tags (it won’t give you more SEO).</li>
 <li>Paragraphs should be defined with <code>&lt;p&gt;</code></li>
 <li>Lists should be defined with <code>&lt;ul&gt;</code></li>
 <li>List items should be defined with <code>&lt;li&gt;</code> and always sit inside <code>&lt;ul&gt;</code> tags.</li>
