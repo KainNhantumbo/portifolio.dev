@@ -104,7 +104,7 @@
     "live_preview_label": "Try this app live!",
     "repository_label": "View or fork source code on Github",
     "choconotey": {
-      "title": "Choconotey Notes App 📔",
+      "title": "Choconotey Notes App",
       "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share and export/output your notes content in multiple formats like Markdown, HTML and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor and clean interface for ease  and distraction free experience.\nGood to give it a try! 🎈🎉🎊"
     },
     "toono": {
@@ -112,11 +112,11 @@
       "description": "Meet a social constructive content oriented platform inspired by dev.to that allows people around the globe to share their career experience and grow by writing valuable content, build their professional profiles and take part in social discussions. All mates are welcome to find a place within our community.\nA platform made for everyone who wants to share, contribute and learn something. 🥳"
     },
     "palletone": {
-      "title": "Palletone Colors App 🎨",
+      "title": "Palletone Colors App",
       "description": "This app aims to bring a new experience of collecting, managing and building color palettes for designers and web developers.\nThe main goal is to simplify the process providing the right tools for choosing the preferred color for their project.\nFeel free to try it on any device of yours and bake your own color flavor for your next project! 🥳"
     },
     "rubymart": {
-      "title": "Rubymart Platform  🫂🛒🇲🇿",
+      "title": "Rubymart Platform",
       "description": "Imagine an open platform where anyone can power their businesses by constructing a community of costumers, sell products, create user and store profiles, rate products, offer jobs, share ideias and make real connections!\nThis is the app that accomplishes it.\nA perfect fusion of e-commerce and social community business platform.\n Explore my github for more!"
     }
   }
