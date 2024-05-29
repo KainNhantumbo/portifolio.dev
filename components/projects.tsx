@@ -32,13 +32,13 @@ export const Projects = () => {
         .
       </p>
 
-      <h3 className='font-sans text-xl font-semibold underline decoration-dashed underline-offset-4 '>
+      <h3 className='my-3 rounded-lg border-2 border-dashed border-primary-variant p-3 font-sans text-2xl font-semibold uppercase text-primary underline-offset-4'>
         {translation('works.section_name')}
       </h3>
 
       <Works />
 
-      <h3 className='font-sans-display text-lg font-semibold uppercase underline decoration-dashed underline-offset-4'>
+      <h3 className='my-3 rounded-lg border-2 border-dashed border-primary-variant p-3 font-sans text-2xl font-semibold uppercase text-primary underline-offset-4'>
         {translation('projects.section_name')}
       </h3>
 

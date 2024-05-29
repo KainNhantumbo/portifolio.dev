@@ -16,7 +16,7 @@ export const Works = () => {
         <AnimateScroll
           key={index}
           className='group rounded-lg border-[1px] border-solid border-font/10 p-3'>
-          <section className='group flex w-full select-none flex-row flex-nowrap items-center gap-3 rounded-xl p-3 group-even:flex-row-reverse max-[890px]:flex-col-reverse max-[890px]:items-center max-[890px]:justify-center max-[890px]:gap-5'>
+          <section className='group flex w-full select-none flex-row flex-nowrap items-center gap-3 rounded-xl p-3 group-even:flex-row-reverse max-md:flex-col-reverse max-md:items-center max-md:justify-center max-md:gap-5 group-even:max-md:flex-col'>
             <div className='flex w-full flex-col gap-2'>
               <h3 className='mx-auto text-center font-sans text-lg font-bold uppercase sm:text-3xl'>
                 <span className='mr-4 text-font/50'>0{index + 1}</span>

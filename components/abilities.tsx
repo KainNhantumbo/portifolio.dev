@@ -12,6 +12,7 @@ import {
   PenToolIcon
 } from 'lucide-react';
 import type { Stack } from '../types';
+import { BitbucketOriginal, JiraOriginal } from 'devicons-react';
 
 export const Abilities = () => {
   const translation = useScopedI18n('abilities');
@@ -49,7 +50,9 @@ export const Abilities = () => {
         { tech: 'Git', icon: FolderGit2Icon },
         { tech: 'Electron.JS', icon: AtomIcon },
         { tech: 'Markdown', icon: BookMarkedIcon },
-        { tech: 'Github', icon: GithubIcon }
+        { tech: 'Github', icon: GithubIcon },
+        { tech: 'Bitbucket', icon: BitbucketOriginal },
+        { tech: 'Jira', icon: JiraOriginal }
       ]
     }
   ];
@@ -83,7 +86,7 @@ export const Abilities = () => {
                   scale: [1.1, 1, 1.18, 1.09, 1]
                 }}
                 className='relative flex w-[150px] select-none flex-col gap-1 rounded-xl p-4 pr-5'>
-                <item.icon className='absolute right-2 top-2 h-5 w-5 stroke-primary' />
+                <item.icon className='absolute right-1 top-2 h-auto w-6 stroke-primary' />
                 <h3 className='font-medium'>{item.tech}</h3>
               </motion.div>
             ))}

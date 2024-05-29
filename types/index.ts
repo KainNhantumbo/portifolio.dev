@@ -1,6 +1,7 @@
 import type { LucideIcon } from 'lucide-react';
 import type { StaticImageData } from 'next/image';
 import type { ChangeEvent, FormEvent } from 'react';
+import { BitbucketOriginal } from 'devicons-react';
 
 export type InputEvents = ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>;
 
@@ -35,7 +36,7 @@ export type Work = {
 export type Stack = {
   title: string;
   icon: LucideIcon;
-  data: Array<{ tech: string; icon: LucideIcon }>;
+  data: Array<{ tech: string; icon: LucideIcon | typeof BitbucketOriginal }>;
 };
 
 export type Action = { type: string; payload: State };
