@@ -76,7 +76,7 @@ export const Footer = () => {
             particleColor='#E4703180'
           />
         </div>
-        <h3 className='my-2 w-fit mx-auto rounded-full px-3 border-[1px] border-solid border-font/10 text-center text-xl font-bold'>
+        <h3 className='mx-auto my-2 w-fit rounded-full border-[1px] border-solid border-font/10 px-3 text-center text-xl font-bold'>
           {translation('title')}
         </h3>
         <ul className='flex flex-row items-center justify-center gap-4'>

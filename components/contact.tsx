@@ -30,7 +30,6 @@ export const Contact = () => {
       [e.target.name]: e.target.value
     }));
   };
-  303074;
 
   // notifies the e-mail sender about the message status
   const notification = (message: string) => {
@@ -75,8 +74,8 @@ export const Contact = () => {
           whileInView={{ opacity: 1 }}>
           {translation('intro-title')}
         </motion.h3>
-        <p>{translation('intro-phrase')}</p>
-        <p>{translation('intro-message')}</p>
+        <p className='text-justify'>{translation('intro-phrase')}</p>
+        <p className='text-justify'>{translation('intro-message')}</p>
       </section>
       <section className='flex flex-col gap-1 font-sans'>
         <div className='flex items-center gap-3'>

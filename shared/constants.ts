@@ -11,7 +11,7 @@ export const cursorClickablesList = [
   'label[for]',
   'select',
   'textarea',
-  'button',
+  'button'
 ];
 
 export const constants = {

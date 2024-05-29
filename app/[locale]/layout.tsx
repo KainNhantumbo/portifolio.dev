@@ -43,7 +43,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
         <AnimatedCursor
           innerSize={12}
           outerSize={12}
-          color='253, 56, 79'
+          color='228, 112, 49'
           outerAlpha={0.2}
           innerScale={0.7}
           outerScale={5}
