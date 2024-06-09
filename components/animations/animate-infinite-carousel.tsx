@@ -1,21 +1,14 @@
-"use client"
+'use client';
 
-import { useAppContext } from '@/context/app-context';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 import Marquee from 'react-fast-marquee';
 
-export type AnimateInfiniteCarouselProps = {
-  children: React.ReactNode;
-  className?: string;
-};
+type Props = { children: React.ReactNode; className?: string };
 
-export function AnimateInfiniteCarousel({
-  children,
-  className
-}: AnimateInfiniteCarouselProps) {
-  const {theme} = useTheme()
+export function AnimateInfiniteCarousel({ children, className }: Props) {
+  const { theme } = useTheme();
   return (
     <Marquee
       gradient

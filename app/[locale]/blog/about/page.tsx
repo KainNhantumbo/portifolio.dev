@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Code2Icon, ExternalLinkIcon, GithubIcon, Mail } from 'lucide-react';
 
