@@ -12,8 +12,7 @@ export function AnimateInfiniteCarousel({ children, className }: Props) {
   return (
     <Marquee
       gradient
-      pauseOnHover
-      gradientColor={theme === 'light' ? '#FFFFFF' : '#26272D'}
+      gradientColor={theme === 'light' ? '#FAFAFA' : '#1A1A1E'}
       className={cn(className)}>
       {children}
     </Marquee>
