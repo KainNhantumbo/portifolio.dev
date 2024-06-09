@@ -1,4 +1,3 @@
-'use client';
 
 import Link from 'next/link';
 import { Code2Icon, ExternalLinkIcon, GithubIcon, Mail } from 'lucide-react';
@@ -81,6 +80,10 @@ export default function Page() {
               <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>React.JS</span>
+              </p>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+                <Code2Icon className='h-auto w-5 stroke-primary' />
+                <span>Tailwind CSS</span>
               </p>
               <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
                 <Code2Icon className='h-auto w-5 stroke-primary' />

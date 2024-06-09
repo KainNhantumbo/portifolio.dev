@@ -56,7 +56,7 @@ export default function Page({ params: { slug } }: Props) {
               </span>
             </div>
 
-            <h1 className='font-slab leading-relaxed'>
+            <h1 className='font-sans-display leading-relaxed'>
               <strong>{post.title}</strong>
             </h1>
 

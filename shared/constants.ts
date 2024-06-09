@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import Package from '../package.json';
 
 export const cursorClickablesList = [
@@ -32,12 +31,6 @@ export const AUTHOR = {
   description: 'Web Developer & Designer'
 };
 
-export const metadata: Metadata = {
-  title: constants.title,
-  description: constants.description,
-  authors: [{ name: AUTHOR.name, url: AUTHOR.email }],
-  category: 'website',
-  icons: '/favicon.png'
-};
+
 
 export const locales = ['pt', 'en'];

@@ -20,8 +20,8 @@
     "dev": "next dev -p 3200",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit -p ./tsconfig.json",
+    "es:lint": "next lint",
+    "ts:lint": "tsc --noEmit -p ./tsconfig.json",
     "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,json}\""
   },
   "dependencies": {
@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "@types/granim": "^2.0.4",
-    "@types/node": "^20.12.12",
-    "@types/react": "^18.3.2",
+    "@types/node": "^20.12.13",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/react-syntax-highlighter": "^15.5.13",
     "autoprefixer": "^10.4.19",
@@ -60,7 +60,7 @@
     "eslint-config-next": "14.0.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "postcss": "^8.4.38",
-    "postcss-nesting": "^12.1.4",
+    "postcss-nesting": "^12.1.5",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.3",

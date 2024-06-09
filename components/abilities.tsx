@@ -1,7 +1,7 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { motion } from '@/providers/framer-provider';
+import { BitbucketOriginal, JiraOriginal } from 'devicons-react';
 import {
   AtomIcon,
   BadgeCheckIcon,
@@ -12,7 +12,7 @@ import {
   PenToolIcon
 } from 'lucide-react';
 import type { Stack } from '../types';
-import { BitbucketOriginal, JiraOriginal } from 'devicons-react';
+import { AnimateInfiniteCarousel } from './animations/animate-infinite-carousel';
 
 export const Abilities = () => {
   const translation = useScopedI18n('abilities');
@@ -39,6 +39,7 @@ export const Abilities = () => {
         { tech: 'Javascript', icon: Code2Icon },
         { tech: 'Node.JS', icon: Code2Icon },
         { tech: 'Express.JS', icon: Code2Icon },
+        { tech: 'Nest.JS', icon: Code2Icon },
         { tech: 'Mongo DB', icon: Code2Icon },
         { tech: 'PostgreSQL', icon: Code2Icon }
       ]
@@ -73,23 +74,16 @@ export const Abilities = () => {
             <span className='pl-6 text-primary'>{group.title}</span>
           </h3>
           <section className='grid grid-cols-4 items-center gap-2 max-[650px]:grid-cols-3 max-[495px]:grid-cols-2 max-[330px]:grid-cols-1'>
-            {group.data.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ scale: 0 }}
-                whileInView={{
-                  scale: 1,
-                  transition: { duration: 0.5, bounce: 1 }
-                }}
-                whileHover={{
-                  rotate: [0, -20, 0, 20, 0],
-                  scale: [1.1, 1, 1.18, 1.09, 1]
-                }}
-                className='relative flex w-[150px] select-none flex-col gap-1 rounded-xl p-4 pr-5'>
-                <item.icon className='absolute right-1 top-2 h-auto w-6 stroke-primary' />
-                <h3 className='font-medium'>{item.tech}</h3>
-              </motion.div>
-            ))}
+            <AnimateInfiniteCarousel>
+              {group.data.map((item, index) => (
+                <div
+                  key={index}
+                  className='relative flex w-[150px] select-none flex-col gap-1 rounded-xl p-4 pr-5'>
+                  <item.icon className='absolute right-1 top-2 h-auto w-6 stroke-primary' />
+                  <h3 className='font-medium'>{item.tech}</h3>
+                </div>
+              ))}
+            </AnimateInfiniteCarousel>
           </section>
         </section>
       ))}

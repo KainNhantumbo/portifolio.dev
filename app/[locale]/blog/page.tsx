@@ -59,7 +59,7 @@ export default function Page({ params: { locale } }: PageParams) {
                 </h4>
               </div>
 
-              <h3 className="relative pl-5 font-slab text-[1.4rem] font-medium underline decoration-dashed underline-offset-4 before:absolute before:left-0 before:top-[calc(50%_-_2px)] before:z-50 before:h-2 before:w-2 before:rounded-lg before:bg-primary  before:content-[''] group-hover:text-blue-400 group-hover:transition-colors">
+              <h3 className="relative pl-5 font-sans-display text-[1.4rem] font-medium underline decoration-dashed underline-offset-4 before:absolute before:left-0 before:top-[calc(50%_-_2px)] before:z-50 before:h-2 before:w-2 before:rounded-lg before:bg-primary  before:content-[''] group-hover:text-blue-400 group-hover:transition-colors">
                 {post.title}
               </h3>
               <p className='excerpt font-sans-body  font-medium'>{post.excerpt}</p>

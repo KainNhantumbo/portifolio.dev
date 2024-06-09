@@ -9,21 +9,33 @@ import { AppContext } from '@/context/app-context';
 import { I18nProviderClient } from '@/locales/client';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';
 import { ThemeProvider } from '@/providers/theme-provider';
-import AnimatedCursor from 'react-animated-cursor';
-import { cursorClickablesList, locales } from '@/shared/constants';
+import { AUTHOR, constants, cursorClickablesList, locales } from '@/shared/constants';
 import {
   ibmPlexMono,
   jakarta,
   spaceGrotesk,
-  zillaSlab,
-  splineSansMono
+  splineSansMono,
+  zillaSlab
 } from '@/shared/fonts';
+import type { PageParams } from '@/types';
 import clsx from 'clsx';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
-import type { PageParams } from '@/types';
+import AnimatedCursor from 'react-animated-cursor';
 
 export { generateStaticParams } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  title: constants.title,
+  description: constants.description,
+  authors: [{ name: AUTHOR.name, url: AUTHOR.email }],
+  category: 'website',
+  robots: 'index, follow',
+  icons: {
+    icon: '/favicon.png'
+  }
+};
 
 type Props = PageParams & { children: ReactNode };
 
