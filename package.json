@@ -43,6 +43,7 @@
     "react": "^18.3.1",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.3.1",
+    "react-fast-marquee": "^1.6.4",
     "react-markdown": "^9.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "react-text-gradients-and-animations": "^1.1.7",

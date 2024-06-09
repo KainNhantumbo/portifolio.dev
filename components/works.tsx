@@ -60,7 +60,7 @@ export const Works = () => {
             />
           </section>
 
-          <div className='mt-2 flex w-full flex-wrap items-center justify-center gap-3 font-sans'>
+          <div className='group mt-2 flex w-full flex-wrap items-center justify-center gap-3 font-sans'>
             <a
               href={item.livePreview.url}
               rel='noopener noreferrer'

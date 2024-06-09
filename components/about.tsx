@@ -13,7 +13,7 @@ export const About = () => {
   return (
     <section
       id='about'
-      className='mx-auto flex w-full max-w-[700px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
+      className='mx-auto flex w-full  max-w-[780px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
       <h2 className='base-section-title'>
         <UserIcon />
         <span>{translation('title')}</span>
