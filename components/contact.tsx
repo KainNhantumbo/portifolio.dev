@@ -61,7 +61,7 @@ export const Contact = () => {
   return (
     <section
       id='contact'
-      className='mx-auto flex w-full max-w-[700px] flex-col items-center gap-6 border-t-[1px] border-solid border-font/10 pt-5 max-[370px]:m-0'>
+      className='mx-auto flex w-full max-w-[780px] flex-col items-center gap-6 border-t-[1px] border-solid border-font/10 pt-5 max-[370px]:m-0'>
       <h2 className='base-section-title'>
         <MessageSquareDashed />
         <span>{translation('title')}</span>

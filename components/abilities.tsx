@@ -88,7 +88,7 @@ export const Abilities = () => {
             <group.icon className='absolute left-0 top-[calc(50%_-_10px)] h-auto w-5 stroke-secondary' />
             <span className='pl-6 text-primary'>{group.title}</span>
           </h3>
-          <AnimateInfiniteCarousel className='mx-auto  w-full max-w-[780px] rounded-xl'>
+          <AnimateInfiniteCarousel className='mx-auto w-full max-w-[780px] rounded-xl max-lg:max-w-[580px] max-sm:max-w-[460px] max-mobile-x:max-w-[400px] max-mobile:max-w-[320px]'>
             <section className='flex items-center gap-2 overflow-hidden'>
               {group.data.map((item, index) => (
                 <div
