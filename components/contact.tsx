@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import type { FormData, InputEvents, SubmitEvent } from '../types';
+import { AnimateTextReveal } from './animations/animate-reveal';
 
 export const Contact = () => {
   const translation = useScopedI18n('contact');
@@ -74,13 +75,17 @@ export const Contact = () => {
           whileInView={{ opacity: 1 }}>
           {translation('intro-title')}
         </motion.h3>
-        <p className='text-justify'>{translation('intro-phrase')}</p>
-        <p className='text-justify'>{translation('intro-message')}</p>
+        <AnimateTextReveal inverseDirection>
+          <p className='text-justify'>{translation('intro-phrase')}</p>
+        </AnimateTextReveal>
+        <AnimateTextReveal delay={0.5}>
+          <p className='text-justify'>{translation('intro-message')}</p>
+        </AnimateTextReveal>
       </section>
       <section className='flex flex-col gap-1 font-sans'>
         <div className='flex items-center gap-3'>
           <MailboxIcon className='h-5 w-5 stroke-primary' />
-          <span className='font-semibold'> {translation('mail')}</span>
+          <span className='font-semibold'>{translation('mail')}</span>
         </div>
       </section>
 

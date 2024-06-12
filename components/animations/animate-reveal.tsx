@@ -10,7 +10,7 @@ type Props = {
   inverseDirection?: boolean;
 };
 
-export const Reveal: FC<Props> = ({
+export const AnimateTextReveal: FC<Props> = ({
   children,
   delay = 0,
   inverseDirection = false,

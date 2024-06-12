@@ -5,6 +5,7 @@ import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import Image from 'next/image';
 import { useWorks } from '../hooks/use-works';
 import { AnimateScroll } from './animations/animate-scroll';
+import { AnimateTextReveal } from './animations/animate-reveal';
 
 export const Works = () => {
   const translation = useScopedI18n('works');
@@ -31,13 +32,15 @@ export const Works = () => {
                   </span>
                 ))}
               </div>
-              <div className='border-t-[1px] border-solid border-font/10 pt-3 text-justify'>
-                {item.description.map((phrase, index) => (
-                  <p key={index} className='mb-3'>
-                    {phrase}
-                  </p>
-                ))}
-              </div>
+              <AnimateTextReveal inverseDirection={index % 2 === 0}>
+                <div className='min-sm:text-justify border-t-[1px] border-solid border-font/10 pt-3'>
+                  {item.description.map((phrase, index) => (
+                    <p key={index} className='mb-3'>
+                      {phrase}
+                    </p>
+                  ))}
+                </div>
+              </AnimateTextReveal>
               <div className='flex flex-row flex-wrap items-center gap-2 font-sans'>
                 <h4 className='font-medium uppercase text-primary'>
                   {translation('platform')}:{' '}

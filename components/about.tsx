@@ -6,6 +6,7 @@ import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
 import Image from 'next/image';
 import { AUTHOR } from '../shared/constants';
 import { SparklesCore } from './animations/animate-sparkles';
+import { AnimateTextReveal } from './animations/animate-reveal';
 
 export const About = () => {
   const translation = useScopedI18n('about');
@@ -35,17 +36,8 @@ export const About = () => {
             />
           </motion.div>
         </div>
-
-        <motion.p
-          className='mb-2'
-          transition={{ delay: 0.2 }}
-          initial={{ y: -50 }}
-          whileInView={{ y: 0 }}>
-          {translation('intro-1')}
-        </motion.p>
-        <motion.p transition={{ delay: 0.4 }} initial={{ y: 50 }} whileInView={{ y: 0 }}>
-          {translation('intro-2')}
-        </motion.p>
+        <AnimateTextReveal inverseDirection>{translation('intro-1')}</AnimateTextReveal>
+        <AnimateTextReveal delay={0.4}>{translation('intro-2')}</AnimateTextReveal>
       </section>
 
       <section className='mt-5 flex flex-wrap items-center justify-center gap-12'>
