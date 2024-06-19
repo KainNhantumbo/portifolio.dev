@@ -123,6 +123,7 @@
     @apply relative m-0 w-[100%] bg-background font-sans font-normal text-font selection:bg-primary/20 selection:text-font selection:text-opacity-90;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    cursor: url('/mouse-pointer.png'), auto;
   }
 
   html {
