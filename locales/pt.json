@@ -23,8 +23,8 @@
   "intro": {
     "welcome-message": "Bem vindo ao meu espaço :)",
     "presentation": "Olá 👋, seja bem vindo!",
-    "message-part-1": "Um verdadeiro amante de conhecimento, sempre procurando aprender e partilhar informações. Trabalhando com desenvolvimento Web desde 2019, desenvolvendo projetos escaláveis e  performáticos enquanto aprende novas coisinhas a cada dia.",
-    "message-part-2": "Para construir os meus projetos, utilizo Typescript e Javascript como linguagens de programação principais.",
+    "message-part-1": "Eu crio produtos acessíveis, inclusivos e melhores experiências digitais para a web.",
+    "message-part-2": "Adoro de assumir novos desafios e colaborar com outros desenvolvedores para criar produtos inovadores e impactantes que resolvam problemas do mundo real.",
     "title": "Sou o Kain!"
   },
   "about": {
@@ -33,7 +33,7 @@
     "intro-1": "Sou uma pessoa com o desejo de crescer aprendendo novas coisas todos os dias. Movido pela curiosidade, me apaixonei pelo desenvolvimento web e design.",
     "intro-2": "Estou muito ansioso e interessado em oportunidades de trabalho que envolvem as mais novas tecnologias e que coloquem as minhas habilidades em prática.",
     "experience-title": "Experiência",
-    "experience-content": "Mais de 3 anos de programação",
+    "experience-content": "4+ anos de programação",
     "projects-title": "Projetos",
     "projects-content": "Mais de 20 projetos no Github"
   },

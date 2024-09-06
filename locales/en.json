@@ -23,8 +23,8 @@
   "intro": {
     "welcome-message": "Welcome to my portfolio :)",
     "presentation": "Hello 👋, you are welcome!",
-    "message-part-1": "A true knowledge lover, always looking to learn more and share information. Working with web development since 2019, developing for performant and scalable projects while learning something new everyday.",
-    "message-part-2": "To build my projects, I use Typescript and Javascript as main programming technologies.",
+    "message-part-1": "I build accessible, inclusive products and digital experiences for the web.",
+    "message-part-2": "I enjoy taking on new challenges and collaborating with other developers to create innovative and impactful products that solve real-world problems.",
     "title": "I am Kain!"
   },
   "about": {
@@ -33,7 +33,7 @@
     "intro-1": "I am a person with a desire to grow by learning new things every day. Driven by curiosity, I fell in love with web development and design.",
     "intro-2": "I am very interested in opportunities to work with the latest technologies on challenging projects that would push my skills to the end. I like programming and I am specially ambitious on the kind of projects that solves daily problems.",
     "experience-title": "Experience",
-    "experience-content": "2+ years of programming",
+    "experience-content": "4+ years of programming",
     "projects-title": "Projects",
     "projects-content": "20+ github projects"
   },
