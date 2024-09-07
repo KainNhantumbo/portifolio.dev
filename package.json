@@ -2,9 +2,9 @@
   "name": "codenut-homepage",
   "description": "Kain's Blog and Portfolio Website",
   "website_name": "Codenut Blog",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "private": true,
-  "latest_compile": "05-2024",
+  "latest_compile": "09-2024",
   "url": "https://codenut-dev.vercel.app",
   "author": {
     "name": "Kain Nhantumbo",
