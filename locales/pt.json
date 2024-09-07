@@ -39,7 +39,8 @@
   },
   "services": {
     "title": "Descubra os Meus Serviços",
-    "subtitle": "Há várias maneiras pelas quais posso ajudar e impulsionar seu negócio!",
+    "subtitle": "Posso ajudar e impulsionar seus negócios de várias maneiras, por isso personalizo cada solução de software para atender às suas necessidades específicas. Você pode contar comigo para fornecer um sistema que apoie o crescimento do seu negócio.",
+    "call-to-action": "Entre em contato hoje mesmo!",
     "types": [
       {
         "title": "Aplicativos da Web",

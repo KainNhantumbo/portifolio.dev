@@ -39,7 +39,8 @@
   },
   "services": {
     "title": "Discover My Services",
-    "subtitle": "There are a variety of ways that I can help and boost your business!",
+    "subtitle": "There are a variety of ways that I can help and boost your business that's why I customize every software solution to match your specific needs. You can count on me to deliver a system supporting your business's growth.",
+    "call-to-action": "Get in Touch Today!",
     "types": [
       {
         "title": "Web Applications",

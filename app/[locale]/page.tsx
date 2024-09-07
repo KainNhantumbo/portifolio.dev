@@ -4,6 +4,7 @@ import { Contact } from '@/components/contact';
 import { Introduction } from '@/components/introduction';
 import { LanguageSwitcher } from '@/components/modals/language-switcher';
 import { Projects } from '@/components/projects';
+import { Services } from '@/components/services';
 import type { PageParams } from '@/types';
 import { setStaticParamsLocale } from 'next-international/server';
 
@@ -15,6 +16,7 @@ const Page = ({ params: { locale } }: PageParams) => {
       <Introduction />
       <LanguageSwitcher />
       <About />
+      <Services />
       <Abilities />
       <Projects />
       <Contact />
