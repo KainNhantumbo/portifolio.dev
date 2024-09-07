@@ -3,6 +3,8 @@
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { send as sender } from '@emailjs/browser';
+import { useForm } from 'react-hook-form';
+import { ContactSchema, ContactSchemaType } from '@/schemas/contact';
 import {
   AtSignIcon,
   MailboxIcon,
@@ -11,26 +13,36 @@ import {
   UserIcon
 } from 'lucide-react';
 import { useState } from 'react';
-import type { FormData, InputEvents, SubmitEvent } from '../types';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { AnimateTextReveal } from './animations/animate-reveal';
+import {
+  AUTHOR,
+  EMAIL_PUBLIC_KEY,
+  EMAIL_SERVICE_ID,
+  EMAIL_TEMPLATE_ID
+} from '@/shared/constants';
+
+const initialFormState: ContactSchemaType = {
+  name: '',
+  email: AUTHOR.email,
+  subject: '',
+  message: '',
+  from_email: ''
+};
 
 export const Contact = () => {
   const translation = useScopedI18n('contact');
   const [messageStatus, setMessageStatus] = useState('');
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: 'nhantumbok@gmail.com',
-    subject: '',
-    message: '',
-    from_email: ''
-  });
 
-  const formDataPicker = (e: InputEvents) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [e.target.name]: e.target.value
-    }));
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm<ContactSchemaType>({
+    resolver: zodResolver(ContactSchema),
+    defaultValues: { ...initialFormState }
+  });
 
   // notifies the e-mail sender about the message status
   const notification = (message: string) => {
@@ -41,18 +53,12 @@ export const Contact = () => {
     }, 5000);
   };
 
-  const emailSender = async (e: SubmitEvent) => {
-    e.preventDefault();
+  const onSubmit = async (values: ContactSchemaType) => {
     setMessageStatus(translation('message.informative'));
     try {
-      await sender(
-        'service_sjw9i8b',
-        'template_eso630j',
-        formData as any,
-        'z3FUpU83GBFJyGXVF'
-      );
+      await sender(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, { ...values }, EMAIL_PUBLIC_KEY);
       notification(translation('message.success'));
-      (e as any).target.reset();
+      reset(initialFormState);
     } catch (err: unknown) {
       console.error((err as any).text);
       notification(translation('message.failure'));
@@ -90,7 +96,7 @@ export const Contact = () => {
       </section>
 
       <section className='flex w-full flex-col gap-3 font-sans max-[420px]:py-5'>
-        <form onSubmit={emailSender} className='flex w-full flex-col gap-3'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex w-full flex-col gap-3'>
           <section className='flex gap-3 max-[568px]:flex-wrap'>
             <div className='flex w-full flex-col'>
               <label htmlFor='name' className='base-label pb-2'>
@@ -98,63 +104,59 @@ export const Contact = () => {
                 <span>{translation('form.name-label')}</span>
               </label>
               <input
-                type='text'
+                {...register('name')}
                 id='name'
-                name='name'
-                maxLength={120}
-                required
                 className='base-input'
                 placeholder={translation('form.name-placeholder')}
-                onChange={(e) => formDataPicker(e)}
               />
+
+              <p className='p-1 text-error'>{errors?.name?.message}</p>
             </div>
             <div className='flex w-full flex-col'>
-              <label htmlFor='email' className='base-label pb-2'>
+              <label htmlFor='from_email' className='base-label pb-2'>
                 <AtSignIcon />
                 <span>{translation('form.mail-label')}</span>
               </label>
               <input
-                type='email'
-                id='email'
-                name='from_email'
+                {...register('from_email')}
                 className='base-input'
-                required
                 placeholder={translation('form.mail-placeholder')}
-                maxLength={30}
-                onChange={(e) => formDataPicker(e)}
               />
+
+              <p className='p-1 text-error'>{errors?.email?.message}</p>
             </div>
           </section>
+
           <label htmlFor='subject' className='base-label pb-2'>
             <TextIcon />
             <span>{translation('form.subject-label')}</span>
           </label>
           <input
-            type='text'
+            {...register('subject')}
             id='subject'
-            name='subject'
-            maxLength={120}
             className='base-input'
-            required
             placeholder={translation('form.subject-placeholder')}
-            onChange={(e) => formDataPicker(e)}
           />
+
+          <p className='p-1 text-error'>{errors?.subject?.message}</p>
+
           <label htmlFor='message' className='base-label pb-2'>
             <MessageSquareDashed />
             <span>{translation('form.message-label')}</span>
           </label>
           <textarea
+            {...register('message')}
             id='message'
-            name='message'
             cols={30}
             rows={10}
-            maxLength={3500}
-            required
             className='base-input'
             placeholder={translation('form.message-placeholder')}
-            onChange={(e) => formDataPicker(e)}
           />
+
+          <p className='p-1 text-error'>{errors?.message?.message}</p>
+
           <span className='text-sm font-medium text-primary'>{messageStatus}</span>
+
           <motion.button
             whileTap={{ scale: 0.85 }}
             whileHover={{ scale: 1.05 }}

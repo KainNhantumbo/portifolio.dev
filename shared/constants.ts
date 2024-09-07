@@ -32,3 +32,7 @@ export const AUTHOR = {
 };
 
 export const locales = ['pt', 'en'];
+
+export const EMAIL_SERVICE_ID = 'service_sjw9i8b';
+export const EMAIL_TEMPLATE_ID = 'template_eso630j';
+export const EMAIL_PUBLIC_KEY = 'z3FUpU83GBFJyGXVF';
