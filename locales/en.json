@@ -37,6 +37,36 @@
     "projects-title": "Projects",
     "projects-content": "20+ github projects"
   },
+  "services": {
+    "title": "Discover My Services",
+    "subtitle": "There are a variety of ways that I can help and boost your business!",
+    "types": [
+      {
+        "title": "Web Applications",
+        "content": "Need access to your application across many locations? I am an expert at building web applications."
+      },
+      {
+        "title": "Legacy Application Upgrades",
+        "content": "It's hard transitioning away from old systems. That's why I focus on creating a seamless transition."
+      },
+      {
+        "title": "Desktop Applications",
+        "content": "Do you want to handle everything internally? I can make that happen for you."
+      },
+      {
+        "title": "Automations",
+        "content": "Save time and money for your business by automating and streamlining repetitive tasks."
+      },
+      {
+        "title": "Security & Speed",
+        "content": "I know how valuable security and speed is. That's why it is one of the top priorities for all applications I build by leveraging the right tools for your project."
+      },
+      {
+        "title": "Enterprise Solutions",
+        "content": "Are you seeking a solution for your large-scale team? Don't hesitate to reach out, and I'll be more than happy to assist."
+      }
+    ]
+  },
   "projects": {
     "title": "My Projects and Works",
     "intro-part-1": "Each project is a unique piece of development 🎏. You can see all my personal projects on my",

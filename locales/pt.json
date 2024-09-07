@@ -37,6 +37,36 @@
     "projects-title": "Projetos",
     "projects-content": "Mais de 20 projetos no Github"
   },
+  "services": {
+    "title": "Descubra os Meus Serviços",
+    "subtitle": "Há várias maneiras pelas quais posso ajudar e impulsionar seu negócio!",
+    "types": [
+      {
+        "title": "Aplicativos da Web",
+        "content": "Precisa de acesso ao seu aplicativo em vários locais? Sou especialista em criar aplicativos da Web."
+      },
+      {
+        "title": "Atualizações de Aplicativos Legados",
+        "content": "É difícil fazer a transição de sistemas antigos. É por isso que me concentro em criar uma transição perfeita."
+      },
+      {
+        "title": "Aplicativos Desktop",
+        "content": "Você quer lidar com tudo internamente? Posso fazer isso acontecer para você."
+      },
+      {
+        "title": "Automações",
+        "content": "Economize tempo e dinheiro para sua empresa automatizando e simplificando tarefas repetitivas."
+      },
+      {
+        "title": "Segurança e Velocidade",
+        "content": "Sei o quão valiosas são a segurança e a velocidade. É por isso que são uma das principais prioridades para todos os aplicativos que crio, aproveitando as ferramentas certas para seu projeto."
+      },
+      {
+        "title": "Soluções Empresariais",
+        "content": "Você está procurando uma solução para sua equipe de grande porte? Não hesite em entrar em contato, ficarei mais do que feliz em ajudar."
+      }
+    ]
+  },
   "projects": {
     "title": "Meus Trabalhos e Projetos",
     "intro-part-1": "Cada projeto é uma uma peça única de desenvolvimento 🎏. Você pode encontrar mais projetos no meu",
