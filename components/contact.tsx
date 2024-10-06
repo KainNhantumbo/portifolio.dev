@@ -36,7 +36,7 @@ const initialFormState: ContactSchemaType = {
 export const Contact = () => {
   const translation = useScopedI18n('contact');
   const [messageStatus, setMessageStatus] = useState('');
-  const { theme = 'light' } = useTheme();
+  const { theme } = useTheme();
   const { recaptchaRef } = useRecaptcha();
   const [isVerified, setIsVerified] = useState(false);
 
@@ -180,19 +180,20 @@ export const Contact = () => {
 
           <ReCAPTCHA
             ref={recaptchaRef}
+            size='compact'
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT_KEY!}
             onChange={handleCaptchaSubmission}
             onExpired={handleCaptchaExpired}
-            theme={theme as 'dark' | 'light'}
+            theme={theme === 'light' ? 'light' : 'dark'}
           />
 
           <span className='text-sm font-medium text-primary'>{messageStatus}</span>
 
           <motion.button
-            whileTap={{ scale: 0.85 }}
-            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: isVerified ? 0.85 : 0 }}
+            whileHover={{ scale: isVerified ? 1.05 : 0 }}
             disabled={!isVerified}
-            className='base-border w-fit rounded-lg bg-primary-variant px-4 py-2 font-medium text-white'
+            className='base-border w-fit rounded-lg bg-primary-variant px-4 py-2 font-medium text-white disabled:bg-primary-variant/40'
             type='submit'>
             <span>{translation('form.button')}</span>
           </motion.button>
