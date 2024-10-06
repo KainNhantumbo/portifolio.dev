@@ -1,7 +1,7 @@
 'use client';
 
 import { useRecaptcha } from '@/hooks/use-captcha';
-import { useScopedI18n } from '@/locales/client';
+import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { ContactSchema, ContactSchemaType } from '@/schemas/contact';
 import {
@@ -37,6 +37,7 @@ export const Contact = () => {
   const [messageStatus, setMessageStatus] = useState('');
   const { recaptchaRef } = useRecaptcha();
   const [isVerified, setIsVerified] = useState(false);
+  const locale = useCurrentLocale();
 
   const {
     register,
@@ -178,6 +179,7 @@ export const Contact = () => {
 
           <ReCAPTCHA
             ref={recaptchaRef}
+            hl={locale}
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT_KEY!}
             onChange={handleCaptchaSubmission}
             onExpired={handleCaptchaExpired}

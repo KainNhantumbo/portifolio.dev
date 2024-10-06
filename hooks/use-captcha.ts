@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import * as React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -25,7 +25,5 @@ export const useRecaptcha = () => {
     return () => clearTimeout(timeoutInstance);
   }, [token]);
 
-  return {  recaptchaRef };
+  return { recaptchaRef };
 };
-
-

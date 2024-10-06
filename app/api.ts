@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     });
   }
 
-  const {token} = await req.json();
+  const { token } = await req.json();
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
   if (!token) {
@@ -36,4 +36,3 @@ export async function POST(req: Request) {
     });
   }
 }
-
