@@ -1,10 +1,17 @@
 'use client';
 
+import { useRecaptcha } from '@/hooks/use-captcha';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
-import { send as sender } from '@emailjs/browser';
-import { useForm } from 'react-hook-form';
 import { ContactSchema, ContactSchemaType } from '@/schemas/contact';
+import {
+  AUTHOR,
+  EMAIL_PUBLIC_KEY,
+  EMAIL_SERVICE_ID,
+  EMAIL_TEMPLATE_ID
+} from '@/shared/constants';
+import { send as sender } from '@emailjs/browser';
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   AtSignIcon,
   MailboxIcon,
@@ -12,15 +19,11 @@ import {
   TextIcon,
   UserIcon
 } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import { useState } from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useForm } from 'react-hook-form';
 import { AnimateTextReveal } from './animations/animate-reveal';
-import {
-  AUTHOR,
-  EMAIL_PUBLIC_KEY,
-  EMAIL_SERVICE_ID,
-  EMAIL_TEMPLATE_ID
-} from '@/shared/constants';
 
 const initialFormState: ContactSchemaType = {
   name: '',
@@ -33,6 +36,9 @@ const initialFormState: ContactSchemaType = {
 export const Contact = () => {
   const translation = useScopedI18n('contact');
   const [messageStatus, setMessageStatus] = useState('');
+  const { theme = 'light' } = useTheme();
+  const { recaptchaRef } = useRecaptcha();
+  const [isVerified, setIsVerified] = useState(false);
 
   const {
     register,
@@ -51,6 +57,23 @@ export const Contact = () => {
     setTimeout(() => {
       setMessageStatus('');
     }, 5000);
+  };
+
+  const handleCaptchaSubmission = async (token: string | null) => {
+    try {
+      await fetch('/api', {
+        method: 'POST',
+        headers: { Accept: 'application/json', ['Content-Type']: 'application/json' },
+        body: JSON.stringify({ token })
+      });
+      setIsVerified(true);
+    } catch (e) {
+      setIsVerified(false);
+    }
+  };
+
+  const handleCaptchaExpired = () => {
+    setIsVerified(false);
   };
 
   const onSubmit = async (values: ContactSchemaType) => {
@@ -155,11 +178,20 @@ export const Contact = () => {
 
           <p className='p-1 text-error'>{errors?.message?.message}</p>
 
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT_KEY!}
+            onChange={handleCaptchaSubmission}
+            onExpired={handleCaptchaExpired}
+            theme={theme as 'dark' | 'light'}
+          />
+
           <span className='text-sm font-medium text-primary'>{messageStatus}</span>
 
           <motion.button
             whileTap={{ scale: 0.85 }}
             whileHover={{ scale: 1.05 }}
+            disabled={!isVerified}
             className='base-border w-fit rounded-lg bg-primary-variant px-4 py-2 font-medium text-white'
             type='submit'>
             <span>{translation('form.button')}</span>

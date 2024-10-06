@@ -92,7 +92,7 @@ export const Header = () => {
                   onClick={() => setPathname(`${currentLocale}#${item.ref}`)}
                   className={clsx(
                     {
-                      'base-border relative rounded-md  after:absolute after:bottom-[calc(50%_-_10px)] after:left-[-3px] after:h-[20px] after:w-[5px] after:rounded-md after:bg-primary sm:rounded-none sm:border-none sm:text-primary sm:after:bottom-[calc(50%_-_16px)] sm:after:left-[calc(50%_-_10px)] sm:after:h-[5px] sm:after:w-[20px]':
+                      'base-border relative rounded-md after:absolute after:bottom-[calc(50%_-_10px)] after:left-[-3px] after:h-[20px] after:w-[5px] after:rounded-md after:bg-primary sm:rounded-none sm:border-none sm:text-primary sm:after:bottom-[calc(50%_-_16px)] sm:after:left-[calc(50%_-_10px)] sm:after:h-[5px] sm:after:w-[20px]':
                         pathname.includes(item.ref)
                     },
                     'group list-none'
