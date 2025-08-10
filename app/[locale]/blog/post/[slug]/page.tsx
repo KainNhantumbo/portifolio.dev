@@ -8,9 +8,13 @@ import { DotIcon } from 'lucide-react';
 import Image from 'next/image';
 import { readingTime } from 'reading-time-estimator';
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
-export default function Page({ params: { slug } }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
+
+  const { slug } = params;
+
   const post = getPost(decodeURIComponent(slug));
   const readTime = readingTime(post.content, undefined, 'en');
 

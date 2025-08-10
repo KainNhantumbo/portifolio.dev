@@ -8,7 +8,11 @@ import { Services } from '@/components/services';
 import type { PageParams } from '@/types';
 import { setStaticParamsLocale } from 'next-international/server';
 
-const Page = ({ params: { locale } }: PageParams) => {
+const Page = async (props: PageParams) => {
+  const params = await props.params;
+
+  const { locale } = params;
+
   setStaticParamsLocale(locale);
 
   return (

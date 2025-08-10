@@ -39,7 +39,12 @@ export const metadata: Metadata = {
 
 type Props = PageParams & { children: ReactNode };
 
-export default function RootLayout({ children, params: { locale } }: Props) {
+export default async function RootLayout(props: Props) {
+  const params = await props.params;
+
+  const { locale } = params;
+  const { children } = props;
+
   if (!locales.includes(locale)) notFound();
 
   return (
