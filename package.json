@@ -37,7 +37,7 @@
     "framer-motion": "^12.23.12",
     "granim": "^2.0.0",
     "gray-matter": "^4.0.3",
-    "lucide-react": "^0.293.0",
+    "lucide-react": "^0.539.0",
     "marked": "^9.1.6",
     "next": "15.4.6",
     "next-international": "^1.2.4",
@@ -49,11 +49,11 @@
     "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.53.0",
     "react-markdown": "^9.0.1",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-syntax-highlighter": "^5.8.0",
     "react-text-gradients-and-animations": "^1.1.7",
     "reading-time-estimator": "^1.11.0",
     "tailwind-merge": "^2.5.3",
-    "zod": "^3.23.8"
+    "zod": "^4.0.17"
   },
   "devDependencies": {
     "@types/granim": "^2.0.4",
