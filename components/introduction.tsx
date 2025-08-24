@@ -3,7 +3,6 @@
 import { useI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
-import { LinearTextGradient } from 'react-text-gradients-and-animations';
 import { AnimateText } from './animations/animate-text';
 
 export const Introduction = () => {
@@ -32,14 +31,9 @@ export const Introduction = () => {
         </h3>
         <div className='flex w-full gap-3'>
           <h1 className='my-4 w-full bg-clip-text font-sans text-4xl font-bold leading-10 text-transparent mobile-x:my-0 mobile-x:py-8 mobile-x:text-6xl'>
-            <LinearTextGradient
-              animate
-              angle={45}
-              animateDirection='vertical'
-              animateDuration={2}
-              colors={['#1E9000', '#708090', '#E47131', '#fafa6e']}>
+            <span>
               {translation('intro.title')}
-            </LinearTextGradient>
+            </span>
           </h1>
         </div>
       </div>
