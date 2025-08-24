@@ -130,15 +130,6 @@
     scroll-padding-top: 70px;
     @apply m-0 overflow-x-hidden scroll-smooth p-0 text-font;
   }
-
-  ::-webkit-scrollbar {
-    @apply w-[8px] bg-transparent bg-opacity-70 hover:transition-all hover:delay-200 hover:ease-in-out;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply absolute bottom-[50%] top-[50%] rounded-lg bg-primary before:h-[100%] before:min-h-[44px] before:w-[100%] before:min-w-[44px] before:translate-x-[50%] before:translate-y-[50%] hover:transition-all hover:delay-200 hover:ease-in-out;
-  }
-
   * {
     @apply text-font;
   }
