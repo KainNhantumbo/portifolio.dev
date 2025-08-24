@@ -9,7 +9,7 @@ import { AppContext } from '@/context/app-context';
 import { I18nProviderClient } from '@/locales/client';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';
 import { ThemeProvider } from '@/providers/theme-provider';
-import { AUTHOR, constants, cursorClickablesList, locales } from '@/shared/constants';
+import { AUTHOR, constants, locales } from '@/shared/constants';
 import {
   ibmPlexMono,
   jakarta,
@@ -22,7 +22,6 @@ import clsx from 'clsx';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
-import AnimatedCursor from 'react-animated-cursor';
 
 export { generateStaticParams } from '@/lib/utils';
 
@@ -57,16 +56,6 @@ export default async function RootLayout(props: Props) {
           zillaSlab.variable,
           jakarta.variable
         )}>
-        <AnimatedCursor
-          innerSize={12}
-          outerSize={12}
-          color='228, 112, 49'
-          outerAlpha={0.2}
-          innerScale={0.7}
-          outerScale={5}
-          showSystemCursor={true}
-          clickables={cursorClickablesList}
-        />
         <ThemeProvider attribute='class' enableSystem={true}>
           <I18nProviderClient locale={locale} fallback='en'>
             <MotionConfig reducedMotion='user'>
