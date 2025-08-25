@@ -31,9 +31,7 @@ export const Introduction = () => {
         </h3>
         <div className='flex w-full gap-3'>
           <h1 className='my-4 w-full bg-clip-text font-sans text-4xl font-bold leading-10 text-transparent mobile-x:my-0 mobile-x:py-8 mobile-x:text-6xl'>
-            <span>
-              {translation('intro.title')}
-            </span>
+            <span>{translation('intro.title')}</span>
           </h1>
         </div>
       </div>
