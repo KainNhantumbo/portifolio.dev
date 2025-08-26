@@ -47,7 +47,7 @@ export default async function RootLayout(props: Props) {
   if (!locales.includes(locale)) notFound();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} data-scroll-behavior='smooth' suppressHydrationWarning>
       <body
         className={clsx(
           spaceGrotesk.variable,

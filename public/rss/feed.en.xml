@@ -4,11 +4,11 @@
         <title>Codenut.dev Feed</title>
         <link>https://codenut-dev.vercel.app</link>
         <description>Kain's Blog and Portfolio Website</description>
-        <lastBuildDate>Sat, 07 Sep 2024 12:44:19 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 Aug 2025 08:54:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Kain's Blog and Portfolio Website</generator>
         <language>en</language>
-        <copyright>Copyright © 2024 Codenut.dev - All rights reserved.</copyright>
+        <copyright>Copyright © 2025 Codenut.dev - All rights reserved.</copyright>
         <item>
             <title><![CDATA[Use SERVE Package to Serve Locally Your Front-end Applications]]></title>
             <link>https://codenut-dev.vercel.app/blog/post/use-serve-package-to-serve-locally-your-react-apps</link>

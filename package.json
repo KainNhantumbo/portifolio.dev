@@ -46,7 +46,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.53.0",
     "react-markdown": "^9.0.1",
-    "react-syntax-highlighter": "^5.8.0",
+    "react-syntax-highlighter": "^15.6.6",
     "reading-time-estimator": "^1.11.0",
     "tailwind-merge": "^2.5.3",
     "zod": "^4.0.17"
