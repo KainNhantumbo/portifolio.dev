@@ -1,7 +1,7 @@
+import { BitbucketOriginal } from 'devicons-react';
 import type { LucideIcon } from 'lucide-react';
 import type { StaticImageData } from 'next/image';
 import type { ChangeEvent, FormEvent } from 'react';
-import { BitbucketOriginal } from 'devicons-react';
 
 export type InputEvents = ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>;
 
@@ -53,7 +53,7 @@ export type Frontmatter = {
 
 export type Post = Frontmatter & { slug: string; content: string };
 
-export type PageParams = { params: { locale: string } };
+export type PageParams = { params: Promise<{ locale: string }> };
 
 export type UrlList = Array<{ ref: string; label: string; url?: string }>;
 

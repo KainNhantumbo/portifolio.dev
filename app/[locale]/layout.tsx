@@ -57,7 +57,7 @@ export default async function RootLayout(props: Props) {
           jakarta.variable
         )}>
         <ThemeProvider attribute='class' enableSystem={true}>
-          <I18nProviderClient locale={locale} fallback='en'>
+          <I18nProviderClient locale={locale}>
             <MotionConfig reducedMotion='user'>
               <LazyMotion strict={true} features={domAnimation}>
                 <AnimatePageTransition>

@@ -4,8 +4,8 @@ import { useScopedI18n } from '@/locales/client';
 import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import Image from 'next/image';
 import { useWorks } from '../hooks/use-works';
-import { AnimateScroll } from './animations/animate-scroll';
 import { AnimateTextReveal } from './animations/animate-reveal';
+import { AnimateScroll } from './animations/animate-scroll';
 
 export const Works = () => {
   const translation = useScopedI18n('works');
@@ -63,7 +63,7 @@ export const Works = () => {
             />
           </section>
 
-          <div className='group mt-2 flex w-full flex-wrap items-center justify-center gap-3 font-sans'>
+          <div className='mt-2 flex w-full flex-wrap items-center justify-center gap-3 font-sans'>
             <a
               href={item.livePreview.url}
               rel='noopener noreferrer'
