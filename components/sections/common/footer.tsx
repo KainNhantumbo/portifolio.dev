@@ -15,8 +15,8 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import donutsImage from '../../../public/assets/donuts.png';
 import { SparklesCore } from '../../animations/animate-sparkles';
-import donutsImage from '../public/assets/donuts.png';
 
 export const Footer = () => {
   const translation = useScopedI18n('footer');
