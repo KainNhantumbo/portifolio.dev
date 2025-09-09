@@ -4,9 +4,9 @@ import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
 import Image from 'next/image';
-import { AUTHOR } from '../shared/constants';
-import { SparklesCore } from './animations/animate-sparkles';
-import { AnimateTextReveal } from './animations/animate-reveal';
+import { AUTHOR } from '../../../shared/constants';
+import { AnimateTextReveal } from '../../animations/animate-reveal';
+import { SparklesCore } from '../../animations/animate-sparkles';
 
 export const About = () => {
   const translation = useScopedI18n('about');

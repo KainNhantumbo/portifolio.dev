@@ -1,11 +1,11 @@
 'use client';
 
+import { Works } from '@/components/sections/home/works';
 import { useI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { ExternalLinkIcon, GithubIcon, SquareStackIcon } from 'lucide-react';
 import Image from 'next/image';
-import { useProjects } from '../hooks/use-projects';
-import { Works } from '@/components/works';
+import { useProjects } from '../../../hooks/use-projects';
 
 export const Projects = () => {
   const projects = useProjects();

@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { AnimateTextReveal } from './animations/animate-reveal';
+import { AnimateTextReveal } from '../../animations/animate-reveal';
 
 const initialFormState: ContactSchemaType = {
   name: '',

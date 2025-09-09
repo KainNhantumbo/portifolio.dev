@@ -24,8 +24,8 @@ import {
   VscodeOriginal
 } from 'devicons-react';
 import { BadgeCheckIcon, PenToolIcon } from 'lucide-react';
-import type { Stack } from '../types';
-import { AnimateInfiniteCarousel } from './animations/animate-infinite-carousel';
+import type { Stack } from '../../../types';
+import { AnimateInfiniteCarousel } from '../../animations/animate-infinite-carousel';
 
 export const Abilities = () => {
   const translation = useScopedI18n('abilities');

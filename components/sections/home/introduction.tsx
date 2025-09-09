@@ -3,7 +3,7 @@
 import { useI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
-import { AnimateText } from './animations/animate-text';
+import { AnimateText } from '../../animations/animate-text';
 
 export const Introduction = () => {
   const translation = useI18n();

@@ -3,8 +3,8 @@ import '@/styles/index.css';
 
 import { ActionFluentButtons } from '@/components/action-fluent-buttons';
 import { AnimatePageTransition } from '@/components/animations/animate-page-transition';
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
+import { Footer } from '@/components/sections/common/footer';
+import { Header } from '@/components/sections/common/header';
 import { AppContext } from '@/context/app-context';
 import { I18nProviderClient } from '@/locales/client';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';

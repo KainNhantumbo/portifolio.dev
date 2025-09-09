@@ -1,6 +1,5 @@
 'use client';
 
-import donutsImage from '../public/assets/donuts.png';
 import { useScopedI18n } from '@/locales/client';
 import Package from '@/package.json';
 import { motion } from '@/providers/framer-provider';
@@ -16,7 +15,8 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { SparklesCore } from './animations/animate-sparkles';
+import { SparklesCore } from '../../animations/animate-sparkles';
+import donutsImage from '../public/assets/donuts.png';
 
 export const Footer = () => {
   const translation = useScopedI18n('footer');

@@ -11,7 +11,7 @@ import { MenuIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
-import { useHeaderView } from '../hooks/use-header-view';
+import { useHeaderView } from '../../../hooks/use-header-view';
 
 export const Header = () => {
   const MIN_WIDTH = 640;
