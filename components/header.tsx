@@ -51,7 +51,7 @@ export const Header = () => {
   return (
     <header className='w-full'>
       <motion.div
-        className='base-border fixed left-[calc(50%_-_285px)] top-3 z-[5000] flex min-h-[50px] w-fit min-w-[550px] items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:left-[calc(50%_-_170px)] max-[640px]:min-w-[340px] max-[640px]:flex-col '
+        className='base-border fixed left-[calc(50%_-_285px)] top-3 z-[5000] flex min-h-[50px] w-fit min-w-[550px] items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:left-[calc(50%_-_170px)] max-[640px]:min-w-[340px] max-[640px]:flex-col'
         animate={{ translateY: scrollRangeValue > 100 ? '-65px' : '0px' }}
         transition={{ duration: 0.5 }}>
         <div className='flex cursor-pointer flex-row items-center gap-2 max-[640px]:absolute max-[640px]:left-[calc(50%_-_60px)] max-[640px]:top-3'>
@@ -97,7 +97,7 @@ export const Header = () => {
                     },
                     'group list-none'
                   )}>
-                  <div className='relative w-full p-1 max-[640px]:p-2 max-[640px]:px-4 '>
+                  <div className='relative w-full p-1 max-[640px]:p-2 max-[640px]:px-4'>
                     <span className='w-full font-sans text-sm font-medium transition-colors group-hover:text-primary'>
                       {item.label}
                     </span>

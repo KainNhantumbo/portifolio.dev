@@ -82,7 +82,7 @@ export const Footer = () => {
         <ul className='flex flex-row items-center justify-center gap-4'>
           {socialMediaAnchors.map((item, index) => (
             <motion.li
-              className='grid h-10  w-10 cursor-pointer place-content-center place-items-center rounded-full bg-primary/[.15] p-3 backdrop-blur-md hover:animate-pulse hover:bg-secondary/20'
+              className='grid h-10 w-10 cursor-pointer place-content-center place-items-center rounded-full bg-primary/[.15] p-3 backdrop-blur-md hover:animate-pulse hover:bg-secondary/20'
               key={index}
               initial={{ scale: 0 }}
               title={item.name}
@@ -97,7 +97,7 @@ export const Footer = () => {
           ))}
         </ul>
 
-        <div className='mx-auto h-auto w-full max-w-[600px] p-5 pb-3 '>
+        <div className='mx-auto h-auto w-full max-w-[600px] p-5 pb-3'>
           <Image
             width={1702}
             height={149}

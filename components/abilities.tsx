@@ -93,7 +93,7 @@ export const Abilities = () => {
               {group.data.map((item, index) => (
                 <div
                   key={index}
-                  className=' flex w-[150px] select-none flex-col items-center gap-2 p-4'>
+                  className='flex w-[150px] select-none flex-col items-center gap-2 p-4'>
                   <item.icon className='h-auto w-24' />
                   <h3 className='font-medium'>{item.tech}</h3>
                 </div>

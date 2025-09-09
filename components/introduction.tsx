@@ -24,7 +24,7 @@ export const Introduction = () => {
   return (
     <section
       id='home'
-      className='relative z-50 mx-auto mt-10 flex w-full max-w-[780px] flex-col gap-3 bg-background/50 px-2 py-5 font-sans backdrop-blur-sm after:absolute after:right-[50%] after:top-0 after:-z-50 after:h-[1px] after:w-[1px] after:rounded-full after:bg-[#FAC684cc] after:shadow-[0_0_180px_140px_#FDC886cc] dark:after:bg-[#E8884Fcc] dark:after:shadow-[0_0_180px_140px_#E8884Fcc] '>
+      className='relative z-50 mx-auto mt-10 flex w-full max-w-[780px] flex-col gap-3 bg-background/50 px-2 py-5 font-sans backdrop-blur-sm after:absolute after:right-[50%] after:top-0 after:-z-50 after:h-[1px] after:w-[1px] after:rounded-full after:bg-[#FAC684cc] after:shadow-[0_0_180px_140px_#FDC886cc] dark:after:bg-[#E8884Fcc] dark:after:shadow-[0_0_180px_140px_#E8884Fcc]'>
       <div className='relative flex w-fit flex-col'>
         <h3 className='p-0 text-sm font-semibold'>
           <AnimateText words={translation('intro.presentation')} />

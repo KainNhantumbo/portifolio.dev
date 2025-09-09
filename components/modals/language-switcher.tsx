@@ -33,7 +33,7 @@ export const LanguageSwitcher = () => {
             })
           }>
           <motion.section
-            className='dialog-modal base-border rounded-xl bg-foreground/90 font-sans backdrop-blur-md '
+            className='dialog-modal base-border rounded-xl bg-foreground/90 font-sans backdrop-blur-md'
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -42,7 +42,7 @@ export const LanguageSwitcher = () => {
               scale: 0,
               transition: { duration: 0.3 }
             }}>
-            <div className='relative mx-3 flex max-w-[400px] flex-col gap-5  px-2 py-5'>
+            <div className='relative mx-3 flex max-w-[400px] flex-col gap-5 px-2 py-5'>
               <div className='flex flex-col gap-3'>
                 <span className='font-sans-display font-medium text-primary'>
                   {translation('title')}

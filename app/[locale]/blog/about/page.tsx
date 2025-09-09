@@ -3,7 +3,7 @@ import { Code2Icon, ExternalLinkIcon, GithubIcon, Mail } from 'lucide-react';
 
 export default function Page() {
   return (
-    <section className='relative z-50  mx-auto mb-12 mt-10 flex w-full max-w-[780px] flex-col gap-3 border-t-font/10 bg-background/50 p-5 px-4 font-sans backdrop-blur-sm after:absolute after:right-[50%] after:top-0 after:-z-50 after:h-[1px] after:w-[1px] after:rounded-full after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
+    <section className='relative z-50 mx-auto mb-12 mt-10 flex w-full max-w-[780px] flex-col gap-3 border-t-font/10 bg-background/50 p-5 px-4 font-sans backdrop-blur-sm after:absolute after:right-[50%] after:top-0 after:-z-50 after:h-[1px] after:w-[1px] after:rounded-full after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
       <article className='mt-10 flex w-full flex-col gap-5 font-sans-body font-medium'>
         <h1 className='font-medium'>About me</h1>
         <section className='flex flex-col gap-3 font-normal'>
@@ -40,7 +40,7 @@ export default function Page() {
               href={'mailto:nhantumbok@gmail.com'}
               rel='noopener noreferrer'
               target='_blank'
-              className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]  hover:text-primary hover:underline hover:decoration-dashed hover:underline-offset-8'>
+              className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] hover:text-primary hover:underline hover:decoration-dashed hover:underline-offset-8'>
               <Mail className='h-auto w-5 stroke-primary' />
               <span className='text-primary'>nhantumbok@gmail.com</span>
             </Link>
@@ -49,7 +49,7 @@ export default function Page() {
               href={'https://github.com/KainNhantumbo'}
               rel='noopener noreferrer'
               target='_blank'
-              className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]  hover:text-primary hover:underline hover:decoration-dashed hover:underline-offset-8'>
+              className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] hover:text-primary hover:underline hover:decoration-dashed hover:underline-offset-8'>
               <GithubIcon className='h-auto w-5 stroke-primary' />
               <span className='text-primary'>https://github.com/KainNhantumbo</span>
             </Link>
@@ -58,7 +58,7 @@ export default function Page() {
               href={'https://codenut-dev.vercel.app'}
               rel='noopener noreferrer'
               target='_blank'
-              className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]  hover:text-primary hover:underline hover:decoration-dashed hover:underline-offset-8'>
+              className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] hover:text-primary hover:underline hover:decoration-dashed hover:underline-offset-8'>
               <ExternalLinkIcon className='h-auto w-5 stroke-primary' />
               <span className='text-primary'>https://codenut-dev.vercel.app</span>
             </Link>
@@ -68,39 +68,39 @@ export default function Page() {
               <strong>Technologies used to build this website:</strong>
             </p>
             <div className='group flex flex-wrap items-center gap-3'>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>React.JS</span>
               </p>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>Next.JS</span>
               </p>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>React.JS</span>
               </p>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>Tailwind CSS</span>
               </p>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>Markdown</span>
               </p>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>CSS 3</span>
               </p>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>Javascript</span>
               </p>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>Typescript</span>
               </p>
-              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px] '>
+              <p className='base-border flex flex-nowrap items-center gap-[5px] rounded-md px-2 py-[3px]'>
                 <Code2Icon className='h-auto w-5 stroke-primary' />
                 <span>Node.JS</span>
               </p>

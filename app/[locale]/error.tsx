@@ -26,7 +26,7 @@ export default function Error({ error, reset }: Props) {
         </h1>
 
         <button
-          className='mt-5 rounded-3xl border-[2px] border-solid border-font p-3 px-5 font-sans font-medium transition-colors hover:border-primary hover:text-primary '
+          className='mt-5 rounded-3xl border-[2px] border-solid border-font p-3 px-5 font-sans font-medium transition-colors hover:border-primary hover:text-primary'
           onClick={reset}>
           Try again
         </button>

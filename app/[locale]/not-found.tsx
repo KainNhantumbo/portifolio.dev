@@ -17,12 +17,12 @@ export default function NotFound() {
         </h1>
         <h2 className='font-sans font-bold uppercase text-primary'>Page not found</h2>
         <p className='max-w-screen-mobile text-center font-sans font-medium normal-case'>
-          But if you dont change your direction, and if you keep looking, you may end up
+          But if you don't change your direction, and if you keep looking, you may end up
           where you are heading.
         </p>
         <Link
           href={'/'}
-          className='mt-5 rounded-3xl border-[2px] border-solid border-font p-2 px-5 font-sans font-medium transition-colors hover:border-primary hover:text-primary '>
+          className='mt-5 rounded-3xl border-[2px] border-solid border-font p-2 px-5 font-sans font-medium transition-colors hover:border-primary hover:text-primary'>
           Take me home
         </Link>
       </section>

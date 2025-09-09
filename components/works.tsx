@@ -59,7 +59,7 @@ export const Works = () => {
               height={800}
               src={item.image}
               alt={item.title}
-              className='base-border h-full w-full rounded-lg  object-cover sm:max-w-[420px]'
+              className='base-border h-full w-full rounded-lg object-cover sm:max-w-[420px]'
             />
           </section>
 
@@ -68,7 +68,7 @@ export const Works = () => {
               href={item.livePreview.url}
               rel='noopener noreferrer'
               target='_blank'
-              className='group flex items-center gap-2 rounded-lg border-[1px] border-solid border-font/10 p-1 px-4  text-blue-400 underline underline-offset-4 transition-colors hover:text-primary '>
+              className='group flex items-center gap-2 rounded-lg border-[1px] border-solid border-font/10 p-1 px-4 text-blue-400 underline underline-offset-4 transition-colors hover:text-primary'>
               <ExternalLinkIcon className='h-auto w-4 stroke-blue-400 transition-colors group-hover:stroke-primary' />
               <span className='font-medium text-blue-400 transition-colors group-hover:text-primary'>
                 {item.livePreview.label}
@@ -78,7 +78,7 @@ export const Works = () => {
               href={item.repository.url}
               rel='noopener noreferrer'
               target='_blank'
-              className='group flex items-center gap-2 rounded-lg border-[1px]  border-solid  border-font/10 p-1 px-4 text-blue-400 underline underline-offset-4 transition-colors hover:text-primary'>
+              className='group flex items-center gap-2 rounded-lg border-[1px] border-solid border-font/10 p-1 px-4 text-blue-400 underline underline-offset-4 transition-colors hover:text-primary'>
               <GithubIcon className='h-auto w-4 stroke-blue-400 transition-colors group-hover:stroke-primary' />
               <span className='font-medium text-blue-400 transition-colors group-hover:text-primary'>
                 {item.repository.label}

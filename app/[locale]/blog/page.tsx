@@ -17,7 +17,7 @@ export default async function Page(props: PageParams) {
   const posts = getPosts();
 
   return (
-    <section className='relative z-50  mx-auto mb-12 mt-12 flex w-full max-w-[780px] flex-col gap-3 border-t-font/10 bg-background/50 p-5 px-2 font-sans backdrop-blur-sm after:absolute after:right-[50%] after:top-0 after:-z-50 after:h-[1px] after:w-[1px] after:rounded-full after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
+    <section className='relative z-50 mx-auto mb-12 mt-12 flex w-full max-w-[780px] flex-col gap-3 border-t-font/10 bg-background/50 p-5 px-2 font-sans backdrop-blur-sm after:absolute after:right-[50%] after:top-0 after:-z-50 after:h-[1px] after:w-[1px] after:rounded-full after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
       <section className='mt-5 w-full border-b-[2px] border-dashed border-font px-3 pb-7'>
         <h1 className='relative py-5 font-sans-display text-4xl font-medium'>
           Codenut<i className='text-primary'>.dev</i> Blog
@@ -63,10 +63,10 @@ export default async function Page(props: PageParams) {
                 </h4>
               </div>
 
-              <h3 className="relative pl-5 font-sans-display text-[1.4rem] font-medium underline decoration-dashed underline-offset-4 before:absolute before:left-0 before:top-[calc(50%_-_2px)] before:z-50 before:h-2 before:w-2 before:rounded-lg before:bg-primary  before:content-[''] group-hover:text-blue-400 group-hover:transition-colors">
+              <h3 className="relative pl-5 font-sans-display text-[1.4rem] font-medium underline decoration-dashed underline-offset-4 before:absolute before:left-0 before:top-[calc(50%_-_2px)] before:z-50 before:h-2 before:w-2 before:rounded-lg before:bg-primary before:content-[''] group-hover:text-blue-400 group-hover:transition-colors">
                 {post.title}
               </h3>
-              <p className='excerpt font-sans-body  font-medium'>{post.excerpt}</p>
+              <p className='excerpt font-sans-body font-medium'>{post.excerpt}</p>
             </Link>
           ))}
         </section>
