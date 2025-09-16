@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-check
 import nextPlugin from '@next/eslint-plugin-next';
 import reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';
@@ -44,6 +44,7 @@ export default [
     rules: {
       ...nextPlugin.configs['core-web-vitals'].rules,
       ...reactHooks.configs.recommended.rules,
+      // @ts-expect-error no types for ts-lint
       ...(tseslint.configs.recommended.rules || {}),
       'react/no-unescaped-entities': 'off',
       '@next/next/no-page-custom-font': 'off',
