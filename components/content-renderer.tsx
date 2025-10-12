@@ -1,12 +1,12 @@
 'use client';
 
-import { clipboard, transformChild } from '@/lib/utils';
+import { transformChild } from '@/lib/utils';
 import clsx from 'clsx';
-import { ClipboardCopyIcon } from 'lucide-react';
 import type { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { CopyButton } from './ui/copy-button';
 
 export const ContentRenderer: FC<{ children: string }> = ({ children }) => (
   <ReactMarkdown
@@ -17,13 +17,14 @@ export const ContentRenderer: FC<{ children: string }> = ({ children }) => (
         return match ? (
           <div className='my-3 flex flex-col gap-0 font-monospace text-white'>
             <div className='flex w-full items-center justify-between gap-2 rounded-t-xl border-b-2 border-b-font/10 bg-[#2F2F2F] px-3 py-2'>
-              <i className='font-sans text-xs font-bold uppercase'>{match[1].toString()}</i>
-              <button
-                onClick={() => clipboard(String(children).replace(/\n$/, ''))}
-                className='base-border group flex flex-row flex-nowrap items-center gap-2 rounded-lg p-1 px-2 hover:bg-primary/30 active:animate-ping'>
-                <ClipboardCopyIcon className='h-auto w-4' />
-                <span className='font-sans text-xs font-bold uppercase'>Copy</span>
-              </button>
+              <i className='font-mono text-base font-bold uppercase'>
+                {match[1].toString()}
+              </i>
+              <CopyButton
+                content={String(children).replace(/\n$/, '')}
+                size='md'
+                variant='ghost'
+              />
             </div>
             <SyntaxHighlighter
               {...rest}

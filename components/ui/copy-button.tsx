@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion';
+import { AnimatePresence, HTMLMotionProps, m as motion } from 'framer-motion';
 import { CheckIcon, CopyIcon } from 'lucide-react';
 import * as React from 'react';
 
