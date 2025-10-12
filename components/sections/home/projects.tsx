@@ -1,11 +1,12 @@
 'use client';
 
+import { BackgroundGradient } from '@/components/animations/animate-background';
 import { Works } from '@/components/sections/home/works';
+import { useProjects } from '@/hooks/use-projects';
 import { useI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
-import { ExternalLinkIcon, GithubIcon, SquareStackIcon } from 'lucide-react';
+import { EyeIcon, GithubIcon, SquareStackIcon } from 'lucide-react';
 import Image from 'next/image';
-import { useProjects } from '../../../hooks/use-projects';
 
 export const Projects = () => {
   const projects = useProjects();
@@ -14,7 +15,7 @@ export const Projects = () => {
   return (
     <section
       id='projects'
-      className='mx-auto flex w-full max-w-[980px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
+      className='mx-auto flex w-full max-w-[1280px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
       <h2 className='base-section-title'>
         <SquareStackIcon />
         <span>{translation('projects.title')}</span>
@@ -43,28 +44,30 @@ export const Projects = () => {
       </h3>
 
       <section className='cards-container'>
-        <section className='mt-5 grid grid-cols-3 gap-5 max-[910px]:grid-cols-2 max-[605px]:grid-cols-1'>
+        <section className='mt-6 grid grid-cols-1 gap-8 min-[900px]:grid-cols-2'>
           {projects.map((project, index) => (
-            <motion.section
-              className='base-border flex h-[380px] w-[280px] select-none flex-col rounded-xl bg-foreground p-2 font-sans shadow-[0_0_25px_#00000015]'
-              key={index}
-              whileHover={{ y: -7 }}>
-              <div className='relative h-[210px] w-full'>
+            <BackgroundGradient
+              containerClassName={'p-1'}
+              className='flex h-full min-h-[320px] w-full select-none flex-row-reverse rounded-xl bg-foreground/60 font-sans'
+              key={index}>
+              <div className='relative h-full w-full'>
                 <Image
                   src={project.image}
                   placeholder={'blur'}
-                  width={280}
-                  height={200}
-                  className='base-border h-full max-h-[180px] w-full'
-                  style={{ borderRadius: 10 }}
+                  width={620}
+                  height={620}
+                  className='h-full w-full rounded-r-xl object-cover'
                   alt={project.name}
                 />
-                <h4 className='absolute bottom-2 left-2 w-fit rounded-lg bg-orange-400/50 px-2 text-sm font-medium text-white backdrop-blur-md'>
-                  {project.category}
-                </h4>
+                <div className='absolute inset-0 bg-gradient-to-r from-foreground/20 from-0% to-transparent to-20%'></div>
               </div>
-              <div className='flex h-full flex-col justify-between'>
+
+              <div className='flex h-full w-full max-w-[200px] flex-col justify-between p-4'>
                 <div>
+                  <span className='inline-block w-fit rounded-md bg-background/50 px-3 py-1 text-xs font-medium uppercase tracking-wide'>
+                    {project.category}
+                  </span>
+
                   <h3 className='mt-2 text-[.95rem]'>{project.name}</h3>
                 </div>
                 <div className='flex flex-col gap-2'>
@@ -74,10 +77,10 @@ export const Projects = () => {
                       whileHover={{ scale: 1.03 }}
                       href={project.live_url}
                       target={'_blank'}
-                      className='base-border group flex items-center gap-2 rounded-xl bg-background px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
+                      className='flex items-center gap-2 rounded-xl bg-background/50 px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
                       rel={'noreferrer noopener'}>
-                      <ExternalLinkIcon className='h-5 w-auto stroke-primary transition-colors' />
-                      <span className='text-[.9rem] capitalize transition-colors group-hover:text-primary'>
+                      <EyeIcon className='h-5 w-auto stroke-primary transition-colors' />
+                      <span className='text-[.9rem] capitalize transition-colors'>
                         {translation('projects.live-demo')}
                       </span>
                     </motion.a>
@@ -86,17 +89,17 @@ export const Projects = () => {
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ scale: 1.03 }}
                     href={project.code_url}
-                    className='base-border group flex items-center gap-2 rounded-xl bg-background px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
+                    className='flex items-center gap-2 rounded-xl bg-background/50 px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
                     target={'_blank'}
                     rel={'noreferrer noopener'}>
                     <GithubIcon className='h-5 w-auto stroke-primary transition-colors' />
-                    <span className='text-[.9rem] capitalize transition-colors group-hover:text-primary'>
+                    <span className='text-[.9rem] capitalize transition-colors'>
                       {translation('projects.github')}
                     </span>
                   </motion.a>
                 </div>
               </div>
-            </motion.section>
+            </BackgroundGradient>
           ))}
         </section>
       </section>

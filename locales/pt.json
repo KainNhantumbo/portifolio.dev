@@ -72,8 +72,8 @@
     "title": "Meus Trabalhos e Projetos",
     "intro-part-1": "Cada projeto é uma uma peça única de desenvolvimento 🎏. Você pode encontrar mais projetos no meu",
     "intro-part-2": "perfil do github",
-    "live-demo": "Ver Demostração",
-    "github": "Repositório do Github",
+    "live-demo": "Saber mais",
+    "github": "Código fonte",
     "section_name": "Outros Projetos Criados",
     "content": {
       "maron-themes": "Extensão de Pacote de Temas para o Visual Studio Code feito com VSCode Theming API",
