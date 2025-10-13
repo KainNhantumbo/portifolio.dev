@@ -1,7 +1,6 @@
 'use client';
 
 import { BackgroundGradient } from '@/components/animations/animate-background';
-import { Works } from '@/components/sections/home/works';
 import { useProjects } from '@/hooks/use-projects';
 import { useI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
@@ -36,8 +35,6 @@ export const Projects = () => {
       <h3 className='my-3 rounded-lg border-2 border-dashed border-primary-variant p-3 font-sans text-2xl font-semibold uppercase text-primary underline-offset-4'>
         {translation('works.section_name')}
       </h3>
-
-      <Works />
 
       <h3 className='my-3 rounded-lg border-2 border-dashed border-primary-variant p-3 font-sans text-2xl font-semibold uppercase text-primary underline-offset-4'>
         {translation('projects.section_name')}

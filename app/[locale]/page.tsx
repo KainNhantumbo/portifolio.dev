@@ -5,6 +5,7 @@ import { Contact } from '@/components/sections/home/contact';
 import { Introduction } from '@/components/sections/home/introduction';
 import { Projects } from '@/components/sections/home/projects';
 import { Services } from '@/components/sections/home/services';
+import { Works } from '@/components/sections/home/works';
 import type { PageParams } from '@/types';
 import { setStaticParamsLocale } from 'next-international/server';
 
@@ -22,6 +23,7 @@ const Page = async (props: PageParams) => {
       <About />
       <Services />
       <Abilities />
+      <Works />
       <Projects />
       <Contact />
     </main>

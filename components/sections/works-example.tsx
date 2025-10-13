@@ -1,9 +1,9 @@
 'use client';
 
+import { useWorks } from '@/hooks/use-works';
 import { useScopedI18n } from '@/locales/client';
 import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import Image from 'next/image';
-import { useWorks } from '../../../hooks/use-works';
 
 export const Works = () => {
   const translation = useScopedI18n('works');
