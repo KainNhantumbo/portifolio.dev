@@ -1,5 +1,6 @@
 'use client';
 
+import { ImageZoom } from '@/components/ui/image-zoom-effect';
 import { useScopedI18n } from '@/locales/client';
 import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import Image from 'next/image';
@@ -50,13 +51,15 @@ export const Works = () => {
                 ))}
               </div>
             </div>
-            <Image
-              width={800}
-              height={800}
-              src={item.image}
-              alt={item.title}
-              className='base-border h-full w-full rounded-lg object-cover sm:max-w-[420px]'
-            />
+            <ImageZoom>
+              <Image
+                width={800}
+                height={800}
+                src={item.image}
+                alt={item.title}
+                className='base-border h-full w-full rounded-lg object-cover sm:max-w-[420px]'
+              />
+            </ImageZoom>
           </section>
 
           <div className='mt-2 flex w-full flex-wrap items-center justify-center gap-3 font-sans'>
