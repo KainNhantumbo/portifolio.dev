@@ -4,7 +4,7 @@ import { m as motion } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import { useCallback } from 'react';
 
-type AnimationVariant = 'circle' | 'circle-blur' | 'gif' | 'polygon';
+type AnimationVariant = 'circle' | 'circle-blur';
 type StartPosition = 'center' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 export interface ThemeToggleButtonProps {
@@ -12,7 +12,6 @@ export interface ThemeToggleButtonProps {
   showLabel?: boolean;
   variant?: AnimationVariant;
   start?: StartPosition;
-  url?: string; // For gif variant
   className?: string;
   onClick?: () => void;
 }
@@ -21,7 +20,6 @@ export const ThemeToggleButton = ({
   showLabel = false,
   variant = 'circle',
   start = 'center',
-  url,
   className,
   onClick
 }: ThemeToggleButtonProps) => {
@@ -88,67 +86,6 @@ export const ThemeToggleButton = ({
           }
         }
       `;
-    } else if (variant === 'gif' && url) {
-      css = `
-        @supports (view-transition-name: root) {
-          ::view-transition-old(root) {
-            animation: fade-out 0.4s ease-out;
-          }
-          ::view-transition-new(root) {
-            animation: gif-reveal 2.5s cubic-bezier(0.4, 0, 0.2, 1);
-            mask-image: url('${url}');
-            mask-size: 0%;
-            mask-repeat: no-repeat;
-            mask-position: center;
-          }
-          @keyframes fade-out {
-            to {
-              opacity: 0;
-            }
-          }
-          @keyframes gif-reveal {
-            0% {
-              mask-size: 0%;
-            }
-            20% {
-              mask-size: 35%;
-            }
-            60% {
-              mask-size: 35%;
-            }
-            100% {
-              mask-size: 300%;
-            }
-          }
-        }
-      `;
-    } else if (variant === 'polygon') {
-      css = `
-        @supports (view-transition-name: root) {
-          ::view-transition-old(root) {
-            animation: none;
-          }
-          ::view-transition-new(root) {
-            animation: ${theme === 'light' ? 'wipe-in-dark' : 'wipe-in-light'} 0.4s ease-out;
-          }
-          @keyframes wipe-in-dark {
-            from {
-              clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-            }
-            to {
-              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-          }
-          @keyframes wipe-in-light {
-            from {
-              clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-            }
-            to {
-              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-          }
-        }
-      `;
     }
 
     if (css) {
@@ -166,7 +103,8 @@ export const ThemeToggleButton = ({
 
     // Call the onClick handler if provided
     onClick?.();
-  }, [onClick, variant, start, url, theme]);
+  }, [onClick, variant, start, theme]);
+
   return (
     <motion.button
       whileTap={{ scale: 0.7 }}
