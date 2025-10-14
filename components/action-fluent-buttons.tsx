@@ -1,15 +1,14 @@
 'use client';
 
 import { motion } from '@/providers/framer-provider';
-import { ArrowUpIcon, LanguagesIcon, MoonStarIcon, SunMediumIcon } from 'lucide-react';
-import { useTheme } from 'next-themes';
+import { ArrowUpIcon, LanguagesIcon } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useAppContext } from '../context/app-context';
 import actions from '../shared/actions';
+import { ThemeToggle } from './theme-toggle';
 
 export const ActionFluentButtons = () => {
   const pathname = usePathname();
-  const { setTheme, theme } = useTheme();
   const { state, dispatch } = useAppContext();
   const isPortfolio = pathname?.includes('blog') === false;
 
@@ -42,22 +41,8 @@ export const ActionFluentButtons = () => {
           </motion.button>
         ) : null}
 
-        <motion.button
-          className='group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center rounded-[10px] border-none bg-primary/20 backdrop-blur-md'
-          whileTap={{ scale: 0.7 }}
-          whileHover={{ y: -4 }}
-          initial={{ x: 200 }}
-          animate={{ x: 0, transition: { delay: 0.8 } }}
-          transition={{ type: 'spring', duration: 0.5 }}
-          title='Change Theme'
-          aria-label='Toggle theme'
-          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-          {theme === 'light' ? (
-            <MoonStarIcon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary' />
-          ) : (
-            <SunMediumIcon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary' />
-          )}
-        </motion.button>
+        <ThemeToggle />
+
         <motion.button
           className='group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center rounded-[10px] border-none bg-primary/20 backdrop-blur-md'
           title='Go to Top'
