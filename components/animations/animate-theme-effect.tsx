@@ -115,15 +115,15 @@ export const ThemeToggleButton = ({
       title='Change Theme'
       onClick={handleClick}
       className={cn(
-        'group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center overflow-hidden rounded-[10px] border-none bg-primary/20 backdrop-blur-md transition-all',
+        'group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center overflow-hidden rounded-[10px] border-none bg-primary/20 backdrop-blur-md transition-all md:h-12 md:w-12 md:rounded-2xl',
         showLabel && 'gap-2',
         className
       )}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}>
       {theme === 'light' ? (
-        <Sun className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary' />
+        <Sun className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary md:h-8 md:w-8' />
       ) : (
-        <Moon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary' />
+        <Moon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary md:h-8 md:w-8' />
       )}
       {showLabel && <span className='text-sm'>{theme === 'light' ? 'Light' : 'Dark'}</span>}
     </motion.button>
