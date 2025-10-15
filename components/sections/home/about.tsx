@@ -3,6 +3,7 @@
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
+import { nanoid } from 'nanoid';
 import Image from 'next/image';
 import { AUTHOR } from '../../../shared/constants';
 import { AnimateTextReveal } from '../../animations/animate-reveal';
@@ -48,7 +49,7 @@ export const About = () => {
           whileInView={{ rotate: 0, opacity: 1 }}>
           <div className='absolute left-0 top-0 h-full w-full'>
             <SparklesCore
-              id={crypto.randomUUID()}
+              id={nanoid()}
               background='transparent'
               minSize={0.4}
               maxSize={1}
@@ -71,7 +72,7 @@ export const About = () => {
           whileInView={{ rotate: 0, opacity: 1 }}>
           <div className='absolute left-0 top-0 h-full w-full'>
             <SparklesCore
-              id={crypto.randomUUID()}
+              id={nanoid()}
               background='transparent'
               minSize={0.4}
               maxSize={1}

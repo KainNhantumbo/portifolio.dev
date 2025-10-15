@@ -17,6 +17,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import donutsImage from '../../../public/assets/donuts.png';
 import { SparklesCore } from '../../animations/animate-sparkles';
+import { nanoid } from 'nanoid';
 
 export const Footer = () => {
   const translation = useScopedI18n('footer');
@@ -67,7 +68,7 @@ export const Footer = () => {
       <div className='relative my-3 flex h-min w-full flex-col gap-3 overflow-hidden rounded-3xl border-[1px] border-solid border-font/10 py-5 font-sans font-semibold'>
         <div className='absolute left-0 top-0 h-full w-full'>
           <SparklesCore
-            id={crypto.randomUUID()}
+            id={nanoid()}
             background='transparent'
             minSize={0.4}
             maxSize={1}
