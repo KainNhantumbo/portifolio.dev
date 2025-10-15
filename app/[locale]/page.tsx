@@ -17,7 +17,7 @@ const Page = async (props: PageParams) => {
   setStaticParamsLocale(locale);
 
   return (
-    <main className='mb-12 flex w-full flex-col gap-7 px-3 pt-[75px]'>
+    <main className='mb-12 flex w-full flex-col gap-7'>
       <Introduction />
       <LanguageSwitcher />
       <About />
