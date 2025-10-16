@@ -10,7 +10,7 @@ import { I18nProviderClient } from '@/locales/client';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';
 import { ThemeProvider } from '@/providers/theme-provider';
 import { AUTHOR, constants, locales } from '@/shared/constants';
-import { ibmPlexMono, jakarta } from '@/shared/fonts';
+import { ibmPlexMono, rethink } from '@/shared/fonts';
 import type { PageParams } from '@/types';
 import clsx from 'clsx';
 import { Metadata } from 'next';
@@ -42,7 +42,7 @@ export default async function RootLayout(props: Props) {
 
   return (
     <html lang={locale} data-scroll-behavior='smooth' suppressHydrationWarning>
-      <body className={clsx(ibmPlexMono.variable, jakarta.variable)}>
+      <body className={clsx(ibmPlexMono.variable, rethink.variable)}>
         <ThemeProvider attribute='class' enableSystem={true}>
           <I18nProviderClient locale={locale}>
             <MotionConfig reducedMotion='user'>

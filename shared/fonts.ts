@@ -1,8 +1,9 @@
-import { IBM_Plex_Mono, Plus_Jakarta_Sans } from 'next/font/google';
+import { IBM_Plex_Mono, Rethink_Sans } from 'next/font/google';
 
-export const jakarta = Plus_Jakarta_Sans({
+export const rethink = Rethink_Sans({
   subsets: ['latin'],
-  variable: '--font-jakarta-sans'
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-rethink-sans'
 });
 
 export const ibmPlexMono = IBM_Plex_Mono({

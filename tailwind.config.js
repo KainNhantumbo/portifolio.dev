@@ -6,7 +6,7 @@ const tailwindConfig = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-jakarta-sans)', 'Inter', ...fontFamily.sans],
+        sans: ['var(--font-rethink-sans)', 'Inter', ...fontFamily.sans],
         monospace: ['var(--font-ibm-plex-mono)', 'Menlo', 'Hack', ...fontFamily.mono]
       },
       screens: { mobile: '420px', ['mobile-x']: '480px' },
