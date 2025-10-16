@@ -17,7 +17,7 @@ export const TableOfContents: FC<{ content: string }> = ({ content }) => {
   return (
     <aside className='toc-container base-border my-2 rounded-xl bg-foreground p-3 px-4'>
       <nav className='flex flex-col gap-2'>
-        <h2 className='font-sans-body text-xl'>Table of Contents</h2>
+        <h2 className='font-sans text-xl'>Table of Contents</h2>
         <ul>
           {headings.map((heading, index) => (
             <li

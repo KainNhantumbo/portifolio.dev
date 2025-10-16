@@ -6,11 +6,8 @@ const tailwindConfig = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-spline-sans-mono)', 'Inter', ...fontFamily.sans],
-        slab: ['Spline Sans Mono', 'Zilla Slab', 'Roboto Slab', ...fontFamily.serif],
-        'sans-body': ['var(--font-jakarta-sans)', 'Inter', ...fontFamily.sans],
-        monospace: ['var(--font-ibm-plex-mono)', 'Menlo', 'Hack', ...fontFamily.mono],
-        'sans-display': ['var(--font-space-grotesk)', ...fontFamily.sans]
+        sans: ['var(--font-jakarta-sans)', 'Inter', ...fontFamily.sans],
+        monospace: ['var(--font-ibm-plex-mono)', 'Menlo', 'Hack', ...fontFamily.mono]
       },
       screens: { mobile: '420px', ['mobile-x']: '480px' },
       colors: {

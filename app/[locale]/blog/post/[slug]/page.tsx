@@ -21,8 +21,8 @@ export default async function Page(props: Props) {
   return (
     <section className='wrapper flex w-full flex-col gap-7 px-2 pt-20'>
       <div className='mx-auto grid max-w-[980px] grid-cols-1 items-center gap-1 self-center'>
-        <article className='w-full px-10 pb-0 pt-7 font-sans-body max-[620px]:px-5 max-[620px]:py-7'>
-          <section className='flex flex-col gap-2 font-sans-body'>
+        <article className='w-full px-10 pb-0 pt-7 font-sans max-[620px]:px-5 max-[620px]:py-7'>
+          <section className='flex flex-col gap-2 font-sans'>
             <h5 className='text-sm font-medium uppercase'>
               published: {formatDate(post.createdAt)}
             </h5>
@@ -60,17 +60,17 @@ export default async function Page(props: Props) {
               </span>
             </div>
 
-            <h1 className='font-sans-display leading-relaxed'>
+            <h1 className='font-sans leading-relaxed'>
               <strong>{post.title}</strong>
             </h1>
 
             <div className='w-fit'>
-              <p className='base-border mt-2 rounded-3xl bg-black px-3 font-sans-display text-[.95rem] font-medium uppercase text-white'>
+              <p className='base-border mt-2 rounded-3xl bg-black px-3 font-sans text-[.95rem] font-medium uppercase text-white'>
                 {post.topic}
               </p>
             </div>
 
-            <h4 className='mx-auto my-3 w-full max-w-[1000px] font-sans-display font-medium'>
+            <h4 className='mx-auto my-3 w-full max-w-[1000px] font-sans font-medium'>
               {post.excerpt}
             </h4>
           </section>

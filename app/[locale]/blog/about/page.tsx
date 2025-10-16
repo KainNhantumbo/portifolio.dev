@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import { Code2Icon, ExternalLinkIcon, GithubIcon, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Page() {
   return (
     <section className='relative z-50 mx-auto mb-12 mt-10 flex w-full max-w-[780px] flex-col gap-3 border-t-font/10 bg-background/50 p-5 px-4 font-sans backdrop-blur-sm after:absolute after:right-[50%] after:top-0 after:-z-50 after:h-[1px] after:w-[1px] after:rounded-full after:bg-primary after:shadow-[0_0_180px_140px_rgba(228,113,49,0.8)]'>
-      <article className='mt-10 flex w-full flex-col gap-5 font-sans-body font-medium'>
+      <article className='mt-10 flex w-full flex-col gap-5 font-sans font-medium'>
         <h1 className='font-medium'>About me</h1>
         <section className='flex flex-col gap-3 font-normal'>
           <p>

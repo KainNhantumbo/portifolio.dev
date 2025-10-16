@@ -165,7 +165,7 @@
   }
 
   .base-section-title {
-    @apply relative mx-auto mt-3 font-sans-display font-bold max-[420px]:text-center max-[420px]:text-base;
+    @apply relative mx-auto mt-3 font-sans font-bold max-[420px]:text-center max-[420px]:text-base;
 
     ::before {
       @apply absolute -top-4 left-[calc(50%_-_20px)] h-[7px] w-11 rounded-xl bg-primary content-[''];

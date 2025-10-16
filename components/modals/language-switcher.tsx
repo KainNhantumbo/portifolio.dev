@@ -44,7 +44,7 @@ export const LanguageSwitcher = () => {
             }}>
             <div className='relative mx-3 flex max-w-[400px] flex-col gap-5 px-2 py-5'>
               <div className='flex flex-col gap-3'>
-                <span className='font-sans-display font-medium text-primary'>
+                <span className='font-sans font-medium text-primary'>
                   {translation('title')}
                 </span>
                 <p className='text-sm'>{translation('message')}</p>
