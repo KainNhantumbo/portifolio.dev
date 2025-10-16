@@ -3,27 +3,30 @@
 import { cn } from '@/lib/utils';
 import { motion } from '@/providers/framer-provider';
 import { stagger, useAnimate } from 'framer-motion';
-import { type FC, useEffect } from 'react';
+import { useEffect } from 'react';
 
-type Props = { words: string; className?: string; duration?: number };
+type Props = {
+  words: string;
+  className?: string;
+  textClassName?: string;
+  duration?: number;
+};
 
-export const AnimateText: FC<Props> = ({ words, duration, className }) => {
+export const AnimateText = ({ words, duration = 2, className, textClassName }: Props) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(' ');
 
   useEffect(() => {
-    animate('span', { opacity: 1 }, { duration: duration ?? 2, delay: stagger(0.1, {}) });
+    animate('span', { opacity: 1 }, { duration: duration, delay: stagger(0.1, {}) });
   }, [scope.current]);
 
-  const renderWords = () => (
-    <motion.div ref={scope}>
+  return (
+    <motion.div ref={scope} className={cn(className)}>
       {wordsArray.map((word, index) => (
-        <motion.span key={index} className='text-primary opacity-0 dark:text-font'>
+        <motion.span key={index} className={cn('opacity-0', textClassName)}>
           {word}{' '}
         </motion.span>
       ))}
     </motion.div>
   );
-
-  return <div className={cn(className)}>{renderWords()}</div>;
 };
