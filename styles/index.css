@@ -135,16 +135,8 @@
 }
 
 @layer components {
-  .base-image {
-    @apply h-[100%] w-[100%] rounded-[50%] object-cover;
-  }
-
   .base-border {
     @apply border-[1px] border-solid border-font/[.12];
-  }
-
-  .base-link {
-    @apply w-fit text-center transition-colors hover:underline hover:underline-offset-4 sm:text-left;
   }
 
   .base-input {
@@ -170,16 +162,6 @@
     svg {
       @apply h-auto w-[20px];
     }
-  }
-
-  .base-button-outline {
-    all: unset;
-    @apply cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap px-[7px] py-[10px] text-font outline-none;
-  }
-
-  .base-button {
-    all: unset;
-    @apply bg-primary_c text-white-light dark:text-white-dark border-font-light dark:border-font-dark hover:bg-primary_c hover:text-font-light w-fit cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded-xl border-[1px] border-solid border-opacity-80 px-2 py-3 text-center font-semibold transition-colors hover:border-opacity-20;
   }
 
   .base-section-title {
