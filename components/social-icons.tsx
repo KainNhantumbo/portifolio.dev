@@ -61,7 +61,7 @@ export function SocialIcons() {
     <ul className='flex flex-row items-center justify-center gap-4'>
       {socialMediaAnchors.map((item, index) => (
         <motion.li
-          className='grid h-10 w-10 cursor-pointer place-content-center place-items-center rounded-full bg-primary/[.15] p-3 backdrop-blur-md hover:animate-pulse hover:bg-secondary/20'
+          className='grid h-12 w-12 cursor-pointer place-content-center place-items-center rounded-full bg-font/[.15] p-3 backdrop-blur-md hover:animate-pulse hover:bg-secondary/20'
           key={index}
           initial={{ scale: 0 }}
           title={item.name}
@@ -70,7 +70,7 @@ export function SocialIcons() {
             transition: { delay: index / socialMediaAnchors.length }
           }}>
           <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
-            <item.icon className='h-auto w-5 stroke-primary' />
+            <item.icon className='h-auto w-6 stroke-font' />
           </a>
         </motion.li>
       ))}
