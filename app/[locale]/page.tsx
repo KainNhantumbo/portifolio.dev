@@ -10,14 +10,11 @@ import type { PageParams } from '@/types';
 import { setStaticParamsLocale } from 'next-international/server';
 
 const Page = async (props: PageParams) => {
-  const params = await props.params;
-
-  const { locale } = params;
-
+  const { locale } = await props.params;
   setStaticParamsLocale(locale);
 
   return (
-    <main className='mb-12 flex w-full flex-col gap-7'>
+    <main className='flex w-full flex-col gap-7'>
       <Introduction />
       <LanguageSwitcher />
       <About />

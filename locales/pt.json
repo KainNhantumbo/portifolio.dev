@@ -9,7 +9,6 @@
     }
   },
   "footer": {
-    "title": "Encontre-me na internet através do:",
     "made-phrase": "Construido com ❤ usando Next.js e Typescript.",
     "version-phrase": "Versão",
     "anchors": {
