@@ -14,6 +14,11 @@
     --secondary: 255 71 71;
     --foreground: 255 255 255;
     --background: 250 250 250;
+
+    --accent-primary: 69 204 254;
+    --accent-secondary: 191 69 255;
+    --accent-tertiary: 237 216 1;
+    --accent-quaternary: 127 29 198;
   }
 
   .dark {
