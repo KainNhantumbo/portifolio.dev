@@ -1,9 +1,9 @@
 'use client';
 
 import { BackgroundGradient } from '@/components/animations/animate-background';
+import { AnimateMagnetism } from '@/components/animations/animate-magnetism';
 import { useProjects } from '@/hooks/use-projects';
 import { useI18n } from '@/locales/client';
-import { motion } from '@/providers/framer-provider';
 import { EyeIcon, GithubIcon, SquareStackIcon } from 'lucide-react';
 import Image from 'next/image';
 
@@ -15,10 +15,13 @@ export const Projects = () => {
     <section
       id='projects'
       className='mx-auto flex w-full max-w-[1280px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
-      <h2 className='base-section-title'>
-        <SquareStackIcon />
-        <span>{translation('projects.title')}</span>
-      </h2>
+      <AnimateMagnetism>
+        <h2 className='base-section-title'>
+          <SquareStackIcon />
+          <span>{translation('projects.title')}</span>
+        </h2>
+      </AnimateMagnetism>
+
       <p className='font-sm max-w-lg text-center font-sans font-semibold'>
         {translation('projects.intro-part-1')}{' '}
         <a
@@ -45,7 +48,7 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <BackgroundGradient
               containerClassName={'p-1'}
-              className='flex h-full min-h-[320px] w-full select-none flex-row-reverse rounded-xl bg-foreground/60 font-sans'
+              className='flex h-full min-h-[360px] w-full select-none flex-row-reverse rounded-xl bg-foreground/60 font-sans'
               key={index}>
               <div className='relative h-full w-full'>
                 <Image
@@ -67,33 +70,33 @@ export const Projects = () => {
 
                   <h3 className='mt-2 text-[.95rem]'>{project.name}</h3>
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-3'>
                   {project.live_url.length > 5 ? (
-                    <motion.a
-                      whileTap={{ scale: 0.9 }}
-                      whileHover={{ scale: 1.03 }}
-                      href={project.live_url}
-                      target={'_blank'}
-                      className='flex items-center gap-2 rounded-xl bg-background/50 px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
-                      rel={'noreferrer noopener'}>
-                      <EyeIcon className='h-5 w-auto stroke-primary transition-colors' />
-                      <span className='text-[.9rem] capitalize transition-colors'>
-                        {translation('projects.live-demo')}
-                      </span>
-                    </motion.a>
+                    <AnimateMagnetism strength={0.1}>
+                      <a
+                        href={project.live_url}
+                        target={'_blank'}
+                        className='flex items-center gap-2 rounded-xl bg-background/50 px-4 py-3 font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
+                        rel={'noreferrer noopener'}>
+                        <EyeIcon className='h-5 w-auto stroke-primary transition-colors' />
+                        <span className='text-[.9rem] capitalize transition-colors'>
+                          {translation('projects.live-demo')}
+                        </span>
+                      </a>
+                    </AnimateMagnetism>
                   ) : null}
-                  <motion.a
-                    whileTap={{ scale: 0.9 }}
-                    whileHover={{ scale: 1.03 }}
-                    href={project.code_url}
-                    className='flex items-center gap-2 rounded-xl bg-background/50 px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
-                    target={'_blank'}
-                    rel={'noreferrer noopener'}>
-                    <GithubIcon className='h-5 w-auto stroke-primary transition-colors' />
-                    <span className='text-[.9rem] capitalize transition-colors'>
-                      {translation('projects.github')}
-                    </span>
-                  </motion.a>
+                  <AnimateMagnetism strength={0.1}>
+                    <a
+                      href={project.code_url}
+                      className='flex items-center gap-2 rounded-xl bg-background/50 px-4 py-3 font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'
+                      target={'_blank'}
+                      rel={'noreferrer noopener'}>
+                      <GithubIcon className='h-5 w-auto stroke-primary transition-colors' />
+                      <span className='text-[.9rem] capitalize transition-colors'>
+                        {translation('projects.github')}
+                      </span>
+                    </a>
+                  </AnimateMagnetism>
                 </div>
               </div>
             </BackgroundGradient>

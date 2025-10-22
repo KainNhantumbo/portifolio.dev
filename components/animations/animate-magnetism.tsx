@@ -21,8 +21,8 @@ type MagneticProps = {
 function AnimateMagnetism({
   ref,
   children,
-  strength = 0.5,
-  range = 120,
+  strength = 0.4,
+  range = 80,
   springOptions = { stiffness: 100, damping: 10, mass: 0.5 },
   onlyOnHover = false,
   disableOnTouch = true,

@@ -7,9 +7,9 @@ import {
   BookTextIcon,
   CoffeeIcon,
   GithubIcon,
-  TwitterIcon,
   LinkedinIcon,
-  RssIcon
+  RssIcon,
+  TwitterIcon
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
