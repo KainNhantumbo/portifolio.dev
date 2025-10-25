@@ -7,7 +7,7 @@ import {
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 
-export function ThemeToggle() {
+export function ThemeSwitcher() {
   const { setTheme, theme } = useTheme();
   const { startTransition } = useThemeTransition();
   const [mounted, setMounted] = React.useState(false);
@@ -31,7 +31,7 @@ export function ThemeToggle() {
       theme={theme === 'dark' ? 'light' : 'dark'}
       onClick={handleThemeToggle}
       variant='circle'
-      start='bottom-right'
+      start='center'
     />
   );
 }

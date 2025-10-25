@@ -2,7 +2,6 @@
 
 import { motion } from '@/providers/framer-provider';
 import { ArrowUpIcon } from 'lucide-react';
-import { ThemeToggle } from './theme-toggle';
 
 export const ActionFluentButtons = () => {
   const slidePageUp = () => {
@@ -16,8 +15,6 @@ export const ActionFluentButtons = () => {
   return (
     <section className='fixed bottom-[135px] left-[97vw] z-[3000] grid h-0 w-0 place-content-center max-[690px]:left-[95vw] max-[480px]:left-[90vw]'>
       <div className='md:space-y-4'>
-        <ThemeToggle />
-
         <motion.button
           className='group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center rounded-[10px] border-none bg-primary/20 backdrop-blur-md md:h-12 md:w-12 md:rounded-2xl'
           title='Go to Top'
