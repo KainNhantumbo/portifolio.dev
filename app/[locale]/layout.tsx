@@ -6,7 +6,6 @@ import { AnimatePageTransition } from '@/components/animations/animate-page-tran
 import { GrainyBackgroundEffect } from '@/components/grainy-background-effect';
 import { Footer } from '@/components/sections/common/footer';
 import { Header } from '@/components/sections/common/header';
-import { AppContext } from '@/context/app-context';
 import { cn } from '@/lib/utils';
 import { I18nProviderClient } from '@/locales/client';
 import { LazyMotion, MotionConfig, domAnimation } from '@/providers/framer-provider';
@@ -47,13 +46,11 @@ export default async function RootLayout(props: Props) {
             <MotionConfig reducedMotion='user'>
               <LazyMotion strict={true} features={domAnimation}>
                 <AnimatePageTransition>
-                  <AppContext>
-                    <Header />
-                    <ActionFluentButtons />
-                    <GrainyBackgroundEffect />
-                    {children}
-                    <Footer />
-                  </AppContext>
+                  <Header />
+                  <ActionFluentButtons />
+                  <GrainyBackgroundEffect />
+                  {children}
+                  <Footer />
                 </AnimatePageTransition>
               </LazyMotion>
             </MotionConfig>
