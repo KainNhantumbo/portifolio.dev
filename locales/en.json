@@ -87,12 +87,11 @@
       "hagira-store-server": "Server Restful API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB"
     }
   },
-  "language_switcher_modal": {
-    "title": "Language Switcher",
-    "message": "Switch between available display languages easily.",
+  "language-switcher": {
+    "current-language": "English",
     "buttons": {
-      "portuguese": "Switch to portuguese",
-      "english": "Switch to english"
+      "portuguese": "Portuguese (PT)",
+      "english": "English (US)"
     }
   },
   "abilities": {

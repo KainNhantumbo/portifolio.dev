@@ -87,12 +87,11 @@
       "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
     }
   },
-  "language_switcher_modal": {
-    "title": "Troca de Língua",
-    "message": "Troque de língua facilmente.",
+  "language-switcher": {
+    "current-language": "Português",
     "buttons": {
-      "portuguese": "Trocar para português",
-      "english": "Trocar para inglês"
+      "portuguese": "Português (PT)",
+      "english": "Inglês (EUA)"
     }
   },
   "abilities": {
