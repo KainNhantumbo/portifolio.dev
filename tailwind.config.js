@@ -3,7 +3,11 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const tailwindConfig = {
   darkMode: 'class',
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,jsx,ts,tsx}'
+  ],
   theme: {
     extend: {
       fontFamily: {

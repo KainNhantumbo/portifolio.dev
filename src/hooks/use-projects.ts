@@ -1,16 +1,16 @@
-import type { Project } from '@/types';
-import server_01 from '@/public/assets/server-01.png';
-import server_03 from '@/public/assets/server-03.png';
-import nava_notes from '@/public/assets/nava-notes.jpg';
-import planner_app from '@/public/assets/planner-app.jpg';
-import bug_tracker_app from '@/public/assets/bug-tracker-app.jpeg';
-import url_shortner_app from '@/public/assets/url-shortner-app.jpeg';
-import bug_tracker_server from '@/public/assets/bug-tracker-server.png';
-import we_commerce from '@/public/assets/we-commerce.png';
-import firstRestaurantImage from '@/public/assets/restaurant-demo-first.png';
-import barbercutts from '@/public/assets/barbercutts.png';
-import maron_themes from '@/public/assets/maron-themes.png';
+import barbercutts from '@/../public/assets/barbercutts.png';
+import bug_tracker_app from '@/../public/assets/bug-tracker-app.jpeg';
+import bug_tracker_server from '@/../public/assets/bug-tracker-server.png';
+import maron_themes from '@/../public/assets/maron-themes.png';
+import nava_notes from '@/../public/assets/nava-notes.jpg';
+import planner_app from '@/../public/assets/planner-app.jpg';
+import firstRestaurantImage from '@/../public/assets/restaurant-demo-first.png';
+import server_01 from '@/../public/assets/server-01.png';
+import server_03 from '@/../public/assets/server-03.png';
+import url_shortner_app from '@/../public/assets/url-shortner-app.jpeg';
+import we_commerce from '@/../public/assets/we-commerce.png';
 import { useScopedI18n } from '@/locales/client';
+import type { Project } from '@/types';
 
 export const categories = {
   back: 'Back-end',

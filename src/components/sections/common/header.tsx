@@ -1,11 +1,11 @@
 'use client';
 
+import donutImage from '@/../public/assets/path36.png';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { usePathname } from '@/hooks/use-pathname';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { AnimatePresence, motion } from '@/providers/framer-provider';
-import donutImage from '@/public/assets/path36.png';
 import { constants } from '@/shared/constants';
 import type { UrlList } from '@/types';
 import clsx from 'clsx';

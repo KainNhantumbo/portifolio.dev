@@ -1,13 +1,13 @@
 'use client';
 
-import { useScopedI18n } from '@/locales/client';
-import Package from '@/package.json';
-import { constants } from '@/shared/constants';
-import Image from 'next/image';
-import donutsImage from '../../../public/assets/donuts.png';
-import { SparklesCore } from '../../animations/animate-sparkles';
-import { nanoid } from 'nanoid';
+import Package from '@/../package.json';
 import { SocialIcons } from '@/components/social-icons';
+import { useScopedI18n } from '@/locales/client';
+import { constants } from '@/shared/constants';
+import { nanoid } from 'nanoid';
+import Image from 'next/image';
+import donutsImage from '@/../public/assets/donuts.png';
+import { SparklesCore } from '@/components/animations/animate-sparkles';
 
 export const Footer = () => {
   const translation = useScopedI18n('footer');

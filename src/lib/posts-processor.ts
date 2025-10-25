@@ -1,9 +1,9 @@
-import { join } from 'node:path';
-import matter from 'gray-matter';
 import type { Post } from '@/types';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'fs';
+import matter from 'gray-matter';
+import path, { join } from 'path';
 
-const postsDir = join(process.cwd(), '/data/posts');
+const postsDir = path.resolve(process.cwd(), 'src', 'data', 'posts');
 
 export function getPost(slug: string): Post {
   const file = readFileSync(join(postsDir, `${slug.replaceAll('-', ' ')}.md`));
