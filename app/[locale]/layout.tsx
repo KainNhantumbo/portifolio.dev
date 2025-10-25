@@ -1,7 +1,6 @@
 import '@/styles/blog-post.css';
 import '@/styles/index.css';
 
-import { ActionFluentButtons } from '@/components/action-fluent-buttons';
 import { AnimatePageTransition } from '@/components/animations/animate-page-transition';
 import { GrainyBackgroundEffect } from '@/components/grainy-background-effect';
 import { Footer } from '@/components/sections/common/footer';
@@ -47,7 +46,6 @@ export default async function RootLayout(props: Props) {
               <LazyMotion strict={true} features={domAnimation}>
                 <AnimatePageTransition>
                   <Header />
-                  <ActionFluentButtons />
                   <GrainyBackgroundEffect />
                   {children}
                   <Footer />
