@@ -30,6 +30,7 @@
     "@tsparticles/slim": "^3.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "country-flag-icons": "^1.5.21",
     "devicons-react": "^1.3.0",
     "feed": "^4.2.2",
     "framer-motion": "^12.23.12",

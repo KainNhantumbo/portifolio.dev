@@ -1,4 +1,3 @@
-import { LanguageSwitcher } from '@/components/modals/language-switcher';
 import { Abilities } from '@/components/sections/home/abilities';
 import { About } from '@/components/sections/home/about';
 import { Contact } from '@/components/sections/home/contact';
@@ -16,7 +15,6 @@ const Page = async (props: PageParams) => {
   return (
     <main className='flex w-full flex-col gap-7'>
       <Introduction />
-      <LanguageSwitcher />
       <About />
       <Services />
       <Abilities />

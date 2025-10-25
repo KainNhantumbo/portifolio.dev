@@ -1,5 +1,6 @@
 'use client';
 
+import { LanguageSwitcher } from '@/components/language-switcher';
 import { usePathname } from '@/hooks/use-pathname';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { AnimatePresence, motion } from '@/providers/framer-provider';
@@ -78,6 +79,7 @@ export const Header = () => {
             <MenuIcon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
           )}
         </motion.button>
+
         <nav className='max-[640px]:w-full' role='main'>
           <AnimatePresence>
             <motion.section
@@ -107,6 +109,9 @@ export const Header = () => {
             </motion.section>
           </AnimatePresence>
         </nav>
+
+        <div className='h-8 w-px bg-font' />
+        <LanguageSwitcher canRender={isPortfolio} />
       </motion.div>
     </header>
   );
