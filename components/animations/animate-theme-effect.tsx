@@ -1,8 +1,8 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { m as motion } from 'framer-motion';
-import { Moon, Sun } from 'lucide-react';
 import { useCallback } from 'react';
 
 type AnimationVariant = 'circle' | 'circle-blur';
@@ -10,7 +10,6 @@ type StartPosition = 'center' | 'top-left' | 'top-right' | 'bottom-left' | 'bott
 
 export interface ThemeToggleButtonProps {
   theme?: 'light' | 'dark';
-  showLabel?: boolean;
   variant?: AnimationVariant;
   start?: StartPosition;
   className?: string;
@@ -18,7 +17,6 @@ export interface ThemeToggleButtonProps {
 }
 export const ThemeToggleButton = ({
   theme = 'light',
-  showLabel = false,
   variant = 'circle',
   start = 'center',
   className,
@@ -109,24 +107,20 @@ export const ThemeToggleButton = ({
   return (
     <motion.button
       whileTap={{ scale: 0.7 }}
-      whileHover={{ y: -4 }}
-      initial={{ x: 200 }}
-      animate={{ x: 0, transition: { delay: 0.8 } }}
+      whileHover={{ scale: 1.05 }}
       transition={{ type: 'spring', duration: 0.5 }}
       title='Change Theme'
       onClick={handleClick}
       className={cn(
-        'group relative mt-2 grid h-7 w-7 cursor-pointer place-content-center overflow-hidden rounded-[10px] border-none bg-primary/20 backdrop-blur-md transition-all md:h-12 md:w-12 md:rounded-2xl',
-        showLabel && 'gap-2',
+        'group relative grid aspect-square h-auto w-8 cursor-pointer place-content-center overflow-hidden rounded-full bg-none p-3 transition-all hover:bg-primary/20',
         className
       )}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}>
       {theme === 'light' ? (
-        <Sun className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary md:h-8 md:w-8' />
+        <SunIcon className='h-5 w-5 text-font transition-colors group-hover:text-secondary' />
       ) : (
-        <Moon className='h-5 w-5 stroke-primary transition-colors group-hover:stroke-secondary md:h-8 md:w-8' />
+        <MoonIcon className='h-5 w-5 text-font transition-colors group-hover:text-secondary' />
       )}
-      {showLabel && <span className='text-sm'>{theme === 'light' ? 'Light' : 'Dark'}</span>}
     </motion.button>
   );
 };

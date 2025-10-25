@@ -111,11 +111,11 @@ export const Header = () => {
           </AnimatePresence>
         </nav>
 
-        <div>
-          <ThemeSwitcher />
-
+        <div className='flex flex-row flex-nowrap items-center gap-2'>
           <div className='mx-4 h-5 w-px bg-font/60' />
+
           <LanguageSwitcher canRender={isPortfolio} />
+          <ThemeSwitcher />
         </div>
       </motion.div>
     </header>

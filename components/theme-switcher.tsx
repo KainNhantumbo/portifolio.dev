@@ -30,7 +30,7 @@ export function ThemeSwitcher() {
     <ThemeToggleButton
       theme={theme === 'dark' ? 'light' : 'dark'}
       onClick={handleThemeToggle}
-      variant='circle'
+      variant='circle-blur'
       start='center'
     />
   );
