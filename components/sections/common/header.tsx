@@ -110,7 +110,7 @@ export const Header = () => {
           </AnimatePresence>
         </nav>
 
-        <div className='h-8 w-px bg-font' />
+        <div className='mx-4 h-5 w-px bg-font/60' />
         <LanguageSwitcher canRender={isPortfolio} />
       </motion.div>
     </header>
