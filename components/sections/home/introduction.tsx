@@ -2,11 +2,11 @@
 
 import { BubbleBackground } from '@/components/animations/animate-bubbles';
 import { StatusIndicator } from '@/components/animations/animate-status';
-import { useI18n } from '@/locales/client';
-import { AnimateText } from '../../animations/animate-text';
-import { useTheme } from 'next-themes';
-import { cn } from '@/lib/utils';
 import { SocialIcons } from '@/components/social-icons';
+import { cn } from '@/lib/utils';
+import { useI18n } from '@/locales/client';
+import { useTheme } from 'next-themes';
+import { AnimateText } from '../../animations/animate-text';
 
 export const Introduction = () => {
   const translation = useI18n();
@@ -24,15 +24,12 @@ export const Introduction = () => {
             <StatusIndicator activeColor='bg-green-500' size='md' />
             <AnimateText
               words={translation('intro.presentation')}
-              textClassName={cn(
-                'leading-relaxed text-xl',
-                theme === 'dark' ? 'text-[#FAFAFA]' : 'text-[#1A1A1E]'
-              )}
+              textClassName={cn('leading-relaxed text-xl dark:text-white text-black')}
             />
           </h3>
           <div className='flex w-full gap-3'>
             <h1 className='my-4 w-full bg-clip-text font-sans text-4xl font-bold leading-10 text-transparent mobile-x:my-0 mobile-x:py-8 mobile-x:text-6xl lg:text-9xl'>
-              <span className={cn(theme === 'dark' ? 'text-[#FAFAFA]' : 'text-[#1A1A1E]')}>
+              <span className={'text-black dark:text-white'}>
                 {translation('intro.title')}
               </span>
             </h1>
@@ -43,18 +40,12 @@ export const Introduction = () => {
           <AnimateText
             words={translation('intro.message-part-1')}
             duration={0.1}
-            textClassName={cn(
-              theme === 'dark' ? 'text-[#FAFAFA]' : 'text-[#1A1A1E]',
-              'leading-relaxed'
-            )}
+            textClassName={cn('leading-relaxed dark:text-white text-black')}
           />
           <AnimateText
             words={translation('intro.message-part-2')}
             duration={0.1}
-            textClassName={cn(
-              theme === 'dark' ? 'text-[#FAFAFA]' : 'text-[#1A1A1E]',
-              'leading-relaxed'
-            )}
+            textClassName={cn('leading-relaxed dark:text-white text-black')}
           />
         </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { LanguageSwitcher } from '@/components/language-switcher';
+import { ThemeSwitcher } from '@/components/theme-switcher';
 import { usePathname } from '@/hooks/use-pathname';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { AnimatePresence, motion } from '@/providers/framer-provider';
@@ -110,8 +111,12 @@ export const Header = () => {
           </AnimatePresence>
         </nav>
 
-        <div className='mx-4 h-5 w-px bg-font/60' />
-        <LanguageSwitcher canRender={isPortfolio} />
+        <div>
+          <ThemeSwitcher />
+
+          <div className='mx-4 h-5 w-px bg-font/60' />
+          <LanguageSwitcher canRender={isPortfolio} />
+        </div>
       </motion.div>
     </header>
   );
