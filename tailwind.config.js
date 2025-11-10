@@ -11,6 +11,7 @@ const tailwindConfig = {
   theme: {
     extend: {
       fontFamily: {
+        slab: ['var(--font-arvo-sans)', 'Inter', ...fontFamily.sans],
         sans: ['var(--font-rethink-sans)', 'Inter', ...fontFamily.sans],
         monospace: ['var(--font-ibm-plex-mono)', 'Menlo', 'Hack', ...fontFamily.mono]
       },
