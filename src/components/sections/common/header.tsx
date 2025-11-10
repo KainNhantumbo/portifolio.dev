@@ -23,7 +23,7 @@ export const Header = () => {
   const translation = useScopedI18n('header');
   const isPortfolio = usePath()?.includes('blog') ? false : true;
   const currentLocale = useCurrentLocale();
-  const { isHeaderInView, scrollRangeValue, handleToggleMenu } = useHeaderView(MIN_WIDTH);
+  const { isHeaderInView, handleToggleMenu } = useHeaderView(MIN_WIDTH);
 
   const portfolioUrls: UrlList = useMemo(
     () => [
@@ -52,34 +52,37 @@ export const Header = () => {
 
   return (
     <header className='w-full'>
-      <motion.div
-        className='base-border fixed left-[calc(50%_-_285px)] top-3 z-[5000] flex min-h-[50px] w-fit min-w-[550px] items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:left-[calc(50%_-_170px)] max-[640px]:min-w-[340px] max-[640px]:flex-col'
-        animate={{ translateY: scrollRangeValue > 100 ? '-65px' : '0px' }}
-        transition={{ duration: 0.5 }}>
-        <div className='flex cursor-pointer flex-row items-center gap-2 max-[640px]:absolute max-[640px]:left-[calc(50%_-_60px)] max-[640px]:top-3'>
-          <Image
-            src={donutImage}
-            width={25}
-            height={25}
-            alt='donut image'
-            className='max-h-[18px] w-full max-w-[18px] object-cover'
-          />
-          <span
-            onClick={() => router.push('/')}
-            className='font-sans text-sm font-semibold text-primary'>
-            {constants.title}
-          </span>
+      <div className='base-border fixed left-[calc(50%_-_285px)] top-3 z-[5000] flex min-h-[50px] w-fit min-w-[550px] items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:left-[calc(50%_-_170px)] max-[640px]:min-w-[340px] max-[640px]:flex-col'>
+        <div className='flex w-full cursor-pointer flex-row justify-between gap-2 px-4 max-[640px]:absolute max-[640px]:top-2'>
+          <div className='min-[640px]:hidden'>
+            <ThemeSwitcher />
+          </div>
+          <div className='flex items-center gap-2'>
+            <Image
+              src={donutImage}
+              width={25}
+              height={25}
+              alt='donut image'
+              className='max-h-[18px] w-full max-w-[18px] object-cover'
+            />
+            <span
+              onClick={() => router.push('/')}
+              className='font-sans text-sm font-semibold text-primary'>
+              {constants.title}
+            </span>
+            <div className='mx-2 hidden h-5 w-px bg-font/20 min-[640px]:block' />
+          </div>
+          <motion.button
+            whileTap={{ scale: 0.8 }}
+            onClick={handleToggleMenu}
+            className='group hidden w-fit cursor-pointer justify-self-end rounded-sm max-[640px]:block'>
+            {isHeaderInView ? (
+              <XIcon className='pointer-events-none h-auto w-6 group-hover:stroke-error' />
+            ) : (
+              <MenuIcon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
+            )}
+          </motion.button>
         </div>
-        <motion.button
-          whileTap={{ scale: 0.8 }}
-          onClick={handleToggleMenu}
-          className='group hidden w-fit cursor-pointer justify-self-end rounded-sm max-[640px]:absolute max-[640px]:right-2 max-[640px]:top-3 max-[640px]:block'>
-          {isHeaderInView ? (
-            <XIcon className='pointer-events-none h-auto w-6 group-hover:stroke-error' />
-          ) : (
-            <MenuIcon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
-          )}
-        </motion.button>
 
         <nav className='max-[640px]:w-full' role='main'>
           <AnimatePresence>
@@ -107,17 +110,18 @@ export const Header = () => {
                   </div>
                 </a>
               ))}
+
+              <div className='relative w-full p-[6px] max-[640px]:p-2 max-[640px]:px-4'>
+                <LanguageSwitcher canRender={isPortfolio} />
+              </div>
             </motion.section>
           </AnimatePresence>
         </nav>
 
-        <div className='flex flex-row flex-nowrap items-center gap-2'>
-          <div className='mx-4 h-5 w-px bg-font/60' />
-
-          <LanguageSwitcher canRender={isPortfolio} />
+        <div className='hidden flex-row flex-nowrap items-center gap-2 min-[640px]:flex'>
           <ThemeSwitcher />
         </div>
-      </motion.div>
+      </div>
     </header>
   );
 };
