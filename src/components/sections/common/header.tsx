@@ -78,7 +78,7 @@ export const Header = () => {
             />
             <span
               onClick={() => router.push('/')}
-              className='font-sans text-sm font-semibold text-primary'>
+              className='font-slab text-sm font-semibold uppercase text-primary'>
               {constants.title}
             </span>
             <div className='mx-2 hidden h-5 w-px bg-font/20 min-[640px]:block' />
