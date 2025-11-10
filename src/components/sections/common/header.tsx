@@ -4,11 +4,11 @@ import donutImage from '@/../public/assets/path36.png';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { usePathname } from '@/hooks/use-pathname';
+import { cn } from '@/lib/utils';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { AnimatePresence, motion } from '@/providers/framer-provider';
 import { constants } from '@/shared/constants';
 import type { UrlList } from '@/types';
-import clsx from 'clsx';
 import { MenuIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
@@ -52,11 +52,22 @@ export const Header = () => {
 
   return (
     <header className='w-full'>
-      <div className='base-border fixed left-[calc(50%_-_285px)] top-3 z-[5000] flex min-h-[50px] w-fit min-w-[550px] items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:left-[calc(50%_-_170px)] max-[640px]:min-w-[340px] max-[640px]:flex-col'>
-        <div className='flex w-full cursor-pointer flex-row justify-between gap-2 px-4 max-[640px]:absolute max-[640px]:top-2'>
-          <div className='min-[640px]:hidden'>
-            <ThemeSwitcher />
-          </div>
+      <div
+        className={cn(
+          'base-border fixed left-1/2 top-3 z-[5000] flex min-h-[50px] w-fit -translate-x-1/2 items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:min-w-[340px] max-[640px]:flex-col',
+          isHeaderInView && 'max-[640px]:pt-2'
+        )}>
+        <div className='flex w-full cursor-pointer flex-row justify-between gap-2 px-4'>
+          <motion.button
+            whileTap={{ scale: 0.8 }}
+            onClick={handleToggleMenu}
+            className='group hidden w-fit cursor-pointer justify-self-end rounded-sm max-[640px]:block'>
+            {isHeaderInView ? (
+              <XIcon className='pointer-events-none h-auto w-6 group-hover:stroke-error' />
+            ) : (
+              <MenuIcon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
+            )}
+          </motion.button>
           <div className='flex items-center gap-2'>
             <Image
               src={donutImage}
@@ -72,22 +83,15 @@ export const Header = () => {
             </span>
             <div className='mx-2 hidden h-5 w-px bg-font/20 min-[640px]:block' />
           </div>
-          <motion.button
-            whileTap={{ scale: 0.8 }}
-            onClick={handleToggleMenu}
-            className='group hidden w-fit cursor-pointer justify-self-end rounded-sm max-[640px]:block'>
-            {isHeaderInView ? (
-              <XIcon className='pointer-events-none h-auto w-6 group-hover:stroke-error' />
-            ) : (
-              <MenuIcon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
-            )}
-          </motion.button>
+          <div className='min-[640px]:hidden'>
+            <ThemeSwitcher />
+          </div>
         </div>
 
-        <nav className='max-[640px]:w-full' role='main'>
+        <nav className='max-[640px]:w-full' role='nav'>
           <AnimatePresence>
             <motion.section
-              className='flex w-full flex-row flex-nowrap gap-2 px-2 max-[640px]:mt-8 max-[640px]:hidden max-[640px]:flex-col max-[640px]:p-5 min-[640px]:flex'
+              className='flex w-full flex-row flex-nowrap gap-2 px-2 max-[640px]:hidden max-[640px]:flex-col max-[640px]:p-4 min-[640px]:flex'
               animate={{ translateY: isHeaderInView ? 0 : -50 }}
               exit={{ translateX: 150 }}
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
@@ -96,7 +100,7 @@ export const Header = () => {
                   key={index.toString()}
                   href={item.url || item.ref}
                   onClick={() => setPathname(`${currentLocale}#${item.ref}`)}
-                  className={clsx(
+                  className={cn(
                     {
                       'base-border relative rounded-md after:absolute after:bottom-[calc(50%_-_10px)] after:left-[-3px] after:h-[20px] after:w-[5px] after:rounded-md after:bg-primary sm:rounded-none sm:border-none sm:text-primary sm:after:bottom-[calc(50%_-_16px)] sm:after:left-[calc(50%_-_10px)] sm:after:h-[5px] sm:after:w-[20px]':
                         pathname.includes(item.ref)
