@@ -45,8 +45,6 @@ export function LanguageSwitcher({ canRender }: Props) {
     }
   ];
 
-  const [selectedLanguage, setSelectedLanguage] = React.useState<Language>(languages[0]);
-
   React.useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -59,7 +57,6 @@ export function LanguageSwitcher({ canRender }: Props) {
   }, []);
 
   const handleLanguageSelect = (language: Language) => {
-    setSelectedLanguage(language);
     setIsOpen(false);
   };
 
