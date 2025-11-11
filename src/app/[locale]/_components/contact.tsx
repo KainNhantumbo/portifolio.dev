@@ -1,5 +1,6 @@
 'use client';
 
+import { AnimateTextReveal } from '@/components/animations/animate-reveal';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { ContactSchema, ContactSchemaType } from '@/schemas/contact';
@@ -20,7 +21,6 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { AnimateTextReveal } from '../../animations/animate-reveal';
 
 const initialFormState: ContactSchemaType = {
   name: '',

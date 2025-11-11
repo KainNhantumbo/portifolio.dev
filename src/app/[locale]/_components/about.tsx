@@ -1,13 +1,13 @@
 'use client';
 
+import { AnimateTextReveal } from '@/components/animations/animate-reveal';
+import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
+import { AUTHOR } from '@/shared/constants';
 import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
 import { nanoid } from 'nanoid';
 import Image from 'next/image';
-import { AUTHOR } from '../../../shared/constants';
-import { AnimateTextReveal } from '../../animations/animate-reveal';
-import { SparklesCore } from '../../animations/animate-sparkles';
 
 export const About = () => {
   const translation = useScopedI18n('about');

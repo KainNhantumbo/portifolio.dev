@@ -2,11 +2,11 @@
 
 import { BubbleBackground } from '@/components/animations/animate-bubbles';
 import { StatusIndicator } from '@/components/animations/animate-status';
+import { AnimateText } from '@/components/animations/animate-text';
 import { SocialIcons } from '@/components/social-icons';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/locales/client';
 import { useTheme } from 'next-themes';
-import { AnimateText } from '../../animations/animate-text';
 
 export const Introduction = () => {
   const translation = useI18n();
