@@ -1,5 +1,6 @@
 'use client';
 
+import { GridPattern } from '@/components/grid-effect';
 import { cn } from '@/lib/utils';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
@@ -88,15 +89,26 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, content, icon: Icon, size }: ServiceCardProps) {
   return (
-    <div
+    <motion.div
+      whileHover={{ scale: 1.1 }}
       className={cn(
-        'base-border relative w-full max-w-md overflow-hidden rounded-3xl bg-foreground p-12',
+        'base-border relative w-full max-w-md select-none overflow-hidden rounded-3xl bg-foreground p-12',
         size === 'large' && 'mt-12 lg:mt-24'
       )}>
+      <GridPattern
+        width={20}
+        height={20}
+        x={-1}
+        y={-1}
+        strokeDasharray={'4 2'}
+        className={cn(
+          '[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]'
+        )}
+      />
       <div className='relative z-10 flex flex-col items-center text-center'>
         <div className='mb-6'>
           <div
-            className={`flex items-center justify-center rounded-full p-4 shadow-lg ring-8 ring-font/10`}>
+            className={`flex items-center justify-center rounded-full border-2 border-primary p-4 shadow-lg ring-8 ring-font/10`}>
             <div className='flex h-auto w-12 items-center justify-center text-white'>
               <Icon className='h-auto w-12 stroke-primary transition-colors' />
             </div>
@@ -106,6 +118,6 @@ export function ServiceCard({ title, content, icon: Icon, size }: ServiceCardPro
         <h3 className='mb-3 font-sans text-xl font-bold'>{title}</h3>
         <p className='font-sans text-base leading-relaxed'>{content}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
