@@ -54,8 +54,8 @@ export const Header = () => {
     <header className='w-full'>
       <div
         className={cn(
-          'base-border fixed left-1/2 top-3 z-[5000] flex min-h-[50px] w-fit -translate-x-1/2 items-center justify-center gap-[5px] rounded-xl bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:min-w-[340px] max-[640px]:flex-col',
-          isHeaderInView && 'max-[640px]:pt-2'
+          'fixed left-1/2 top-3 z-[5000] flex min-h-[50px] w-fit -translate-x-1/2 items-center justify-center gap-[5px] rounded-full bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:min-w-[340px] max-[640px]:flex-col',
+          isHeaderInView && 'rounded-3xl max-[640px]:pt-2'
         )}>
         <div className='flex w-full cursor-pointer flex-row justify-between gap-2 px-4'>
           <motion.button
@@ -92,7 +92,7 @@ export const Header = () => {
           <AnimatePresence>
             <motion.section
               className='flex w-full flex-row flex-nowrap gap-2 px-2 max-[640px]:hidden max-[640px]:flex-col max-[640px]:p-4 min-[640px]:flex'
-              animate={{ translateY: isHeaderInView ? 0 : -50 }}
+              animate={{ scale: isHeaderInView ? 1 : 5 }}
               exit={{ translateX: 150 }}
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
               {urls.map((item, index) => (
@@ -108,7 +108,7 @@ export const Header = () => {
                     'group list-none'
                   )}>
                   <div className='relative w-full p-1 max-[640px]:p-2 max-[640px]:px-4'>
-                    <span className='w-full font-sans text-sm font-medium transition-colors group-hover:text-primary'>
+                    <span className='w-full font-sans text-base font-medium transition-colors group-hover:text-primary'>
                       {item.label}
                     </span>
                   </div>
