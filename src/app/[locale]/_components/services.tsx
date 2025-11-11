@@ -1,16 +1,36 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
-import { Mail, RocketIcon, SparklesIcon } from 'lucide-react';
+import {
+  AppWindowIcon,
+  CodeIcon,
+  LucideIcon,
+  Mail,
+  RocketIcon,
+  SparklesIcon,
+  UserIcon
+} from 'lucide-react';
+import { useMemo } from 'react';
+
+const icons = [Mail, RocketIcon, SparklesIcon, AppWindowIcon, CodeIcon, UserIcon];
 
 export const Services = () => {
   const translation = useScopedI18n('services');
 
+  const data = useMemo(() => {
+    return Array.from(icons).map((icon, index) => ({
+      title: translation(`types.${index}.title`, { count: index }),
+      content: translation(`types.${index}.content`, { count: index }),
+      icon: icon
+    }));
+  }, [translation]);
+
   return (
     <section
       id='services'
-      className='mx-auto flex w-full max-w-[780px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
+      className='mx-auto flex w-full max-w-[1280px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
       <h2 className='base-section-title'>
         <RocketIcon />
         <span>{translation('title')}</span>
@@ -19,22 +39,31 @@ export const Services = () => {
         {translation('subtitle')}
       </h3>
 
-      <section className='mt-5 grid place-content-center place-items-center gap-6 mobile-x:grid-cols-2'>
-        {Array.from({ length: 6 }, (_, i) => i + 1).map((_, index) => (
-          <motion.div
-            key={index}
-            className='base-border group relative flex h-full w-full select-none flex-col gap-3 rounded-xl border-b-[4px] border-b-primary bg-foreground p-3'
-            whileHover={{ scale: 1.05 }}>
-            <div className='flex flex-nowrap items-center gap-3'>
-              <SparklesIcon className='' />
-              <h4 className='font-bold uppercase text-primary'>
-                {translation(`types.${index}.title`, { count: index })}
-              </h4>
-            </div>
-            <p>{translation(`types.${index}.content`, { count: index })}</p>
-          </motion.div>
-        ))}
-      </section>
+      <div className='grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-12'>
+        <div className='space-y-6 lg:space-y-12'>
+          {data.slice(0, 3).map((service, idx) => (
+            <ServiceCard
+              key={idx}
+              title={service.title}
+              content={service.content}
+              icon={service.icon}
+              size='small'
+            />
+          ))}
+        </div>
+
+        <div className='space-y-6 lg:space-y-12'>
+          {data.slice(3, 6).map((service, idx) => (
+            <ServiceCard
+              key={idx}
+              title={service.title}
+              content={service.content}
+              icon={service.icon}
+              size='large'
+            />
+          ))}
+        </div>
+      </div>
 
       <motion.a
         whileTap={{ scale: 0.9 }}
@@ -49,3 +78,34 @@ export const Services = () => {
     </section>
   );
 };
+
+interface ServiceCardProps {
+  title: string;
+  content: string;
+  icon: LucideIcon;
+  size: 'small' | 'large';
+}
+
+export function ServiceCard({ title, content, icon: Icon, size }: ServiceCardProps) {
+  return (
+    <div
+      className={cn(
+        'base-border relative w-full max-w-md overflow-hidden rounded-3xl bg-foreground p-12',
+        size === 'large' && 'mt-12 lg:mt-24'
+      )}>
+      <div className='relative z-10 flex flex-col items-center text-center'>
+        <div className='mb-6'>
+          <div
+            className={`flex items-center justify-center rounded-full p-4 shadow-lg ring-8 ring-font/10`}>
+            <div className='flex h-auto w-12 items-center justify-center text-white'>
+              <Icon className='h-auto w-12 stroke-primary transition-colors' />
+            </div>
+          </div>
+        </div>
+
+        <h3 className='mb-3 font-sans text-xl font-bold'>{title}</h3>
+        <p className='font-sans text-base leading-relaxed'>{content}</p>
+      </div>
+    </div>
+  );
+}
