@@ -19,18 +19,16 @@ interface ServiceCardProps {
   title: string;
   content: string;
   icon: LucideIcon;
-  size: 'small' | 'large';
 }
 
 const icons = [Mail, RocketIcon, SparklesIcon, AppWindowIcon, CodeIcon, UserIcon];
 
-export function ServiceCard({ title, content, icon: Icon, size }: ServiceCardProps) {
+export function ServiceCard({ title, content, icon: Icon }: ServiceCardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
       className={cn(
-        'relative w-full max-w-md select-none overflow-hidden rounded-3xl bg-foreground p-12 shadow-sm transition-all hover:shadow-lg',
-        size === 'large' && 'mt-12 lg:mt-24'
+        'relative grid aspect-square w-full max-w-md select-none place-items-center overflow-hidden rounded-3xl bg-foreground p-8 shadow-sm transition-all hover:shadow-lg'
       )}>
       <GridPattern
         width={20}
@@ -73,39 +71,25 @@ export const Services = () => {
   return (
     <section
       id='services'
-      className='mx-auto flex w-full max-w-[1280px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
-      <h2 className='base-section-title'>
-        <RocketIcon />
-        <span>{translation('title')}</span>
-      </h2>
-      <h3 className='mb-3 w-full max-w-xl text-center font-medium'>
-        {translation('subtitle')}
-      </h3>
+      className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 pt-5'>
+      <div className='mb-6 space-y-6 lg:mb-12'>
+        <h2 className='font-slab text-5xl font-bold uppercase leading-relaxed sm:text-5xl lg:text-6xl xl:text-[7rem] 2xl:text-[8rem]'>
+          <span>{translation('title')}</span>
+        </h2>
+        <h3 className='w-full max-w-4xl text-lg font-medium sm:text-xl lg:leading-relaxed'>
+          {translation('subtitle')}
+        </h3>
+      </div>
 
-      <div className='grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-12'>
-        <div className='space-y-6 lg:space-y-12'>
-          {data.slice(0, 3).map((service, idx) => (
-            <ServiceCard
-              key={idx}
-              title={service.title}
-              content={service.content}
-              icon={service.icon}
-              size='small'
-            />
-          ))}
-        </div>
-
-        <div className='space-y-6 lg:space-y-12'>
-          {data.slice(3, 6).map((service, idx) => (
-            <ServiceCard
-              key={idx}
-              title={service.title}
-              content={service.content}
-              icon={service.icon}
-              size='large'
-            />
-          ))}
-        </div>
+      <div className='grid w-full grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-12'>
+        {data.map((service, idx) => (
+          <ServiceCard
+            key={idx}
+            title={service.title}
+            content={service.content}
+            icon={service.icon}
+          />
+        ))}
       </div>
 
       <motion.a
