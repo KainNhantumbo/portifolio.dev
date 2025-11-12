@@ -15,7 +15,49 @@ import {
 } from 'lucide-react';
 import { useMemo } from 'react';
 
+interface ServiceCardProps {
+  title: string;
+  content: string;
+  icon: LucideIcon;
+  size: 'small' | 'large';
+}
+
 const icons = [Mail, RocketIcon, SparklesIcon, AppWindowIcon, CodeIcon, UserIcon];
+
+export function ServiceCard({ title, content, icon: Icon, size }: ServiceCardProps) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className={cn(
+        'relative w-full max-w-md select-none overflow-hidden rounded-3xl bg-foreground p-12 shadow-sm transition-all hover:shadow-lg',
+        size === 'large' && 'mt-12 lg:mt-24'
+      )}>
+      <GridPattern
+        width={20}
+        height={20}
+        x={-1}
+        y={-1}
+        strokeDasharray={'4 2'}
+        className={cn(
+          '[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]'
+        )}
+      />
+      <div className='relative z-10 flex flex-col items-center text-center'>
+        <div className='mb-6'>
+          <div
+            className={`flex items-center justify-center rounded-full border-2 border-primary p-4 shadow-lg ring-8 ring-font/10`}>
+            <div className='flex h-auto w-12 items-center justify-center text-white'>
+              <Icon className='h-auto w-12 stroke-primary transition-colors' />
+            </div>
+          </div>
+        </div>
+
+        <h3 className='mb-3 font-sans text-2xl font-bold'>{title}</h3>
+        <p className='font-sans text-lg leading-relaxed'>{content}</p>
+      </div>
+    </motion.div>
+  );
+}
 
 export const Services = () => {
   const translation = useScopedI18n('services');
@@ -79,45 +121,3 @@ export const Services = () => {
     </section>
   );
 };
-
-interface ServiceCardProps {
-  title: string;
-  content: string;
-  icon: LucideIcon;
-  size: 'small' | 'large';
-}
-
-export function ServiceCard({ title, content, icon: Icon, size }: ServiceCardProps) {
-  return (
-    <motion.div
-      whileHover={{ scale: 1.1 }}
-      className={cn(
-        'base-border relative w-full max-w-md select-none overflow-hidden rounded-3xl bg-foreground p-12',
-        size === 'large' && 'mt-12 lg:mt-24'
-      )}>
-      <GridPattern
-        width={20}
-        height={20}
-        x={-1}
-        y={-1}
-        strokeDasharray={'4 2'}
-        className={cn(
-          '[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]'
-        )}
-      />
-      <div className='relative z-10 flex flex-col items-center text-center'>
-        <div className='mb-6'>
-          <div
-            className={`flex items-center justify-center rounded-full border-2 border-primary p-4 shadow-lg ring-8 ring-font/10`}>
-            <div className='flex h-auto w-12 items-center justify-center text-white'>
-              <Icon className='h-auto w-12 stroke-primary transition-colors' />
-            </div>
-          </div>
-        </div>
-
-        <h3 className='mb-3 font-sans text-xl font-bold'>{title}</h3>
-        <p className='font-sans text-base leading-relaxed'>{content}</p>
-      </div>
-    </motion.div>
-  );
-}

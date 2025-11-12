@@ -3,6 +3,7 @@
 import donutImage from '@/../public/assets/path36.png';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import { useHeaderView } from '@/hooks/use-header-view';
 import { usePathname } from '@/hooks/use-pathname';
 import { cn } from '@/lib/utils';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
@@ -13,7 +14,6 @@ import { MenuIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
-import { useHeaderView } from '../../../hooks/use-header-view';
 
 export const Header = () => {
   const MIN_WIDTH = 640;
