@@ -1,6 +1,5 @@
 import type { PageParams } from '@/types';
 import { setStaticParamsLocale } from 'next-international/server';
-import { Abilities } from './_components/abilities';
 import { About } from './_components/about';
 import { Contact } from './_components/contact';
 import { Introduction } from './_components/introduction';
@@ -17,7 +16,6 @@ const Page = async (props: PageParams) => {
       <Introduction />
       <About />
       <Services />
-      <Abilities />
       <Works />
       <Projects />
       <Contact />

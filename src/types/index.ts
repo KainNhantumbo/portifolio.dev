@@ -33,11 +33,7 @@ export type Work = {
   platforms: string[];
 };
 
-export type Stack = {
-  title: string;
-  icon: LucideIcon;
-  data: Array<{ tech: string; icon: LucideIcon | typeof BitbucketOriginal }>;
-};
+export type Stack = { tech: string; icon: LucideIcon | typeof BitbucketOriginal };
 
 export type Action = { type: string; payload: State };
 
