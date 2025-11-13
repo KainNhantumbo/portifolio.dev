@@ -12,6 +12,21 @@ import Image from 'next/image';
 export const About = () => {
   const translation = useScopedI18n('about');
 
+  const cards = [
+    {
+      title: translation('experience-title'),
+      content: translation('experience-content'),
+      icon: <Code2Icon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
+    },
+    {
+      title: translation('projects-title'),
+      content: translation('projects-content'),
+      icon: (
+        <SquareStackIcon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
+      )
+    }
+  ];
+
   return (
     <section
       id='about'
@@ -47,51 +62,27 @@ export const About = () => {
       </section>
 
       <section className='mt-5 flex flex-wrap items-center justify-center gap-12'>
-        <motion.div
-          className='base-border group relative grid h-[180px] w-[180px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-3 font-sans'
-          whileHover={{ scale: 1.1 }}
-          initial={{ opacity: 0.4, rotate: 360 }}
-          whileInView={{ rotate: 0, opacity: 1 }}>
-          <div className='absolute left-0 top-0 h-full w-full'>
+        {cards.map((item, idx) => (
+          <motion.div
+            key={idx}
+            className='group relative grid aspect-square w-[220px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-8 font-sans'
+            whileHover={{ scale: 1.1 }}
+            initial={{ opacity: 0.4, rotate: 360 }}
+            whileInView={{ rotate: 0, opacity: 1 }}>
             <SparklesCore
               id={nanoid()}
               background='transparent'
               minSize={0.4}
               maxSize={1}
-              particleDensity={1200}
-              className='h-full w-full'
+              particleDensity={500}
+              className='absolute left-0 top-0 h-full w-full'
               particleColor='#E4703180'
             />
-          </div>
-          <Code2Icon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
-          <h4 className='font-medium'>{translation('experience-title')}</h4>
-          <span className='text-center text-sm font-bold capitalize'>
-            {translation('experience-content')}
-          </span>
-        </motion.div>
-
-        <motion.div
-          className='base-border group relative grid h-[180px] w-[180px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-3 font-sans'
-          whileHover={{ scale: 1.1 }}
-          initial={{ opacity: 0.4, rotate: 360 }}
-          whileInView={{ rotate: 0, opacity: 1 }}>
-          <div className='absolute left-0 top-0 h-full w-full'>
-            <SparklesCore
-              id={nanoid()}
-              background='transparent'
-              minSize={0.4}
-              maxSize={1}
-              particleDensity={1200}
-              className='h-full w-full'
-              particleColor='#E4703180'
-            />
-          </div>
-          <SquareStackIcon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
-          <h4 className='font-medium'>{translation('projects-title')}</h4>
-          <span className='text-center text-sm font-bold capitalize'>
-            {translation('projects-content')}
-          </span>
-        </motion.div>
+            {item.icon}
+            <h4 className='text-xl font-medium'>{item.title}</h4>
+            <span className='text-md text-center font-bold capitalize'>{item.content}</span>
+          </motion.div>
+        ))}
       </section>
     </section>
   );
