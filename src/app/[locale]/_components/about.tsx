@@ -5,7 +5,7 @@ import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { AUTHOR } from '@/shared/constants';
-import { Code2Icon, SquareStackIcon, UserIcon } from 'lucide-react';
+import { Code2Icon, SquareStackIcon } from 'lucide-react';
 import { nanoid } from 'nanoid';
 import Image from 'next/image';
 
@@ -15,11 +15,16 @@ export const About = () => {
   return (
     <section
       id='about'
-      className='mx-auto flex w-full max-w-[780px] flex-col items-center gap-3 border-t-[1px] border-solid border-font/10 pt-5'>
-      <h2 className='base-section-title'>
-        <UserIcon />
-        <span>{translation('title')}</span>
-      </h2>
+      className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-3 pt-5'>
+      <div className='mb-6 space-y-6 lg:mb-12'>
+        <h2 className='font-slab text-5xl font-bold uppercase leading-relaxed sm:text-5xl lg:text-6xl xl:text-[7rem] 2xl:text-[8rem]'>
+          <span>{translation('title')}</span>
+        </h2>
+        <h3 className='w-full max-w-4xl text-lg font-medium sm:text-xl lg:leading-relaxed'>
+          {translation('subtitle')}
+        </h3>
+      </div>
+
       <section className='text-center font-sans'>
         <div className='mx-auto my-5 flex max-w-md items-center justify-between gap-5 max-[420px]:mb-[5px] max-[420px]:flex-col-reverse max-[420px]:justify-center max-[420px]:text-center'>
           <div>

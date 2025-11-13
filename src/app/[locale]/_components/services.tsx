@@ -40,6 +40,7 @@ export function ServiceCard({ title, content, icon: Icon }: ServiceCardProps) {
           '[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]'
         )}
       />
+
       <div className='relative z-10 flex flex-col items-center text-center'>
         <div className='mb-6'>
           <div
