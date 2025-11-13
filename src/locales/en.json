@@ -3,7 +3,6 @@
     "anchors": {
       "blog": "Blog",
       "about": "About",
-      "skills": "Skills",
       "projects": "Projects",
       "contact": "Contact"
     }
@@ -93,12 +92,6 @@
       "portuguese": "Portuguese (PT)",
       "english": "English (US)"
     }
-  },
-  "abilities": {
-    "title": "My Experience and Skills",
-    "frontend-title": "Frontend Development",
-    "backend-title": "Backend Development",
-    "tools-title": "Development Tools"
   },
   "contact": {
     "title": "Contact me",
