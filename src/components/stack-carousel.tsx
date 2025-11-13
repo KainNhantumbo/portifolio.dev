@@ -1,6 +1,5 @@
 'use client';
 
-import { AnimateInfiniteCarousel } from '@/components/animations/animate-infinite-carousel';
 import type { Stack } from '@/types';
 import {
   BitbucketOriginal,
@@ -22,6 +21,7 @@ import {
   TailwindcssOriginal,
   TypescriptOriginal
 } from 'devicons-react';
+import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from './marquee';
 
 export const StackCarousel = () => {
   const content: Stack[] = [
@@ -48,17 +48,19 @@ export const StackCarousel = () => {
   ];
 
   return (
-    <AnimateInfiniteCarousel className='mx-auto w-full max-w-[780px] rounded-xl max-lg:max-w-[580px] max-sm:max-w-[460px] max-mobile-x:max-w-[400px] max-mobile:max-w-[320px]'>
-      <section className='flex items-center gap-2 overflow-hidden'>
-        {content.map((item, index) => (
-          <div
-            key={index}
-            className='flex w-[150px] select-none flex-col items-center gap-2 p-4'>
-            <item.icon className='h-auto w-24' />
-            <h3 className='font-medium'>{item.tech}</h3>
-          </div>
-        ))}
-      </section>
-    </AnimateInfiniteCarousel>
+    <div className='flex size-full items-center justify-center bg-background'>
+      <Marquee>
+        <MarqueeFade side='left' />
+        <MarqueeFade side='right' />
+        <MarqueeContent>
+          {content.map((item, index) => (
+            <MarqueeItem key={index} className='flex select-none items-center gap-3 px-6'>
+              <item.icon className='size-12 h-48 w-48 text-font' size={36} />
+              <h3 className='text-lg font-medium'>{item.tech}</h3>
+            </MarqueeItem>
+          ))}
+        </MarqueeContent>
+      </Marquee>
+    </div>
   );
 };
