@@ -19,7 +19,7 @@ import {
   TextIcon,
   UserIcon
 } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const initialFormState: ContactSchemaType = {
@@ -31,6 +31,7 @@ const initialFormState: ContactSchemaType = {
 };
 
 export const Contact = () => {
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const translation = useScopedI18n('contact');
   const [messageStatus, setMessageStatus] = useState('');
 
@@ -38,17 +39,18 @@ export const Contact = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors , }
-  } = useForm<ContactSchemaType>({
+    formState: { errors }
+  } = useForm({
     resolver: zodResolver(ContactSchema),
-    defaultValues: { ...initialFormState }
+    defaultValues: { ...initialFormState },
+    mode: 'onSubmit'
   });
 
   // notifies the e-mail sender about the message status
   const notification = (message: string) => {
     setMessageStatus(message);
-    clearTimeout(undefined);
-    setTimeout(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
       setMessageStatus('');
     }, 5000);
   };
@@ -60,14 +62,11 @@ export const Contact = () => {
       notification(translation('message.success'));
       reset(initialFormState);
     } catch (err: unknown) {
-      console.error(err)
+      console.error(err);
       console.error((err as any).text);
       notification(translation('message.failure'));
     }
   };
-
-  console.debug(errors);
-
 
   return (
     <section
@@ -125,11 +124,12 @@ export const Contact = () => {
                 </label>
                 <input
                   {...register('from_email')}
+                  id='from_email'
                   className='base-input'
                   placeholder={translation('form.mail-placeholder')}
                 />
 
-                <p className='p-1 text-error'>{errors?.email?.message}</p>
+                <p className='p-1 text-error'>{errors?.from_email?.message}</p>
               </div>
             </section>
 
