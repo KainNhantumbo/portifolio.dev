@@ -184,3 +184,21 @@
     }
   }
 }
+
+@layer utilities {
+  .hover-text {
+    @apply transition-all duration-300;
+  }
+
+  .hover-text:hover {
+    @apply text-accent-secondary;
+  }
+
+  .hover-text:hover + .hover-text {
+    @apply text-accent-primary;
+  }
+
+  .hover-text:has(+ .hover-text:hover) {
+    @apply text-accent-tertiary;
+  }
+}

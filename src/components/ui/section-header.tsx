@@ -32,13 +32,23 @@ export function SectionHeader(props: Props) {
             hovered: { y: 0 }
           }}>
           <h2 className='font-slab text-5xl font-bold uppercase leading-relaxed sm:text-5xl lg:text-6xl xl:text-[7rem] 2xl:text-[8rem]'>
-            <span>{props.title}</span>
+            <span>
+              {props.title.split('').map((child, idx) => (
+                <span className={'hover-text cursor-grab'} key={idx}>
+                  {child}
+                </span>
+              ))}
+            </span>
           </h2>
         </motion.div>
       </motion.div>
 
       <h3 className='w-full max-w-4xl text-lg font-medium sm:text-xl lg:leading-relaxed'>
-        {props.description}
+        {props.description.split('').map((child, idx) => (
+          <span className={'hover-text cursor-grab'} key={idx}>
+            {child}
+          </span>
+        ))}
       </h3>
     </div>
   );
