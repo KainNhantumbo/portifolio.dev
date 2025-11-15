@@ -22,11 +22,29 @@ const tailwindConfig = {
         font: 'rgb(var(--font) / <alpha-value>)',
         black: 'rgb(var(--black) / <alpha-value>)',
         white: 'rgb(var(--white) / <alpha-value>)',
+
+        'accent-primary': 'rgb(var(--accent-primary) / <alpha-value>)',
+        'accent-secondary': 'rgb(var(--accent-secondary) / <alpha-value>)',
+        'accent-tertiary': 'rgb(var(--accent-tertiary) / <alpha-value>)',
+        'accent-quaternary': 'rgb(var(--accent-quaternary) / <alpha-value>)',
         secondary: 'rgb(var(--secondary) / <alpha-value>)',
         foreground: 'rgb(var(--foreground) / <alpha-value>)',
         background: 'rgb(var(--background) / <alpha-value>)',
         'primary-variant': 'rgb(var(--primary-variant) / <alpha-value>)',
         primary: 'rgb(var(--primary) / <alpha-value>)'
+      },
+      backgroundSize: {
+        '400%': '400% 400%'
+      },
+      keyframes: {
+        gradientAnimation: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' }
+        }
+      },
+      animation: {
+        gradient: 'gradientAnimation 15s ease infinite'
       }
     }
   },

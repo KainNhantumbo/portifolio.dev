@@ -2,6 +2,7 @@
 
 import Package from '@/../package.json';
 import donutsImage from '@/../public/assets/donuts.png';
+import { AnimateGradient } from '@/components/animations/animate-gradient';
 import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { useScopedI18n } from '@/locales/client';
 import { constants } from '@/shared/constants';
@@ -12,7 +13,8 @@ export const Footer = () => {
   const translation = useScopedI18n('footer');
 
   return (
-    <footer className='relative mt-20 w-full border-t border-font/10'>
+    <footer className='relative mt-20 w-full'>
+      <AnimateGradient />
       <div className='absolute left-0 top-0 z-0 h-full w-full'>
         <SparklesCore
           id={nanoid()}
@@ -24,11 +26,9 @@ export const Footer = () => {
           particleColor='#E4703180'
         />
       </div>
-
-      <h1 className='font-slab mx-auto w-full max-w-full text-center text-5xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'>
+      <h1 className='mx-auto w-full max-w-full text-center font-slab text-5xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'>
         {constants.title}
       </h1>
-
       <div className='mx-auto h-auto w-full max-w-[820px] p-5 pb-3'>
         <Image
           width={1702}
