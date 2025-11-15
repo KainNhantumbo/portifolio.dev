@@ -10,7 +10,6 @@ import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { AnimatePresence, motion } from '@/providers/framer-provider';
 import { constants } from '@/shared/constants';
 import type { UrlList } from '@/types';
-import { MenuIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
 import { useMemo } from 'react';
@@ -61,11 +60,54 @@ export const Header = () => {
             whileTap={{ scale: 0.8 }}
             onClick={handleToggleMenu}
             className='group hidden w-fit cursor-pointer justify-self-end rounded-sm max-[640px]:block'>
-            {isHeaderInView ? (
-              <XIcon className='pointer-events-none h-auto w-6 group-hover:stroke-error' />
-            ) : (
-              <MenuIcon className='pointer-events-none h-auto w-6 group-hover:stroke-primary' />
-            )}
+            <svg
+              className='pointer-events-none h-auto w-6'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'>
+              {/* Top line - rotates and moves down to form top of X */}
+              <line
+                x1='3'
+                y1='6'
+                x2='21'
+                y2='6'
+                style={{
+                  transformOrigin: '12px 6px',
+                  transform: isHeaderInView
+                    ? 'rotate(45deg) translateY(6px) translateX(2px)'
+                    : 'rotate(0deg)',
+                  transition: 'transform 300ms ease-in-out'
+                }}
+              />
+              {/* Middle line - fades out */}
+              <line
+                x1='3'
+                y1='12'
+                x2='21'
+                y2='12'
+                style={{
+                  opacity: isHeaderInView ? 0 : 1,
+                  transition: 'opacity 300ms ease-in-out'
+                }}
+              />
+              {/* Bottom line - rotates and moves up to form bottom of X */}
+              <line
+                x1='3'
+                y1='18'
+                x2='21'
+                y2='18'
+                style={{
+                  transformOrigin: '12px 18px',
+                  transform: isHeaderInView
+                    ? 'rotate(-45deg) translateY(-6px) translateX(2px)'
+                    : 'rotate(0deg)',
+                  transition: 'transform 300ms ease-in-out'
+                }}
+              />
+            </svg>
           </motion.button>
           <div className='flex items-center gap-2'>
             <Image
