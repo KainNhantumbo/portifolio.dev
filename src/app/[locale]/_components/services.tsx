@@ -1,6 +1,7 @@
 'use client';
 
 import { GridPattern } from '@/components/grid-effect';
+import { SectionHeader } from '@/components/ui/section-header';
 import { cn } from '@/lib/utils';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
@@ -73,14 +74,7 @@ export const Services = () => {
     <section
       id='services'
       className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 pt-5'>
-      <div className='mb-6 space-y-6 lg:mb-12'>
-        <h2 className='font-slab text-5xl font-bold uppercase leading-relaxed sm:text-5xl lg:text-6xl xl:text-[7rem] 2xl:text-[8rem]'>
-          <span>{translation('title')}</span>
-        </h2>
-        <h3 className='w-full max-w-4xl text-lg font-medium sm:text-xl lg:leading-relaxed'>
-          {translation('subtitle')}
-        </h3>
-      </div>
+      <SectionHeader title={translation('title')} description={translation('subtitle')} />
 
       <div className='grid w-full grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-12'>
         {data.map((service, idx) => (

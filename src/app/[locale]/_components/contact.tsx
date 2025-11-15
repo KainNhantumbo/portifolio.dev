@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
+import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { ContactSchema, ContactSchemaType } from '@/schemas/contact';
@@ -72,14 +73,10 @@ export const Contact = () => {
     <section
       id='contact'
       className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-12 pt-5'>
-      <div className='mb-6 space-y-6 lg:mb-12'>
-        <h2 className='font-slab text-5xl font-bold uppercase leading-relaxed sm:text-5xl lg:text-6xl xl:text-[7rem] 2xl:text-[8rem]'>
-          <span>{translation('title')}</span>
-        </h2>
-        <h3 className='w-full max-w-4xl text-lg font-medium sm:text-xl lg:leading-relaxed'>
-          {translation('intro-title')}
-        </h3>
-      </div>
+      <SectionHeader
+        title={translation('title')}
+        description={translation('intro-title')}
+      />
 
       <section className='flex w-full gap-12'>
         <div className='flex w-full max-w-md flex-col gap-6'>

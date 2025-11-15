@@ -3,6 +3,7 @@
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
 import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { StackCarousel } from '@/components/stack-carousel';
+import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { AUTHOR } from '@/shared/constants';
@@ -33,15 +34,8 @@ export const About = () => {
       <section
         id='about'
         className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-12 pt-5'>
-        <div className='mb-6 space-y-6 lg:mb-12'>
-          <h2 className='font-slab text-5xl font-bold uppercase leading-relaxed sm:text-5xl lg:text-6xl xl:text-[7rem] 2xl:text-[8rem]'>
-            <span>{translation('title')}</span>
-          </h2>
-          <h3 className='w-full max-w-4xl text-lg font-medium sm:text-xl lg:leading-relaxed'>
-            {translation('subtitle')}
-          </h3>
-        </div>
-
+        <SectionHeader title={translation('title')} description={translation('subtitle')} />
+        
         <section className={'grid grid-cols-1 lg:grid-cols-2'}>
           <section className='space-y-12'>
             <div className='w-full max-w-xl space-y-6 text-lg font-medium sm:text-xl lg:leading-relaxed'>
@@ -97,7 +91,6 @@ export const About = () => {
             </div>
           </section>
         </section>
-
         <StackCarousel />
       </section>
     </>
