@@ -4,11 +4,12 @@
       "blog": "Blogue",
       "about": "Sobre",
       "projects": "Projetos",
+      "services": "Serviços",
       "contact": "Contato"
     }
   },
   "footer": {
-    "made-phrase": "Construido com ❤ usando Next.js e Typescript.",
+    "made-phrase": "Construindo com ❤ usando Next.js e Typescript.",
     "version-phrase": "Versão",
     "anchors": {
       "github": "Encontre-me no Github",

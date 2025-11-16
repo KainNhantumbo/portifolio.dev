@@ -29,7 +29,7 @@ export function ServiceCard({ title, content, icon: Icon }: ServiceCardProps) {
     <motion.div
       whileHover={{ scale: 1.05 }}
       className={cn(
-        'relative grid aspect-square w-full max-w-md select-none place-items-center overflow-hidden rounded-3xl bg-foreground p-8 shadow-sm transition-all hover:shadow-lg'
+        'relative grid aspect-square w-full max-w-md select-none place-items-center overflow-hidden rounded-3xl base-border p-8 shadow-sm transition-all hover:shadow-lg'
       )}>
       <GridPattern
         width={20}
@@ -75,7 +75,6 @@ export const Services = () => {
       id='services'
       className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 pt-5'>
       <SectionHeader title={translation('title')} description={translation('subtitle')} />
-
       <div className='grid w-full grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-12'>
         {data.map((service, idx) => (
           <ServiceCard

@@ -44,7 +44,7 @@ const tailwindConfig = {
         }
       },
       animation: {
-        gradient: 'gradientAnimation 15s ease infinite'
+        gradient: 'gradientAnimation 5s ease infinite'
       }
     }
   },

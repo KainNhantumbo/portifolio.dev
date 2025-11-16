@@ -35,7 +35,7 @@ export const About = () => {
         id='about'
         className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-12 pt-5'>
         <SectionHeader title={translation('title')} description={translation('subtitle')} />
-        
+
         <section className={'grid grid-cols-1 lg:grid-cols-2'}>
           <section className='space-y-12'>
             <div className='w-full max-w-xl space-y-6 text-lg font-medium sm:text-xl lg:leading-relaxed'>
@@ -50,9 +50,11 @@ export const About = () => {
                 <motion.div
                   key={idx}
                   className='group relative grid aspect-square w-[220px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-8 font-sans'
-                  whileHover={{ scale: 1.1 }}
-                  initial={{ opacity: 0.4, rotate: 360 }}
-                  whileInView={{ rotate: 0, opacity: 1 }}>
+                  whileHover={{
+                    rotate: '-2.5deg',
+                    scale: 1.1
+                  }}
+                >
                   <SparklesCore
                     id={nanoid()}
                     background='transparent'
