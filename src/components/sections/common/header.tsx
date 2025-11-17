@@ -73,59 +73,21 @@ export const Header = () => {
           }}
         />
 
-        <div className='flex w-full cursor-pointer flex-row justify-between gap-2 px-4'>
+        <div className='flex w-full cursor-pointer flex-row items-center justify-between gap-2 px-4'>
           <motion.button
             whileTap={{ scale: 0.8 }}
             onClick={handleToggleMenu}
-            className='group hidden w-fit cursor-pointer justify-self-end rounded-sm max-[640px]:block'>
-            <svg
-              className='pointer-events-none h-auto w-6'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='2'
-              strokeLinecap='round'
-              strokeLinejoin='round'>
-              {/* Top line - rotates and moves down to form top of X */}
-              <line
-                x1='3'
-                y1='6'
-                x2='21'
-                y2='6'
-                style={{
-                  transformOrigin: '12px 6px',
-                  transform: isHeaderInView
-                    ? 'rotate(45deg) translateY(6px) translateX(2px)'
-                    : 'rotate(0deg)',
-                  transition: 'transform 300ms ease-in-out'
-                }}
-              />
-              {/* Middle line - fades out */}
-              <line
-                x1='3'
-                y1='12'
-                x2='21'
-                y2='12'
-                style={{
-                  opacity: isHeaderInView ? 0 : 1,
-                  transition: 'opacity 300ms ease-in-out'
-                }}
-              />
-              {/* Bottom line - rotates and moves up to form bottom of X */}
-              <line
-                x1='3'
-                y1='18'
-                x2='21'
-                y2='18'
-                style={{
-                  transformOrigin: '12px 18px',
-                  transform: isHeaderInView
-                    ? 'rotate(-45deg) translateY(-6px) translateX(2px)'
-                    : 'rotate(0deg)',
-                  transition: 'transform 300ms ease-in-out'
-                }}
-              />
-            </svg>
+            className='group hidden h-full w-fit cursor-pointer flex-col items-center justify-center gap-[6px] justify-self-end rounded-sm max-[640px]:flex'>
+            <div
+              className={`hamburger-line h-[2px] w-[25px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
+                isHeaderInView ? 'translate-y-[4px] rotate-45' : ''
+              } group-hover:opacity-75`}
+            />
+            <div
+              className={`hamburger-line h-[2px] w-[25px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
+                isHeaderInView ? '-translate-y-[4px] -rotate-45' : ''
+              } group-hover:opacity-75`}
+            />
           </motion.button>
           <div className='flex items-center gap-2'>
             <Image
