@@ -4,6 +4,7 @@ import Package from '@/../package.json';
 import donutsImage from '@/../public/assets/donuts.png';
 import { AnimateGradient } from '@/components/animations/animate-gradient';
 import { SparklesCore } from '@/components/animations/animate-sparkles';
+import { AnimateTextScroll } from '@/components/animations/animete-text-scroll';
 import { useScopedI18n } from '@/locales/client';
 import { constants } from '@/shared/constants';
 import { nanoid } from 'nanoid';
@@ -13,7 +14,7 @@ export const Footer = () => {
   const translation = useScopedI18n('footer');
 
   return (
-    <footer className='relative mt-20 w-full'>
+    <footer className='relative mt-20 min-h-[70vh] w-full'>
       <AnimateGradient />
       <div className='absolute left-0 top-0 z-0 h-full w-full'>
         <SparklesCore
@@ -26,9 +27,17 @@ export const Footer = () => {
           particleColor='#E4703180'
         />
       </div>
-      <h1 className='mx-auto w-full max-w-full text-center font-slab text-5xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'>
+
+      <AnimateTextScroll
+        animationDuration={2}
+        ease='back.inOut(2)'
+        scrollStart='top center+=35%'
+        scrollEnd='center bottom-=45%'
+        textClassName='mx-auto w-full max-w-full text-center font-slab text-5xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'
+        stagger={0.08}>
         {constants.title}
-      </h1>
+      </AnimateTextScroll>
+
       <div className='mx-auto h-auto w-full max-w-[820px] p-5 pb-3'>
         <Image
           width={1702}
