@@ -37,6 +37,7 @@
     "framer-motion": "^12.23.12",
     "granim": "^2.0.0",
     "gray-matter": "^4.0.3",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.539.0",
     "marked": "^9.1.6",
     "nanoid": "^5.1.6",
