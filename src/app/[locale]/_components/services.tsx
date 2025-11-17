@@ -29,7 +29,7 @@ export function ServiceCard({ title, content, icon: Icon }: ServiceCardProps) {
     <motion.div
       whileHover={{ scale: 1.05 }}
       className={cn(
-        'relative grid aspect-square w-full max-w-md select-none place-items-center overflow-hidden rounded-3xl base-border p-8 shadow-sm transition-all hover:shadow-lg'
+        'base-border relative grid aspect-square w-full max-w-md select-none place-items-center overflow-hidden rounded-3xl p-8 shadow-sm transition-all hover:shadow-lg'
       )}>
       <GridPattern
         width={20}
