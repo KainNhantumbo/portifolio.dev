@@ -1,5 +1,6 @@
 'use client';
 
+import { ColourfulText } from '@/components/animations/animate-colorful-text';
 import { ImageZoom } from '@/components/ui/image-zoom-effect';
 import { useScopedI18n } from '@/locales/client';
 import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
@@ -20,7 +21,7 @@ export const Works = () => {
             <div className='flex w-full flex-col gap-2'>
               <h3 className='mx-auto text-center font-sans text-lg font-bold uppercase sm:text-3xl'>
                 <span className='mr-4 text-font/50'>0{index + 1}</span>
-                {item.title}
+                <ColourfulText text={item.title} />
               </h3>
               <div className='flex flex-row flex-wrap items-center gap-2 border-t-[1px] border-solid border-font/10 pt-3 group-even:flex-row-reverse'>
                 {item.stack.map((platform, index) => (
