@@ -7,19 +7,12 @@ import { motion } from '@/providers/framer-provider';
 import {
   AppWindowIcon,
   CodeIcon,
-  LucideIcon,
   Mail,
   RocketIcon,
   SparklesIcon,
   UserIcon
 } from 'lucide-react';
 import { useMemo } from 'react';
-
-interface ServiceCardProps {
-  title: string;
-  content: string;
-  icon: LucideIcon;
-}
 
 const icons = [
   { icon: Mail, color: '#EA7E5D' },

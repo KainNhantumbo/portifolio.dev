@@ -16,6 +16,7 @@ export const Footer = () => {
   return (
     <footer className='relative mt-20 min-h-[70vh] w-full'>
       <AnimateGradient />
+
       <div className='absolute left-0 top-0 z-0 h-full w-full'>
         <SparklesCore
           id={nanoid()}
