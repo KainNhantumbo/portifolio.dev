@@ -1,3 +1,4 @@
+import { GlowingCards } from '@/components/cards/animated-hover-card';
 import type { PageParams } from '@/types';
 import { setStaticParamsLocale } from 'next-international/server';
 import { About } from './_components/about';
@@ -14,6 +15,7 @@ const Page = async (props: PageParams) => {
   return (
     <main className='flex w-full flex-col gap-24'>
       <Introduction />
+      <GlowingCards />
       <About />
       <Services />
       <Works />

@@ -19,6 +19,12 @@
     --accent-secondary: 191 69 255;
     --accent-tertiary: 237 216 1;
     --accent-quaternary: 127 29 198;
+
+    --x: 0;
+    --y: 0;
+    --xp: 0;
+    --yp: 0;
+    --spotlight-size: 150px;
   }
 
   .dark {
