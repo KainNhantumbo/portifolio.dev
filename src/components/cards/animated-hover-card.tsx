@@ -1,162 +1,203 @@
 'use client';
 
-import { Code, Puzzle, Sparkles, Zap } from 'lucide-react';
-import { useEffect } from 'react';
+import gsap from 'gsap';
+import { Code, LucideIcon, Puzzle, Sparkles, Zap } from 'lucide-react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
-const cards = [
+interface CardData {
+  id: number;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  badge: string;
+  hue: number;
+}
+
+const CARDS_DATA: CardData[] = [
   {
     id: 1,
     icon: Zap,
-    title: 'Wherever you go,<br/>the cursor follows',
-    badge: 'Pro',
-    hue: 200
+    title: 'Lightning Fast',
+    description: 'Wherever you go, the cursor follows with zero latency.',
+    badge: 'Core',
+    hue: 220
   },
   {
     id: 2,
     icon: Code,
-    title: 'One event listener<br/>powers it all',
-    badge: 'Pro',
+    title: 'One Listener',
+    description: 'One event listener powers it all using delegation.',
+    badge: 'DX',
     hue: 280
   },
   {
     id: 3,
     icon: Puzzle,
-    title: 'Lean into CSS<br/>and the cascade',
-    badge: 'Pro',
-    hue: 150
+    title: 'CSS Cascade',
+    description: 'Lean into the cascade. Let the browser do the heavy lifting.',
+    badge: 'Style',
+    hue: 160
   },
   {
     id: 4,
     icon: Sparkles,
-    title: 'One attribute,<br/>make it glow',
-    badge: 'Pro',
-    hue: 50
+    title: 'Glow Effect',
+    description: 'One attribute, make it glow. Simple and effective.',
+    badge: 'UI',
+    hue: 45
   }
 ];
 
-export function GlowingCards() {
-  useEffect(() => {
-    const handlePointerMove = (e: PointerEvent) => {
-      const { clientX, clientY } = e;
-      document.documentElement.style.setProperty('--x', clientX.toString());
-      document.documentElement.style.setProperty('--y', clientY.toString());
-      document.documentElement.style.setProperty(
-        '--xp',
-        (clientX / window.innerWidth).toString()
-      );
-      document.documentElement.style.setProperty(
-        '--yp',
-        (clientY / window.innerHeight).toString()
-      );
-    };
+const Card = React.forwardRef<HTMLDivElement, { data: CardData }>(({ data }, ref) => {
+  const { hue, icon: Icon, title, description, badge } = data;
+  const internalRef = useRef<HTMLDivElement>(null);
 
-    document.body.addEventListener('pointermove', handlePointerMove);
-    return () => {
-      document.body.removeEventListener('pointermove', handlePointerMove);
-    };
-  }, []);
+  const handleMouseEnter = () => {
+    if (!internalRef.current) return;
+    gsap.to(internalRef.current, {
+      scale: 1.03,
+      duration: 0.3,
+      ease: 'power2.out',
+      boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)'
+    });
+  };
 
-  return (
-    <div className='flex max-w-6xl flex-wrap justify-center gap-3'>
-      {cards.map((card, idx) => (
-        <Card key={idx} hue={card.hue} />
-      ))}
-    </div>
-  );
-}
+  const handleMouseLeave = () => {
+    if (!internalRef.current) return;
+    gsap.to(internalRef.current, {
+      scale: 1,
+      duration: 0.3,
+      ease: 'power2.out',
+      boxShadow: 'none'
+    });
+  };
 
-interface CardProps {
-  hue: number;
-}
+  // Combine refs to allow parent to access the DOM element for coordinate tracking
+  // and local usage for GSAP animations
+  React.useImperativeHandle(ref, () => internalRef.current as HTMLDivElement);
 
-
-export function Card(props: CardProps) {
   return (
     <div
-      className='glow-card relative grid aspect-[3/4] w-[260px] grid-rows-[1fr_auto] gap-4 rounded-xl border border-white/20 p-4 shadow-lg backdrop-blur-md'
-      style={
-        {
-          '--card-hue': props.hue,
-          backgroundColor: 'hsl(0 0% 60% / 0.15)',
-          backgroundImage: `radial-gradient(var(--spotlight-size) var(--spotlight-size) at calc(var(--x) * 1px) calc(var(--y) * 1px), hsl(var(--card-hue) 100% 70% / 0.1), transparent)`,
-          backgroundSize: 'calc(100% + 4px) calc(100% + 4px)',
-          backgroundPosition: '50% 50%',
-          backgroundAttachment: 'fixed'
-        } as React.CSSProperties
-      }>
+      ref={internalRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className='group relative h-[300px] w-[260px] overflow-hidden rounded-2xl border border-white/10 bg-gray-900/40 will-change-transform'
+      style={{ '--hue': hue } as React.CSSProperties}>
+      {/*
+        1. Border Glow
+        We use mask-composite to cut out the center of the div, leaving only the border area.
+        Using absolute positioning with calculated coordinates (--x, --y) instead of fixed
+        background attachment ensures compatibility with CSS transforms (scale).
+      */}
       <div
-        className='glow-card__outer-glow pointer-events-none absolute inset-0 rounded-xl'
+        className='absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100'
         style={{
-          backgroundImage: `radial-gradient(var(--spotlight-size) var(--spotlight-size) at calc(var(--x) * 1px) calc(var(--y) * 1px), hsl(var(--card-hue) 100% 70% / 0.1), transparent)`,
-          backgroundSize: 'calc(100% + 4px) calc(100% + 4px)',
-          backgroundPosition: '50% 50%',
-          backgroundAttachment: 'fixed',
-          filter: 'blur(20px)'
+          background: `radial-gradient(
+            300px circle at var(--x) var(--y),
+            hsl(var(--hue) 100% 60%),
+            transparent 40%
+          )`,
+          mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          maskComposite: 'exclude',
+          WebkitMaskComposite: 'xor',
+          padding: '2px'
         }}
       />
 
-      <div className='glow-card__content relative z-10 grid grid-rows-[auto_1fr_auto] gap-4 text-gray-200'></div>
+      {/*
+        2. Inner Spotlight
+        A subtle wash of color inside the card.
+      */}
+      <div
+        className='absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100'
+        style={{
+          background: `radial-gradient(
+            400px circle at var(--x) var(--y),
+            hsl(var(--hue) 100% 60% / 0.15),
+            transparent 40%
+          )`
+        }}
+      />
 
-      <style>{`
-              .glow-card::before,
-              .glow-card::after {
-                pointer-events: none;
-                content: "";
-                position: absolute;
-                inset: -2px;
-                border: 2px solid transparent;
-                border-radius: 12px;
-                background-attachment: fixed;
-                background-size: calc(100% + 4px) calc(100% + 4px);
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
-                mask-clip: padding-box, border-box;
-                mask-composite: intersect;
-              }
+      {/* 3. Content */}
+      <div className='pointer-events-none relative z-10 flex h-full flex-col p-6'>
+        <div className='mb-auto flex items-center justify-between'>
+          <div
+            className='flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-gray-800 shadow-inner transition-colors duration-300 group-hover:bg-gray-800/80'
+            style={{ color: `hsl(${hue}, 80%, 70%)` }}>
+            <Icon size={20} />
+          </div>
+          <span className='rounded-full border border-white/5 bg-white/5 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gray-300 transition-colors duration-300 group-hover:border-white/10 group-hover:bg-white/10'>
+            {badge}
+          </span>
+        </div>
 
-              .glow-card::before {
-                background-image: radial-gradient(
-                  calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
-                  calc(var(--x) * 1px) calc(var(--y) * 1px),
-                  hsl(var(--card-hue) 100% 50% / 1), transparent 100%
-                );
-                z-index: 2;
-                filter: brightness(2);
-              }
+        <div className='space-y-3'>
+          <h3 className='text-xl font-bold leading-tight text-white'>{title}</h3>
+          <p className='text-sm leading-relaxed text-gray-400'>{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+});
 
-              .glow-card::after {
-                background-image: radial-gradient(
-                  calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
-                  calc(var(--x) * 1px) calc(var(--y) * 1px),
-                  hsl(0 100% 100% / 1), transparent 100%
-                );
-                z-index: 2;
-              }
+Card.displayName = 'Card';
 
-              .glow-card__outer-glow::before {
-                pointer-events: none;
-                content: "";
-                position: absolute;
-                inset: -10px;
-                border: 10px solid transparent;
-                border-radius: 12px;
-                background-attachment: fixed;
-                background-size: calc(100% + 4px) calc(100% + 4px);
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
-                mask-clip: padding-box, border-box;
-                mask-composite: intersect;
-                background-image: radial-gradient(
-                  calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
-                  calc(var(--x) * 1px) calc(var(--y) * 1px),
-                  hsl(var(--card-hue) 100% 50% / 1), transparent 100%
-                );
-                z-index: 2;
-                filter: brightness(2);
-              }
-            `}</style>
+export function GlowingCards() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRects = useRef<DOMRect[]>([]);
+
+  // Optimization: Cache bounding boxes to avoid reflows during mousemove
+  const updateRects = useCallback(() => {
+    cardRects.current = cardsRef.current.map((card) =>
+      card ? card.getBoundingClientRect() : new DOMRect()
+    );
+  }, []);
+
+  useEffect(() => {
+    updateRects();
+    window.addEventListener('resize', updateRects);
+    window.addEventListener('scroll', updateRects, { capture: true, passive: true });
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+
+      // Update each card's CSS variables directly
+      cardsRef.current.forEach((card, index) => {
+        if (!card) return;
+        const rect = cardRects.current[index];
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('resize', updateRects);
+      window.removeEventListener('scroll', updateRects);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [updateRects]);
+
+  return (
+    <div
+      ref={containerRef}
+      className='perspective-1000 flex w-full max-w-5xl flex-wrap justify-center gap-4'>
+      {CARDS_DATA.map((card, index) => (
+        <Card
+          key={card.id}
+          data={card}
+          ref={(el) => {
+            cardsRef.current[index] = el;
+          }}
+        />
+      ))}
     </div>
   );
 }

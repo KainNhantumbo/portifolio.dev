@@ -1,9 +1,10 @@
 'use client';
+
 import { cn } from '@/lib/utils';
 import { m as motion, type SpringOptions, useMotionValue, useSpring } from 'framer-motion';
 import * as React from 'react';
 
-type BubbleBackgroundProps = React.ComponentProps<'div'> & {
+export type BubbleBackgroundProps = React.ComponentProps<'div'> & {
   interactive?: boolean;
   transition?: SpringOptions;
   colors?: {
@@ -16,7 +17,7 @@ type BubbleBackgroundProps = React.ComponentProps<'div'> & {
   };
 };
 
-function BubbleBackground({
+export function BubbleBackground({
   ref,
   className,
   children,
@@ -138,4 +139,4 @@ function BubbleBackground({
     </div>
   );
 }
-export { BubbleBackground, type BubbleBackgroundProps };
+

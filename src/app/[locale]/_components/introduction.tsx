@@ -6,11 +6,9 @@ import { AnimateText } from '@/components/animations/animate-text';
 import { SocialIcons } from '@/components/social-icons';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/locales/client';
-import { useTheme } from 'next-themes';
 
 export const Introduction = () => {
   const translation = useI18n();
-  const { theme } = useTheme();
 
   return (
     <BubbleBackground
