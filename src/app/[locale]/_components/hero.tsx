@@ -7,7 +7,7 @@ import { SocialIcons } from '@/components/social-icons';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/locales/client';
 
-export const Introduction = () => {
+export const Hero = () => {
   const translation = useI18n();
 
   return (
