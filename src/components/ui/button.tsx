@@ -7,14 +7,15 @@ import * as React from 'react';
 type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'ghost' | 'neon';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
+type ButtonProps = {
   children: React.ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   icon?: React.ReactNode;
   isLoading?: boolean;
   isFullWidth?: boolean;
-}
+  as?: 'button' | 'a';
+} & Omit<HTMLMotionProps<'button'> & HTMLMotionProps<'a'>, 'children'>;
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -25,9 +26,11 @@ const Button: React.FC<ButtonProps> = ({
   isFullWidth = false,
   className = '',
   disabled,
+  as = 'button',
   ...props
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
+  const isDisabled = isLoading || disabled;
 
   const sizeClasses = {
     sm: 'px-3 py-1.5 text-sm',
@@ -53,20 +56,20 @@ const Button: React.FC<ButtonProps> = ({
     sizeClasses[size],
     variantStyles[variant],
     isFullWidth ? 'w-full flex justify-center' : 'inline-flex',
-    disabled || isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
+    isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
     'items-center justify-center gap-2',
     className
   );
 
-  return (
-    <motion.button
-      className={classes}
-      disabled={disabled || isLoading}
-      whileHover={disabled || isLoading ? {} : { scale: 1.02, y: -2 }}
-      whileTap={disabled || isLoading ? {} : { scale: 0.96, y: 0 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      {...props}>
+  const motionProps = {
+    whileHover: isDisabled ? {} : { scale: 1.02, y: -2 },
+    whileTap: isDisabled ? {} : { scale: 0.96, y: 0 },
+    onHoverStart: () => setIsHovered(true),
+    onHoverEnd: () => setIsHovered(false)
+  };
+
+  const childrenContent = (
+    <>
       {!disabled && !isLoading && variant !== 'ghost' && (
         <motion.div
           className='pointer-events-none absolute inset-0 z-0 -translate-x-full'
@@ -92,7 +95,6 @@ const Button: React.FC<ButtonProps> = ({
           animate={{ opacity: isHovered ? 0.8 : 0 }}
         />
       )}
-
       <span className='relative z-10 flex items-center gap-2'>
         {isLoading ? (
           <LoaderIcon />
@@ -103,6 +105,24 @@ const Button: React.FC<ButtonProps> = ({
           </>
         )}
       </span>
+    </>
+  );
+
+  if (as === 'a') {
+    return (
+      <motion.a className={classes} {...motionProps} {...props}>
+        {childrenContent}
+      </motion.a>
+    );
+  }
+
+  return (
+    <motion.button
+      className={classes}
+      disabled={isDisabled}
+      {...motionProps}
+      {...props}>
+      {childrenContent}
     </motion.button>
   );
 };
