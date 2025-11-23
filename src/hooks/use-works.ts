@@ -17,11 +17,11 @@ export const useWorks = (): readonly Work[] => {
       description: translation('rubymart.description').split('\n'),
       image: rubymartDemoImage,
       livePreview: {
-        label: translation('live_preview_label'),
+        label: translation('button-actions.go-live'),
         url: 'https://sales-app-demo.vercel.app'
       },
       repository: {
-        label: translation('repository_label'),
+        label: translation('button-actions.view-code'),
         url: 'https://github.com/KainNhantumbo/sales-app'
       },
       stack: ['node.js', 'next.js', 'styled-components', 'express.js', 'typescript'],
@@ -32,11 +32,11 @@ export const useWorks = (): readonly Work[] => {
       description: translation('choconotey.description').split('\n'),
       image: choconoteyImage,
       livePreview: {
-        label: translation('live_preview_label'),
+        label: translation('button-actions.go-live'),
         url: 'https://choconotey-demo.vercel.app'
       },
       repository: {
-        label: translation('repository_label'),
+        label: translation('button-actions.view-code'),
         url: 'https://github.com/KainNhantumbo/notes-client'
       },
       stack: ['node.js', 'react.js', 'express.js', 'styled-components', 'typescript'],
@@ -47,11 +47,11 @@ export const useWorks = (): readonly Work[] => {
       description: translation('toono.description').split('\n'),
       image: toonoDemoImage,
       livePreview: {
-        label: translation('live_preview_label'),
+        label: translation('button-actions.go-live'),
         url: 'https://toono-community.vercel.app'
       },
       repository: {
-        label: translation('repository_label'),
+        label: translation('button-actions.view-code'),
         url: 'https://github.com/KainNhantumbo/toono-community-app'
       },
       stack: ['tailwind css', 'react.js', 'vite', 'redux', 'typescript'],
@@ -62,11 +62,11 @@ export const useWorks = (): readonly Work[] => {
       description: translation('palletone.description').split('\n'),
       image: palletoneDemoImage,
       livePreview: {
-        label: translation('live_preview_label'),
+        label: translation('button-actions.go-live'),
         url: 'https://palletone-demo.vercel.app'
       },
       repository: {
-        label: translation('repository_label'),
+        label: translation('button-actions.view-code'),
         url: 'https://github.com/KainNhantumbo/palletone-app'
       },
       stack: ['tailwind css', 'react.js', 'electron.js', 'typescript'],

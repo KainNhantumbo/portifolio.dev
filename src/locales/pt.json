@@ -3,6 +3,7 @@
     "anchors": {
       "blog": "Blogue",
       "about": "Sobre",
+      "works": "Trabalhos",
       "projects": "Projetos",
       "services": "Serviços",
       "contact": "Contato"
@@ -69,7 +70,6 @@
   "projects": {
     "title": "Meus Trabalhos e Projetos",
     "description": "Cada projeto é uma uma peça única de desenvolvimento 🎏. Você pode encontrar mais projetos no meu perfil do github",
-    "section_name": "Outros Projetos Criados",
     "button-actions": {
       "view-code": "Código fonte",
       "go-live": "Saber mais"
@@ -119,12 +119,14 @@
     }
   },
   "works": {
+    "title": "Trabalhos recentes",
+    "description": "Coleção dos meus projetos mais recentes",
+    "button-actions": {
+      "view-code": "Experimente a demostração!",
+      "go-live": "Ver ou ramificar o código fonte no Github"
+    },
     "platform": "Plataforma",
     "stack": "Ferramentas",
-    "repo": "Repositório",
-    "demo": "Versão Demostrativa",
-    "live_preview_label": "Experimente a demostração!",
-    "repository_label": "Ver ou ramificar o código fonte no Github",
     "choconotey": {
       "title": "Aplicação de Notas Choconotey",
       "description": "Fazer anotações em markdown se tornou mais simples com esta aplicação. Ela foi projetada com funcionalidades para criar, organizar, filtrar, compartilhar e exportar o conteúdo das suas notas em múltiplos formatos como Markdown, HTML e texto simples.\nEmbutida com sincronização automática, controlo de dados e funcionalidades, leves animações gráficas, um editor robusto com uma interface limpa para obter uma experiência fácil e sem  distrações.\nDê uma olhada ao vivo! 🎈🎉🎊"

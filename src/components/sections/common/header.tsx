@@ -64,6 +64,7 @@ export const Header = () => {
     () => [
       { label: translation('anchors.about'), ref: '#about' },
       { label: translation('anchors.services'), ref: '#services' },
+      { label: translation('anchors.works'), ref: '#works' },
       { label: translation('anchors.projects'), ref: '#projects' },
       { label: translation('anchors.contact'), ref: '#contact' },
       { label: translation('anchors.blog'), ref: '/en/blog' }
