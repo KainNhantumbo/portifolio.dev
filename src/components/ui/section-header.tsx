@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { m as motion } from 'framer-motion';
+import { AnimateTextFade } from '../animations/animate-text-fade';
 
 interface Props {
   title: string;
@@ -42,14 +43,15 @@ export function SectionHeader(props: Props) {
           </h2>
         </motion.div>
       </motion.div>
-
-      <h3 className='w-full max-w-4xl text-lg font-medium sm:text-xl lg:leading-relaxed'>
-        {props.description.split('').map((child, idx) => (
-          <span className={'hover-text cursor-grab'} key={idx}>
-            {child}
-          </span>
-        ))}
-      </h3>
+      <AnimateTextFade direction='down' delay={3} runOnce={false}>
+        <h3 className='w-full max-w-4xl text-lg font-medium sm:text-xl lg:leading-relaxed'>
+          {props.description.split('').map((child, idx) => (
+            <span className={'hover-text cursor-grab'} key={idx}>
+              {child}
+            </span>
+          ))}
+        </h3>
+      </AnimateTextFade>
     </div>
   );
 }

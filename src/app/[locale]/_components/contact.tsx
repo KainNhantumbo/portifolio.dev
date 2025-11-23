@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
+import { AnimatedSeparator } from '@/components/animations/animate-separator';
 import Button from '@/components/ui/button';
 import { AnimatedInput } from '@/components/ui/inputs';
 import { SectionHeader } from '@/components/ui/section-header';
@@ -83,6 +84,8 @@ export const Contact = () => {
               <p className='leading-relaxed'>{translation('intro-message')}</p>
             </AnimateTextReveal>
           </section>
+
+          <AnimatedSeparator className='w-full' />
 
           <section className='flex flex-col gap-1 font-sans'>
             <div className='flex items-center gap-3'>
