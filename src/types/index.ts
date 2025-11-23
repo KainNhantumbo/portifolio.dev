@@ -1,7 +1,7 @@
 import { BitbucketOriginal } from 'devicons-react';
 import type { LucideIcon } from 'lucide-react';
 import type { StaticImageData } from 'next/image';
-import type { ChangeEvent, FormEvent } from 'react';
+import type { ChangeEvent, FormEvent, FunctionComponent } from 'react';
 
 export type InputEvents = ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>;
 
@@ -54,3 +54,25 @@ export type PageParams = { params: Promise<{ locale: string }> };
 export type UrlList = Array<{ ref: string; label: string; url?: string }>;
 
 export type FooterAnchors = { name: string; icon: LucideIcon; link: string };
+
+export interface SoftwareItem {
+  name: string;
+  /**
+   * Fallback or accent color
+   */
+  color: string;
+  /**
+   * Percent offset X from center (-50 to 50)
+   */
+  x: number;
+  /**
+   * Percent offset Y from center (-50 to 50)
+   */
+  y: number;
+  /**
+   * Scale factor relative to base size
+   */
+  size: number;
+  icon: LucideIcon | FunctionComponent;
+  rotation?: number;
+}

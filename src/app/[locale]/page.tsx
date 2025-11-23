@@ -5,6 +5,7 @@ import { Contact } from './_components/contact';
 import { Hero } from './_components/hero';
 import { Projects } from './_components/projects';
 import { Services } from './_components/services';
+import { WhatIUse } from './_components/what-i-use';
 import { Works } from './_components/works';
 
 const Page = async (props: PageParams) => {
@@ -16,6 +17,7 @@ const Page = async (props: PageParams) => {
       <Hero />
       <About />
       <Services />
+      <WhatIUse />
       <Works />
       <Projects />
       <Contact />
