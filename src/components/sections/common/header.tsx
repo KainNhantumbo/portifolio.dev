@@ -12,41 +12,7 @@ import { constants } from '@/shared/constants';
 import type { UrlList } from '@/types';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
-import { useMemo, useRef, useState } from 'react';
-
-const Magnetic = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouse = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e;
-    const { height, width, left, top } = ref.current?.getBoundingClientRect() || {
-      height: 0,
-      width: 0,
-      left: 0,
-      top: 0
-    };
-    const middleX = clientX - (left + width / 2);
-    const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX * 0.1, y: middleY * 0.1 });
-  };
-
-  const reset = () => {
-    setPosition({ x: 0, y: 0 });
-  };
-
-  return (
-    <motion.div
-      style={{ position: 'relative' }}
-      ref={ref}
-      onMouseMove={handleMouse}
-      onMouseLeave={reset}
-      animate={{ x: position.x, y: position.y }}
-      transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}>
-      {children}
-    </motion.div>
-  );
-};
+import { useMemo, useState } from 'react';
 
 export const Header = () => {
   const MIN_WIDTH = 640;
@@ -85,18 +51,18 @@ export const Header = () => {
     () => (isPortfolio ? portfolioUrls : blogUrls),
     [isPortfolio, blogUrls, portfolioUrls]
   );
-  const animationColor = '#e47131';
-  const animationDuration = '5s';
+  // const animationColor = '#e47131';
+  // const animationDuration = '5s';
 
   return (
     <header className='w-full'>
       <div
         className={cn(
-          'base-border fixed left-1/2 top-3 z-[5000] flex min-h-[50px] w-fit -translate-x-1/2 items-center justify-center gap-[5px] overflow-hidden rounded-full bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:min-w-[340px] max-[640px]:flex-col',
+          'base-border fixed left-1/2 top-3 z-[5000] flex min-h-[50px] w-fit -translate-x-1/2 items-center justify-center gap-[5px] rounded-full bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:min-w-[340px] max-[640px]:flex-col',
           isHeaderInView && 'rounded-3xl max-[640px]:pt-2'
         )}>
-        <div
-          className='absolute left-[-250%] top-[-10px] z-0 h-[25%] w-[300%] animate-star-movement-top rounded-full opacity-70'
+        {/* <div
+          className='absolute left-[-250%] top-[-10px] z-0 h-[25%] w-[300%] animate-star-movement-top overflow-hidden rounded-full opacity-70'
           style={{
             background: `radial-gradient(circle, ${animationColor}, transparent 10%)`,
             animationDuration: animationDuration
@@ -108,7 +74,7 @@ export const Header = () => {
             background: `radial-gradient(circle, ${animationColor}, transparent 10%)`,
             animationDuration: animationDuration
           }}
-        />
+        /> */}
 
         <div className='flex w-full cursor-pointer flex-row items-center justify-between gap-2 px-4'>
           <motion.button
@@ -203,7 +169,7 @@ export const Header = () => {
               })}
 
               <div className='relative w-full p-[6px] max-[640px]:p-2 max-[640px]:px-4'>
-                <div className='flex gap-2'>
+                <div className='relative flex gap-2'>
                   <div className='mx-2 hidden h-5 w-px bg-font/20 min-[640px]:block' />
                   <LanguageSwitcher canRender={isPortfolio} />
                 </div>

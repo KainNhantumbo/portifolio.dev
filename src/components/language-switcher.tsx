@@ -89,7 +89,7 @@ export function LanguageSwitcher({ canRender }: Props) {
 
       {/* Dropdown Menu */}
       <div
-        className={`base-border ransition-all absolute right-0 top-full z-50 mt-5 w-48 rounded-lg bg-background/50 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm duration-200 ${
+        className={`base-border absolute right-0 top-full z-[5000] mt-5 w-48 rounded-lg bg-background/50 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm transition-all duration-200 ${
           isOpen ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
         onMouseLeave={() => setIsOpen(false)}>
