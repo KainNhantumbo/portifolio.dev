@@ -20,8 +20,10 @@ export const Works = () => {
           <section className='group flex w-full select-none flex-row flex-nowrap items-center gap-3 rounded-xl p-3 group-even:flex-row-reverse max-md:flex-col-reverse max-md:items-center max-md:justify-center max-md:gap-5 group-even:max-md:flex-col'>
             <div className='flex w-full flex-col gap-2'>
               <h3 className='mx-auto text-center font-sans text-lg font-bold uppercase sm:text-3xl'>
-                <span className='mr-4 text-font/50'>0{index + 1}</span>
-                <ColourfulText text={item.title} />
+                <span className='mr-4 text-font/50'>
+                  <ColourfulText key={index} text={`0${index + 1}`} />
+                </span>
+                <span>{item.title}</span>
               </h3>
               <div className='flex flex-row flex-wrap items-center gap-2 border-t-[1px] border-solid border-font/10 pt-3 group-even:flex-row-reverse'>
                 {item.stack.map((platform, index) => (
@@ -74,6 +76,7 @@ export const Works = () => {
                 {item.livePreview.label}
               </span>
             </a>
+
             <a
               href={item.repository.url}
               rel='noopener noreferrer'
