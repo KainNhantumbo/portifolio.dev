@@ -2,13 +2,14 @@
 
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
 import { SparklesCore } from '@/components/animations/animate-sparkles';
+import { GlowCard } from '@/components/glow-card';
 import { StackCarousel } from '@/components/stack-carousel';
+import { generateColor } from '@/components/ui/badge';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { AUTHOR } from '@/shared/constants';
 import { Code2Icon, SquareStackIcon } from 'lucide-react';
-import { nanoid } from 'nanoid';
 import Image from 'next/image';
 
 export const About = () => {
@@ -18,14 +19,14 @@ export const About = () => {
     {
       title: translation('experience-title'),
       content: translation('experience-content'),
-      icon: <Code2Icon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
+      icon: <Code2Icon className={'h-auto w-24'} color={generateColor() as string} />,
+      color: 'blue' as const
     },
     {
       title: translation('projects-title'),
       content: translation('projects-content'),
-      icon: (
-        <SquareStackIcon className='h-10 w-10 stroke-primary group-hover:stroke-secondary' />
-      )
+      icon: <SquareStackIcon className={'h-auto w-24'} color={generateColor() as string} />,
+      color: 'green' as const
     }
   ];
 
@@ -47,28 +48,27 @@ export const About = () => {
 
             <div className='flex flex-wrap items-center gap-12'>
               {cards.map((item, idx) => (
-                <motion.div
+                <GlowCard
                   key={idx}
-                  className='group relative grid aspect-square w-[220px] select-none place-content-center place-items-center gap-3 rounded-xl bg-foreground p-8 font-sans'
-                  whileHover={{
-                    rotate: '-2.5deg',
-                    scale: 1.1
-                  }}>
+                  width={280}
+                  height={280}
+                  glowColor={item.color}
+                  className='group relative grid aspect-square w-[220px] select-none place-content-center place-items-center gap-3 rounded-xl p-8 font-sans'>
                   <SparklesCore
-                    id={nanoid()}
+                    id={idx.toString()}
                     background='transparent'
                     minSize={0.4}
-                    maxSize={1}
-                    particleDensity={500}
-                    className='absolute left-0 top-0 h-full w-full'
-                    particleColor='#E4703180'
+                    maxSize={4}
+                    particleDensity={100}
+                    className='absolute left-0 top-0 -z-50 h-full w-full'
+                    particleColor={generateColor() as string}
                   />
                   {item.icon}
-                  <h4 className='text-xl font-medium'>{item.title}</h4>
-                  <span className='text-md text-center font-bold capitalize'>
+                  <h4 className='text-3xl font-bold'>{item.title}</h4>
+                  <span className='text-center text-lg font-bold uppercase'>
                     {item.content}
                   </span>
-                </motion.div>
+                </GlowCard>
               ))}
             </div>
           </section>

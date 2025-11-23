@@ -111,3 +111,7 @@ export function getComputedStyleColor(twClass: string): string | null {
 
   return null;
 }
+
+export function generateColor() {
+  return getComputedStyleColor(getRandomTwBaseColor());
+}
