@@ -1,6 +1,7 @@
 'use client';
 
 import { MagicBento } from '@/components/animations/animate-bento';
+import Button from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
@@ -55,16 +56,15 @@ export const Services = () => {
         cards={data}
       />
 
-      <motion.a
-        whileTap={{ scale: 0.9 }}
-        whileHover={{ scale: 1.03 }}
+      <Button
+        as='a'
+        variant='neon'
+        size='lg'
         href={'#contact'}
-        className='base-border group mt-6 flex items-center gap-2 rounded-xl bg-background px-4 py-[5px] font-medium shadow-[0_0_20px_rgba(0,0,0,.06)] transition-colors'>
-        <Mail className='h-5 w-auto stroke-primary transition-colors' />
-        <span className='text-xl capitalize transition-colors group-hover:text-primary'>
-          {translation('call-to-action')}
-        </span>
-      </motion.a>
+        className='mt-12'
+        icon={<Mail className='h-auto w-8' />}>
+        {translation('call-to-action')}
+      </Button>
     </section>
   );
 };
