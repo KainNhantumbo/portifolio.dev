@@ -3,6 +3,7 @@
 import { BubbleBackground } from '@/components/animations/animate-bubbles';
 import { StatusIndicator } from '@/components/animations/animate-status';
 import { AnimateText } from '@/components/animations/animate-text';
+import { AnimateTextFade } from '@/components/animations/animate-text-fade';
 import { SocialIcons } from '@/components/social-icons';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/locales/client';
@@ -26,11 +27,13 @@ export const Hero = () => {
             />
           </h3>
           <div className='flex w-full gap-3'>
-            <h1 className='my-4 w-full bg-clip-text font-sans text-4xl font-bold leading-10 text-transparent mobile-x:my-0 mobile-x:py-8 mobile-x:text-6xl lg:text-9xl'>
-              <span className={'text-black dark:text-white'}>
-                {translation('intro.title')}
-              </span>
-            </h1>
+            <AnimateTextFade direction='up'>
+              <h1 className='my-4 w-full bg-clip-text font-sans text-4xl font-bold leading-10 text-transparent mobile-x:my-0 mobile-x:py-8 mobile-x:text-6xl lg:text-9xl'>
+                <span className={'text-black dark:text-white'}>
+                  {translation('intro.title')}
+                </span>
+              </h1>
+            </AnimateTextFade>
           </div>
         </div>
 

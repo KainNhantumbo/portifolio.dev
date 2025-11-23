@@ -4,7 +4,7 @@ import { AnimateMagnetism } from '@/components/animations/animate-magnetism';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useLayoutEffect, useRef } from 'react';
-import { StarBackground } from './background';
+import { StarBackground } from '../../../../components/animations/animate-stars-background';
 import { TOOLS } from './data';
 
 // Register GSAP plugin
