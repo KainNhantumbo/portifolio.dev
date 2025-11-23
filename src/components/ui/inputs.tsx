@@ -1,5 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionTemplate, useMotionValue, animate } from 'framer-motion';
+'use client';
+
+import { animate, m as motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
 
 type AnimatedInputProps = {
   icon?: React.ReactNode;
@@ -35,7 +37,7 @@ export const AnimatedInput: React.FC<AnimatedInputProps> = ({
       ease: 'linear'
     });
     return () => controls.stop();
-  }, [rotation]);
+  }, [isFocused, rotation]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -80,23 +82,17 @@ export const AnimatedInput: React.FC<AnimatedInputProps> = ({
           '--tw-gradient-to': getComputedStyleColor(gradientTo) || '#34d399'
         } as React.CSSProperties
       }>
-      {/* 1. Spotlight Effect (Hover State) */}
       <motion.div
         className='pointer-events-none absolute -inset-px rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100'
         style={{ background: spotlightBackground }}
       />
-
-      {/* 2. Active Border Animation (Focus State) */}
       <motion.div
         className='absolute inset-0 rounded-xl bg-gradient-to-r opacity-0 blur-md transition-opacity duration-300'
         animate={{ opacity: isFocused ? 0.6 : 0 }}
         style={{
-          background: focusBackground,
-          backgroundImage: `conic-gradient(from ${rotation.get()}deg, transparent 0deg, var(--tw-gradient-from) 60deg, var(--tw-gradient-to) 120deg, transparent 180deg)`
+          background: focusBackground
         }}
       />
-
-      {/* 3. Sharp Rotating Border (Focus State - Top Layer) */}
       <motion.div
         className='absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300'
         animate={{ opacity: isFocused ? 1 : 0 }}
@@ -104,11 +100,8 @@ export const AnimatedInput: React.FC<AnimatedInputProps> = ({
           background: focusBackground
         }}
       />
-
-      {/* 4. Inner Content Container */}
       <div
-        className={`relative flex rounded-[10px] bg-slate-950 ring-1 ring-white/10 transition-all duration-300 group-hover:ring-white/20 ${isTextArea ? 'items-start' : 'items-center'} `}>
-        {/* Icon */}
+        className={`relative flex rounded-[10px] bg-foreground ring-1 ring-white/10 transition-all duration-300 group-hover:ring-white/20 ${isTextArea ? 'items-start' : 'items-center'} `}>
         {icon && (
           <div
             className={`ml-4 transition-colors duration-300 ${isFocused ? 'text-slate-200' : 'text-slate-500'} ${isTextArea ? 'mt-3.5' : ''} `}>
@@ -116,17 +109,16 @@ export const AnimatedInput: React.FC<AnimatedInputProps> = ({
           </div>
         )}
 
-        {/* Input or Textarea */}
         {isTextArea ? (
           <textarea
-            className={`w-full resize-none bg-transparent px-4 py-3.5 text-sm text-slate-200 placeholder-slate-500 outline-none transition-all duration-300 ${!icon ? 'pl-4' : ''} `}
+            className={`placeholder-text-font/60 w-full bg-transparent px-4 py-3.5 text-slate-200 outline-none transition-all duration-300 ${!icon ? 'pl-4' : ''} `}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
           />
         ) : (
           <input
-            className={`w-full bg-transparent px-4 py-3.5 text-sm text-slate-200 placeholder-slate-500 outline-none transition-all duration-300 ${!icon ? 'pl-4' : ''} `}
+            className={`w-full bg-transparent px-4 py-3.5 text-font placeholder-font/60 outline-none transition-all duration-300 ${!icon ? 'pl-4' : ''} `}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
