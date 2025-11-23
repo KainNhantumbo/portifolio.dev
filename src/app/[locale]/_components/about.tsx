@@ -53,8 +53,7 @@ export const About = () => {
                   whileHover={{
                     rotate: '-2.5deg',
                     scale: 1.1
-                  }}
-                >
+                  }}>
                   <SparklesCore
                     id={nanoid()}
                     background='transparent'

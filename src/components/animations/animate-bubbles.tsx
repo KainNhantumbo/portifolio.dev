@@ -139,4 +139,3 @@ export function BubbleBackground({
     </div>
   );
 }
-

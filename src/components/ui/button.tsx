@@ -117,11 +117,7 @@ const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <motion.button
-      className={classes}
-      disabled={isDisabled}
-      {...motionProps}
-      {...props}>
+    <motion.button className={classes} disabled={isDisabled} {...motionProps} {...props}>
       {childrenContent}
     </motion.button>
   );
