@@ -102,7 +102,7 @@ export function getRandomTwBaseColor(): string {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-function getComputedStyleColor(twClass: string): string | null {
+export function getComputedStyleColor(twClass: string): string | null {
   for (const key in baseColors) {
     if (twClass.includes(key)) {
       return baseColors[key];
