@@ -40,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary: 'bg-white/10 base-border text-white hover:bg-white/20 hover:border-white/30',
-    secondary: 'bg-black/20  text-white hover:bg-black/30',
+    secondary: 'bg-foreground/20  text-white hover:bg-foreground/30',
     danger:
       'bg-red-500/10 border-red-500/20 text-red-100 hover:bg-red-500/20 hover:border-red-500/30 hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]',
     ghost:

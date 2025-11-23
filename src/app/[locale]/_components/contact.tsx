@@ -1,10 +1,10 @@
 'use client';
 
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
+import Button from '@/components/ui/button';
 import { AnimatedInput } from '@/components/ui/inputs';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
-import { motion } from '@/providers/framer-provider';
 import { ContactSchema, ContactSchemaType } from '@/schemas/contact';
 import {
   AUTHOR,
@@ -163,13 +163,9 @@ export const Contact = () => {
 
             <span className='text-sm font-medium text-primary'>{messageStatus}</span>
 
-            <motion.button
-              whileTap={{ scale: 0.85 }}
-              whileHover={{ scale: 1.05 }}
-              className='base-border w-fit rounded-lg bg-primary-variant px-4 py-2 font-medium text-white disabled:bg-primary-variant/40'
-              type='submit'>
+            <Button variant='secondary' type='submit' className='w-fit'>
               <span>{translation('form.button')}</span>
-            </motion.button>
+            </Button>
           </form>
         </section>
       </section>
