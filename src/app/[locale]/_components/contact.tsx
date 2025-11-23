@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
+import { AnimatedInput } from '@/components/ui/inputs';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
@@ -13,13 +14,7 @@ import {
 } from '@/shared/constants';
 import { send as sender } from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  AtSignIcon,
-  MailboxIcon,
-  MessageSquareDashed,
-  TextIcon,
-  UserIcon
-} from 'lucide-react';
+import { Mail, MailboxIcon, MessageSquareDashed, TextIcon, UserIcon } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -100,29 +95,31 @@ export const Contact = () => {
         <section className='flex w-full flex-col gap-3 font-sans max-[420px]:py-5'>
           <form onSubmit={handleSubmit(onSubmit)} className='flex w-full flex-col gap-3'>
             <section className='flex gap-3 max-[568px]:flex-wrap'>
-              <div className='flex w-full flex-col'>
-                <label htmlFor='name' className='base-label pb-2'>
-                  <UserIcon />
+              <div className='flex w-full flex-col gap-2'>
+                <label htmlFor='name' className='ml-1 block font-medium'>
                   <span>{translation('form.name-label')}</span>
                 </label>
-                <input
+                <AnimatedInput
+                  as='input'
+                  icon={<UserIcon className='h-5 w-5 text-font' />}
                   {...register('name')}
                   id='name'
-                  className='base-input'
                   placeholder={translation('form.name-placeholder')}
                 />
 
                 <p className='p-1 text-error'>{errors?.name?.message}</p>
               </div>
-              <div className='flex w-full flex-col'>
-                <label htmlFor='from_email' className='base-label pb-2'>
-                  <AtSignIcon />
+              <div className='flex w-full flex-col gap-2'>
+                <label htmlFor='from_email' className='ml-1 block font-medium'>
                   <span>{translation('form.mail-label')}</span>
                 </label>
-                <input
+                <AnimatedInput
+                  as='input'
+                  icon={<Mail className='h-5 w-5 text-font' />}
+                  gradientFrom='from-fuchsia-500'
+                  gradientTo='to-purple-600'
                   {...register('from_email')}
                   id='from_email'
-                  className='base-input'
                   placeholder={translation('form.mail-placeholder')}
                 />
 
@@ -130,29 +127,35 @@ export const Contact = () => {
               </div>
             </section>
 
-            <label htmlFor='subject' className='base-label pb-2'>
-              <TextIcon />
-              <span>{translation('form.subject-label')}</span>
-            </label>
-            <input
-              {...register('subject')}
-              id='subject'
-              className='base-input'
-              placeholder={translation('form.subject-placeholder')}
-            />
+            <div className='flex w-full flex-col gap-2'>
+              <label htmlFor='subject' className='ml-1 block font-medium'>
+                <span>{translation('form.subject-label')}</span>
+              </label>
+              <AnimatedInput
+                as='input'
+                icon={<TextIcon className='h-5 w-5 text-font' />}
+                gradientFrom='from-amber-400'
+                gradientTo='to-rose-400'
+                {...register('subject')}
+                id='subject'
+                placeholder={translation('form.subject-placeholder')}
+              />
 
-            <p className='p-1 text-error'>{errors?.subject?.message}</p>
+              <p className='p-1 text-error'>{errors?.subject?.message}</p>
+            </div>
 
-            <label htmlFor='message' className='base-label pb-2'>
-              <MessageSquareDashed />
+            <label htmlFor='message' className='ml-1 block font-medium'>
               <span>{translation('form.message-label')}</span>
             </label>
-            <textarea
+            <AnimatedInput
+              as='textarea'
+              icon={<MessageSquareDashed className='h-5 w-5 text-font' />}
+              gradientFrom='from-amber-400'
+              gradientTo='to-orange-500'
               {...register('message')}
               id='message'
               cols={30}
               rows={10}
-              className='base-input'
               placeholder={translation('form.message-placeholder')}
             />
 
