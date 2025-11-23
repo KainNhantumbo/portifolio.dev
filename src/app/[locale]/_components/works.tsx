@@ -1,11 +1,12 @@
 'use client';
 
 import { ColourfulText } from '@/components/animations/animate-colorful-text';
+import { AnimatedBadge, getRandomTwBaseColor } from '@/components/ui/badge';
 import Button from '@/components/ui/button';
 import { ImageZoom } from '@/components/ui/image-zoom-effect';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
-import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
+import { Code, ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import Image from 'next/image';
 import { useWorks } from '../../../hooks/use-works';
 
@@ -23,44 +24,45 @@ export const Works = () => {
       />
 
       <section className='mx-auto mb-5 flex w-full flex-col gap-5'>
-        {data.map((item, index) => (
-          <section
-            key={index}
-            className='group rounded-lg border-[1px] border-solid border-font/10 p-3'>
-            <section className='group flex w-full select-none flex-row flex-nowrap items-center gap-3 rounded-xl p-3 group-even:flex-row-reverse max-md:flex-col-reverse max-md:items-center max-md:justify-center max-md:gap-5 group-even:max-md:flex-col'>
+        {data.map((item, idx) => (
+          <section key={idx} className='base-border rounded-xl bg-foreground p-3 md:p-6'>
+            <section className='flex w-full select-none flex-row flex-nowrap items-center gap-6 rounded-xl p-3 max-md:flex-col-reverse max-md:items-center max-md:justify-center max-md:gap-12'>
               <div className='flex w-full flex-col gap-2'>
-                <h3 className='mx-auto text-center font-sans text-lg font-bold uppercase sm:text-3xl'>
+                <h3 className='font-sans text-lg font-bold uppercase leading-relaxed sm:text-3xl md:text-4xl lg:text-5xl'>
                   <span className='mr-4 text-font/50'>
-                    <ColourfulText key={index} text={`0${index + 1}`} />
+                    <ColourfulText key={idx} text={`0${idx + 1}`} />
                   </span>
                   <span>{item.title}</span>
                 </h3>
                 <div className='flex flex-row flex-wrap items-center gap-2 border-solid border-font/10 pt-3 group-even:flex-row-reverse'>
-                  {item.stack.map((platform, index) => (
-                    <span
-                      key={index}
-                      className='base-border rounded-lg bg-foreground p-1 px-2 text-xs font-medium uppercase text-secondary'>
-                      {platform}
-                    </span>
+                  {item.stack.map((stack, idx) => (
+                    <AnimatedBadge
+                      key={idx}
+                      icon={<Code className='h-auto w-5' />}
+                      gradientFrom={getRandomTwBaseColor()}
+                      gradientTo={getRandomTwBaseColor()}>
+                      <span className='uppercase'>{stack}</span>
+                    </AnimatedBadge>
                   ))}
                 </div>
-                <div className='min-sm:text-justify border-t-[1px] border-solid border-font/10 pt-3'>
-                  {item.description.map((phrase, index) => (
-                    <p key={index} className='mb-3'>
+                <div className='min-sm:text-justify pt-3 md:space-y-6'>
+                  {item.description.map((phrase, idx) => (
+                    <p key={idx} className='mb-3 leading-relaxed md:text-xl'>
                       {phrase}
                     </p>
                   ))}
                 </div>
                 <div className='flex flex-row flex-wrap items-center gap-2 font-sans'>
-                  <h4 className='font-medium uppercase text-primary'>
-                    {translation('platform')}:{' '}
-                  </h4>
-                  {item.platforms.map((platform, index) => (
-                    <span
-                      key={index}
-                      className='base-border rounded-lg bg-foreground p-1 px-2 text-xs font-medium uppercase text-secondary'>
-                      {platform}
-                    </span>
+                  <h4 className='font-medium uppercase'>{translation('platform')}: </h4>
+                  {item.platforms.map((platform, idx) => (
+                    <AnimatedBadge
+                      key={idx}
+                      animateBorder={false}
+                      icon={<Code className='h-auto w-5' />}
+                      gradientFrom={''}
+                      gradientTo={''}>
+                      <span className='uppercase'>{platform}</span>
+                    </AnimatedBadge>
                   ))}
                 </div>
               </div>
