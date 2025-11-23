@@ -150,22 +150,6 @@
     @apply border-[1px] border-solid border-font/[.12];
   }
 
-  .base-input {
-    @apply base-border w-full resize-y rounded-lg bg-background/70 px-[18px] py-[10px] outline-none transition-colors placeholder:text-font/60 focus:shadow-[0_0_20px_rgba(0,0,0,.06)] disabled:border-none disabled:bg-foreground disabled:placeholder:text-transparent;
-  }
-
-  .base-label {
-    @apply relative;
-
-    svg {
-      @apply absolute left-0 top-[2px] h-[18px] w-[18px];
-    }
-
-    span {
-      @apply pl-6;
-    }
-  }
-
   .base-corner-button {
     all: unset;
     @apply grid w-fit cursor-pointer place-content-center rounded-lg;
