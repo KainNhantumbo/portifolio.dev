@@ -68,11 +68,12 @@
   },
   "projects": {
     "title": "Meus Trabalhos e Projetos",
-    "intro-part-1": "Cada projeto é uma uma peça única de desenvolvimento 🎏. Você pode encontrar mais projetos no meu",
-    "intro-part-2": "perfil do github",
-    "live-demo": "Saber mais",
-    "github": "Código fonte",
+    "description": "Cada projeto é uma uma peça única de desenvolvimento 🎏. Você pode encontrar mais projetos no meu perfil do github",
     "section_name": "Outros Projetos Criados",
+    "button-actions": {
+      "view-code": "Código fonte",
+      "go-live": "Saber mais"
+    },
     "content": {
       "maron-themes": "Extensão de Pacote de Temas para o Visual Studio Code feito com VSCode Theming API",
       "bug-tracker": "Aplicação de Rastreamento de Bugs construida com React e Typescript",
@@ -122,7 +123,6 @@
     "stack": "Ferramentas",
     "repo": "Repositório",
     "demo": "Versão Demostrativa",
-    "section_name": "Trabalhos",
     "live_preview_label": "Experimente a demostração!",
     "repository_label": "Ver ou ramificar o código fonte no Github",
     "choconotey": {

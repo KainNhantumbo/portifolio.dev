@@ -6,7 +6,6 @@ import Button from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useProjects } from '@/hooks/use-projects';
 import { useI18n } from '@/locales/client';
-import { GithubOriginal } from 'devicons-react';
 import { EyeIcon, GithubIcon } from 'lucide-react';
 import Image from 'next/image';
 

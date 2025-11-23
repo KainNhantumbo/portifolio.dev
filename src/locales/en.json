@@ -68,11 +68,11 @@
   },
   "projects": {
     "title": "My Projects and Works",
-    "intro-part-1": "Each project is a unique piece of development 🎏. You can see all my personal projects on my",
-    "intro-part-2": "github profile",
-    "live-demo": "Learn more",
-    "github": "Source code",
-    "section_name": "Other Crafted Projects",
+    "description": "Each project is a unique piece of development 🎏. You can see all my personal projects on my github profile",
+    "button-actions": {
+      "view-code": "Source code",
+      "go-live": "Learn more"
+    },
     "content": {
       "maron-themes": "Visual Studio Code Theme extension pack made with VSCode Theming API",
       "we-commerce": "Full featured e-commerce store, crafted with Next.JS, Nest.JS, Node.JS, Tailwindcss and Typescript.",
@@ -122,7 +122,6 @@
     "stack": "Stack",
     "repo": "Repository",
     "demo": "Live Preview",
-    "section_name": "Main Works",
     "live_preview_label": "Try this app live!",
     "repository_label": "View the code on Github",
     "choconotey": {
