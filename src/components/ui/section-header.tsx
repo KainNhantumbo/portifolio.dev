@@ -11,7 +11,7 @@ interface Props {
 
 export function SectionHeader(props: Props) {
   return (
-    <div className={cn('mb-6 space-y-6 lg:mb-12', props.className)}>
+    <div className={cn('mb-6 w-fit space-y-6 lg:mb-12', props.className)}>
       <motion.div
         initial='initial'
         whileHover='hovered'
