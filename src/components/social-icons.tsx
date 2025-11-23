@@ -1,7 +1,6 @@
 'use client';
 
 import { useScopedI18n } from '@/locales/client';
-import { motion } from '@/providers/framer-provider';
 import type { FooterAnchors } from '@/types';
 import {
   BookTextIcon,
@@ -12,6 +11,7 @@ import {
   TwitterIcon
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import Button from './ui/button';
 
 export function SocialIcons() {
   const translation = useScopedI18n('footer');
@@ -60,19 +60,19 @@ export function SocialIcons() {
   return (
     <ul className='flex flex-row items-center justify-center gap-4'>
       {socialMediaAnchors.map((item, index) => (
-        <motion.li
-          className='grid h-12 w-12 cursor-pointer place-content-center place-items-center rounded-full bg-font/[.15] p-3 backdrop-blur-md hover:animate-pulse hover:bg-secondary/20'
+        <Button
+          icon={<item.icon className='h-auto w-8' />}
+          as='a'
+          href={item.link}
+          target={'_blank'}
+          rel={'noreferrer noopener'}
+          variant='neon'
           key={index}
-          initial={{ scale: 0 }}
           title={item.name}
-          whileInView={{
-            scale: 1,
-            transition: { delay: index / socialMediaAnchors.length }
-          }}>
-          <a href={item.link} target={'_blank'} rel={'noreferrer noopener'}>
-            <item.icon className='h-auto w-6 stroke-font' />
-          </a>
-        </motion.li>
+          size='sm'
+          className='aspect-square rounded-full'>
+          <span className='sr-only'>{item.name}</span>
+        </Button>
       ))}
     </ul>
   );

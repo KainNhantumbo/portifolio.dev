@@ -8,7 +8,7 @@ type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'ghost' | 'neon';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 type ButtonProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   icon?: React.ReactNode;
