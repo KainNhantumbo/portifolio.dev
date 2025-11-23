@@ -1,11 +1,11 @@
 'use client';
 
 import { AnimateMagnetism } from '@/components/animations/animate-magnetism';
-import { TOOLS } from '@/shared/constants';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useLayoutEffect, useRef } from 'react';
 import { StarBackground } from './background';
+import { TOOLS } from './data';
 
 // Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
