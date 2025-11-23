@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { HTMLMotionProps, m as motion } from 'framer-motion';
 import * as React from 'react';
@@ -34,13 +36,11 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const baseGlass =
-    'relative overflow-hidden rounded-2xl backdrop-blur-md border shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-colors duration-300';
+    'relative overflow-hidden rounded-2xl text-font backdrop-blur-md base-border shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-colors duration-300';
 
   const variantStyles = {
-    primary:
-      'bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30',
-    secondary:
-      'bg-black/20 border-white/10 text-white hover:bg-black/30 hover:border-white/20',
+    primary: 'bg-white/10 base-border text-white hover:bg-white/20 hover:border-white/30',
+    secondary: 'bg-black/20  text-white hover:bg-black/30',
     danger:
       'bg-red-500/10 border-red-500/20 text-red-100 hover:bg-red-500/20 hover:border-red-500/30 hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]',
     ghost:
