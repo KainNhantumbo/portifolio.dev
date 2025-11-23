@@ -30,7 +30,7 @@ function WorkItem({ item, idx }: WorkItemProps) {
       onMouseLeave={() => setHovered(false)}>
       {/* overlay */}
       <div
-        className={`overflow-hidden p-px before:pointer-events-none before:absolute before:-left-20 before:-top-20 before:z-30 before:h-96 before:w-96 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-lime-500 before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:absolute after:inset-0 after:z-10 after:rounded-3xl after:opacity-0 after:transition-opacity after:duration-500 before:hover:opacity-20 after:group-hover:opacity-100 dark:before:bg-lime-400`}
+        className={`-z-50 overflow-hidden p-px before:pointer-events-none before:absolute before:-left-20 before:-top-20 before:z-30 before:h-96 before:w-96 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-lime-500 before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:absolute after:inset-0 after:z-10 after:rounded-3xl after:opacity-0 after:transition-opacity after:duration-500 before:hover:opacity-20 after:group-hover:opacity-100 dark:before:bg-lime-400`}
       />
 
       {hovered && (
@@ -38,9 +38,9 @@ function WorkItem({ item, idx }: WorkItemProps) {
           id={idx.toString()}
           background='transparent'
           minSize={0.4}
-          maxSize={3}
+          maxSize={4}
           particleDensity={40}
-          className='absolute left-0 top-0 h-full w-full'
+          className='absolute left-0 top-0 -z-50 h-full w-full'
           particleColor='#555555'
         />
       )}
@@ -82,8 +82,9 @@ function WorkItem({ item, idx }: WorkItemProps) {
             ))}
           </div>
 
-          <div className='mt-2 flex w-full flex-wrap items-center gap-3 font-sans'>
+          <div className='z-50 mt-2 flex w-full flex-wrap items-center gap-3'>
             <Button
+              as='a'
               href={item.livePreview.url}
               rel='noopener noreferrer'
               target='_blank'
@@ -93,6 +94,7 @@ function WorkItem({ item, idx }: WorkItemProps) {
               <span className='font-medium'>{item.livePreview.label}</span>
             </Button>
             <Button
+              as='a'
               href={item.repository.url}
               rel='noopener noreferrer'
               target='_blank'
