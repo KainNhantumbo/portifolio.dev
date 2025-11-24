@@ -17,7 +17,7 @@ import { send as sender } from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Mail, MailboxIcon, MessageSquareDashed, TextIcon, UserIcon } from 'lucide-react';
 import { useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 
 const initialFormState: ContactSchemaType = {
   name: '',
@@ -36,6 +36,7 @@ export const Contact = () => {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors }
   } = useForm({
     resolver: zodResolver(ContactSchema),
@@ -134,16 +135,22 @@ export const Contact = () => {
               <label htmlFor='subject' className='ml-1 block font-medium'>
                 <span>{translation('form.subject-label')}</span>
               </label>
-              <AnimatedInput
-                as='input'
-                icon={<TextIcon className='h-5 w-5 text-font' />}
-                gradientFrom='from-amber-400'
-                gradientTo='to-rose-400'
-                {...register('subject')}
-                id='subject'
-                placeholder={translation('form.subject-placeholder')}
-              />
 
+              <Controller
+                name='subject'
+                control={control}
+                render={({ ...props }) => (
+                  <AnimatedInput
+                    {...props}
+                    id='subject'
+                    as='input'
+                    icon={<TextIcon className='h-5 w-5 text-font' />}
+                    gradientFrom='from-amber-400'
+                    gradientTo='to-rose-400'
+                    placeholder={translation('form.subject-placeholder')}
+                  />
+                )}
+              />
               <p className='p-1 text-error'>{errors?.subject?.message}</p>
             </div>
 
