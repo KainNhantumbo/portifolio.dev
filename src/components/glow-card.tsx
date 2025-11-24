@@ -1,25 +1,32 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import React, { ReactNode, useEffect, useRef } from 'react';
-
-interface GlowCardProps {
-  children: ReactNode;
-  className?: string;
-  glowColor?: 'blue' | 'purple' | 'green' | 'red' | 'orange';
-  size?: 'sm' | 'md' | 'lg';
-  width?: string | number;
-  height?: string | number;
-  customSize?: boolean; // When true, ignores size prop and uses width/height or className
-}
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import { useDefault } from '@uidotdev/usehooks';
 
 const glowColorMap = {
   blue: { base: 220, spread: 200 },
   purple: { base: 280, spread: 300 },
   green: { base: 120, spread: 200 },
   red: { base: 0, spread: 200 },
-  orange: { base: 30, spread: 200 }
+  orange: { base: 30, spread: 200 },
+  pink: { base: 330, spread: 200 },
+  yellow: { base: 50, spread: 200 },
+  cyan: { base: 180, spread: 200 },
+  lime: { base: 90, spread: 200 }
 };
+
+type GlowColor = keyof typeof glowColorMap;
+interface GlowCardProps {
+  children: ReactNode;
+  className?: string;
+  glowColor?: GlowColor;
+  size?: 'sm' | 'md' | 'lg';
+  width?: string | number;
+  useRandomTwColors?: boolean;
+  height?: string | number;
+  customSize?: boolean; // When true, ignores size prop and uses width/height or className
+}
 
 const sizeMap = {
   sm: 'w-48 h-64',
@@ -31,6 +38,7 @@ export const GlowCard: React.FC<GlowCardProps> = ({
   children,
   className = '',
   glowColor = 'blue',
+  useRandomTwColors = false,
   size = 'md',
   width,
   height,
@@ -38,6 +46,12 @@ export const GlowCard: React.FC<GlowCardProps> = ({
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
+
+  const [randomColor] = useState<GlowColor>(() => {
+    if (!useRandomTwColors) return glowColor;
+    const colors = Object.keys(glowColorMap) as GlowColor[];
+    return colors[Math.floor(Math.random() * colors.length)];
+  });
 
   useEffect(() => {
     const syncPointer = (e: PointerEvent) => {
@@ -55,7 +69,8 @@ export const GlowCard: React.FC<GlowCardProps> = ({
     return () => document.removeEventListener('pointermove', syncPointer);
   }, []);
 
-  const { base, spread } = glowColorMap[glowColor];
+  const finalColor = useRandomTwColors ? randomColor : glowColor;
+  const { base, spread } = glowColorMap[finalColor];
 
   // Determine sizing
   const getSizeClasses = () => {
