@@ -19,15 +19,8 @@ export type ParticlesProps = {
 };
 
 export const SparklesCore = (props: ParticlesProps) => {
-  const {
-    className,
-    background,
-    minSize,
-    maxSize,
-    speed,
-    particleColor,
-    particleDensity
-  } = props;
+  const { className, background, minSize, maxSize, speed, particleColor, particleDensity } =
+    props;
   const id = useId();
   const [init, setInit] = useState(false);
   const controls = useAnimation();
