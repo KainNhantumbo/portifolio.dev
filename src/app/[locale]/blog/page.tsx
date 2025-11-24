@@ -1,10 +1,9 @@
 import { FeedGenerator } from '@/lib/feed-generator';
 import { getPosts } from '@/lib/posts-processor';
-import { formatDate } from '@/lib/utils';
 import type { PageParams } from '@/types';
 import { RssIcon } from 'lucide-react';
 import { setStaticParamsLocale } from 'next-international/server';
-import Link from 'next/link';
+import { PostCard } from './_components/post-card';
 
 export default async function Page(props: PageParams) {
   const params = await props.params;
@@ -49,25 +48,7 @@ export default async function Page(props: PageParams) {
       <article className='w-full'>
         <section className='flex w-full flex-col gap-5'>
           {posts.map((post, index) => (
-            <Link
-              href={`/${locale}/blog/post/${post.slug}`}
-              locale={'en'}
-              className='hover:base-border group flex cursor-pointer flex-col gap-3 rounded-xl border-[1px] border-transparent p-4 transition-colors hover:bg-foreground'
-              key={index.toString()}>
-              <div className='flex flex-row items-center justify-between gap-1'>
-                <h3 className='base-border rounded-full bg-black px-3 font-sans text-[.95rem] font-medium uppercase text-white'>
-                  {post.topic}
-                </h3>
-                <h4 className='font-sans text-xs font-medium uppercase'>
-                  {formatDate(post.createdAt)}
-                </h4>
-              </div>
-
-              <h3 className="relative pl-5 font-sans text-[1.4rem] font-medium underline decoration-dashed underline-offset-4 before:absolute before:left-0 before:top-[calc(50%_-_2px)] before:z-50 before:h-2 before:w-2 before:rounded-lg before:bg-primary before:content-[''] group-hover:text-blue-400 group-hover:transition-colors">
-                {post.title}
-              </h3>
-              <p className='excerpt font-sans font-medium'>{post.excerpt}</p>
-            </Link>
+            <PostCard key={index} post={post} locale={locale} />
           ))}
         </section>
       </article>
