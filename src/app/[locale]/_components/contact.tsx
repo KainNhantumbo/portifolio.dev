@@ -103,30 +103,46 @@ export const Contact = () => {
                 <label htmlFor='name' className='ml-1 block font-medium'>
                   <span>{translation('form.name-label')}</span>
                 </label>
-                <AnimatedInput
-                  as='input'
-                  icon={<UserIcon className='h-5 w-5 text-font' />}
-                  {...register('name')}
-                  id='name'
-                  placeholder={translation('form.name-placeholder')}
-                />
 
+                <Controller
+                  name='name'
+                  control={control}
+                  render={({ field }) => (
+                    <AnimatedInput
+                      {...field}
+                      as='input'
+                      icon={<UserIcon className='h-5 w-5 text-font' />}
+                      {...register('name')}
+                      id='name'
+                      placeholder={translation('form.name-placeholder')}
+                    />
+                  )}
+                />
                 <p className='p-1 text-error'>{errors?.name?.message}</p>
               </div>
               <div className='flex w-full flex-col gap-2'>
                 <label htmlFor='from_email' className='ml-1 block font-medium'>
                   <span>{translation('form.mail-label')}</span>
                 </label>
-                <AnimatedInput
-                  as='input'
-                  icon={<Mail className='h-5 w-5 text-font' />}
-                  gradientFrom='from-fuchsia-500'
-                  gradientTo='to-purple-600'
-                  {...register('from_email')}
-                  id='from_email'
-                  placeholder={translation('form.mail-placeholder')}
-                />
 
+                <Controller
+                  name='from_email'
+                  control={control}
+                  render={({ field }) => (
+                    <AnimatedInput
+                      {...field}
+                      as='input'
+                      type='email'
+                      autoComplete='true'
+                      icon={<Mail className='h-5 w-5 text-font' />}
+                      gradientFrom='from-fuchsia-500'
+                      gradientTo='to-purple-600'
+                      {...register('from_email')}
+                      id='from_email'
+                      placeholder={translation('form.mail-placeholder')}
+                    />
+                  )}
+                />
                 <p className='p-1 text-error'>{errors?.from_email?.message}</p>
               </div>
             </section>
@@ -139,9 +155,9 @@ export const Contact = () => {
               <Controller
                 name='subject'
                 control={control}
-                render={({ ...props }) => (
+                render={({ field }) => (
                   <AnimatedInput
-                    {...props}
+                    {...field}
                     id='subject'
                     as='input'
                     icon={<TextIcon className='h-5 w-5 text-font' />}
@@ -157,16 +173,24 @@ export const Contact = () => {
             <label htmlFor='message' className='ml-1 block font-medium'>
               <span>{translation('form.message-label')}</span>
             </label>
-            <AnimatedInput
-              as='textarea'
-              icon={<MessageSquareDashed className='h-5 w-5 text-font' />}
-              gradientFrom='from-amber-400'
-              gradientTo='to-orange-500'
-              {...register('message')}
-              id='message'
-              cols={30}
-              rows={10}
-              placeholder={translation('form.message-placeholder')}
+
+            <Controller
+              name='message'
+              control={control}
+              render={({ field }) => (
+                <AnimatedInput
+                  {...field}
+                  as='textarea'
+                  icon={<MessageSquareDashed className='h-5 w-5 text-font' />}
+                  gradientFrom='from-amber-400'
+                  gradientTo='to-orange-500'
+                  {...register('message')}
+                  id='message'
+                  cols={30}
+                  rows={10}
+                  placeholder={translation('form.message-placeholder')}
+                />
+              )}
             />
 
             <p className='p-1 text-error'>{errors?.message?.message}</p>

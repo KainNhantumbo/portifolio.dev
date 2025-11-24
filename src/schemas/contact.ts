@@ -8,7 +8,7 @@ export const ContactSchema = z.object({
     .max(64, 'Name field length must not be more than 64 characters.'),
   email: z.email({ message: 'Please enter a valid email.' }).default(AUTHOR.email),
   subject: z
-    .string()
+    .string({ error: 'Subject is required' })
     .min(1, 'Please type your subject.')
     .max(96, 'Subject field length must not be more than 96 characters.'),
   message: z
