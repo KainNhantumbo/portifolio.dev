@@ -110,7 +110,7 @@ export const AnimatedInput = forwardRef<
 
         {/* Active Border Animation (Focus State) */}
         <motion.div
-          className='absolute inset-0 rounded-xl opacity-0 blur-md transition-opacity duration-300'
+          className='absolute inset-0 rounded-[10px] opacity-0 blur-md transition-opacity duration-300'
           animate={{ opacity: isFocused ? 0.6 : 0 }}
           style={{
             background: focusBackground
@@ -128,11 +128,11 @@ export const AnimatedInput = forwardRef<
 
         {/* Inner Content Container */}
         <div
-          className={`relative flex rounded-[10px] bg-slate-950 ring-1 ring-white/10 transition-all duration-300 group-hover:ring-white/20 ${isTextArea ? 'items-start' : 'items-center'} `}>
+          className={`base-border relative flex rounded-xl bg-foreground transition-all duration-300 group-hover:ring-font/20 ${isTextArea ? 'items-start' : 'items-center'} `}>
           {/* Icon */}
           {icon && (
             <div
-              className={`ml-4 transition-colors duration-300 ${isFocused ? 'text-slate-200' : 'text-slate-500'} ${isTextArea ? 'mt-3.5' : ''} `}>
+              className={`ml-4 transition-colors duration-300 ${isFocused ? 'text-font/60' : 'text-font'} ${isTextArea ? 'mt-3.5' : ''} `}>
               {icon}
             </div>
           )}
@@ -143,7 +143,7 @@ export const AnimatedInput = forwardRef<
               ref={ref as React.Ref<HTMLTextAreaElement>}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              className={`w-full resize-none bg-transparent px-4 py-3.5 text-sm text-slate-200 placeholder-slate-500 outline-none transition-all duration-300 ${!icon ? 'pl-4' : ''} `}
+              className={`w-full bg-transparent px-4 py-3.5 text-font placeholder-font/60 outline-none transition-all duration-300 ${!icon ? 'pl-4' : ''} `}
               {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
             />
           ) : (
@@ -151,7 +151,7 @@ export const AnimatedInput = forwardRef<
               ref={ref as React.Ref<HTMLInputElement>}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              className={`w-full bg-transparent px-4 py-3.5 text-sm text-slate-200 placeholder-slate-500 outline-none transition-all duration-300 ${!icon ? 'pl-4' : ''} `}
+              className={`w-full bg-transparent px-4 py-3.5 text-font placeholder-font/60 outline-none transition-all duration-300 ${!icon ? 'pl-4' : ''} `}
               {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
             />
           )}
