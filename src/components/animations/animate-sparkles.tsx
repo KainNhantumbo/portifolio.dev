@@ -5,7 +5,7 @@ import type { Container, SingleOrMultiple } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { useAnimation } from 'framer-motion';
-import { useEffect, useId, useState } from 'react';
+import { useCallback, useEffect, useId, useState } from 'react';
 
 export type ParticlesProps = {
   className?: string;
@@ -31,11 +31,14 @@ export const SparklesCore = (props: ParticlesProps) => {
       .catch((error) => console.error(error));
   }, []);
 
-  const particlesLoaded = async (container?: Container) => {
-    if (container) {
-      controls.start({ opacity: 1, transition: { duration: 1 } });
-    }
-  };
+  const particlesLoaded = useCallback(
+    async (container?: Container) => {
+      if (container) {
+        controls.start({ opacity: 1, transition: { duration: 1 } });
+      }
+    },
+    [controls]
+  );
 
   return (
     <motion.div animate={controls} className={cn('opacity-0', className)}>
