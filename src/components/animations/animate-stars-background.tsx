@@ -1,29 +1,31 @@
 'use client';
 
+import { useIsClient } from '@uidotdev/usehooks';
 import { useTheme } from 'next-themes';
 import React, { useMemo } from 'react';
+
+const generateShadows = (n: number, currentColor: string) => {
+  let value = `${Math.random() * 2000}px ${Math.random() * 2000}px ${currentColor}`;
+  for (let i = 2; i <= n; i++) {
+    value += `, ${Math.random() * 2000}px ${Math.random() * 2000}px ${currentColor}`;
+  }
+  return value;
+};
 
 export const StarBackground: React.FC = () => {
   const { theme } = useTheme();
   const currentColor = useMemo(() => (theme === 'dark' ? '#FFF' : '#000'), [theme]);
+  const canRender = useIsClient();
 
-  // Function to generate random box-shadow strings
-  const generateShadows = (n: number) => {
-    let value = `${Math.random() * 2000}px ${Math.random() * 2000}px ${currentColor}`;
-    for (let i = 2; i <= n; i++) {
-      value += `, ${Math.random() * 2000}px ${Math.random() * 2000}px ${currentColor}`;
-    }
-    return value;
-  };
-
-  // Memoize the shadows so they don't regenerate on every render
   const { shadowsSmall, shadowsMedium, shadowsBig } = useMemo(() => {
     return {
-      shadowsSmall: generateShadows(700),
-      shadowsMedium: generateShadows(200),
-      shadowsBig: generateShadows(100)
+      shadowsSmall: generateShadows(700, currentColor),
+      shadowsMedium: generateShadows(200, currentColor),
+      shadowsBig: generateShadows(100, currentColor)
     };
   }, [currentColor]);
+
+  if (!canRender) return null;
 
   return (
     <div className='absolute inset-0 z-0 h-full w-full overflow-hidden'>

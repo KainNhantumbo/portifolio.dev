@@ -4,7 +4,6 @@ import { AnimateMagnetism } from '@/components/animations/animate-magnetism';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useLayoutEffect, useRef } from 'react';
-import { StarBackground } from '../../../../components/animations/animate-stars-background';
 import { TOOLS } from './data';
 
 // Register GSAP plugin
@@ -127,8 +126,6 @@ export const WhatIUse: React.FC = () => {
     <section
       ref={containerRef}
       className='perspective-1000 relative flex h-screen w-full items-center justify-center overflow-hidden'>
-      <StarBackground />
-
       {/* Vertical Fade Gradients - Blend background into adjacent sections */}
       <div className='pointer-events-none absolute left-0 top-0 z-[1] h-[20%] w-full' />
       <div className='pointer-events-none absolute bottom-0 left-0 z-[1] h-[20%] w-full' />

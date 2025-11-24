@@ -55,7 +55,6 @@ export const About = () => {
                   glowColor={item.color}
                   className='group relative grid aspect-square w-[220px] select-none place-content-center place-items-center gap-3 rounded-xl p-8 font-sans'>
                   <SparklesCore
-                    id={idx.toString()}
                     background='transparent'
                     minSize={0.4}
                     maxSize={4}
