@@ -8,9 +8,9 @@ import { ImageZoom } from '@/components/ui/image-zoom-effect';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
 import { Work } from '@/types';
+import { useHover } from '@uidotdev/usehooks';
 import { Code, ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import Image from 'next/image';
-import * as React from 'react';
 import { useWorks } from '../../../hooks/use-works';
 
 interface WorkItemProps {
@@ -20,22 +20,19 @@ interface WorkItemProps {
 
 function WorkItem({ item, idx }: WorkItemProps) {
   const translation = useScopedI18n('works');
-  const [hovered, setHovered] = React.useState(false);
+  const [ref, hovering] = useHover();
 
   return (
     <section
       className='base-border relative overflow-hidden rounded-xl bg-foreground/30 p-3 md:p-6'
-      // @ts-ignore
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}>
+      ref={ref}>
       {/* overlay */}
       <div
         className={`-z-50 overflow-hidden p-px before:pointer-events-none before:absolute before:-left-20 before:-top-20 before:z-30 before:h-96 before:w-96 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-lime-500 before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:absolute after:inset-0 after:z-10 after:rounded-3xl after:opacity-0 after:transition-opacity after:duration-500 before:hover:opacity-20 after:group-hover:opacity-100 dark:before:bg-lime-400`}
       />
 
-      {hovered && (
+      {hovering && (
         <SparklesCore
-          id={idx.toString()}
           background='transparent'
           minSize={0.4}
           maxSize={4}

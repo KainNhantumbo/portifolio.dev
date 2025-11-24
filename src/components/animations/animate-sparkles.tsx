@@ -5,10 +5,9 @@ import type { Container, SingleOrMultiple } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { useAnimation } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 
 export type ParticlesProps = {
-  id?: string;
   className?: string;
   background?: string;
   particleSize?: number;
@@ -21,7 +20,6 @@ export type ParticlesProps = {
 
 export const SparklesCore = (props: ParticlesProps) => {
   const {
-    id,
     className,
     background,
     minSize,
@@ -30,6 +28,7 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleColor,
     particleDensity
   } = props;
+  const id = useId();
   const [init, setInit] = useState(false);
   const controls = useAnimation();
 
@@ -49,7 +48,7 @@ export const SparklesCore = (props: ParticlesProps) => {
     <motion.div animate={controls} className={cn('opacity-0', className)}>
       {init && (
         <Particles
-          id={id || 'tsparticles'}
+          id={id}
           className={cn('h-full w-full')}
           particlesLoaded={particlesLoaded}
           options={{
