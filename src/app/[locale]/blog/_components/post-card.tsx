@@ -17,8 +17,11 @@ export function PostCard({ post, locale }: Props) {
   const [ref, hovering] = useHover();
 
   return (
-    <div ref={ref}>
-      <GlowCard customSize useRandomTwColors className='relative'>
+    <div ref={ref} className='h-full'>
+      <GlowCard
+        customSize
+        useRandomTwColors
+        className='group relative flex h-full min-h-96 flex-col justify-between'>
         {hovering && (
           <SparklesCore
             background='transparent'
@@ -29,25 +32,31 @@ export function PostCard({ post, locale }: Props) {
             particleColor='#555555'
           />
         )}
-        <div className='flex flex-row items-center justify-between gap-1'>
-          <AnimatedBadge
-            animateBorder={true}
-            gradientFrom={getRandomTwBaseColor()}
-            gradientTo={getRandomTwBaseColor()}>
-            <span className='uppercase'>{post.topic}</span>
-          </AnimatedBadge>
 
-          <h4 className='font-sans font-medium uppercase'>{formatDate(post.createdAt)}</h4>
-        </div>
+        <section className='space-y-6'>
+          <div className='flex flex-row items-center justify-between gap-1'>
+            <AnimatedBadge
+              animateBorder={true}
+              gradientFrom={getRandomTwBaseColor()}
+              gradientTo={getRandomTwBaseColor()}>
+              <span className='uppercase'>{post.topic}</span>
+            </AnimatedBadge>
 
-        <h3 className="relative pl-5 font-sans text-[1.4rem] font-medium underline decoration-dashed underline-offset-4 before:absolute before:left-0 before:top-[calc(50%_-_2px)] before:z-50 before:h-2 before:w-2 before:rounded-lg before:bg-primary before:content-[''] group-hover:text-blue-400 group-hover:transition-colors">
-          {post.title}
-        </h3>
-        <p className='excerpt font-sans font-medium'>{post.excerpt}</p>
+            <h4 className='font-sans font-medium uppercase'>
+              {formatDate(post.createdAt)}
+            </h4>
+          </div>
+
+          <h3 className='font-sans text-[1.4rem] font-medium duration-300 group-hover:text-blue-400 group-hover:transition-colors'>
+            {post.title}
+          </h3>
+          <p className='excerpt font-sans font-medium'>{post.excerpt}</p>
+        </section>
+
         <Link
           locale={'en'}
           href={`/${locale}/blog/post/${post.slug}`}
-          className='base-border w-fit cursor-pointer rounded-full bg-foreground px-4 py-2 font-medium transition-colors duration-300 hover:bg-foreground/80'>
+          className='base-border w-fit cursor-pointer rounded-full bg-foreground px-4 py-2 font-medium transition-colors duration-300 hover:bg-foreground/40 hover:text-blue-400 hover:transition-colors'>
           Read more
         </Link>
       </GlowCard>
