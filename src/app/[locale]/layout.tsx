@@ -1,7 +1,6 @@
 import '@/styles/blog-post.css';
 import '@/styles/index.css';
 
-import { AnimatePageTransition } from '@/components/animations/animate-page-transition';
 import { Footer } from '@/components/sections/common/footer';
 import { Header } from '@/components/sections/common/header';
 import { cn } from '@/lib/utils';
@@ -44,12 +43,9 @@ export default async function RootLayout(props: Props) {
           <I18nProviderClient locale={locale}>
             <MotionConfig reducedMotion='user'>
               <LazyMotion strict={true} features={domAnimation}>
-                <AnimatePageTransition>
-                  <Header />
-                  {/*<GrainyBackgroundEffect />*/}
-                  {children}
-                  <Footer />
-                </AnimatePageTransition>
+                <Header />
+                {children}
+                <Footer />
               </LazyMotion>
             </MotionConfig>
           </I18nProviderClient>
