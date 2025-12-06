@@ -54,6 +54,7 @@
     "react-medium-image-zoom": "^5.4.0",
     "react-syntax-highlighter": "^15.6.6",
     "reading-time-estimator": "^1.11.0",
+    "simplex-noise": "^4.0.3",
     "tailwind-merge": "^2.5.3",
     "zod": "^4.1.12"
   },
