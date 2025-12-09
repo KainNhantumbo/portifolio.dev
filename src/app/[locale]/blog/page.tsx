@@ -17,10 +17,10 @@ export default async function Page(props: PageParams) {
   feed.generate();
 
   return (
-    <section className='relative z-50 mx-auto mb-12 mt-12 flex w-full max-w-[1280px] flex-col gap-3 p-5 px-2 font-sans'>
+    <section className='flex w-full flex-col gap-24'>
       <BlogHero />
 
-      <article className='w-full'>
+      <article className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 pt-5'>
         <section className='grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
           {posts.map((post, index) => (
             <PostCard key={index} post={post} locale={locale} />
