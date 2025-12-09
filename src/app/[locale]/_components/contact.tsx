@@ -1,7 +1,6 @@
 'use client';
 
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
-import { AnimatedSeparator } from '@/components/animations/animate-separator';
 import Button from '@/components/ui/button';
 import { AnimatedInput } from '@/components/ui/inputs';
 import { SectionHeader } from '@/components/ui/section-header';
@@ -15,8 +14,16 @@ import {
 } from '@/shared/constants';
 import { send as sender } from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Mail, MailboxIcon, MessageSquareDashed, TextIcon, UserIcon } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { now } from 'dot-beat-time';
+import {
+  ClockFadingIcon,
+  Mail,
+  MailboxIcon,
+  MessageSquareDashed,
+  TextIcon,
+  UserIcon
+} from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 const initialFormState: ContactSchemaType = {
@@ -43,6 +50,16 @@ export const Contact = () => {
     defaultValues: { ...initialFormState },
     mode: 'onSubmit'
   });
+
+  const [internetTime, setInternetTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    const timeoutInstance = setInterval(() => {
+      setInternetTime(now(true));
+    }, 1000);
+
+    return () => clearTimeout(timeoutInstance);
+  }, []);
 
   // notifies the e-mail sender about the message status
   const notification = (message: string) => {
@@ -77,21 +94,23 @@ export const Contact = () => {
 
       <section className='flex w-full gap-12'>
         <div className='flex w-full max-w-md flex-col gap-6'>
-          <section className='flex flex-col gap-3 font-sans'>
+          <section className='flex flex-col gap-6 font-sans'>
             <AnimateTextReveal inverseDirection>
               <p className='leading-relaxed'>{translation('intro-phrase')}</p>
             </AnimateTextReveal>
             <AnimateTextReveal delay={0.5}>
               <p className='leading-relaxed'>{translation('intro-message')}</p>
             </AnimateTextReveal>
-          </section>
 
-          <AnimatedSeparator className='w-full' />
-
-          <section className='flex flex-col gap-1 font-sans'>
+            <hr className='w-full bg-foreground/40' />
             <div className='flex items-center gap-3'>
-              <MailboxIcon className='h-5 w-5 stroke-primary' />
+              <MailboxIcon className='h-5 w-5' />
               <span className='font-semibold'>{translation('mail')}</span>
+            </div>
+            <hr className='w-full bg-foreground/40' />
+            <div className='flex items-center gap-3'>
+              <ClockFadingIcon className='h-5 w-5' />
+              <span className='font-semibold'>{internetTime}</span>
             </div>
           </section>
         </div>

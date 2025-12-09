@@ -1609,6 +1609,11 @@ domutils@^3.0.1:
     domelementtype "^2.3.0"
     domhandler "^5.0.3"
 
+dot-beat-time@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/dot-beat-time/-/dot-beat-time-1.2.1.tgz#0ed611b50b1e78043a5137a0951fc48a531a4454"
+  integrity sha512-/SZynid/jSoG+7SeCeImFLgOUGA00m8hU//IeUR+kmWQXR/3cgP0YyA0V5efHu2yU1Eza2KTVLYomXjc61XybA==
+
 dunder-proto@^1.0.0, dunder-proto@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/dunder-proto/-/dunder-proto-1.0.1.tgz#d7ae667e1dc83482f8b70fd0f6eefc50da30f58a"
