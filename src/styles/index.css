@@ -149,30 +149,6 @@
   .base-border {
     @apply border-[1px] border-solid border-font/[.12];
   }
-
-  .base-corner-button {
-    all: unset;
-    @apply grid w-fit cursor-pointer place-content-center rounded-lg;
-
-    svg {
-      @apply h-auto w-[20px];
-    }
-  }
-
-  .base-section-title {
-    @apply relative mx-auto mt-3 font-sans font-bold max-[420px]:text-center max-[420px]:text-base;
-
-    ::before {
-      @apply absolute -top-4 left-[calc(50%_-_20px)] h-[7px] w-11 rounded-xl bg-primary content-[''];
-    }
-
-    svg {
-      @apply absolute left-0 top-[calc(50%_-_10px)] h-5 w-5 stroke-primary;
-    }
-    span {
-      @apply pl-6 text-lg uppercase;
-    }
-  }
 }
 
 @layer utilities {
