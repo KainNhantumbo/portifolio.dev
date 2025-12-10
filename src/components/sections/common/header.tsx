@@ -51,8 +51,6 @@ const Header = () => {
     () => (isPortfolio ? portfolioUrls : blogUrls),
     [isPortfolio, blogUrls, portfolioUrls]
   );
-  // const animationColor = '#e47131';
-  // const animationDuration = '5s';
 
   return (
     <header className='w-full'>
@@ -61,21 +59,6 @@ const Header = () => {
           'base-border fixed left-1/2 top-3 z-[5000] flex min-h-[50px] w-fit -translate-x-1/2 items-center justify-center gap-[5px] rounded-full bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:min-w-[340px] max-[640px]:flex-col',
           isHeaderInView && 'rounded-3xl max-[640px]:pt-2'
         )}>
-        {/* <div
-          className='absolute left-[-250%] top-[-10px] z-0 h-[25%] w-[300%] animate-star-movement-top overflow-hidden rounded-full opacity-70'
-          style={{
-            background: `radial-gradient(circle, ${animationColor}, transparent 10%)`,
-            animationDuration: animationDuration
-          }}
-        />
-        <div
-          className='absolute bottom-[-11px] right-[-250%] z-0 h-[25%] w-[300%] animate-star-movement-bottom rounded-full opacity-70'
-          style={{
-            background: `radial-gradient(circle, ${animationColor}, transparent 10%)`,
-            animationDuration: animationDuration
-          }}
-        /> */}
-
         <div className='flex w-full cursor-pointer flex-row items-center justify-between gap-2 px-4'>
           <motion.button
             whileTap={{ scale: 0.8 }}
