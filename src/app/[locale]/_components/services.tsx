@@ -4,7 +4,6 @@ import { MagicBento } from '@/components/animations/animate-bento';
 import Button from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
-import { motion } from '@/providers/framer-provider';
 import {
   AppWindowIcon,
   CodeIcon,
@@ -13,7 +12,7 @@ import {
   SparklesIcon,
   UserIcon
 } from 'lucide-react';
-import { useMemo } from 'react';
+import * as React from 'react';
 
 const icons = [
   { icon: Mail, color: '#EA7E5D' },
@@ -24,10 +23,10 @@ const icons = [
   { icon: UserIcon, color: '#DDA0DD' }
 ];
 
-export const Services = () => {
+const Services = () => {
   const translation = useScopedI18n('services');
 
-  const data = useMemo(() => {
+  const data = React.useMemo(() => {
     return Array.from(icons).map(({ color, icon }, index) => ({
       title: translation(`types.${index}.title`, { count: index }),
       description: translation(`types.${index}.content`, { count: index }),
@@ -68,3 +67,5 @@ export const Services = () => {
     </section>
   );
 };
+
+export default React.memo(Services);
