@@ -1,7 +1,7 @@
 import '@/styles/blog-post.css';
 import '@/styles/index.css';
 
-import { Footer } from '@/components/sections/common/footer';
+import Footer from '@/components/sections/common/footer';
 import Header from '@/components/sections/common/header';
 import { cn } from '@/lib/utils';
 import { I18nProviderClient } from '@/locales/client';

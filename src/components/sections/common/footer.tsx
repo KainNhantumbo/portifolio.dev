@@ -7,8 +7,9 @@ import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { useScopedI18n } from '@/locales/client';
 import { constants } from '@/shared/constants';
 import Image from 'next/image';
+import * as React from 'react';
 
-export const Footer = () => {
+const Footer = () => {
   const translation = useScopedI18n('footer');
 
   return (
@@ -51,3 +52,5 @@ export const Footer = () => {
     </div>
   );
 };
+
+export default React.memo(Footer);
