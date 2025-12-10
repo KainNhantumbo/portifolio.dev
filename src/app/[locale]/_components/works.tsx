@@ -2,7 +2,7 @@
 
 import { AnimateColourfulText } from '@/components/animations/animate-colorful-text';
 import { SparklesCore } from '@/components/animations/animate-sparkles';
-import { AnimatedBadge, getRandomTwBaseColor } from '@/components/ui/badge';
+import { getRandomTwBaseColor } from '@/components/ui/badge';
 import Button from '@/components/ui/button';
 import { ImageZoom } from '@/components/ui/image-zoom-effect';
 import { SectionHeader } from '@/components/ui/section-header';
@@ -10,6 +10,7 @@ import { useScopedI18n } from '@/locales/client';
 import { Work } from '@/types';
 import { useHover } from '@uidotdev/usehooks';
 import { Code, ExternalLinkIcon, GithubIcon } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useWorks } from '../../../hooks/use-works';
 
@@ -17,6 +18,11 @@ interface WorkItemProps {
   idx: number;
   item: Work;
 }
+
+const AnimatedBadge = dynamic(
+  () => import('@/components/ui/badge').then((mod) => mod.AnimatedBadge),
+  { ssr: false }
+);
 
 function WorkItem({ item, idx }: WorkItemProps) {
   const translation = useScopedI18n('works');

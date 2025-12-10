@@ -7,6 +7,10 @@ import { Projects } from './_components/projects';
 import { Services } from './_components/services';
 import { Works } from './_components/works';
 
+// const About = dynamic(() => import('./_components/about').then((mod) => mod.About), {
+//   ssr: false
+// });
+
 const Page = async (props: PageParams) => {
   const { locale } = await props.params;
   setStaticParamsLocale(locale);

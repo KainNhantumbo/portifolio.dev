@@ -2,11 +2,17 @@
 
 import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { GlowCard } from '@/components/glow-card';
-import { AnimatedBadge, getRandomTwBaseColor } from '@/components/ui/badge';
+import { getRandomTwBaseColor } from '@/components/ui/badge';
 import { formatDate } from '@/lib/utils';
 import { Post } from '@/types';
 import { useHover } from '@uidotdev/usehooks';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
+
+const AnimatedBadge = dynamic(
+  () => import('@/components/ui/badge').then((mod) => mod.AnimatedBadge),
+  { ssr: false }
+);
 
 interface Props {
   post: Post;
