@@ -9,11 +9,19 @@ import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
 import { motion } from '@/providers/framer-provider';
 import { AUTHOR } from '@/shared/constants';
+import { useWindowSize } from '@uidotdev/usehooks';
 import { Code2Icon, SquareStackIcon } from 'lucide-react';
 import Image from 'next/image';
+import { useMemo } from 'react';
 
 export const About = () => {
   const translation = useScopedI18n('about');
+
+  const windowSize = useWindowSize();
+  const enableAnimations = useMemo(
+    () => !!windowSize?.width && windowSize.width >= 768,
+    [windowSize]
+  );
 
   const cards = [
     {
@@ -49,6 +57,7 @@ export const About = () => {
             <div className='flex flex-wrap items-center gap-12'>
               {cards.map((item, idx) => (
                 <GlowCard
+                  enableMouseEffect={enableAnimations}
                   key={idx}
                   width={280}
                   height={280}
