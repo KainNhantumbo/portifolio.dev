@@ -3,7 +3,7 @@ import { setStaticParamsLocale } from 'next-international/server';
 import About from './_components/about';
 import { Contact } from './_components/contact';
 import Hero from './_components/hero';
-import { Projects } from './_components/projects';
+import Projects from './_components/projects';
 import Services from './_components/services';
 import Works from './_components/works';
 

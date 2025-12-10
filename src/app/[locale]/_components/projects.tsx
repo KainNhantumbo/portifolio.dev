@@ -7,8 +7,9 @@ import { useProjects } from '@/hooks/use-projects';
 import { useI18n } from '@/locales/client';
 import { EyeIcon, GithubIcon } from 'lucide-react';
 import Image from 'next/image';
+import * as React from 'react';
 
-export const Projects = () => {
+const Projects = () => {
   const projects = useProjects();
   const translation = useI18n();
 
@@ -82,3 +83,5 @@ export const Projects = () => {
     </section>
   );
 };
+
+export default React.memo(Projects);
