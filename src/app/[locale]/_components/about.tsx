@@ -12,13 +12,13 @@ import { AUTHOR } from '@/shared/constants';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { Code2Icon, SquareStackIcon } from 'lucide-react';
 import Image from 'next/image';
-import { useMemo } from 'react';
+import * as React from 'react';
 
-export const About = () => {
+const About = () => {
   const translation = useScopedI18n('about');
 
   const windowSize = useWindowSize();
-  const enableAnimations = useMemo(
+  const enableAnimations = React.useMemo(
     () => !!windowSize?.width && windowSize.width >= 768,
     [windowSize]
   );
@@ -105,3 +105,5 @@ export const About = () => {
     </>
   );
 };
+
+export default React.memo(About);
