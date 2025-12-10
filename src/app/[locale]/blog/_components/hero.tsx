@@ -5,8 +5,9 @@ import { AnimateTextFade } from '@/components/animations/animate-text-fade';
 import { AnimateVortex } from '@/components/animations/animate-vortex';
 import { SectionHeader } from '@/components/ui/section-header';
 import { RssIcon } from 'lucide-react';
+import * as React from 'react';
 
-export function BlogHero() {
+function BlogHero() {
   return (
     <section className='relative mt-5 grid min-h-screen w-full grid-cols-1 place-items-center overflow-hidden px-3 pb-7'>
       <AnimateVortex
@@ -28,7 +29,7 @@ export function BlogHero() {
           </a>
         </h1>
 
-        <div className='flex w-full max-w-4xl flex-col gap-2 font-sans font-medium'>
+        <div className='w-full max-w-4xl space-y-6 font-medium'>
           <h3 className='mb-2'>
             <AnimateColourfulText
               text="Hello, Welcome to Kain's Universe!"
@@ -57,3 +58,5 @@ export function BlogHero() {
     </section>
   );
 }
+
+export default React.memo(BlogHero);

@@ -1,17 +1,23 @@
 'use client';
 
-import { SparklesCore } from '@/components/animations/animate-sparkles';
-import { GlowCard } from '@/components/glow-card';
 import { getRandomTwBaseColor } from '@/components/ui/badge';
 import { formatDate } from '@/lib/utils';
-import { Post } from '@/types';
+import type { Post } from '@/types';
 import { useHover, useWindowSize } from '@uidotdev/usehooks';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { useMemo } from 'react';
+import * as React from 'react';
 
 const AnimatedBadge = dynamic(
   () => import('@/components/ui/badge').then((mod) => mod.AnimatedBadge),
+  { ssr: false }
+);
+const GlowCard = dynamic(
+  () => import('@/components/glow-card').then((mod) => mod.GlowCard),
+  { ssr: false }
+);
+const SparklesCore = dynamic(
+  () => import('@/components/animations/animate-sparkles').then((mod) => mod.SparklesCore),
   { ssr: false }
 );
 
@@ -20,11 +26,11 @@ interface Props {
   locale?: string;
 }
 
-export function PostCard({ post, locale }: Props) {
+const PostCard = ({ post, locale }: Props) => {
   const [ref, hovering] = useHover();
 
   const windowSize = useWindowSize();
-  const enableAnimations = useMemo(
+  const enableAnimations = React.useMemo(
     () => !!windowSize?.width && windowSize.width >= 768,
     [windowSize]
   );
@@ -76,4 +82,6 @@ export function PostCard({ post, locale }: Props) {
       </GlowCard>
     </div>
   );
-}
+};
+
+export default React.memo(PostCard);

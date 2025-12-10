@@ -7,7 +7,7 @@ import Projects from './_components/projects';
 import Services from './_components/services';
 import Works from './_components/works';
 
-const Page = async (props: PageParams) => {
+export default async function Page(props: PageParams) {
   const { locale } = await props.params;
   setStaticParamsLocale(locale);
 
@@ -21,6 +21,4 @@ const Page = async (props: PageParams) => {
       <Contact />
     </main>
   );
-};
-
-export default Page;
+}
