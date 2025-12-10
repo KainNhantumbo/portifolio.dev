@@ -38,16 +38,16 @@ export const Hero = () => {
         </div>
 
         <div className='flex w-full max-w-3xl flex-col gap-4 text-xl font-medium'>
-          <AnimateText
-            words={translation('intro.message-part-1')}
-            duration={0.1}
-            textClassName={cn('leading-relaxed dark:text-white text-black')}
-          />
-          <AnimateText
-            words={translation('intro.message-part-2')}
-            duration={0.1}
-            textClassName={cn('leading-relaxed dark:text-white text-black')}
-          />
+          <AnimateTextFade direction='down' delay={2000}>
+            <p className={cn('leading-relaxed text-black dark:text-white')}>
+              {translation('intro.message-part-1')}
+            </p>
+          </AnimateTextFade>
+          <AnimateTextFade direction='up' delay={3000}>
+            <p className={cn('leading-relaxed text-black dark:text-white')}>
+              {translation('intro.message-part-2')}
+            </p>
+          </AnimateTextFade>
         </div>
 
         <div className={'mt-6 self-start'}>
