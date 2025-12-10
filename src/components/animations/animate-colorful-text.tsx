@@ -1,8 +1,15 @@
 'use client';
-import React from 'react';
-import { motion } from '@/providers/framer-provider';
 
-export function ColourfulText({ text }: { text: string }) {
+import { cn } from '@/lib/utils';
+import { motion } from '@/providers/framer-provider';
+import React from 'react';
+
+type Props = {
+  text: string;
+  className?: string;
+};
+
+export function AnimateColourfulText({ text, className }: Props) {
   const colors = [
     'rgb(131, 179, 32)',
     'rgb(47, 195, 106)',
@@ -46,7 +53,7 @@ export function ColourfulText({ text }: { text: string }) {
         duration: 0.5,
         delay: index * 0.05
       }}
-      className='inline-block whitespace-pre font-sans tracking-tight'>
+      className={cn('inline-block whitespace-pre font-sans tracking-tight', className)}>
       {char}
     </motion.span>
   ));
