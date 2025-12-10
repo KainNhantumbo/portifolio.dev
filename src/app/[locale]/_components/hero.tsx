@@ -7,8 +7,9 @@ import { AnimateTextFade } from '@/components/animations/animate-text-fade';
 import { SocialIcons } from '@/components/social-icons';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/locales/client';
+import * as React from 'react';
 
-export const Hero = () => {
+const Hero = () => {
   const translation = useI18n();
 
   return (
@@ -57,3 +58,5 @@ export const Hero = () => {
     </BubbleBackground>
   );
 };
+
+export default React.memo(Hero);
