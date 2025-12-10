@@ -2,7 +2,6 @@
 
 import { cn } from '@/lib/utils';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
-import { useDefault } from '@uidotdev/usehooks';
 
 const glowColorMap = {
   blue: { base: 220, spread: 200 },
@@ -26,6 +25,7 @@ interface GlowCardProps {
   useRandomTwColors?: boolean;
   height?: string | number;
   customSize?: boolean; // When true, ignores size prop and uses width/height or className
+  enableMouseEffect?: boolean;
 }
 
 const sizeMap = {
@@ -42,7 +42,8 @@ export const GlowCard: React.FC<GlowCardProps> = ({
   size = 'md',
   width,
   height,
-  customSize = false
+  customSize = false,
+  enableMouseEffect = true
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -54,6 +55,8 @@ export const GlowCard: React.FC<GlowCardProps> = ({
   });
 
   useEffect(() => {
+    if (!enableMouseEffect) return;
+
     const syncPointer = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e;
 
@@ -67,7 +70,7 @@ export const GlowCard: React.FC<GlowCardProps> = ({
 
     document.addEventListener('pointermove', syncPointer);
     return () => document.removeEventListener('pointermove', syncPointer);
-  }, []);
+  }, [enableMouseEffect]);
 
   const finalColor = useRandomTwColors ? randomColor : glowColor;
   const { base, spread } = glowColorMap[finalColor];
