@@ -23,7 +23,7 @@ import {
   TextIcon,
   UserIcon
 } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import * as React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 const initialFormState: ContactSchemaType = {
@@ -34,10 +34,10 @@ const initialFormState: ContactSchemaType = {
   from_email: ''
 };
 
-export const Contact = () => {
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+const Contact = () => {
+  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
   const translation = useScopedI18n('contact');
-  const [messageStatus, setMessageStatus] = useState('');
+  const [messageStatus, setMessageStatus] = React.useState('');
 
   const {
     register,
@@ -51,9 +51,9 @@ export const Contact = () => {
     mode: 'onSubmit'
   });
 
-  const [internetTime, setInternetTime] = useState<string | null>(null);
+  const [internetTime, setInternetTime] = React.useState<string | null>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timeoutInstance = setInterval(() => {
       setInternetTime(now(true));
     }, 1000);
@@ -225,3 +225,5 @@ export const Contact = () => {
     </section>
   );
 };
+
+export default React.memo(Contact);
