@@ -1,6 +1,6 @@
 'use client';
 
-import { ColourfulText } from '@/components/animations/animate-colorful-text';
+import { AnimateColourfulText } from '@/components/animations/animate-colorful-text';
 import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { AnimatedBadge, getRandomTwBaseColor } from '@/components/ui/badge';
 import Button from '@/components/ui/button';
@@ -45,7 +45,7 @@ function WorkItem({ item, idx }: WorkItemProps) {
         <div className='flex w-full flex-col gap-6'>
           <h3 className='font-sans text-lg font-bold uppercase leading-relaxed sm:text-3xl md:text-4xl lg:text-5xl'>
             <span className='mr-4'>
-              <ColourfulText key={idx} text={`0${idx + 1}`} />
+              <AnimateColourfulText key={idx} text={`0${idx + 1}`} />
             </span>
             <span>{item.title}</span>
           </h3>

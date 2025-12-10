@@ -1,17 +1,17 @@
 'use client';
 
+import { AnimateColourfulText } from '@/components/animations/animate-colorful-text';
+import { AnimateTextFade } from '@/components/animations/animate-text-fade';
 import { AnimateVortex } from '@/components/animations/animate-vortex';
 import { SectionHeader } from '@/components/ui/section-header';
 import { RssIcon } from 'lucide-react';
-import { useTheme } from 'next-themes';
 
 export function BlogHero() {
-  const { theme } = useTheme();
   return (
     <section className='relative mt-5 grid min-h-screen w-full grid-cols-1 place-items-center overflow-hidden px-3 pb-7'>
       <AnimateVortex
-        rangeY={800}
-        particleCount={220}
+        rangeY={400}
+        particleCount={80}
         baseHue={220}
         containerClassName='absolute left-0 top-0 flex h-screen w-full'
       />
@@ -28,19 +28,30 @@ export function BlogHero() {
           </a>
         </h1>
 
-        <div className='flex flex-col gap-2 font-sans font-medium'>
-          <h3 className='mb-2 font-sans text-xl font-medium'>
-            👋 Hello, Welcome to Kain's Universe!
+        <div className='flex w-full max-w-4xl flex-col gap-2 font-sans font-medium'>
+          <h3 className='mb-2'>
+            <AnimateColourfulText
+              text="Hello, Welcome to Kain's Universe!"
+              className='font-sans text-2xl font-bold uppercase leading-relaxed tracking-wide'
+            />
           </h3>
-          <p>
+          <AnimateTextFade
+            direction='up'
+            delay={2000}
+            runOnce={false}
+            className='text-xl leading-relaxed'>
             You've stumbled upon Kain's little corner of the internet, where everything runs
             rampant and normal is just a unpredictable wave on a ocean.
-          </p>
-          <p>
+          </AnimateTextFade>
+          <AnimateTextFade
+            direction='up'
+            delay={3000}
+            runOnce={false}
+            className='text-xl leading-relaxed'>
             Web development is my favorite flavour and I love to code. I blog about coding,
             software, my projects and works. Feel free to dive in, here every visit is an
             adventure, a glance on exploration!
-          </p>
+          </AnimateTextFade>
         </div>
       </div>
     </section>
