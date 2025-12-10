@@ -12,9 +12,9 @@ import { constants } from '@/shared/constants';
 import type { UrlList } from '@/types';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
-import { useMemo, useState } from 'react';
+import * as React from 'react';
 
-export const Header = () => {
+const Header = () => {
   const MIN_WIDTH = 640;
   const { pathname, setPathname } = usePathname();
 
@@ -24,9 +24,9 @@ export const Header = () => {
   const currentLocale = useCurrentLocale();
   const { isHeaderInView, handleToggleMenu } = useHeaderView(MIN_WIDTH);
 
-  const [selectedPath, setSelectedPath] = useState<string | null>(null);
+  const [selectedPath, setSelectedPath] = React.useState<string | null>(null);
 
-  const portfolioUrls: UrlList = useMemo(
+  const portfolioUrls: UrlList = React.useMemo(
     () => [
       { label: translation('anchors.about'), ref: '#about' },
       { label: translation('anchors.services'), ref: '#services' },
@@ -38,7 +38,7 @@ export const Header = () => {
     [translation]
   );
 
-  const blogUrls: UrlList = useMemo(
+  const blogUrls: UrlList = React.useMemo(
     () => [
       { label: 'Blog', ref: 'post', url: '/en/blog' },
       { label: 'About', ref: 'about', url: '/en/blog/about' },
@@ -47,7 +47,7 @@ export const Header = () => {
     []
   );
 
-  const urls = useMemo(
+  const urls = React.useMemo(
     () => (isPortfolio ? portfolioUrls : blogUrls),
     [isPortfolio, blogUrls, portfolioUrls]
   );
@@ -185,3 +185,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default React.memo(Header);
