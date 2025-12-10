@@ -5,9 +5,10 @@ import { GlowCard } from '@/components/glow-card';
 import { getRandomTwBaseColor } from '@/components/ui/badge';
 import { formatDate } from '@/lib/utils';
 import { Post } from '@/types';
-import { useHover } from '@uidotdev/usehooks';
+import { useHover, useWindowSize } from '@uidotdev/usehooks';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { useMemo } from 'react';
 
 const AnimatedBadge = dynamic(
   () => import('@/components/ui/badge').then((mod) => mod.AnimatedBadge),
@@ -22,13 +23,20 @@ interface Props {
 export function PostCard({ post, locale }: Props) {
   const [ref, hovering] = useHover();
 
+  const windowSize = useWindowSize();
+  const enableAnimations = useMemo(
+    () => !!windowSize?.width && windowSize.width >= 768,
+    [windowSize]
+  );
+
   return (
     <div ref={ref} className='h-full'>
       <GlowCard
+        enableMouseEffect={enableAnimations}
         customSize
         useRandomTwColors
         className='group relative flex h-full min-h-96 flex-col justify-between'>
-        {hovering && (
+        {hovering && enableAnimations && (
           <SparklesCore
             background='transparent'
             minSize={0.4}
@@ -42,7 +50,7 @@ export function PostCard({ post, locale }: Props) {
         <section className='space-y-6'>
           <div className='flex flex-row items-center justify-between gap-1'>
             <AnimatedBadge
-              animateBorder={true}
+              animateBorder={enableAnimations}
               gradientFrom={getRandomTwBaseColor()}
               gradientTo={getRandomTwBaseColor()}>
               <span className='uppercase'>{post.topic}</span>
