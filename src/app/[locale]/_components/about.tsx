@@ -1,9 +1,6 @@
 'use client';
 
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
-import { SparklesCore } from '@/components/animations/animate-sparkles';
-import { GlowCard } from '@/components/glow-card';
-import { StackCarousel } from '@/components/stack-carousel';
 import { generateColor } from '@/components/ui/badge';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
@@ -11,8 +8,22 @@ import { motion } from '@/providers/framer-provider';
 import { AUTHOR } from '@/shared/constants';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { Code2Icon, SquareStackIcon } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import * as React from 'react';
+
+const GlowCard = dynamic(
+  () => import('@/components/glow-card').then((mod) => mod.GlowCard),
+  { ssr: false }
+);
+const StackCarousel = dynamic(
+  () => import('@/components/stack-carousel').then((mod) => mod.StackCarousel),
+  { ssr: false }
+);
+const SparklesCore = dynamic(
+  () => import('@/components/animations/animate-sparkles').then((mod) => mod.SparklesCore),
+  { ssr: false }
+);
 
 const About = () => {
   const translation = useScopedI18n('about');

@@ -2,7 +2,12 @@
 
 import { cn } from '@/lib/utils';
 import { m as motion } from 'framer-motion';
-import { AnimateTextFade } from '../animations/animate-text-fade';
+import dynamic from 'next/dynamic';
+
+const AnimateTextFade = dynamic(
+  () => import('../animations/animate-text-fade').then((mod) => mod.AnimateTextFade),
+  { ssr: false }
+);
 
 interface Props {
   title: string;
