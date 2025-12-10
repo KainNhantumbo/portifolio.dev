@@ -1,7 +1,6 @@
 'use client';
 
 import { BackgroundGradient } from '@/components/animations/animate-background';
-import { AnimateMagnetism } from '@/components/animations/animate-magnetism';
 import Button from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useProjects } from '@/hooks/use-projects';
@@ -50,35 +49,31 @@ export const Projects = () => {
               </div>
               <div className='flex flex-col gap-3'>
                 {project.live_url.length > 5 ? (
-                  <AnimateMagnetism strength={0.1}>
-                    <Button
-                      as='a'
-                      variant='secondary'
-                      href={project.live_url}
-                      target={'_blank'}
-                      rel={'noreferrer noopener'}
-                      className='w-full'
-                      icon={<EyeIcon className='h-5 w-auto' />}>
-                      <span className='text-[.9rem] capitalize transition-colors'>
-                        {translation('projects.button-actions.go-live')}
-                      </span>
-                    </Button>
-                  </AnimateMagnetism>
-                ) : null}
-                <AnimateMagnetism strength={0.1}>
                   <Button
                     as='a'
-                    variant='primary'
-                    href={project.code_url}
+                    variant='secondary'
+                    href={project.live_url}
                     target={'_blank'}
                     rel={'noreferrer noopener'}
                     className='w-full'
-                    icon={<GithubIcon className='h-5 w-auto' />}>
+                    icon={<EyeIcon className='h-5 w-auto' />}>
                     <span className='text-[.9rem] capitalize transition-colors'>
-                      {translation('projects.button-actions.view-code')}
+                      {translation('projects.button-actions.go-live')}
                     </span>
                   </Button>
-                </AnimateMagnetism>
+                ) : null}
+                <Button
+                  as='a'
+                  variant='primary'
+                  href={project.code_url}
+                  target={'_blank'}
+                  rel={'noreferrer noopener'}
+                  className='w-full'
+                  icon={<GithubIcon className='h-5 w-auto' />}>
+                  <span className='text-[.9rem] capitalize transition-colors'>
+                    {translation('projects.button-actions.view-code')}
+                  </span>
+                </Button>
               </div>
             </div>
           </BackgroundGradient>
