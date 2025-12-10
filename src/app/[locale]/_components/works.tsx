@@ -12,6 +12,7 @@ import { useHover } from '@uidotdev/usehooks';
 import { Code, ExternalLinkIcon, GithubIcon } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import * as React from 'react';
 import { useWorks } from '../../../hooks/use-works';
 
 interface WorkItemProps {
@@ -123,7 +124,7 @@ function WorkItem({ item, idx }: WorkItemProps) {
   );
 }
 
-export const Works = () => {
+const Works = () => {
   const translation = useScopedI18n('works');
   const data = useWorks();
 
@@ -145,3 +146,5 @@ export const Works = () => {
     </section>
   );
 };
+
+export default React.memo(Works);

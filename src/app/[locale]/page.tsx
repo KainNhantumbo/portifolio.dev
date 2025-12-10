@@ -5,7 +5,7 @@ import { Contact } from './_components/contact';
 import Hero from './_components/hero';
 import { Projects } from './_components/projects';
 import Services from './_components/services';
-import { Works } from './_components/works';
+import Works from './_components/works';
 
 const Page = async (props: PageParams) => {
   const { locale } = await props.params;
