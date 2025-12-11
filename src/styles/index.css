@@ -14,6 +14,7 @@
     --secondary: 255 71 71;
     --foreground: 255 255 255;
     --background: 245 245 245;
+    --border: 229 231 235;
 
     --accent-primary: 69 204 254;
     --accent-secondary: 191 69 255;
@@ -38,6 +39,7 @@
     --secondary: 255 71 71;
     --foreground: 39 40 45;
     --background: 27 27 31;
+    --border: 55 65 81;
   }
 
   label {

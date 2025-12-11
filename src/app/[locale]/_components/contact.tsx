@@ -92,9 +92,9 @@ const Contact = () => {
         description={translation('intro-title')}
       />
 
-      <section className='flex w-full gap-12'>
-        <div className='flex w-full max-w-md flex-col gap-6'>
-          <section className='flex flex-col gap-6 font-sans'>
+      <section className='flex w-full flex-col gap-12 md:flex-row'>
+        <div className='flex w-full flex-col gap-6 md:max-w-md'>
+          <section className='flex flex-col gap-6 font-sans text-lg'>
             <AnimateTextReveal inverseDirection>
               <p className='leading-relaxed'>{translation('intro-phrase')}</p>
             </AnimateTextReveal>
