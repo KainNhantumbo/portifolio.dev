@@ -1,10 +1,10 @@
 'use client';
+
 import { cn } from '@/lib/utils';
-import { motion } from '@/providers/framer-provider';
 import type { Container, SingleOrMultiple } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
-import { useAnimation } from 'framer-motion';
+import { m as motion, useAnimation } from 'framer-motion';
 import { useCallback, useEffect, useId, useState } from 'react';
 
 export type ParticlesProps = {

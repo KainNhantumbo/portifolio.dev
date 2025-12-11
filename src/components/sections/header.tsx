@@ -13,6 +13,7 @@ import type { UrlList } from '@/types';
 import Image from 'next/image';
 import { usePathname as usePath, useRouter } from 'next/navigation';
 import * as React from 'react';
+import { AnimateColourfulText } from '../animations/animate-colorful-text';
 
 const Header = () => {
   const MIN_WIDTH = 640;
@@ -81,13 +82,15 @@ const Header = () => {
               width={25}
               height={25}
               alt='donut image'
-              className='max-h-[18px] w-full max-w-[18px] object-cover'
+              className='mb-px aspect-square w-full max-w-[24px] object-cover'
             />
-            <span
-              onClick={() => router.push('/')}
-              className='font-slab text-sm font-semibold uppercase text-primary'>
-              {constants.title}
-            </span>
+            <div>
+              <AnimateColourfulText
+                text={constants.title}
+                className='font-slab font-semibold uppercase text-primary'
+              />
+            </div>
+
             <div className='mx-2 hidden h-5 w-px bg-font/20 min-[640px]:block' />
           </div>
           <div className='min-[640px]:hidden'>
@@ -97,10 +100,8 @@ const Header = () => {
 
         <nav className='max-[640px]:w-full' role='nav'>
           <AnimatePresence mode='wait'>
-            <motion.section
+            <section
               className='flex w-full flex-row flex-nowrap gap-3 px-2 max-[640px]:hidden max-[640px]:flex-col max-[640px]:p-4 min-[640px]:flex'
-              animate={{ scale: isHeaderInView ? 1 : 5 }}
-              exit={{ translateX: 150 }}
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
               {urls.map((item, index) => {
                 const isActive = pathname.includes(item.ref) || pathname === item.url;
@@ -157,7 +158,7 @@ const Header = () => {
                   <LanguageSwitcher canRender={isPortfolio} />
                 </div>
               </div>
-            </motion.section>
+            </section>
           </AnimatePresence>
         </nav>
 

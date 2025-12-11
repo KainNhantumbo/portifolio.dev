@@ -58,7 +58,7 @@ export function SocialIcons() {
   ];
 
   return (
-    <ul className='flex flex-row items-center justify-center gap-4'>
+    <ul className='flex w-full flex-row flex-wrap items-center justify-center gap-4'>
       {socialMediaAnchors.map((item, index) => (
         <Button
           icon={<item.icon className='h-auto w-8' />}
