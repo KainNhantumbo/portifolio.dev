@@ -9,6 +9,7 @@
       "contact": "Contato"
     }
   },
+
   "footer": {
     "made-phrase": "Construindo com ❤ usando Next.js e Typescript.",
     "version-phrase": "Versão",
@@ -20,12 +21,14 @@
       "coffee": "Compre-me um café"
     }
   },
+
   "intro": {
-    "presentation": "Olá 👋, seja bem vindo!",
+    "presentation": "Olá 👋, seja bem-vindo!",
     "message-part-1": "Eu crio produtos acessíveis, inclusivos e melhores experiências digitais para a web.",
-    "message-part-2": "Adoro de assumir novos desafios e colaborar com outros desenvolvedores para criar produtos inovadores e impactantes que resolvam problemas do mundo real.",
+    "message-part-2": "Adoro assumir novos desafios e colaborar com outros desenvolvedores para criar produtos inovadores e impactantes que resolvam problemas do mundo real.",
     "title": "Eu sou Kain Nhantumbo!"
   },
+
   "about": {
     "title": "Sobre",
     "subtitle": "Desenvolvedor Web e Criador de Conteúdo",
@@ -36,6 +39,7 @@
     "projects-title": "Projetos",
     "projects-content": "Mais de 20 projetos no Github"
   },
+
   "services": {
     "title": "Descubra os Meus Serviços",
     "subtitle": "Posso ajudar e impulsionar seus negócios de várias maneiras, por isso personalizo cada solução de software para atender às suas necessidades específicas. Você pode contar comigo para fornecer um sistema que apoie o crescimento do seu negócio.",
@@ -67,27 +71,29 @@
       }
     ]
   },
+
   "projects": {
     "title": "Meus Trabalhos e Projetos",
-    "description": "Cada projeto é uma uma peça única de desenvolvimento 🎏. Você pode encontrar mais projetos no meu perfil do github",
+    "description": "Cada projeto é uma peça única de desenvolvimento 🎏. Você pode encontrar mais projetos no meu perfil do Github",
     "button-actions": {
       "view-code": "Código fonte",
       "go-live": "Saber mais"
     },
     "content": {
       "maron-themes": "Extensão de Pacote de Temas para o Visual Studio Code feito com VSCode Theming API",
-      "bug-tracker": "Aplicação de Rastreamento de Bugs construida com React e Typescript",
-      "we-commerce": "Loja E-Commerce Online completa (pronta para uso), construida com Next.JS, Nest.JS, Node.JS, Tailwindcss e Typescript.",
-      "bug-tracker-server": "API Rest da Aplicação de Rastreamento de Bugs construida com Typescript, Node.JS + Express.JS + MongoDB",
-      "url-shortner": "Aplicação Encurtadora de URLs construida com Node.JS e Express.JS (backend), React.JS e Typescript (frontend).",
-      "notes-app": "Aplicação Notas construida com React + Styled-Components + Sass",
-      "tasks-app": "Aplicação Tarefas e Contatos construida com Javascript, React e Node.JS + Express.JS + MongoDB para servidor",
-      "tasks-app-server": "API Rest para Aplicação Tarefas e Contatos, construida com Javascript, Node.JS, Express.JS e Mongo DB para servidor",
-      "barber-shop-website": "Site de Loja de Barbearia construido com Typescript, React.JS e Tailwindcss",
-      "restaurant-demo": "Site de Restaurante feito com React.JS e Typescript + Tailwindcss",
-      "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construida com Javascript, Node.JS, Express.JS e Mongo DB"
+      "bug-tracker": "Aplicação de Rastreamento de Bugs construída com React e Typescript",
+      "we-commerce": "Loja E-Commerce Online completa (pronta para uso), construida com Next.js, Nest.js, Node.js, Tailwindcss e Typescript.",
+      "bug-tracker-server": "API Rest da Aplicação de Rastreamento de Bugs construída com Typescript, Node.js + Express.js + MongoDB",
+      "url-shortner": "Aplicação Encurtadora de URLs construida com Node.js e Express.js (backend), React.js e Typescript (frontend).",
+      "notes-app": "Aplicação Notas construída com React + Styled-Components + Sass",
+      "tasks-app": "Aplicação Tarefas e Contatos construída com Javascript, React e Node.js + Express.js + MongoDB para servidor",
+      "tasks-app-server": "API Rest para Aplicação Tarefas e Contatos, construída com Javascript, Node.js, Express.js e MongoDB para servidor",
+      "barber-shop-website": "Site de Loja de Barbearia construído com Typescript, React.js e TailwindCSS",
+      "restaurant-demo": "Site de restaurante feito com React.js e Typescript + TailwindCSS",
+      "hagira-store-server": "API Rest para Aplicação Hagira E-commerce Website, construída com Javascript, Node.js, Express.js e MongoDB"
     }
   },
+
   "language-switcher": {
     "current-language": "Português",
     "buttons": {
@@ -95,11 +101,12 @@
       "english": "Inglês (EUA)"
     }
   },
+
   "contact": {
     "title": "Contate-me",
     "intro-title": "Vamos trazer ideias à vida utilizando código!",
     "intro-phrase": "Olá! Estou aqui para ajudar as pessoas a tornar as suas ideias em realidade. Se você estiver preso em um projeto, quer iniciar algo novo ou simplesmente quer um conselho sobre onde pretende chegar daqui, gostaria de conversar com você sobre isso e ver o que podemos fazer juntos. Sinta-se livre para me contactar para mais informações!",
-    "intro-message": "Você pode utilizar o formulário abaixo para me enviar uma mensagem por correio eletrónico ou escolhendo uma das seguintes opções:",
+    "intro-message": "Você pode utilizar o formulário abaixo para me enviar uma mensagem por correio eletrónico ou escolher uma das seguintes opções:",
     "mail": "Correio eletrónico: nhantumbok@gmail.com",
     "form": {
       "name-label": "Nome *",
@@ -118,12 +125,13 @@
       "informative": "Enviando a sua mensagem, aguarde..."
     }
   },
+
   "works": {
     "title": "Trabalhos recentes",
     "description": "Coleção dos meus projetos mais recentes",
     "button-actions": {
-      "view-code": "Experimente a demostração!",
-      "go-live": "Ver ou ramificar o código fonte no Github"
+      "view-code": "Experimente a demonstração!",
+      "go-live": "Ver ou ramificar o código-fonte no GitHub"
     },
     "platform": "Plataforma",
     "stack": "Ferramentas",
@@ -137,7 +145,7 @@
     },
     "palletone": {
       "title": "Criador de Cores Palletone",
-      "description": "Este aplicativo tem como objetivo trazer uma nova experiência de coleta, gerenciamento e construção de paletas de cores para designers e desenvolvedores web.\nO objetivo principal é simplificar o processo fornecendo as ferramentas certas para escolher a cor preferida para seu projeto.\nSinta-se à vontade para experimentá-lo. em qualquer dispositivo seu e prepare seu próprio sabor de cor para seu próximo projeto!🥳"
+      "description": "Este aplicativo tem como objetivo trazer uma nova experiência de coleta, gerenciamento e construção de paletas de cores para designers e desenvolvedores web.\nO objetivo principal é simplificar o processo fornecendo as ferramentas certas para escolher a cor preferida para seu projeto.\nSinta-se à vontade para experimentá-lo em qualquer dispositivo seu e prepare seu próprio sabor de cor para seu próximo projeto!🥳"
     },
     "rubymart": {
       "title": "Plataforma Rubymart",
