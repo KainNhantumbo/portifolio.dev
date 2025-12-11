@@ -16,7 +16,7 @@ const Projects = () => {
   return (
     <section
       id='projects'
-      className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 pt-5'>
+      className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 px-4 pt-5'>
       <SectionHeader
         title={translation('projects.title')}
         description={translation('projects.description')}

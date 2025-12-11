@@ -25,6 +25,29 @@ const AnimatedBadge = dynamic(
   { ssr: false }
 );
 
+const Works = () => {
+  const translation = useScopedI18n('works');
+  const data = useWorks();
+
+  return (
+    <section
+      id='works'
+      className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 px-4 pt-5'>
+      <SectionHeader
+        title={translation('title')}
+        description={translation('description')}
+        className='m-0 self-start'
+      />
+
+      <section className='group mb-5 flex w-full flex-col gap-5'>
+        {data.map((item, idx) => (
+          <WorkItem key={idx} idx={idx} item={item} />
+        ))}
+      </section>
+    </section>
+  );
+};
+
 function WorkItem({ item, idx }: WorkItemProps) {
   const translation = useScopedI18n('works');
   const [ref, hovering] = useHover();
@@ -123,28 +146,5 @@ function WorkItem({ item, idx }: WorkItemProps) {
     </section>
   );
 }
-
-const Works = () => {
-  const translation = useScopedI18n('works');
-  const data = useWorks();
-
-  return (
-    <section
-      id='works'
-      className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 pt-5'>
-      <SectionHeader
-        title={translation('title')}
-        description={translation('description')}
-        className='m-0 self-start'
-      />
-
-      <section className='group mb-5 flex w-full flex-col gap-5'>
-        {data.map((item, idx) => (
-          <WorkItem key={idx} idx={idx} item={item} />
-        ))}
-      </section>
-    </section>
-  );
-};
 
 export default React.memo(Works);
