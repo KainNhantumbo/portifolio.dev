@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <BubbleBackground
-      interactive={true}
+      interactive={false}
       className='grid h-screen w-full grid-cols-1 place-content-center place-items-center'>
       <section
         id='home'
