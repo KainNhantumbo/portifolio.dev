@@ -9,6 +9,7 @@
       "contact": "Contact"
     }
   },
+
   "footer": {
     "made-phrase": "Crafted with ❤ using Next.js and Typescript.",
     "version-phrase": "Version",
@@ -20,25 +21,28 @@
       "coffee": "Buy me a coffee"
     }
   },
+
   "intro": {
     "presentation": "Hello 👋, you are welcome!",
     "message-part-1": "I build accessible, inclusive products and digital experiences for the web.",
     "message-part-2": "I enjoy taking on new challenges and collaborating with other developers to create innovative and impactful products that solve real-world problems.",
     "title": "I am Kain Nhantumbo!"
   },
+
   "about": {
     "title": "About me",
     "subtitle": "Web Developer & Content Creator",
     "intro-1": "I am a person with a desire to grow by learning new things every day. Driven by curiosity, I fell in love with web development and design.",
-    "intro-2": "I am very interested in opportunities to work with the latest technologies on challenging projects that would push my skills to the end. I like programming and I am specially ambitious on the kind of projects that solves daily problems.",
+    "intro-2": "I am very interested in opportunities to work with the latest technologies on challenging projects that would push my skills to the limit. I like programming, and I am especially ambitious about the kind of projects that solve daily problems.",
     "experience-title": "Experience",
     "experience-content": "4+ years of programming",
     "projects-title": "Projects",
-    "projects-content": "20+ github projects"
+    "projects-content": "20+ GitHub Projects"
   },
+
   "services": {
     "title": "Discover My Services",
-    "subtitle": "There are a variety of ways that I can help and boost your business that's why I customize every software solution to match your specific needs. You can count on me to deliver a system supporting your business's growth.",
+    "subtitle": "There are a variety of ways that I can help and boost your business, that's why I customize every software solution to match your specific needs. You can count on me to deliver a system supporting your business's growth.",
     "call-to-action": "Get in Touch Today!",
     "types": [
       {
@@ -67,27 +71,29 @@
       }
     ]
   },
+
   "projects": {
     "title": "My Projects and Works",
-    "description": "Each project is a unique piece of development 🎏. You can see all my personal projects on my github profile",
+    "description": "Each project is a unique piece of development 🎏. You can see all my personal projects on my GitHub profile.",
     "button-actions": {
       "view-code": "Source code",
       "go-live": "Learn more"
     },
     "content": {
       "maron-themes": "Visual Studio Code Theme extension pack made with VSCode Theming API",
-      "we-commerce": "Full featured e-commerce store, crafted with Next.JS, Nest.JS, Node.JS, Tailwindcss and Typescript.",
-      "bug-tracker": "Bug Tracker App built with React.JS and Typescript",
+      "we-commerce": "Full-featured e-commerce store, crafted with Next.js, Nest.js, Node.js, TailwindCSS, and Typescript.",
+      "bug-tracker": "Bug Tracker App built with React.js and Typescript",
       "bug-tracker-server": "Bug Tracker Restful API built with Typescript, Node.JS + Express.JS + MongoDB on the Back-end",
-      "url-shortner": "Url Shortner App, built with Node.JS and Express.JS (backend), React.JS and Typescript (frontend).",
+      "url-shortner": "Url Shortner App, built with Node.js and Express.js (backend), React.js and Typescript (frontend).",
       "notes-app": "Notes App made with React.JS + Styled-Components + Sass",
-      "tasks-app": "Contacts and Tasks Application made with Javascript, React.JS and Node.JS + Express.JS + MongoDB on the Back-end",
-      "tasks-app-server": "Server Restful API for Contacts and Tasks App, made with Javascript, Node.JS, Express.JS and Mongo DB",
-      "barber-shop-website": "Barber Shop  Website made using Typescript, React.JS and Tailwindcss",
-      "restaurant-demo": "Restaurant Website made using React.JS and Typescript + Tailwindcss",
-      "hagira-store-server": "Server Restful API for Hagira E-commerce Website, made with Javascript, Node.JS, Express.JS and Mongo DB"
+      "tasks-app": "Contacts and Tasks Application made with JavaScript, React.js, and Node.js + Express.js + MongoDB on the back-end",
+      "tasks-app-server": "Server Restful API for Contacts and Tasks App, made with JavaScript, Node.js, Express.js, and MongoDB",
+      "barber-shop-website": "Barber Shop  Website made using Typescript, React.js, and Tailwindcss",
+      "restaurant-demo": "Restaurant Website made using React.js and Typescript + Tailwindcss",
+      "hagira-store-server": "Server Restful API for Hagira E-commerce Website, made with JavaScript, Node.js, Express.js, and MongoDB"
     }
   },
+
   "language-switcher": {
     "current-language": "English",
     "buttons": {
@@ -95,10 +101,11 @@
       "english": "English (US)"
     }
   },
+
   "contact": {
     "title": "Contact me",
     "intro-title": "Let's bring ideas to life with code!",
-    "intro-phrase": "Hi! I'm here to help people turn their ideas into reality. If you are stuck with a project, want to start something new or just need some advice on where you can go from here—I'd love to talk it over with you and see what we can do together. Feel free contact me for more info!",
+    "intro-phrase": "Hi! I'm here to help people turn their ideas into reality. If you are stuck on a project, want to start something new, or need some advice on where to go from here, I'd love to talk it over with you and see what we can do together. Feel free to contact me for more info!",
     "intro-message": "You can use the form below to send me an e-mail or use the following contact options:",
     "mail": "E-mail: nhantumbok@gmail.com",
     "form": {
@@ -118,6 +125,7 @@
       "informative": "Sending your message, please wait..."
     }
   },
+
   "works": {
     "title": "Recent Work",
     "description": "A collection of my most recent projects",
@@ -129,19 +137,19 @@
     "stack": "Stack",
     "choconotey": {
       "title": "Choconotey Notes App",
-      "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share and export/output your notes content in multiple formats like Markdown, HTML and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor and clean interface for ease  and distraction free experience.\nGood to give it a try! 🎈🎉🎊"
+      "description": "Taking notes in markdown is made simple with this application. It provides the core features to create, organize, filter, share, and export/output your notes content in multiple formats like Markdown, HTML, and plain text.\nJammed with auto sync, app and data control settings, soft layout animations, a robust editor, and a clean interface for ease  and distraction-free experience.\nGood to give it a try! 🎈🎉🎊"
     },
     "toono": {
       "title": "Toono Community",
-      "description": "Meet a social constructive content oriented platform inspired by dev.to that allows people around the globe to share their career experience and grow by writing valuable content, build their professional profiles and take part in social discussions. All mates are welcome to find a place within our community.\nA platform made for everyone who wants to share, contribute and learn something. 🥳"
+      "description": "Meet a social constructive content-oriented platform inspired by dev.to that allows people around the globe to share their career experience and grow by writing valuable content, build their professional profiles, and take part in social discussions. All mates are welcome to find a place within our community.\nA platform made for everyone who wants to share, contribute, and learn something. 🥳"
     },
     "palletone": {
       "title": "Palletone Colors App",
-      "description": "This app aims to bring a new experience of collecting, managing and building color palettes for designers and web developers.\nThe main goal is to simplify the process providing the right tools for choosing the preferred color for their project.\nFeel free to try it on any device of yours and bake your own color flavor for your next project! 🥳"
+      "description": "This app aims to bring a new experience of collecting, managing, and building color palettes for designers and web developers.\nThe main goal is to simplify the process, providing the right tools for choosing the preferred color for their project.\nFeel free to try it on any device of yours and bake your own color flavor for your next project! 🥳"
     },
     "rubymart": {
       "title": "Rubymart Platform",
-      "description": "Imagine an open platform where anyone can power their businesses by constructing a community of costumers, sell products, create user and store profiles, rate products, offer jobs, share ideias and make real connections!\nThis is the app that accomplishes it.\nA perfect fusion of e-commerce and social community business platform.\n Explore my github for more!"
+      "description": "Imagine an open platform where anyone can power their businesses by constructing a community of customers, sell products, create user and store profiles, rate products, offer jobs, share ideas, and make real connections!\nThis is the app that accomplishes it.\nA perfect fusion of e-commerce and social community business platform.\n Explore my GitHub for more!"
     }
   }
 }
