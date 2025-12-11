@@ -17,7 +17,7 @@ const PostList = ({ posts, locale }: Props) => {
     <section className='space-y-6'>
       <h2 className='text-center font-slab text-xl uppercase leading-relaxed md:text-4xl lg:text-5xl xl:text-6xl'>
         Meet my
-        <AnimatedTextFlip words={titleWords} className='text-primary' />
+        <AnimatedTextFlip words={titleWords} />
       </h2>
 
       <article className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center gap-3 pt-5'>

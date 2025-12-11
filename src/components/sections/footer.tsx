@@ -8,14 +8,26 @@ import { useScopedI18n } from '@/locales/client';
 import { constants } from '@/shared/constants';
 import Image from 'next/image';
 import * as React from 'react';
+import { AnimatedTextFlip } from '../animations/animate-text-flip';
+
+const words: string[] = [
+  'Ubelloch',
+  'My Universe',
+  'Lovely Donuts',
+  "Kain's Blog",
+  "Kain's Workspace",
+  'My Notebook',
+  'My Portfolio',
+  constants.title
+];
 
 const Footer = () => {
   const translation = useScopedI18n('footer');
 
   return (
-    <div className='mt-20'>
+    <div className='mt-20 transition-all'>
       <AnimateGradient />
-      <footer className='relative min-h-[60vh] w-full'>
+      <footer className='relative min-h-[60vh] w-full transition-all'>
         <SparklesCore
           background='transparent'
           minSize={0.4}
@@ -25,7 +37,7 @@ const Footer = () => {
           particleColor={'#555555'}
         />
         <h3 className='mx-auto w-full max-w-full py-12 text-center font-slab text-5xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'>
-          {constants.title}
+          <AnimatedTextFlip words={words} />
         </h3>
 
         <div className='mx-auto h-auto w-full max-w-[820px] p-5 pb-3'>
