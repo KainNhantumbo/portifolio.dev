@@ -24,7 +24,7 @@ const Footer = () => {
           className='absolute left-0 top-0 -z-50 h-full w-full'
           particleColor={'#555555'}
         />
-        <h3 className='mx-auto w-full max-w-full text-center font-slab text-5xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'>
+        <h3 className='mx-auto w-full max-w-full py-12 text-center font-slab text-5xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'>
           {constants.title}
         </h3>
 

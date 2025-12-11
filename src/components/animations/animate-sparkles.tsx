@@ -1,11 +1,11 @@
 'use client';
+
 import { cn } from '@/lib/utils';
-import { motion } from '@/providers/framer-provider';
 import type { Container, SingleOrMultiple } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
-import { useAnimation } from 'framer-motion';
-import { useCallback, useEffect, useId, useState } from 'react';
+import { m as motion, useAnimation } from 'framer-motion';
+import * as React from 'react';
 
 export type ParticlesProps = {
   className?: string;
@@ -21,24 +21,23 @@ export type ParticlesProps = {
 export const SparklesCore = (props: ParticlesProps) => {
   const { className, background, minSize, maxSize, speed, particleColor, particleDensity } =
     props;
-  const id = useId();
-  const [init, setInit] = useState(false);
+  const id = React.useId();
+  const [init, setInit] = React.useState(false);
   const controls = useAnimation();
 
-  useEffect(() => {
+  React.useEffect(() => {
     initParticlesEngine(async (engine) => await loadSlim(engine))
       .then(() => setInit(true))
       .catch((error) => console.error(error));
   }, []);
 
-  const particlesLoaded = useCallback(
-    async (container?: Container) => {
-      if (container) {
-        controls.start({ opacity: 1, transition: { duration: 1 } });
-      }
-    },
-    [controls]
-  );
+  React.useEffect(() => {
+    if (init) {
+      controls.start({ opacity: 1, transition: { duration: 1 } });
+    }
+  }, [init, controls]);
+
+  const particlesLoaded = React.useCallback(async (_container?: Container) => {}, []);
 
   return (
     <motion.div animate={controls} className={cn('opacity-0', className)}>

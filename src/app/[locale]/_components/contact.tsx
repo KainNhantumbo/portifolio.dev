@@ -86,15 +86,15 @@ const Contact = () => {
   return (
     <section
       id='contact'
-      className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-12 pt-5'>
+      className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-12 px-4 pt-5'>
       <SectionHeader
         title={translation('title')}
         description={translation('intro-title')}
       />
 
-      <section className='flex w-full gap-12'>
-        <div className='flex w-full max-w-md flex-col gap-6'>
-          <section className='flex flex-col gap-6 font-sans'>
+      <section className='flex w-full flex-col gap-12 md:flex-row'>
+        <div className='flex w-full flex-col gap-6 md:max-w-md'>
+          <section className='flex flex-col gap-6 font-sans text-lg'>
             <AnimateTextReveal inverseDirection>
               <p className='leading-relaxed'>{translation('intro-phrase')}</p>
             </AnimateTextReveal>

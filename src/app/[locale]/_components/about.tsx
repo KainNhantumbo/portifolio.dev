@@ -53,7 +53,7 @@ const About = () => {
     <>
       <section
         id='about'
-        className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-12 pt-5'>
+        className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-12 px-4 pt-5'>
         <SectionHeader title={translation('title')} description={translation('subtitle')} />
 
         <section className={'grid grid-cols-1 lg:grid-cols-2'}>

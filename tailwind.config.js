@@ -28,6 +28,7 @@ const tailwindConfig = {
         'accent-tertiary': 'rgb(var(--accent-tertiary) / <alpha-value>)',
         'accent-quaternary': 'rgb(var(--accent-quaternary) / <alpha-value>)',
         secondary: 'rgb(var(--secondary) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)',
         foreground: 'rgb(var(--foreground) / <alpha-value>)',
         background: 'rgb(var(--background) / <alpha-value>)',
         'primary-variant': 'rgb(var(--primary-variant) / <alpha-value>)',

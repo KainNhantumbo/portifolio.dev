@@ -14,11 +14,11 @@ const Hero = () => {
 
   return (
     <BubbleBackground
-      interactive={true}
+      interactive={false}
       className='grid h-screen w-full grid-cols-1 place-content-center place-items-center'>
       <section
         id='home'
-        className='z-50 flex w-full max-w-[1280px] flex-col gap-3 px-2 py-5 font-sans'>
+        className='z-50 flex w-full max-w-[1280px] flex-col gap-3 px-4 py-5 font-sans'>
         <div className='relative flex w-fit flex-col'>
           <h3 className='my-3 flex w-fit items-center gap-3 rounded-full border border-font/40 px-6 py-1 font-semibold'>
             <StatusIndicator activeColor='bg-green-500' size='md' />
@@ -29,10 +29,8 @@ const Hero = () => {
           </h3>
           <div className='flex w-full gap-3'>
             <AnimateTextFade direction='up'>
-              <h1 className='my-4 w-full bg-clip-text font-sans text-4xl font-bold leading-10 text-transparent mobile-x:my-0 mobile-x:py-8 mobile-x:text-6xl lg:text-9xl'>
-                <span className={'text-black dark:text-white'}>
-                  {translation('intro.title')}
-                </span>
+              <h1 className='my-4 w-full bg-clip-text font-sans text-6xl font-bold leading-normal text-black dark:text-white mobile-x:py-8 lg:text-9xl'>
+                {translation('intro.title')}
               </h1>
             </AnimateTextFade>
           </div>

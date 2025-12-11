@@ -11,14 +11,14 @@ import { AnimatePresence, motion } from '@/providers/framer-provider';
 import { constants } from '@/shared/constants';
 import type { UrlList } from '@/types';
 import Image from 'next/image';
-import { usePathname as usePath, useRouter } from 'next/navigation';
+import { usePathname as usePath } from 'next/navigation';
 import * as React from 'react';
+import { AnimateColourfulText } from '../animations/animate-colorful-text';
 
 const Header = () => {
-  const MIN_WIDTH = 640;
+  const MIN_WIDTH = 868;
   const { pathname, setPathname } = usePathname();
 
-  const router = useRouter();
   const translation = useScopedI18n('header');
   const isPortfolio = usePath()?.includes('blog') ? false : true;
   const currentLocale = useCurrentLocale();
@@ -56,14 +56,14 @@ const Header = () => {
     <header className='w-full'>
       <div
         className={cn(
-          'base-border fixed left-1/2 top-3 z-[5000] flex min-h-[50px] w-fit -translate-x-1/2 items-center justify-center gap-[5px] rounded-full bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[640px]:min-w-[340px] max-[640px]:flex-col',
-          isHeaderInView && 'rounded-3xl max-[640px]:pt-2'
+          'base-border fixed left-1/2 top-3 z-[5000] flex min-h-[50px] w-fit -translate-x-1/2 items-center justify-center gap-[5px] rounded-full bg-background/50 px-5 shadow-[0_0_25px_rgba(0,0,0,.1)] backdrop-blur-sm max-[868px]:min-w-[340px] max-[868px]:flex-col',
+          isHeaderInView && 'rounded-3xl max-[868px]:pt-2'
         )}>
         <div className='flex w-full cursor-pointer flex-row items-center justify-between gap-2 px-4'>
           <motion.button
             whileTap={{ scale: 0.8 }}
             onClick={handleToggleMenu}
-            className='group hidden h-full w-fit cursor-pointer flex-col items-center justify-center gap-[6px] justify-self-end rounded-sm max-[640px]:flex'>
+            className='group hidden h-full w-fit cursor-pointer flex-col items-center justify-center gap-[6px] justify-self-end rounded-sm max-[868px]:flex'>
             <div
               className={`hamburger-line h-[2px] w-[25px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
                 isHeaderInView ? 'translate-y-[4px] rotate-45' : ''
@@ -81,26 +81,26 @@ const Header = () => {
               width={25}
               height={25}
               alt='donut image'
-              className='max-h-[18px] w-full max-w-[18px] object-cover'
+              className='mb-px aspect-square w-full max-w-[24px] object-cover'
             />
-            <span
-              onClick={() => router.push('/')}
-              className='font-slab text-sm font-semibold uppercase text-primary'>
-              {constants.title}
-            </span>
-            <div className='mx-2 hidden h-5 w-px bg-font/20 min-[640px]:block' />
+            <div>
+              <AnimateColourfulText
+                text={constants.title}
+                className='inline font-slab font-semibold uppercase text-primary'
+              />
+            </div>
+
+            <div className='mx-2 hidden h-5 w-px bg-font/20 min-[868px]:block' />
           </div>
-          <div className='min-[640px]:hidden'>
+          <div className='min-[868px]:hidden'>
             <ThemeSwitcher />
           </div>
         </div>
 
-        <nav className='max-[640px]:w-full' role='nav'>
+        <nav className='max-[868px]:w-full' role='nav'>
           <AnimatePresence mode='wait'>
-            <motion.section
-              className='flex w-full flex-row flex-nowrap gap-3 px-2 max-[640px]:hidden max-[640px]:flex-col max-[640px]:p-4 min-[640px]:flex'
-              animate={{ scale: isHeaderInView ? 1 : 5 }}
-              exit={{ translateX: 150 }}
+            <section
+              className='flex w-full flex-row flex-nowrap gap-3 px-2 max-[868px]:hidden max-[868px]:flex-col max-[868px]:p-4 min-[868px]:flex'
               style={{ display: isHeaderInView ? 'flex' : 'none' }}>
               {urls.map((item, index) => {
                 const isActive = pathname.includes(item.ref) || pathname === item.url;
@@ -142,7 +142,7 @@ const Header = () => {
                       />
                     )}
 
-                    <div className='relative w-full p-1 max-[640px]:p-2 max-[640px]:px-4'>
+                    <div className='relative w-full p-1 max-[868px]:p-2 max-[868px]:px-4'>
                       <span className='w-full font-sans text-base font-medium transition-colors group-hover:text-primary'>
                         {item.label}
                       </span>
@@ -151,17 +151,17 @@ const Header = () => {
                 );
               })}
 
-              <div className='relative w-full p-[6px] max-[640px]:p-2 max-[640px]:px-4'>
+              <div className='relative w-full p-[6px] max-[868px]:p-2 max-[868px]:px-4'>
                 <div className='relative flex gap-2'>
-                  <div className='mx-2 hidden h-5 w-px bg-font/20 min-[640px]:block' />
+                  <div className='mx-2 hidden h-5 w-px bg-font/20 min-[868px]:block' />
                   <LanguageSwitcher canRender={isPortfolio} />
                 </div>
               </div>
-            </motion.section>
+            </section>
           </AnimatePresence>
         </nav>
 
-        <div className='hidden flex-row flex-nowrap items-center gap-2 min-[640px]:flex'>
+        <div className='hidden flex-row flex-nowrap items-center gap-2 min-[868px]:flex'>
           <ThemeSwitcher />
         </div>
       </div>
