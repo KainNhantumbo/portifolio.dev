@@ -12,7 +12,7 @@ export default async function Page(props: PageParams) {
   setStaticParamsLocale(locale);
 
   return (
-    <main className='flex w-full flex-col gap-24'>
+    <main className='flex w-full flex-col gap-24 lg:gap-40'>
       <Hero />
       <About />
       <Services />

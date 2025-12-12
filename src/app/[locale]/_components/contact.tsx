@@ -1,5 +1,6 @@
 'use client';
 
+import Package from '@/../package.json';
 import { AnimateTextReveal } from '@/components/animations/animate-reveal';
 import Button from '@/components/ui/button';
 import { AnimatedInput } from '@/components/ui/inputs';
@@ -14,15 +15,10 @@ import {
 } from '@/shared/constants';
 import { send as sender } from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { DashIcon, StopwatchIcon } from '@radix-ui/react-icons';
 import { now } from 'dot-beat-time';
-import {
-  ClockFadingIcon,
-  Mail,
-  MailboxIcon,
-  MessageSquareDashed,
-  TextIcon,
-  UserIcon
-} from 'lucide-react';
+import { Mail, MessageSquareDashed, TextIcon, UserIcon } from 'lucide-react';
+
 import * as React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -98,19 +94,51 @@ const Contact = () => {
             <AnimateTextReveal inverseDirection>
               <p className='leading-relaxed'>{translation('intro-phrase')}</p>
             </AnimateTextReveal>
-            <AnimateTextReveal delay={0.5}>
-              <p className='leading-relaxed'>{translation('intro-message')}</p>
-            </AnimateTextReveal>
 
-            <hr className='w-full bg-foreground/40' />
-            <div className='flex items-center gap-3'>
-              <MailboxIcon className='h-5 w-5' />
-              <span className='font-semibold'>{translation('mail')}</span>
-            </div>
-            <hr className='w-full bg-foreground/40' />
-            <div className='flex items-center gap-3'>
-              <ClockFadingIcon className='h-5 w-5' />
-              <span className='font-semibold'>{internetTime}</span>
+            <div className='border-t border-font/20'>
+              <div className='group space-y-3 border-b border-font/20 py-3'>
+                <h4 className='flex items-center gap-3'>
+                  <MessageSquareDashed className='h-auto w-6' />
+                  <span className='text-md font-slab font-medium'>Whatsapp</span>
+                </h4>
+                <a
+                  href={`https://wa.me/258844002535`}
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className='flex items-center gap-3 font-semibold group-hover:text-accent-primary'>
+                  <DashIcon className='h-auto w-6' />
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+              <div className='group space-y-3 border-b border-font/20 py-3'>
+                <h4 className='flex items-center gap-3'>
+                  <Mail className='h-auto w-6' />
+                  <span className='text-md font-slab font-medium'>Email</span>
+                </h4>
+                <a
+                  href={`mailto:${Package.author.email}`}
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className='flex items-center gap-3 font-semibold group-hover:text-accent-primary'>
+                  <DashIcon className='h-auto w-6' />
+                  <span>{Package.author.email}</span>
+                </a>
+              </div>
+
+              <div className='group space-y-3 border-b border-font/20 py-3'>
+                <h4 className='flex items-center gap-3'>
+                  <StopwatchIcon className='h-auto w-6' />
+                  <span className='text-md font-slab font-medium'>.Beat Time</span>
+                </h4>
+                <a
+                  href='https://en.wikipedia.org/wiki/Swatch_Internet_Time'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className='flex items-center gap-3 font-semibold group-hover:text-accent-primary'>
+                  <DashIcon className='h-auto w-6' />
+                  <span>{internetTime}</span>
+                </a>
+              </div>
             </div>
           </section>
         </div>

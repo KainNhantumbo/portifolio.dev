@@ -109,8 +109,6 @@
     "title": "Contate-me",
     "intro-title": "Vamos trazer ideias à vida utilizando código!",
     "intro-phrase": "Olá! Estou aqui para ajudar as pessoas a tornar as suas ideias em realidade. Se você estiver preso em um projeto, quer iniciar algo novo ou simplesmente quer um conselho sobre onde pretende chegar daqui, gostaria de conversar com você sobre isso e ver o que podemos fazer juntos. Sinta-se livre para me contactar para mais informações!",
-    "intro-message": "Você pode utilizar o formulário abaixo para me enviar uma mensagem por correio eletrónico ou escolher uma das seguintes opções:",
-    "mail": "Correio eletrónico: nhantumbok@gmail.com",
     "form": {
       "name-label": "Nome *",
       "name-placeholder": "Escreva o seu nome",

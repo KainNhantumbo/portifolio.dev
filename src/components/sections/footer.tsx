@@ -11,13 +11,12 @@ import * as React from 'react';
 import { AnimatedTextFlip } from '../animations/animate-text-flip';
 
 const words: string[] = [
+  "Kain's Space",
+  'Universe',
+  'Notebook',
+  'Portfolio',
+  'With Love',
   'Ubelloch',
-  'My Universe',
-  'Lovely Donuts',
-  "Kain's Blog",
-  "Kain's Workspace",
-  'My Notebook',
-  'My Portfolio',
   constants.title
 ];
 

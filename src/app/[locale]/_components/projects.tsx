@@ -44,7 +44,7 @@ const Projects = () => {
 
               <div className='flex h-full w-full max-w-[200px] flex-col justify-between p-4'>
                 <div>
-                  <AnimatedBadge>{project.category}</AnimatedBadge>
+                  <AnimatedBadge animateBorder={false}>{project.category}</AnimatedBadge>
 
                   <h3 className='mt-2 text-[.95rem]'>{project.name}</h3>
                 </div>
