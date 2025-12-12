@@ -111,6 +111,7 @@ const About = () => {
             </div>
           </section>
         </section>
+
         <StackCarousel />
       </section>
     </>
