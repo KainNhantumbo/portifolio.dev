@@ -1,7 +1,9 @@
 'use client';
 
+import { useScopedI18n } from '@/locales/client';
 import type { Stack } from '@/types';
 import {
+  AstroOriginal,
   BitbucketOriginal,
   ElectronOriginal,
   ExpressOriginal,
@@ -23,32 +25,43 @@ import {
 } from 'devicons-react';
 import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from './marquee';
 
+const content: Stack[] = [
+  { tech: 'Typescript', icon: TypescriptOriginal },
+  { tech: 'Javascript', icon: JavascriptOriginal },
+  { tech: 'React', icon: ReactOriginal },
+  { tech: 'Next.js', icon: NextjsOriginal },
+  { tech: 'Tailwind CSS', icon: TailwindcssOriginal },
+  { tech: 'SASS & CSS', icon: SassOriginal },
+  { tech: 'Typescript', icon: TypescriptOriginal },
+  { tech: 'Javascript', icon: JavascriptOriginal },
+  { tech: 'Node.js', icon: NodejsOriginal },
+  { tech: 'Express.js', icon: ExpressOriginal },
+  { tech: 'Astro.js', icon: AstroOriginal },
+  { tech: 'Nest.js', icon: NestjsOriginal },
+  { tech: 'Mongo DB', icon: MongodbOriginal },
+  { tech: 'Git', icon: GitOriginal },
+  { tech: 'Electron.js', icon: ElectronOriginal },
+  { tech: 'Markdown', icon: MarkdownOriginal },
+  { tech: 'Github', icon: GithubOriginal },
+  { tech: 'Bitbucket', icon: BitbucketOriginal },
+  { tech: 'Jira', icon: JiraOriginal },
+  { tech: 'PostgreSQL', icon: PostgresqlOriginal },
+  { tech: 'HTML5', icon: Html5Original }
+];
+
 export const StackCarousel = () => {
-  const content: Stack[] = [
-    { tech: 'Typescript', icon: TypescriptOriginal },
-    { tech: 'Javascript', icon: JavascriptOriginal },
-    { tech: 'React', icon: ReactOriginal },
-    { tech: 'Next.JS', icon: NextjsOriginal },
-    { tech: 'Tailwind CSS', icon: TailwindcssOriginal },
-    { tech: 'SASS & CSS', icon: SassOriginal },
-    { tech: 'Typescript', icon: TypescriptOriginal },
-    { tech: 'Javascript', icon: JavascriptOriginal },
-    { tech: 'Node.JS', icon: NodejsOriginal },
-    { tech: 'Express.JS', icon: ExpressOriginal },
-    { tech: 'Nest.JS', icon: NestjsOriginal },
-    { tech: 'Mongo DB', icon: MongodbOriginal },
-    { tech: 'Git', icon: GitOriginal },
-    { tech: 'Electron.JS', icon: ElectronOriginal },
-    { tech: 'Markdown', icon: MarkdownOriginal },
-    { tech: 'Github', icon: GithubOriginal },
-    { tech: 'Bitbucket', icon: BitbucketOriginal },
-    { tech: 'Jira', icon: JiraOriginal },
-    { tech: 'PostgreSQL', icon: PostgresqlOriginal },
-    { tech: 'HTML5', icon: Html5Original }
-  ];
+  const t = useScopedI18n('about.carousel');
 
   return (
     <div className='flex size-full items-center justify-center bg-background'>
+      <div className='group relative m-auto max-w-7xl px-6'>
+        <div className='flex flex-col items-center md:flex-row'>
+          <div className='border-font/15 md:max-w-44 md:border-r md:pr-6'>
+            <p className='text-end text-sm'>{t('label')}</p>
+          </div>
+        </div>
+      </div>
+
       <Marquee>
         <MarqueeFade side='left' />
         <MarqueeFade side='right' />
