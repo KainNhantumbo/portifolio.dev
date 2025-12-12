@@ -37,7 +37,10 @@
     "experience-title": "Experiência",
     "experience-content": "4+ anos de programação",
     "projects-title": "Projetos",
-    "projects-content": "Mais de 20 projetos no Github"
+    "projects-content": "Mais de 20 projetos no Github",
+    "carousel": {
+      "label": "Algumas ferramentas que sempre uso"
+    }
   },
 
   "services": {
