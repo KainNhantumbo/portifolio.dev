@@ -1,7 +1,6 @@
 'use client';
 
 import Package from '@/../package.json';
-import { AnimateTextReveal } from '@/components/animations/animate-reveal';
 import Button from '@/components/ui/button';
 import { AnimatedInput } from '@/components/ui/inputs';
 import { SectionHeader } from '@/components/ui/section-header';
@@ -18,7 +17,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { DashIcon, StopwatchIcon } from '@radix-ui/react-icons';
 import { now } from 'dot-beat-time';
 import { Mail, MessageSquareDashed, TextIcon, UserIcon } from 'lucide-react';
-
 import * as React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -91,9 +89,7 @@ const Contact = () => {
       <section className='flex w-full flex-col gap-12 md:flex-row'>
         <div className='flex w-full flex-col gap-6 md:max-w-md'>
           <section className='flex flex-col gap-6 font-sans text-lg'>
-            <AnimateTextReveal inverseDirection>
-              <p className='leading-relaxed'>{translation('intro-phrase')}</p>
-            </AnimateTextReveal>
+            <p className='leading-relaxed'>{translation('intro-phrase')}</p>
 
             <div className='border-t border-font/20'>
               <div className='group space-y-3 border-b border-font/20 py-3'>

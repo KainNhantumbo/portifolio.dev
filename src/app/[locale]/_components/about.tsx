@@ -1,12 +1,11 @@
 'use client';
 
-import { AnimateTextReveal } from '@/components/animations/animate-reveal';
 import { generateColor } from '@/components/ui/badge';
 import { SectionHeader } from '@/components/ui/section-header';
 import { useScopedI18n } from '@/locales/client';
-import { motion } from '@/providers/framer-provider';
 import { AUTHOR } from '@/shared/constants';
 import { useWindowSize } from '@uidotdev/usehooks';
+import { m as motion } from 'framer-motion';
 import { Code2Icon, SquareStackIcon } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -59,10 +58,8 @@ const About = () => {
         <section className={'grid grid-cols-1 lg:grid-cols-2'}>
           <section className='space-y-12'>
             <div className='w-full max-w-xl space-y-6 text-lg font-medium sm:text-xl lg:leading-relaxed'>
-              <AnimateTextReveal inverseDirection>
-                {translation('intro-1')}
-              </AnimateTextReveal>
-              <AnimateTextReveal delay={0.4}>{translation('intro-2')}</AnimateTextReveal>
+              <p>{translation('intro-1')}</p>
+              <p>{translation('intro-2')}</p>
             </div>
 
             <div className='flex flex-wrap items-center gap-12'>

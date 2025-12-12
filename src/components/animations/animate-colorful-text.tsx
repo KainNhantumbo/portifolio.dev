@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { motion } from '@/providers/framer-provider';
+import { m as motion } from 'framer-motion';
 import React from 'react';
 
 type Props = {
