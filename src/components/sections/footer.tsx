@@ -2,7 +2,6 @@
 
 import Package from '@/../package.json';
 import donutsImage from '@/../public/assets/donuts.png';
-import { AnimateGradient } from '@/components/animations/animate-gradient';
 import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { useScopedI18n } from '@/locales/client';
 import { constants } from '@/shared/constants';
@@ -25,8 +24,7 @@ const Footer = () => {
 
   return (
     <div className='mt-20 transition-all'>
-      <AnimateGradient />
-      <footer className='relative min-h-[60vh] w-full transition-all'>
+      <footer className='relative min-h-[60vh] w-full border-t border-font/15 transition-all'>
         <SparklesCore
           background='transparent'
           minSize={0.4}

@@ -1,12 +1,12 @@
 'use client';
 
 import { BubbleBackground } from '@/components/animations/animate-bubbles';
-import { StatusIndicator } from '@/components/animations/animate-status';
-import { AnimateText } from '@/components/animations/animate-text';
 import { AnimateTextFade } from '@/components/animations/animate-text-fade';
 import { SocialIcons } from '@/components/social-icons';
+import { AnimatedBadge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/locales/client';
+import { SparkleIcon } from 'lucide-react';
 import * as React from 'react';
 
 const Hero = () => {
@@ -20,12 +20,10 @@ const Hero = () => {
         id='home'
         className='z-50 flex w-full max-w-[1280px] flex-col gap-3 px-4 py-5 font-sans'>
         <div className='relative flex w-fit flex-col'>
-          <h3 className='my-3 flex w-fit items-center gap-3 rounded-full border border-font/40 px-6 py-1 font-semibold'>
-            <StatusIndicator activeColor='bg-green-500' size='md' />
-            <AnimateText
-              words={translation('intro.presentation')}
-              textClassName={cn('leading-relaxed text-xl dark:text-white text-black')}
-            />
+          <h3 className='my-3  font-semibold'>
+            <AnimatedBadge className='bg-transparent' animateBorder={false} icon={<SparkleIcon className='h-4 w-4 text-primary' />}>
+              {translation('intro.presentation')}
+            </AnimatedBadge>
           </h3>
           <div className='flex w-full gap-3'>
             <AnimateTextFade direction='up'>
