@@ -5,6 +5,7 @@ import donutsImage from '@/../public/assets/donuts.png';
 import { SparklesCore } from '@/components/animations/animate-sparkles';
 import { useScopedI18n } from '@/locales/client';
 import { constants } from '@/shared/constants';
+import { useWindowSize } from '@uidotdev/usehooks';
 import Image from 'next/image';
 import * as React from 'react';
 import { AnimatedTextFlip } from '../animations/animate-text-flip';
@@ -22,6 +23,12 @@ const words: string[] = [
 const Footer = () => {
   const translation = useScopedI18n('footer');
 
+  const windowSize = useWindowSize();
+  const enableAnimations = React.useMemo(
+    () => !!windowSize?.width && windowSize.width >= 768,
+    [windowSize]
+  );
+
   return (
     <div className='mt-20 transition-all'>
       <footer className='relative min-h-[60vh] w-full border-t border-font/15 transition-all'>
@@ -33,8 +40,8 @@ const Footer = () => {
           className='absolute left-0 top-0 -z-50 h-full w-full'
           particleColor={'#555555'}
         />
-        <h3 className='mx-auto w-full max-w-full py-12 text-center font-slab text-5xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'>
-          <AnimatedTextFlip words={words} />
+        <h3 className='mx-auto w-full max-w-full py-12 text-center font-slab text-2xl font-bold uppercase leading-relaxed sm:py-24 sm:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem]'>
+          <AnimatedTextFlip words={words} disableAnimation={!enableAnimations} />
         </h3>
 
         <div className='mx-auto h-auto w-full max-w-[820px] p-5 pb-3'>

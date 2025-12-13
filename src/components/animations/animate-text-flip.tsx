@@ -9,6 +9,7 @@ export type FlipWordsProps = Omit<React.ComponentProps<'span'>, 'children'> & {
   duration?: number;
   letterDelay?: number;
   wordDelay?: number;
+  disableAnimation?: boolean;
 };
 
 export function AnimatedTextFlip({
@@ -18,6 +19,7 @@ export function AnimatedTextFlip({
   letterDelay = 0.05,
   wordDelay = 0.3,
   className,
+  disableAnimation = false,
   ...props
 }: FlipWordsProps) {
   const localRef = React.useRef<HTMLSpanElement>(null);
@@ -37,6 +39,28 @@ export function AnimatedTextFlip({
       return () => clearTimeout(timeoutId);
     }
   }, [isAnimating, duration, startAnimation]);
+
+  if (disableAnimation) {
+    return (
+      <span ref={localRef} data-slot='flip-words' {...(props as any)}>
+        <span
+          className={cn('relative inline-block px-2 text-left', className)}
+          key={currentWord}>
+          {currentWord.split(' ').map((word, wordIndex) => (
+            <span key={`${word}-${wordIndex}`} className='inline-block whitespace-nowrap'>
+              {word.split('').map((letter, letterIndex) => (
+                <span key={`${word}-${letterIndex}`} className='inline-block'>
+                  {letter}
+                </span>
+              ))}
+              <span className='inline-block'>&nbsp;</span>
+            </span>
+          ))}
+        </span>
+      </span>
+    );
+  }
+
   return (
     <span ref={localRef} data-slot='flip-words' {...(props as any)}>
       <AnimatePresence
