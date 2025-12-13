@@ -51,6 +51,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.66.0",
     "react-markdown": "^9.0.1",
+    "react-medium-image-zoom": "^5.4.0",
     "react-syntax-highlighter": "^16.1.0",
     "reading-time-estimator": "^1.11.0",
     "simplex-noise": "^4.0.3",
