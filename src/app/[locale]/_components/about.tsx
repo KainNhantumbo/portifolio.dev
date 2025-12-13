@@ -34,14 +34,12 @@ const About = () => {
     {
       title: translation('experience-title'),
       content: translation('experience-content'),
-      icon: <Code2Icon className={'h-auto w-24'} color={generateColor() as string} />,
-      color: 'blue' as const
+      icon: <Code2Icon className={'h-auto w-8'} color={generateColor() as string} />
     },
     {
       title: translation('projects-title'),
       content: translation('projects-content'),
-      icon: <SquareStackIcon className={'h-auto w-24'} color={generateColor() as string} />,
-      color: 'green' as const
+      icon: <SquareStackIcon className={'h-auto w-8'} color={generateColor() as string} />
     }
   ];
 
@@ -52,39 +50,36 @@ const About = () => {
         className='relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-12 px-4 pt-5'>
         <SectionHeader title={translation('title')} description={translation('subtitle')} />
 
-        <section className={'grid grid-cols-1 gap-6 lg:grid-cols-2'}>
-          <section className='space-y-12'>
-            <div className='w-full max-w-xl space-y-6 text-lg font-medium sm:text-xl lg:leading-relaxed'>
-              <p>{translation('intro-1')}</p>
-              <p>{translation('intro-2')}</p>
-            </div>
-          </section>
-
-          <div className='flex flex-wrap items-center justify-center gap-12 sm:justify-start'>
-            {cards.map((item, idx) => (
-              <GlowCard
-                enableMouseEffect={enableAnimations}
+        <div className='flex flex-wrap items-center justify-center gap-12'>
+          {cards.map((item, idx) => (
+            <div className='base-border rounded-xl p-1' key={idx}>
+              <div
                 key={idx}
-                width={'100%'}
-                height={'100%'}
-                glowColor={item.color}
-                className='group relative grid aspect-square max-h-[280px] w-full select-none place-content-center place-items-center gap-3 rounded-xl p-8 font-sans md:max-w-[280px]'>
-                <SparklesCore
-                  background='transparent'
-                  minSize={0.4}
-                  maxSize={4}
-                  particleDensity={15}
-                  className='absolute left-0 top-0 -z-50 h-full w-full'
-                  particleColor={generateColor() as string}
-                />
-                {item.icon}
-                <h4 className='text-3xl font-bold'>{item.title}</h4>
-                <span className='text-center text-lg font-bold uppercase'>
+                className='group relative flex w-full select-none items-center gap-3 rounded-xl bg-foreground p-8 font-sans'>
+                <div className='flex items-center gap-2 border-r border-font/20 pr-4'>
+                  {item.icon}
+                  <h4 className='font-slab text-xl font-bold uppercase'>{item.title}</h4>
+                </div>
+                <span className='text-center text-lg font-bold uppercase text-font/60'>
                   {item.content}
                 </span>
-              </GlowCard>
-            ))}
-          </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <section
+          className={'flex flex-wrap items-center justify-center gap-12 self-center'}>
+          <section className='space-y-12'>
+            <p className='w-full max-w-xl space-y-6 text-pretty text-justify text-lg font-medium sm:text-xl lg:leading-relaxed'>
+              {translation('intro-1')}
+            </p>
+          </section>
+          <section className='space-y-12'>
+            <p className='w-full max-w-xl space-y-6 text-pretty text-justify text-lg font-medium sm:text-xl lg:leading-relaxed'>
+              {translation('intro-2')}
+            </p>
+          </section>
         </section>
 
         <StackCarousel />

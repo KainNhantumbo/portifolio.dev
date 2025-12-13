@@ -1,5 +1,6 @@
 'use client';
 
+import { BubbleBackground } from '@/components/animations/animate-bubbles';
 import { AnimateTextFade } from '@/components/animations/animate-text-fade';
 import { SocialIcons } from '@/components/social-icons';
 import { AnimatedBadge } from '@/components/ui/badge';
@@ -12,7 +13,7 @@ const Hero = () => {
   const translation = useI18n();
 
   return (
-    <section className='grid h-screen w-full grid-cols-1 place-content-center place-items-center'>
+    <BubbleBackground className='grid h-screen w-full grid-cols-1 place-content-center place-items-center'>
       <section
         id='home'
         className='z-50 flex w-full max-w-[1280px] flex-col gap-3 px-4 py-5 font-sans'>
@@ -51,7 +52,7 @@ const Hero = () => {
           <SocialIcons />
         </div>
       </section>
-    </section>
+    </BubbleBackground>
   );
 };
 
@@ -278,7 +279,8 @@ export function MouseEffectCard({
   dotSize = 2,
   dotSpacing = 16,
   repulsionRadius = 80,
-  repulsionStrength = 20
+  repulsionStrength = 20,
+  children
 }: MouseEffectCardProps) {
   const innerContainerRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(Infinity);
