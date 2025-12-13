@@ -36,7 +36,7 @@ const Footer = () => {
           background='transparent'
           minSize={0.4}
           maxSize={4}
-          particleDensity={100}
+          particleDensity={20}
           className='absolute left-0 top-0 -z-50 h-full w-full'
           particleColor={'#555555'}
         />

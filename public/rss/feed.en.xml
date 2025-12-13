@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Codenut.dev Feed</title>
-        <link>https://codenut-dev.vercel.app</link>
+        <link>https://ubelloch.vercel.app</link>
         <description>Kain's Blog and Portfolio Website</description>
-        <lastBuildDate>Fri, 12 Dec 2025 20:47:21 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Dec 2025 10:06:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Kain's Blog and Portfolio Website</generator>
         <language>en</language>
         <copyright>Copyright © 2025 Codenut.dev - All rights reserved.</copyright>
         <item>
             <title><![CDATA[Use SERVE Package to Serve Locally Your Front-end Applications]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/use-serve-package-to-serve-locally-your-react-apps</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/use-serve-package-to-serve-locally-your-react-apps</guid>
+            <link>https://ubelloch.vercel.app/blog/post/use-serve-package-to-serve-locally-your-react-apps</link>
+            <guid>https://ubelloch.vercel.app/blog/post/use-serve-package-to-serve-locally-your-react-apps</guid>
             <pubDate>Mon, 27 Nov 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>Vercel has a pretty useful package called serve, that can be very handy to test and preview your local applications build</p>
 ]]></description>
@@ -38,8 +38,8 @@
         </item>
         <item>
             <title><![CDATA[Schema Validation with Zod and Express.js]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/schema-validation-with-zod-and-expressjs</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/schema-validation-with-zod-and-expressjs</guid>
+            <link>https://ubelloch.vercel.app/blog/post/schema-validation-with-zod-and-expressjs</link>
+            <guid>https://ubelloch.vercel.app/blog/post/schema-validation-with-zod-and-expressjs</guid>
             <pubDate>Thu, 09 Nov 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>They say “Never trust user input” - I know that this may sound extreme, but it is an important security principle in programming. Today, we will learn together how to implement Zod in a Express.js application.</p>
 ]]></description>
@@ -196,8 +196,8 @@ app.listen(8080, () =&gt; console.log(`&gt; Ready on http://localhost:${8080}`))
         </item>
         <item>
             <title><![CDATA[Discover The Features of The New Next 14]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/discover-the-features-of-next14</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/discover-the-features-of-next14</guid>
+            <link>https://ubelloch.vercel.app/blog/post/discover-the-features-of-next14</link>
+            <guid>https://ubelloch.vercel.app/blog/post/discover-the-features-of-next14</guid>
             <pubDate>Sun, 05 Nov 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>Let&#39;s  wrap up for the latest version of Next.js that brings several new features and improvements to the framework that most of us love</p>
 ]]></description>
@@ -251,8 +251,8 @@ app.listen(8080, () =&gt; console.log(`&gt; Ready on http://localhost:${8080}`))
         </item>
         <item>
             <title><![CDATA[Combine Styled Components with CSS Modules to Unleash Power]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/combine-styled-components-with-css-modules-to-unleash-power</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/combine-styled-components-with-css-modules-to-unleash-power</guid>
+            <link>https://ubelloch.vercel.app/blog/post/combine-styled-components-with-css-modules-to-unleash-power</link>
+            <guid>https://ubelloch.vercel.app/blog/post/combine-styled-components-with-css-modules-to-unleash-power</guid>
             <pubDate>Sat, 07 Oct 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>Styled components and CSS modules offer powerful features for managing and scaling CSS in modern web applications so  you can create a robust and maintainable CSS architecture that is both flexible and efficient. Get ready to learn more about them together.</p>
 ]]></description>
@@ -332,8 +332,8 @@ const CustomButton = (props) =&gt; (
         </item>
         <item>
             <title><![CDATA[Get the Most Out of Your React Apps by Learning These Performance Techniques]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/get-the-most-out-of-your-react-apps-by-learning-these-performance-techniques</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/get-the-most-out-of-your-react-apps-by-learning-these-performance-techniques</guid>
+            <link>https://ubelloch.vercel.app/blog/post/get-the-most-out-of-your-react-apps-by-learning-these-performance-techniques</link>
+            <guid>https://ubelloch.vercel.app/blog/post/get-the-most-out-of-your-react-apps-by-learning-these-performance-techniques</guid>
             <pubDate>Fri, 30 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>Take your skills to the next level and optimize your React applications by using these performance tips</p>
 ]]></description>
@@ -361,8 +361,8 @@ const CustomButton = (props) =&gt; (
         </item>
         <item>
             <title><![CDATA[Optimize SEO in your Next.js Applications]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/optimize-seo-in-nextjs-applicatons</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/optimize-seo-in-nextjs-applicatons</guid>
+            <link>https://ubelloch.vercel.app/blog/post/optimize-seo-in-nextjs-applicatons</link>
+            <guid>https://ubelloch.vercel.app/blog/post/optimize-seo-in-nextjs-applicatons</guid>
             <pubDate>Wed, 12 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>Search engine optimization (SEO) makes a crucial role in driving organic traffic to websites. Next.js provides tools for building performant and SEO-friendly web applications. In this blog post, we will explore some techniques for optimizing SEO in Next.js Apps to enhance search engine visibility and attract more organic traffic.</p>
 ]]></description>
@@ -449,8 +449,8 @@ export default Page;
         </item>
         <item>
             <title><![CDATA[Learn More About Next.js: SSR, SSG, ISR, Server Components and more]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/learn-more-about-nextjs-ssr,-ssg,-isr,-server-components-and-more</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/learn-more-about-nextjs-ssr,-ssg,-isr,-server-components-and-more</guid>
+            <link>https://ubelloch.vercel.app/blog/post/learn-more-about-nextjs-ssr,-ssg,-isr,-server-components-and-more</link>
+            <guid>https://ubelloch.vercel.app/blog/post/learn-more-about-nextjs-ssr,-ssg,-isr,-server-components-and-more</guid>
             <pubDate>Sun, 19 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>In this era of dynamic world of web development, search engine optimization (SEO) plays a crucial role in ensuring your website’s visibility and success.</p>
 ]]></description>
@@ -479,8 +479,8 @@ export default Page;
         </item>
         <item>
             <title><![CDATA[How to Generate Random Colors in Javascript]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/how-to-generate-colors-in-javascript</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/how-to-generate-colors-in-javascript</guid>
+            <link>https://ubelloch.vercel.app/blog/post/how-to-generate-colors-in-javascript</link>
+            <guid>https://ubelloch.vercel.app/blog/post/how-to-generate-colors-in-javascript</guid>
             <pubDate>Tue, 20 Sep 2022 12:10:18 GMT</pubDate>
             <description><![CDATA[<p>Learn how to generate colors in javascript programmatically</p>
 ]]></description>
@@ -519,8 +519,8 @@ Thank you for reading!</p>
         </item>
         <item>
             <title><![CDATA[Why Semantic Markup is Significant for Your Website Optimization]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/why-semantic-markup-is-significant-for-Your-website-optimization</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/why-semantic-markup-is-significant-for-Your-website-optimization</guid>
+            <link>https://ubelloch.vercel.app/blog/post/why-semantic-markup-is-significant-for-Your-website-optimization</link>
+            <guid>https://ubelloch.vercel.app/blog/post/why-semantic-markup-is-significant-for-Your-website-optimization</guid>
             <pubDate>Sun, 11 Sep 2022 12:10:18 GMT</pubDate>
             <description><![CDATA[<p>We should discuss why semantic markup (HTML) is significant for your sites Search engine optimization, and that it is so easy to get this pivotal Website design enhancement component right, even as a non-geek.</p>
 ]]></description>
@@ -569,8 +569,8 @@ Thank you for reading!</p>
         </item>
         <item>
             <title><![CDATA[How to Make Pre Tags Responsive in CSS]]></title>
-            <link>https://codenut-dev.vercel.app/blog/post/how-to-make-pre-tags-responsive-in-css</link>
-            <guid>https://codenut-dev.vercel.app/blog/post/how-to-make-pre-tags-responsive-in-css</guid>
+            <link>https://ubelloch.vercel.app/blog/post/how-to-make-pre-tags-responsive-in-css</link>
+            <guid>https://ubelloch.vercel.app/blog/post/how-to-make-pre-tags-responsive-in-css</guid>
             <pubDate>Sat, 10 Sep 2022 15:10:18 GMT</pubDate>
             <description><![CDATA[<p>Learn how to make your HTML pre tags responsive by adding a couple of CSS properties</p>
 ]]></description>

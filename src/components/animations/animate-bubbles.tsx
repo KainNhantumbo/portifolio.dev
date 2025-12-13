@@ -1,12 +1,10 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { m as motion, type SpringOptions, useMotionValue, useSpring } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import * as React from 'react';
 
 export type BubbleBackgroundProps = React.ComponentProps<'div'> & {
-  interactive?: boolean;
-  transition?: SpringOptions;
   colors?: {
     first: string;
     second: string;
@@ -21,41 +19,19 @@ export function BubbleBackground({
   ref,
   className,
   children,
-  interactive = false,
-  transition = { stiffness: 100, damping: 20 },
-  colors = {
+  ...props
+}: BubbleBackgroundProps) {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  React.useImperativeHandle(ref, () => containerRef.current as HTMLDivElement);
+
+  const colors = {
     first: '18,113,255',
     second: '221,74,255',
     third: '0,220,255',
     fourth: '200,50,50',
     fifth: '180,180,50',
     sixth: '140,100,255'
-  },
-  ...props
-}: BubbleBackgroundProps) {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-
-  React.useImperativeHandle(ref, () => containerRef.current as HTMLDivElement);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, transition);
-  const springY = useSpring(mouseY, transition);
-
-  React.useEffect(() => {
-    if (!interactive) return;
-    const currentContainer = containerRef.current;
-    if (!currentContainer) return;
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = currentContainer.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      mouseX.set(e.clientX - centerX);
-      mouseY.set(e.clientY - centerY);
-    };
-    currentContainer?.addEventListener('mousemove', handleMouseMove);
-    return () => currentContainer?.removeEventListener('mousemove', handleMouseMove);
-  }, [interactive, mouseX, mouseY]);
+  };
 
   return (
     <div
@@ -98,7 +74,7 @@ export function BubbleBackground({
           transition={{ duration: 30, ease: 'easeInOut', repeat: Infinity }}
         />
         <motion.div
-          className='absolute inset-0 flex origin-[calc(50%-400px)] items-center justify-center'
+          className='absolute inset-0 flex origin-[calc(50%-200px)] items-center justify-center'
           animate={{ rotate: 360 }}
           transition={{
             duration: 20,
@@ -106,34 +82,25 @@ export function BubbleBackground({
             repeat: Infinity,
             repeatType: 'loop'
           }}>
-          <div className='left-[10%] top-[10%] size-[80%] rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--second-color),0.8)_0%,rgba(var(--second-color),0)_50%)] mix-blend-hard-light' />
+          <div className='left-[10%] top-[10%] size-[60%] rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--second-color),0.8)_0%,rgba(var(--second-color),0)_50%)] mix-blend-hard-light' />
         </motion.div>
         <motion.div
-          className='absolute inset-0 flex origin-[calc(50%+400px)] items-center justify-center'
+          className='absolute inset-0 flex origin-[calc(50%+200px)] items-center justify-center'
           animate={{ rotate: 360 }}
           transition={{ duration: 40, ease: 'linear', repeat: Infinity }}>
           <div className='absolute left-[calc(50%-500px)] top-[calc(50%+200px)] size-[80%] rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--third-color),0.8)_0%,rgba(var(--third-color),0)_50%)] mix-blend-hard-light' />
         </motion.div>
         <motion.div
-          className='absolute left-[10%] top-[10%] size-[80%] rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--fourth-color),0.8)_0%,rgba(var(--fourth-color),0)_50%)] opacity-70 mix-blend-hard-light'
+          className='absolute left-[10%] top-[10%] size-[80%] rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--fourth-color),0.8)_0%,rgba(var(--fourth-color),0)_50%)] opacity-40 mix-blend-hard-light'
           animate={{ x: [-50, 50, -50] }}
           transition={{ duration: 40, ease: 'easeInOut', repeat: Infinity }}
         />
         <motion.div
-          className='absolute inset-0 flex origin-[calc(50%_-_800px)_calc(50%_+_200px)] items-center justify-center'
+          className='absolute inset-0 flex origin-[calc(50%_-_400px)_calc(50%_+_200px)] items-center justify-center'
           animate={{ rotate: 360 }}
           transition={{ duration: 20, ease: 'linear', repeat: Infinity }}>
           <div className='absolute left-[calc(50%-80%)] top-[calc(50%-80%)] size-[160%] rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--fifth-color),0.8)_0%,rgba(var(--fifth-color),0)_50%)] mix-blend-hard-light' />
         </motion.div>
-        {interactive && (
-          <motion.div
-            className='absolute size-full rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--sixth-color),0.8)_0%,rgba(var(--sixth-color),0)_50%)] opacity-70 mix-blend-hard-light'
-            style={{
-              x: springX,
-              y: springY
-            }}
-          />
-        )}
       </div>
       {children}
     </div>

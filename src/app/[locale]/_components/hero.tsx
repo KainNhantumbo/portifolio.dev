@@ -13,9 +13,7 @@ const Hero = () => {
   const translation = useI18n();
 
   return (
-    <BubbleBackground
-      interactive={false}
-      className='grid h-screen w-full grid-cols-1 place-content-center place-items-center'>
+    <BubbleBackground className='grid h-screen w-full grid-cols-1 place-content-center place-items-center'>
       <section
         id='home'
         className='z-50 flex w-full max-w-[1280px] flex-col gap-3 px-4 py-5 font-sans'>
