@@ -1,15 +1,15 @@
 {
-  "name": "codenut-homepage",
+  "name": "ubelloch-homepage",
   "description": "Kain's Blog and Portfolio Website",
-  "website_name": "Codenut Blog",
-  "version": "6.4.0",
+  "website_name": "Ubelloch Blog",
+  "version": "7.0.0",
   "private": true,
-  "latest_compile": "09-2025",
-  "url": "https://codenut-dev.vercel.app",
+  "latest_compile": "12-2025",
+  "url": "https://ubelloch.vercel.app",
   "author": {
     "name": "Kain Nhantumbo",
     "email": "nhantumbok@gmail.com",
-    "url": "https://codenut-dev.vercel.app"
+    "url": "https://ubelloch.vercel.app"
   },
   "license": "Apache License Version 2.0",
   "repository": {
