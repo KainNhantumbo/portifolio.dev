@@ -73,7 +73,7 @@ const About = () => {
                   background='transparent'
                   minSize={0.4}
                   maxSize={4}
-                  particleDensity={100}
+                  particleDensity={15}
                   className='absolute left-0 top-0 -z-50 h-full w-full'
                   particleColor={generateColor() as string}
                 />

@@ -1,7 +1,7 @@
 'use client';
 
 import { buildShareUrls } from '@/lib/share-urls';
-import { m as motion } from 'framer-motion';
+import { m as motion } from 'motion/react';
 import type { FC } from 'react';
 
 type Props = { title: string; excerpt: string; slug: string };

@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
-import { m as motion } from 'framer-motion';
+import { m as motion } from 'motion/react';
 import { useCallback } from 'react';
 
 type AnimationVariant = 'circle' | 'circle-blur';

@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { useCurrentLocale, useScopedI18n } from '@/locales/client';
 import { constants } from '@/shared/constants';
 import type { UrlList } from '@/types';
-import { AnimatePresence, m as motion } from 'framer-motion';
+import { AnimatePresence, m as motion } from 'motion/react';
 import Image from 'next/image';
 import { usePathname as usePath } from 'next/navigation';
 import * as React from 'react';

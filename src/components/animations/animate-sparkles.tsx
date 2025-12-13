@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import type { Container, SingleOrMultiple } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
-import { m as motion, useAnimation } from 'framer-motion';
+import { m as motion, useAnimation } from 'motion/react';
 import * as React from 'react';
 
 export type ParticlesProps = {

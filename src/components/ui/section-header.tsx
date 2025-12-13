@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { m as motion } from 'framer-motion';
+import { m as motion } from 'motion/react';
 import dynamic from 'next/dynamic';
 
 const AnimateTextFade = dynamic(

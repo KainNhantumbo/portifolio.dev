@@ -1,5 +1,5 @@
 'use client';
-import { m as motion, useInView, Variants } from 'framer-motion';
+import { m as motion, useInView, Variants } from 'motion/react';
 import * as React from 'react';
 
 export function AnimateTextFade({

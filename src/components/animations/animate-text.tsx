@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { m as motion, stagger, useAnimate } from 'framer-motion';
+import { m as motion, stagger, useAnimate } from 'motion/react';
 import { useEffect } from 'react';
 
 type Props = {

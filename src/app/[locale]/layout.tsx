@@ -9,7 +9,7 @@ import { ThemeProvider } from '@/providers/theme-provider';
 import { AUTHOR, constants, locales } from '@/shared/constants';
 import { arvo, ibmPlexMono, rethink } from '@/shared/fonts';
 import type { PageParams } from '@/types';
-import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
+import { LazyMotion, MotionConfig, domAnimation } from 'motion/react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';

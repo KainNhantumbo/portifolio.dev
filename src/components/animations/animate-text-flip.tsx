@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { AnimatePresence, m as motion } from 'framer-motion';
+import { AnimatePresence, m as motion } from 'motion/react';
 import * as React from 'react';
 
 export type FlipWordsProps = Omit<React.ComponentProps<'span'>, 'children'> & {

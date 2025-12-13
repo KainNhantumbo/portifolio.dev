@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { HTMLMotionProps, m as motion } from 'framer-motion';
+import { HTMLMotionProps, m as motion } from 'motion/react';
 import * as React from 'react';
 
 type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'ghost' | 'neon';

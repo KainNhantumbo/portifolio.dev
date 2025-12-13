@@ -1,6 +1,6 @@
 'use client';
 
-import { animate, m as motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { animate, m as motion, useMotionTemplate, useMotionValue } from 'motion/react';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 
 type AnimatedInputProps = {
