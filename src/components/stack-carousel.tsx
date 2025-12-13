@@ -53,7 +53,7 @@ export const StackCarousel = () => {
   const t = useScopedI18n('about.carousel');
 
   return (
-    <div className='flex size-full items-center justify-center bg-background'>
+    <div className='flex size-full items-center justify-center bg-background pt-12'>
       <div className='group relative m-auto max-w-7xl px-6'>
         <div className='flex flex-col items-center md:flex-row'>
           <div className='border-font/15 md:max-w-44 md:border-r md:pr-6'>
