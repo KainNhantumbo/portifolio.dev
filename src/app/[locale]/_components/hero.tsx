@@ -20,8 +20,11 @@ const Hero = () => {
         id='home'
         className='z-50 flex w-full max-w-[1280px] flex-col gap-3 px-4 py-5 font-sans'>
         <div className='relative flex w-fit flex-col'>
-          <h3 className='my-3  font-semibold'>
-            <AnimatedBadge className='bg-transparent' animateBorder={false} icon={<SparkleIcon className='h-4 w-4 text-primary' />}>
+          <h3 className='my-3 font-semibold'>
+            <AnimatedBadge
+              className='bg-transparent'
+              animateBorder={false}
+              icon={<SparkleIcon className='h-4 w-4 text-primary' />}>
               {translation('intro.presentation')}
             </AnimatedBadge>
           </h3>
