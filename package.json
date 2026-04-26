@@ -2,14 +2,14 @@
   "name": "codenut-homepage",
   "description": "Kain's Blog and Portfolio Website",
   "website_name": "Codenut Blog",
-  "version": "6.4.0",
+  "version": "6.5.0",
   "private": true,
-  "latest_compile": "09-2025",
-  "url": "https://codenut-dev.vercel.app",
+  "latest_compile": "05-2026",
+  "url": "https://ubelloch.vercel.app",
   "author": {
     "name": "Kain Nhantumbo",
     "email": "nhantumbok@gmail.com",
-    "url": "https://codenut-dev.vercel.app"
+    "url": "https://ubelloch.vercel.app"
   },
   "license": "Apache License Version 2.0",
   "repository": {
@@ -43,12 +43,12 @@
     "lucide-react": "^0.539.0",
     "marked": "^9.1.6",
     "nanoid": "^5.1.6",
-    "next": "15.5.7",
+    "next": "16.2.4",
     "next-international": "^1.2.4",
     "next-themes": "^0.2.1",
     "ogl": "^1.0.11",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.66.0",
     "react-markdown": "^9.0.1",
@@ -62,12 +62,12 @@
   "devDependencies": {
     "@types/granim": "^2.0.4",
     "@types/node": "^20.16.10",
-    "@types/react": "19.1.9",
-    "@types/react-dom": "19.1.7",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
     "@types/react-syntax-highlighter": "^15.5.13",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.35.0",
-    "eslint-config-next": "^15.5.2",
+    "eslint-config-next": "16.2.4",
     "eslint-plugin-react-hooks": "^5.2.0",
     "postcss": "^8.4.47",
     "postcss-nesting": "^12.1.5",
@@ -80,5 +80,9 @@
   "overrides": {
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7"
+  },
+  "resolutions": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
   }
 }
