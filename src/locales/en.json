@@ -131,8 +131,8 @@
     "title": "Recent Work",
     "description": "A collection of my most recent projects",
     "button-actions": {
-      "view-code": "Try this app live!",
-      "go-live": "View the code on Github"
+      "view-code": "View the code on Github",
+      "go-live": "Try this app live!"
     },
     "platform": "Platform",
     "stack": "Stack",
